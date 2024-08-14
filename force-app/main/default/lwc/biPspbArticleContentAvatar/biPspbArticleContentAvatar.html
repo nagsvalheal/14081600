@@ -1,0 +1,50 @@
+<!--This lightning web component is used for display the personalized messages based on category of the article selected-->
+<template>
+	<div class='contain'>
+
+		<div>
+			<!--Selected avatar By patient-->
+			<img src={cardImage} alt="Selected Avatar" class="image" />
+		</div>
+		<!--Personalized message content based on category of the articles-->
+		<div class="message-container">
+			<p class="para">{genMessageRecord} </p>
+			<p class="paranew">...</p>
+
+		</div>
+		<div class='mbintm'><a><span class='intmark'> X</span></a></div>
+
+	</div>
+	<hr class='gradientline'>
+
+	<div class='searchoption'>
+
+		<div class="search-icon-container">
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<g clip-path="url(#clip0_14614_32008)">
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M9.82997 0C4.40103 0 0 4.40103 0 9.82997C0 15.2589 4.40103 19.6599 9.82997 19.6599C12.243 19.6599 14.453 18.7905 16.1637 17.3477L22.5708 23.7556L22.6867 23.8525C23.013 24.0786 23.4641 24.0463 23.7547 23.7557C24.0817 23.4288 24.0818 22.8987 23.7548 22.5717L17.3477 16.1637C18.7905 14.453 19.6599 12.243 19.6599 9.82997C19.6599 4.40103 15.2589 0 9.82997 0ZM15.6222 15.5713C17.0831 14.0975 17.9855 12.0691 17.9855 9.82997C17.9855 5.32578 14.3342 1.67442 9.82997 1.67442C5.32578 1.67442 1.67442 5.32578 1.67442 9.82997C1.67442 14.3342 5.32578 17.9855 9.82997 17.9855C12.0692 17.9855 14.0976 17.0831 15.5714 15.6221C15.5795 15.6133 15.5878 15.6046 15.5963 15.5961C15.6048 15.5876 15.6134 15.5794 15.6222 15.5713Z"
+						fill="#696969" class="svgstyl"></path>
+				</g>
+				<defs>
+					<clipPath id="clip0_14614_32008">
+						<rect width="24" height="24" fill="white" class="svgfil"></rect>
+					</clipPath>
+				</defs>
+			</svg>
+			<!--Search input for mobile view-->
+			<input class="search-bar" type="search" placeholder="Search for an article" onchange={handleSearch}
+				oninput={debouncedSearch} onkeyup={handleSearchInputKeyUp} onfocus={handleSearchBarFocus}
+				onblur={handleSearchBarBlur}>
+
+			<svg class='valueclear' onclick={clearInput} width="16" height="16" viewBox="0 0 16 16" fill="none"
+				xmlns="http://www.w3.org/2000/svg" role="button" onkeypress={clearInput} tabindex="0">
+				<path fill-rule="evenodd" clip-rule="evenodd"
+					d="M0.875504 0.0988925L0.952804 0.163475L8 7.21023L15.0472 0.163475C15.2652 -0.0544918 15.6186 -0.0544918 15.8365 0.163475C16.0303 0.357224 16.0518 0.657977 15.9011 0.875504L15.8365 0.952804L8.78977 8L15.8365 15.0472C16.0545 15.2652 16.0545 15.6186 15.8365 15.8365C15.6428 16.0303 15.342 16.0518 15.1245 15.9011L15.0472 15.8365L8 8.78977L0.952804 15.8365C0.734837 16.0545 0.381442 16.0545 0.163475 15.8365C-0.0302732 15.6428 -0.0518008 15.342 0.0988925 15.1245L0.163475 15.0472L7.21023 8L0.163475 0.952804C-0.0544918 0.734837 -0.0544918 0.381442 0.163475 0.163475C0.333005 -0.00605464 0.58446 -0.043728 0.790401 0.0504553L0.875504 0.0988925Z"
+					fill="#696969" class="svgstyl" />
+			</svg>
+			<hr class="search-bar-border-bottom">
+
+		</div>
+	</div>
+</template>

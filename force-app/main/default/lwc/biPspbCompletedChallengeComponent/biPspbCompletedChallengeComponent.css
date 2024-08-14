@@ -1,0 +1,163 @@
+/*--Font Declaration---*/
+@font-face {
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina01-Regular.woff")
+    format("woff");
+}
+@font-face {
+  font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina04-Light.woff")
+    format("woff");
+}
+@font-face {
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina04-SemiBold.woff")
+    format("woff");
+}
+@font-face {
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina04-Bold.woff")
+    format("woff");
+}
+.noDecoration{
+  text-decoration: none;
+  color: #ecdca8;
+}
+hr {
+  margin: 0px;
+  border-width: 2px;
+  border-color: #8d89a5;
+}
+.grid-containerAC {
+  display: grid;
+  gap: 10px 20px;
+}
+.ActiveChallenges {
+  background-color: #403a60;
+  height: auto;
+  border-radius: 10px;
+  border-style: none;
+  padding: 80px 20px 20px 20px;
+}
+.ChallengeTrophy {
+  border-style: none;
+  border-radius: 10px;
+  margin-bottom: -75px;
+  height: 140px;
+}
+.grid-containerXPButtons {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px 10px;
+  padding: 10px;
+}
+.XPButton {
+  padding: 5px 15px 5px 15px;
+  border-radius: 30px;
+  border-style: none;
+  background-color: #926b45;
+  font-size: 14px;
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-weight: 400;
+  width: fit-content;
+  color: white;
+}
+.PerButton {
+  padding: 5px 15px 5px 15px;
+  border-radius: 30px;
+  border-style: none;
+  background-color: #8d89a5;
+  font-size: 14px;
+  font-weight: 800;
+  width: fit-content;
+  color: white;
+}
+.grid-containerCardDetails {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 20px 0px;
+  padding: 0px;
+}
+.CardTitle {
+  color: #fbfaf5;
+  font-size: 24px;
+  font-weight: 400;
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  text-align: center;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.CardPara {
+  color: #ecdca8;
+  height: 60px;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+.Cardpara1 {
+  color: #fbfaf5;
+  height: 35px;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+.ComChaButton {
+  padding: 0px 20px 0px 20px;
+  border-radius: 12px;
+  border-style: none;
+  background-color: #ecdca8;
+  font-size: 14px;
+  font-weight: 400;
+  width: auto;
+  color: #403a60;
+  height: 40px;
+}
+.AChallenges {
+  width: 320px;
+}
+
+/*---CSS Media Quries---*/
+@media only screen and (max-width: 400px) {
+  .AChallenges {
+    width: auto;
+  }
+}
+@media only screen and (min-width: 401px) {
+  .AChallenges {
+    width: auto;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .AChallenges {
+    width: auto;
+  }
+}
+@media only screen and (min-width: 710px) {
+  .AChallenges {
+    width: 270px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .AChallenges {
+    width: 270px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .AChallenges {
+    width: 270px;
+  }
+}
+@media only screen and (min-width: 1500px) {
+  .AChallenges {
+    width: 290px;
+  }
+}
+@media only screen and (min-width: 1700px) {
+  .AChallenges {
+    width: 320px;
+  }
+}

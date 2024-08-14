@@ -1,0 +1,186 @@
+.tophead {
+  color: #403a60;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.MainCmp {
+  display: flex;
+}
+
+.enroll {
+  color: #403a60;
+  font-size: 24px;
+  font-family: "Bahnschrift Light", "Eina-regular", Helvetica, Arial, Verdana,
+    Tahoma, sans-serif;
+}
+
+.shead {
+  color: #403a60;
+  font-weight: 400;
+  font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.title {
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 14px;
+  color: #000000;
+  line-height: 24px;
+}
+.sidebar-container {
+  width: 34.5%;
+  background: #413a63;
+}
+
+.sidebar-container::after {
+  content: "";
+  background: linear-gradient(
+    to bottom,
+    #744f0d 0%,
+    #8b5f2d 11.35%,
+    #efdba1 42.29%,
+    #744f0d 100%
+  );
+  position: absolute;
+  top: 0;
+  left: 33%;
+  height: 100%;
+  width: 6px;
+}
+
+.container {
+  padding-top: 0%;
+  padding-left: 3%;
+  position: relative;
+  bottom: 37px;
+}
+
+.marTB20 {
+  display: none;
+  width: 200px;
+  position: absolute;
+  bottom: 877px;
+}
+
+.img {
+  width: 168px;
+  height: 151px;
+}
+
+.pclass {
+  font-size: 16px;
+  font-family: "Eina-regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  color: #000000;
+}
+
+@media (width <=600px) {
+  .slds-grid {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .tophead {
+    font-size: 18px;
+  }
+}
+
+@media (width <=400px) {
+  .container {
+    padding-top: 0%;
+    padding-left: 3%;
+    position: relative;
+    bottom: 0px;
+    margin-top: 40px;
+    margin-left: 10px;
+  }
+
+  .sidebar-container1 {
+    content: "";
+    background: linear-gradient(
+      90deg,
+      #744f0d 0%,
+      #8b5f2d 11.35%,
+      #efdba1 42.29%,
+      #744f0d 100%
+    );
+    position: absolute;
+    top: 183px !important;
+    height: 5px;
+    width: 100%;
+  }
+  .tophead {
+    font-size: 18px;
+  }
+  .marTB20 {
+    width: 200px;
+    position: absolute;
+    bottom: 995px !important;
+    left: 22px !important;
+  }
+}
+
+@media (width <=850px) {
+  .container {
+    padding-top: 0%;
+    padding-left: 3%;
+    position: relative;
+    bottom: 0px;
+    margin-left: 10px;
+  }
+  .tophead {
+    font-size: 18px;
+  }
+  .marTB20 {
+    display: block;
+    width: 200px;
+    position: absolute;
+    bottom: 775px;
+    left: 36px;
+  }
+
+  .divclass {
+    height: auto;
+  }
+
+  .sidebar-container::after {
+    display: none;
+  }
+
+  .img {
+    width: 168px;
+    height: 183px;
+  }
+
+  .sidebar-container1 {
+    content: "";
+    background: linear-gradient(
+      90deg,
+      #744f0d 0%,
+      #8b5f2d 11.35%,
+      #efdba1 42.29%,
+      #744f0d 100%
+    );
+    position: absolute;
+    top: 210px !important;
+    height: 5px;
+    width: 100%;
+  }
+}
+
+
+@media (width <=350px) {
+  .sidebar-container1 {
+    content: "";
+    background: linear-gradient(
+      90deg,
+      #744f0d 0%,
+      #8b5f2d 11.35%,
+      #efdba1 42.29%,
+      #744f0d 100%
+    );
+    position: absolute;
+    top: 215px !important;
+    height: 5px;
+    width: 99.3%;
+  }
+}

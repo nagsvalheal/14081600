@@ -1,0 +1,469 @@
+.grid-container {
+	display: grid;
+	grid-template-columns: auto;
+	gap: 15px 0px;
+	width: -webkit-fill-available;
+}
+
+.bannerclass {
+	background-color: #EBEBEB;
+	padding: 60px 0px;
+}
+
+.avatar {
+	position: relative;
+	top: 25%;
+
+}
+
+.button-Div {
+	background-color: #696969;
+	border-radius: 15px;
+	color: white;
+	font-weight: 800;
+	border-style: none;
+	padding: 5px 15px;
+}
+
+.widgetremin {
+	margin-left: 155px;
+	margin-top: 26px;
+}
+
+.grid-containerButtons {
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 0px 15px;
+	width: max-content;
+}
+
+.widgetcss {
+	margin-left: 160px;
+	margin-top: 90px;
+	width: 493px;
+}
+
+.align {
+	overflow: hidden;
+	padding-right: 5%;
+    padding-left: 5%;
+	background-color: #FFFFFF;
+}
+
+.spanHeading {
+	font-size: 15px;
+	font-weight: 800;
+}
+
+.TiltleHeading {
+	font-size: 35px;
+	font-weight: 800;
+	margin-top: -15px;
+}
+
+.paraHead {
+	font-size: 10px;
+}
+
+.grid-containerNavRem {
+	display: grid;
+	grid-template-columns: auto;
+	gap: 10px;
+}
+
+.grid-containerNotification {
+	display: grid;
+	grid-template-columns: auto;
+	gap: 10px;
+}
+
+/* CSS Media Queries */
+@media only screen and (max-width: 400px) {
+	.widgetremin {
+		margin-left: 0px;
+	}
+
+	.grid-containerWidget {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 128px;
+		width: 108%;
+		position: relative;
+
+		bottom: 320px;
+	}
+
+	.avatar {
+		position: relative;
+		top: -7%;
+
+	}
+
+	.board {
+		position: relative;
+		bottom: 15px;
+	}
+
+	.widget {
+		height: 215px;
+	}
+
+	.widgetch {
+		position: relative;
+		bottom: 42px;
+	}
+
+	.widgetcss {
+		width: 350px;
+		margin-left: 175px;
+		margin-top: 205px;
+	}
+
+	.custom-box {
+		margin-top: -50px;
+	}
+}
+
+@media only screen and (min-width:600px) and (max-width:992px) {
+	.widgetcss {
+		position: relative;
+		top: 510px;
+		left: 10px;
+	}
+
+	.slds-grid {
+		position: relative;
+		bottom: 0px;
+	}
+	.grid-containerWidget {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 20px;
+	}
+
+}
+
+
+
+@media only screen and (min-width:401px) and (max-width: 600px) {
+	.grid-containerButtons {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 10px 15px;
+		width: max-content;
+	}
+
+	.avatar {
+		position: relative;
+		top: -7%;
+		right: 1%;
+	}
+
+	.board {
+		position: relative;
+		bottom: 30px;
+
+	}
+
+	.custom-box {
+		margin-top: -55px;
+	}
+
+	.notifications-card {
+		width: 68%;
+	}
+
+	.widgetch {
+		position: relative;
+		bottom: 42px;
+	}
+
+	.widgetcss {
+		position: relative;
+		bottom: 150px;
+		left: 15px;
+		width: 390px;
+	}
+
+	.widget {
+		height: 255px;
+	}
+
+	.grid-containerWidget {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 71px;
+		width: 100%;
+		position: relative;
+		right: 6px;
+		bottom: 220px;
+	}
+
+
+}
+
+@media only screen and (min-width: 601px) {
+	.grid-containerButtons {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 10px 15px;
+		width: max-content;
+	}
+
+	.slds-grid {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.widgetremin {
+		margin-left: 0px;
+	}
+
+	.grid-containerNotification {
+		margin-left: -20px;
+	}
+
+}
+
+@media only screen and (min-width:601px) and (max-width:768px) {
+	.grid-containerWidget {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 50px;
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width:768px)and (max-width:992px) {
+	.widgetcss {
+		width: 700px;
+	}
+
+	.grid-containerWidget {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 10px;
+		width: 120%;
+
+	}
+
+	.avatar {
+		position: relative;
+		top: 15%;
+
+	}
+
+	.board {
+		position: relative;
+
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.grid-containerButtons {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 10px 15px;
+		width: max-content;
+	}
+
+	.grid-containerWidget {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 55px;
+	}
+}
+
+@media only screen and (min-width:992px)and (max-width:1200px) {
+	.widgetcss {
+		width: 471px;
+		position: relative;
+		right: 115px;
+
+	}
+
+	.grid-containerWidget {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 45px;
+	}
+
+	.align {
+		padding-right: 3%;
+		padding-left: 3%;
+
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.grid-containerButtons {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 10px 15px;
+		width: max-content;
+	}
+
+	.slds-grid {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.widgetremin {
+		margin-left: 10px;
+		margin-top: 60px;
+	}
+
+	.grid-containerNotification {
+		margin-left: 0px;
+	}
+
+	.align {
+		padding-right: 4%;
+		padding-left: 4%;
+		display: flex;
+        align-items: center;
+
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.grid-containerButtons {
+		display: grid;
+		grid-template-columns: auto auto;
+		gap: 0px 15px;
+		width: max-content;
+	}
+
+	.board {
+		position: relative;
+		bottom: 0px;
+
+	}
+
+	.grid-containerWidget {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 51px;
+		position: relative;
+		left: 14px;
+	}
+
+	.align {
+		padding-right: 5%;
+        padding-left: 3%;
+
+	}
+}
+
+@media only screen and (min-width:992px) and (max-width:1200px) {
+	.grid-containerWidget {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 51px;
+		margin-left: -56px;
+	}
+}
+
+@media only screen and (min-width:1300px) and (max-width:1400px) {
+	.grid-containerWidget {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 51px;
+
+	}
+}
+
+@media only screen and (min-width:1400px) and (max-width:1500px) {
+	.grid-containerWidget {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 51px;
+		position: relative;
+		left: 16px;
+
+	}
+}
+
+@media only screen and (min-width:1600px) and (max-width:1700px) {
+	.grid-containerWidget {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 51px;
+		position: relative;
+		left: 0px;
+
+	}
+}
+
+@media only screen and (min-width: 1500px) and (max-width:1700px) {
+	.grid-containerButtons {
+		display: grid;
+		grid-template-columns: auto auto;
+		gap: 0px 15px;
+		width: max-content;
+	}
+
+	.align {
+		padding-right: 5%;
+		padding-left: 5%;
+	}
+
+	.grid-containerWidget {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 51px;
+
+	}
+
+	.board {
+		position: relative;
+		bottom: 0px;
+	}
+
+	.avatar {
+		position: relative;
+		top: 0%;
+
+	}
+}
+
+@media only screen and (min-width:1701px) and (max-width:1900px) {
+	.grid-containerWidget {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 51px;
+		position: relative;
+		left: 45px;
+
+	}
+}
+
+@media only screen and (min-width:1901px) {
+	.grid-containerWidget {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 51px;
+		position: relative;
+		left: 25px;
+
+	}
+
+	.align {
+		padding-left: 5%;
+		padding-right: 6%;
+	}
+}
+
+@media only screen and (min-width:1501px) and (max-width:1700px) {
+	.align {
+		padding-left: 5%;
+		padding-right: 4%;
+	}
+}
+
+@media only screen and (min-width:1701px) and (max-width:1900px) {
+	.align {
+		padding-left: 5%;
+		padding-right: 7%;
+	}
+}

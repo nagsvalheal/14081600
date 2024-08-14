@@ -1,0 +1,460 @@
+<!--This  Component facilitating user measurement of health problem effects on work and regular activities.-->
+<template>
+  <div class={popuphide}>
+    <div class="tophead">{wpaiText}<sup>1*</sup></div>
+    <div class="containercolumn" data-it-uid={userid}>
+      <!--To display Questions-->
+      <div class="column1">
+        <div class="nds-form-element nds-form-container">
+          <legend
+            class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+            <span class="nds-m-right_x-small"
+              >{firstQuestionText} {workingForPay}?</span
+            ><br />
+          </legend>
+
+          <div class="nds-form-element__control nds-horizontal_radio">
+            <span class="nds-radio">
+              <div class="radio-container">
+                <input
+                  type="radio"
+                  value="Yes"
+                  id="vlocity-radio-0-0-9"
+                  aria-invalid="false"
+                  name="question1"
+                  onchange={onclickFronFirstQuestion}
+                  checked={firstQuesIsYes}
+                />
+                <label
+                  class="nds-radio__label"
+                  data-index="0"
+                  for="vlocity-radio-0-0-9"
+                >
+                  <span class="nds-radio_faux"></span>
+                  <span class="nds-form-element__label slds-p-left_small"
+                    >{yes}</span
+                  >
+                </label>
+              </div>
+            </span>
+            <!-- <div class="stripe"></div> -->
+
+            <span class="nds-radio last-option">
+              <div class="radio-container">
+                <input
+                  type="radio"
+                  id="vlocity-radio-0-1-9"
+                  value="No"
+                  name="question1"
+                  onchange={onclickFronFirstQuestion}
+                  checked={firstQuesIsNo}
+                />
+                <label
+                  class="nds-radio__label"
+                  data-index="1"
+                  for="vlocity-radio-0-1-9"
+                >
+                  <span class="nds-radio_faux"></span>
+                  <span class="nds-form-element__label slds-p-left_small"
+                    >{no}</span
+                  >
+                </label>
+              </div>
+            </span>
+          </div>
+        </div>
+
+        <div if:true={secondQuestionVisible}>
+          <div class="qnouterbox">
+            <div class="qn-box">
+              <span class="nds-m-right_x-small"
+                >{secondQuestionText}
+                <span class="subtext"> {includeHelpText}</span></span
+              >
+            </div>
+            <div class="nums">
+              <input
+                type="number"
+                class="numbox"
+                id="numberbox"
+                value={firstNumberValue}
+                name="firstNumberField"
+                onchange={oncahngeOfFirstNumber}
+                onkeypress={handleKeyPress}
+                onpaste={handlePaste}
+                oninput={firstKeyUp}
+                min="0"
+                max="168"
+              />
+              <label for="numberbox" class="labelhrs">{hours}</label>
+            </div>
+            <template if:true={errorFlag}>
+              <div class="alertclass">
+                <img src={errorIcon} alt="NumberBoxError" class="errorPicture"/> {alertText} (Now :{totalValueToUi})
+                <br>
+              </div>
+            </template>
+          </div>
+
+          <div class="qnouterbox1">
+            <div class="qn-box1">
+              <span class="nds-m-right_x-small">{thirdQuestionText}</span><br />
+            </div>
+            <div class="nums">
+              <input
+                type="number"
+                class="numbox"
+                value={secondNumberValue}
+                name="secondNumberField"
+                onchange={oncahngeOfSecondNumber}
+                onkeypress={handleKeyPress}
+                onpaste={handlePaste}
+                oninput={secondKeyUp}
+                min="0"
+                max="168"
+                id="numberboxone"
+              />
+              <label for="numberboxone" class="labelhrs">{hours}</label>
+            </div>
+            <template if:true={errorFlag}>
+              <div class="alertclass">
+                <img src={errorIcon} alt="NumberBoxError" class="errorPicture"/> {alertText} (now :
+                {totalValueToUi})
+              </div>
+            </template>
+          </div>
+
+          <div class="qnouterbox2">
+            <div class="qn-box2">
+              <span class="nds-m-right_x-small"
+                >{fourthQuestionText}<span class="subtext"
+                  >{skipText}</span
+                ></span
+              ><br />
+            </div>
+            <div class="nums">
+              <input
+                type="number"
+                class="numbox"
+                value={thirdNumberValue}
+                name="thirdNumberField"
+                onchange={oncahngeOfThirdNumber}
+                onkeypress={handleKeyPress}
+                onpaste={handlePaste}
+                oninput={thirdKeyUp}
+                min="0"
+                max="168"
+                id="numberboxtwo"
+              />
+              <label for="numberboxtwo" class="labelhrs">{hours}</label>
+            </div>
+            <template if:true={errorFlag}>
+              <div class="alertclass">
+                <img src={errorIcon} alt="NumberBoxError" class="errorPicture"/> {alertText} (now :
+                {totalValueToUi})
+              </div>
+            </template>
+          </div>
+
+          <div class="qnouterbox3">
+            <div class="qn-box3">
+              <span class="nds-m-right_x-small">{fifthQuestionText}</span
+              ><br /><br />
+              <slot> <div class="contentclass">{sliderText}</div> </slot><br />
+            </div>
+            <div class="compress">
+              <div class="slidecontainer">
+                <div class="start-label">0</div>
+                <div class="end-label">10</div>
+                <input
+                  type="range"
+                  min="0"
+                  max="10"
+                  name="firstQuestionName"
+                  value={sliderValue}
+                  class="slider"
+                  id="myRange"
+                  list="tickmarks"
+                  onchange={handleInputChange}
+                />
+
+                <div class="thumb-label" id="demo">{sliderValue}</div>
+              </div>
+            </div>
+
+            <div class="slds-grid slds-gutters">
+              <div class="slds-col">
+                <div class="col1">{workSliderLeft}</div>
+              </div>
+              <div class="slds-col">
+                <div class="col2">{workSliderRight}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="outerCOntainer">
+          <div class="container-box">
+            <span class="nds-m-right_x-small">{sixthQuestionText}</span
+            ><br /><br />
+            <slot> <div class="contentclass">{sliderTextTwo}</div> </slot><br />
+          </div>
+          <!-- </div> -->
+          <div class="compress">
+            <div class="slidecontainersec">
+              <div class="start-labelsec">0</div>
+              <div class="end-labelsec">10</div>
+              <input
+                type="range"
+                min="0"
+                max="10"
+                name="thestone"
+                value={sliderValueSec}
+                class="slidersec"
+                id="myRangesec"
+                list="tickmarks"
+                onchange={handleInputChangesec}
+              />
+
+              <div class="thumb-labelsec" id="demosec">{sliderValueSec}</div>
+            </div>
+          </div>
+
+          <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+              <div class="col1">{dailySliderLeft}</div>
+            </div>
+            <div class="slds-col">
+              <div class="col2">{dailySliderRight}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--To display total number of questions and Total number answer of answered -->
+      <div class="column2">
+        <div class="box">
+          <h2 class="ans">
+            <span class="ansq">{totalDraftResponses}</span>/{countQuestion}
+            <span class="smalltxt"> {answered}</span>
+          </h2>
+          <div class="line"></div>
+          <div class="button-container">
+            <button
+              label="Submit"
+              data-it-button="WPAI Questionnaires Page: submit"
+              onclick={saveResponse}
+              class="retbutton1"
+            >
+              {submit}</button
+            >&nbsp;&nbsp;&nbsp;
+            <button
+              label="Save Draft"
+              data-it-button="WPAI Questionnaires Page: Save Draft"
+              onclick={saveAsDraft}
+              class="savebutton1"
+            >
+              {saveasdraft}
+            </button>
+          </div>
+          <br /><br />
+          <!--To display the rollout and Expired date-->
+          <div class="statusRE">
+            <div class="roll1">
+              <p class="rollout">{rolloutdate}</p>
+              <p class="rdclass">{rolloutDate}</p>
+            </div>
+            <br />
+            <div class="roll2">
+              <p class="expires">{expiresOn}</p>
+              <p class="edclass">{expireDate}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="box2">
+          <div class="texts">{outstandingQue}</div>
+          <div class="line22"></div>
+          <!--Side Bar navigation-->
+          <div class="category-names">
+            <div class={checkdlqi}>
+              <div class="category-box" onclick={navigateToCategory2} onkeydown={navigateToCategory2}>
+                <img src={dlqiCardImage} alt="Dlqi" class="navigationPic" />
+                <p class="b">{dlqi}</p>
+              </div>
+            </div>
+            <div class={checkpss}>
+              <div class="category-box" onclick={navigateToCategory3} onkeydown={navigateToCategory3}>
+                <img src={pssCardImage} alt="Pss" class="navigationPic" />
+                <p class="c">{pss}</p>
+              </div>
+            </div>
+            <div class={checkwai}>
+              <div class="category-box1">
+                <img src={wpaiCardImage} alt="Wapi" class="navigationPic" />
+                <p class="d">{wpaiText}</p>
+              </div>
+            </div>
+            <div class={checkqsq}>
+              <div class="category-box" onclick={navigateToCategory5} onkeydown={navigateToCategory5}>
+                <img src={qsqCardImage} alt="Qsq" class="navigationPicHightlight" />
+                <p class="e">{qsq}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <template if:true={customFormModal}>
+    <div class="modal-backdrop"></div>
+    <div class="modal-visible">
+      <div class={popupClass1}>
+        <div class="popup2-container">
+          <button
+            data-it-button="WPAI Questionnaires Page: close Button"
+            onclick={closePopup1}
+            class="times"
+          >
+            &times;
+          </button>
+          <p class="message">{message}</p>
+          <br />
+          <p class="content1">{saveAsDraftContent}</p>
+          <br /><br />
+
+          <div class="forMob">
+            <button
+              class="savebutton"
+              data-it-button="WPAI Questionnaires Page: Close Save AS Drfat Button"
+              onclick={saveAsDraft}
+            >
+              {saveasdraft}
+            </button>
+            <button
+              onclick={closePopup1}
+              data-it-button="WPAI Questionnaires Page: Close Save  returnbackc Button"
+              class="retbutton"
+            >
+              {returnBackc}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+  <template if:true={isPopupOpen}>
+    <div class="modal-backdrop"></div>
+    <div class="modal-visible">
+      <div class={popupClass}>
+        <div class="popup">
+          <button
+            class="close-button"
+            title="Close"
+            data-it-button="WPAI Questionnaires Page: Close Popup"
+            onclick={closePopup}
+          >
+            &times;
+          </button>
+
+          <div class="content">
+            <p class="heading">{confirmSub}</p>
+            <br />
+            <p class="paragh">{cannotEdit}</p>
+            <br />
+            <div class="btn">
+              <button
+                class="cancelbtn"
+                data-it-button="WPAI Questionnaires Page: Close Popup cancelbt"
+                onclick={closePopup}
+              >
+                &nbsp;{cancelbt} &nbsp;</button
+              >&emsp;
+              <button
+                class="submitbtn"
+                data-it-button="WPAI Questionnaires Page: Close Popup confirmbt"
+                onclick={confirmSubmission}
+              >
+                {confirmbt}</button
+              >&emsp; <br /><br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template if:true={isConfirmationDialogOpen}>
+    <div class={popupClass}>
+      <div class="popup">
+        <button
+          class="close-button"
+          title="Close"
+          data-it-button="WPAI Questionnaires Page: Close Popup Second"
+          onclick={closePopup}
+        >
+          &times;
+        </button>
+
+        <div class="content">
+          <p class="heading">{confirmSub}</p>
+          <br />
+          <p class="paragh">{cannotEdit}</p>
+          <br />
+          <div class="btn">
+            <button
+              class="cancelbtn"
+              data-it-button="WPAI Questionnaires Page: Close Popup cancelbtn closePopup"
+              onclick={closePopup}
+            >
+              &nbsp;{cancelbt} &nbsp;</button
+            >&emsp;
+            <button
+              class="submitbtn"
+              data-it-button="WPAI Questionnaires Page: Close Popup confirmSubmission"
+              onclick={confirmSubmission}
+            >
+              {confirmbt}</button
+            >&emsp; <br /><br />
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+
+  <template if:true={isDraftSavedPopupOpen}>
+		<div class={popupClassSaveDraft}>
+			<div class="popup">	
+				<c-bi-pspb-common-popup toast-message={draftSavedMessage} onbuttonclick={closeDraftSavedPopup}></c-bi-pspb-common-popup>
+			</div>
+		</div>
+	</template>
+
+  <br />
+   <div if:true={visibleButton} class="button-container-bottom">
+            <button
+              label="Submit"
+              data-it-button="WPAI Questionnaires Page: submit"
+              onclick={saveResponse}
+              class="retbutton1-bottom"
+            >
+              {submit}</button
+            >&nbsp;&nbsp;&nbsp;
+            <button
+              label="Save Draft"
+              data-it-button="WPAI Questionnaires Page: Save Draft"
+              onclick={saveAsDraft}
+              class="savebutton1-bottom"
+            >
+              {saveasdraft}
+            </button>
+          </div>
+
+  <div class="botcontainer">
+    <br />
+    <div class="bot1">1.&nbsp;{wpaiFirstFooterMsg}</div>
+    <br /><br />
+    <div class="bot2">*{wpaiSecndFooterMsg}</div>
+  </div>
+</template>

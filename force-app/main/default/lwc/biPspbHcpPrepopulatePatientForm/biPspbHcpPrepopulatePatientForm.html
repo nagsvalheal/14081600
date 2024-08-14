@@ -1,0 +1,496 @@
+<!-- This LWC is used for prepopulating hcp patient information. -->
+<template>
+	<div if:true={showSpinner}>
+		<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	   </div>
+	<div class="slds-grid">
+	
+		<div class="sidebar-container">
+			<div class="avatar-content-container">
+				<div class="avatar-img-div">
+					<img src={selectedAvatarSrc} alt="..." class="avatar-image" />
+					<p class="text-content avatar-content">
+						<span>{avatarContentTop}</span>
+						<br>
+						<br>
+						<span>{avatarContentMid}</span>
+					</p>
+					<p class="text-content">
+						{fieldWidth} <b class="Btag">*</b> {areMandotory}
+					</p>
+				</div>
+				<div class="text-content-div-for-mobile">
+					<div class="formobile">
+
+						<button class="closeavatar" onclick={Xmark}>&times;</button>
+						<div>
+							<p class="text-content-for-mobile">{mobileValueTwo}</p>
+							<p if:true={fieldBox} class="text-content1">
+								{fieldWidth} <b class="Btag">*</b> {areMandotory}
+							</p>
+						</div>
+
+					</div>
+					<button class="text-content-for-mobile threedot" if:true={clickMethod} onclick={click}>
+						...
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="slds-col formContainer">
+			<div class="sidebar-container1"></div>
+			<div class="stepOne step-container">
+				<img src={bgLogo} class="marTB20" alt="Beyond Gpp" />
+				<h1 class="mobile-heading1">{patientEnrollHead}</h1>
+				<h1 class="heading">{patientEnrollHead}</h1>
+				<div class="slds-col">
+					<template if:true={normalHeading}>
+						<h1 class="demoFont verify">
+							{patientVerify}
+						</h1>
+						<br />
+					</template>
+					<template if:true={normalHeadingOne}>
+						<p class="errorclass">
+							{invalidInfo}
+						</p>
+					</template>
+				</div>
+				<div class="slds-col">
+					<div class="input-div">
+						<div class="input-label" data-field="FN">{firstNameLabel}</div>
+						<lightning-input name="FirstName" value={firstName} class="textInput"
+							onchange={handleFirstNameChange} placeholder={placeFirst} data-field="FN"
+							variant="label-hidden" maxlength="35">
+						</lightning-input>
+						<div class="input-error-label1" if:true={firstNameRequire}>
+							<img src={warningIcons} alt="Warning" width="12px" height="12px" />
+							&nbsp; {patientFirstName}
+						</div>
+
+						<div class="input-error-label1" if:true={firstNameValidCondition}>
+							<img src={warningIcons} alt="Warning" width="12px" height="12px" /><span class="sp">&nbsp; {firstNameValid}</span>
+						</div>
+					</div>
+					<div class="input-div">
+						<div class="input-label" data-field="LN">{lastNameLabel}</div>
+						<lightning-input name="LastName" value={lastName} class="textInput"
+							onchange={handleLastNameChange} placeholder={placeLast} data-field="LN"
+							variant="label-hidden" maxlength="60">
+						</lightning-input>
+						<div class="input-error-label1" if:true={lastNameChangeRequire}>
+							<img src={warningIcons} alt="Warning" width="12px" height="12px" />&nbsp;{patientLastName}
+						</div>
+						<div class="input-error-label1" if:true={lastNameChangeValid}>
+							<img src={warningIcons} alt="Warning" width="12px" height="12px" /><span class="sp">&nbsp;{lastNameValid}</span>
+						</div>
+					</div>
+					<div class="input-div">
+						<div class="input-label" data-field="dob">{dobLabel}</div>
+						<lightning-input type="date" name="dob" value={dob} class="textInput" onchange={handleDobChange}
+							placeholder={placeDob} date-style="short" data-field="dob" variant="label-hidden"
+							onkeydown={handleKeyDownThree}>
+						</lightning-input>
+						<div class="input-error-label1" if:true={dateOfBirthRequire}>
+							<img src={warningIcons} alt="Warning" width="12px" height="12px" />&nbsp; {patientDob}
+						</div>
+						<div class="input-error-label1" if:true={dateOfBirthVaild}>
+							<img src={warningIcons} alt="Warning" width="12px" height="12px" /><span class="sp">&nbsp;{validDob}</span>
+						</div>
+
+						<div class="input-error-label1" if:true={dobErrorMessage}>
+							<img src={warningIcons} alt="Warning" width="12px" height="12px" />
+							<span class="slds-form-element__helps">{dobErrorMessage}</span>
+						</div>
+						<span class="input-error-label" data-field="dob-error"></span>
+					</div>
+				</div>
+				<div class="btn-div">
+					&nbsp;&nbsp;
+					<button class="next-button next" onclick={goToStepTwo}>{nextLabel}</button>
+				</div>
+			</div>
+			<div class="stepTwo step-container slds-hide">
+				<h1 class="heading">{patientEnrollHead}</h1>
+				<div class="PI">
+					<div class="progress-label-count1">{numOne}&nbsp;</div>
+					<div class="PI">{patientinfo}</div>
+				</div>
+				<h1 class="demoFont marg">{patientinfo}</h1>
+				<div class="slds-col">
+					
+					<div class="input-div">
+						<div class="input-label">{firstNameLabel}</div>
+						<lightning-input name="FirstName" value={leadFirstName} class="textInput"
+							onchange={handleInputChange} placeholder={placeFirst} disabled variant="label-hidden"
+							maxlength="35">
+						</lightning-input>
+					</div>
+					<div class="input-div">
+						<div class="input-label">{lastNameLabel}</div>
+						<lightning-input name="LastName" value={leadLastName} class="textInput"
+							onchange={handleInputChange} placeholder={placeLast} disabled variant="label-hidden"
+							maxlength="60">
+						</lightning-input>
+					</div>
+					<div class="input-div">
+						<div class="input-label">{dobLabel}</div>
+						<lightning-input type="date" name="dob" value={leadDob} class="textInput"
+							onchange={agecalculationEvent} placeholder={placeDob} disabled variant="label-hidden">
+						</lightning-input>
+					</div>
+					<div class="input-div">
+						<div class="input-label" data-field="GN">{generalLabel}</div>
+						<lightning-combobox name="Gender" placeholder={placeSelect} class="textInput" options={leadGender}
+							value={selectedValue} onchange={handleGenderChange} data-field="GN" variant="label-hidden">
+						</lightning-combobox>
+						<div class="slds-form-element__help" if:true={genderChangeRequire}>
+							<img src={warningIcons} alt="Warning" width="12px" height="12px" />
+							{genderRequired}
+						</div>
+					</div>
+					<div class="input-div">
+						<div class="input-label">{emailLabelMand}</div>
+						<lightning-input type="email" name="Email" value={leadEmail} class="textInput"
+							onchange={handleInputChange} placeholder={placeEmail} disabled variant="label-hidden">
+						</lightning-input>
+						
+					</div>
+				</div>
+				
+				<div class="btn-div">
+					<button class="prev-button" onclick={goBackToStepOne}>
+						{previousValue}
+					</button>
+					&nbsp; &nbsp;
+					<button class="next-button nxt" onclick={goToStepThree}>{nextLabel}</button>
+				</div>
+			</div>
+
+			<div class="stepThree step-container slds-hide">
+				<h1 class="heading">{patientEnrollHead}</h1>
+				<div class="PI">
+					<div class="progress-label-count1">{numTwo}&nbsp;</div>
+					<div class="PI">{contactInfo}</div>
+				</div>
+
+				<h1 class="demoFont">{contactInfo}</h1>
+
+				<div class="slds-col">
+					<div class="input-div" if:true={phoneVisible}>
+						<div class="input-label" data-field="PhoneNumber">{phoneNum}</div>
+						<lightning-input label="Phone*" name="Phone" value={phone} onchange={handlePhoneChangeEmpty}
+							maxlength="16" class="textInput" variant="label-hidden" onkeypress={handleKeyDown}
+							data-field="PhoneNumber" placeholder={placePhone}>
+						</lightning-input>
+						<div class="input-error-label" if:true={PhoneerrorMessagevalid}>
+							<img src={warningIcons} alt="Warning" width="12px" height="12px" />
+							<p class="input-error-label1">
+								{validPhone}
+							</p>
+						</div>
+					</div>
+					<div class="input-div" if:true={phoneInVisible}>
+						<div class="input-label" data-field="PhoneNumber">{phoneNumMandotory}</div>
+						<lightning-input label="Phone*" name="Phone" value={phone} onchange={handlePhoneChange}
+							maxlength="16" class="textInput" variant="label-hidden" onkeypress={handleKeyDown}
+							data-field="PhoneNumber" placeholder={placePhone}>
+						</lightning-input>
+						<div class="input-error-label" if:true={phoneRequire}>
+							<img src={warningIcons} alt="Warning" width="12px" height="12px" />
+							<p class="input-error-label1">{phoneRequired}</p>
+						</div>
+						<div class="input-error-label" if:true={PhoneerrorMessagevalid}>
+							<img src={warningIcons} alt="Warning" width="12px" height="12px" />
+							<p class="input-error-label1">
+								{validPhone}
+							</p>
+						</div>
+					</div>
+					<div class="input-div">
+						<div class="input-label" data-field="Pmc">{pmcLabel}</div>
+						<lightning-combobox name="Preffered mode of communication*" placeholder={placeSelect}
+							class="textInput" options={leadPmc} value={pmc} onchange={handlePmcChange} data-field="Pmc"
+							variant="label-hidden">
+						</lightning-combobox>
+						<div class="input-error-labels1" if:true={pmcRequire}>
+							<img src={warningIcons} alt="Warning" width="12px" height="12px" />
+							<p class="input-error-labels">
+								{pmcRequired}
+							</p>
+						</div>
+					</div>
+					<div class="input-div">
+						<div class="input-label" data-field="Country">{countryLabel}</div>
+						<lightning-combobox name="Country" placeholder={placeCountry} class="textInput"
+							options={CountryCode} value={country} onchange={handleCountryChange} data-field="Country"
+							variant="label-hidden">
+						</lightning-combobox>
+						<div class="input-error-label" if:true={countryRequire}>
+							<img src={warningIcons} alt="Warning" width="12px" height="12px" />
+							<p class="input-error-label1">{countryfield}</p>
+						</div>
+					</div>
+					<div class="input-div">
+						<div class="input-label" data-field="State">{stateLabel}</div>
+						<lightning-combobox label={placeCity} value={state} options={StateCode}
+							onchange={handleStateChange} class="textInput" variant="label-hidden" data-field="State"
+							placeholder={placeState}>
+						</lightning-combobox>
+						<div class="input-error-label" if:true={stateRequire}>
+							<img src={warningIcons} alt="Warning" width="12px" height="12px" />
+							<p class="input-error-label1">{statecode}</p>
+						</div>
+					</div>
+					<div class="input-div">
+						<div class="input-label" data-field="City">{cityLabel}</div>
+						<lightning-input label="City*" type="tel" name="CaregiverPhone" value={city}
+							onchange={handleCityChange} placeholder={placeCity} class="textInput"
+							variant="label-hidden" data-field="City" maxlength="35">
+						</lightning-input>
+						<div class="input-error-label" if:true={cityRequire}>
+							<img src={warningIcons} alt="Warning" width="12px" height="12px" />
+							<p class="input-error-label1">{cityCode}</p>
+						</div>
+						<div class="input-error-label" if:true={cityRequireOne}>
+							<img src={warningIcons} alt="Warning" width="12px" height="12px" />
+							<p class="input-error-label1">{validCity}</p>
+						</div>
+					</div>
+					<div class="input-div">
+						<div class="input-label" data-field="Street">{streetLabel}</div>
+						<lightning-textarea label="Street Address*" type="tel" name="CaregiverPhone" value={street}
+							onchange={handleStreetChange} class="textInput" variant="label-hidden" data-field="Street"
+							placeholder={placeStreet}>
+						</lightning-textarea>
+						<div class="input-error-label" if:true={streetRequire}>
+							<img src={warningIcons} alt="Warning" width="12px" height="12px" />
+							<p class="input-error-label1">{streetcode}</p>
+						</div>
+					</div>
+					<div class="input-div">
+						<div class="input-label" data-field="ZipCode">{zipCodeValue}</div>
+						<lightning-input label="Zip Code*" type="tel" name="CaregiverPhone" value={zipCode}
+							onchange={handleZipCodeChange} class="textInput" placeholder={placeZip}
+							variant="label-hidden" data-field="ZipCode">
+						</lightning-input>
+						<div class="input-error-label" if:true={conZipCodeErrorMessage}>
+							<img src={warningIcons} alt="Warning" width="12px" height="12px" />
+							<p class="input-error-label1">{pinCode}</p>
+						</div>
+						<div class="input-error-label" if:true={zipCodeRequire}>
+							<img src={warningIcons} alt="Warning" width="12px" height="12px" />
+							<p class="input-error-label1">{validZipCode}</p>
+						</div>
+					</div>
+					<div class="slds-cols">
+						<div class="slds-col">
+							<h1 class="demoFont">{consentInfo}</h1>
+							<div class="color1-properties">
+								<label class="custom-checkbox-container">
+									<input type="checkbox" id="customCheckbox" class="custom-checkbox"
+										onchange={handleInputChange3} />
+									<div for="customCheckbox" class="custom-checkbox-label">
+										<span class="custom-checkbox-box" data-field="checkbox"></span>
+									</div>
+								</label>
+								<span class="Agreeclass">{agree}&nbsp;</span>
+								<button onclick={showModal} class="termsclass">{terms}
+								</button>
+							</div>
+						</div>
+						<div class="check-error">
+							<div class="input-error-label" if:true={checkBoxName}>
+								<img src={warningIcons} alt="Warning" width="12px" height="12px" />
+								<p class="input-error-label1">
+									{agreeMsg}
+								</p>
+							</div>
+						</div>
+						<div class="btn-div" if:false={isButtonDisabled}>
+							<button class="prev-button" onclick={goBackToStepTwo}>
+								{previousValue}
+							</button>
+							&nbsp; &nbsp;
+							<button type="button" onclick={handleCreateLead} disabled={isButtonDisabled}
+								class="next-button">
+								{submit}
+							</button>
+						</div>
+						<div class="btn-div" if:true={isButtonDisabled}>
+							<button class="prev-button" onclick={goBackToStepTwo}>
+								{previousValue}
+							</button>
+							&nbsp; &nbsp;
+							<button type="button" onclick={handleCreateLead} disabled={isButtonDisabled}
+								class="disable-button">
+								{submit}
+							</button>
+						</div>
+						<template if:true={openModal}>
+							<div class="slds-modal slds-fade-in-open slds-backdrop">
+								<div class="slds-modal__container">
+									<!--HEADER Section-->
+									<div class="slds-modal__header">
+										<lightning-button-icon icon-name="utility:close"
+											alternative-text="Close this window" size="large" variant="bare-inverse"
+											onclick={closeModal} class="close-icon">
+										</lightning-button-icon>
+										<h2 class="hclass">Terms and Conditions</h2>
+									</div>
+									<!--Body Section-->
+									<div class="slds-modal__content slds-p-around_medium">
+										<p>
+											Lorem ipsum dolor sit amet. Quo saepe inventore ut galisum
+											dicta et perferendis laborum. Sed fugit consequatur qui
+											praesentium internos id officiis tempore eum veniam culpa
+											ad ipsam repudiandae aut veniam natus aut assumenda
+											repellat. Eum delectus vitae aut nisi enim aut velit
+											dolorem eos labore reprehenderit.
+										</p>
+										<h2 class="terms-conditions-subheading">
+											Et adipisci tempora eum dolor iure
+										</h2>
+										<p>
+											Est atque neque qui dignissimos galisum in distinctio
+											eveniet ab esse nobis eum iusto consequuntur est fugit
+											maiores et dolores sint. Qui voluptatum tempore vel
+											molestiae architecto ut nostrum autem qui optio dicta?
+										</p>
+										<h2 class="terms-conditions-subheading">
+											Your loved ones are here to support you
+										</h2>
+										<p>
+											Lorem ipsum dolor sit amet. Quo saepe inventore ut galisum
+											dicta et perferendis laborum. Sed fugit consequatur qui
+											praesentium internos id officiis tempore eum veniam culpa
+											ad ipsam repudiandae aut veniam natus aut assumenda
+											repellat. Eum delectus vitae aut nisi enim aut velit
+											dolorem eos labore reprehenderit.
+										</p>
+										<p>
+											Lorem ipsum dolor sit amet. Quo saepe inventore ut galisum
+											dicta et perferendis laborum. Sed fugit consequatur qui
+											praesentium internos id officiis tempore eum veniam culpa
+											ad ipsam repudiandae aut veniam natus aut assumenda
+											repellat. Eum delectus vitae aut nisi enim aut velit
+											dolorem eos labore reprehenderit.
+										</p>
+										<p>
+											Lorem ipsum dolor sit amet. Quo saepe inventore ut galisum
+											dicta et perferendis laborum. Sed fugit consequatur qui
+											praesentium internos id officiis tempore eum veniam culpa
+											ad ipsam repudiandae aut veniam natus aut assumenda
+											repellat. Eum delectus vitae aut nisi enim aut velit
+											dolorem eos labore reprehenderit.Lorem ipsum dolor sit
+											amet. Quo saepe inventore ut galisum dicta et perferendis
+											laborum. Sed fugit consequatur qui praesentium internos id
+											officiis tempore eum veniam culpa ad ipsam repudiandae aut
+											veniam natus aut assumenda repellat. Eum delectus vitae
+											aut nisi enim aut velit dolorem eos labore reprehenderit.
+										</p>
+										<h2 class="terms-conditions-subheading">
+											Et adipisci tempora eum dolor iure.
+										</h2>
+										<p>
+											Lorem ipsum dolor sit amet. Quo saepe inventore ut galisum
+											dicta et perferendis laborum. Sed fugit consequatur qui
+											praesentium internos id officiis tempore eum veniam culpa
+											ad ipsam repudiandae aut veniam natus aut assumenda
+											repellat. Eum delectus vitae aut nisi enim aut velit
+											dolorem eos labore reprehenderit. Lorem ipsum dolor sit
+											amet. Quo saepe inventore ut galisum dicta et perferendis
+											laborum. Sed fugit consequatur qui praesentium internos id
+											officiis tempore eum veniam culpa ad ipsam repudiandae aut
+											veniam natus aut assumenda repellat. Eum delectus vitae
+											aut nisi enim aut velit dolorem eos labore reprehenderit.
+										</p>
+										<p>
+											Lorem ipsum dolor sit amet. Quo saepe inventore ut galisum
+											dicta et perferendis laborum. Sed fugit consequatur qui
+											praesentium internos id officiis tempore eum veniam culpa
+											ad ipsam repudiandae aut veniam natus aut assumenda
+											repellat. Eum delectus vitae aut nisi enim aut velit
+											dolorem eos labore reprehenderit.Lorem ipsum dolor sit
+											amet. Quo saepe inventore ut galisum dicta et perferendis
+											laborum. Sed fugit consequatur qui praesentium internos id
+											officiis tempore eum veniam culpa ad ipsam repudiandae aut
+											veniam natus aut assumenda repellat. Eum delectus vitae
+											aut nisi enim aut velit dolorem eos labore reprehenderit.
+										</p>
+										<h2 class="terms-conditions-subheading">
+											Et adipisci tempora eum dolor iure
+										</h2>
+										<p>
+											Est atque neque qui dignissimos galisum in distinctio
+											eveniet ab esse nobis eum iusto consequuntur est fugit
+											maiores et dolores sint. Qui voluptatum tempore vel
+											molestiae architecto ut nostrum autem qui optio dicta?
+										</p>
+										<h2 class="terms-conditions-subheading">
+											Your loved ones are here to support you
+										</h2>
+										<p>
+											Lorem ipsum dolor sit amet. Quo saepe inventore ut galisum
+											dicta et perferendis laborum. Sed fugit consequatur qui
+											praesentium internos id officiis tempore eum veniam culpa
+											ad ipsam repudiandae aut veniam natus aut assumenda
+											repellat. Eum delectus vitae aut nisi enim aut velit
+											dolorem eos labore reprehenderit.
+										</p>
+										<p>
+											Lorem ipsum dolor sit amet. Quo saepe inventore ut galisum
+											dicta et perferendis laborum. Sed fugit consequatur qui
+											praesentium internos id officiis tempore eum veniam culpa
+											ad ipsam repudiandae aut veniam natus aut assumenda
+											repellat. Eum delectus vitae aut nisi enim aut velit
+											dolorem eos labore reprehenderit.
+										</p>
+										<p>
+											Lorem ipsum dolor sit amet. Quo saepe inventore ut galisum
+											dicta et perferendis laborum. Sed fugit consequatur qui
+											praesentium internos id officiis tempore eum veniam culpa
+											ad ipsam repudiandae aut veniam natus aut assumenda
+											repellat. Eum delectus vitae aut nisi enim aut velit
+											dolorem eos labore reprehenderit.Lorem ipsum dolor sit
+											amet. Quo saepe inventore ut galisum dicta et perferendis
+											laborum. Sed fugit consequatur qui praesentium internos id
+											officiis tempore eum veniam culpa ad ipsam repudiandae aut
+											veniam natus aut assumenda repellat. Eum delectus vitae
+											aut nisi enim aut velit dolorem eos labore reprehenderit.
+										</p>
+									</div>
+								</div>
+							</div>
+						</template>
+					</div>
+				</div>
+			</div>
+			<!-- Progress Indicator HTML code -->
+
+			<div class="progress-bar-container-parent" if:true={sldsProgree}>
+				<div class="slds-progress slds-progress_vertical progress-bar-container">
+					<img src={bgLogo} class="marTB201" alt="Beyond Gpp" />
+					<h1 class="mobile-heading">{patientEnrollHead}</h1>
+					<div class="progress-label">{progressLabel}</div>
+					<ol class="slds-progress__list progress-ol">
+						<li class="slds-progress__item slds-is-active li-one">
+							<div class="slds-progress__marker"></div>
+							<div class="progress-label-count">{numOne}&nbsp;</div>
+							<div class="slds-progress__item_content slds-grid slds-grid_align-spread progress-label">
+								{patientinfo}
+							</div>
+						</li>
+						<li class="slds-progress__item li-two">
+							<div class="slds-progress__marker"></div>
+							<div class="progress-label-count">{numTwo}&nbsp;</div>
+							<div class="slds-progress__item_content slds-grid slds-grid_align-spread progress-label">
+								{contactInfo}
+							</div>
+						</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

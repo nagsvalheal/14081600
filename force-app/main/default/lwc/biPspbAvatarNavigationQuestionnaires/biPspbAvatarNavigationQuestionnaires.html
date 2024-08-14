@@ -1,0 +1,91 @@
+<!-- This component for Avatar Navigation or prompt message through Avatar -->
+<template>
+	<!-- Avatar image -->
+
+	<div class="avatar-picklist-container">
+		<div class="avatar-container">
+			<img src={selectedAvatarSrc} alt={selectAvatar} class="slds-m-right_large" />
+		</div>
+
+		<!-- prompt message -->
+		<div class="Dot">
+			<div if:true={content} class="navigationcontent">
+				<div class="flex1">
+					<div>
+						<p class="contentbox">{selectedNameOne}</p><br>
+						<p class="contentbox">{selectedOne}</p><br>
+						<p class="contentbox">{selectedTwo}</p>
+						<div class="contentboxmobile">
+							<p>{mobileName}</p>
+						</div>
+					</div>
+					<button if:true={showClose} class={closeValue} onclick={handleClose}>
+						<a><span style="font-size: 27px; color: grey">&times;</span></a>
+					</button>
+				</div>
+			</div>
+
+				<div if:true={qualitative} class="navigationcontent">
+				<div class="flex1">
+					<div>
+						<div class="contentbox"><p class="qualtive">{qualitySatisfation}</p>{selectedNameOne}</div>
+						<div class="contentboxmobile">
+							<p>{qualitySatisfation}{mobileName} {saveAsDraftMsg}</p>
+						</div>
+					</div>
+					<button if:true={showClose} class={closeValue} onclick={handleClose}>
+						<a><span style="font-size: 27px; color: grey">&times;</span></a>
+					</button>
+				</div>
+			</div>
+
+			<div if:true={twoContentMobile} class="navigationcontent2mobile">
+				<p class="contentboxmobile">{selectedNameTwo}</p><br>
+			</div>
+			<div if:true={challengeContentMobile} class="navigationcontent3mobile">
+				<p class="contentboxmobile">{selectedNameThree}</p>
+			</div>
+			<template if:true={contentDot}>
+				<button class="navigationcontentdot" onclick={mobileclick}>
+					<span  class="contentboxdot">...</span>
+				</button>
+			</template>
+		</div>
+
+		<div if:true={twoContent} class="navigationcontent2">
+			<p class="contentbox">{selectedNameTwo}</p>
+			<p class="contentbox">{selectedNameTwoSub}</p>
+		</div>
+		<div if:true={challangeContent} class="navigationcontent3">
+			<p class="contentboxchal">{selectedNameThree}</p>
+		</div>
+		<div class="summaryflex">
+			<div if:true={summary} class={navigationContentFive}>
+				<div class="flex1">
+					<div>
+						<div><p class="contentbox5">{selectedName6}</p></div>
+						<div class="contentboxmobile">
+							<p>{mobileName}</p>
+						</div>
+						<p class="contentbox1">{selectedNameFive}</p>
+						<p class="contentbox1">{selectedFive}</p>
+					</div>
+					<button if:true={showClose} class={closeValue} onclick={handleClose}>
+						<a><span style="font-size: 27px; color: grey">&times;</span></a>
+					</button>
+				</div>
+			</div>
+			<template if:true={contentDotOne}>
+				<button class={navigationContentDotOne} onclick={mobileclick}>
+					<span  class="contentboxdot2">...</span>
+				</button>
+			</template>
+		
+		</div>
+
+		<div if:true={dermo} class="navigationcontent4">
+			<p class="contentbox2">{selectedNameFour}</p>
+		</div>
+	</div>
+	<hr class="line" />
+</template>

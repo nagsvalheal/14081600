@@ -1,0 +1,733 @@
+<!--To design the Navigation bar that contains the required menus and submenus-->
+<template>
+	<div class="slds-no-print">
+		<template if:false={showForHcpPat}>
+			<!-- Top Header -->
+			<lightning-layout multiple-rows class="topHeader padding">
+				<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+					<div class="grid-containerNavPatient">
+						<div class="display-text">
+							<p class="textp">{beyondGpp}</p>
+						</div>
+						<div class="custom-box">
+							<template if:true={showNavDetails}>
+								<div class="grid-containerLogout">
+									<div class="disFlex">
+										<button onclick={openCarNotSettingsOne} class="buttonStyleTwo">
+											<img src={notificIcon} width="17px" onkeypress={openCarNotSettingsOne} alt="Notification Icon" role="button">
+										</button>
+									</div>
+									<div class="usernameMenu">
+										<a class="userName">{userName} <span><img src={downHeadIcon} alt="Down head Icon"
+													width="20px"></span></a>
+										<div class="userName-SubMenu">
+											<div class="grid-containerMenuProfile">
+												
+												<template if:true={caregiverDeskMenu}>
+													<div>
+													<p class="headMenu" onclick={openCarMyProfile} onkeypress={openCarMyProfile} data-it-button="Nabver: My Profile" role="button">{accountManager}</p>
+													</div>
+													<div>
+														<p class="headMenu" onclick={openCarNotSettingsOne} onkeypress={openCarNotSettingsOne} role="button"
+															data-it-button="Nabver: Notification Settings">{notificationCenter}</p>
+													</div>
+													<div>
+														<p class="headMenu" onclick={openTreatmentRemaindersLink} onkeypress={openTreatmentRemaindersLink} role="button"
+															data-it-button="Nabver: Treatment & Prescription Reminders">{treatmentPresValue}</p>
+													</div>
+													<div>
+														<p class="headMenu" onclick={openUpdatePrescription} onkeypress={openUpdatePrescription} role="button"
+															data-it-button="Nabver: Update Prescription">{updatePrescription}</p>
+													</div>
+													
+												</template>
+												<template if:true={patientDeskMenu}>
+													<div>
+													<p class="headMenu" onclick={openPatMyProfile} onkeypress={openPatMyProfile} role="button" data-it-button="Nabver: My Profile">{accountManager}</p>
+												</div>
+													<div>
+														<p class="headMenu" onclick={openCarNotSettingsOne} onkeypress={openCarNotSettingsOne} role="button"
+															data-it-button="Nabver: Notification Settings">{notificationCenter}</p>
+													</div>
+													<div>
+														<p class="headMenu" onclick={openTreatmentRemaindersLink} onkeypress={openTreatmentRemaindersLink} role="button"
+															data-it-button="Nabver: Treatment">{treatmentPresValue}</p>
+													</div>
+													<div>
+														<p class="headMenu" onclick={openUpdatePrescription} onkeypress={openUpdatePrescription} role="button"
+															data-it-button="Nabver: Update Prescription">{updatePrescription}</p>
+													</div>
+												</template>
+											</div>
+											<template if:true={showCareGiverMenus}>
+												<div class="grid-containerMenuProfile">
+													<div>
+														<p class="headMenu">{switchPatients}</p>
+													</div>
+													<template for:each={activeData} for:item="active" for:index="index">
+														<div key={active.Id}>
+															<c-bi-Pspb-Patient-Selection-Switch
+																caregiverid={active.CaregiveID} patientname={active.Name}
+																patientid={active.Id}>
+															</c-bi-Pspb-Patient-Selection-Switch>
+														</div>
+													</template>
+												</div>
+											</template>
+										</div>
+									</div>
+									<div>
+										<button data-it-button="Nabver: Logout"
+											onclick={logoutFunc} class="logoutFunc">{logOut}</button>
+									</div>
+								</div>
+							</template>
+							<div if:true={caregiverAvatar}>
+								<button data-it-button="Nabver: Logout"
+									onclick={logoutFunc} class="logoutFunc">{logOut}</button>
+							</div>
+						</div>
+					</div>
+				</lightning-layout-item>
+			</lightning-layout>
+			<div class="gradientcolorNavbar"></div>
+			<!-- Naviagtion Bar-->
+			<lightning-layout multiple-rows class="navBar padding">
+				<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+					<div class="display-LogoLogin">
+						<div class="grid-containerNav">
+							<div class="logo">
+								<button onclick={openHome} class="buttonStyle">
+									<img src={navLogo} width="132px" height="56px" alt="Navigation Logo">
+								</button>
+							</div>
+							<template if:true={showMenu}>
+								<div class="login">
+									<div class="displaylogincontent">
+										<div class="grid-containerMenu">
+											<div class="disBlock">
+												<button class="menu" data-it-button="Nabver: Home" onclick={openHome}>{home}</button>
+												<template if:true={showHomeLine}>
+													<hr>
+												</template>
+											</div>
+											<div class="disBlock">
+												<button class="menu" data-it-button="Nabver: Information Center" onclick={openInformationCenter}>{informationCenter}</button>
+												<template if:true={showInformationCenter}>
+													<hr>
+												</template>
+											</div>
+											<div class="disBlock">
+												<button class="menu" data-it-button="Nabver: Symptom Tracker" onclick={openSymptomTracker}>{symptomTracker}</button>
+												<template if:true={showSymptomTracker}>
+													<hr>
+												</template>
+											</div>
+											<div class="disBlock">
+												<button class="menu" data-it-button="Nabver: Challenges" onclick={openChallenges}>{challenges}</button>
+												<template if:true={showChallenge}>
+													<hr>
+												</template>
+											</div>
+											<div class="disBlock">
+												<button class="menu" data-it-button="Nabver: My Questionnaires" onclick={openQuestions}>{myQuestionnaire}</button>
+												<template if:true={showQuestionnaires}>
+													<hr>
+												</template>
+											</div>
+											<div class="disBlock">
+												<button class="menu" data-it-button="Nabver: Community" onclick={openCommunity}>{community}</button>
+												<template if:true={showCommunity}>
+													<hr>
+												</template>
+											</div>
+											<div class="disBlock">
+												<button class="menu" data-it-button="Nabver: Support" onclick={openSupport}>{support}</button>
+												<template if:true={showSupport}>
+													<hr>
+												</template>
+											</div>
+										</div>
+									</div>
+								</div>
+							</template>
+							<template if:true={showToLogin}>
+								<div class="displayFlex">
+									<button class="button-Div" onclick={checkUser}
+										data-it-button="Nabver: Login">{loginLabel}</button>
+								</div>
+							</template>
+							<template if:false={showToLogin}>
+								<div class="loginMobile">
+									<div class="grid-containerMenuMobile">
+										<div class="bell" if:true={bellCaregiver}>
+											<div>
+												<button onclick={openCarNotSettingsOne} class="buttonStyleTwo">
+													<img src={notificIconCol} width="24px" alt="Notification Icon">
+												</button>	
+											</div>
+										</div>
+										<div class="menuutop">	
+											<div>
+												<button onclick={openMobMenu} class="buttonStyleTwo">
+													<img src={menuIcon} width="24px" alt="Menu Icon">
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</template>
+						</div>
+					</div>
+				</lightning-layout-item>
+			</lightning-layout>
+		</template>
+		<template if:true={showForHcpPat}>
+			<!-- Naviagtion Bar-->
+			<lightning-layout multiple-rows class="navBar padding">
+				<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+					<div class="display-LogoLogin">
+						<div class="grid-containerNav">
+							<div class="logo">
+								<button onclick={openHome} class="buttonStyleTwo">
+									<img src={navLogo} width="132px" height="56px" alt="Navigation Logo">
+								</button>
+							</div>
+							<template if:true={showMenu}>
+								<div class="login">
+									<div class="displaylogincontent">
+										<div class="grid-containerMenu">
+											<div class="disBlock">
+												<button class="menu" data-it-button="Nabver: Home" onclick={openHome}>{home}</button>
+												<template if:true={showHomeLine}>
+													<hr>
+												</template>
+											</div>
+											<div class="disBlock">
+												<button class="menu" data-it-button="Nabver: Information Center" onclick={openInformationCenter}>{informationCenter}</button>	
+												<template if:true={showInformationCenter}>
+													<hr>
+												</template>
+											</div>
+											<div class="disBlock">
+												<button class="menu" data-it-button="Nabver: Symptom Tracker" onclick={openSymptomTracker}>{symptomTracker}</button>
+												<template if:true={showSymptomTracker}>
+													<hr>
+												</template>
+											</div>
+											<div class="disBlock">
+												<button class="menu" data-it-button="Nabver: Challenges" onclick={openChallenges}>{challenges}</button>
+												<template if:true={showChallenge}>
+													<hr>
+												</template>
+											</div>
+											<div class="disBlock">
+												<button class="menu" data-it-button="Nabver: My Questionnaires" onclick={openQuestions}>{myQuestionnaire}</button>
+												<template if:true={showQuestionnaires}>
+													<hr>
+												</template>
+											</div>
+											<div class="disBlock">
+												<button class="menu" data-it-button="Nabver: Community" onclick={openCommunity}>{community}</button>	
+												<template if:true={showCommunity}>
+													<hr>
+												</template>
+											</div>
+											<div class="disBlock">
+												<button class="menu" data-it-button="Nabver: Support" onclick={openSupport}>{support}</button>	
+												<template if:true={showSupport}>
+													<hr>
+												</template>
+											</div>
+										</div>
+									</div>
+								</div>
+							</template>
+							<template if:true={showToLogin}>
+								<div class="displayFlex">
+									<button class="button-Div" onclick={checkUser}
+										data-it-button="Nabver: Login">{loginLabel}</button>
+								</div>
+							</template>
+							<template if:true={showMobileMenuIcons}>
+								<div class="loginMobile">
+									<div class="grid-containerMenuMobile">
+										<div class="bell">
+											<div>
+												<button onclick={openCarNotSettingsOne} class="buttonStyleTwo">
+													<img src={notificIconCol} onkeypress={openCarNotSettingsOne} width="24px" alt="Notification Icon">
+												</button>
+											</div>
+										</div>
+										<div class="menuutop">
+											<div>
+												<button onclick={openMobMenu} class="buttonStyleTwo">
+													<img src={menuIcon} width="24px" alt="Menu Icon">
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</template>
+						</div>
+					</div>
+				</lightning-layout-item>
+			</lightning-layout>
+		</template>
+		<template if:true={isMenuOpen}>
+			<div class="menu-overlay">
+				<div class="menuMob">
+					<div class="display-MobileLogoLogin padding">
+						<div class="grid-containerNav">
+							<div class="logo">
+								<button onclick={openHome} class="buttonStyleTwo">
+									<img src={navLogo} width="104px" height="44px" alt="Home">
+								</button>
+							</div>
+							<div class="loginMobile">
+								<div class="grid-containerMenuMobile">
+									<div class="disFlex">
+									</div>
+									<div class="menuutop">
+										<button onclick={closeMobMenu} class="buttonStyleTwo">
+											<img src={crossIcon} width="17px" alt="Cross Icon">
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="menuList padding">
+						<template if:true={showMenu}>
+							<ul>
+								<li>
+									<button class="menu" data-it-button="Nabver: Home" onclick={openHome}>{home}</button>	
+								</li>
+								<li>
+									<div class="grid-containerMobileMenuList">
+										<div>
+											<button data-it-button="Nabver: Information Center" onclick={openInformationCenterPage} class="buttonStyle">{informationCenter}</button>
+										</div>
+										<div>
+											<span class="floRight" onclick={openInformationCenterPage} onkeypress={openInformationCenterPage} role="button">&#10095;</span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<button class="menu" data-it-button="Nabver: Symptom tracker" onclick={openSymptomTracker}>{symptomTracker}</button>	
+								</li>
+								<li>
+									<div class="grid-containerMobileMenuList">
+										<div>
+											<button class="menu" data-it-button="Nabver: Challenges" onclick={openChallengesPage}>{challenges}</button>	
+											</div>
+										<div>
+											<span class="floRight" onclick={openChallengesPage} onkeypress={openChallengesPage} role="button">&#10095;</span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="grid-containerMobileMenuList">
+										<div>
+											<button class="menu" data-it-button="Nabver: My questionnaries" onclick={openQuestionnaire}>{myQuestionnaire}</button>	
+										</div>
+										<div>
+											<span class="floRight" onclick={openQuestionnaire} onkeypress={openQuestionnaire} role="button">&#10095;</span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="grid-containerMobileMenuList">
+										<div>
+											<button class="menu" data-it-button="Nabver: Community" onclick={openCommunities}>{community}</button>	
+										</div>
+										<div>
+											<span class="floRight" onclick={openCommunities} onkeypress={openCommunities} role="button">&#10095;</span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="grid-containerMobileMenuList">
+										<div>
+											<button class="menu" data-it-button="Nabver: Support" onclick={openSupportCase}>{support}</button>	
+										</div>
+										<div>
+											<span class="floRight" onclick={openSupportCase} onkeypress={openSupportCase} role="button">&#10095;</span>
+										</div>
+									</div>
+								</li>
+								<hr>
+								<li>
+									<div class="grid-containerMobileMenuList">
+										<div>
+											<button class="menu" onclick={openUserDetailMenu}>{userName}</button>	
+										</div>
+										<div>
+											<span class="floRight" onclick={openUserDetailMenu} onkeypress={openUserDetailMenu}>&#10095;</span>
+										</div>
+									</div>
+								</li>
+								<hr>
+								<li>
+									<button class="menu" onclick={logoutFunc}>{logOut}</button>
+								</li>
+							</ul>
+						</template>
+						<template if:true={caregiverAvatarMobile}>
+							<ul>
+								<li>
+									<button class="menu" onclick={logoutFunc}>{logOut}</button>
+								</li>
+								
+							</ul>
+						</template>
+						<template if:true={showUserSubMenu}>
+							<ul>
+								<li>
+									<div class="grid-containerMobileMenuListBack">
+										<div>
+											<span class="floLeft" onclick={backToMainMenu} onkeypress={backToMainMenu} role="button">&#10094;</span>
+										</div>
+										<div>
+											<button class="textStyleback" onclick={backToMainMenu}>{back}</button>
+										</div>
+									</div>
+								</li>
+								<li><a class="textStyleExtra"><b>{userName}</b></a></li>
+								<hr>
+								<li>
+									<div class="grid-containerMobileMenuList">
+										<div>
+											<button class="menu" data-it-button="Nabver: Account Manager" onclick={userMenuNavigation}>{accountManager}</button>	
+										</div>
+										<div>
+											<span class="floRight" onclick={userMenuNavigation} onkeypress={userMenuNavigation} role="button">&#10095;</span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="grid-containerMobileMenuList">
+										<div>
+											<button class="menu" data-it-button="Nabver: Notification Center" onclick={openNotificationCenterMenu}>{notificationCenter}</button>	
+										</div>
+										<div>
+											<span class="floRight" onclick={openNotificationCenterMenu} onkeypress={openNotificationCenterMenu} role="button">&#10095;</span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<button class="menu" data-it-button="Nabver: Treatment & Prescription Reminders" onclick={openTreatmentRemaindersLink}>{treatmentPresValue}</button>	
+								</li>
+								<li>
+									<div class="grid-containerMobileMenuList">
+										<div>
+											<button class="menu" data-it-button="Nabver: Update Prescription" onclick={openUpdatePrescriptionMenu}>{updatePrescription}</button>		
+										</div>
+										<div>
+											<span class="floRight" onclick={openUpdatePrescriptionMenu} onkeypress={openUpdatePrescriptionMenu} role="button">&#10095;</span>
+										</div>
+									</div>
+								</li>
+								<hr>
+								<li>
+									<template if:true={showCareGiverMenus}>
+										<div class="grid-containerMenuProfileMobile">
+											<div>
+												<p class="textStyleExtra marBottom">{switchPatients}</p>
+											</div>
+											<template for:each={activeData} for:item="active" for:index="index">
+												<div key={active.Id}>
+													<c-bi-Pspb-Patient-Selection-Switch caregiverid={active.CaregiveID}
+														patientname={active.Name} patientid={active.Id}>
+													</c-bi-Pspb-Patient-Selection-Switch>
+												</div>
+											</template>
+										</div>
+									</template>
+								</li>
+							</ul>
+						</template>
+						<template if:true={showPrescriptionMenu}>
+							<ul>
+								<li>
+									<div class="grid-containerMobileMenuListBack">
+										<div>
+											<span class="floLeft" onclick={backToHomeMenu} onkeypress={backToHomeMenu} role="button">&#10094;</span>
+										</div>
+										<div>
+											<button class="textStyleback" onclick={backToHomeMenu}>{back}</button>
+										</div>
+									</div>
+								</li>
+								<li>
+									<a class="textStyleExtra"><b>{updatePrescription}</b></a>
+								</li>
+								<hr>
+								<li>
+									<button class="menu" data-it-button="Nabver: Update Prescription" onclick={updatePrescriptionLink}>{updatePrescription}</button>		
+								</li>
+								<li>
+									<button class="menu" data-it-button="Nabver: Prescription Status" onclick={prescriptionStatusLink}>{presStatus}</button>		
+								</li>
+							</ul>
+						</template>
+						<template if:true={showNotificationCenterMenu}>
+							<ul>
+								<li>
+									<div class="grid-containerMobileMenuListBack">
+										<div>
+											<span class="floLeft" onclick={backToHomeMenu} onkeypress={backToHomeMenu} role="button">&#10094;</span>
+										</div>
+										<div>
+											<button class="textStyleback" onclick={backToHomeMenu}>{back}</button>
+										</div>
+									</div>
+								</li>
+								<li>
+									<a class="textStyleExtra"><b>{notificationCenter}</b></a>
+								</li>
+								<hr>
+								<li>
+									<button class="menu" onclick={openMessageCenter}>{general}</button>
+								</li>
+								<li>
+									<button class="menu" onclick={openActionRequired}>{actionRequired}</button>
+								</li>
+								<li>
+									<button class="menu" onclick={openHistory}>{history}</button>
+								</li>
+							</ul>
+						</template>
+						<template if:true={caregiverAmList}>
+							<div class="menuList">
+								<ul>
+									<li>
+										<button class="menu" onclick={backToMenu}>&#10094;&nbsp;{back}</button>
+									</li>
+									<li>
+										<div class="grid-containerMobileMenuList">
+											<div>
+												<button class="textStyleExtra" onclick={openAmList}>{accountManager}</button>
+											</div>
+										</div>
+									</li>
+									<hr>
+									<li>
+										<button class="menu" onclick={openCarMyProfile}>{myProfile}</button>
+									</li>
+									<li>
+										<button class="menu" onclick={openCarMyCaregiver}>{patientInfoLabel}</button>
+									</li>
+									<li>
+										<button class="menu" onclick={openCarSelectAvatar}>{selectAvatar}</button>
+									</li>
+									<li>
+										<button class="menu" onclick={openCarNotSettings}>{notificSetting}</button>
+									</li>
+									
+								</ul>
+							</div>
+						</template>
+						<template if:true={showSupportMenu}>
+							<ul>
+								<li>
+									<div class="grid-containerMobileMenuListBack">
+										<div>
+											<span class="floLeft" onclick={handleBackSupport} onkeypress={handleBackSupport} role="button">&#10094;</span>
+										</div>
+										<div>
+											<button class="textStyleback" onclick={handleBackSupport}>{back}</button>
+										</div>
+									</div>
+								</li>
+								<li><a class="textStyleExtra"><b>{support}</b></a></li>
+								<hr>
+								<li>
+									<button class="menu" onclick={openSupportCenter}>{supportCenter}</button>
+								</li>
+								<li>
+									<button class="menu" onclick={openMyCases}>{myCase}</button>
+								</li>
+							</ul>
+						</template>
+						<template if:true={showInformationCenterMenu}>
+							<ul>
+								<li>
+									<div class="grid-containerMobileMenuListBack">
+										<div>
+											<span class="floLeft" onclick={handleBackInformationCenter} onkeypress={handleBackInformationCenter} role="button">&#10094;</span>
+										</div>
+										<div>
+											<button class="textStyleback" onclick={handleBackInformationCenter}>{back}</button>
+										</div>
+									</div>
+								</li>
+								<li>
+									<a class="textStyleExtra"><b>{informationCenter}</b></a>
+								</li>
+								<hr>
+								<li>
+									<button class="menu" onclick={openArticles}>{article}</button>
+								</li>
+								<li >
+									<button class="menu" onclick={openSpevigoCategory}>{spevigoArticleLabel}</button>
+								</li>
+								<li>
+									<button class="menu" onclick={openChronicPatient}>{patientTrtVideo}</button>
+								</li>
+							</ul>
+						</template>
+						<template if:true={showChallengesMenu}>
+							<ul>
+								<li>
+									<div class="grid-containerMobileMenuListBack">
+										<div>
+											<span class="floLeft" onclick={handleBackChallenges} onkeypress={handleBackChallenges} role="button">&#10094;</span>
+										</div>
+										<div>
+											<button class="textStyleback" onclick={handleBackChallenges}>{back}</button>
+										</div>
+									</div>
+								</li>
+								<li><a class="textStyleExtra"><b>{challenges}</b></a></li>
+								<hr>
+								<li>
+									<button class="menu" onclick={openChallenges}>{challenges}</button>
+								</li>
+								<li>
+									<button class="menu" onclick={openTrophyCase}>{trophyCase}</button>
+								</li>
+							</ul>
+						</template>
+						<template if:true={showCommunityMenu}>
+							<ul>
+								<li>
+									<div class="grid-containerMobileMenuListBack">
+										<div>
+											<span class="floLeft" onclick={handleBackCommunity} onkeypress={handleBackCommunity} role="button">&#10094;</span>
+										</div>
+										<div>
+											<button class="textStyleback" onclick={handleBackCommunity}>{back}</button>
+										</div>
+									</div>
+								</li>
+								<li><a class="textStyleExtra"><b>{community}</b></a></li>
+								<hr>
+								<li>
+									<button class="menu" onclick={openAllPosts}>{allPosts}</button>
+								</li>
+								<li>
+									<button class="menu" onclick={openMyPosts}>{myPosts}</button>
+								</li>
+								<li>
+									<button class="menu" onclick={openMyFollowers}>{myFollowers}</button>
+								</li>
+								<li>
+									<button class="menu" onclick={openFollowing}>{following}</button>
+								</li>
+							</ul>
+						</template>
+						<!--new-->
+						<template if:true={showQuestionnaireMenu}>
+							<ul>
+								<li>
+									<div class="grid-containerMobileMenuListBack">
+										<div>
+											<span class="floLeft" onclick={handleBack} onkeypress={handleBack} role="button">&#10094;</span>
+										</div>
+										<div>
+											<button class="textStyleback" onclick={handleBack} onkeypress={handleBack}>{back}</button>
+										</div>
+									</div>
+								</li>
+								<li><a class="textStyleExtra"><b>{myQuestionnaire}</b></a></li>
+								<hr>
+								<li>
+									<button class="menu" onclick={openOutstandingQuestionnaire}>{outstandingPage}</button>
+								</li>
+								<template if:true={showTabMenu}>
+									<li>
+										<button class="menu" onclick={openSummary}>{summary}</button>
+									</li>
+									<li>
+										<button class="menu" onclick={openComQuestionnaires}>{completedQues}</button>
+									</li>
+								</template>
+								<template if:false={showTabMenu}>
+									<li><a class="textStyle disabled">{summary}</a></li>
+									<li>
+										<a class="textStyle disabled">{completedQues} </a>
+									</li>
+								</template>
+								<li>
+									<button class="menu" onclick={openLetsPersonalize}>{letsPersonalize}</button>
+								</li>
+							</ul>
+						</template>
+						<!--new-->
+						<template if:true={patientAmList}>
+							<div class="menuList">
+								<ul>
+									<li>
+										<button class="textStyleExtra" onclick={backToMenu}>&#10094;&nbsp;{patientBack}</button>
+									</li>
+									<li>
+										<div class="grid-containerMobileMenuList">
+											<div>
+												<button class="textStyleExtra" onclick={openAmList}>{accountManager}</button>
+											</div>
+										</div>
+									</li>
+									<hr>
+									<li>
+										<button class="menu" onclick={openPatMyProfile}>{myProfile}</button>
+									</li>
+									<li>
+										<button class="menu" onclick={openPatMyCaregiver}>{myCaregiver}</button>
+									</li>
+									<li>
+										<button class="menu" onclick={openPatSelectAvatar}>{selectAvatar}</button>
+									</li>
+									<li>
+										<button class="menu" onclick={openPatNotSettings}>{notificSetting}</button>
+									</li>
+									
+								</ul>
+							</div>
+						</template>
+						<template if:true={showToLogin}>
+							<ul>
+								<li>
+									<button class="menu" onclick={checkUser}>{loginLabel}</button>
+								</li>
+							</ul>
+						</template>
+					</div>
+				</div>
+			</div>
+		</template>
+
+		<template if:true={showPopup}>
+			<div class="modal-backdrop"></div>
+			<div class="modal-visible">
+				<div class="modal-close" onclick={handleClose} onkeypress={handleClose} role="button">
+					<button onclick={doNotLogout} class="anchorclass">
+						<span class="distimeStyle">&times;</span>
+					</button>
+				</div>
+				<div class="modal-content">
+					<p class="modalHead">{logoutWarning}</p>
+					<p class="modalPara">{logoutContent}</p>
+					<div class="width100">
+						<div class="grid-containermodals">
+							<button class="buttonLogoutCancel" onclick={doNotLogout}
+								data-it-button="Nabver: Cancel">{cancel}</button>
+							<button class="ButtonLogoutYes" onclick={logoutFromSite}
+								data-it-button="Nabver: Yes">{yes}</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+	</div>
+</template>

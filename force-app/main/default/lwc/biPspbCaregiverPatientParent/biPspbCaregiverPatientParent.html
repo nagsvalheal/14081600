@@ -1,0 +1,38 @@
+<!--This  consolidates component the functionality for caregivers to view patient information and perform updates when logged in-->
+<template>
+	 <div if:true={showSpinner}>
+		<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	 </div>
+	<lightning-layout multiple-rows class="tabClass">
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+			<div class="tabsDiv pad">
+				<div class="grid-containerTabs">
+					<button onclick={openCarMyProfile} class="anchorText">{myProfile}</button>
+					<button onclick={openCarMyCaregiver} class="anchorTextActive">{patientInfo}</button>
+					<button onclick={openCarSelectAvatar} class="anchorText">{selectAvatar}</button>
+					<button onclick={openCarNotSettings} class="anchorText">{notificationSetting}</button>
+				</div>
+			</div>
+		</lightning-layout-item>
+	</lightning-layout>
+	<hr class="hrline" />
+
+	<lightning-layout multiple-rows class="layoutColor pad">
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="4" large-device-size="4"
+			class="slds-p-top_xx-large slds-p-bottom_xx-large lightningcard1">
+			<!--Display the Avatar Navigation---->
+			<div class="custom-box1">
+				<c-bi-Pspb-Avatar-Navigation onload={handleComponentLoad}></c-bi-Pspb-Avatar-Navigation>
+			</div>
+		</lightning-layout-item>
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="8" large-device-size="8"
+			class="slds-p-top_xx-large slds-p-bottom_xx-large lightningcard">
+			<!--Display the Caregiver profile---->
+			<div class="custom-box2">
+				<div>
+					<c-bi-Pspb-Cg-Patient-Information onload={handleComponentLoad}></c-bi-Pspb-Cg-Patient-Information>
+				</div>
+			</div>
+		</lightning-layout-item>
+	</lightning-layout>
+</template>

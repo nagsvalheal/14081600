@@ -1,0 +1,38 @@
+<!-- This component is consolidates  for HCP enrollment. -->
+<template>
+	<lightning-layout multiple-rows class="main">
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+			<div class="custom-box2">
+				<div class="displayHeader">
+					<div class="header-logo-container">
+						<!-- Display the header logo -->
+						<div>
+							<img src={logoSrc} alt="logo" width="133px" />
+						</div>
+						<img src={beyondGpp} alt="logo" class="marTB201" />
+					</div>
+					<div class="home-icon-container">
+						<c-bi-Pspb-Home-Icon-Parent></c-bi-Pspb-Home-Icon-Parent>
+					</div>
+				</div>
+				<div>
+					<c-bi-Pspb-Hcp-Enrollment></c-bi-Pspb-Hcp-Enrollment>
+				</div>
+				<!-- Display the footer logo -->
+				<div class="footer-container">
+					<div class="footer-logo-container">
+						<div>
+							<img src={footerSrc} alt="logo" class="Foot" />
+						</div>
+					</div>
+					<div class="footer-containerMobile">
+						<c-bi-Pspb-Footer-Logo></c-bi-Pspb-Footer-Logo>
+					</div>
+					<div class="padR7">
+						<c-bi-Pspb-Footer-Quick-Links></c-bi-Pspb-Footer-Quick-Links>
+					</div>
+				</div>
+			</div>
+		</lightning-layout-item>
+	</lightning-layout>
+</template>

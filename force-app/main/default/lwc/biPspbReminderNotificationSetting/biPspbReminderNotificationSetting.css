@@ -1,0 +1,153 @@
+@font-face 
+{
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff")
+		format("woff");
+}
+@font-face 
+{
+	font-family: "Eina-Light",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff")
+		format("woff");
+}
+@font-face 
+{
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff")
+		format("woff");
+}
+@font-face 
+{
+	font-family: "Eina04-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff")
+		format("woff");
+}
+.nobutton{
+	background: none;
+	border: none;
+}
+.reminder-container 
+{
+	text-align: left;
+	height: 144px;
+	background-color: #fef4d7;
+	padding: 20px;
+	display: flex;
+	gap: 10px;
+	border-left: 4px solid #edbe2b;
+}
+.link 
+{
+	text-decoration: underline;
+	color: #403a60;
+}
+.reminder-text 
+{
+	color: #2c333a;
+	width: 206px;
+	height: 48px;
+	font-family: "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 550;
+	margin-bottom: 30px;
+}
+.box-icon 
+{
+	width: 24px;
+	height: 24px;
+	margin-top: 3px;
+}
+.notification-settings 
+{
+	display: flex;
+	justify-content: left;
+	width: 214px;
+	height: 60px;
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	color: #403a60;
+}
+.para 
+{
+	margin-top: -10%;
+}
+@media only screen and (max-width: 600px) 
+{
+	.reminder-container 
+	{
+		text-align: left;
+		position: relative;
+		top: 140px;
+		height: 144px;
+		background-color: #fef4d7;
+		padding: 20px;
+		display: flex;
+		gap: 10px;
+		border-left: 4px solid #edbe2b;
+		margin-top: -160px;
+	margin-left: 120px;
+        width: 90%;
+	}
+}
+@media only screen and (min-width: 601px) and (max-width: 768px) 
+{
+	.reminder-container 
+	{
+		text-align: left;
+		position: relative;
+		top: 60px;
+		width: 96%;
+		height: 144px;
+		background-color: #fef4d7;
+		padding: 20px;
+		display: flex;
+		gap: 10px;
+		border-left: 4px solid #edbe2b;
+		margin-top: -110px;
+		margin-left: 16%;
+	}
+}
+@media only screen and (min-width: 992px) and (max-width: 1100px) 
+{
+	.reminder-container 
+	{
+		text-align: left;
+		position: relative;
+		left: 135px;
+		width: 286px;
+		height: auto;
+		background-color: #fef4d7;
+		padding: 20px;
+		display: flex;
+		gap: 10px;
+		border-left: 4px solid #edbe2b;
+		margin-top: -390px;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+	.reminder-container 
+	{
+		text-align: left;
+		position: relative;
+		bottom: 590px;
+		left: 530px;
+		width: 286px;
+		height: auto;
+		background-color: #fef4d7;
+		padding: 20px;
+		display: flex;
+		gap: 10px;
+		margin-top: -365px;
+		border-left: 4px solid #edbe2b;
+	}
+}
+@media only screen and (min-width: 1500px) 
+{
+	.reminder-container 
+	{
+		right: 170px;
+	}
+}

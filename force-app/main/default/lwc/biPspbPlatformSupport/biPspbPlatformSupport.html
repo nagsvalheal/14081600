@@ -1,0 +1,83 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+<!--This component is used for creating case records based on the Platform Support queries-->
+<template>
+	<div if:true={showSpinner}>
+		<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	 </div>
+	<template if:true={casePopup}>
+		<div class="check"><c-bi-pspb-common-popup toast-message={successMsg} onbuttonclick={ClosePopup}></c-bi-pspb-common-popup></div>
+	</template>	
+<template if:true={draftPopup}>
+	<div class="check"><c-bi-pspb-common-popup toast-message={successMessage} onbuttonclick={ClosePopup}></c-bi-pspb-common-popup></div>
+</template>
+	<div class="main" data-it-uid={userId}>
+		<div class="response">
+			<div class="heading">
+				<button class="back" onclick={handleBack} onkeypress={handleBack}>
+					<div><img src={backArrow} alt="back arrow" class="imgmod" width="12px" height="12px">
+					</div>
+					<div>
+						<p> {backValue} </p>
+					</div>
+				</button>
+			
+			</div>
+			<div class="medicalheading">
+				<h2>{platformSuppport}</h2>
+			</div>
+			<div class="form-container">
+				<!-- Your form content goes here -->
+				<div class="medicalform">
+					<div data-field="desc" class="desnot">{descriptionValue}</div><br>
+					<lightning-textarea class={classFive} variant="label-hidden" value={description} onchange={handledescription}
+						data-field="desc"></lightning-textarea><br>
+					<div class="error-throw" if:true={descriptionError}>
+						<img src={iconWarning} alt="Warning Icon" class="imgwarning">&nbsp;
+						{descriptionErr}
+					</div>
+					<div class="error-throw" if:true={descriptionLengthError}>
+						<img src={iconWarning} alt="Warning Icon" class="imgwarning">&nbsp;
+						{descritionErrChar}
+					</div>
+					<br><div class="desnot">{attachment} </div>
+					<div class="fileBox">
+						<div class="BoxAndMb">
+							<p class="fileLabelName" if:true={browserName}>{browesAndUpload}</P>
+							<template if:true={fileNames} for:each={fileNames} for:item="fileName">
+								<p key={fileName} class="fileLabelName">{fileName}</p>
+							</template>
+
+							<div><img class="imgclass" alt="File Icon" src={fileIcon}></div>
+							<div></div>
+							<h4 class="fivemb"><span><b>{fiveMb}</b></span>
+								<p class="max">{maxLimit}</p>
+							</h4>
+						</div>
+					</div>
+					<div class="fileBoxHide">
+						<div class="fileUploadSelector">
+							<lightning-file-upload name="fileUploader" accept={acceptedFormats}
+								onuploadfinished={handleUploadFinished} record-id={recordId} 
+								class="file-selector-image">
+								<span class="fiflif"></span>
+							</lightning-file-upload>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="buttondiv">
+				<div><button class="button1" onclick={handleInsertUpdate} data-value="PSP Platform Support"
+						data-it-button="pspplatform: Create New Case"  disabled={isSubmitButtonDisabled}>{createCase}</button></div>
+				<button class="button2" onclick={handleInsertDraft} data-value="PSP Platform Support"
+					data-it-button="pspplatform: Save as Draft" disabled={isButtonDisabled}>{createDraft}</button>
+			</div>
+
+
+		</div>
+	</div>
+
+
+
+</template>

@@ -1,0 +1,33 @@
+<!-- The Consolidate Component serves as a centralized container for organizing and presenting multiple Questionnaire cards -->
+<template>
+
+	<div class="spinner-wrapper" if:true={showSpinner}>
+	<div class="loader"></div>
+	</div>
+
+	<!-- Strings are hard coded in this HTML file to comply with the mobile responsiveness-->
+	<p class="heading">Outstanding Questionnaires</p>
+	<div class="cards" data-it-uid={userid}>
+		<div class="splicard">
+			<div class="card1">
+				<c-bi-Pspb-Introduction-Card> </c-bi-Pspb-Introduction-Card>
+			</div>
+
+			<div class="card2">
+				<c-bi-Pspb-Dlqi-Card onvaluechange={handleValueChange}></c-bi-Pspb-Dlqi-Card>
+			</div>
+			<div class="card3">
+				<c-bi-Pspb-Psoriasis-Card onvaluechange={handleValueChange}></c-bi-Pspb-Psoriasis-Card>
+			</div>
+		</div>
+
+		<div class="splicard2">
+			<div class="card4">
+				<c-bi-Pspb-Wapi-Card onvaluechange={handleValueChange}></c-bi-Pspb-Wapi-Card>
+			</div>
+			<div class="card5">
+				<c-bi-Pspb-Qualitative-Card></c-bi-Pspb-Qualitative-Card>
+			</div>
+		</div>
+	</div>
+</template>

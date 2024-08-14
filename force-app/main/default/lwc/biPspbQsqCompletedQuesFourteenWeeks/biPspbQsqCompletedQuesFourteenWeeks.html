@@ -1,0 +1,256 @@
+<!--This is Qualitative satisfaction questionnaire completed Questionnaire(LWC). This allows you to see your submited Responses.-->
+<template>
+	<!-- Qsq for seven Questions after 14 weeks -->
+	<div class="tophead">{qsq}</div>
+	<div class="containercolumn" data-it-uid={userid}>
+		<div class="column1">
+			<template if:true={assessmentResponseses}>
+				<div class="dropdowncolumn">
+					<div class="dropdowncolumn">
+						<template if:true={assessmentResponseses}>
+							<div class="comboboxtext">{selectMonth}</div>
+
+							<lightning-combobox class="combobox" value={selectedAssessment} options={assessmentOptions}
+								onchange={handleAssessmentChange}>
+							</lightning-combobox>
+						</template>
+					</div>
+				</div>
+				<template if:false={assessmentResponseses}>
+					<p>{notFound}</p>
+				</template>
+			</template>
+
+			<template if:true={assessmentResponseses}>
+				<div class="outerCOntainer">
+					<div class="container-box">
+						<span class="nds-m-right_x-small">{firstQuestionText}</span><br />
+					</div>
+					<div class="compress">
+						<div class="slidecontainer">
+							<div class="start-label">0</div>
+							<div class="end-label">10</div>
+							<input type="range" min="0" max="10" value={firstQuestionResponse} name="thirdQuestionname"
+								class="slider" id="myRange" list="tickmarks" disabled />
+							<div class="thumb-label" id="demo">
+								{sliderValue}
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="nds-form-element nds-form-container">
+					<legend
+						class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+						<span class="nds-m-right_x-small">{secondQuestionText}</span><br />
+					</legend>
+
+					<div class="nds-form-element__control nds-horizontal_radio">
+						<span class="nds-radio">
+							<div class="radio-container">
+								<input id="radiocheck" type="radio" name="QuestionResponse"  value="Yes" checked
+									disabled />
+								<label  for="radiocheck" class="nds-radio__label">
+									<span class="nds-radio_faux"></span>
+									<span
+										class="nds-form-element__label slds-p-left_small">{secondQuestionResponse}</span>
+								</label>
+							</div>
+						</span>
+					</div>
+				</div>
+
+				<div class="outerCOntainer">
+					<div class="container-box">
+						<span class="nds-m-right_x-small">{thirdQuestionText} {qsqText}</span><br />
+					</div>
+					<div class="compress">
+						<div class="slidecontainersec">
+							<div class="start-labelsec">0</div>
+							<div class="end-labelsec">10</div>
+							<input type="range" min="0" max="10" value={thirdQuestionResponse} name="fourthQuestionName"
+								class="slidersec" id="myRangesec" list="tickmarks" disabled />
+							<div class="thumb-labelsec" id="demosec">
+								{sliderValuesec}
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="outerCOntainer">
+					<div class="container-box">
+						<span class="nds-m-right_x-small">{fourthQuestionText}?</span><br />
+					</div>
+					<div class="compress">
+						<div class="slidecontainerthree">
+							<div class="start-labelthree">0</div>
+							<div class="end-labelthree">10</div>
+							<input type="range" min="0" max="10" name="eigthQuestionName" value={fourthQuestionResponse}
+								class="sliderthree" id="myRangethree" list="tickmarks" disabled />
+
+							<div class="thumb-labelthree" id="demothree">
+								{sliderValuethree}
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--changees below-->
+				<template if:true={fifthQuestDisplay}>
+					<div class="nds-horizontal-form-element nds-form-container">
+						<legend
+							class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+							<span class="nds-m-right_x-small">{fifthQuestionText}</span><br />
+						</legend>
+						<div class="nds-form-element__controll nds-vertical_radio">
+							<template for:each={fifthQuestionResponse} for:item="option">
+								<div key={option} class="nds-checkbox-wrapper">
+									<input type="checkbox" value={option} id="questionResponse" name="fourthQuestionResponse" checked
+										disabled />
+									<label for="questionResponse" class="nds-radio-label">{option}</label>
+								</div>
+							</template>
+						</div>
+					</div>
+				</template>
+
+				<template if:true={unselectedFifthQues}>
+					<div class="nds-horizontal-form-element nds-form-container">
+						<legend
+							class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+							<span class="nds-m-right_x-small">{sixthQuestionText}</span><br />
+						</legend>
+						<div class="nds-form-element__controll nds-vertical_radio">
+							<div class="nds-checkbox-wrapper">
+								<input type="checkbox" id="questionResponsetxt" name="fifthque" value="InformationCentre" checked={fifthinfo}
+									disabled />
+								<label for="questionResponsetxt" class="nds-radio-label">{informationCenter}</label>
+							</div>
+							<div class="nds-checkbox-wrapper">
+								<input type="checkbox" id="questionResponsetxtOne" name="fifthque" value="SymptomTracker" checked={fifthSyTr}
+									disabled />
+								<label for="questionResponsetxtOne" class="nds-radio-label">{symptomTracker}</label>
+							</div>
+							<div class="nds-checkbox-wrapper">
+								<input type="checkbox" id="questionResponsetxtTwo" name="fifthque" value="Challenges" checked={fifthChallenges}
+									disabled />
+								<label for="questionResponsetxtTwo" class="nds-radio-label">{challenges}</label>
+							</div>
+							<div class="nds-checkbox-wrapper">
+								<input type="checkbox" id="questionResponsetxtThree" name="fifthque" value="Questionnaire"
+									checked={fifthQuestionnaire} disabled />
+								<label for="questionResponsetxtThree" class="nds-radio-label">{questionnaire}</label>
+							</div>
+							<div class="nds-checkbox-wrapper">
+								<input type="checkbox" id="questionResponsetxtFour" name="fifthque" value="TreatmentVideos"
+									checked={fifthTreatmentVideo} disabled />
+								<label for="questionResponsetxtFour" class="nds-radio-label">{treatmentVideos}</label>
+							</div>
+							<div class="nds-checkbox-wrapper">
+								<input id="questionResponsetxtFive" type="checkbox" name="fifthque" value="Support" checked={fifthSupport}
+									disabled />
+								<label for="questionResponsetxtFive" class="nds-radio-label">{support}</label>
+							</div>
+						</div>
+					</div>
+				</template>
+
+				<!--changes below ends here-->
+
+				<div class="nds-form-element nds-form-container">
+					<legend
+						class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+						<span class="nds-m-right_x-small">{seventhQuestionText}</span><br />
+					</legend>
+					<div class="nds-form-element__control nds-horizontal_radio">
+						<span class="nds-radio">
+							<div class="radio-container">
+								<input id="questionResponsetxtSix" type="radio" name="fifthQuestionResponse"  value="Yes"
+									checked disabled />
+								<label for="questionResponsetxtSix" class="nds-radio__label">
+									<span class="nds-radio_faux"></span>
+									<span
+										class="nds-form-element__label slds-p-left_small">{sixthQuestionResponse}</span>
+								</label>
+							</div>
+						</span>
+					</div>
+				</div>
+
+				<div class="nds-form-element nds-form-container">
+					<legend
+						class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+						<span class="nds-m-right_x-small">{eightQuestionText}</span><br />
+					</legend>
+					<div class="nds-form-element__control nds-horizontal_radio">
+						<span class="nds-radio">
+							<div class="radio-container">
+								<input type="radio" name="sixthQuestionResponse" id="questionboxresponseeight" value="Yes"
+									checked disabled />
+								<label for="questionboxresponseeight" class="nds-radio__label">
+									<span class="nds-radio_faux"></span>
+									<span
+										class="nds-form-element__label slds-p-left_small">{seventhQuestionResponse}</span>
+								</label>
+							</div>
+						</span>
+					</div>
+				</div>
+			</template>
+		</div>
+		<!--column-->
+
+		<div class="column2">
+			<div class="box">
+				<div class="statusRE">
+					<div class="rollout">
+						{rollout}<br />
+						<p class="rddate">{rolloutDate}</p>
+					</div>
+
+					<div class="expires">
+						{completedOn}<br />
+						<p class="eddate">{expireDate}</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="box2">
+				<br />
+				<br />
+				<div class="texts">{completedQn}</div>
+				<div class="line"></div>
+				<!-- Category names with clickable boxes -->
+
+				<div class="category-names">
+					<div class={checkdlqi}>
+						<div class="category-box" onclick={navigateToCategory2} onkeydown={navigateToCategory2}
+							data-it-button="QSQ Completed Questionnaire: Navigate to DLQI">
+							<img src={cardImageDlqi} alt="Dermatology" class="imageNavi" />
+							<p class="b">{dlqi}</p>
+						</div>
+					</div>
+					<div class={checkpss}>
+						<div class="category-box" onclick={navigateToCategory3} onkeydown={navigateToCategory3}
+							data-it-button="QSQ Completed Questionnaire: Navigate to PSS">
+							<img src={cardImagePss} alt="Psorasis" class="imageNavi" />
+							<p class="c">{pss}</p>
+						</div>
+					</div>
+					<div class={checkwai}>
+						<div class="category-box" onclick={navigateToCategory4} onkeydown={navigateToCategory4}
+							data-it-button="QSQ Completed Questionnaire: Navigate to WAPI">
+							<img src={cardImageWpai} alt="Work and Activity" class="imageNavi" />
+							<p class="d">{workApi}</p>
+						</div>
+					</div>
+					<div class="category-box1" onclick={navigateToCategory5} onkeydown={navigateToCategory5}
+						data-it-button="QSQ Completed Questionnaire: Navigate to QSQ">
+						<img src={cardImageQsq} alt="Qualitative" class="imageNaviNxt" />
+						<p class="e">{qsq}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

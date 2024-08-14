@@ -1,0 +1,92 @@
+<!--This Lightning Web Component retrieves and displays notification messages for patients from various sources within a Salesforce community.-->
+<template>
+	<div class="notifications-card">
+		<div class="header">
+		<div> <h2 class="Notify">{notification}</h2>
+		</div><!-- Header and View All Button -->	   
+		<div class='butnclass'><button class="view-all-button" onclick={handleActionResponse}>{viewAllBtn}</button>
+		</div>
+		</div>
+		<div class="slds-p-around_medium">
+			<template if:true={tasks}>			   
+				<!-- Iterate through tasks to display notifications -->
+				<template for:each={timeElapsedForTasks} for:item="task">					
+					<div class="notification" key={task.Id}>
+						<!-- Display task information -->
+						<div class="imgdiv" if:true={task.iconUrl}>
+							<img src={task.iconUrl} width="50px" height="40px"  alt="Category Icon" />
+						</div>
+						<div class="wholesub">
+						<h3 class="Subject">{task.Subject}</h3>
+						</div>
+						<div>
+						<!-- Action buttons based on task type -->
+						<div if:true={task.showActionButton}>
+							<button class="Viewbtn" onclick={handleNavigateLetPers} data-id={task.Id} data-it-button="Notifications: Start">{startBtn}</button>
+						</div>
+						<div if:true={task.showWpai}>
+							<button class="Viewbtn" onclick={clickQuestionWpai} data-id={task.Id} data-it-button="Notifications: Start">{viewbtn}</button>
+						</div>	
+						<div if:true={task.showPss}>
+							<button class="Viewbtn" onclick={clickQuestionPss} data-id={task.Id} data-it-button="Notifications: Start">{viewbtn}</button>
+						</div>	
+						<div if:true={task.showDlqi}>
+							<button class="Viewbtn" onclick={clickQuestionDlqi} data-id={task.Id} data-it-button="Notifications: Start">{viewbtn}</button>
+						</div>	
+						<div if:true={task.showQsq}>
+							<button class="Viewbtn" onclick={clickQuestionQsq} data-id={task.Id} data-it-button="Notifications: Start">{viewbtn}</button>
+						</div>	
+						<div if:true={task.showTreatmentOneThree}>
+							<button class="Viewbtn" onclick={handleNavigateAll} data-id={task.Id} data-it-button="Notifications: Start">{viewbtn}</button>
+						</div>
+						<div if:true={task.showPrescription}>
+							<button class="Viewbtn" onclick={handleNavigateAction} data-id={task.Id} data-it-button="Notifications: Start">{viewbtn}</button>
+						</div>	
+						<div if:true={task.showDateOfTreatment}>
+							<button class="Viewbtn" onclick={handleNavigateAction} data-id={task.Id} data-it-button="Notifications: Start">{viewbtn}</button>
+						</div>	
+						<div if:true={task.showSymptom}>
+							<button class="Viewbtn" onclick={handleNavigateSymptom} data-id={task.Id} data-it-button="Notifications: Start">{viewbtn}</button>
+						</div>							
+						</div>
+							<p class="timeElapsed">{task.timeElapsed}</p>
+					</div>				   
+				</template>
+			
+			</template>
+				<div  class="line"></div>
+			<template if:false={tasks}>
+				
+				<p class="no-notifications">{emptyNotification}</p>
+
+			</template>
+		</div>
+		<template if:true={showModal}>
+			<dialog tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+				<div class="slds-modal__container">
+					<!-- modal header start -->
+					<header class="slds-modal__header">
+						<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideModalBox}>
+							<lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse" size="small"></lightning-icon>
+							<span class="slds-assistive-text" data-it-button="Notifications: Close">{close}</span>
+						</button>
+						<h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{treatmentDate}</h2>
+					</header>
+					<!-- modal body start -->
+					<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+						<p>{enterDate}</p>
+						<!-- Input for date of treatment -->
+						<input type="date" onchange={handleDateChange} >{dateOfTreatment}
+						<Button type="Submit" onclick={handleSaveDate} data-it-button="Notifications: Submit">{submitButton}</Button>
+						<button onclick={hideModalBox} data-it-button="Notifications: Cancel">{cancelButton}</button>
+					</div>
+					<!-- modal footer start-->
+					<footer class="slds-modal__footer">
+						<button class="slds-button slds-button_neutral" onclick={hideModalBox} data-it-button="Notifications: Close">{close}</button>
+					</footer>
+				</div>
+			</dialog>
+			<div class="slds-backdrop slds-backdrop_open"></div>
+		</template>
+	</div>
+</template>

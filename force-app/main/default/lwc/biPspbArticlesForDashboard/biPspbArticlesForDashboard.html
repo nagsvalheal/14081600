@@ -1,0 +1,111 @@
+<!--This Lightning Web Component is designed to display both 'Just for Me' articles and recent articles from the CMS -->
+<template>
+	<lightning-layout multiple-rows>
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+			<div class="grid-containerHeadButton">
+				<div>
+					<h2 class="headParaStyle">{articlesForYou}</h2>
+				</div>
+				<div class="align-right">
+					<button onclick={navtoinforcenter} class="buttonStyle">
+						{visitInfoCenter}
+					</button>
+				</div>
+			</div>
+			<hr />
+		</lightning-layout-item>
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12"
+			class="slds-p-top_large">
+			<!--Artice one-->
+			<div if:true={showFirstArticle} class="grid-containerArticles">
+				<div class="yellowBack">
+					<div class="grid-containerInnerDivs">
+						<div class="backimg1"></div>
+						<div class="grid-containerContent">
+							<div class="display-Inline">
+								<img class="clck" src={ClockIcon} alt = 'ClockIcon' />
+								<p class="paraStyleclock">{readTimeOne} {minutes}</p>
+							</div>
+							<div>
+								<h2 class="h2Style">{firstHeading}</h2>
+							</div>
+							<div>
+								<p class="paraStyle">{firstDescription}</p>
+							</div>
+							<div>
+								<img data-name={firstHeading} data-it-button={analyticsFirstHeading} alt ="Heading" onclick={handleButtonClick}
+									src={NextIcon} class="imagecls" width="50px" role="button" onkeypress={handleButtonClick} />
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Artice two-->
+				<div if:true={showSecondArticle} class="purpleBack">
+					<div class="grid-containerInnerDivs">
+						<div class="backimg2"></div>
+						<div class="grid-containerContent">
+							<div class="display-Inline">
+								<img class="clck" src={ClockIcon} alt = 'ClockIcon'/>
+								<p class="paraStyleclock">{readTimeTwo} {minutes}</p>
+							</div>
+							<div>
+								<h2 class="h2Style">{secondHeading}</h2>
+							</div>
+							<div>
+								<p class="paraStyle">{secondDescription}</p>
+							</div>
+							<div>
+								<img data-name={secondHeading} data-it-button={analyticsSecondHeading} onclick={handleButtonClick}
+									src={NextIcon} width="50px" class="imagecls" alt = 'ArrowIcon' role="button" onkeypress={handleButtonClick}/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Artice three-->
+				<div if:true={showThirdArticle} class="purpleBack">
+					<div class="grid-containerInnerDivs">
+						<div class="backimg3"></div>
+						<div class="grid-containerContent">
+							<div class="display-Inline">
+								<img class="clck" src={ClockIcon} alt ='ClockIcon'/>
+								<p class="paraStyleclock">{readTimeThird} {minutes}</p>
+							</div>
+							<div>
+								<h2 class="h2Style">{thirdHeading}</h2>
+							</div>
+							<div>
+								<p class="paraStyle">{thirdDescription}</p>
+							</div>
+							<div>
+								<img data-name={thirdHeading} data-it-button={analyticsThirdHeading} onclick={handleButtonClick}
+									src={NextIcon} width="50px" class="imagecls" alt = 'ArrowIcon' role="button" onkeypress={handleButtonClick}/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Artice four-->
+				<div if:true={showFourthArticle} class="yellowBack">
+					<div class="grid-containerInnerDivs">
+						<div class="backimg4"></div>
+						<div class="grid-containerContent">
+							<div class="display-Inline">
+								<img class="clck" src={ClockIcon} alt ='ClockIcon'/>
+								<p class="paraStyleclock">{readTimeFourth} {minutes}</p>
+							</div>
+							<div>
+								<h2 class="h2Style">{fourthHeading}</h2>
+							</div>
+							<div>
+								<p class="paraStyle">{fourthDescription}</p>
+							</div>
+							<div>
+								<img data-name={fourthHeading} data-it-button={analyticsFourthHeading} onclick={handleButtonClick}
+									src={NextIcon} width="50px" class="imagecls" alt = 'ArrowIcon' role="button" onkeypress={handleButtonClick}/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</lightning-layout-item>
+	</lightning-layout>
+</template>

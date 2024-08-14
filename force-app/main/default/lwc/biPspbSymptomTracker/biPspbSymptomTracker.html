@@ -1,0 +1,399 @@
+<!-- @description: This components using user body parts and intencity itchiness values store this lwc  - biPspbSymptomTracker. -->
+<template>
+	<div class="st-heading" data-it-uid={userId}>{addSymptom}</div>
+	<div class="st-date-row">
+		<div class="input-div">
+			<span class="input-label" data-field="dob">{enterDate}*</span>
+			<div class="disflecCenter">
+				<lightning-input type="date" value={currentDate2} data-field="dob" class="textInput" disabled={Editdatedisable}
+					onchange={handleDateChange} variant="label-hidden" placeholder="DD.MM.YYYY"  date-style="short" >
+				</lightning-input>
+			
+			</div>
+		</div>
+		<button class="confirm-btn-date" onclick={handleSaveDate} disabled={dataMantroyDispable}
+			data-it-button="Add Symptoms: Save Date">{saveDate}</button>
+		<template if:true={isDateUnique}>
+			<p class="alredy-data">{alreadyExist}</p>
+		</template>
+		<br>
+		<br>
+		<div class="futuredateerror" if:true={futuredatedisable}>{futureDate}</div>
+		<!--  -->
+		<div class="" if:true={dataMandatory}>
+			<div class="lastmodifieddate" if:true={lastModifi}> {lastModified} {formattedLastModifiedDate}</div>
+			<!-- Dropdown Start -->
+			<!-- Dropdown 1 -->
+			<div class="card">
+				<!-- Dropdown Header -->
+				<div class={accordColor} onkeypress={toggleDropdown1} tabindex="0" role="button" onclick={toggleDropdown1}>
+					<div class="card-header-text">
+						<h2 class="cl"> {experiencingGpp}<img src={symptomTickIcon}  alt={alternateTextTick} class="currentlygpp-icon" if:true={currentlyGpp}></h2>
+						
+					
+					</div>
+					<div class="card-header-arrow">
+						<div class={dropdownButtonClass1}></div>
+					</div>
+				</div>
+				<!-- Dropdown Body -->
+				<div class="card-body" if:true={isDropDownOpen1}>
+					<div class="dropdown1-row">
+						<lightning-radio-group class="customRadioCls" name="radioGroup" label="" options={options}
+							value={chsngedVal} type="radio" onchange={handleRadioChange}>
+						</lightning-radio-group>	
+						<button class="confirm-btn-file" type="button" onclick={handleSavegpp}
+							data-it-button="Add Symptoms: Confirm and Save">{confirmAndSave}</button>
+						<div if:true={showMessage} class="slds-m-top_medium">
+							<div >
+								<p class="Gpp-yes-btn"> <img src={boxedIcon} alt={alternateTextIcon} >{speakToDoctor}</p>
+							</div>
+						</div>
+						<div if:true={showMessage} class="slds-m-top_medium1">
+							<div class="img"> <img src={boxedIcon} alt={alternateTextIcon} class="wiHeight">
+								<p class="Gpp-yes-btn"> {speakToDoctor}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Dropdown 2 -->
+			<div class="card">
+				<!-- Dropdown Header -->
+				<div class={accordColorSymptom} role="button" onkeypress={toggleDropdown2} tabindex="0" onclick={toggleDropdown2}>
+					<div class="card-header-text">
+						{symptomLabel}
+						<img class="tickclass" src={symptomTickIcon} alt={alternateTextTick} if:true={itchinessChange1}>
+					</div>
+					<div class="card-header-arrow">
+						<div class={dropdownButtonClass2}></div>
+					</div>
+				</div>
+				<!-- Dropdown Body -->
+				<div class="card-body" if:true={isDropDownOpen2}>
+					<div class="dropdown2-row">
+						<div class="dropdown2-text">{selectSymptomsYouExperiencing}</div>
+						<div class="symptoms-row">
+							<div class="symptoms" >
+								<button class="symptomButton" onclick={openItchinessModal} >
+								<img src={itchinessColorVarient} alt={alternateTextItchiness} class="itchinessimag" if:true={itchinessChange}>
+								<lightning-formatted-rich-text class={colorChange} if:false={itchinessChange}
+									value={imageItchiness}> </lightning-formatted-rich-text>
+								</button>
+								</div>
+							<div class="symptoms" >
+								<button class="symptomButton" onclick={openRednessModal} >
+								<img src={rednessColorVarient} alt={alternateTextRedness} if:true={rednessChange}>
+								<lightning-formatted-rich-text class={colorChange1} if:false={rednessChange}
+									value={imageRedness}></lightning-formatted-rich-text>
+								</button>
+							</div>
+							<div class="symptoms" >
+								<button class="symptomButton" onclick={openPainModal} >
+								<img src={painColorVarient} alt={alternateTextPain} if:true={painChange}>
+								<lightning-formatted-rich-text class={colorChange2} if:false={painChange}
+									value={imagePain}></lightning-formatted-rich-text>
+								</button>
+							</div>
+							<div class="symptoms" >
+								<button class="symptomButton" onclick={openPustulesModal} >
+								<img src={pustulesColorVarient} alt={alternateTextPustules} if:true={pustlesChange}>
+								<lightning-formatted-rich-text class={colorChange3} if:false={pustlesChange}
+									value={imagePustules}></lightning-formatted-rich-text>
+								</button>
+							</div>
+							<div class="symptoms" >
+								<button class="symptomButton" onclick={openFatigueModal} >
+								<img src={fatigueColorVarient}  alt={alternateTextFatigue} if:true={fatiquesChange}>
+								<lightning-formatted-rich-text class={colorChange4} if:false={fatiquesChange}
+									value={imageFatigue}></lightning-formatted-rich-text>
+								</button>
+							</div>
+							<div class="symptoms" >
+								<button class="symptomButton" onclick={openTemperatureModal} >
+								<img src={temperatureColorVarient} alt={alternateTextTemperature} if:true={temperatureChange}>
+								<lightning-formatted-rich-text class={colorChange5} if:false={temperatureChange}
+									value={imageTemperature}></lightning-formatted-rich-text>
+								</button>
+							</div>
+							<div class="symptoms" >
+								<button class="symptomButton" onclick={openMoodModal} >
+								<img src={moodColorVarient} alt={alternateTextTemperature} if:true={moodChange}>
+								<lightning-formatted-rich-text class={colorChange6} if:false={moodChange}
+									value={imageMood}></lightning-formatted-rich-text>
+								</button>
+							</div>
+						</div>
+						<button class="confirm-btn-activity" onclick={handlechnagedropdown} type="button"
+							data-it-button="Add Symptoms: Confirm and Save" data-name="symptombtn">{confirmAndSave}</button>
+					</div>
+				</div>
+			</div>
+			<!-- Dropdown 3 -->
+			<div class="card">
+				<!-- Dropdown Header -->
+				<div class={accordColorBtn} role="button" onkeypress={toggleDropdown3} tabindex="0" onclick={toggleDropdown3}>
+					<div class="card-header-text">
+						<h2 class="cl">{activityLabel}<img class="tickclass-21" alt={alternateTextTick} src={symptomTickIcon} if:true={recentActivity}></h2>
+						
+					</div>
+					<div class="card-header-arrow">
+						<div class={dropdownButtonClass3}></div>
+					</div>
+				</div>
+				<!-- Dropdown Body -->
+				<div class="card-body" if:true={isDropDownOpen3}>
+					<div class="dropdown3-row">
+						<div class="dropdown3-text">{selectCausesSymptom}</div>
+						<div class="dropdown3-line"></div>
+						<div class="dropdown3-activity-row">
+							<button class={btnColorChange} onclick={handleClickactivites} data-name="Steroid withdrawal"
+								data-it-button="Add Symptoms: Steroid withdrawal">{steroidWithdrawal}</button>
+							<button class={btnColorChange} onclick={handleClickactivites} data-name="Had an infection"
+								data-it-button="Add Symptoms: Had an infection">{hadInfection}</button>
+							<button class={btnColorChange} onclick={handleClickactivites} data-name="Stress"
+								data-it-button="Add Symptoms: Stress">{stressLabel}</button>
+							<button if:true={accGender} class={btnColorChange} onclick={handleClickactivites}
+								data-name="Confirmed as pregnant" data-it-button="Add Symptoms: buttons">{confirmPregnant}</button>
+							<button class={btnColorChange} onclick={handleClickactivites}
+								data-name="Starting or stopping some steroid medicines and / or pain relievers"
+								data-it-button="Add Symptoms: smp relivers">{stopSteroids}</button>
+							<button class={btnColorChange} onclick={handleClickactivites}
+								data-name="Extreme changes in the weather or climate"
+								data-it-button="Add Symptoms: ECWclimate">
+								{extremeClimate}</button>
+							<button class={btnColorChange} onclick={handleClickactivites}
+								data-name="New use of skin creams and ointments"
+								data-it-button="Add Symptoms: creams and ointments">{newOintment}</button>
+							<button class={btnColorChange} onclick={handleClickactivites}
+								data-name="Excessive sun exposure"
+								data-it-button="Add Symptoms:  sun exposure">{excessiveSunExposure}</button>
+						</div>
+						<button class="confirm-btn-activity" type="button" data-name="" onclick={handleClickForAccept}
+							data-it-button="Add Symptoms: Confirm and Save">{confirmAndSave}</button>
+					</div>
+				</div>
+			</div>
+			<!-- Dropdown 4 -->
+			<div class="fourth-card">
+				<div class="card">
+					<!-- Dropdown Header -->
+					<div class={fileChangeColour} role="button" onkeypress={toggleDropdown4} tabindex="0" onclick={toggleDropdown4}>
+						<img class="tickfile" src={symptomTickIcon} alt={alternateTextTick} if:true={fileMessage}>
+						<div class="card-header-text">
+							{photosLabel}
+						</div>
+						<div class="card-header-arrow">
+							<div class={dropdownButtonClass4}></div>
+						</div>
+					</div>
+					<!-- Dropdown Body -->
+					<div class="card-body" if:true={isDropDownOpen4}>
+						<div class="dropdown4-row">
+							<div class="dropdown4-text">{addSkinPhoto}</div>
+							<label class="dropdown4-upload-label" for="uploadPhoto">
+								<template if:true={isLimitReached}>
+									<div class="Upload-alert-mseg">
+										<div class="icontext"><img src={limtUpLoad} alt="limit">
+											<p class="uploadfilelimit">{limitReached}</p>
+										</div>
+										<div>
+											<p class="uploadfilelimitword">5 MB {maxFiveImage}</p>
+										</div>
+									</div>
+								</template>
+								<div class="adduploadbtn" if:false={isLimitReached}>
+									<img class="symptomcompletetickcheck" alt={alternateTextTick} src={symptomCompleteTick}>
+									<p>Add your photos</p>
+									<p class="onlyallowd">5 MB (Maximum limit)</p>
+									<div class="relativeRight" if:true={upLoadedLarge}>{fileTooLarge}</div>
+								</div>
+								<input class="file-imge" if:false={isLimitReached} type="file" accept=".png, .jpg, pdf"  
+									onchange={handleFileInputChange} />
+							</label>
+							<div if:true={imageUrls} class="image-container">
+								<template for:each={imageUrls} for:item="url" for:index="index">
+									<div key={url} class="image-file-set">
+										<button class="fileuploadbtn" onclick={removeImage} data-index={index}
+											data-it-button="Add Symptoms: buttons">X</button>
+										<img src={url} alt={alternateTextUpload} class="uploaded-image" />
+									</div>
+								</template>
+							</div>
+						</div>
+						<!-- Display uploaded files -->
+						<template if:true={uploadedFiles}>
+							<div>
+							</div>
+						</template>
+						<div class="here">
+							<p>1.</p>
+							<div class="dropdown4-help-text"> {photoOfFlares} <button
+									onclick={openfiles} class="dropdown4-help-text-link">{hereSomeAdvice}</button><br>
+							</div>
+						</div>
+						<div class="here">
+							<p>2.</p>
+							<div class="dropdown4-help-text">{photoHostedRegion}
+							</div>
+						</div>
+						<button class="confirm-btn-file marLeft" onclick={handleClickpdf} type="button"
+							data-it-button="Add Symptoms: Confirm and Save">{confirmAndSave}</button>
+					</div>
+				</div>
+			</div>
+			<!-- Dropdown End -->
+			<!-- Dropdown 2 Modal -->
+			<!-- Itchiness Modal -->
+			<template if:true={showItchinessModal}>
+				<div class="modal-background">
+					<div class="modal-content-symptoms">
+						<button class="close" onclick={closeItchinessModal}>&times;</button>
+						<div class="modal-header">{itchinessLabel}</div>
+						<div class="modal-header-text">
+							<c-bi-Pspb-Itchiness-Symptom bodyparts={bodyparts} result-id-in-child={resultId}
+								onaddtask={changerecord} 
+								onupdatechildprop={closeItchinessModal}></c-bi-Pspb-Itchiness-Symptom>
+						</div>
+					</div>
+				</div>
+			</template>
+			<!-- pain modal -->
+			<template if:true={showPainModal}>
+				<div class="modal-background">
+					<div class="modal-content-symptoms">
+						<button class="close" onclick={closePainModal}>&times;</button>
+						<div class="modal-header">{painLabel}</div>
+						<div class="modal-header-text">
+							<c-bi-Pspb-Pain-Symptoms result-id-in-child={resultId} 	onaddtask={changerecord} 
+								onupdatechildprop={closePainModal}></c-bi-Pspb-Pain-Symptoms>
+						</div>
+
+					</div>
+				</div>
+			</template>
+			<!-- Redness Modal -->
+			<template if:true={showrednessModal}>
+				<div class="modal-background">
+					<div class="modal-content-symptoms">
+						<button class="close" onclick={closeRednessModal}>&times;</button>
+						<div class="modal-header">{rednessLabel}</div>
+						<div class="modal-header-text">
+							<c-bi-Pspb-Redness-Symptoms result-id-in-child={resultId} 	onaddtask={changerecord} 
+								onupdatechildprop={closeRednessModal}></c-bi-Pspb-Redness-Symptoms>
+						</div>
+					</div>
+				</div>
+			</template>
+			<!-- Pustules model -->
+			<template if:true={showPustulesModal}>
+				<div class="modal-background">
+					<div class="modal-content-symptoms">
+						<button class="close" onclick={closePustulesModal}>&times;</button>
+						<div class="modal-header">{pustulesLabel}</div>
+						<div class="modal-header-text">
+							<c-bi-Pspb-Pustules-Symptoms result-id-in-child={resultId} 	onaddtask={changerecord} 
+								onupdatechildprop={closePustulesModal}></c-bi-Pspb-Pustules-Symptoms>
+						</div>
+					</div>
+				</div>
+			</template>
+			<!-- Fatigue Modal -->
+			<template if:true={showFatigueModal}>
+				<div class="modal-background">
+					<div class="modal-content-symptoms">
+						<button class="close" onclick={closeFatigueModal}>&times;</button>
+						<div class="modal-header">{fatigueLabel}</div>
+						<div class="modal-header-text">
+							<c-bi-Pspb-Fatigue-Symptoms result-id-in-child={resultId} 	onaddtask={changerecord} 
+								onupdatechildprop={closeFatigueModal}></c-bi-Pspb-Fatigue-Symptoms>
+						</div>
+					</div>
+				</div>
+			</template>
+			<!-- Temperature Modal -->
+			<template if:true={showTemperatureModal}>
+				<div class="modal-background">
+					<div class="modal-content-symptoms">
+						<button class="close" onclick={closeTemperatureModal}>&times;</button>
+						<div class="modal-header">{temperatureLabel}</div>
+						<div class="modal-header-text">
+							<c-bi-Pspb-Temperature-Symptoms result-id-in-child={resultId} onaddtask={changerecord} 
+								onupdatechildprop={closeTemperatureModal}></c-bi-Pspb-Temperature-Symptoms>
+						</div>
+					</div>
+				</div>
+			</template>
+			<!-- Mood Modal -->
+			<template if:true={showMoodModal}>
+				<div class="modal-background">
+					<div class="modal-content-symptoms">
+						<button class="close" onclick={closeMoodModal}>&times;</button>
+						<div class="modal-header">{moodLabel}</div>
+						<div class="modal-header-text">
+							<c-bi-Pspb-Mood-Symptom result-id-in-child={resultId} onaddtask={changerecord} 
+								onupdatechildprop={closeMoodModal}></c-bi-Pspb-Mood-Symptom>
+						</div>
+					</div>
+				</div>
+			</template>
+			<template if:true={showFiles}>
+				<div class="modal-background">
+					<div class="modal-content">
+						<button class="close" onclick={closefiles}>&times;</button>
+						<div class="modal-header">{takingPictures}</div>
+						<div class="modal-header-text">
+							<h5>{tipsToPerfectPhoto}</h5>
+							<ul>
+								<li>
+									{lowerQuality}
+								</li>
+								<li>
+									{avoidZoom}
+								</li>
+								<li>
+									{fastShutterSpeed}
+								</li>
+								<li>
+									{goodLight}
+								</li>
+							</ul>
+						</div>
+						<div class="modal-btn-row">
+							<button class="modal-confirm-btn ClBtn" type="button" onclick={closefiles}
+								data-it-button="Add Symptoms: Close">{closeLabel}</button>
+						</div>
+					</div>
+				</div>
+			</template>
+			<button class="submit-btn" onclick={handleButtonClick} disabled={isPopupOpenDisable}
+				data-it-button="Add Symptoms: Submit Entry">{submitEntry}</button>
+			<template if:true={submitModal}>
+				<div class="modal-background">
+					<div class="modal-content">
+						<button class="close" onclick={closesubmitModal}>&times;</button>
+						<h3 class="confirm-ct">{confirmSubmit}</h3>
+						<p>{addAtLeastOneSymptom}</p>
+						<div class="confirm-btn-head">
+							<button class="confirm-btn" onclick={addsymtom} data-it-button="Add Symptoms: OK">{okLabel}
+							</button>
+						</div>
+					</div>
+				</div>
+			</template>
+		</div>
+	</div>
+	<template if:true={undersatand}>
+		<div class="modal-background">
+			<div class="modal-content">
+				<button class="close" onclick={closeundersatand}>&times;</button>
+				<h3 class="CHead">{confirmSubmit}</h3>
+				<p>{iUnderstandInformationCorrect}</p>
+				<div class="confirm-btn-head">
+					<button class="confirm-btn-understand" onclick={understand}
+						data-it-button="Add Symptoms: I Understand">{understandLabel}</button>
+				</div>
+			</div>
+		</div>
+	</template>
+</template>

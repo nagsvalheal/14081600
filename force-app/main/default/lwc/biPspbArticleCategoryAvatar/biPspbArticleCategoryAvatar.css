@@ -1,0 +1,261 @@
+.para {
+	background-color: #ecdca8;
+	padding: 10px;
+	border-radius: 8px;
+	display: inline-block;
+	width: 286px;
+	height: 103px;
+	margin-left: 30%;
+	margin-top: -15%;
+	font-size: 14px;
+	font-weight: 400;
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.line {
+	display: none;
+}
+
+.image {
+	height: 160px;
+	width: 160px;
+	display: block;
+	margin: auto;
+	margin-top: -30px;
+	margin-left: 146px;
+}
+
+.message-container {
+	margin: auto;
+	height: 150px;
+	width: 250px;
+	margin-top: 60px;
+}
+
+.contain {
+	height: 300px;
+	width: 150px;
+}
+
+.mbintm {
+	display: none;
+}
+
+.mbmess {
+	display: none;
+}
+
+.mbbreak {
+	display: none;
+}
+
+/*--Font Declaration---*/
+
+@font-face {
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff') format('woff');
+}
+
+@font-face {
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff') format('woff');
+}
+
+@font-face {
+	font-family:   "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff') format('woff');
+}
+
+@media only screen and (max-width: 600px) {
+	.para {
+		background-color: #ecdca8;
+		padding: 10px 20px;
+		border-radius: 8px;
+		display: inline-block;
+		position: absolute;
+		left: none;
+		width: 286px;
+		height: 108px;
+		top: 0px;
+		gap: 5px;
+	}
+
+	.mbbreak {
+		display: block;
+	}
+
+	.imgclass {
+		width: 100%;
+	}
+
+	.contain {
+		display: flex;
+		gap: 18px;
+	}
+
+	.message-container {
+		margin: 0;
+		margin-top: 0px;
+	}
+
+	.image {
+		height: 64px;
+		width: 64px;
+		display: block;
+		margin: 0;
+		margin-top: 0px;
+		margin-left: 0px;
+	}
+
+	.mbintm {
+		display: block;
+		background-color: #ecdca8;
+		height: fit-content;
+		margin-left: 330px;
+		position: absolute;
+		margin-top: -6px;
+	}
+
+	.intmark {
+		font-size: 19px;
+		color: grey;
+	}
+
+	.mbmess {
+		display: block;
+	}
+
+	.dkmess {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 420px) {
+	.para {
+		width: 241px;
+		height: fit-content;
+		margin-top: 128px;
+		margin-left: -78px;
+		padding-left: 8px;
+		font-size: 13px;
+	}
+
+	.mbbreak {
+		display: block;
+	}
+
+	.imgclass {
+		margin-left: 11px;
+	}
+
+	.contain {
+		height: 173px;
+		width: 312px;
+	}
+
+	.line {
+		display: block;
+		background: linear-gradient(90deg,
+				#744f0d 0%,
+				#99693e 17.19%,
+				#efdba1 58.85%,
+				#744f0d 100%);
+		height: 4px;
+		margin-top: -79px;
+	}
+
+	.mbmess {
+		display: block;
+	}
+
+	.dkmess {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 421px) and (max-width: 767px) {
+	.para {
+		top: 243px !important;
+		left: -37px !important;
+		margin-top: -26%;
+		background-color: #ecdca8;
+		padding: 10px 20px;
+		border-radius: 8px;
+		display: inline-block;
+		position: absolute;
+		width: 286px;
+		height: 108px;
+		gap: 5px;
+	}
+
+	.mbbreak {
+		display: block;
+	}
+
+	.imgclass {
+		width: 100%;
+	}
+
+	.contain {
+		display: flex;
+		gap: 18px;
+	}
+
+	.message-container {
+		margin: 0;
+		margin-top: 0px;
+	}
+
+	.image {
+		height: 64px;
+		width: 64px;
+		display: block;
+		margin: 0;
+		margin-top: 0px;
+		margin-left: 0px;
+	}
+
+	.dkmess {
+		display: none;
+	}
+
+	.mbmess {
+		display: block;
+	}
+
+	.line {
+		display: block;
+		background: linear-gradient(90deg,
+				#744f0d 0%,
+				#99693e 17.19%,
+				#efdba1 58.85%,
+				#744f0d 100%);
+		height: 4px;
+		margin-top: -200px;
+	}
+}
+
+@media only screen and (min-width: 421px) and (max-width: 767px) {
+	.mbintm {
+		display: none;
+		margin-left: 352px;
+		margin-top: 0px;
+	}
+
+	.dkmess {
+		display: none;
+	}
+
+	.mbmess {
+		display: block;
+	}
+
+	.mbbreak {
+		display: block;
+	}
+}

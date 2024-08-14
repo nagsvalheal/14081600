@@ -1,0 +1,77 @@
+<!---This component consolidates the display of the summary page--->
+<template>
+	<!-- Lightning Layout to structure the layout -->
+	<lightning-layout multiple-rows class="main">
+
+		<!-- Lightning Layout Item to define layout item -->
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+			<!-- Container for the main content -->
+			<div class="custom-box2">
+				<!-- Header section -->
+				<div class="displayHeader">
+					<!-- Logo container -->
+					<div class="header-logo-container">
+						<div>
+							<!-- Logo image with dynamic source -->
+							<img src={logoSrc} alt="logo" width="133px" />
+						</div>
+						<!-- Background image -->
+						<img src={BGpp} alt="logo" class='marTB201' />
+					</div>
+					<!-- Home icon container -->
+					<div class="home-icon-container">
+						<!-- Custom home icon component -->
+						<c-bi-Pspb-Home-Icon-For-Thankyou-Msg></c-bi-Pspb-Home-Icon-For-Thankyou-Msg>
+					</div>
+				</div>
+				<!-- Main content container -->
+				<div class="maincmp">
+					<div class="imageavatar">
+						<!-- Avatar image with dynamic source -->
+						<div class='imageiiii'>
+							<img src={selectedAvatarSrc} alt={selectedOption} class="Avatrimg rounded  d-block bg-logo">
+							<!-- Congratulatory message -->
+							<div class='flexi'>
+								<div>
+									<p class="text-content">{congratulation}</p>
+								</div>
+								<!-- Close icon -->
+								<div class='markclass'>
+									<span class="Xmark">X</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Child component -->
+					<div class="child">
+						<!-- Background image -->
+						<img src={BGpp} alt="logo" class='marTB20' />
+						<!-- Custom component for thanking for HCP enrollment -->
+						<c-bi-Pspb-Thankyou-For-Hcp-Enrollment></c-bi-Pspb-Thankyou-For-Hcp-Enrollment>
+					</div>
+				</div>
+				<!-- Footer container -->
+				<div class="footer-container">
+					<!-- Footer logo container -->
+					<div class="footer-logo-container">
+						<div>
+							<!-- Footer logo image with dynamic source -->
+							<img src={footerSrc} alt="logo" class="Foot" />
+						</div>
+					</div>
+					<!-- Footer container for mobile -->
+					<div class="footer-containerMobile">
+						<!-- Custom footer logo component -->
+						<c-bi-Pspb-Footer-Logo></c-bi-Pspb-Footer-Logo>
+					</div>
+					<!-- Container for quick links in footer -->
+					<div class="padR7">
+						<!-- Custom component for footer quick links -->
+						<c-bi-Pspb-Footer-Quick-Links></c-bi-Pspb-Footer-Quick-Links>
+					</div>
+				</div>
+			</div>
+		</lightning-layout-item>
+	</lightning-layout>
+</template>

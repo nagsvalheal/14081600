@@ -1,0 +1,293 @@
+.custom-box2 {
+	width: -webkit-fill-available;
+	display: grid;
+	position: relative;
+	right: 100px;
+	bottom: 105px;
+}
+
+.custom-box1 {
+	position: relative;
+	right: 20%;
+}
+
+.displayHeader {
+	display: flex;
+	justify-content: end;
+}
+
+.footerLink {
+	text-decoration: none;
+	color: #403A60;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.grid-containerfooter {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 10px 20px;
+	padding: 10px;
+	width: fit-content;
+}
+
+.layoutColor {
+	background-color: #FBFAF5;
+	min-height: 400px;
+	overflow: hidden;
+	padding-left: 10% !important;
+}
+
+.grid-containerTabs {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 10px 20px;
+	padding: 10px;
+	width: fit-content;
+}
+
+.tabsDiv {
+	width: 100%;
+	text-align: left;
+}
+
+.anchorText {
+	text-decoration: none;
+	color: #403A60;
+	font-size: 16px;
+	font-weight: 400;
+	border: none;
+    background: none;
+}
+
+.anchorTextActive {
+	text-decoration: none;
+    color: #403A60;
+    font-size: 16px;
+    font-weight: 800;
+    border: none;
+    background: none;
+
+}
+
+.pad {
+	border-bottom: 1px solid #8D89A580;
+}
+
+/*--CSS Media Queries---*/
+@media only screen and (max-width: 400px) {
+	.custom-box2 {
+		right: 0px;
+		position: relative;
+		bottom: 0px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.custom-box1 {
+		right: 0%;
+		margin-left: 20px;
+		bottom: 0px;
+	}
+
+	.tabClass {
+		display: none;
+		width: 100%;
+		background-color: white;
+	}
+
+	.pad {
+		padding-left: 0px !important;
+		height: auto;
+	}
+
+	.lightning-card {
+		height: auto;
+		padding: 0px;
+	}
+
+	.lightning-card1 {
+		height: auto;
+		padding-bottom: 15px;
+	}
+}
+
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+	.pad {
+		padding-left: 20px !important;
+		padding-right: 20px;
+		height: auto;
+	}
+
+	.tabClass {
+		display: none;
+		width: 100%;
+		background-color: white;
+	}
+
+	.showMobileBorder {
+		display: flex;
+		height: 5px;
+		width: 100%;
+		background: linear-gradient(90deg, #744F0D 0%, #99693E 17.19%, #EFDBA1 58.85%, #744F0D 100%);
+
+	}
+
+	.custom-box1 {
+		right: 0px;
+		bottom: 0px;
+	}
+
+	.lightning-card {
+		height: auto;
+		padding: 0px;
+	}
+
+	.custom-box2 {
+		left: 0%;
+		bottom: 8%;
+	}
+
+	.lightning-card1 {
+		height: auto;
+		padding-bottom: 15px;
+	}
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+	.pad {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.tabClass {
+		display: none;
+		width: 100%;
+		background-color: white;
+	}
+
+	.showMobileBorder {
+		display: none;
+	}
+
+	.custom-box2 {
+		left: 20%;
+		bottom: 15%;
+	}
+
+	.lightning-card {
+		height: 28cm;
+	}
+
+	.custom-box1 {
+		left: 20%;
+	}
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+	.pad {
+		padding-left: 5%;
+		padding-right: 10%;
+	}
+
+	.tabClass {
+		display: grid;
+		width: 100%;
+		background-color: white;
+	}
+
+	.showMobileBorder {
+		display: none;
+	}
+
+	.custom-box2 {
+		left: 21%;
+	}
+
+	.custom-box1 {
+		right: 20%;
+	}
+
+	.lightning-card {
+		height: 28cm;
+	}
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1199px) {
+	.pad {
+		padding-left: 5%;
+		padding-right: 10%;
+	}
+
+	.tabClass {
+		display: grid;
+		width: 100%;
+		background-color: white;
+	}
+
+	.showMobileBorder {
+		display: none;
+	}
+
+	.custom-box2 {
+		left: 0%;
+	}
+
+	.custom-box1 {
+		right: 20%;
+	}
+
+	.lightning-card {
+		height: 16cm;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.pad {
+		padding-left: 5%;
+		padding-right: 10%;
+	}
+
+	.tabClass {
+		display: grid;
+		width: 100%;
+		background-color: white;
+	}
+
+	.showMobileBorder {
+		display: none;
+	}
+
+	.custom-box2 {
+		width: -webkit-fill-available;
+		display: grid;
+		position: relative;
+		right: 75px;
+		bottom: 105px;
+	}
+}
+
+@media only screen and (min-width: 1500px) {
+	.pad {
+		padding-left: 5%;
+		padding-right: 0%;
+	}
+
+	.tabClass {
+		display: grid;
+		width: 100%;
+		background-color: white;
+	}
+
+	.showMobileBorder {
+		display: none;
+	}
+
+	.custom-box2 {
+		width: -webkit-fill-available;
+		display: grid;
+		position: relative;
+		right: 80px;
+		bottom: 105px;
+	}
+}

@@ -1,0 +1,1597 @@
+/*--Font Declaration---*/
+@font-face {
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina01-Regular.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina04-Light.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina04-SemiBold.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina04-Bold.woff")
+    format("woff");
+}
+.textAligncenter {
+  text-align: center;
+}
+.width100{
+  width: 100%;
+}
+.divMarginStyle {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  line-height: 30px;
+  color: black;
+}
+.coloBlack {
+  color: black;
+}
+.fillWidth {
+  width: -webkit-fill-available;
+}
+
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+hr {
+  margin: 10px 0px 5px 10px;
+  border-color: #c4c1cd;
+  border-width: 0px;
+  background-color: #c4c1cd;
+}
+
+.clevelMobile {
+  font-size: 24px;
+  color: #403a60;
+  font-weight: 600;
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.ranksMobile {
+  color: #403a60;
+  font-size: 12px;
+  font-weight: 600;
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.ranksHrMobile {
+  color: #403a60;
+  font-size: 12px;
+  text-align: center;
+}
+
+.ranksHrMobileBold {
+  color: #403a60;
+  font-size: 12px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.acavai {
+  display: block;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.ranks {
+  color: #403a60;
+  font-size: 16px;
+}
+
+.ranksHr {
+  line-height: 20px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  color: #403a60;
+  font-size: 14px;
+  text-align: center;
+}
+
+.avatar-container {
+  position: relative;
+  margin-left: 150px;
+}
+
+.search {
+  padding: 20px;
+  width: 44%;
+  height: auto;
+  margin: 5%;
+  color: white;
+}
+
+.search1 {
+  padding: 20px;
+  width: 22%;
+  height: auto;
+  margin: 5%;
+  color: white;
+}
+
+.pop-up {
+  justify-content: center;
+  display: flex;
+}
+
+.FontStyle {
+  font-size: 24px;
+  font-weight: 800;
+  color: #403a60;
+  margin: 20px 0px 0px 10px;
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.ranklevels {
+  margin-top: 120px;
+}
+
+.FontStyles {
+  font-size: 24px;
+  font-weight: 800;
+  width: auto;
+  color: #403a60;
+  margin: 20px 0px 0px 10px;
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.FontStyleChallenge {
+  font-size: 32px;
+  font-weight: 800;
+  color: #403a60;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.marginTop80 {
+  margin-top: 80px;
+}
+
+.text {
+  color: #403a60;
+  font-size: 18px;
+  margin-left: 10px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 28px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  padding: 10px 0px;
+}
+
+.textBold {
+  color: #403a60;
+  font-size: 18px;
+  margin-left: 10px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 28px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.text1 {
+  color: #403a60;
+  font-size: 14px;
+  margin-left: 10px;
+  font-weight: 400;
+  line-height: 20px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.showmore {
+  padding-right: 20px;
+}
+
+.description {
+  color: #847f7ff5;
+  font-size: 14px;
+}
+
+.rank {
+  color: #847f7ff5;
+  font-size: 14px;
+}
+
+.rankN {
+  color: black;
+  font-size: 20px;
+}
+
+.help {
+  color: #847f7ff5;
+  font-size: 12px;
+  text-align: center;
+}
+
+.title {
+  color: black;
+  font-size: 16px;
+  text-align: center;
+}
+
+.question {
+  color: black;
+  font-size: 13px;
+}
+
+.grid-containerChallenge {
+  display: grid;
+  grid-template-columns: max-content max-content auto 100px;
+  gap: 10px 20px;
+  padding: 10px;
+}
+
+.grid-containerChallengeMobile {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 10px 0px;
+  padding: 10px;
+}
+
+.allignCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.line-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.TrophyImg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.arrow-line {
+  border: none;
+  background: #8d89a5;
+  /* Color of the line */
+  height: 2px;
+  /* Adjust the height as needed */
+}
+
+.pageBackground {
+  background-color: #fbfaf5;
+}
+
+/* Modal */
+
+.grid-containerACModal {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 10px 20px;
+  padding: 10px;
+}
+
+.ActiveChallenges {
+  background-color: #ffffff;
+  height: auto;
+  border-radius: 10px;
+  border-style: none;
+  border-color: #c4c1cd;
+  padding: 80px 20px 20px 20px;
+  margin: 20px;
+}
+
+.crossClass {
+  text-align: right;
+  margin-bottom: -55px;
+  padding: 0px 35px;
+}
+
+.ChallengeTrophy {
+  border-style: none;
+  border-radius: 10px;
+  margin-bottom: -85px;
+}
+
+.ChallengeTrophy1 {
+  border-style: none;
+  border-radius: 10px;
+  margin-bottom: -85px;
+}
+
+.ChallengeTrophy2 {
+  border-style: none;
+  border-radius: 10px;
+  margin-bottom: 0;
+}
+
+.grid-containerXPButtons {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px 10px;
+  padding: 10px;
+}
+
+.PerButton {
+  padding: 5px 15px 5px 15px;
+  border-radius: 30px;
+  border-style: none;
+  background-color: #8d89a5;
+  font-size: 14px;
+  font-weight: 800;
+  width: fit-content;
+  color: white;
+}
+
+.grid-containerCardDetails {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 15px 0px;
+  padding: 0px;
+}
+
+.CardTitle {
+  color: #403a60;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.CardPara {
+  color: #403a60;
+  height: 77px;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+}
+
+.CardcongModal {
+  color: #403a60;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.CardTitleModal1 {
+  color: #403a60;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.CongaTitleModal {
+  color: #403a60;
+  font-size: 32px;
+  font-weight: 400;
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.CongaBoldModal {
+  color: #403a60;
+  font-weight: 400;
+  font-size: 18px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.CongaRegularModal {
+  color: #403a60;
+  font-weight: 400;
+  font-size: 18px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.CardParaModal {
+  color: #403a60;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  line-height: 24px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.ComChaButton {
+  padding: 0px 20px 0px 20px;
+  border-radius: 12px;
+  border-style: none;
+  background-color: #403a60;
+  font-size: 14px;
+  font-weight: 400;
+  width: auto;
+  color: #ffffff;
+  height: 40px;
+  line-height: 16px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.ComChaButtonLoad {
+  padding: 0px 20px 0px 20px;
+  border-radius: 12px;
+  border-style: solid;
+  border-color: #403a60;
+  background-color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  width: auto;
+  color: #403a60;
+  height: 40px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  float: right;
+}
+
+.cancelButton {
+  padding: 0px 20px 0px 20px;
+  border-radius: 12px;
+  border-style: solid;
+  border-color: #403a60;
+  border-width: 1.5px;
+  background-color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  width: auto;
+  color: #403a60;
+  height: 40px;
+  margin-top: 10px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.percentButton {
+  border-radius: 12px;
+  border-style: none;
+  border-width: 1.5px;
+  background-color: #403a60;
+  font-size: 24px;
+  font-weight: 400;
+  width: 80px;
+  color: #ffffff;
+  height: 40px;
+  margin-top: 10px;
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.AChallenges {
+  width: 320px;
+}
+
+.AChallengesModal {
+  width: 400px;
+}
+
+.ButtonModal {
+  display: grid;
+}
+
+.imgCenter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.conImage {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.grid-containerChart {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.textCenter1 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+.textCenter {
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.congaCenter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/*---CSS Media Quries---*/
+@media only screen and (max-width: 400px) {
+  .CardcongModal {
+    color: #403a60;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+  .CardTitleModal {
+    color: #403a60;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+  .displayhr {
+    display: flex;
+    margin: 10px 0px 5px 10px;
+    border-color: #c4c1cd;
+    border-width: 0px;
+    background-color: #c4c1cd;
+    width: 100%;
+  }
+  .ActiveChallengesConga {
+    background-color: #fbfaf5;
+    height: auto;
+    border-radius: 10px;
+    border-style: none;
+    border-color: #c4c1cd;
+    text-align: center;
+  }
+
+  .addUnderline {
+    text-decoration: underline;
+  }
+
+  .marginTop45 {
+    margin-top: 0px;
+  }
+
+  .AChallengesModalConga {
+    width: auto;
+  }
+
+  .displayOnlyOnMobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .grid-congaChallengeMobile {
+    display: grid;
+    grid-template-columns: 150px max-content;
+    gap: 10px 20px;
+    padding: 10px;
+  }
+
+  .grid-congaChallengeDesktop {
+    display: none;
+    grid-template-columns: max-content max-content;
+    gap: 10px 20px;
+    padding: 10px;
+  }
+
+  .pad {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .grid-containerAC {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px 0px;
+    width: fit-content;
+  }
+
+  .chartLevelsforDesktop {
+    display: none;
+  }
+
+  .chartLevelsforMobile {
+    display: block;
+    background-color: white;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: #c4c1cd;
+    margin: 10px 10px 10px 10px;
+    width: 89%;
+  }
+
+  .arrow-line::after {
+    content: "";
+    position: absolute;
+    top: 70%;
+    right: -10px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px;
+    /* Adjust the size of the arrow */
+    border-color: transparent transparent transparent #8d89a5;
+    /* Color of the arrow */
+  }
+
+  .ComChaButtonLoad {
+    padding: 0px 20px 0px 20px;
+    border-radius: 12px;
+    border-style: solid;
+    border-color: #403a60;
+    background-color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    width: auto;
+    color: #403a60;
+    height: 40px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    float: right;
+  }
+}
+
+@media only screen and (min-width: 401px) {
+  .CardcongModal {
+    color: #403a60;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+  .CardTitleModal {
+    color: #403a60;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+  .displayhr {
+    display: flex;
+    margin: 10px 0px 5px 10px;
+    border-color: #c4c1cd;
+    border-width: 0px;
+    background-color: #c4c1cd;
+    width: 100%;
+  }
+  .ActiveChallengesConga {
+    background-color: #fbfaf5;
+    height: auto;
+    border-radius: 10px;
+    border-style: none;
+    border-color: #c4c1cd;
+    text-align: center;
+  }
+
+  .addUnderline {
+    text-decoration: underline;
+  }
+
+  .marginTop45 {
+    margin-top: 0px;
+  }
+
+  .AChallengesModalConga {
+    width: auto;
+  }
+
+  .displayOnlyOnMobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .grid-congaChallengeMobile {
+    display: grid;
+    grid-template-columns: 150px max-content;
+    gap: 10px 20px;
+    padding: 10px;
+  }
+
+  .grid-congaChallengeDesktop {
+    display: none;
+    grid-template-columns: max-content max-content;
+    gap: 10px 20px;
+    padding: 10px;
+  }
+
+  .pad {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .grid-containerAC {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px 0px;
+    width: fit-content;
+  }
+
+  .chartLevelsforDesktop {
+    display: none;
+  }
+
+  .chartLevelsforMobile {
+    display: block;
+    background-color: white;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: #c4c1cd;
+    margin: 10px 0px 10px 10px;
+    width: 100%;
+  }
+
+  .arrow-line::after {
+    content: "";
+    position: absolute;
+    top: 75%;
+    right: -10px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px;
+    /* Adjust the size of the arrow */
+    border-color: transparent transparent transparent #8d89a5;
+    /* Color of the arrow */
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .CardcongModal {
+    color: #403a60;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+  .CardTitleModal {
+    color: #403a60;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+  .displayhr {
+    display: flex;
+    margin: 10px 0px 5px 10px;
+    border-color: #c4c1cd;
+    border-width: 0px;
+    background-color: #c4c1cd;
+    width: 100%;
+  }
+  .ActiveChallengesConga {
+    background-color: #fbfaf5;
+    height: auto;
+    border-radius: 10px;
+    border-style: none;
+    border-color: #c4c1cd;
+    text-align: center;
+  }
+
+  .displayOnlyOnMobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .grid-congaChallengeMobile {
+    display: grid;
+    grid-template-columns: 150px max-content;
+    gap: 10px 20px;
+    padding: 10px;
+  }
+
+  .grid-congaChallengeDesktop {
+    display: none;
+    grid-template-columns: max-content max-content;
+    gap: 10px 20px;
+    padding: 10px;
+  }
+
+  .addUnderline {
+    text-decoration: underline;
+  }
+
+  .ComChaButtonLoad {
+    padding: 0px 20px 0px 20px;
+    border-radius: 12px;
+    border-style: solid;
+    border-color: #403a60;
+    background-color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    width: auto;
+    color: #403a60;
+    height: 40px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    float: right;
+  }
+
+  .chartLevelsforMobile {
+    display: block;
+    background-color: white;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: #c4c1cd;
+    margin: 10px 0px 10px 10px;
+    width: 93%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .CardcongModal {
+    color: #403a60;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+  .CardTitleModal {
+    color: #403a60;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+  .displayhr {
+    display: flex;
+    margin: 10px 0px 5px 10px;
+    border-color: #c4c1cd;
+    border-width: 0px;
+    background-color: #c4c1cd;
+    width: 100%;
+  }
+  .ActiveChallengesConga {
+    background-color: #fbfaf5;
+    height: auto;
+    border-radius: 10px;
+    border-style: none;
+    border-color: #c4c1cd;
+    text-align: center;
+  }
+
+  .addUnderline {
+    text-decoration: underline;
+  }
+
+  .marginTop45 {
+    margin-top: 0px;
+  }
+
+  .AChallengesModalConga {
+    width: auto;
+  }
+
+  .displayOnlyOnMobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .grid-congaChallengeMobile {
+    display: grid;
+    grid-template-columns: 150px max-content;
+    gap: 10px 20px;
+    padding: 10px;
+  }
+
+  .grid-congaChallengeDesktop {
+    display: none;
+    grid-template-columns: max-content max-content;
+    gap: 10px 20px;
+    padding: 10px;
+  }
+
+  .pad {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .grid-containerAC {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px 0px;
+    width: fit-content;
+  }
+
+  .chartLevelsforDesktop {
+    display: none;
+  }
+
+  .chartLevelsforMobile {
+    display: block;
+    background-color: white;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: #c4c1cd;
+    margin: 10px 10px 10px 10px;
+    width: 100%;
+  }
+
+  .arrow-line::after {
+    content: "";
+    position: absolute;
+    top: 75%;
+    right: -10px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px;
+    /* Adjust the size of the arrow */
+    border-color: transparent transparent transparent #8d89a5;
+    /* Color of the arrow */
+  }
+}
+
+@media only screen and (min-width: 703px) {
+  .CardcongModal {
+    color: #403a60;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+  .CardTitleModal {
+    color: #403a60;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+  .displayhr {
+    display: flex;
+    margin: 10px 0px 5px 10px;
+    border-color: #c4c1cd;
+    border-width: 0px;
+    background-color: #c4c1cd;
+    width: 100%;
+  }
+  .ActiveChallengesConga {
+    background-color: #fbfaf5;
+    height: auto;
+    border-radius: 10px;
+    border-style: none;
+    border-color: #c4c1cd;
+    text-align: left;
+  }
+
+  .addUnderline {
+    text-decoration: underline;
+  }
+
+  .marginTop45 {
+    margin-top: 45px;
+  }
+
+  .AChallengesModalConga {
+    width: auto;
+  }
+
+  .displayOnlyOnMobile {
+    display: none;
+  }
+
+  .grid-congaChallengeMobile {
+    display: none;
+    grid-template-columns: max-content max-content auto;
+    gap: 10px 20px;
+    padding: 10px;
+  }
+
+  .grid-congaChallengeDesktop {
+    display: grid;
+    grid-template-columns: max-content max-content auto;
+    gap: 10px 20px;
+    padding: 10px;
+  }
+
+  .pad {
+    padding-right: 10%;
+    padding-left: 10%;
+  }
+
+  .grid-containerAC {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px 0px;
+    width: fit-content;
+  }
+
+  .chartLevelsforDesktop {
+    display: block;
+    background-color: white;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: #c4c1cd;
+    margin: 10px 10px 10px 10px;
+    width: auto;
+  }
+
+  .chartLevelsforMobile {
+    display: none;
+  }
+
+  .chartLevelsforMobile1 {
+    display: none;
+  }
+
+  .arrow-line::after {
+    content: "";
+    position: absolute;
+    top: 71%;
+    right: -10px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px;
+    /* Adjust the size of the arrow */
+    border-color: transparent transparent transparent #8d89a5;
+    /* Color of the arrow */
+  }
+
+  .clevel {
+    font-size: 32px;
+    color: #403a60;
+    font-weight: 400;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+
+  .ranks {
+    color: #403a60;
+    font-size: 16px;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+
+  .ranksHr {
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    line-height: 20px;
+    color: #403a60;
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 765px) {
+  .CardcongModal {
+    color: #403a60;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+  .CardTitleModal {
+    color: #403a60;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+  .displayhr {
+    display: flex;
+    margin: 10px 0px 5px 10px;
+    border-color: #c4c1cd;
+    border-width: 0px;
+    background-color: #c4c1cd;
+    width: 100%;
+  }
+  .ActiveChallengesConga {
+    background-color: #fbfaf5;
+    height: auto;
+    border-radius: 10px;
+    border-style: none;
+    border-color: #c4c1cd;
+    text-align: left;
+  }
+
+  .addUnderline {
+    text-decoration: underline;
+  }
+
+  .marginTop45 {
+    margin-top: 45px;
+  }
+
+  .AChallengesModalConga {
+    width: auto;
+  }
+
+  .displayOnlyOnMobile {
+    display: none;
+  }
+
+  .grid-congaChallengeMobile {
+    display: none;
+    grid-template-columns: max-content max-content auto;
+    gap: 10px 20px;
+    padding: 10px;
+  }
+
+  .grid-congaChallengeDesktop {
+    display: grid;
+    grid-template-columns: max-content max-content auto;
+    gap: 10px 20px;
+    padding: 10px;
+  }
+
+  .pad {
+    padding-right: 10%;
+    padding-left: 10%;
+  }
+
+  .grid-containerAC {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px 0px;
+    width: fit-content;
+  }
+
+  .chartLevelsforDesktop {
+    display: block;
+    background-color: white;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: #c4c1cd;
+    margin: 10px 10px 10px 10px;
+    width: auto;
+  }
+
+  .chartLevelsforMobile {
+    display: none;
+  }
+
+  .chartLevelsforMobile1 {
+    display: none;
+  }
+
+  .arrow-line::after {
+    content: "";
+    position: absolute;
+    top: 65%;
+    right: -10px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px;
+    /* Adjust the size of the arrow */
+    border-color: transparent transparent transparent #8d89a5;
+    /* Color of the arrow */
+  }
+}
+
+@media only screen and (min-width: 919px) {
+  .CardcongModal {
+    color: #403a60;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+  .CardTitleModal {
+    color: #403a60;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+  .displayhr {
+    display: none;
+  }
+  .ActiveChallengesConga {
+    background-color: #fbfaf5;
+    height: auto;
+    border-radius: 10px;
+    border-style: none;
+    border-color: #c4c1cd;
+    text-align: left;
+  }
+
+  .addUnderline {
+    text-decoration: none;
+  }
+
+  .marginTop45 {
+    margin-top: 45px;
+  }
+
+  .AChallengesModalConga {
+    width: auto;
+  }
+
+  .displayOnlyOnMobile {
+    display: none;
+  }
+
+  .grid-congaChallengeMobile {
+    display: none;
+    grid-template-columns: max-content max-content auto;
+    gap: 10px 20px;
+    padding: 10px;
+  }
+
+  .grid-congaChallengeDesktop {
+    display: grid;
+    grid-template-columns: max-content max-content auto;
+    gap: 10px 20px;
+    padding: 10px;
+  }
+
+  .pad {
+    padding-right: 10%;
+    padding-left: 10%;
+  }
+
+  .grid-containerAC {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px 0px;
+    width: fit-content;
+  }
+
+  .chartLevelsforDesktop {
+    display: block;
+    background-color: white;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: #c4c1cd;
+    margin: 10px 0px 10px 10px;
+    width: auto;
+  }
+
+  .chartLevelsforMobile {
+    display: none;
+  }
+
+  .chartLevelsforMobile1 {
+    display: none;
+  }
+
+  .arrow-line::after {
+    content: "";
+    position: absolute;
+    top: 58%;
+    right: -10px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px;
+    /* Adjust the size of the arrow */
+    border-color: transparent transparent transparent #8d89a5;
+    /* Color of the arrow */
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .CardcongModal {
+    color: #403a60;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+  .CardTitleModal {
+    color: #403a60;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+  .displayhr {
+    display: none;
+  }
+  .ActiveChallengesConga {
+    background-color: #fbfaf5;
+    height: auto;
+    border-radius: 10px;
+    border-style: none;
+    border-color: #c4c1cd;
+    text-align: left;
+  }
+
+  .addUnderline {
+    text-decoration: none;
+  }
+
+  .marginTop45 {
+    margin-top: 45px;
+  }
+
+  .AChallengesModalConga {
+    width: auto;
+  }
+
+  .displayOnlyOnMobile {
+    display: none;
+  }
+
+  .grid-congaChallengeMobile {
+    display: none;
+    grid-template-columns: max-content max-content auto;
+    gap: 10px 20px;
+    padding: 10px;
+  }
+
+  .grid-congaChallengeDesktop {
+    display: grid;
+    grid-template-columns: max-content max-content auto;
+    gap: 10px 20px;
+    padding: 10px;
+  }
+
+  .pad {
+    padding-right: 10%;
+    padding-left: 10%;
+  }
+
+  .grid-containerAC {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px 0px;
+    width: fit-content;
+  }
+
+  .chartLevelsforDesktop {
+    display: block;
+    background-color: white;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: #c4c1cd;
+    margin: 10px 0px 10px 10px;
+    width: auto;
+  }
+
+  .chartLevelsforMobile {
+    display: none;
+  }
+
+  .chartLevelsforMobile1 {
+    display: none;
+  }
+
+  .arrow-line::after {
+    content: "";
+    position: absolute;
+    top: 58%;
+    right: -10px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px;
+    /* Adjust the size of the arrow */
+    border-color: transparent transparent transparent #8d89a5;
+    /* Color of the arrow */
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .CardcongModal {
+    color: #403a60;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+  .CardTitleModal {
+    color: #403a60;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+  .displayhr {
+    display: none;
+  }
+  .ActiveChallengesConga {
+    background-color: #fbfaf5;
+    height: auto;
+    border-radius: 10px;
+    border-style: none;
+    border-color: #c4c1cd;
+    text-align: left;
+  }
+
+  .addUnderline {
+    text-decoration: none;
+  }
+
+  .marginTop45 {
+    margin-top: 45px;
+  }
+
+  .AChallengesModalConga {
+    width: auto;
+  }
+
+  .displayOnlyOnMobile {
+    display: none;
+  }
+
+  .grid-congaChallengeMobile {
+    display: none;
+    grid-template-columns: max-content max-content auto;
+    gap: 10px 20px;
+    padding: 10px;
+  }
+
+  .grid-congaChallengeDesktop {
+    display: grid;
+    grid-template-columns: max-content max-content auto;
+    gap: 10px 20px;
+    padding: 10px;
+  }
+
+  .pad {
+    padding-right: 10%;
+    padding-left: 10%;
+  }
+
+  .grid-containerAC {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px 0px;
+    width: fit-content;
+  }
+
+  .chartLevelsforDesktop {
+    display: block;
+    background-color: white;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: #c4c1cd;
+    margin: 10px 10px 10px 10px;
+    width: auto;
+  }
+
+  .chartLevelsforMobile {
+    display: none;
+  }
+
+  .chartLevelsforMobile1 {
+    display: none;
+  }
+
+  .arrow-line::after {
+    content: "";
+    position: absolute;
+    top: 58%;
+    right: -10px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px;
+    /* Adjust the size of the arrow */
+    border-color: transparent transparent transparent #8d89a5;
+    /* Color of the arrow */
+  }
+}
+
+@media only screen and (min-width: 1700px) {
+  .CardcongModal {
+    color: #403a60;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+  .CardTitleModal {
+    color: #403a60;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+  .displayhr {
+    display: none;
+  }
+  .ActiveChallengesConga {
+    background-color: #fbfaf5;
+    height: auto;
+    border-radius: 10px;
+    border-style: none;
+    border-color: #c4c1cd;
+    text-align: left;
+  }
+
+  .addUnderline {
+    text-decoration: none;
+  }
+
+  .marginTop45 {
+    margin-top: 45px;
+  }
+
+  .AChallengesModalConga {
+    width: auto;
+  }
+
+  .displayOnlyOnMobile {
+    display: none;
+  }
+
+  .grid-congaChallengeMobile {
+    display: none;
+    grid-template-columns: max-content max-content auto;
+    gap: 10px 20px;
+    padding: 10px;
+  }
+
+  .grid-congaChallengeDesktop {
+    display: grid;
+    grid-template-columns: max-content max-content auto;
+    gap: 10px 20px;
+    padding: 10px;
+  }
+
+  .pad {
+    padding-right: 10%;
+    padding-left: 10%;
+  }
+
+  .grid-containerAC {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px 0px;
+    width: fit-content;
+  }
+
+  .chartLevelsforDesktop {
+    display: block;
+    background-color: white;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: #c4c1cd;
+    margin: 10px 10px 10px 10px;
+    width: auto;
+  }
+
+  .chartLevelsforMobile {
+    display: none;
+  }
+
+  .chartLevelsforMobile1 {
+    display: none;
+  }
+
+  .arrow-line::after {
+    content: "";
+    position: absolute;
+    top: 58%;
+    right: -10px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px;
+    /* Adjust the size of the arrow */
+    border-color: transparent transparent transparent #8d89a5;
+    /* Color of the arrow */
+  }
+}

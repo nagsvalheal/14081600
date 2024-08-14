@@ -1,0 +1,29 @@
+<!--This lightning web component is used for display the chronic treatment video and  chronic avatar message-->
+<template>
+	<!-- Strings are hard coded in this HTML file to comply with the mobile responsiveness-->
+	<lightning-layout multiple-rows class="tabClass">
+		<!--Display the subheader-->
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+			<div class="tabsDiv pad">
+				<div class="grid-containerTabs">
+					<button onclick={openAcute} class="anchorText">{articles}</button>
+					<button onclick={openSpevigoCategory} class="anchorText">{spevigoArticleLabel}</button>
+					<button onclick={openChronic} class="anchorTextActive">{patientTreatmentVideos}</button>
+				</div>
+			</div>
+		</lightning-layout-item>
+	</lightning-layout>
+	<br />
+
+	<div class="flexi">
+		<!--Display the chronic avatar message-->
+		<div class="column column1">
+			<c-bi-Pspb-Chronic-Video-Avatar site-urlq={siteUrlq}></c-bi-Pspb-Chronic-Video-Avatar>
+		</div>
+		<!--Display the chronic patient customized video-->
+		<div class="flexcol2">
+			<c-bi-Pspb-Chronic-Video site-urlq={siteUrlq}></c-bi-Pspb-Chronic-Video>
+		</div>
+	</div>
+	<br />
+</template>

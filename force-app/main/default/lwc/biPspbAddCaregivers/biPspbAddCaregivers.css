@@ -1,0 +1,697 @@
+@font-face {
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff') format('woff');
+}
+
+@font-face {
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff') format('woff');
+}
+
+@font-face {
+	font-family: "Eina04-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff') format('woff');
+}
+
+.custom-div {
+	padding: 10px;
+	border-radius: 5px;
+	/* Add rounded corners to the div */
+	width: 80%;
+	padding-left: 20px;
+}
+
+.header {
+	height: 50%;
+
+}
+.check{
+	position: relative;
+    bottom: 233px;
+    width: 168%;
+    right: 59%;
+}
+
+.GAbtn1 {
+	margin-left: auto;
+}
+.save-button{
+	font-family:  "Eina04-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		display: flex;
+		height: 40px;
+		padding: 12px 24px;
+		justify-content: center;
+		align-items: center;
+		flex-shrink: 0;
+		background-color: #403A60;
+		color: #fff;
+		border-radius: 12px;
+		border-color: transparent;
+	
+}
+.flexclass {
+	display: flex;
+	width: 100%;
+}
+
+.GrantAcc {
+	width: 100%;
+}
+.errorflag{
+	position: relative;
+    bottom: 18px;
+    left: 19px;
+}
+
+.Parag {
+	font-size: 14px;
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+.imgClass{
+	margin-right: 5px;
+}
+.autowid {
+	width: 55%;
+}
+
+.toast {
+	background-color: rgb(194 240 194);
+	width: 100%;
+	height: 65px;
+	position: absolute;
+	right: 0%;
+}
+
+.notify {
+	background-color: none;
+	position: absolute;
+	top: -30px;
+	right: 70px;
+}
+
+.para {
+	font-size: 15px;
+	font-weight: bold;
+	padding-left: 50px;
+	padding-top: 25px;
+}
+
+.btncls {
+	position: relative;
+	top: 46px;
+	background: none;
+	border: none;
+	font-size: 20px;
+}
+.error-message {
+    color: red;
+    font-size: 12px;
+	position: relative;
+	top: 37pc;
+	left: 2pc;
+	width: 154px;
+}
+
+
+.toggle-checkbox {
+	display: none;
+	
+}
+
+.toggle-slider {
+	position: relative;
+	display: inline-block;
+	width: 52px;
+	height: 32px;
+	background-color: #ccc;
+	border-radius: 20px;
+	transition: background-color 0.3s;
+	bottom: 6px;
+	cursor: pointer;
+}
+
+.GA {
+	font-size: 16px;
+	font-family: "Eina04-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.toggle-slider:before {
+	position: absolute;
+	content: '';
+	height: 20px;
+	width: 20px;
+	left: 6px;
+	bottom: 6px;
+	background-color: white;
+	border-radius: 50%;
+	transition: transform 0.3s;
+}
+
+/* Adjust style when the checkbox is checked */
+.toggle-checkbox:checked+.toggle-slider {
+	background-color: #403A60;
+	height: 32px;
+	width: 52px;
+	/* Blue color, you can change it to whatever you prefer */
+}
+
+.toggle-checkbox:checked+.toggle-slider:before {
+	transform: translateX(20px);
+	/* Move the slider to the right */
+}
+
+.grantlabel {
+	display: flex;
+	gap: 16px;
+	width: 140%;
+}
+
+@media only screen and (max-width:400px) {
+	.mycard {
+		width: Hug (300px);
+		height: Hug (607px);
+		top: 258px;
+		left: 10px;
+		gap: 24px;
+	}
+	.check{
+		position: relative;
+        bottom: 34px;
+        width: 110%;
+        right: 10%;
+	}
+
+.para{
+	font-size: 14px;
+    font-weight: bold;
+    padding-left: 15px;
+    padding-top: 10px;
+    width: 100%;
+}
+.btncls{
+	position: relative;
+    top: 35px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    left: 50px;
+}
+.toast{
+	background-color: rgb(194 240 194);
+    width: 132%;
+    height: 65px;
+    position: absolute;
+    right: -20%;
+    top: 3px;
+}
+	.toggle-label {
+		position: relative;
+		top: 34pc;
+		right: 7pc;
+
+	}
+}
+
+@media only screen and (max-width:400px) {
+	
+	.size {
+		font-size: 24px !important;
+		font-weight: bold;
+		padding-left: 0px !important;
+	}
+
+	.error-message {
+		color: red;
+		position: relative;
+		top: 36pc !important;
+		left: 0pc !important;
+	}
+
+	.GrantAcc {
+		width: 50%;
+		left: 73%;
+	}
+
+	.autowid {
+		width: 100%;
+		margin-top: -25px;
+	}
+
+	.GAbtn2 {
+		display: block !important;
+		position: relative;
+		top: 10px;
+
+	}
+
+	.prompt-message {
+		display: flex;
+		background-color: #FEF4D7;
+		padding: 7px;
+		margin-bottom: 7px;
+		width: 265px !important;
+		height: auto;
+		position: relative !important;
+		left: 2% !important;
+		top: 7px !important;
+		border-left: 4px solid #EDBE2B;
+	}
+
+	.GAbtn1 {
+		display: none;
+	}
+
+	.mycard {
+		width: 100%;
+		position: relative;
+		top: 0px;
+	}
+
+	.save-button {
+		width: 100%;
+		margin-top: 70px;
+		margin-left: 0px;
+	}
+
+	.slds-input {
+		width: 90%;
+		overflow-x: hidden;
+	}
+
+	.slds-select_container {
+		width: 110%;
+	}
+
+	.slds-select {
+		width: 120%;
+	}
+
+	.slds-card {
+		width: 310px;
+		overflow-x: hidden;
+	}
+
+	.custom-div {
+		width: 100%;
+		overflow-x: hidden;
+		padding-left: 0px;
+	}
+
+	
+	.toggle-label-disabled {
+		position: absolute;
+		top: 890px;
+		right: 150px;
+	}
+
+	.grantlabel {
+		display: flex;
+		flex-direction: row-reverse;
+		gap: 16px;
+		width: 140%;
+	}
+}
+
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+	.mycard {
+		position: relative;
+		bottom: 0px;
+	}
+	.check{
+		position: relative;
+        bottom: -13px;
+        width: 100%;
+        right: 0%;
+	}
+.para{
+	font-size: 14px;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-top: 10px;
+}
+	.autowid {
+		width: 100%;
+		margin-top: 20px;
+	}.custom-div{
+		width: 100%;
+	}
+.toast{
+	background-color: rgb(194 240 194);
+    width: 112%;
+    height: 60px;
+    position: absolute;
+    right: -6%;
+    top: 5px;
+}
+.btncls{
+	position: relative;
+    top: 32px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    left: 72px;
+}
+	.save-button {
+		position: relative;
+		top: 60px;
+		width: 100%;
+	}
+
+	.GAbtn2 {
+		display: block !important;
+		position: relative;
+		right: 132px;
+
+	}
+
+	.prompt-message {
+		position: relative !important;
+		width: 286px !important;
+		left: 54% !important;
+		top: 50px !important;
+
+	}
+
+	.GAbtn1 {
+		display: none;
+	}
+
+	.toggle-label-disabled {
+		position: absolute;
+		bottom: 280px;
+		right: 390px;
+
+	}
+
+	.GrantAcc {
+		position: relative;
+		left: 155px;
+		top: 40px;
+		width: 52%;
+	}
+
+	.grantlabel {
+		display: flex;
+		flex-direction: row-reverse;
+		gap: 16px;
+		width: 140%;
+	}
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+	.toggle-label {
+		position: absolute;
+		top: 1110px;
+		left: 40px;
+	}
+	.check{
+		position: relative;
+        bottom: 603px;
+        width: 110%;
+        right: 7%;
+	}
+	.autowid {
+		width: 100%;
+	}
+	.toast {
+	background-color: rgb(194 240 194);
+	width: 100%;
+	height: 65px;
+	position: absolute;
+	right: 0%;
+	top: 100px;
+}
+	.save-button {
+		margin-top: 75px;
+	}
+
+	.GAbtn2 {
+		display: block !important;
+		position: relative;
+		top: 10px;
+
+	}
+
+	.GAbtn1 {
+		display: none;
+	}
+
+	.prompt-message {
+		position: relative !important;
+		width: 286px !important;
+		left: 0% !important;
+		top: 18px !important;
+	}
+
+	.GrantAcc {
+		left: 54%;
+		top: 40px;
+		width: 37%;
+
+	}
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+	.toggle-label {
+		position: absolute;
+		top: 670px;
+		left: 43%
+	}
+	.check{
+		position: relative;
+        bottom: 148px;
+        width: 165%;
+        right: 70%;
+	}
+
+	.save-button {
+		width: 100%;
+		margin-top: 24%;
+	}
+	.toast {
+	background-color: rgb(194 240 194);
+	width: 100%;
+	height: 65px;
+	position: absolute;
+	right: 0%;
+	top: 100px;
+}
+	.custom-div {
+		padding: 10px;
+		border-radius: 5px;
+		width: 100%;
+		padding-left: 20px;
+	}
+
+	.GrantAcc {
+		position: relative;
+		left: 71%;
+		top: 48px;
+		width: 55%;
+	}
+
+	.GAbtn2 {
+		display: block !important;
+		position: relative;
+		right: 190px;
+
+	}
+
+	.GAbtn1 {
+		display: none;
+	}
+
+	.prompt-message {
+		position: relative !important;
+		width: 286px !important;
+		left: 71% !important;
+		top: 45px !important;
+
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+	.custom-div {
+		padding: 10px;
+		border-radius: 5px;
+		width: 100%;
+		padding-left: 20px;
+	}
+
+	.check{
+		position: relative;
+    bottom: 233px;
+    width: 182%;
+    right: 72%;
+	}
+	.GrantAcc{
+		position: relative;
+    top: 14%;
+	}
+	.toast {
+	background-color: rgb(194 240 194);
+	width: 100%;
+	height: 65px;
+	position: absolute;
+	right: 0%;
+	top: 120px;
+}
+}
+
+@media only screen and (min-width:1200px) {
+	.toggle-label {
+		position: absolute;
+		top: 230px;
+		right: 100px;
+	}
+	.GrantAcc{
+		position: relative;
+    top: 14%;
+	}
+	.toast {
+	background-color: rgb(194 240 194);
+	width: 100%;
+	height: 65px;
+	position: absolute;
+	right: 0%;
+	top: 180px;
+}
+}
+
+@media only screen and (min-width:1500px) {
+
+	.prompt-message {
+		background-color: #FEF4D7;
+		padding: 7px;
+		margin-bottom: 7px;
+		height: auto;
+		border-left: 4px solid #EDBE2B;
+	}
+	.imgClass{
+		margin-right: 5px;
+	}
+	 .check{
+    position: relative;
+    bottom: 233px;
+    width: 180%;
+    right: 68%;
+  }
+}
+
+
+.color {
+	--slds-c-button-brand-color-background: #403a60;
+}
+
+
+/* Developed by Vinothkumar  */
+.size {
+	font-size: 32px;
+	font-weight: bold;
+	padding-left: 18px;
+	color: #403a60;
+}
+
+.saveChanges {
+	margin-top: 30px;
+}
+
+.input-label {
+	color: #423A66;
+	font-weight: 600;
+	line-height: 24px;
+	font-style: normal;
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 16px;
+}
+
+.textInput {
+	-webkit-text-fill-color: #403A60;
+	--slds-c-input-color-border: #423A66 !important;
+	--slds-c-textarea-color-border: #423A66 !important;
+	font-size: 14px;
+	margin: 8px 0px 0px 0px;
+	--lwc-heightInput: 40px;
+}
+
+.slds-form-element__help {
+	color: red;
+	font-size: 14px;
+	margin-left: 8px;
+}
+
+.input-div {
+	margin: 8px 0px;
+}
+
+.AddCaregiver-button {
+	display: flex;
+	height: 40px;
+	padding: 12px 24px;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+	background-color: #403A60;
+	color: #fff;
+	border-radius: 12px;
+	border-color: transparent;
+}
+
+.textInput-err {
+	-webkit-text-fill-color: #403A60;
+	--slds-c-input-color-border: red;
+	--slds-c-textarea-color-border: red;
+	margin: 8px 0px 0px 0px;
+	--lwc-heightInput: 40px;
+	font-size: 14px;
+}
+
+
+.input-error-label {
+	color: red;
+	font-weight: 400;
+	line-height: 24px;
+	font-style: normal;
+	font-size: 16px;
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+
+.GAbtn2 {
+	display: none;
+}
+
+.prompt-message {
+	background-color: #FEF4D7;
+	padding: 7px;
+	margin-bottom: 7px;
+	width: 23%;
+    height: auto;
+    position: absolute;
+    left: 73%;
+    top: 380px;
+	border-left: 4px solid #EDBE2B;
+}
+
+.error-label {
+	color: red;
+}
+
+.img {
+	display: flex;
+	gap: 10px;
+}
+
+.box-icon {
+	width: 24px;
+	height: 24px;
+
+}

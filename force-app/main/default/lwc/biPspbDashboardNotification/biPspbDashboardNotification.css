@@ -1,0 +1,613 @@
+@font-face 
+{
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff') format('woff');
+}
+@font-face
+{
+	font-family: "Eina-Light",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff') format('woff');
+}
+@font-face 
+{
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff') format('woff');
+}
+@font-face 
+{
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff') format('woff');
+}
+.notifications-card 
+{
+border: none;
+	border-radius: 5px;
+	
+	width: 596px;
+}
+.wholesub
+{
+	margin-right: auto;
+	margin-left: 40px;
+}
+.no-notifications{
+	position: relative;
+    bottom: 210px;
+    font-size: 16px;
+    margin-top: 40%;
+}
+.line
+{
+	display: block;
+	background-color: #8D89A5;
+	height: 1px;
+	position: relative;
+	right: 0px;
+	width: 100%;
+	bottom: 8px;
+}
+.notifications-card .notification
+{
+	display: flex;
+	height: 130px;
+	border-top: 1px solid #8D89A5;
+	justify-content: space-between;
+	padding-top: 5px;
+}
+.notifications-card .notification .subject 
+{
+font-size: 16px;
+font-weight: bold;
+}
+.Subject
+{
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+	font-weight: 400;
+	font-size: 14px;
+	position: relative;
+	top: 10px;	
+}
+button.Viewbtn 
+{
+	border-radius: 12px;
+	width: 66px;
+	height: 40px;
+		font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-weight: 400;
+	background-color: #403A60;
+	color: white;
+	position: relative;
+	top: 10px;
+	border: none;
+}
+.action-buttons 
+{
+	display: flex;
+	gap: 4px;
+			font-size: 14px;
+	font-weight: 400;
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	position: relative;
+	top: 15px;
+}
+.notifications-card .notification .action-buttons button 
+{
+background-color: white;
+	border-radius: 12px;
+	width: 68px;
+	height: 40px;
+		font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-weight: 400;
+	border: 1px solid #403a60;
+	color: #403a60;
+}
+.header
+{
+	display: flex;
+			margin-bottom: -10px;
+	
+}
+.butnclass
+{
+	margin-left: auto;
+}
+.view-all-button
+{
+	border-width: 1px;
+	background-color: white;
+	border-radius: 12px;
+		font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-weight: 400;
+		margin-right: 15px;
+	width: 79px;
+height: 36px;
+	border-color: #403a60;
+	color: #403a60;
+	
+}
+.Notify
+{
+	margin-left: 16px;
+	font-size: 16px;
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-weight: 650;
+	line-height: 24px;
+	letter-spacing: 0em;
+	color:#403a60 ;
+} 
+h3 .Subject 
+{
+	margin-left: 57px;
+	width: 69%;	
+	line-height: 20px;
+	letter-spacing: 0em;
+	margin-bottom: 25px;
+	text-align: left;
+	color: #403a60;
+}
+.timeElapsed 
+{
+	color:#333333;
+	position: absolute;
+	padding-top: 0px;
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 16px;
+	margin-top: 12%;
+		margin-left: 13%;
+}
+.slds-p-around--medium 
+{
+	padding: var(--lwc-spacingMedium,1rem);
+}
+@media screen and (max-width: 1500px)
+{
+.imgdiv
+{
+width: 45px;
+height: 45px;
+}
+.notification
+{
+margin-top: 21px;
+}
+.header
+{
+	display: flex;	
+}
+}
+@media screen and (max-width: 1200px)
+{
+.notification
+{
+margin-top: 13px;
+margin-bottom: 29px
+}
+.Subject
+{
+margin-left: 19px;
+}
+.timeElapsed
+{
+ margin-top: 38px;
+}
+}
+@media screen and (max-width: 992px)
+{
+.notification
+{
+margin-top: 13px;
+margin-bottom: 29px
+}
+.Subject
+{
+margin-left: 19px;
+}
+.timeElapsed
+{
+ margin-top: 68px;
+}
+}
+@media screen and (max-width: 768px)
+{
+.notification
+{
+margin-top: 13px;
+margin-bottom: 29px
+}
+.Subject
+{
+margin-left: 19px;
+}
+.timeElapsed
+{
+margin-top: 68px;
+}
+}
+@media screen and (max-width: 600px)
+{
+.notification
+{
+flex-direction: column;
+margin-top: 10px;
+	margin-bottom: 90px;
+}
+.view-all-button{
+	background-color: #fbfaf5;
+}
+.action-buttons
+{
+margin-left: 53px;
+}
+.Subject
+{
+margin-left: 58px;
+}
+.notifications-card .notification .action-buttons button {
+background-color: #fbfaf5;	
+}
+.line
+{
+display: block;
+	background-color: #8D89A5;
+	height: 1px;
+	position: relative;
+	right: 15px;
+	width: 110%;
+	top: -2px;
+}
+.imgdiv
+{
+position: absolute;
+	margin-top: 12px;
+}
+.timeElapsed
+{
+	width: 28%;
+margin-top: 76px;
+margin-left: 268px;
+}
+}
+@media screen and (max-width: 1500px)
+{
+	.Subject
+	{
+	position: relative;
+			font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+		font-weight: 400;
+			font-size: 14px;
+	}
+	.notification
+	{
+margin-top: 21px;
+	}
+		.header
+		{
+		display: flex;	 
+	}	
+}
+@media screen and (min-width:1500px)
+{
+	.view-all-button
+	{
+			position: relative;
+	}
+	.timeElapsed
+	{
+		margin-top: 9%;
+		margin-left: 9%;
+	}
+	.Subject
+	{
+		margin-left: 0px;
+	}
+}
+	@media only screen and (min-width:1200px)
+	{
+	.notification
+	{
+	width: 110%;
+	}
+	.imgdiv{
+		position: relative;
+        top: 18px;
+        left: 10px;
+	}
+	.line{
+		width: 110%;
+		position: relative;
+        bottom: 0px;
+	}
+	.timeElapsed{
+		margin-left: 13%;
+		margin-top: 95px;
+	}
+	.Subject{
+		width: 375px;
+		margin-top: 10px;
+	}
+	.view-all-button
+	{
+		margin-left: 55%;
+	}
+	}
+	@media only screen and (min-width:1400px) and (max-width:1500px)
+	{
+		.timeElapsed
+		{
+			margin-left: 12%;
+			margin-top: 13%;
+		}
+	} 
+	@media only screen and (min-width:1500px) and (max-width:1700px)
+	{
+		.timeElapsed
+		{
+			margin-left: 11%;
+			margin-top: 11%;
+		}
+	} 
+	@media only screen and (min-width:1700px) and (max-width:1900px)
+	{
+		.timeElapsed
+		{
+			margin-left: 90px;
+			margin-top: 10%;
+		}
+	} 
+	@media only screen and (min-width:1900px)
+	{
+		.timeElapsed
+		{
+			margin-top: 9%;
+			margin-left: 9%;
+		}
+	}
+	@media screen and (min-width:992px) and (max-width: 1200px)
+	{
+	.notifications-card
+	{
+	width:500px;
+	position: relative;
+	}
+	.no-notifications{
+		position: relative;
+    bottom: 180px;
+    font-size: 16px;
+    margin-top: 45%;
+	}
+	.notification
+	{
+	margin-top: 13px;
+	margin-bottom: 29px
+	}
+	.Subject
+	{
+margin-left: 0px;
+width: 250px;
+	}
+	.notifications-card .notification
+	{
+			position: relative;
+			right: 10px;
+		}
+	.timeElapsed
+	{
+	margin-top: 20%;
+		margin-left: 98px;
+	}
+		
+}
+@media screen and (min-width:768px)and  (max-width: 992px)
+{
+	.notifications-card
+	{
+	max-width:750px;
+	position: relative;
+	}
+	.imgdiv{
+		position: relative;
+        top: 15px;
+        left: 10px;
+	}
+	.no-notifications{
+		position: relative;
+    bottom: 60px;
+    font-size: 16px;
+    margin-top: 20%;
+	}
+	.notification
+	{
+	margin-top: 13px;
+	margin-bottom: 50px
+	}
+	.Subject
+	{
+margin-left: 10px;
+width: 350px;
+	}
+	.timeElapsed
+	{
+		margin-top: 85px;
+		margin-left: 100px;
+	} 
+} 
+@media screen and (min-width:601px) and (max-width: 767px)
+{
+	.notifications-card
+	{
+		width: 100%;
+		position: relative;
+	}
+		.imgdiv{
+		position: relative;
+        top: 15px;
+        left: 10px;
+	}
+	.no-notifications{
+		position: relative;
+    bottom: 60px;
+    font-size: 16px;
+    margin-top: 20%;
+	}
+	.notification
+	{
+	margin-top: 13px;
+	margin-bottom: 50px
+	}
+	.Subject
+	{
+ margin-left: 0%;
+		width: 320px;
+	}
+	.timeElapsed
+	{
+	margin-top: 90px;
+		margin-left: 88px;
+	}
+	.view-all-button
+	{
+	position: relative;
+	bottom: 10px;
+	}
+}
+@media screen and (min-width:401px) and (max-width: 600px)
+{
+ .notifications-card
+ {
+		width:100%;
+		position: relative;
+		bottom: 110px;
+	}
+
+.no-notifications{
+	position: relative;
+    bottom: 110px;
+    font-size: 16px;
+    margin-top: 40%;
+}
+	.notification
+	{
+		flex-direction: column;
+		margin-top: 10px;
+		 margin-bottom: 90px;
+	}
+
+	.action-buttons
+	{
+		margin-left: 18%;
+        margin-top: 8%;
+	}
+	.notifications-card .notification
+	{
+		border-top: 1px solid #8D89A5;
+		width: 110%;
+		 position: relative;
+	right: 15px;
+	bottom: 0px;
+	height: 40px;
+	}
+	.Subject
+	{
+ 		margin-left: 11%;
+        width: 240px;
+        font-size: 12px;
+        margin-top: -1%;
+	}
+	.imgdiv{
+		position: absolute;
+		margin-top: 3px;
+	}
+	button.Viewbtn
+	{
+		margin-left: 18%;
+        margin-top: 6%;
+	}
+	.timeElapsed
+	{
+	margin-top: 75px;
+		margin-left: 60%;
+		width: 45%;
+	}
+	.header{
+			position: relative;
+	bottom: 10px;
+}
+}
+@media screen and (max-width: 400px)
+{ 
+	.notifications-card
+	{
+	width: 100%;
+	position: relative;
+	bottom: 135px;
+	right: 3%;
+	}
+	.line{
+		width: 109%;
+	}
+	.slds-p-around_medium{
+		position: relative;
+    bottom: 14px;
+	}
+	.no-notifications{
+	position: relative;
+    bottom: 80px;
+    font-size: 16px;
+    margin-top: 40%;
+}
+.action-buttons
+{
+	width: 41%;
+	margin-left: 19%;
+		margin-top: 5%;
+}	
+	.Subject
+	{
+		font-size: 12px;
+		margin-left: 12%;
+		margin-top: 2%;
+		width: 240px;
+	}
+.timeElapsed
+{
+		width: 42%;
+		margin-top: 102px;
+		margin-left: 60%;
+		font-size: 10px;
+}
+	.imgdiv
+	{
+		position: absolute;
+	right: 81%;		
+	}
+	button.Viewbtn
+	{
+	margin-left: 70px;
+		margin-top: 7%;
+		width: 24%;
+	}
+	.Viewbtn
+	{
+			width: 60px;
+			height: 40px;
+	}
+	.view-all-button
+	{
+			width: 70px;
+			height: 40px;
+			position: relative;
+			bottom: 0px;
+	}
+	.header
+	{
+		justify-content: none;
+				gap: 64px;
+	}
+	.notifications-card .notification
+	{
+		width: 109%;
+		margin-bottom: 50px;
+	}
+	}

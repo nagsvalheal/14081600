@@ -1,0 +1,228 @@
+<!-- This component is used to display all followers Who are following the logedUser and the user can follow and unfollow others. -->
+<!-- Strings are hard coded in this HTML file to comply with the mobile responsiveness-->
+<template>
+  <div>
+    <!-- To display ToastMessage   -->
+    <div lwc:if={showToastMsg}>
+      <div class="toastForDesktop">
+        <c-bi-pspb-common-popup toast-message={ToastMsg} onbuttonclick={closeToastMsg}></c-bi-pspb-common-popup>
+      </div>
+      </div>
+  </div>
+  <div class="total">
+    <!-- leftSide Avatar content -->
+    <div class="backgroundtop">
+      <img src={loggedUserAvatar} alt={alternateForUserAvatar} class="avatarno" />
+      <div class="avatarcontentno">
+        <div>
+          <p class="avatarcontentdis">
+            {avatarContent}
+          </p>
+        </div>
+      </div>
+      <!-- This line is only for mobile responsiveness -->
+      <hr class="forMblresponse" />
+    </div>
+    <!-- Toast Message for Mobile responsivenss for follow -->
+    <div lwc:if={showToastMsg}>
+      <div class="toastForMblResponse">
+        <c-bi-pspb-common-popup toast-message={ToastMsg} onbuttonclick={closeToastMsg}></c-bi-pspb-common-popup>
+      </div>
+      </div>
+    <!-- right side content -->
+    <div class="rightSide">
+      <p class="title" data-scroll-target>{myFollowersLabel} ({numberOfFollowers})</p>
+      <!-- Total followers count -->
+      <!-- display this content if there are Followers list for the logged user -->
+      <template if:true={followersCount}>
+        <!-- User Avatar,Username and Follow/Following button -->
+        <template for:each={userNames} for:item="username">
+          <div class="divclass" key={username.Id}>
+            <div class="avatarAndName">
+              <button class="avatarButton" onclick={handleFollowButtonClick} tabindex="0" onkeypress={handleFollowButtonClick}
+              data-id={username}
+              data-avatar={username.userAvatarForEnrollee}
+              data-username={username.BI_PSP_CareProgramEnrolleeFollow__r.BI_PSP_CommunityUsername__c}
+              data-enrollee={username.BI_PSP_CareProgramEnrolleeFollow__r.Id}
+              data-following={username.followOrUnfollowButton}
+              data-it-button="MyFollowers: Profile Avatar">
+              <img
+                src={username.userAvatarForEnrollee} alt={alternateForUserAvatar} 
+                class="profileavatar" data-avatar={username.userAvatarForEnrollee}
+              />
+              </button>
+              <button
+                class="name"
+                onclick={handleFollowButtonClick} tabindex="0" onkeypress={handleFollowButtonClick}
+                data-avatar={username.userAvatarForEnrollee}
+                data-id={username}
+                data-username={username.BI_PSP_CareProgramEnrolleeFollow__r.BI_PSP_CommunityUsername__c}
+                data-enrollee={username.BI_PSP_CareProgramEnrolleeFollow__r.Id}
+                data-following={username.followOrUnfollowButton}
+                data-it-button="MyFollowers: Profile Username"
+              >
+                {username.BI_PSP_CareProgramEnrolleeFollow__r.BI_PSP_CommunityUsername__c}
+              </button>
+            </div>
+            <button
+              class={username.followOrUnfollowButton}
+              onclick={handleFollowUserButton} tabindex="0" onkeypress={handleFollowUserButton}
+              data-avatar={username.userAvatarForEnrollee}
+              data-id={username}
+              data-username={username.BI_PSP_CareProgramEnrolleeFollow__r.BI_PSP_CommunityUsername__c}
+              data-enrollee={username.BI_PSP_CareProgramEnrolleeFollow__r.Id}
+              data-following={username.followOrUnfollowButton}
+              data-it-button="MyFollowers: Follow/Unfollow "
+            >
+              {username.followOrUnfollowButton}
+            </button>
+          </div>
+        </template>
+      </template>
+      <!-- If there are no followers list display this content -->
+      <template if:false={followersCount}>
+        <div class="widthformbl">
+          <img src={allpostImg}  alt={alternateForPost}  class="postimage" />
+          <p class="text">
+            {noFollowersContent}
+          </p>
+          <br />
+        </div>
+      </template>
+      <!-- Display the profile popup when user click the follow button  -->
+      <template if:true={follow}>
+        <template if:true={followPopup}>
+          <div class="back">
+            <div class="popup-container">
+              <p class="profile">{profileLabel}</p>
+              <button
+                onclick={closePopup} tabindex="0" onkeypress={closePopup}
+                class="times"
+                data-it-button="MyFollowers: Close Follow Popup"
+              >
+                X
+              </button>
+              <div class="picname">
+                <img src={avatarFollow}  alt={alternateTextForAvatar} class="popavatar" />
+                <p class="username">{selectedUser}</p>
+              </div>
+              <button
+                class="popupbutton"
+                onclick={handleFollowPopupButtonClick} tabindex="0" onkeypress={handleFollowPopupButtonClick}
+                data-it-button="MyFollowers:  Follow "
+              >
+              {followLabel}
+              </button>
+            </div>
+          </div>
+        </template>
+      </template>
+      <!-- Follow confirmation popup -->
+      <template if:true={followPopupConfirmation}>
+        <div class="back">
+          <div class="popup1-container">
+            <button
+              onclick={closePopup} tabindex="0" onkeypress={closePopup}
+              class="times3"
+              data-it-button="MyFollowers: Close Follow Popup "
+            >
+              X
+            </button>
+            <p class="popuptitle">{followUserText}?<br /></p>
+            <p class="popupcontent">
+              {followPopupHeading} {selectedUser}?<br /><br />
+            </p>
+            <p class="contentonly">
+              {followPopupContent}
+            </p>
+            <button
+              class="followno"
+              onclick={closePopup} tabindex="0" onkeypress={closePopup}
+              data-it-button="MyFollowers: Follow - No "
+            >
+              {no}
+            </button>
+            <button
+              class="followyes"
+              onclick={handleFollowConfirmation}
+              data-it-button="MyFollowers: Follow - Yes "
+            >
+              {yes}
+            </button>
+          </div>
+        </div>
+      </template>
+      <!-- Display the profile popup when user click the Following button  -->
+      <template if:true={following}>
+        <template if:true={followingPopup}>
+          <div class="back">
+            <div class="popup-container">
+              <p class="profile">{profileLabel}</p>
+              <button
+                onclick={closePopup} tabindex="0" onkeypress={closePopup}
+                class="times"
+                data-it-button="MyFollowers: Close Follow"
+              >
+                X
+              </button>
+              <div class="picname">
+                <img
+                  src={avatarFollow} alt={alternateForUserAvatar} 
+                  class="popavatar"
+                  data-it-button="MyFollowers: Profile Avatar"
+                />
+                <p class="username">{selectedUser}</p>
+              </div>
+              <button
+                class="popupbuttonFollowing"
+                onclick={handleFollowingPopupButtonClick} tabindex="0" onkeypress={handleFollowingPopupButtonClick}
+                data-it-button="MyFollowers: Following"
+              >
+                {followingLabel}
+              </button>
+            </div>
+          </div>
+        </template>
+      </template>
+      <!-- Unfollowing confirmation popup -->
+      <template if:true={followingPopupConfirmation}>
+        <div class="back">
+          <div class="popup2-container">
+            <button
+              onclick={closePopup} tabindex="0" onkeypress={closePopup}
+              data-it-button="MyFollowers: Close Popup"
+              class="times2"
+            >
+              X
+            </button>
+            <p class="popuptitle second">{unFollowUserText}?<br /></p>
+            <p class="popupcontent">
+            {unFollowPopupHeading} {selectedUser}?<br /><br />
+            </p>
+            <p class="contentonly">
+              {unFollowPopupContent}
+            </p>
+            <button
+              class="followno1"
+              onclick={closePopup} tabindex="0" onkeypress={closePopup}
+              data-it-button="MyFollowers: Unfollow No "
+            >
+              {no}
+            </button>
+            <button
+              class="followyes1"
+              onclick={handleUnFollowConfirmation}
+              data-it-button="MyFollowers: Unfollow Yes "
+            >
+              {yes}
+            </button>
+          </div>
+        </div>
+      </template>
+      <!-- Loading spinner -->
+      <div lwc:if={isLoading}>
+        <c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+      </div>
+    </div>
+  </div>
+</template>

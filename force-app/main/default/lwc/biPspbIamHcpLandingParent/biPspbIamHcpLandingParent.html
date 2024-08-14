@@ -1,0 +1,164 @@
+<template>
+	<!---Banner Section Starts-->
+		<div if:true={showSpinner}>
+		<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	 </div>
+	<div class="display">
+		<!--Display HCP Banner Image-->
+		<img src={hcpBannerImage}  alt={hcpBanner}>
+		<div class="head padding">
+			<div>
+				<!--Display Banner Label-->
+				<img src={BGpp} class="marTB20" alt={beyondGpp}>
+			</div>
+			<div>
+				<p class="textSmallBold">{gppJourney}</p>
+			</div>
+			<div>
+				<p class="textSmall">Traveling the GPP path might be tricky, but you don't have to do it by yourself.
+					You can get important info, talk to others like you, and keep an eye on your progress. This special
+					tool helps you every step of your journey.</p>
+			</div>
+			<div class="grid-containerButtons">
+				<div>
+					<!--Display button for Enrolling the Patient -->
+					<button class="button-Div btn1" onclick={openHCPpage}>{enrollPatient}</button>
+				</div>
+				<div>
+					<!--Display button for downloading the Enrollment Form -->
+					<button class="button-DivNoBack btn2" onclick={handleDownload}>{downloadForm}</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<lightning-layout multiple-rows class="bannerclass padding banner"  onload={handleComponentLoad} style={displayBackgroundImage}>
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="6">
+			<div class="grid-container help">
+				<div>
+					<!--Display padding banner image-->
+					<img src={BGpp} class="marTB20" onload={handleComponentLoad}  alt={beyondGpp}>
+				</div>
+				<div>
+					<p class="textSmallBold ">{helpPatients}</p>
+				</div>
+				<div>
+					<p class="textSmall gpp">With Beyond GPP: The Spevigo Patient Support Program, help your patients
+						with GPP stay informed, track changes in their symptoms and find personalized resources to
+						manage their condition.</p>
+				</div>
+				<div class="grid-containerButtons">
+					<div>
+						<!--Display button for Enrolling the Patient -->
+						<button class="button-Div" onclick={openHCPpage}>{enrollPatient}</button>
+					</div>
+					<div>
+						<!--Display button for downloading the Enrollment Form -->
+						<button class="button-DivNoBack desk" onclick={handleDownload}>{downloadForm}</button>
+					</div>
+				</div>
+			</div>
+		</lightning-layout-item>
+	</lightning-layout>
+	<!---Banner Section Ends-->
+
+	<!--Track & Features Section Starts-->
+	<lightning-layout multiple-rows>
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" onload={handleComponentLoad}  large-device-size="12"
+			class="slds-p-top_xx-large slds-p-bottom_xx-large padding backColor">
+			<div class="grid-container support">
+				<div class="slds-align_absolute-center textalignCenter">
+					<p class="bodyHeadText">{supportJourney}</p>
+				</div>
+				<div class="slds-align_absolute-center textalignCenter check1">
+					<p class="bodyParaText">Beyond GPP: The Spevigo® Patient Support Program, allows your patients to
+						keep a track of their symptoms and set treatment reminders* to help with medication adherence.
+						This can help patients to stay in control and respond promptly to any changes in their
+						condition.</p>
+				</div>
+				<p class="bodyPara">*Only available to patients receiving Spevigo SC for flare prevention </p>
+				<div class="slds-align_absolute-center textalignCenter check">
+					<p class="bodyParaText para2">Take control of your GPP journey with our comprehensive suite of tools
+						designed to support your health and well-being.</p>
+				</div>
+			</div>
+		</lightning-layout-item>
+		<lightning-layout-item size="12" small-device-size="12"  onload={handleComponentLoad} medium-device-size="12" large-device-size="12"
+			class="slds-p-top_xx-large slds-p-bottom_xx-large padding backBannerclass">
+			<div class="grid-container">
+				<div class="slds-align_absolute-center textalignCenter">
+					<img class="bann widthSize" src={hcpFeatureBanner} alt={hcpBanner}>
+				</div>
+				<div class="slds-align_absolute-center textalignCenter">
+					<div class="grid-container">
+						<p class="bodyHeadText32">Unlock the power of data to help support your GPP patients manage
+							their condition</p>
+						<p class="bodyParaText">Enroll your GPP patients today to give them access to a network of
+							support, educational resources, and data to help manage their condition. The Beyond GPP: The
+							Spevigo® Patient Support Program can help your patients stay on track with their treatment
+							and support their understanding of the condition.</p>
+					</div>
+				</div>
+			</div>
+		</lightning-layout-item>
+		<lightning-layout-item size="12" small-device-size="12"  onload={handleComponentLoad} medium-device-size="12" large-device-size="12"
+			class="slds-p-bttom_xx-large backBannerclass paddingBottom50">
+			<div class="slds-align_absolute-center textalignCenter">
+				<div class="grid-containerFeatureBoxes">
+					<div class="trackBox">
+						<div class="grid-containerFeatureBoxContents">
+							<!--Display the image for Encourage Learning-->
+							<div><img src={patientIconVisual} width="56px" alt={encourageLearningIcon}></div>
+							<div>
+								<p class="featureBoxTextHead enc">{encourageLearning}</p>
+							</div>
+							<div>
+								<p class="text">Help your GPP patients develop their GPP expertise and sharpen their
+									knowledge</p>
+							</div>
+						</div>
+					</div>
+					<div class="trackBox">
+						<div class="grid-containerFeatureBoxContents">
+							<!--Display the image for Articles and Resources-->
+							<div><img src={iamHcpIconBooks} width="56px" alt={discoveryIcon}></div>
+							<div>
+								<p class="featureBoxTextHead">{accessResources}</p>
+							</div>
+							<div>
+								<p class="text">Provide patients with access to curated articles and resources to deepen
+									their GPP understanding.</p>
+							</div>
+						</div>
+					</div>
+					<div class="trackBox">
+						<div class="grid-containerFeatureBoxContents">
+							<!--Display the image for Video Learning-->
+							<div><img src={iamHcpIconYoutube} width="56px" alt={videolearningIcon}></div>
+							<div>
+								<p class="featureBoxTextHead video">{videoLearning}</p>
+							</div>
+							<div>
+								<p class="text">Enable your GPP patients to watch animated videos and learn more about
+									their treatment journey.</p>
+							</div>
+						</div>
+					</div>
+					<div class="trackBox">
+						<div class="grid-containerFeatureBoxContents">
+							<!--Display the image for Personalized Engagement-->
+							<div><img src={iamHcpIconChat} width="56px" alt={personalisedIcon}></div>
+							<div>
+								<p class="featureBoxTextHead">{personalised}</p>
+							</div>
+							<div>
+								<p class="text">Offer GPP patients personalized support to help save time, and improve
+									experience.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</lightning-layout-item>
+	</lightning-layout>
+	<!--Track & Features Section Ends-->
+</template>

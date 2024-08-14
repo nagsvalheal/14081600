@@ -1,0 +1,77 @@
+<template>
+  <div if:true={showSpinner}>
+    <c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+   </div>
+  <!-- This component used for get the information of patient and show to the UI. -->
+  <div class="divclass">
+    <div class="sidebar-container1"></div>
+    <div class="sidebar-container"></div>
+    <div class="container">
+      <img src={mailImg} class="img" width="74px" height="80px" alt="mail" /> <br />
+
+      <br />
+
+      <h1 class="tophead">{enrollThank}</h1>
+      <p class="titlee">{toActive} {patientEmail}</p>
+
+      <h2 class="enroll">{enrollHead}</h2>
+      <br />
+
+      <template if:false={age}>
+        <div class="slds-grid slds-gutters">
+          <div class="slds-col">
+            <span>
+              <p class="shead">{patientinfo}</p>
+              <template for:each={recordDetails} for:item="lead">
+                <p class="titlee" key={lead.Id}>
+                  {nameColan} {lead.FirstName} {lead.LastName} <br />
+                  {dobColan} {lead.HealthCloudGA__BirthDate__c} <br />
+                  {emailColan} {lead.Email} <br />
+                  {phoneColan} {lead.Phone} <br />
+                </p>
+              </template>
+            </span>
+          </div>
+          <br />
+        </div>
+        <br />
+      </template>
+
+      <template if:true={age}>
+        <div class="slds-grid slds-gutters class">
+          <div class="slds-col p1">
+            <span>
+              <p class="shead">{patientinfo}</p>
+              <template for:each={recordDetails} for:item="lead">
+                <P key={lead.id} class="titlee">
+                  {nameColan} {lead.FirstName} {lead.LastName} <br />
+                  {dobColan} {lead.HealthCloudGA__BirthDate__c} <br />
+                  {emailColan} {lead.Email} <br />
+                  {phoneColan} {lead.Phone} <br />
+                </P>
+              </template>
+            </span>
+          </div>
+
+          <div class="slds-col c1">
+            <span>
+              <p class="shead">{physicianInfo}</p>
+              <template for:each={caregiver} for:item="care">
+                <P key={care.id} class="titlee">
+                  {nameColan} {care.BI_PSPB_Physician_Name__r.FirstName}
+                  {care.BI_PSPB_Physician_Name__r.LastName}<br />
+                  {emailColan}{care.BI_PSPB_Physician_Name__r.Email} <br />
+                  {phoneColan} {care.BI_PSPB_Physician_Name__r.Phone} <br />
+                  {addressColan}
+                  {care.BI_PSPB_Physician_Name__r.BI_PSPB_Address_Line__c}<br />
+                </P>
+              </template>
+            </span>
+          </div>
+          <br />
+        </div>
+        <br /><br />
+      </template>
+    </div>
+  </div>
+</template>

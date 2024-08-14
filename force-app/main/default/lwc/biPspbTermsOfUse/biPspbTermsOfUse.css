@@ -1,0 +1,287 @@
+.h1 {
+
+	font-size: 32px;
+	font-weight: 400;
+	line-height: 44px;
+	letter-spacing: 0em;
+	text-align: left;
+	color: #403A60;
+	width: 470px;
+	height: 47px;
+	top: 228px;
+	margin-left: -8px;
+
+}
+
+.p1 {
+	margin-left: 83px;
+	margin-bottom: -126px;
+	color: black;
+	font-size: 14px;
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	width: 1216px;
+	height: 2182px;
+}
+
+.mbpara {
+	display: none;
+}
+
+.mbline {
+	display: none;
+}
+
+.mbrbreak {
+	display: none;
+}
+
+
+
+@font-face {
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: "Eina-Light",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff') format('woff');
+}
+
+@font-face {
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff') format('woff');
+}
+
+@font-face {
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff') format('woff');
+}
+
+
+@media only screen and (min-width:320px) and (max-width: 374px) {
+	.p1 {
+		padding: 1%;
+		width: 307px;
+		margin: 0 auto;
+		font-size: 14px;
+		color: #000000;
+		line-height: 24px;
+		font-weight: 400;
+		font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		margin-left: 4%;
+		height: auto;
+		overflow: hidden;
+		margin-top: -44px;
+
+	}
+
+	p {
+		padding: 1%;
+
+	}
+
+	.h1 {
+		font-size: 18px;
+		margin-left: 0px;
+
+
+	}
+
+	.mbpara {
+		display: block;
+	}
+
+	.para {
+		font-size: 14px;
+		font-weight: 400;
+		font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		line-height: 20px;
+		color: #000000;
+	}
+
+	.mbline {
+		display: block;
+		background: linear-gradient(90deg, #744f0d 0%, #99693e 17.19%, #efdba1 58.85%, #744f0d 100%);
+		height: 4px;
+		margin-top: 0px;
+
+	}
+
+	.paracls {
+		padding: 1%;
+	}
+
+	.mbbreak {
+		display: none;
+	}
+
+	.mbrbreak {
+		display: block;
+	}
+
+	.paradiv {
+		background: #FBFAF5;
+	}
+}
+
+@media only screen and (min-width:375px) and (max-width: 400px) {
+	.p1 {
+		padding: 1%;
+		width: 307px;
+		margin: 0 auto;
+		font-size: 14px;
+		color: #000000;
+		line-height: 24px;
+		font-weight: 400;
+		font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		margin-left: 4%;
+		height: auto;
+		overflow: hidden;
+		margin-top: -44px;
+
+	}
+
+	p {
+		padding: 0%;
+
+	}
+
+	.h1 {
+		font-size: 18px;
+		margin-left: 0px;
+
+
+	}
+
+	.mbpara {
+		display: block;
+	}
+
+	.para {
+		font-size: 14px;
+		font-weight: 400;
+		font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		line-height: 20px;
+		color: #000000;
+	}
+
+	.mbline {
+		display: block;
+		background: linear-gradient(90deg, #744f0d 0%, #99693e 17.19%, #efdba1 58.85%, #744f0d 100%);
+		height: 4px;
+		margin-top: 0px;
+
+	}
+
+	.paracls {
+		padding: 1%;
+	}
+
+	.mbbreak {
+		display: none;
+	}
+
+	.mbrbreak {
+		display: block;
+	}
+
+	.paradiv {
+		background: #FBFAF5;
+	}
+}
+
+@media only screen and (min-width:401px) and (max-width: 992px) {
+
+	.p1 {
+		padding: 2%;
+		width: 100%;
+		margin: 0 auto;
+		font-size: 14px;
+		color: #000000;
+		line-height: 24px;
+		font-weight: 400;
+		font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		height: auto;
+		overflow: hidden;
+		margin-top: -44px;
+		padding-right: 2%;
+
+	}
+
+	.h1 {
+		font-size: 18px;
+		margin-left: 1%;
+
+
+
+	}
+
+	.mbpara {
+		display: block;
+	}
+
+	.para {
+		font-size: 14px;
+		font-weight: 400;
+		font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		line-height: 20px;
+		color: #000000;
+	}
+
+	.mbline {
+		display: block;
+		background: linear-gradient(90deg, #744f0d 0%, #99693e 17.19%, #efdba1 58.85%, #744f0d 100%);
+		height: 4px;
+		margin-top: 0px;
+
+	}
+
+	.paracls {
+		padding: 1%;
+	}
+
+	.mbbreak {
+		display: none;
+	}
+
+	.mbrbreak {
+		display: block;
+	}
+
+	.paradiv {
+		background: #FBFAF5;
+	}
+}
+
+@media only screen and (min-width:992px) and (max-width: 1200px) {
+	.p1 {
+		width: 100%;
+		margin: 0 auto;
+		padding: 5%;
+		margin-top: 0px;
+		height: fit-content;
+		background-color: #FBFAF5;
+
+	}
+
+	.h1 {
+		margin-left: -5px;
+	}
+}
+
+@media only screen and (min-width:1200px) and (max-width: 1920px) {
+
+	.p1 {
+		width: 100%;
+		margin: 0 auto;
+		padding: 5%;
+		margin-top: 0px;
+		height: fit-content;
+		background: #FBFAF5;
+		padding-top: 2%;
+	}
+
+	.h1 {
+		margin-left: 0px;
+	}
+}

@@ -1,0 +1,312 @@
+<!--This Lightning web component is used to display the four most recent articles and is also utilized for category navigation.-->
+<template>
+	<div class="searchhead">
+		<u></u>
+		<div class="searchClass">
+			<div class='flex_row'>
+				<svg class='svgcls' width="24" height="24" viewBox="0 0 24 24" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M9.82976 0C4.40093 0 0 4.40093 0 9.82976C0 15.2586 4.40093 19.6595 9.82976 19.6595C12.2427 19.6595 14.4527 18.7901 16.1633 17.3474L22.5711 23.7561L22.687 23.8529C23.0133 24.079 23.4644 24.0467 23.7551 23.7561C24.082 23.4292 24.0821 22.8991 23.7552 22.5722L17.3473 16.1634C18.79 14.4527 19.6595 12.2428 19.6595 9.82976C19.6595 4.40093 15.2586 0 9.82976 0ZM9.8292 1.67383C14.3333 1.67383 17.9846 5.32511 17.9846 9.8292C17.9846 14.3333 14.3333 17.9846 9.8292 17.9846C5.32511 17.9846 1.67383 14.3333 1.67383 9.8292C1.67383 5.32511 5.32511 1.67383 9.8292 1.67383Z"
+						fill="#403A60"
+						class = 'svgfil' />
+				</svg>
+				<input class="search-bar" type="search" value="" placeholder="Search for an article"
+					onchange={handleSearch} onkeyup={handleSearchInputKeyUp} onfocus={handleSearchBarFocus}
+					onblur={handleSearchBarBlur} id="myInput">
+				<svg class="intmark" onclick={clearinput} width={svgWidth} height={svgHeight} viewBox="0 0 24 24" fill="none"
+					xmlns="http://www.w3.org/2000/svg" role="button" onkeydown={clearinput} tabindex="0">
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M3.09438 2.12362L3.191 2.20434L12 11.0128L20.809 2.20434C21.0815 1.93189 21.5232 1.93189 21.7957 2.20434C22.0378 2.44653 22.0648 2.82247 21.8764 3.09438L21.7957 3.191L12.9872 12L21.7957 20.809C22.0681 21.0815 22.0681 21.5232 21.7957 21.7957C21.5535 22.0378 21.1775 22.0648 20.9056 21.8764L20.809 21.7957L12 12.9872L3.191 21.7957C2.91855 22.0681 2.4768 22.0681 2.20434 21.7957C1.96216 21.5535 1.93525 21.1775 2.12362 20.9056L2.20434 20.809L11.0128 12L2.20434 3.191C1.93189 2.91855 1.93189 2.4768 2.20434 2.20434C2.41626 1.99243 2.73058 1.94534 2.988 2.06307L3.09438 2.12362Z"
+						fill="#403A60"
+						class="svgfil" />
+				</svg>
+				
+			</div>
+
+		</div>
+		<!--Mobile category navigation-->
+		<div class="QuickLinks">
+			<div class="display">
+				<h3 class='mbheading'>{articleCategoriesLabel}</h3>
+				<div class="vtag"> <lightning-icon class="vicon" if:true={down} icon-name="utility:chevrondown"
+						alternative-text="Connected" size="xx-small" title="xx-small size"
+						onclick={click} onkeydown={click}></lightning-icon>
+					<lightning-icon class="vicon" if:true={up} icon-name="utility:chevronup"
+						alternative-text="Connected" size="xx-small" onclick={notClick}
+						title="xx-small size" onkeydown={notClick}></lightning-icon>
+				</div>
+			</div>
+			<span if:true={touch}>
+				<template if:true={showJustForMe}>
+					<button if:true={showJustForMe} label="Just for me &#8594;" data-name="Just for me"
+						data-it-button="category: Just for me" onclick={handleButtonClicknew} class='end-btn'
+						title="Just for me">{justForMeLabel} <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path d="M2 7.44531H14" stroke="#403A60" class="pathstroke"
+								stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60"
+								class="pathstroke" stroke-width="1.5" stroke-linecap="round"
+								stroke-linejoin="round" />
+						</svg></button>&nbsp;&nbsp;&nbsp;
+				</template>
+
+				<template for:each={standarItems} for:item="relatedItem">
+					<button key={relatedItem.id} data-label={relatedItem.title} title={relatedItem.title}
+						class="end-btn" onclick={handleButtonClicknew} data-id={relatedItem.id}
+						data-name={relatedItem.title}>{relatedItem.title} <svg width="16" height="16"
+							viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M2 7.44531H14" stroke="#403A60" class="pathstroke"
+								stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60"
+								class="pathstroke" stroke-width="1.5" stroke-linecap="round"
+								stroke-linejoin="round" />
+						</svg></button>&nbsp;&nbsp;&nbsp;
+				</template>
+				<template if:true={patientStatusRecord}>
+					<template if:true={showTreatVideo}> <button if:true={patientStatusRecord} label="Just for me &#8594;"
+							data-name={categoryLabel} onclick={handleButtonClicknew} class='end-btn'
+							title="Just for me">{categoryLabel}<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path d="M2 7.44531H14" stroke="#403A60" class="pathstroke"
+									stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60"
+									class="pathstroke" stroke-width="1.5" stroke-linecap="round"
+									stroke-linejoin="round" />
+							</svg></button>&nbsp;&nbsp;&nbsp;
+					</template>
+				</template>
+
+			</span>
+		</div>
+		<!--Category page Navigations-->
+		<hr class="search-bar-border-bottom">
+		<div class='head_btn_container'>
+			<p class='subheadingnew'>{articleCategoriesLabel}</p>
+			<br>
+			<template if:true={showJustForMe}>
+				<button if:true={showJustForMe} label="Just for me &#8594;" data-name="Just for me"
+					data-it-button="category: Just for me" onclick={handleButtonClicknew} class='end-btn'
+					title="Just for me">{justForMeLabel} <svg class="justformeleft" width="16" height="16"
+						viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M2 7.44531H14" stroke="#403A60" class="pathstroke"
+							stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60"
+							class="pathstroke" stroke-width="1.5" stroke-linecap="round"
+							stroke-linejoin="round" />
+					</svg></button>
+			</template>
+
+			<template for:each={standarItems} for:item="relatedItem">
+				<button key={relatedItem.id} data-label={relatedItem.title} title={relatedItem.title} class="end-btn"
+					onclick={handleButtonClicknew} data-id={relatedItem.id} data-name={relatedItem.title}
+					data-it-button={relatedItem.categoryLabel}>{relatedItem.title} <svg class='arrowbtn' width="16"
+						height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M2 7.44531H14" stroke="#403A60" class="pathstroke"
+							stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60"
+							class="pathstroke" stroke-width="1.5" stroke-linecap="round"
+							stroke-linejoin="round" />
+					</svg></button>
+			</template>
+
+			<template if:true={patientStatusRecord}>
+				<template if:true={showTreatVideo}> <button if:true={patientStatusRecord} label="Just for me &#8594;"
+						data-name={categoryLabel} onclick={handleButtonClicknew} class='end-btn'
+						title="Just for me">{categoryLabel}<svg class='arrowbtn' width="16" height="16"
+							viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M2 7.44531H14" stroke="#403A60" class="pathstroke"
+								stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60"
+								class="pathstroke" stroke-width="1.5" stroke-linecap="round"
+								stroke-linejoin="round" />
+						</svg></button>&nbsp;&nbsp;&nbsp;
+				</template>
+			</template>
+
+
+		</div>
+	</div>
+
+	<!--Recent articles-->
+	<h1 class="top-heading">{recentArticlesLabel}</h1>
+	<div class='alignformb'>
+		<div class="article-container">
+			<div class="left-section">
+				<article class="article first">
+
+					<img src={firstImg} alt="Article 1" />
+					<div class="headingcontainer">
+						<div
+							class="headercontain">
+							<svg width="40" height="24" viewBox="0 0 24 24" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd"
+									d="M12 3.42827C6.87482 3.42827 2.71395 7.58913 2.71395 12.7143C2.71395 17.8395 6.87482 22.0004 12 22.0004C17.1252 22.0004 21.286 17.8395 21.286 12.7143C21.286 7.58913 17.1252 3.42827 12 3.42827ZM11.2857 12.3707L7.982 15.0137C7.67413 15.2601 7.62413 15.7101 7.87056 16.018C8.117 16.3259 8.56702 16.3759 8.87489 16.1294L12.4464 13.2722C12.5329 13.2029 12.5986 13.1179 12.6436 13.0243L12.6443 13.0236C12.6893 12.93 12.7143 12.825 12.7143 12.7143V6.99982C12.7143 6.60552 12.3943 6.28551 12 6.28551C11.6057 6.28551 11.2857 6.60552 11.2857 6.99982V12.3707ZM5.06618 2.20894L2.20894 5.06618C1.93035 5.34476 1.93035 5.79764 2.20894 6.07622C2.48752 6.3548 2.94039 6.3548 3.21897 6.07622L6.07622 3.21897C6.3548 2.94039 6.3548 2.48752 6.07622 2.20894C5.79764 1.93035 5.34476 1.93035 5.06618 2.20894ZM17.9238 3.21897L20.781 6.07622C21.0596 6.3548 21.5125 6.3548 21.7911 6.07622C22.0696 5.79764 22.0696 5.34476 21.7911 5.06618L18.9338 2.20894C18.6552 1.93035 18.2024 1.93035 17.9238 2.20894C17.6452 2.48752 17.6452 2.94039 17.9238 3.21897Z"
+									fill="#403A60"
+									class="svgfil">
+								</path>
+							</svg>
+
+							<strong>{articleOneReadTime} {minutes}</strong>
+						</div>
+
+						<h2>{firstHeading}</h2>
+						<p class='descriptionsub'>{firstDescription}</p>
+						<br>
+						<br>
+						<br>
+						<a href="#" class='leftlink' >
+							<svg data-it-button={analyticFirstTag} data-name={firstHeading}
+							onclick={handleButtonClick} role="button" onkeydown={handleButtonClick} tabindex="0" class='svgtop' width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<rect x="1.68164" y="1" width="46" height="46" rx="23" stroke="#403A60" class = "svgstroke" stroke-width="2"/>
+								<path d="M14.8477 24.166H34.8477" stroke="#403A60" class = "svgstroke" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M24.8477 14.166L34.8477 24.166L24.8477 34.166" stroke="#403A60" class = "svgstroke" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg></a>
+					</div>
+
+				</article>
+				<div class='artfordesk'>
+					<article class="article second">
+						<div class='secondarticlecont'>
+							<div class="headingcontainersecond">
+								<div
+									class="headercontain">
+									<svg width="40" height="24" viewBox="0 0 24 24" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+											d="M12 3.42827C6.87482 3.42827 2.71395 7.58913 2.71395 12.7143C2.71395 17.8395 6.87482 22.0004 12 22.0004C17.1252 22.0004 21.286 17.8395 21.286 12.7143C21.286 7.58913 17.1252 3.42827 12 3.42827ZM11.2857 12.3707L7.982 15.0137C7.67413 15.2601 7.62413 15.7101 7.87056 16.018C8.117 16.3259 8.56702 16.3759 8.87489 16.1294L12.4464 13.2722C12.5329 13.2029 12.5986 13.1179 12.6436 13.0243L12.6443 13.0236C12.6893 12.93 12.7143 12.825 12.7143 12.7143V6.99982C12.7143 6.60552 12.3943 6.28551 12 6.28551C11.6057 6.28551 11.2857 6.60552 11.2857 6.99982V12.3707ZM5.06618 2.20894L2.20894 5.06618C1.93035 5.34476 1.93035 5.79764 2.20894 6.07622C2.48752 6.3548 2.94039 6.3548 3.21897 6.07622L6.07622 3.21897C6.3548 2.94039 6.3548 2.48752 6.07622 2.20894C5.79764 1.93035 5.34476 1.93035 5.06618 2.20894ZM17.9238 3.21897L20.781 6.07622C21.0596 6.3548 21.5125 6.3548 21.7911 6.07622C22.0696 5.79764 22.0696 5.34476 21.7911 5.06618L18.9338 2.20894C18.6552 1.93035 18.2024 1.93035 17.9238 2.20894C17.6452 2.48752 17.6452 2.94039 17.9238 3.21897Z"
+											fill="#403A60"
+											class="svgfil">
+										</path>
+									</svg>
+
+									<strong>{articleTwoReadTime} {minutes}</strong>
+								</div>
+
+								<h2>{secondHeading}</h2>
+								<p class='descriptionsub'>{secondDescription}</p>
+								<br>
+								<br>
+								<br>
+								<a href="#" class='leftlink'> <svg data-it-button={analyticSecondTag} data-name={secondHeading}
+									onclick={handleButtonClick} role="button" onkeydown={handleButtonClick} tabindex="0" class='svgtop' width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<rect x="1.68164" y="1" width="46" height="46" rx="23" stroke="#403A60" class = "svgstroke" stroke-width="2"/>
+										<path d="M14.8477 24.166H34.8477" stroke="#403A60" class = "svgstroke" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+										<path d="M24.8477 14.166L34.8477 24.166L24.8477 34.166" stroke="#403A60" class = "svgstroke" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg></a>
+							</div>
+						</div>
+						<img class='secondimg' src={secondImg} alt="Article 2" />
+
+
+					</article>
+				</div>
+				<div class='artformb'>
+					<article class="article second">
+						<img src={secondImg} alt="Article 3" />
+						<div class="headingcontainer">
+							<div
+								class="headercontain">
+								<svg width="40" height="24" viewBox="0 0 24 24" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd"
+										d="M12 3.42827C6.87482 3.42827 2.71395 7.58913 2.71395 12.7143C2.71395 17.8395 6.87482 22.0004 12 22.0004C17.1252 22.0004 21.286 17.8395 21.286 12.7143C21.286 7.58913 17.1252 3.42827 12 3.42827ZM11.2857 12.3707L7.982 15.0137C7.67413 15.2601 7.62413 15.7101 7.87056 16.018C8.117 16.3259 8.56702 16.3759 8.87489 16.1294L12.4464 13.2722C12.5329 13.2029 12.5986 13.1179 12.6436 13.0243L12.6443 13.0236C12.6893 12.93 12.7143 12.825 12.7143 12.7143V6.99982C12.7143 6.60552 12.3943 6.28551 12 6.28551C11.6057 6.28551 11.2857 6.60552 11.2857 6.99982V12.3707ZM5.06618 2.20894L2.20894 5.06618C1.93035 5.34476 1.93035 5.79764 2.20894 6.07622C2.48752 6.3548 2.94039 6.3548 3.21897 6.07622L6.07622 3.21897C6.3548 2.94039 6.3548 2.48752 6.07622 2.20894C5.79764 1.93035 5.34476 1.93035 5.06618 2.20894ZM17.9238 3.21897L20.781 6.07622C21.0596 6.3548 21.5125 6.3548 21.7911 6.07622C22.0696 5.79764 22.0696 5.34476 21.7911 5.06618L18.9338 2.20894C18.6552 1.93035 18.2024 1.93035 17.9238 2.20894C17.6452 2.48752 17.6452 2.94039 17.9238 3.21897Z"
+										fill="#403A60"
+										class="svgfil">
+									</path>
+								</svg>
+
+								<strong>{articleTwoReadTime} {minutes}</strong>
+							</div>
+
+							<h2>{secondHeading}</h2>
+							<p class='descriptionsub'>{secondDescription}</p>
+							<br>
+							<br>
+							<br>
+							<a href="#" class='leftlink'> <svg data-it-button={analyticSecondTag} data-name={secondHeading}
+								onclick={handleButtonClick} role="button" onkeydown={handleButtonClick} tabindex="0" class='svgtop' width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect x="1.68164" y="1" width="46" height="46" rx="23" stroke="#403A60" class = "svgstroke" stroke-width="2"/>
+									<path d="M14.8477 24.166H34.8477" stroke="#403A60" class = "svgstroke" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M24.8477 14.166L34.8477 24.166L24.8477 34.166" stroke="#403A60" class = "svgstroke" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg></a>
+						</div>
+
+					</article>
+				</div>
+
+
+				<article class="article third">
+					<img src={thirdImg} alt="Article 3" />
+					<div class="headingcontainer">
+						<div
+							class="headercontain">
+							<svg width="40" height="24" viewBox="0 0 24 24" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd"
+									d="M12 3.42827C6.87482 3.42827 2.71395 7.58913 2.71395 12.7143C2.71395 17.8395 6.87482 22.0004 12 22.0004C17.1252 22.0004 21.286 17.8395 21.286 12.7143C21.286 7.58913 17.1252 3.42827 12 3.42827ZM11.2857 12.3707L7.982 15.0137C7.67413 15.2601 7.62413 15.7101 7.87056 16.018C8.117 16.3259 8.56702 16.3759 8.87489 16.1294L12.4464 13.2722C12.5329 13.2029 12.5986 13.1179 12.6436 13.0243L12.6443 13.0236C12.6893 12.93 12.7143 12.825 12.7143 12.7143V6.99982C12.7143 6.60552 12.3943 6.28551 12 6.28551C11.6057 6.28551 11.2857 6.60552 11.2857 6.99982V12.3707ZM5.06618 2.20894L2.20894 5.06618C1.93035 5.34476 1.93035 5.79764 2.20894 6.07622C2.48752 6.3548 2.94039 6.3548 3.21897 6.07622L6.07622 3.21897C6.3548 2.94039 6.3548 2.48752 6.07622 2.20894C5.79764 1.93035 5.34476 1.93035 5.06618 2.20894ZM17.9238 3.21897L20.781 6.07622C21.0596 6.3548 21.5125 6.3548 21.7911 6.07622C22.0696 5.79764 22.0696 5.34476 21.7911 5.06618L18.9338 2.20894C18.6552 1.93035 18.2024 1.93035 17.9238 2.20894C17.6452 2.48752 17.6452 2.94039 17.9238 3.21897Z"
+									fill="#403A60"
+									class="svgfil">
+								</path>
+							</svg>
+
+							<strong>{articleThreeReadTime} {minutes}</strong>
+						</div>
+
+						<h2>{thirdHeading}</h2>
+						<p class='descriptionsub'>{thirdDescription}</p>
+						<br>
+						<br>
+						<br>
+						<a href="#" class='leftlink'> <svg data-name={thirdHeading} data-it-button={analyticThirdTag}
+							onclick={handleButtonClick} role ="button" onkeydown={handleButtonClick} tabindex="0" class='svgtop' width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<rect x="1.68164" y="1" width="46" height="46" rx="23" stroke="#403A60" class = "svgstroke" stroke-width="2"/>
+								<path d="M14.8477 24.166H34.8477" stroke="#403A60" class = "svgstroke" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M24.8477 14.166L34.8477 24.166L24.8477 34.166" stroke="#403A60" class = "svgstroke" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg></a>
+					</div>
+
+				</article>
+			</div>
+
+
+
+
+		</div>
+		<div if:true={showTreatVideo} class="right-section">
+			<div class='videofordes'>
+				<article class="article fourth">
+
+					<img src={videoThumbnail} alt="Article 4" class="imgforvide" />
+					<div class="headingcontainervideo">
+						<h2 class='headingvisual'>{visualLearningLabel}</h2>
+						<p class='headingvisual2'>{watchLearnLabel}</p>
+						<p class='paragraphvideo'>{videoLandingMsg}</p>
+						<br>
+						<br>
+
+						<button onclick={openPTVPage} class='videobutton' data-it-button={patientStatusRecord}>
+							{watchVideoLabel}</button>
+					</div>
+				</article>
+			</div>
+			<div class='videoformb'>
+				<article class="article fourth">
+
+					<img src={videoThumbnail} alt="Article 4" class="imgforvide" />
+					<div class="headingcontainervideo">
+						<h2 class='headingvisual'>{visualLearningLabel}</h2>
+						<p class='headingvisual2'>{watchLearnLabel}</p>
+						<p class='paragraphvideo'>{videoLandingMsg}</p>
+
+
+						<button onclick={openPTVPage} class='videobutton'>
+							{watchVideoLabel}</button>
+					</div>
+				</article>
+			</div>
+		</div>
+		<br>
+	</div>
+</template>

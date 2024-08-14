@@ -1,0 +1,24 @@
+<template>
+  <div class="divcolor">
+    <div class="ingclass1">
+      <!-- image for updaterx -->
+      <img src={myUrl} class="imgclass" alt="Rximg" />
+    </div>
+    <!-- heading updaterx widget -->
+    <p class="upRxCss">{updatePrescriptionLabel}</p>
+    <!-- contant of update widget -->
+    <p class="infocss">
+      {prescriptionMessage}
+    </p>
+    <div class="padding">
+      <!-- button used for navigate the updateprescription component  -->
+      <button
+        class="updateCss"
+        onclick={navigateUpdateRx}
+        data-it-button="dashboard:update"
+      >
+        {updateLabel}
+      </button>
+    </div>
+  </div>
+</template>

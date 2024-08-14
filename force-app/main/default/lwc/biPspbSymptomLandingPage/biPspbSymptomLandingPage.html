@@ -1,0 +1,20 @@
+<!-- This LWC serves as a landing page for a symptom tracker, offering options to create new entries and displaying a happy face image. 
+			It dynamically determines the URL based on the current page and navigates users accordingly. -->
+			<template>
+			<div if:true={isLoading} class="spinner-container">
+		<lightning-spinner alternative-text="Loading"></lightning-spinner>
+	</div>
+<h1 class="head">{symptomTracker}</h1>
+	<div class="Symptom-head">
+	<div class="Createnewentry">
+			<p>{noSymptomYet}</p>        
+			<button class="st-date-btn" onclick={openEntryDate} type="button" 
+			data-it-button="symptomtracker: Create a New Entry">{createNewEntry} </button>               
+		</div>
+</div>
+	<div class="center">
+		<img src={emptyGraph} alt={alternateTextEmptyGraph}>      
+	</div>  
+
+		
+</template>

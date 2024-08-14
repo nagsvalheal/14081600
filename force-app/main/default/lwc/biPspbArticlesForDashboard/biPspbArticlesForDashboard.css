@@ -1,0 +1,382 @@
+@font-face {
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff") format("woff");
+}
+
+@font-face {
+	font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff") format("woff");
+}
+
+.imagecls {
+	cursor: pointer;
+}
+
+.backimg1 {
+	background-image: "";
+	border-bottom-left-radius: 12px;
+	border-top-left-radius: 12px;
+	background-size: 100% 100%;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+
+}
+
+.backimg2 {
+	background-image: "";
+	border-bottom-left-radius: 12px;
+	border-top-left-radius: 12px;
+	background-size: 100% 100%;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+.backimg3 {
+	background-image: "";
+	border-bottom-left-radius: 12px;
+	border-top-left-radius: 12px;
+	background-size: 100% 100%;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+.backimg4 {
+	background-image: "";
+	border-bottom-left-radius: 12px;
+	border-top-left-radius: 12px;
+	background-size: 100% 100%;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+.grid-containerHeadButton {
+	display: grid;
+	grid-template-columns: auto auto;
+}
+
+.grid-containerArticles {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	width: 108%;
+	gap: 20px;
+}
+.grid-containerInnerDivs {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	gap: 0px;
+	height: 100%;
+}
+
+.grid-containerInnerDivs .img img {
+	width: 100%;
+	/* Make the image fill the container width */
+	height: 100%;
+	/* Make the image fill the container height */
+	object-fit: cover;
+	/* Maintain aspect ratio without stretching */
+}
+
+.clockIcon {
+	width: 16px;
+	height: 16px;
+}
+
+.clck {
+	width: 16px;
+	height: 16px;
+	margin-top: 10px;
+}
+
+.headParaStyle {
+	color: #403a60;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.buttonStyle {
+	color: #403a60;
+	font-size: 14px;
+	font-weight: 400;
+	border: 1px solid #403a60;
+	border-radius: 12px;
+	padding: 5px 20px;
+	background-color: white;
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	height: 40px;
+}
+
+hr {
+	background: #8d89a580 !important;
+	margin: 5px 0px 5px 0px !important;
+	height: 1px !important;
+	border: none !important;
+	width: 100%;
+	position: relative;
+	top: 15px;
+}
+
+.align-right {
+	margin-left: 50%;
+	width: 207px;
+}
+
+.yellowBack {
+	background-color: #ecdca8;
+	border-radius: 12px;
+}
+
+.purpleBack {
+	background-color: #8d89a580;
+	border-radius: 12px;
+}
+
+.pad10 {
+	padding: 10px;
+}
+
+.grid-containerContent {
+	display: grid;
+	grid-template-columns: auto;
+	gap: 20px;
+	padding: 10px;
+}
+
+.display-Inline {
+	display: inline-flex;
+}
+
+.paraStyle {
+	color: #403a60;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.paraStyleclock {
+	color: #403a60;
+	font-size: 14px;
+	font-weight: 800;
+	padding-top: 7px;
+	padding-left: 10px;
+}
+
+.h2Style {
+	font-size: 18px;
+	font-weight: 400;
+	color: #403a60;
+}
+
+@media only screen and (max-width: 400px) {
+	.grid-containerArticles {
+		display: grid;
+		grid-template-columns: 93%;
+		gap: 20px;
+	}
+
+	hr {
+		display: none;
+	}
+
+	.align-right {
+		margin-top: 50px;
+		margin-left: 6%;
+	}
+
+	.buttonStyle {
+		display: none;
+	}
+
+	.headParaStyle {
+		width: 230%;
+        position: relative;
+        top: 6px;
+        margin-top: 60px;
+	}
+
+	.grid-containerInnerDivs {
+		display: grid;
+		grid-template-columns: 100%;
+		gap: 20px;
+	}
+
+	.grid-containerContent {
+		height: 301px;
+	}
+	.backimg1, .backimg2, .backimg3, .backimg4 {
+		border-bottom-left-radius: 0px;
+		width: auto;
+		height: 285px;
+		border-top-right-radius: 12px;
+		
+	}
+}
+
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+	.grid-containerArticles {
+		display: grid;
+		grid-template-columns: 93%;
+		gap: 20px;
+		position: relative;
+		top: 20px;
+	}
+
+	.backimg1, .backimg2, .backimg3, .backimg4 {
+		border-bottom-left-radius: 0px;
+		width: auto;
+		height: 290px;
+		border-top-right-radius: 12px;
+	}
+
+	.grid-containerInnerDivs {
+		display: grid;
+		grid-template-columns: 100%;
+		gap: 20px;
+	}
+
+	hr {
+		display: none;
+	}
+
+	.buttonStyle {
+		display: none;
+	}
+
+	.headParaStyle {
+		width: 220%;
+		position: relative;
+		top: 40%;
+        margin-top: 50px;
+	}
+
+	.grid-containerContent {
+		height: 301px;
+	}
+
+	.align-right {
+		margin-left: -65%;
+		margin-top: 45px;
+	}
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+	.grid-containerArticles {
+		display: grid;
+		grid-template-columns: 93%;
+		gap: 20px;
+	}
+
+	.align-right {
+		margin-left: 30%;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.grid-containerArticles {
+		display: grid;
+		grid-template-columns: 93%;
+		gap: 20px;
+	}
+
+	.align-right {
+		margin-left: 33%;
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.grid-containerArticles {
+		display: grid;
+		grid-template-columns: 45% 45%;
+		gap: 25px;
+	}
+
+	.align-right {
+		margin-left: 64%;
+	}
+
+	hr {
+		width: 102%;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.grid-containerArticles {
+		display: grid;
+		grid-template-columns: 45% 47%;
+		gap: 25px;
+		padding-top: 10px;
+	}
+
+	.grid-containerContent {
+		height: 320px;
+	}
+
+	.align-right {
+		margin-left: 70%;
+	}
+
+	hr {
+		width: 101%;
+	}
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1500px) {
+	.align-right {
+		margin-left: 72%;
+	}
+}
+
+@media only screen and (min-width: 1500px) {
+	.grid-containerArticles {
+		display: grid;
+		grid-template-columns: 46% 45%;
+		gap: 25px;
+	}
+
+	hr {
+		width: 100%;
+	}
+
+	.grid-containerContent {
+		height: 300px;
+	}
+
+	.align-right {
+		margin-left: 73%;
+	}
+}
+
+@media only screen and (min-width: 1700px) {
+	.grid-containerArticles {
+		display: grid;
+		grid-template-columns: 46% 45%;
+		gap: 60px;
+	}
+
+	hr {
+		width: 102%;
+	}
+
+	.align-right {
+		margin-left: 78%;
+	}
+}
+
+@media only screen and (min-width: 1900px) {
+	.align-right {
+		margin-left: 80%;
+	}
+
+	hr {
+		width: 102%;
+	}
+}

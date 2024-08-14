@@ -1,0 +1,115 @@
+.img4 {
+	background-color: rgb(37 156 37);
+	margin-left: -46px;
+	border-radius: 50px;
+	margin-right: 20px;
+	width: 25px;
+	height: 25px;
+}
+
+.toast {
+	background-color: rgb(194 240 194);
+	width: 100%;
+	height: auto;
+	position: absolute;
+	left: 0%;
+	top: 185px;
+	z-index: 1;
+}
+
+.para {
+	font-size: 16px;
+    padding-left: 127px;
+    padding-top: 25px;
+    padding-bottom: 28px;
+    width: 70%;
+    text-align: left;
+    font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-weight: 400;
+    color: #403a60;
+}
+
+.notify {
+	background-color: none;
+	position: absolute;
+	top: -30px;
+	right: 70px;
+}
+
+.btncls {
+	float: right;
+    padding-bottom: 10%;
+    padding-right: 10%;
+    background-color: rgb(194 240 194);
+    color: #000000;
+    border: 0px solid;
+    position: relative;
+    top: 50px;
+}
+
+
+.close {
+	font-size: 24px;
+}
+
+@media (width <=600px) {
+	.toast {
+		background-color: rgb(194 240 194);
+		width: 115% !important;
+		height: 88px;
+		position: absolute;
+		left: -8% !important;
+		top: -6px !important;
+		z-index: 1;
+	}
+    .para {
+		padding-top: 13px;
+        margin-left: 22px;
+        padding-left: 63px;
+
+    }
+	
+	.notify{
+		right: 30px;
+	}
+    .btncls{
+		padding-left: 100%;
+		margin-right: auto;
+		top:40px;
+	}
+}
+
+@media (width <=992px) {
+	.toast {
+		background-color: rgb(194 240 194);
+		width: 100%;
+		height: auto;
+		position: absolute;
+		left: 0%;
+		top: 99px;
+		z-index: 1;
+	}
+}
+
+@media only screen and (min-width:1201px) and (max-width:1500px) {
+	.para{
+		width: 81%;
+	}
+}
+
+@media only screen and (min-width:1501px) and (max-width:1925px) {
+	.para{
+		width: 100%;
+	}
+}
+@media only screen and (min-width:500px) and (max-width:599px) {
+	.toast {
+		background-color: rgb(194 240 194);
+		width: 100% !important;
+		height: auto;
+		position: absolute;
+		left: 0% !important;
+		top: -6px !important;
+		z-index: 1;
+	}
+}

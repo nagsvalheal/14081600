@@ -1,0 +1,242 @@
+.nobutton {
+	background: none;
+	border: none;
+}
+.custom-box2 {
+	width: -webkit-fill-available;
+	display: grid;
+	position: relative;
+	right: 25px;
+	top: 3px;
+}
+
+.displayHeader {
+	display: flex;
+	justify-content: end;
+}
+
+.footerLink {
+	text-decoration: none;
+	color: #403A60;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.grid-containerfooter {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 10px 20px;
+	padding: 10px;
+	width: fit-content;
+}
+
+.layoutColor {
+	display: flex;
+	background-color: #FBFAF5;
+	min-height: 400px;
+}
+
+.pad {
+	padding-bottom: 100px;
+	overflow: hidden;
+}
+
+.grid-containerTabs {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 10px 20px;
+	padding: 10px;
+	width: fit-content;
+}
+
+.tabsDiv {
+	width: 100%;
+	text-align: left;
+}
+
+.anchorText {
+	text-decoration: none;
+	color: #403A60;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.anchorTextActive {
+	text-decoration: none;
+	color: #403A60;
+	font-size: 16px;
+	font-weight: 800;
+}
+
+@media only screen and (max-width: 600px) {
+	.pad {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.tabClass {
+		display: none;
+		width: 100%;
+		background-color: white;
+	}
+
+	.showMobileBorder {
+		display: flex;
+		height: 5px;
+		width: 100%;
+		background: linear-gradient(90deg, #744F0D 0%, #99693E 17.19%, #EFDBA1 58.85%, #744F0D 100%);
+
+	}
+}
+
+@media only screen and (min-width: 601px) {
+	.pad {
+		padding-left: 20px;
+		padding-right: 40px;
+	}
+
+	.tabClass {
+		display: none;
+		width: 100%;
+		background-color: white;
+	}
+
+	.showMobileBorder {
+		display: flex;
+		height: 5px;
+		width: 100%;
+		background: linear-gradient(90deg, #744F0D 0%, #99693E 17.19%, #EFDBA1 58.85%, #744F0D 100%);
+
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.pad {
+		padding-left: 4%;
+		padding-right: 3%;
+	}
+
+	.tabClass {
+		display: none;
+		width: 100%;
+		background-color: white;
+	}
+
+	.showMobileBorder {
+		display: none;
+	}
+}
+
+@media only screen and (min-width:992px) and (max-width:1200px) {
+	.tabsDiv {
+		padding-left: 4%;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.pad {
+		padding-left: 4%;
+		padding-right: 14%;
+	}
+
+	.tabClass {
+		display: grid;
+		width: 100%;
+		background-color: white;
+		border-bottom: 0.5px solid rgba(141, 137, 165, 0.5);
+	}
+
+	.showMobileBorder {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.pad {
+		padding-left: 5%;
+		padding-right: 19%;
+	}
+
+	.tabsDiv {
+		padding-left: 4%;
+		padding-right: 5%;
+	}
+
+	.tabClass {
+		display: grid;
+		width: 100%;
+		background-color: white;
+		border-bottom: 0.5px solid rgba(141, 137, 165, 0.5);
+	}
+
+	.showMobileBorder {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 1500px) {
+	.pad {
+		padding-left: 5%;
+		padding-right: 20%;
+	}
+
+	.tabsDiv {
+		padding-left: 4%;
+		padding-right: 5%;
+	}
+
+	.tabClass {
+		display: grid;
+		width: 100%;
+		background-color: white;
+		border-bottom: 0.5px solid rgba(141, 137, 165, 0.5);
+	}
+
+	.showMobileBorder {
+		display: none;
+	}
+}
+
+@media only screen and (min-width:1300px) and (max-width:1500px) {
+	.custom-box2 {
+		position: relative;
+	
+	}
+}
+
+@media only screen and (min-width:1700px) {
+	.custom-box2 {
+		position: relative;
+		
+	}
+
+	.tabsDiv {
+		padding-left: 4%;
+		padding-right: 5%;
+	}
+
+	.pad {
+		padding-left: 5%;
+		padding-right: 20%;
+	}
+
+	.layoutColor {
+		min-height: 70vh;
+	}
+}
+
+@media only screen and (min-width:1900px) {
+	.pad {
+		padding-left: 5%;
+		padding-right: 20%;
+	}
+
+	.layoutColor {
+		min-height: 70vh;
+	}
+
+	.tabsDiv {
+		padding-left: 4%;
+		padding-right: 5%;
+	}
+}

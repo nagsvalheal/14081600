@@ -1,0 +1,124 @@
+<!-- This component is consolidate component used to update hcp patient information enrollment form main page. -->
+<template>
+	<div if:true={showSpinner}>
+		<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	   </div>
+	<div>
+		<div class="sidebar-container1"></div>
+		<div>
+			<div class="sidebar-container"></div>
+			<img src={beyandGpp} class="marTB20" alt="Beyond Gpp" />
+			<div class="container">
+				<img class="img" src={mailImg} alt="MailIcon" width="168px" height="151px" /> <br />
+				<br />
+				<h1 class="tophead" if:true={head}>{verifyTheInfo}</h1>
+				<h1 class="tophead" if:false={head}>{verifyYourInfo}</h1>
+				<br />
+				<div if:true={contData}>
+					<p class="ptag">
+						{messageContent}<br />
+						{messageContentTwo}
+					</p>
+					<br />
+				</div>
+				<div if:false={contData}>
+					<p class="ptag">
+						{messageContent}<br />
+						{messageContentTwo}
+					</p>
+					<br />
+				</div>
+				<h2 class="enroll">{enrollHead}</h2>
+				<!--if the candiate has no caregiver -->
+				<div if:true={recordId}>
+					<template if:false={age}>
+						<div class="slds-grid slds-gutters">
+							<div class="slds-col">
+								<span>
+									<p class="shead">{patientinfo}</p>
+									<template for:each={recordDetails} for:item="lead">
+										<p key={lead.Id} class="title">
+											
+											{nameColan} {lead.FirstName} {lead.LastName} <br />
+											{dobColan} {lead.HealthCloudGA__BirthDate__c} <br />
+											{emailColan} <span class="underline-email">{lead.Email}</span>
+											<br />
+											{phoneColan} {lead.Phone} <br />
+										</p>
+									</template>
+								</span>
+							</div>
+							<br />
+							<div class="slds-col">
+								<span>
+									<p class="shead">{physicianInfo}</p>
+									<template for:each={caregivers} for:item="care">
+										<P key={care.id} class="title">
+											
+											{nameColan} {care.BI_PSPB_Physician_Name__r.FirstName}
+											{care.BI_PSPB_Physician_Name__r.LastName}<br />
+											{emailColan} {care.BI_PSPB_Physician_Name__r.Email} <br />
+											{phoneColan} {care.BI_PSPB_Physician_Name__r.Phone} <br />
+											{addressColan} {care.BI_PSPB_Physician_Name__r.BI_PSPB_Address_Line__c}
+										</P>
+									</template>
+								</span>
+							</div>
+						</div>
+						<br />
+					</template>
+					<!--if the candiate has caregiver -->
+
+					<template if:true={age}>
+						<div class="slds-grid slds-gutters">
+							<div class="slds-col">
+								<span>
+									<p class="shead">{patientinfo}</p>
+									<template for:each={recordDetails} for:item="lead">
+										<P key={lead.id} class="title">
+										
+											{nameColan} {lead.FirstName} {lead.LastName} <br />
+											{dobColan} {lead.HealthCloudGA__BirthDate__c} <br />
+										</P>
+									</template>
+								</span>
+							</div>
+
+							<div class="slds-col">
+								<span>
+									<p class="shead">{caregiverInfo}</p>
+									
+									<template for:each={caregiver} for:item="care">
+										<P key={care.id} class="title">
+										
+											{nameColan} {care.BI_PSPB_First_Name__c}
+											{care.BI_PSPB_Last_Name__c}<br />
+											{relationColan} {care.BI_PSPB_Relationship_to_Patient__c}
+											<br />
+											{emailColan} {care.BI_PSPB_E_mail_ID__c}</span><br />
+											{phoneColan} {care.BI_PSPB_Phone_number__c} <br />
+										</P>
+									</template>
+								</span>
+							</div>
+							<br />
+						</div>
+						<div>
+							<p class="shead">{physicianInfo}</p>
+							
+							<template for:each={caregivers} for:item="care">
+								<P key={care.id} class="title">
+									{nameColan} {care.BI_PSPB_Physician_Name__r.FirstName}
+									{care.BI_PSPB_Physician_Name__r.LastName}<br />
+									{emailColan} {care.BI_PSPB_Physician_Name__r.Email} <br />
+									{phoneColan} {care.BI_PSPB_Physician_Name__r.Phone} <br />
+									{addressColan} {care.BI_PSPB_Physician_Name__r.BI_PSPB_Address_Line__c}
+								</P>
+							</template>
+						</div>
+					</template>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

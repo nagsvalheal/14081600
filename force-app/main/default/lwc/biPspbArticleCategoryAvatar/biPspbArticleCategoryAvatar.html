@@ -1,0 +1,25 @@
+<!--This lightning web component is used to display the landing avatar message in the Information Center Landing Page
+-->
+<template>
+	<div class="contain" data-it-uid={userid}>
+		<!--Display the selected avatar-->
+		<div class="imgclass">
+			<img src={cardimage} alt="Selected Avatar" class="image" />
+		</div>
+		<!--Display the avatar message-->
+		<div class="message-container">
+			<p class="para">
+				<span class="mbmess" tabindex="0" onclick={displayExpandedMessage} role="button" onkeypress={displayExpandedMessage}>
+					{acuteMessage}
+					</span>
+				<span class="dkmess">{categoryPageMessage}</span>
+			</p>
+		</div>
+
+		<div class="mbintm">
+			<a><span class="intmark" onclick={displayMessage} role="button" onkeypress={displayMessage} tabindex="0"> X</span></a>
+		</div>
+	</div>
+	<br class="mbbreak" />
+	<hr class="line" />
+</template>

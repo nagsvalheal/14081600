@@ -1,0 +1,38 @@
+<!--This is consolidated component for trophy case page,which have a trophy coponent as a child and Avatar navigation as a child-->
+<template>
+		<div if:true={showSpinner}>
+		<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	 </div>
+	<lightning-layout multiple-rows class="tabClass">
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+			<div class="tabsDiv pad">
+				<div class="grid-containerTabs">
+					<a onclick={openChallenges} class="anchorText">{challengeNavValue}</a>
+					<a onclick={openTrophyCase} class="anchorTextActive">{tropyCaseNavValue}</a>
+				</div>
+			</div>
+		</lightning-layout-item>
+	</lightning-layout>
+
+	<lightning-layout multiple-rows class="layoutColor pad">
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="3" large-device-size="3"
+			class="slds-p-top_medium">
+			<div class="displayflexCenter1">
+			<div class="custom-box1">
+				<c-bi-Pspb-Avatar-Navigation onload={handleComponentLoad}></c-bi-Pspb-Avatar-Navigation>
+			</div>
+			</div>
+		</lightning-layout-item>
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="9" large-device-size="9"
+			class="slds-p-bottom_xx-large">
+			<div class="displayflexCenter">
+			<div class="custom-box2">
+				<div>
+					<c-bi-Pspb-Trophy-Case-Component onload={handleComponentLoad}></c-bi-Pspb-Trophy-Case-Component>
+				</div>
+			</div>
+			</div>
+		</lightning-layout-item>
+	</lightning-layout>
+
+</template>

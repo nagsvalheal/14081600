@@ -1,0 +1,852 @@
+@font-face {
+font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff') format('woff');
+}
+
+@font-face {
+font-family: "Eina-Light",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff') format('woff');
+}
+
+@font-face {
+font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff') format('woff');
+}
+
+@font-face {
+font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff') format('woff');
+}
+
+ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: white;
+border-bottom: 1px solid #403a60;
+}
+
+li {
+float: left;
+display: block;
+color: black;
+text-align: center;
+padding: 14px 16px;
+}
+
+li:after {
+content: '';
+display: block;
+height: 2px;
+width: 0%;
+background-color: transparent;
+transition: all 0.5s ease;
+}
+
+li:hover:after {
+width: 100%;
+background-color: black;
+color: black;
+font-weight: bold;
+}
+
+.notify {
+width: 39cm;
+
+background-color: white;
+}
+
+.notify p {
+padding-left: 80px;
+padding-top: 20px;
+font-weight: bold;
+font-size: larger;
+}
+
+.notify ul {
+padding-left: 70px;
+padding-top: 10px;
+background-color: white;
+}
+
+.notify li {
+background-color: white;
+}
+
+.textInput {
+-webkit-text-fill-color: #403a60;
+--slds-c-input-color-border: #423a66;
+--slds-c-textarea-color-border: #423a66;
+margin: 8px 0px 0px 0px;
+--lwc-heightInput: 30px;
+width: 40%;
+font-size: 16px;
+}
+
+.combobox2 {
+width: 200px;
+}
+
+.notifyImage {
+width: 11cm;
+height: 20cm;
+background-color: #FBFAF5;
+}
+
+.notifyImage figure {
+padding-left: 100px;
+padding-top: 150px;
+}
+
+.main {
+width: 100%;
+height: auto;
+}
+
+.symptom {
+background-color: #D8D8D8;
+margin-top: 30px;
+margin-left: 70px;
+margin-right: 50px;
+height: 100px;
+}
+
+.symptom p {
+padding-left: 10px;
+}
+
+.generalnotify {
+display: flex;
+flex-direction: column;
+
+margin-top: 30px;
+border-left: 4px solid #403a60;
+height: 130px;
+width: 136%;
+font-size: small;
+background-color: white;
+
+}
+
+.imgclass {
+width: 35px;
+height: 29px;
+}
+
+div.Not {
+display: flex;
+gap: 1cm;
+margin-top: 30px;
+margin-left: 40px;
+border-left: 2px solid red;
+height: 1.5cm;
+width: 803px;
+background-color: white;
+}
+
+.figure {
+margin-top: 17px;
+padding-left: 20px;
+background-color: #ECDCA8;
+border-radius: 8px;
+width: 203px;
+}
+
+div.Read {
+display: flex;
+gap: 1cm;
+margin-top: 30px;
+margin-left: 40px;
+border-left: 2px solid rgb(241, 193, 106);
+height: 1.5cm;
+width: 803px;
+background-color: white;
+}
+
+div.Read p {
+padding-top: 3px;
+padding-left: 10px;
+font-size: small;
+}
+
+div.Not p {
+padding-top: 3px;
+padding-left: 10px;
+font-size: small;
+}
+
+.actionclass {
+display: flex;
+position: absolute;
+gap: 1cm;
+}
+
+div.Completed {
+display: flex;
+gap: 1cm;
+margin-top: 30px;
+width: 803px;
+margin-left: 40px;
+border-left: 2px solid green;
+height: 1.5cm;
+background-color: white;
+}
+
+div.Completed p {
+padding-top: 4px;
+padding-left: 10px;
+font-size: small;
+}
+
+.secondMain {
+display: flex;
+flex-direction: row;
+row-gap: 2cm;
+width: 100%;
+margin-top: -50px;
+}
+
+p.recordclass {
+margin-top: 9%;
+margin-left: 10%;
+font-size: 26px;
+color: #403A60;
+}
+
+.notification {
+padding-left: 50px;
+padding-top: 50px;
+width: 100%;
+background-color: #FBFAF5;
+}
+
+.notification h3 {
+color: #403a60;
+font-weight: bold;
+font-size: 32px;
+}
+
+.ActionCombo {
+display: flex;
+flex-direction: row;
+row-gap: 1cm;
+}
+
+.pclass p {
+margin-top: 50px;
+color: #403a60;
+font-weight: bolder;
+font-size: medium;
+margin-right: 2px;
+}
+
+.pclass hr {
+margin-top: -15px;
+margin-left: 100px;
+color: #403a60;
+border: 1px solid #403a60;
+
+}
+
+.dotclass {
+font-weight: bolder;
+font-size: x-large;
+}
+
+.classimg {
+padding-left: 16px;
+padding-top: 14px;
+}
+
+.classSubject {
+padding-top: 14px;
+width: 512px;
+height: 25px;
+font-size: 16px;
+font-family: "Eina04-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.viewpostbtn {
+width: 90px;
+height: 30px;
+gap: 8px;
+font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+
+}
+
+.readbtn {
+width: 100px;
+height: 28px;
+gap: 8px;
+
+}
+
+.start {
+width: 85px;
+height: 28px;
+gap: 8px;
+font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.clickVideo {
+width: 150px;
+height: 30px;
+gap: 8px;
+font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.clickhere {
+        width: 265px;
+        height: 30px;
+        gap: 8px;
+        font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+        }
+
+.clicktowatch{
+        width: 150px;
+        height: 30px;
+        gap: 8px;
+        font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.viewreactbtn {
+width: 126px;
+height: 30px;
+gap: 8px;
+font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+
+}
+
+.viewcommentbtn {
+width: 135px;
+height: 28px;
+gap: 8px;
+font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+
+}
+
+.viewfollowbtn {
+width: 125px;
+height: 30px;
+gap: 8px;
+font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+
+}
+
+.actionbtn {
+margin-left: 68px;
+margin-top: 30px;
+font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+font-size: 14px;
+}
+
+.buttonclass {
+margin-top: 20px;
+margin-left: 80%;
+width: 130px;
+font-family: "Eina04-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+height: 40px;
+border-radius: 12px;
+border: 1.5px solid #403A60;
+background-color: white;
+font-weight: 700;
+font-size: 16px;
+}
+
+.actionbtn button {
+margin: 20px;
+background-color: #403a60;
+color: #FFFFFF;
+border-radius: 8px;
+border: none;
+font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+padding: 0px 11px 1px 11px;
+}
+
+.classdate {
+margin-left: 90%;
+margin-top: 11px;
+font-size: 14px;
+font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+
+}
+
+@media only screen and (max-width:400px) {
+.generalnotify {
+        width: 124%;
+        height: 175px;
+        background-color: #FFFFFF;
+        position: relative;
+        right: 1%;
+        }
+
+.notification h3 {
+width: 112%;
+margin-top: -30px;
+font-size: 20px;
+}
+
+.notification {
+position: relative;
+right: 8px;
+top: 25px;
+}
+
+.slds-truncate {
+margin-top: 5px;
+}
+
+.actionbtn {
+margin-top: 25px;
+margin-left: 30px;
+}
+
+.main {
+position: relative;
+right: 6%;
+bottom: 70px;
+}
+
+.clicktowatch{
+        width: 150px;
+        height: 30px;
+        font-size: 13px;
+}
+
+.textInput {
+width: 120%;
+height: 40px;
+position: relative;
+bottom: 20px;
+}
+
+.clickhere {
+    width: 84%;
+    height: 26px;
+    font-size: 11px;
+    line-height: 25px
+}
+
+.actionbtn button {
+margin-top: 81px;
+margin-left: 37px;
+}
+
+.readbtn {
+width: 100px;
+height: 26px;
+}
+
+.viewpostbtn {
+width: 90px;
+height: 26px;
+}
+
+.start {
+width: 90px;
+height: 26px;
+}
+
+.viewfollowbtn {
+width: 140px;
+height: 26px;
+}
+
+.viewcommentbtn {
+width: 140px;
+height: 26px;
+}
+
+.viewreactbtn {
+width: 130px;
+height: 26px;
+}
+
+.buttonclass {
+font-size: 12px;
+width: 100px;
+height: 35px;
+margin-left: 87%;
+padding: 12px, 24px, 12px, 24px;
+border-radius: 8px;
+border: 1.5px solid #403A60;
+}
+
+.classSubject {
+width: 150px;
+height: 40px;
+font-family:    "Eina04-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+font-size: 13px;
+font-weight: 400;
+line-height: 20px;
+letter-spacing: 0em;
+text-align: left;
+color: #403A60;
+position: relative;
+right: 16px;
+bottom: 4px;
+}
+
+.classdate {
+width: 60px;
+height: 16px;
+font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+font-size: 12px;
+font-weight: 400;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: left;
+color: #403A60;
+margin-left: 77%;
+margin-top: 15px;
+position: relative;
+bottom: 3px;
+}
+}
+
+@media only screen and (min-width:401px) and (max-width:600px) {
+.generalnotify {
+width: 117%;
+height: 175px;
+position: relative;
+right: 8%;
+}
+
+.readbtn {
+width: 100px;
+height: 26px;
+}
+
+.viewpostbtn {
+width: 90px;
+height: 26px;
+}
+
+.clickhere {
+width: 84%;
+height: 26px;
+}
+
+.viewfollowbtn {
+width: 118px;
+height: 26px;
+}
+
+.viewcommentbtn {
+width: 127px;
+height: 26px;
+}
+
+.viewreactbtn {
+width: 120px;
+height: 26px;
+}
+
+.start {
+width: 90px;
+height: 32px;
+gap: 8px;
+
+}
+
+.notification {
+position: relative;
+right: 8px;
+}
+
+.textInput {
+width: 115%;
+position: relative;
+right: 7%;
+}
+
+.notification h3 {
+margin-top: -75px;
+position: relative;
+right: 7%;
+font-size: 20px;
+}
+
+.actionbtn button {
+margin-left: 30px;
+margin-top: 60px;
+font-size: 13px;
+
+}
+
+.classdate {
+margin-left: 80%;
+margin-top: 11px;
+width: 16%;
+font-size: 11px;
+}
+
+.classSubject {
+width: 180px;
+height: 80px;
+font-size: 14px;
+}
+
+.buttonclass {
+font-size: 13px;
+width: 32%;
+height: 5%;
+margin-left: 78%;
+}
+
+.actionbtn {
+margin-left: 52px;
+margin-top: 43px;
+}
+}
+
+@media only screen and (min-width:601px) and (max-width:767px) {
+.buttonclass {
+width: 30%;
+margin-left: 105%;
+}
+
+.classdate {
+width: 30%;
+margin-left: 86%;
+}
+
+.generalnotify {
+height: 162px;
+width: 140%;
+}
+
+.classSubject {
+font-size: 15px;
+width: 60%;
+}
+
+.actionbtn button {
+margin-top: 32px;
+margin-left: 30px;
+
+}
+
+.start {
+width: 100px;
+height: 30px;
+gap: 8px;
+
+}
+
+.viewpostbtn {
+width: 100px;
+height: 30px;
+}
+
+.readbtn {
+width: 100px;
+height: 30px;
+}
+
+.clickhere {
+width: 270px;
+}
+
+.notification {
+padding-left: 50px;
+padding-top: 50px;
+width: 85%;
+background-color: #FBFAF5;
+position: relative;
+right: 35px;
+}
+
+.textInput {
+width: 135%;
+}
+
+.actionbtn {
+margin-left: 55px;
+margin-top: 55px;
+}
+}
+
+@media only screen and (min-width:768px) and (max-width:992px) {
+.main {
+position: relative;
+left: 20%;
+width: 90%;
+}
+
+.classSubject {
+width: 50%;
+font-size: 15px;
+}
+
+.textInput {
+width: 105%;
+}
+
+.classdate {
+margin-left: 80%;
+width: 18%;
+}
+
+.notification {
+position: relative;
+right: 35px;
+}
+
+.actionbtn button {
+margin-top: 45px;
+}
+
+.buttonclass {
+margin-top: 20px;
+margin-left: 72%;
+}
+
+.start {
+width: 110px;
+height: 30px;
+gap: 8px;
+
+}
+
+.viewpostbtn {
+width: 110px;
+height: 30px;
+}
+
+.readbtn {
+width: 110px;
+height: 30px;
+
+
+}
+
+.generalnotify {
+height: 182px;
+width: 106%;
+}
+
+.actionbtn {
+margin-left: 65px;
+width: 100%;
+margin-top: 64px;
+}
+}
+
+@media only screen and (min-width:992px) and (max-width:1200px) {
+.classdate {
+margin-left: 85%;
+width: 20%;
+}
+
+.generalnotify {
+height: 140px;
+}
+
+.classSubject {
+width: 300px;
+}
+
+.actionbtn button {
+margin-top: 75px;
+height: 28px;
+}
+
+.textInput {
+width: 45%;
+}
+
+.actionbtn {
+margin-left: 68px;
+margin-top: 2px;
+}
+
+.main {
+width: 95%;
+}
+
+.notification {
+width: 95%;
+margin-left: 5%;
+}
+
+.readbtn {
+width: 130px;
+height: 32px;
+}
+
+.start {
+width: 130px;
+height: 32px;
+gap: 8px;
+
+}
+}
+
+@media only screen and (min-width:992px) and (max-width:1200px) {
+.classdate {
+width: 20%;
+}
+
+.buttonclass {
+width: 25%;
+margin-left: 116%;
+}
+
+.actionbtn button {
+margin-top: 60px;
+height: 35px;
+}
+}
+
+@media only screen and (min-width:1200px) {
+.buttonclass {
+margin-left: 114%;
+}
+}
+
+@media only screen and (min-width:1400px) and (max-width:1500px) {
+.buttonclass {
+margin-left: 116%;
+}
+}
+
+@media only screen and (min-width:1500px) {
+.buttonclass {
+margin-left: 119%;
+}
+
+.actionbtn {
+margin-left: 7%;
+margin-top: 30px;
+font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+font-size: 14px;
+}
+}
+
+@media only screen and (min-width:1700px) {
+.buttonclass {
+margin-left: 120%;
+}
+
+.actionbtn {
+margin-left: 6%;
+margin-top: 30px;
+font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+font-size: 14px;
+}
+}
+
+@media only screen and (min-width:1900px) {
+.buttonclass {
+margin-left: 121%;
+}
+
+.actionbtn {
+margin-left: 6%;
+margin-top: 30px;
+font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+font-size: 14px;
+}
+}

@@ -1,0 +1,134 @@
+.DidYouFindThisArticleUseful {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+	background-color: #403a60;
+	border-radius: 12px;
+	height: 68px;
+	width: 286px;
+	font-size: 16px;
+	margin-left: 78px;
+	position: absolute;
+}
+
+
+.container {
+	height: 68px;
+	width: 286px;
+	display: flex;
+	flex-direction: row;
+}
+
+.DidYouFindThisArticleUseful img {
+	margin-left: 25px;
+	width: 13%;
+	height: auto;
+	cursor: pointer;
+}
+
+.DidYouFindThisArticleUseful p {
+	color: #ffffff;
+	width: 187px;
+	height: 48px;
+	font-size: 16px;
+	margin-left: 12px;
+}
+
+.displaymb {
+	display: none;
+}
+
+/*Font Declaration*/
+
+@font-face {
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff") format("woff");
+}
+
+@font-face {
+	font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff") format("woff");
+}
+
+@media only screen and (max-width: 400px) {
+	.DidYouFindThisArticleUseful {
+		margin-left: -6px;
+		margin-left: 2%;
+		margin-top: -31px;
+		width: 95%;
+	}
+
+	.DidYouFindThisArticleUseful img {
+		margin-left: 26.5% !important;
+	}
+}
+
+@media only screen and (min-width: 401px) and (max-width: 768px) {
+	.DidYouFindThisArticleUseful {
+		margin-left: -6px;
+		margin-left: 7px;
+		margin-top: -31px;
+		width: 94%;
+	}
+
+	.DidYouFindThisArticleUseful img {
+		width: 10%;
+		margin-left: 32%;
+		height: auto;
+	}
+
+	.DidYouFindThisArticleUseful p {
+		width: 48%;
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.DidYouFindThisArticleUseful {
+		display: flex;
+		align-items: center;
+		margin-bottom: 10px;
+		background-color: #403a60;
+		border-radius: 12px;
+		height: 68px;
+		width: 286px;
+		font-size: 16px;
+		margin-left: 80px;
+		position: absolute;
+	}
+
+	.container {
+		height: 68px;
+		width: 286px;
+		display: flex;
+		flex-direction: row;
+	}
+
+	.DidYouFindThisArticleUseful img {
+		margin-left: 25px;
+		width: 13%;
+		height: auto;
+		cursor: pointer;
+	}
+
+	.DidYouFindThisArticleUseful p {
+		color: #ffffff;
+		width: 187px;
+		height: 48px;
+		font-size: 16px;
+		margin-left: 12px;
+	}
+
+	.displaymb {
+		display: none;
+	}
+}

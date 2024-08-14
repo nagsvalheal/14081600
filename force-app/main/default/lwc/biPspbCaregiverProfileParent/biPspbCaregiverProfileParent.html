@@ -1,0 +1,52 @@
+<!-- This Lightning Web Component serves as the navigation and parent component for the caregiver profile. -->
+<!-- Strings are hard coded in this HTML file to comply with the mobile responsiveness-->
+<template>
+	 <div if:true={showSpinner}>
+		<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	 </div>
+<lightning-layout multiple-rows class="tabClass">
+<lightning-layout-item
+	size="12"
+	small-device-size="12"
+	medium-device-size="12"
+	large-device-size="12"
+>
+	<div class="tabsDiv pad">
+	<div class="grid-containerTabs">
+		<button onclick={openCarMyProfile} class="anchorTextActive">{myProfile}</button>
+		<button onclick={openCarMyCaregiver} class="anchorText">{patientInfo}</button>
+		<button onclick={openCarSelectAvatar} class="anchorText">{selectAvatar}</button>
+		<button onclick={openCarNotSettings} class="anchorText"
+		>{notificationSetting}</button>
+	</div>
+	</div>
+</lightning-layout-item>
+</lightning-layout>
+
+<lightning-layout multiple-rows class="layoutColor pad">
+<lightning-layout-item
+	size="12"
+	small-device-size="12"
+	medium-device-size="4"
+	large-device-size="4"
+	class="slds-p-top_xx-large slds-p-bottom_xx-large"
+>
+	<div class="custom-box1">
+	<c-bi-Pspb-Avatar-Navigation onload={handleComponentLoad}></c-bi-Pspb-Avatar-Navigation>
+	</div>
+</lightning-layout-item>
+<lightning-layout-item
+	size="12"
+	small-device-size="12"
+	medium-device-size="8"
+	large-device-size="8"
+	class="slds-p-top_xx-large slds-p-bottom_xx-large lightnigLayC"
+>
+	<div class="custom-box2">
+	<div>
+		<c-bi-Pspb-Caregiver-Profile onload={handleComponentLoad}></c-bi-Pspb-Caregiver-Profile>
+	</div>
+	</div>
+</lightning-layout-item>
+</lightning-layout>
+</template>

@@ -1,0 +1,294 @@
+.grid-container{
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 10px;
+}
+.times{
+	font-size:40px;
+	color:#403A60;
+}
+.MenuProfile{
+	text-decoration: none;
+	color: #403A60;
+	font-size: 16px;
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+.headMenu{
+	font-weight: 800;
+	font-size: 16px;
+	color: #403A60;
+}
+/* Popup Screen */
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 999;
+}
+
+.modal-buttons {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+.modalHead {
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 44px;
+	color: #403A60;
+}
+.modalPara {
+	margin-top: 20px;
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 32px;
+	color: #403A60;
+}
+.modal-close {
+	position: absolute;
+	top: -10px;
+	right: 10px;
+	cursor: pointer;
+	font-size: 20px;
+	color: #403A60;
+}
+.modal-close:hover {
+	color: #000;
+}
+.button-DivNoBack{
+	margin-right: 20px;
+	background-color: white;
+	border-radius: 15px;
+	color: #403A60;
+	font-weight: 800;
+	border-style: solid;
+	border-color: #403A60;
+	padding: 10px 25px;
+	font-size: 14px;
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+.modal-content {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	pointer-events: auto;
+	background-clip: padding-box;
+	border-radius: 0.3rem;
+	outline: 0;
+	border: none;
+	text-align: left;
+}
+.switchIconClass{
+	float: right;
+}
+
+.width100{
+	width: 100%;
+	margin-top: 20px;
+}
+.close-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: inherit;
+    color: inherit;
+}
+/* Popup Screen Ends */
+@media only screen and (max-width: 600px)
+{
+	.grid-containermodals{
+	display: grid;
+	grid-template-columns: auto;
+	gap: 10px;
+	}
+	.ButtonLogoutYes{
+	background-color: #403A60;
+	border-radius: 15px;
+	color: white;
+	font-weight: 800;
+	border-style: none;
+	padding: 5px 25px;
+	height: 45px;
+	width: auto;
+	}
+	.modal-visible {
+	display: block;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 33px;
+	border: 1px solid #ccc;
+	z-index: 1000;
+	border-radius: 12px;
+	width: auto;
+	}
+}
+@media only screen and (min-width: 601px)
+{
+	.grid-containermodals{
+	display: grid;
+	grid-template-columns: auto;
+	gap: 10px;
+	}
+	.ButtonLogoutYes{
+	background-color: #403A60;
+	border-radius: 15px;
+	color: white;
+	font-weight: 800;
+	border-style: none;
+	padding: 5px 25px;
+	height: 45px;
+	width: auto;
+	}
+	.modal-visible {
+	display: block;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 33px;
+	border: 1px solid #ccc;
+	z-index: 1000;
+	border-radius: 12px;
+	width: auto;
+	}
+}
+@media only screen and (min-width: 768px)
+{
+	.grid-containermodals{
+	display: grid;
+	grid-template-columns: auto;
+	gap: 10px;
+	float: right;
+	}
+	.ButtonLogoutYes{
+	background-color: #403A60;
+	border-radius: 15px;
+	color: white;
+	font-weight: 800;
+	border-style: none;
+	padding: 5px 25px;
+	height: 45px;
+	width: 100px;
+	}
+	.modal-visible {
+	display: block;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 33px;
+	border: 1px solid #ccc;
+	z-index: 1000;
+	border-radius: 12px;
+	width: 600px;
+	}
+}
+@media only screen and (min-width: 992px)
+{
+	.grid-containermodals{
+	display: grid;
+	grid-template-columns: auto;
+	gap: 10px;
+	float: right;
+	}
+	.ButtonLogoutYes{
+	background-color: #403A60;
+	border-radius: 15px;
+	color: white;
+	font-weight: 800;
+	border-style: none;
+	padding: 5px 25px;
+	height: 45px;
+	width: 100px;
+	}
+	.modal-visible {
+	display: block;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 33px;
+	border: 1px solid #ccc;
+	z-index: 1000;
+	border-radius: 12px;
+	width: auto;
+	}
+}
+@media only screen and (min-width: 1200px)
+{
+	.grid-containermodals{
+	display: grid;
+	grid-template-columns: auto;
+	gap: 10px;
+	float: right;
+	}
+	.ButtonLogoutYes{
+	background-color: #403A60;
+	border-radius: 15px;
+	color: white;
+	font-weight: 800;
+	border-style: none;
+	padding: 5px 25px;
+	height: 45px;
+	width: 100px;
+	}
+	.modal-visible {
+	display: block;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 33px;
+	border: 1px solid #ccc;
+	z-index: 1000;
+	border-radius: 12px;
+	width: 660px;
+	}
+}
+@media only screen and (min-width: 1500px)
+{
+	.grid-containermodals{
+	display: grid;
+	grid-template-columns: auto;
+	gap: 10px;
+	float: right;
+	}
+	.ButtonLogoutYes{
+	background-color: #403A60;
+	border-radius: 15px;
+	color: white;
+	font-weight: 800;
+	border-style: none;
+	padding: 5px 25px;
+	height: 45px;
+	width: 100px;
+	}
+	.modal-visible {
+	display: block;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 33px;
+	border: 1px solid #ccc;
+	z-index: 1000;
+	border-radius: 12px;
+	width: 660px;
+	}
+}

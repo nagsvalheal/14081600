@@ -1,0 +1,33 @@
+.grid-container {
+display: grid;
+grid-template-columns: auto auto auto;
+}
+
+.date {
+text-align: center;
+color: #565173;
+font-weight: 800;
+font-size: 14px;
+height: 30px;
+}
+
+.main {
+width: 148px;
+height: 120px;
+}
+
+.level {
+text-align: center;
+color: #565173;
+font-weight: 800;
+font-size: 16px;
+margin-top: 10px;
+}
+
+.level1 {
+text-align: center;
+color: #565173;
+font-weight: 400;
+font-size: 16px;
+margin-top: 10px;
+}

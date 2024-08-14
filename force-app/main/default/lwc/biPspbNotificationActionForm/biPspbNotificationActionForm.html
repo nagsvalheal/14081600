@@ -1,0 +1,100 @@
+<!--This component is used to Display Tasks based on the Action notification on clicking the Notification icon from the Dashboard.-->
+<template>
+		<template if:true={showdiv}>
+			<div class="toastMessage"><c-bi-pspb-common-popup  toast-message={successToast} onbuttonclick={handleclose}></c-bi-pspb-common-popup></div>
+		</template>
+	<div class="main">
+		<div class="secondMain">
+			<div class="notification">
+				<h3>{heading}</h3><br>
+				<div class="ActionCombo">
+					<div><lightning-combobox class="combobox2 cat" value={actionCategory}
+							placeholder="Select a Category" options={actionOptions}
+							onchange={actioncat}></lightning-combobox></div>
+				</div>
+				<div if:true={noRecords}>
+					<p class="recordclass">{noNotification}</p>
+				</div>
+				<div if:true={noRecordsForTime}>
+					<p class="recordclass">{noActionRequired}</p>
+				</div>
+				<div if:true={recordForAction}>
+				<template if:true={displayedActionValue}>
+					<template for:each={displayedActionValue} for:item="actionTask">
+						<h2 key={actionTask.Id}>
+							<div class="generalnotify">
+								<div>
+									<hr if:true={actionTask.voilet} class="voilet">
+									<hr if:true={actionTask.green} class="green">
+									<hr if:true={actionTask.amber} class="amber">
+									<hr if:true={actionTask.red} class="red">
+								</div>
+								<div class="actionclass">
+									<div class="classimg"><img if:true={actionTask.sympimg} src={symptomImg} alt = {alternateSymptoms}><img
+											if:true={actionTask.QuestionImgDlqi} src={questionImg} alt = {alternateForQuestions}><img
+											if:true={actionTask.QuestionImgWpai} src={questionImg} alt = {alternateForQuestions}><img
+											if:true={actionTask.QuestionImgPss} src={questionImg} alt = {alternateForQuestions}><img
+											if:true={actionTask.QuestionImgQsq} src={questionImg} alt = {alternateForQuestions}><img
+											if:true={actionTask.treatimg} src={treatmentImg} alt = {alternateForReminders}><img
+											if:true={actionTask.PersonaliseImg} src={letsPersonaliseImg} alt = {alternateForLetsPersonalise}></div>
+									<div class="classSubject">
+										<p>{actionTask.Subject}</p>
+									</div>
+								</div>
+								<div class="classdate">
+									<p>{actionTask.FormattedDate}</p>
+								</div>
+								<div class="actionbtn">
+									<button if:true={actionTask.dateoftreatmentyes} data-id={actionTask.Id} class='Yesbtn'
+										data-action-value="Yes" onclick={handleComplete}>{yesButton}</button>
+									<button if:true={actionTask.yesbutton} data-taskid={actionTask.Id} class='Yesbtn'
+										data-action-value="Yes" onclick={handleCompleteDateOfTreatment}>{yesButton}</button>
+									<button if:true={actionTask.nobutton} data-id={actionTask.Id} class='Nobtn'
+										data-action-value="No" onclick={handleNotCompleted}>{noButton}</button>
+									<button if:true={actionTask.submitbutton} class='btnclass' data-id={actionTask.Id}
+										onclick={clickSymptom}>{updateSymptoms}</button>
+									<button if:true={actionTask.StartbuttonQsq} class=' getstart' data-id={actionTask.Id}
+										onclick={clickQuestionQsq}>{getStartButton}</button>
+									<button if:true={actionTask.StartbuttonPss} class=' getstart' data-id={actionTask.Id}
+										onclick={clickQuestionPss}>{clickStartButton}</button>
+									<button if:true={actionTask.StartbuttonWpai} class=' getstart' data-id={actionTask.Id}
+										onclick={clickQuestionWpai}>{getStartButton}</button>
+									<button if:true={actionTask.StartbuttonDlqi} class=' getstart' data-id={actionTask.Id}
+										onclick={clickQuestionDlqi}>{clickToStart}</button>
+									<button if:true={actionTask.StartbuttonLetPer} class=' getstart' data-id={actionTask.Id}
+										onclick={clickLetPerQuestion}>{startButton}</button>
+								</div>
+							</div>
+						</h2>
+					</template>
+					<button class="buttonclass" if:true={showLoadMoreButton} onclick={loadMore}>Load More</button>
+				</template>
+				</div>
+				<template if:true={showModal}>
+					<div id="modal" class="slds-modal slds-fade-in-open" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+						<div class="div1">
+							<!-- modal header start -->
+							<header class="header">
+								<button class="buttonclass2" title="Close" onclick={hideModalBox}>&times;</button>
+								<h2 id="modal-heading-01" class="heading">{enterDate}</h2>
+							</header>
+							<!-- modal body start -->
+							<div class="classdiv" id="modal-content-id-1">
+								<p class="pclass">{enterDateField}</p>
+								<!-- Input for date of treatment -->
+								<p class="datehead">{dateOfTreatment}</p>
+								<input class="inputdate" type="date" onchange={handleDateChange} min={minDate} max={maxDate}><br>
+								<button class="submit" type="Submit" onclick={handleSaveDate}>{submitButton}</button>
+								<button class="cancel" onclick={hideModalBox}>Cancel</button>
+							</div>
+						</div>
+					</div>
+					<div class="slds-backdrop slds-backdrop_open"></div>
+				</template>
+			</div>
+		</div>
+	</div>
+	<div if:true={showSpinner}>
+        <c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+     </div>
+</template>

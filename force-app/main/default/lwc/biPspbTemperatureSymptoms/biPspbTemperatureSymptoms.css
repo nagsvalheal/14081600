@@ -1,0 +1,200 @@
+@font-face {
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff")
+        format("woff");
+}
+
+@font-face {
+    font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff")
+        format("woff");
+}
+
+@font-face {
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff")
+        format("woff");
+}
+
+@font-face {
+    font-family: "Eina04-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff")
+        format("woff");
+}
+
+@font-face {
+    font-family: "Eina04-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Regular.woff")
+        format("woff");
+}
+
+.text {
+    color: red;
+}
+
+.modal-confirm-btn {
+    height: 40px;
+    width: 170px;
+    border-radius: 12px;
+    background-color: #403a60;
+    font-weight: bold;
+    color: #ffffff;
+    border: #403a60;
+    margin: 20px 0px;
+    font-size: 14px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.modal-btn-row {
+    display: flex;
+    justify-content: center;
+}
+
+.modal-background {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #8d89a5;
+    border-radius: 8px;
+    width: 80%;
+}
+
+.close {
+    color: #403a60;
+    float: right;
+    text-align: right;
+    font-size: 40px;
+    cursor: pointer;
+}
+.modal-message {
+    padding-bottom: 10px;
+}
+.modal-message img {
+    width: 16px;
+    height: 24px;
+    margin: 0px 8px;
+    padding: 4px 0px;
+}
+
+.temprutre-box {
+    position: relative;
+    top: 23px;
+    right: 16px;
+}
+
+.Temperature-content {
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    height: 40px;
+    width: 99px;
+    border-style: solid;
+    border-color: #8d89a580;
+    border: 1px solid #8d89a580;
+    border-radius: 8px;
+    color: #403a60;
+    font-size: 18px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+.temperatureDegree {
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    size: 16px;
+    color: #384b59;
+}
+
+.itchenesline {
+    margin-bottom: 34px;
+    color: #2c333a;
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+.para1 {
+    display: none;
+}
+
+p {
+    font-size: 15px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    color: #2c333a;
+}
+
+.para {
+    display: flex;
+    color: #000000;
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+    opacity: 1;
+    width: 20%;
+}
+
+.p {
+    text-align: center;
+}
+
+.slds-radio {
+    display: inline-block !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .Temperature-content {
+        margin-right: 10%;
+        display: grid;
+    }
+
+    .p {
+        text-align: start;
+    }
+
+    .modal-btn-row {
+        margin-left: 0%;
+        width: 115%;
+        margin-top: 0px;
+    }
+
+    .modal-confirm-btn {
+        width: 200px;
+        height: 50px;
+    }
+
+    .itchenesline {
+        padding: 2%;
+    }
+
+    .temprutre-box {
+        margin-left: 30%;
+        width: 100%;
+    }
+
+    .modal-header {
+        font-size: 18px;
+    }
+
+    .para {
+        display: none;
+    }
+
+    .para1 {
+        font-size: 16px;
+        color: #000000;
+        font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma,
+            sans-serif;
+        display: flex;
+    }
+}

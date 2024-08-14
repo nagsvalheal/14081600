@@ -1,0 +1,75 @@
+@font-face {
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff")
+    format("woff");
+}
+
+/* whole chatter navbar div */
+.topNav {
+  display: block;
+  overflow: hidden;
+  background-color: #ffffff;
+  border-bottom: 1px solid #8d89a580;
+  left: 20px;
+  padding-left: 4%;
+}
+
+/* Each Navbar content head */
+.topNav button {
+  float: left;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* set the color of navbar in normal mode */
+.navColor,
+.navColor1,
+.navColor2,
+.navColor3 {
+  color: black;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 16px;
+}
+
+/* Apply the css if navbar is equal to UrlName */
+.navColorHighlight {
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 17px;
+  color: #403a60;
+}
+
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+  .topNav {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .topNav {
+    display: none;
+  }
+}

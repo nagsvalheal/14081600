@@ -1,0 +1,131 @@
+<!-- This is Dermatology Life Quality Index completed Questionnaire(LWC). This allows you to see your submited Responses. -->
+<template>
+	<div class="tophead">{dlqi} <sup>1</sup></div>
+	<div class="containercolumn" data-it-uid={userid}>
+		<!--To display Questions-->
+		<div class="column1">
+			<div class="dropdowncolumn">
+				<div class="dropdowncolumn">
+					<template if:true={records}>
+						<div class="comboboxtext">{selectMonth}</div>
+						<lightning-combobox value={selectedAssessment} options={assessmentOptions}
+							onchange={handleAssessmentChange}>
+						</lightning-combobox>
+					</template>
+				</div>
+				<template if:false={records}>
+					<p>{notFound}</p>
+				</template>
+			</div>
+
+			<!-- Display the fetched records -->
+			<template if:true={records}>
+				<template for:each={records} for:item="record">
+					<div key={record.Id}>
+						<div class="nds-form-element nds-form-container">
+							<legend
+								class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+								<span class="nds-m-right_x-small"
+				>{record.AssessmentQuestion.QuestionText}</span><br />
+			</legend>
+								<div class="nds-form-element__control nds-horizontal_radio">
+									<span class="nds-radio">
+				<div class="radio-container">
+					<input
+					type="radio"
+					value="Yes"
+					checked
+					disabled
+					id="QuestionBox"
+					/>
+					<label class="nds-radio__label" for="QuestionBox">
+					<span class="nds-radio_faux"></span>
+									<span class="nds-form-element__label slds-p-left_small">
+						{record.ResponseText}</span>
+									</label>
+								</div>
+								</span>
+						</div>
+					</div>
+		</div>
+		<!-- Adjust the key and display fields based on your object structure -->
+</template>
+</template>
+
+<!-- Display error if there is any -->
+<template if:true={error}>
+	<div class="slds-m-top_medium">
+		<p>Error: {error}</p>
+	</div>
+</template>
+</div>
+<!--To display rollout date and Expire date-->
+
+<div class="column2">
+	<div class="box">
+		<div class="statusRE">
+			<div class="rollout">
+				{rollout}<br />
+				<p class="rddate">{rolloutDate}</p>
+			</div>
+
+			<div class="expires">
+				{completedOn}<br />
+				<p class="eddate">{expireDate}</p>
+			</div>
+		</div>
+	</div>
+	<div class="box2">
+		<br />
+		<br />
+		<div class="texts">{completedQn}</div>
+		<div class="line"></div>
+		<!--Side bar navigation-->
+		<div class="category-names">
+			<div class="category-box1" data-it-button="DLQI Completed Questionnaire: Navigate to DLQI">
+				<img src={cardImageDlqi} alt="Dermatalogy" class="imageNavi" />
+				<p class="b">{dlqi}</p>
+			</div>
+			<div class={checkpss}>
+				<div class="category-box" role="button" onclick={navigateToCategory3} onkeydown={navigateToCategory3}
+					data-it-button="DLQI Completed Questionnaire: Navigate to PSS">
+					<img src={cardImagePss} alt="Psorasis" class="imageNavi" />
+					<p class="c">{pss}</p>
+				</div>
+			</div>
+			<div class={checkwai}>
+				<div class="category-box" role="button" onkeydown={navigateToCategory4} onclick={navigateToCategory4}
+					data-it-button="DLQI Completed Questionnaire: Navigate to WAPI">
+					<img src={cardImageWpai} alt="Work and Activity" class="imageNavi" />
+					<p class="d">{workApi}</p>
+				</div>
+			</div>
+			<div class={checkqsq}>
+				<div class="category-box" role="button" onclick={navigateToCategory5} onkeydown={navigateToCategory5}
+					data-it-button="DLQI Completed Questionnaire: Navigate to QSQ">
+					<img src={cardImageQsq} alt="Qualitative" class="imageNaviNxt" />
+					<p class="e">{qsq}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--column2-->
+</div>
+
+<br />
+<!--Footer-->
+<div class="wholecontainer">
+	<div class="botcontainer">
+		<div class="bot1">1. {dlqiBottomText}</div>
+		<div class="bot4">{dlqiBottomTextFour}</div>
+		<br />
+		<div class="bot2">{dlqiBottomTextOne}</div>
+	</div>
+	<div class="botcontainer2">
+		<br />
+		<br />
+		
+	</div>
+</div>
+</template>

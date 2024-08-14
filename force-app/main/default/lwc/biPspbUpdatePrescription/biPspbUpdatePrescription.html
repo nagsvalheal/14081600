@@ -1,0 +1,130 @@
+<!-- This component facilitates prescription updates for users, enhancing their control over medication management. -->
+<template>
+	<div class="popup">
+		<template if:true={showDiv}>
+			<c-bi-pspb-common-popup toast-message={prescriptionToastMsg} onbuttonclick={reset}></c-bi-pspb-common-popup>
+		</template>
+	</div>
+
+	<div class="Fields">
+		<!-- Heading of this compomet -->
+
+		<p class="titlecolor">{updatePrescriptionLabel}</p>
+
+		<!-- if user click prescrition and prescription value is no  this error message  template will show  -->
+		<template if:true={Message}>
+			<div class="slds-text-color_error error">
+				{prescriptionContactMsg}
+			</div>
+		</template>
+
+		<!-- lable and radio button for physical copy  -->
+		<label for="copy" class="input-label">{latestPrescriptionQstn}</label>
+		<lightning-radio-group field-name="BI_PSPB_physical_copy__c" options={optionsOne} value={radioValue}
+			class="input-labelone" type="radio" onchange={handlePhysicalCopyRecord}></lightning-radio-group>
+
+		<!-- label and radio button for e prescription  -->
+		<div class="epresdiv">
+			<template if:true={ePrescriptionQuestion}>
+				<label for="prescrption" class="input-label wid">{ePrescriptionQstn}</label>
+				<lightning-radio-group field-name="BI_PSPB_e_prescription__c" options={optionsTwo}
+					value={radioValueSecond} class="input-labelone" type="radio"
+					onchange={handleEprescription}></lightning-radio-group>
+			</template>
+		</div>
+
+		<!-- label and input box for  prescription send to  -->
+		<template if:true={radioValueThree}>
+			<div class="senttodiv">
+				<div class="input-wrapper">
+					<label for="prescription" class="input-label" data-field="prescription">{pharmacyPrescriptionLabel}</label>
+					<lightning-input field-name="BI_PSPB_prescription_sent_to__c"
+						label="Which Pharmacy was the prescription sent to?" data-field="prescription" class="textInput"
+						value={pharmacyValue} variant="label-hidden"
+						onchange={handlePharmacyValue}></lightning-input>
+					<!-- if  input box is empty this custom label error will show  -->
+					<span class="slds-form-element__help" if:true={PrescriptionErrorMessage}>
+						<img src={warningIcons} width="12px" height="12px" alt="warningIcon" />
+						<div>{pharmacyLabel}</div>
+					</span>
+				</div>
+			</div>
+		</template>
+
+		<div>
+			<br />
+			<!-- Additional Comments label and input box  -->
+
+			<div if:true={radioValueNine}>
+				<label for="comments" class="input-label">{additionalCommentsLabel}</label>
+				<lightning-textarea name="input3" value={commentsValue} variant="label-hidden" class="input3"
+					onchange={handleComments}>
+				</lightning-textarea>
+			</div>
+
+			<!-- file upload lable ,upolod file input box,and eroor message  -->
+
+			<template if:true={handleUploadFinished}>
+				<div class="filefulldiv">
+					<div>
+						<!-- fileUpload label -->
+						<label data-field="uploadFile" class={uploadFile}>Upload Files
+							<span if:true={fileUploadStar} class={starName}>*</span></label>
+						<div class="pointer"></div>
+						<div class={fileUpload}>
+							<div class="filenamecss">
+								<label for="upload" if:true={browsCondition} class={BrowseLabel}>Browse and
+									upload</label>
+								<!-- if user select file the file will showing in input box  -->
+								<template if:true={fileNames} for:each={fileNames} for:item="fileName">
+									<p key={fileName}>{fileName}</p>
+								</template>
+							</div>
+
+							<!-- file upload icons  -->
+							<div class="imgclass">
+								<button class = 'uploadbtn' onclick={handleUploadFinisheds1}>
+								<img if:true={imgOne} src={myIconUrl} class="imgone" alt="fileUploadIcon"  />
+								</button>
+							</div>
+						</div>
+
+						<div class="hidden-file-upload">
+							<lightning-file-upload name="fileUploader" accept={acceptedFormats} record-id={recordId}
+								class="textInput1" data-field="uploadFile" variant="label-hidden"
+								onuploadfinished={handleUploadFinisheds} onchange={handleFileChange}>
+							</lightning-file-upload>
+						</div>
+					</div>
+					<div>
+						<p class="maxLimit">
+							5 MB <span class="classformax">(Maximum limit)</span>
+						</p>
+					</div>
+
+					<!-- if user not selected the file this error meaasage will show  -->
+
+					<div class="slds-m-top_medium">
+						<div if:true={errorMessage} class="slds-form-element__help">
+							<img src={warningIcons} width="12px" height="12px" alt="warning" />
+							<div class="slds-text-color_error">{errorMessage}</div>
+						</div>
+					</div>
+				</div>
+			</template>
+		</div>
+
+		<!-- submit and cancel button  -->
+
+		<template if:true={canceLandSubmit}>
+			<div class="submitmargin">
+				<button type="Cancel" title="Cancel" class="cancelpadding" onclick={reset}>
+					{cancelLabel}
+				</button>
+				<button type="submit" title="Submit" class="submitPad" onclick={handleSubmit}>
+					{submitLabel}
+				</button>
+			</div>
+		</template>
+	</div>
+</template>

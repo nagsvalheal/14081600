@@ -1,0 +1,737 @@
+@font-face {
+  font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-Light",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina04-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff")
+    format("woff");
+}
+.check{
+  position: relative;
+  bottom: 143px;
+  width: 184%;
+  left: -37%;
+
+}
+.input-error-label {
+  color: red !important;
+}
+
+.input-error {
+  color: #403a60 !important;
+}
+
+.form-container {
+  margin: 0px;
+  padding: 10px;
+}
+
+.toast {
+  background-color: rgb(194 240 194);
+  width: 187.6%;
+  height: 77px;
+  position: absolute;
+  left: -38%;
+  top: -3px;
+  z-index: 1;
+}
+
+.img4 {
+  background-color: rgb(37 156 37);
+  margin-left: -35px;
+  border-radius: 50px;
+  margin-right: 20px;
+  width: 25px;
+  height: 25px;
+}
+.input-error-label{
+  color: red !important;
+  font-size: 16px;
+  font-family: "Eina04-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+.desnot {
+  color: #403a60;
+  font-size: 16px;
+  font-family: "Eina04-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.btncls {
+  float: right;
+  padding-bottom: 10%;
+  background-color: rgb(194 240 194);
+  color: #000000;
+  border: 0px solid;
+  position: relative;
+  top: 50px;
+}
+
+.para {
+  font-size: 15px;
+  font-weight: bold;
+  padding-left: 60px;
+  padding-top: 25px;
+  width: 90%;
+}
+
+.notify {
+  background-color: none;
+  position: absolute;
+  top: -30px;
+  right: 70px;
+}
+
+.fileUploadSelector {
+  position: relative;
+  bottom: 39px;
+}
+
+.fileBox {
+  border-radius: 4px;
+  border: 1.2px solid #403a60;
+  height: 40px;
+  width: 390px;
+  background: #ffffff;
+  margin-top: 5px;
+}
+
+.fileBoxHide {
+  opacity: 0;
+  position: relative;
+  bottom: 25px;
+}
+
+h4.fivemb {
+  position: relative;
+  left: 99%;
+  bottom: 15px;
+  width: 41%;
+  font-size: 14px;
+  font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  gap: 5px;
+}
+
+.max {
+  font-size: 14px;
+  font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.fileLabelName {
+  color: #8d89a5;
+  position: relative;
+  top: 7px;
+  left: 10px;
+  font-size: 16px;
+  font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.imgclass {
+  margin-bottom: 16px;
+  float: left;
+  position: relative;
+  bottom: 12px;
+  left: 360px;
+  width: 16px;
+}
+
+.main {
+  width: 20cm;
+  height: 16cm;
+  display: flex;
+  flex-direction: row;
+}
+
+.UserImage {
+  padding-left: 4cm;
+  padding-top: 5cm;
+}
+
+.response .heading {
+  padding-left: 2.5cm;
+  font-size: large;
+  font-weight: bold;
+  margin-top: 2cm;
+  color: #403a60;
+}
+
+.heading h2 {
+  padding-top: 18px;
+  font-size: x-large;
+  color: #403a60;
+}
+
+.collectbutton {
+  padding-left: 2.5cm;
+  padding-top: 1cm;
+  display: flex;
+  justify-content: space-between;
+  gap: 1cm;
+}
+
+.buttonbox {
+  width: 286px;
+  height: 136px;
+  border-radius: 20px;
+  background-color: white;
+  border: 2px solid #403a60;
+  color: #403a60;
+}
+
+.back {
+  background: none;
+  border: none;
+  display: flex;
+  gap: 8px;
+}
+
+.back p {
+  font-size: 20px;
+  cursor: pointer;
+  color: #403a60;
+  padding-top: 0px;
+  font-family: "Eina04-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.medicalheading h2 {
+  font-size: 32px;
+  font-weight: bold;
+  padding-left: 2.5cm;
+  color: #403a60;
+  font-family: "Eina04-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  margin-top: 20px;
+}
+
+.medicalform {
+  padding-top: 5px;
+  padding-left: 2.2cm;
+}
+
+.medicalform label {
+  margin-top: 3px;
+  color: #403a60;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  line-height: 28px;
+}
+
+.medicalform .medicalInput {
+  padding-top: 3px;
+  font-size: 16px;
+  font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  line-height: 24px;
+}
+
+.desc {
+  width: 390px;
+    border: 1.2px solid #403a60;
+    border-radius: 4px;
+    background-color: #ffffff;
+    margin-top: 5px;
+    --sds-c-textarea-sizing-min-height: 78px;
+    padding: 0;
+}
+
+.buttondiv {
+  position: relative;
+  display: flex;
+  gap: 1px;
+  margin-top: 0px;
+  margin-left: 90px;
+  bottom: 25px;
+}
+
+.button1 {
+  background-color: #403a60;
+  border: 1.2px solid #403a60;
+  border-radius: 12px;
+  color: #ffffff;
+  width: 165px;
+  height: 40px;
+  font-size: 14px;
+  font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.button2 {
+  padding-left: 2px;
+  background-color: #ffffff;
+  border: 1.5px solid #403a60;
+  border-radius: 12px;
+  margin-left: 10px;
+  width: 136px;
+  height: 40px;
+  font-size: 14px;
+  font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.buttonbox div {
+  padding-top: 1px;
+  padding-left: 1px;
+}
+
+.active {
+  background-color: #403a60;
+  border: 2px solid #403a60;
+  color: #fff;
+}
+
+.flexclass {
+  display: flex;
+  margin-left: -16px;
+  gap: 10px;
+}
+
+ul.noclass {
+  padding-left: 27px;
+  font-size: medium;
+}
+
+ul.tymclass {
+  padding-left: 27px;
+}
+
+.colclass {
+  display: flex;
+  flex-direction: column;
+}
+
+.info1 {
+  padding-right: 147px;
+}
+
+.info2 {
+  padding-right: 72px;
+}
+
+p.pinfo {
+  padding-right: 25px;
+}
+
+p.pinfo1 {
+  padding-right: 148px;
+}
+
+p.pinfo2 {
+  padding-right: 42px;
+}
+
+.error-throw {
+  color: red;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  margin-top: -12px;
+}
+
+
+.imgwarning {
+  width: 15px;
+}
+.input-label{
+  font-size: 16px;
+  font-family: "Eina04-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.change {
+  width: 390px;
+  --sds-c-textarea-sizing-min-height: 40px !important;
+  border: 1.2px solid red !important;
+  border-radius: 4px;
+  height: 59px;
+}
+
+.change1 {
+  width: 400px;
+  height: 2cm;
+  border: 2px solid red !important;
+  border-radius: 5px;
+}
+
+.change2 {
+  width: 400px;
+  height: 2cm;
+  border: 2px solid red !important;
+  border-radius: 5px;
+}
+
+.slds-file-selector_files .slds-file-selector__body,
+.slds-file-selector--files .slds-file-selector__body {
+  display: flex;
+  align-items: center;
+  width: 395px;
+}
+
+.chnageradiobtn .slds-radio .slds-radio_faux,
+.slds-radio .slds-radio--faux {
+  width: var(--lwc-squareIconMediumContent, 1rem);
+  height: var(--lwc-squareIconMediumContent, 1rem);
+  display: inline-block;
+  position: relative;
+  flex-shrink: 0;
+  vertical-align: middle;
+  border: 1px solid red;
+  border-radius: var(--lwc-borderRadiusCircle, 50%);
+  background: none;
+  background-color: var(
+    --slds-c-radio-color-background,
+    var(
+      --sds-c-radio-color-background,
+      var(
+        --slds-g-color-neutral-base-100,
+        var(--lwc-colorBackgroundInput, rgb(255, 255, 255))
+      )
+    )
+  );
+  box-shadow: var(--slds-c-radio-shadow, var(--sds-c-radio-shadow));
+  transition:
+    border var(--lwc-durationQuickly, 0.1s) linear,
+    background-color var(--lwc-durationQuickly, 0.1s) linear;
+}
+
+@media only screen and (max-width: 600px) {
+  .desc {
+    width: 100%;
+  }
+
+  .fileBox {
+    height: 40px;
+    width: 100%;
+  }
+
+  .BoxAndMb {
+    display: grid;
+  }
+
+  h4.fivemb {
+    left: 0px;
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+  }
+
+  .imgclass {
+    left: -10px;
+    float: right;
+    bottom: 11px;
+  }
+
+  .main {
+    height: auto;
+    width: 100%;
+  }
+
+ .check{
+  position: relative;
+  bottom: 43px;
+  width: 99%;
+  left: 1%;
+ }
+  .response {
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+  }
+
+  .response .heading {
+    margin-top: -1cm;
+    padding: 0px;
+  }
+
+  .buttondiv {
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 0px;
+  }
+
+  .button1 {
+    width: 100%;
+  }
+
+  .button2 {
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  .change {
+    width: 100%;
+  }
+
+  .medicalform {
+    padding-top: 5px;
+    padding-left: 0px;
+  }
+
+  .medicalheading {
+    padding-left: 0px;
+  }
+
+  .form-container {
+    margin: 0px;
+    padding: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .medicalheading h2 {
+    font-size: 18px;
+    font-weight: 400;
+    padding-left: 0px;
+    color: #403a60;
+    font-family: "Eina04-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    margin-top: 20px;
+  }
+
+  .back p {
+    font-size: 16px;
+    cursor: pointer;
+    color: #403a60;
+    padding-top: 2px;
+    font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+
+  .medicalform label {
+    margin-top: 3px;
+    color: #403a60;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    line-height: 28px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .desc {
+    width: 100%;
+  }
+
+  .fileBox {
+    height: 40px;
+    width: 100%;
+  }
+
+  .BoxAndMb {
+    display: grid;
+  }
+
+  h4.fivemb {
+    left: 0px;
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+  }
+
+  .imgclass {
+    left: -10px;
+    float: right;
+    bottom: 11px;
+  }
+
+  .main {
+    height: auto;
+    width: 100%;
+  }
+
+ .check
+{
+  position: relative;
+  bottom: 436px;
+  width: 117%;
+  left: -12%;
+}
+  .response {
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+  }
+
+  .response .heading {
+    margin-top: -1cm;
+    padding: 0px;
+  }
+
+  .buttondiv {
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 0px;
+  }
+
+  .button1 {
+    width: 100%;
+  }
+
+  .button2 {
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  .change {
+    width: 100%;
+  }
+
+  .medicalform {
+    padding-top: 5px;
+    padding-left: 0px;
+  }
+
+  .medicalheading {
+    padding-left: 0px;
+  }
+
+  .form-container {
+    margin: 0px;
+    padding: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .medicalheading h2 {
+    font-size: 18px;
+    font-weight: 400;
+    padding-left: 0px;
+    color: #403a60;
+    font-family: "Eina04-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    margin-top: 20px;
+  }
+
+  .back p {
+    font-size: 16px;
+    cursor: pointer;
+    color: #403a60;
+    padding-top: 2px;
+    font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+
+  .medicalform label {
+    margin-top: 3px;
+    color: #403a60;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    line-height: 28px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 850px) {
+  .response {
+    margin-left: 55%;
+  }
+
+  .medicalheading h2 {
+    font-size: 32px;
+    padding-left: 92px;
+  }
+
+  .BoxAndMb {
+    display: grid;
+  }
+
+  h4.fivemb {
+    left: 0px;
+    width: 50%;
+    display: flex;
+    margin-top: 10px;
+  }
+
+  .main {
+    width: 10cm;
+  }
+
+ .check{
+  position: relative;
+  bottom: 62px;
+  width: 175%;
+  left: -18%;
+ }
+}
+
+@media only screen and (min-width: 850px) and (max-width: 992px) {
+  .response {
+    margin-left: 55%;
+  }
+
+  .medicalheading h2 {
+    font-size: 32px;
+    padding-left: 92px;
+  }
+
+  .BoxAndMb {
+    display: grid;
+  }
+
+  h4.fivemb {
+    left: 0px;
+    width: 50%;
+    display: flex;
+    margin-top: 10px;
+  }
+
+  .main {
+    width: 10cm;
+  }
+
+ .check{
+  position: relative;
+        bottom: 58px;
+        width: 169%;
+        left: -22%;
+ }
+
+  .para {
+    padding-left: 90px;
+  }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  .check{
+    position: relative;
+    bottom: 143px;
+    width: 185%;
+    left: -23%;
+  }
+
+  h4.fivemb {
+    display: flex;
+  }
+
+  .main {
+    width: 10cm;
+    margin-left: 35%;
+  }
+
+  
+}
+
+@media only screen and (min-width: 1200px) {
+  h4.fivemb {
+    display: flex;
+  }
+
+  .main {
+    width: 10cm;
+    margin-left: 7%;
+  }
+
+}
+@media only screen and (min-width: 1200px) and (max-width: 1500px){
+  .check{
+    position: relative;
+    bottom: 143px;
+    width: 185%;
+    left: -40%;
+
+  }
+}

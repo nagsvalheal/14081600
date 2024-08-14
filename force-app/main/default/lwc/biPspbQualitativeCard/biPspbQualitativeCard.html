@@ -1,0 +1,61 @@
+<!--This Card displays information related to the Qualitative satisfaction questionnaire,aiding in the presentation and understanding 
+of its contents.-->
+<template>
+	<template if:true={shouldShowComponent}>
+		<div class={flexCard}>
+			<div class="content">
+				<div>
+					<p class="dlqi">Qualitative Satisfaction <br />Questionnaire</p>
+				</div>
+				<br />
+				<!--To display RollOut and Completed Date-->
+				<div if:true={showRolloutDateCard}>
+					<p class={dlqiText}>{rollOut}</p>
+					<p class={dlqiChangeTxt}>{rolloutDate}</p>
+					<br />
+
+					<p class="dlqi2">{expireLabel}</p>
+					<p class="dlqi3">{expiresIn} days</p>
+					<img src={cardImage} alt="Qualitative Satisfaction" class={image} />
+		</div>
+					<div if:true={showAnswerQuestionsText}>
+						<p class="dlqi1">
+							<img src={cardImage} alt="Qualitative Satisfaction" class="image" />
+		</p>
+					</div>
+				</div>
+				<div class={bottomBar}>
+					<!-- Total Number of answered Question and Total number of Questions-->
+					<p class={ans}>
+						<span class="ansq">{answeredQuestions}</span>/{totalquestioncount}
+						<span class="smalltxt"> {answeredLabel}</span>
+					</p>
+
+					<div class="right">
+						<!--To Display button with Dynamic label-->
+						<template if:false={isStartLabel}>
+							<button
+			label={buttonLabel}
+			onclick={handleButtonClick}
+			class="button"
+			data-it-button="QSQ: Resume"
+			>
+			{buttonLabel}
+			</button>
+						</template>
+						<template if:true={isStartLabel}>
+							<svg class='svgtop' onclick={handleButtonClick} onkeydown={handleButtonClick} viewBox="0 0 49 48" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<rect x="1.68164" y="1" width="46" height="46" rx="23" stroke="#403A60"
+									class="svgstroke" stroke-width="2" />
+								<path d="M14.8477 24.166H34.8477" stroke="#403A60" class="svgstroke" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M24.8477 14.166L34.8477 24.166L24.8477 34.166" stroke="#403A60"
+									class="svgstroke" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</template>
+					</div>
+				</div>
+			</div>
+	</template>
+</template>

@@ -1,0 +1,193 @@
+<!--This Lightning web component facilitates setting up reminders and treatment schedules, allowing users to save and manage their healthcare appointments efficiently-->
+<template>
+	<div>
+	<template if:true={showDiv}>
+		<div class="checktoast"><c-bi-pspb-common-popup toast-message={reminderSetup} onbuttonclick={handleclose}></c-bi-pspb-common-popup></div>
+	</template>
+	<div class="avatar-picklist-container">
+		<div class="avatar-container">
+		<img
+			src={selectedAvatarSrc} alt = {alternateForAvatar}
+			class="slds-m-right_large">
+		</div>
+	<div class="wholediv">
+	<div if:true={variable} class="navigationcontent" >
+		<div class="contentbox"><div  if:true={showBeforeSaveContent}>
+			<div>{avatarTextOne}</div><br>
+			<div>{avatarTextTwo}</div> <br>
+			<div>{avatarTextThree}</div>
+		</div>
+	</div>
+		<div class="contentbox "><div if:false={showAfterSaveContent} class="savedata">
+			<div>{doneLabel}</div><br> 
+			<div>{setTreatmentText}</div><br>
+			<div>{lookReminders}</div>
+		</div>
+	</div>
+		 <div class="contentbox1" ><div if:true={showBeforeSaveContent}>
+			<div>{avatarTextOne}</div><br>
+			<div>{useReminderView}</div>
+		</div>
+	</div><span if:true={defaultClass} class="close" onclick={closeButton} onkeydown={closeButton} role="button" tabindex="0">X</span>
+		<div class="contentbox1" ><div if:false={showAfterSaveContent}>
+			<div>{doneLabel}</div> <br>
+			<div>{treatmentReminderView}</div>
+		</div></div><span if:true={close} class="closing">X</span>
+	</div>
+	<div class="navigationcontentmobile"  if:true={checkdata}>
+		<p class="remind">{avatarTextOne} {avatarTextTwo} {avatarTextThree}
+		</p>
+		<span if:true={clss} class="close1" onclick={closeButton} onkeydown={closeButton} role="button" tabindex="0">X</span>
+	</div>
+	<div class="navigationcontentmobile"  if:true={checkingdata}>
+		<p class="words">{doneLabel}<br>
+			{setTreatmentText}
+			{lookReminders}
+		</p>
+		<span if:true={clss} class="close1" >X</span>
+	</div>
+	<div if:true={closeDot}>
+		<p onclick={mobileclick} role="button"  aria-label="Navigation dot" tabindex="0" onkeydown={mobileclick} class="navigationcontentdot">...</p>
+	</div>
+	</div>
+	</div> 
+	<div class="show">
+	</div>
+	<div>
+			<hr class="line1">
+	</div>
+	<div class="main">
+<div class="head">
+	<h1 class="slds-text-heading_large heading slds-m-vertical_small customheading">{reminders}</h1>
+		<div>
+		</div><br>
+			<p class="pclass">{setTreatmentPrescription}</p>
+			<div class="timeline">
+			<div class="head">
+		<div class="date-container box" if:true={formattedReminderDates.length}>
+			<p class="tl">{timeline} </p>		
+			<div class="container1">
+				<template for:each={formattedReminderDates} for:item="reminder" for:index="index">
+					<div key={reminder.id} class="container">
+					<div class="row">
+						<span class="circle">					   
+						<button class="circlebutton"><div class="formdate"><p class="clssbtn">{reminder.formattedDate}</p><div><sup >{reminder.head}</sup></div></div></button>
+						</span> 
+					<span class={reminder.month}> 						
+					</span>  
+					</div>						   
+						<div class="row1">
+							<span class={reminder.formattedDatemonth}></span>
+						</div>
+					</div>
+				</template>
+			</div>
+			
+		</div>		  
+			</div>
+	<div>
+		<p data-field="DOB" class="cls3">
+			{dateOfTreatment} </p>
+			<div>
+			<input
+				placeholder={datePlaceHolder}
+				type="date"
+				class="inputbox"
+				data-field="DOB"
+				value={selectedDate}
+				onchange={handleDateChange}
+				min={minDate}
+				onkeydown={handleKeyDown} 
+				oninput={handleInput}
+				id="datefield">	
+			</div>
+		<span class="spanerror" if:true={dobErrorMessage}>
+			<img class="warn" src={warning} alt = {alternateForError}>
+			<p class="dotr"> {dateRequiredField}</p>
+		</span>
+	</div>
+		<p class="date-content">{receiveReminder}</p>	
+		<p class="pclass2 check">{recieveReminderDate}</p><br>
+<div class="flexclass">
+	<div>
+		<input type="checkbox" class="days14" onchange={handleCheckBoxFourteen} value="14" checked={checkedFourteen} disabled={disableFourteen}></input>
+	</div>
+	<div>
+		<label class="labelclr1" for="14days">{dayFourteen} {daysBefore}</label>
+	</div>
+</div>
+<div class="flexclass1">
+	<div><input type="checkbox" class="days10" onchange={handleCheckBoxTen} value="10" checked={checkedTen} disabled={disableTen}></input></div>
+	<div><label class="labelclr2" for="10days">{dayTen} {daysBefore}</label></div>
+</div>
+<div class="flexclass2">
+	<div><input type="checkbox" class="days7" onchange={handleCheckBoxSeven} value="7" checked={checkedSeven} disabled={disableSeven}></input></div>
+	<div><label class="labelclr3" for="7days">{daySeven} {daysBefore}</label></div>
+</div>
+<div if:true={showMessage} class="new">
+	<img class="warn" src={warning} alt = {alternateForError}> <p class="require">{fieldRequired}</p>
+</div><br>
+<p class="pclass2 check">{whenTreatment} </p>
+<div class="flexclass3">
+	<div><input type="checkbox" class="days3" onchange={handleCheckBoxThree} value="3" checked={checkedThree}></input></div>
+	<div><label class="labelclr4" for="3days">{dayThree} {daysBefore}</label></div>
+</div>
+<div class="flexclass4">
+	<div><input type="checkbox" class="days1" onchange={handleCheckBoxOne} value="1" checked={checkedOne}></input></div>
+	<div><label class="labelclr5" for="1days">{dayOne} {dayBefore}</label></div>
+</div>
+			</div>     
+		<div if:true={showMessageTwo} class="slds-m-top_medium">
+			<img class="warn" src={warning} alt = {alternateForError}> <p class="require">{fieldRequired}</p>
+		</div>
+</div>
+	<div class="buttonclass">
+	<div class="div"> 
+		<div>
+			<button  class="btn"  disabled={isSubmitButtonDisabled} onclick={handleSuccess}>{save}</button>
+		</div>			  		
+	<div>
+		<button if:true={showAddToCalendarBtn} class="slds-button slds-button_brand" onclick={handleAddCalendarButtonClick}>
+		{addCalendar}
+		</button>
+	</div>
+	</div>
+			<div class="disclaimer">
+			<img src={boxedIcon} class="box-icon" alt = {alternateForBox}>
+			<div>
+			<h4 class="disclaimer-head">Disclaimer</h4>
+			<div class="disclaimer-content">
+			<p ></p>{reminderText}
+			</div>
+			</div>
+			</div>
+	<template if:true={isPartVisible}>
+		<div class="slds-modal slds-fade-in-open open">
+			<div class="slds-modal__container">	  
+			<div class="closeclass">						
+			</div>			
+				<div class="slds-modal__content slds-p-around_medium contain cat">				
+					<h2 class="slds-text-heading_medium cal">{selectCalendar}</h2>
+					<div class="closebtn"> 
+						<button class="clsbtn" type="button" onclick={closeModal}>&#x2715;</button> 
+					</div>
+					<br><br><br><br>
+					<div class="imgclass">
+						<div><a href={googleCalendarUrls} target="_blank">
+							<img class="img1" src={googleCalIcon}  alt={alternateForGoogleCalendar}></a>
+						</div>
+							<div>
+								<a href={outlookCalendarUrls} target="_blank"><img class="img3" src={outlookCalIcon} alt={alternateForOutlookCalendar}></a>
+							</div> 
+					</div> 
+				</div>						
+			</div>  
+		</div>
+	</template>
+	<!-- Modal backdrop -->
+	<div class="slds-backdrop" if:true={isPartVisible}>
+	</div>
+		</div>
+		</div>		
+	</div>
+</template>

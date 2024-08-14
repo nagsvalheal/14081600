@@ -1,0 +1,51 @@
+<template>
+   <div if:true={showSpinner}>
+		<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	 </div>
+  <lightning-layout multiple-rows class="tabClass">
+    <lightning-layout-item
+      size="12"
+      small-device-size="12"
+      medium-device-size="12"
+      large-device-size="12"
+    >
+      <div class="tabsDiv pad">
+        <div class="grid-containerTabs">
+          <button onclick={openPatMyProfile} class="anchorTextActive">{myProfile}</button>
+          <button onclick={openPatMyCaregiver} class="anchorText">{myCaregiverLabel}</button>
+          <button onclick={openPatSelectAvatar} class="anchorText">{selectAvatar}</button>
+          <button onclick={openPatNotSettings} class="anchorText"
+            >{notificationSetting}</button>
+        </div>
+      </div>
+    </lightning-layout-item>
+  </lightning-layout>
+
+  <lightning-layout multiple-rows class="layoutColor pad">
+    <lightning-layout-item
+      size="12"
+      small-device-size="12"
+      medium-device-size="4"
+      large-device-size="4"
+      class="slds-p-top_xx-large slds-p-bottom_xx-large"
+    >
+      <div class="custom-box1">
+        <c-bi-Pspb-Avatar-Navigation onload={handleComponentLoad}></c-bi-Pspb-Avatar-Navigation>
+      </div>
+    </lightning-layout-item>
+
+    <lightning-layout-item
+      size="12"
+      small-device-size="12"
+      medium-device-size="8"
+      large-device-size="8"
+      class="slds-p-top_xx-large slds-p-bottom_xx-large lightningcard"
+    >
+      <div class="custom-box2">
+        <div class="pdv">
+          <c-bi-Pspb-Patient-Profile-Detail onload={handleComponentLoad}></c-bi-Pspb-Patient-Profile-Detail>
+        </div>
+      </div>
+    </lightning-layout-item>
+  </lightning-layout>
+</template>

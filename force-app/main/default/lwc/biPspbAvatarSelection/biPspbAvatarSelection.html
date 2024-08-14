@@ -1,0 +1,29 @@
+<!--This component is to Select avatar in account manager.-->
+<template>
+	<div class="main">
+		<div>
+			<h3 class="avatarchoose">Choose the avatar that best suits you</h3>
+		</div>
+		<div class="avatar-container">
+
+			<div class="avatar-row">
+				<template for:each={imageClass} for:item='avatar'>
+					<button key={avatar.dataid} class="image-column">
+						<img src={avatar.image} class={avatar.avatarclass} onclick={handleavatare}
+							data-id={avatar.dataid}>
+
+					</button>
+				</template>
+			</div>
+			<div class="buttondiv">
+				<button onclick={handleSave} class="custom-save-button">Apply Selected Avatar</button>
+				<div class="line"></div>
+			</div>
+		</div>
+	</div>
+
+	<div if:true={isLoading} class="spinner-container">
+		<!-- Show spinner or loading message -->
+		<lightning-spinner alternative-text="Loading"></lightning-spinner>
+	</div>
+</template>

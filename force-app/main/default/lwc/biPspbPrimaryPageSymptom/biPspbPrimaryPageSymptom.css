@@ -1,0 +1,1772 @@
+@font-face {
+            font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma,
+                sans-serif;
+            src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Regular.woff")
+                format("woff");
+        }
+
+        @font-face {
+            font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma,
+                sans-serif;
+            src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff")
+                format("woff");
+        }
+
+        @font-face {
+            font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma,
+                sans-serif;
+            src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff")
+                format("woff");
+        }
+
+        @font-face {
+            font-family: "Eina04-Bold", Helvetica, Arial, Verdana, Tahoma,
+                sans-serif;
+
+            src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff")
+                format("woff");
+        }
+
+
+.Symptomdata-date img {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    left: 38px;
+    top: 25px;
+}
+
+
+
+
+
+
+
+@media print {
+.display-LogoLogin{
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+    position: relative !important;
+    bottom: 20px !important;
+}
+h2{
+    text-align: center !important;
+    position: relative !important;
+    top: 2.5rem !important;
+    font-size: 16px !important;
+    font-family: 'Eina-Bold', Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+}
+.symptom-date-time{
+       page-break-after: always;
+
+}
+.Symptomdata-trigeer{
+     page-break-after: always;
+}
+.navBar{    
+    position: relative !important;
+    left: -32px !important;
+    width: 105% !important;
+}
+.padding{
+    padding-left: 20% !important;
+    padding-right: 20% !important;
+}
+
+
+    .button {
+        background-color: #ecdca8 !important ;
+        border-radius: 24px;
+        width: fit-content;
+        height: auto;
+        border: 1px solid white;
+        font-size: 16px;
+        font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma,
+            sans-serif;
+        padding: 10px 19px;
+        /* -webkit-print-color-adjust: exact; /* For WebKit browsers */
+        /*  print-color-adjust: exact; For other browsers */
+    }
+    .white {
+        background-color: #ffffff !important;
+        border-radius: 15px !important;
+        border-color: #c4c1cd !important;
+        width: 100% !important;
+        height: fit-content !important;
+        -webkit-print-color-adjust: exact !important; /* For WebKit browsers */
+        print-color-adjust: exact !important; /* For other browsers */
+        margin-left: 0px !important;
+    }
+    .Symptomdata-date {
+        background-color: white !important;
+        width: 100% !important;
+    }
+    .Symptomdata-GPp {
+        background-color: white !important;
+        width: 100% !important;
+    }
+    .Symptomdata-rows {
+        margin-left: 0px !important;
+    }
+}
+.span {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-weight: 300;
+    position: relative;
+    bottom: 9px;
+    right: 1px;
+}
+
+.edit {
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.modal-background {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.image-file-set {
+    border: 1px solid #c4c1cd;
+    width: 191px;
+    padding: 14px;
+    margin: 24px 6px;
+    border-radius: 10px;
+}
+
+.image-container {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #8d89a5;
+    border-radius: 8px;
+    width: 514px;
+}
+
+.close {
+    color: #403a60;
+    float: right;
+    text-align: right;
+    font-size: 40px;
+    cursor: pointer;
+    position: relative;
+    bottom: 30px;
+    background: none;
+    border: none;
+}
+
+p {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 10px;
+    color: #403a60;
+}
+.final {
+    font-weight: bold;
+}
+.ulstyle {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.key {
+    margin-right: 10px;
+}
+.list {
+    width: 24px;
+    height: 24px;
+}
+h3.lastedit {
+    color: #403a60;
+    font-size: 32px;
+    font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.modal-header {
+    color: #403a60;
+    font-size: 32px;
+    font-weight: bold;
+    position: absolute;
+    width: 33%;
+    border: none;
+    font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.modal-header-text {
+    color: #000000;
+    font-size: 16px;
+    margin: 60px 0px;
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.modal-btn-row {
+    display: flex;
+    justify-content: center;
+}
+
+.modal-confirm-btn {
+    height: 40px;
+    width: 24px;
+    border-radius: 12px;
+    background-color: #403a60;
+    font-weight: bold;
+    color: white;
+    border: #403a60;
+    margin: 20px 0px;
+}
+
+.confirm-btn-head {
+    display: flex;
+    justify-content: right;
+    flex-direction: row-reverse;
+}
+
+.confirm-btn-understand {
+    height: 40px;
+    width: 68px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    font-weight: bold;
+    color: #403a60;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    margin-top: 30px;
+    border-color: #403a60;
+    margin-bottom: 0px;
+    border: 1.5px solid;
+}
+
+.confirm-btn-understand-1 {
+    height: 40px;
+    width: 68px;
+    border-radius: 12px;
+    background-color: #403a60;
+    font-weight: bold;
+    color: white;
+    border: #403a60;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-bottom: 0px;
+}
+
+.Symptomdata-GPp img {
+    width: 44px;
+    height: 44px;
+    position: relative;
+    left: 38px;
+    top: 14px;
+}
+
+.Symptomdata-date {
+    height: 90px;
+    width: 100%;
+    border-radius: 12px;
+    font-weight: bold;
+    border: #403a60;
+    margin: 48px 8px 16px 0px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    display: flex;
+    background-color: #fff !important;
+}
+
+.Symptomdata-GPp {
+    height: 90px;
+    width: 100%;
+    border-radius: 12px;
+    font-weight: bold;
+    border: #403a60;
+    margin: 48px 0px 16px 8px;
+    background-color: white;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    display: flex;
+}
+
+.Symptomdata-rows {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin-left: 5%;
+}
+
+p.Symptomdata-value {
+    position: relative;
+    left: 72px;
+    display: inline-block;
+    top: 23px;
+}
+
+.p1 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 560;
+    color: #403a60;
+    width: 100%;
+}
+
+.btn {
+    border-radius: 12px;
+    width: 75px;
+    height: 40px;
+    border: 1.5px solid #403a60;
+    font-size: 14px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    line-height: 21px;
+    font-weight: 400;
+    background: #fbfaf5;
+}
+
+.btns {
+    display: flex;
+    gap: 20px;
+}
+
+.itchiness-page-primary {
+    border: 2px solid #c5ccd3;
+    width: 130px;
+    height: 130px;
+    border-radius: 12px;
+    margin: 8px 2px;
+}
+
+.itchiness-page-primary img {
+    width: 33px !important;
+    position: relative;
+    left: 45px;
+    top: 19px;
+    height: auto !important;
+}
+
+.boximg {
+    display: flex;
+    position: relative;
+    width: -webkit-fill-available;
+    overflow: scroll;
+}
+
+.head {
+    font-size: 18px;
+    line-height: 24px;
+    font-family: "Eina-regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-weight: 600;
+       
+}
+
+.white {
+    background-color: #ffffff;
+    border-radius: 15px;
+    border-color: #c4c1cd;
+    width: 100%;
+    height: fit-content;
+}
+
+.align {
+    position: relative;
+    left: 3%;
+    width: 96%;
+}
+
+.itchiness-page-primary-center {
+    position: relative;
+    left: 0px;
+    top: 29px;
+    text-align: center;
+}
+
+.div {
+    padding: 20px;
+    background-color: white;
+}
+
+.primary-symptoms {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.itchiness-page-primary-center p {
+    color: #8d89a5;
+    font-size: 16px;
+}
+
+.hr {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.img {
+    gap: 10px;
+    display: flex;
+}
+
+.hr1 {
+    margin-top: 40px;
+    margin-bottom: 10px;
+     color: #C4C1CD;
+}
+
+.button {
+    background-color: #ecdca8;
+    border-radius: 24px;
+    width: fit-content;
+    height: auto;
+    border: 1px solid #926b45;
+    font-size: 16px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    padding: 10px 19px;
+}
+
+.careName {
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 400;
+    color: #8d89a5;
+}
+
+.ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+h1 {
+    padding-bottom: 10px;
+}
+
+.Name {
+    position: RELATIVE;
+    left: 0px;
+    top: 32px;
+    text-align: center;
+    display: flex;
+    flex-direction: column-reverse;
+    font-size: 16px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.Imageclass {
+    width: 120px;
+    height: 73px;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+.btnclass {
+    padding-left: 57px;
+    padding-bottom: 50px;
+}
+
+@media only screen and (max-width: 400px) {
+    .main {
+        width: 100%;
+        margin-left: 18px;
+        margin-top: -41%;
+    }
+
+    .Symptomdata-rows {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        right: 8%;
+    }
+
+    .Symptomdata-date {
+        width: 99%;
+        margin-left: -10px;
+    }
+
+    .Symptomdata-GPp {
+        width: 100%;
+        margin: 10px -10px;
+    }
+
+    .ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 36%;
+        padding: 5px 5px;
+    }
+
+    .boximg {
+        overflow-x: scroll;
+        width: -webkit-fill-available;
+    }
+
+    .btns {
+        width: 100%;
+        flex-direction: column;
+        position: relative;
+        left: 0px;
+    }
+
+    .btn {
+        width: 97%;
+    }
+
+    .align {
+        position: relative;
+        left: 3%;
+        width: 96%;
+        margin-top: 10px;
+    }
+
+    .hr {
+        width: 100%;
+         color: #C4C1CD;
+    }
+
+    .btnclass {
+        width: 85%;
+        margin-left: -72px;
+        padding-bottom: 120px;
+    }
+
+    .confirm-btn-understand {
+        width: 100% !important;
+        margin-top: 0px !important;
+        background-color: #ffffff !important;
+        font-weight: bold;
+        color: #403a60 !important;
+        font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma,
+            sans-serif;
+        border-color: #403a60 !important;
+    }
+
+    
+     
+        .Symptomdata-date img {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            left: 38px;
+            top: 25px;
+        }
+
+        .span {
+            font-size: 16px;
+            line-height: 24px;
+            font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma,
+                sans-serif;
+            font-weight: 300;
+            position: relative;
+            bottom: 15px;
+            color: #403a60;
+        }
+
+        .Symptomdata-GPp img {
+            width: 44px;
+            height: 44px;
+            position: relative;
+            left: 38px;
+            top: 14px;
+        }
+
+        .Symptomdata-date {
+            height: 90px;
+            width: 393px;
+            border-radius: 12px;
+            font-weight: bold;
+            border: #403a60;
+            margin: 20px 25px;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+                rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+            display: flex;
+             background-color: #fff !important;
+            
+        }
+
+        .Symptomdata-GPp {
+            height: 90px;
+            width: 393px;
+            border-radius: 12px;
+            font-weight: bold;
+            border: #403a60;
+            margin: 20px 39px;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+                rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+            display: flex;
+        }
+
+        .Symptomdata-rows {
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+        }
+
+        p.Symptomdata-value {
+            position: relative;
+            left: 99px;
+            display: inline-block;
+            top: 31px;
+            color: #403a60;
+        }
+
+        .p1 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            line-height: 21px;
+            font-weight: 560;
+            color: #403a60;
+            width: 800px;
+        }
+
+        .btn {
+            border-radius: 12px;
+            width: 75px;
+            height: 40px;
+            border: 1.5px solid #403a60;
+            font-size: 14px;
+            font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma,
+                sans-serif;
+            line-height: 21px;
+            font-weight: 400;
+        }
+
+        .btns {
+            display: flex;
+            gap: 20px;
+        }
+
+        .itchiness-page-primary {
+            border: 2px solid #c5ccd3;
+            width: 130px;
+            height: 130px;
+            border-radius: 12px;
+        }
+
+        .itchiness-page-primary img {
+            position: relative;
+            left: 45px;
+            top: 20px;
+            width: 37px !important;
+            height: auto !important;
+        }
+
+        .boximg {
+            display: flex;
+            position: relative;
+        }
+
+        .head {
+            font-size: 18px;
+            line-height: 24px;
+            font-family: "Eina-regular", Helvetica, Arial, Verdana, Tahoma,
+                sans-serif;
+            font-weight: 600;
+        }
+
+        .white {
+            background-color: #ffffff;
+            border-radius: 15px;
+            border-color: #c4c1cd;
+            width: 888px;
+            height: fit-content;
+        }
+
+        .align {
+            position: relative;
+            left: 3%;
+            width: 96%;
+        }
+
+        .itchiness-page-primary-center {
+            position: relative;
+            left: 0px;
+            top: 29px;
+            text-align: center;
+        }
+
+        .div {
+            padding: 20px;
+            background-color: white;
+        }
+
+        .primary-symptoms {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .itchiness-page-primary-center p {
+            color: #8d89a5;
+            font-size: 16px;
+        }
+
+        .hr {
+            margin-top: 0px;
+            margin-bottom: 10px;
+        }
+
+        .img {
+            gap: 10px;
+            display: flex;
+        }
+
+        .hr1 {
+            margin-top: 40px;
+            margin-bottom: 10px;
+        }
+
+        .button {
+            background-color: #ecdca8;
+            border-radius: 24px;
+            width: fit-content;
+            height: 48px;
+            border: 1px solid #926b45;
+            font-size: 16px;
+            font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma,
+                sans-serif;
+        }
+
+        .careName {
+            font-size: 16px;
+            line-height: 21px;
+            font-weight: 400;
+            color: #8d89a5;
+        }
+
+        .ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        h1 {
+            padding-bottom: 10px;
+        }
+
+        .Name {
+            position: RELATIVE;
+            left: 0px;
+            top: 32px;
+            text-align: center;
+            display: flex;
+            flex-direction: column-reverse;
+            font-size: 16px;
+            font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma,
+                sans-serif;
+        }
+
+        .Imageclass {
+            width: 120px;
+            height: 73px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+
+        .btnclass {
+            padding-left: 10px;
+        }
+    
+
+    @media only screen and (min-width: 401px) and (max-width: 600px) {
+        .Symptomdata-rows {
+            flex-direction: column;
+            position: relative;
+            right: 0%;
+        }
+
+        .boximg {
+            overflow-x: scroll;
+            width: 90%;
+            position: relative;
+            left: 7%;
+        }
+
+        .Symptomdata-date {
+            width: 90%;
+            margin-left: 0px;
+        }
+
+        .Symptomdata-GPp {
+            width: 90%;
+            margin-left: 0px;
+        }
+
+        .p1 {
+            width: 370px;
+        }
+
+        .head {
+            margin-left: 3%;
+        }
+
+        .btns {
+            flex-direction: column;
+            position: relative;
+            left: 0px;
+        }
+
+        .btnclass {
+            width: 380px;
+            padding-left: 20px;
+            padding-bottom: 40px;
+        }
+
+        .hr {
+            width: 100%;
+        }
+
+        .hr1 {
+            width: 100%;
+        }
+
+        .ul {
+            width: 370px;
+            margin-left: 2%;
+        }
+
+        .btn {
+            width: 300px;
+        }
+
+        .white {
+            width: 100%;
+            height: fit-content;
+            margin-left: 13px;
+        }
+
+        .confirm-btn-understand {
+            width: 100%;
+            margin-top: 0px;
+
+            margin-left: 0px;
+        }
+        .confirm-btn-head {
+            flex-direction: column;
+        }
+    }
+
+    @media only screen and (min-width: 601px) and (max-width: 768px) {
+        .Symptomdata-rows {
+            flex-direction: column;
+        }
+
+        .boximg {
+            overflow-x: scroll;
+        }
+
+        .Symptomdata-GPp {
+            position: relative;
+            right: 5%;
+        }
+
+        .Symptomdata-date {
+            position: relative;
+            right: 3%;
+        }
+
+        .btnclass {
+            width: 85%;
+        }
+
+        .p1 {
+            width: 550px;
+        }
+
+        .hr {
+            width: 100%;
+        }
+
+        .hr1 {
+            width: 100%;
+        }
+
+        .white {
+            width: 100%;
+            height: fit-content;
+        }
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 992px) {
+        .boximg {
+            overflow-x: scroll;
+            width: -webkit-fill-available;
+        }
+
+        .Symptomdata-GPp {
+            position: relative;
+            right: 2%;
+        }
+
+        .hr {
+            width: 100%;
+        }
+
+        .p1 {
+            width: 600px;
+        }
+
+        .hr1 {
+            width: 100%;
+        }
+
+        .main {
+            position: relative;
+            right: 20%;
+        }
+
+        .Symptomdata-rows {
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+            position: relative;
+            right: 3%;
+            flex-direction: column;
+        }
+
+        .white {
+            width: 100%;
+            height: fit-content;
+        }
+    }
+
+    @media only screen and (min-width: 992px) and (max-width: 1200px) {
+        .boximg {
+            overflow-x: scroll;
+            width: -webkit-fill-available;
+        }
+
+        .hr {
+            width: 100%;
+        }
+
+        .hr1 {
+            width: 100%;
+        }
+
+        .white {
+            width: 100%;
+            height: fit-content;
+        }
+
+        .Symptomdata-GPp {
+            position: relative;
+            right: 2%;
+        }
+
+        .p1 {
+            width: 700px;
+        }
+
+        .Symptomdata-rows {
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+            position: relative;
+            right: 3%;
+            flex-direction: column;
+        }
+
+        .main {
+            position: relative;
+            right: 15%;
+        }
+    }
+
+    @media only screen and (min-width: 1200px) {
+        .main {
+            position: relative;
+            right: 1%;
+            width: 96%;
+        }
+
+        .Symptomdata-rows {
+            position: relative;
+            right: 2%;
+        }
+    }
+
+    .modal-background {
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 100px auto;
+        padding: 20px;
+        border: 1px solid #8d89a5;
+        border-radius: 8px;
+        width: 514px;
+    }
+
+    .close {
+        color: #403a60;
+        float: right;
+        text-align: right;
+        font-size: 40px;
+        cursor: pointer;
+        position: relative;
+        bottom: 25px;
+    }
+
+    .modal-header {
+        color: #403a60;
+        font-size: 32px;
+        font-weight: bold;
+        position: absolute;
+        width: 33%;
+        border: none;
+        font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    }
+
+    .modal-header-text {
+        color: #000000;
+        font-size: 16px;
+        margin: 60px 0px;
+        font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma,
+            sans-serif;
+    }
+
+    .modal-btn-row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .modal-confirm-btn {
+        height: 40px;
+        width: 24px;
+        border-radius: 12px;
+        background-color: #403a60;
+        font-weight: bold;
+        color: white;
+        border: #403a60;
+        margin: 20px 0px;
+    }
+
+    .confirm-btn-head {
+        display: flex;
+        justify-content: right;
+        flex-direction: column;
+    }
+
+    .confirm-btn-understand-1 {
+        height: 40px;
+        width: 68px;
+        border-radius: 12px;
+        background-color: #403a60;
+        font-weight: bold;
+        color: white;
+        margin-right: 10px;
+        border: 1.5px solid #403a60;
+        font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma,
+            sans-serif;
+        margin-top: 29px;
+        margin-left: 0px;
+        margin-bottom: 0px;
+    }
+
+    p {
+        font-size: 16px;
+        font-weight: bold;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    h3.lastedit {
+        color: #403a60;
+        font-size: 32px;
+        font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    }
+
+    .p1 {
+        width: 288px;
+    }
+
+    .white {
+        width: 100%;
+        height: fit-content;
+        margin-left: -17px;
+    }
+}
+
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+    .Symptomdata-rows {
+        width: 100%;
+        flex-direction: column;
+        position: relative;
+        right: 0%;
+    }
+
+    .boximg {
+        overflow-x: scroll;
+        width: 90%;
+        position: relative;
+        left: 7%;
+    }
+
+    .Symptomdata-date {
+        width: 90%;
+        margin-left: 0px;
+        margin-top: -37px;
+    }
+
+    .Symptomdata-GPp {
+        width: 90%;
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+
+    .button {
+        width: 96%;
+    }
+
+    .main {
+        width: 100%;
+    }
+
+    .p1 {
+        width: 94%;
+        line-height: 1.3;
+    }
+
+    .head {
+        margin-left: 3%;
+    }
+
+    .btns {
+        width: 96%;
+        flex-direction: column;
+        position: relative;
+        left: 0px;
+    }
+
+    .btnclass {
+        width: 100%;
+        padding-left: 20px;
+        padding-bottom: 40px;
+    }
+
+    .hr {
+        width: 100%;
+    }
+
+    .hr1 {
+        width: 100%;
+    }
+
+    .ul {
+        width: 100%;
+        margin-left: 2%;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .white {
+        width: 94%;
+        height: fit-content;
+        margin-left: 13px;
+    }
+
+    .modal-content {
+        width: 94%;
+        margin-left: 16px;
+    }
+
+    .confirm-btn-understand {
+        width: 100%;
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+
+    .confirm-btn-understand-1 {
+        width: 100%;
+        margin-bottom: 20px;
+        margin-left: 0px;
+    }
+
+    .confirm-btn-head {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    .Symptomdata-rows {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .boximg {
+        overflow-x: scroll;
+    }
+
+    .Symptomdata-GPp {
+        position: relative;
+        right: 6%;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .Symptomdata-date {
+        position: relative;
+        right: 5%;
+        width: 100%;
+        margin-top: -51px;
+    }
+
+    .btnclass {
+        width: 85%;
+        margin-left: 10px;
+        padding-bottom: 40px;
+    }
+
+    .p1 {
+        width: 100%;
+    }
+
+    .hr {
+        width: 100%;
+    }
+
+    .hr1 {
+        width: 100%;
+    }
+
+    .white {
+        width: 100%;
+        height: fit-content;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .boximg {
+        overflow-x: scroll;
+        width: -webkit-fill-available;
+    }
+
+    .Symptomdata-GPp {
+        position: relative;
+        right: -3%;
+        width: 134%;
+    }
+
+    .Symptomdata-date {
+        width: 133%;
+        margin-left: 28px;
+    }
+
+    .hr {
+        width: 100%;
+    }
+
+    .p1 {
+        width: 100%;
+    }
+
+    .hr1 {
+        width: 100%;
+    }
+
+    .main {
+        position: relative;
+        right: 20%;
+        width: 100%;
+    }
+
+    .Symptomdata-rows {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        position: relative;
+        right: 3%;
+        flex-direction: column;
+    }
+
+    .white {
+        width: 134%;
+        height: fit-content;
+        margin-left: 35px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .boximg {
+        overflow-x: scroll;
+        width: -webkit-fill-available;
+    }
+
+    .hr {
+        width: 96%;
+        color: #C4C1CD;
+    }
+
+    .hr1 {
+        width: 96%;
+        color: #C4C1CD;
+    }
+
+    .white {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .Symptomdata-GPp {
+        position: relative;
+        right: 2%;
+        width: 100%;
+    }
+
+    .p1 {
+        width: 100%;
+    }
+
+    .Symptomdata-rows {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        position: relative;
+        right: 3%;
+        flex-direction: column;
+    }
+
+    .Symptomdata-date {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1500px) {
+    .main {
+        position: relative;
+        right: 50px;
+        width: 96%;
+    }
+
+    .white {
+        width: 111%;
+        margin-left: 44px;
+        padding-top: 14px;
+    }
+
+    .Symptomdata-rows {
+        position: relative;
+        right: 2%;
+        width: 114%;
+        padding-left: 23px;
+    }
+
+    .btnclass {
+        width: 100%;
+        padding-bottom: 55px;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    .white {
+        width: 100%;
+        margin-left: 56px;
+    }
+
+    .Symptomdata-rows {
+        margin-top: -35px;
+        margin-left: 53px;
+    }
+}
+
+
+h2 {
+    text-align: center;
+    position: relative;
+    top: 3.5rem;
+    font-size: 16px;
+    font-family: 'Eina-Bold', Helvetica, Arial, Verdana, Tahoma, sans-serif;;
+}
+@media print{
+   .primarysytle {
+	padding-left: 30px !important;
+	Width: 100% !important;
+}
+
+
+	.primarystyle{
+       page-break-after: always;
+
+	 }
+}
+
+	.printDoc{
+		background-color: #FBFAF5 !important;
+	}
+@media print {
+
+
+	.navBar{
+		    background-color: #F8F2DF !important;
+	}
+	.printDoc{
+		background-color: #FBFAF5 !important;
+	
+		 
+	}.padding{
+		    padding-left: 0 !important;
+    padding-right: 0 !important;
+	}
+.Symptomdata-date{
+    height: 90px !important;
+    width: 100% !important;
+    border-radius: 12px !important;
+    font-weight: bold !important;
+    border: #403a60 !important;
+    margin: 48px 8px 16px 0px !important;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px !important;
+    display: flex !important;
+    background-color: #fff !important;
+}
+
+/* .primarysytle{
+	padding-left: 30px !important;
+    Width: 70% !important;
+} */
+
+
+}
+
+.chart-container {
+	display: flex;
+    justify-content: center;
+    margin-bottom: 59px;
+}
+
+/* To hide content during PDF Export*/
+.padding {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.navBar {
+	background-color: #F8F2DF;
+	height: 96px;
+}
+
+
+.grid-containerPatientDetials {
+	display: grid;
+    grid-template-columns: auto auto;
+    gap: 25px;
+    margin-left: 46%;
+}
+.grid-font{
+	    font-size: 14px;
+    font-family: 'Eina-bold', Helvetica, Arial, Verdana, Tahoma, sans-serif;;
+}
+.grid-containerPatient {
+	display: grid;
+	grid-template-columns: auto;
+	gap: 5px;
+	margin-left: 0%;
+}
+.grid-containerPatient1 {
+	display: grid;
+	grid-template-columns: auto;
+	gap: 5px;
+	margin-left: 10%;
+}
+
+.paraStyle {
+	font-family: 'Eina-Regular', Helvetica, Arial, Verdana, Tahoma, sans-serif;;
+	font-weight: 400;
+	font-size: 11px;
+}
+
+.display-LogoLogin {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100px;
+}
+
+.grid-containerNav {
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 10px 0px;
+	width: -webkit-fill-available;
+	position: relative;
+}
+
+.bar.highlighted {
+	background-color: lightblue;
+	/* Add your desired highlighted color */
+}
+
+.chart {
+	display: flex;
+}
+
+.selected-image-container {
+	background-color: #ffcc00;
+	/* Set your desired background color */
+	/* Add any other styling for the selected image container */
+}
+
+.spinner-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #ffff;
+	/* semi-transparent white background */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 99999;
+	/* Ensure it appears above other elements */
+}
+
+.bar {
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container-bottom {
+	display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    height: 106%;
+}
+
+
+
+.lineimg {
+      position: relative;
+    left: 50.1%;
+    height: 411px;
+    width: 2px;
+    top: 25px;
+}
+
+.chart-image {
+	margin-bottom: 5px;
+    position: relative;
+    bottom: 50px;
+}
+
+.label {
+	font-size: 12px;
+	margin-top: 5px;
+	/* Add margin at the top to separate date from images */
+}
+
+/* ends */
+.grid-containers {
+	display: grid;
+	grid-template-columns: repeat(7, auto);
+}
+
+/*.custom-box{
+	background-color : white;
+	border: 1px solid black;
+	border-radius: 10px;
+}*/
+.textAlignCenter {
+	text-align: center;
+}
+
+.grid-containerGraph {
+	display: grid;
+	grid-template-columns: 400px 150px 150px 150px 150px 150px;
+	gap: 10px;
+}
+
+.displayBlock {
+	display: block;
+	text-align: center;
+	padding: 10px;
+}
+
+.FlexCenter {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.grid-containerinline {
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 5px;
+}
+
+.FlexCircleCenter {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.FlexCircleCenterText {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: 5px;
+}
+
+.backcLOLOR {
+	background-color: #c6c5d3;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.grid-containerColorNotification {
+	display: grid;
+	grid-template-columns: repeat(7, max-content);
+	gap: 30px;
+	margin-left: 1%;
+}
+
+.grid-containerColors {
+	display: grid;
+	grid-template-columns: max-content max-content;
+	gap: 5px;
+}
+
+.height40 {
+	height: 40px;
+	width: 10px;
+}
+.wiDheight{
+	width:132px;
+	height:56px;
+}
+.vertical-line {
+	border-left: 1px solid #000;
+	height: 65px;
+}
+
+.lineDesign {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.padLeft10 {
+	padding-left: 10px;
+	margin: 0px 15px;
+}
+
+.showEnd {
+	display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin-bottom: -48px;
+}
+
+/*----Second Chart----*/
+.grid-containerBubble {
+	display: grid;
+	grid-template-columns: repeat(9, 80px);
+	gap: 10px;
+}
+
+.grid-containerChartBubbles {
+	display: grid;
+	grid-template-rows: repeat(9, auto);
+	gap: 5px;
+	margin: 30px 0px;
+}
+
+.FlexBubbleCenter {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	height: 20px;
+}
+
+.custom-Bubble-box {
+	background-color: white;
+	width: fit-content;
+}
+
+.highlightBack {
+	background-color: #f2e174;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.disInline {
+	display: inline-flex;
+}
+
+.grid-containerButtons {
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 10px;
+}
+
+.selectWidth {
+	width: 200px;
+	border: none;
+	border-radius: 2px;
+	height: 30px;
+}
+
+.bar .container-bottom>hr {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.pad10 {
+	padding: 5px 35px;
+}
+
+.highlighted {
+	background-color: red;
+}
+
+hr {
+	margin: 0px;
+    color: #C4C1CD;
+	width: 100%
+}
+
+.primarysytle {
+	padding-left: 30px;
+	Width: 100%;
+}

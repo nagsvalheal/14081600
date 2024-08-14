@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+	<apiVersion>57.0</apiVersion>
+	<isExposed>true</isExposed>
+	<description>
+		This LWC creates a reminder notification interface. 
+		It features an icon and text to prompt users to choose their preferred reminder method and includes a link to the notification settings page for configuring preferences.
+	</description>
+	<targets>
+		<target>lightningCommunity__Page</target>
+		<target>lightningCommunity__Default</target>
+		<target>lightningCommunity__Page_Layout</target>
+		<target>lightningCommunity__Theme_Layout</target>
+	</targets>
+</LightningComponentBundle>

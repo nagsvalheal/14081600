@@ -1,0 +1,251 @@
+<!--This Lightning web component is used to display the searched article and search avatar message.-->
+<template>
+	<!-- Onload show spinner few seconds -->
+	 <div if:false={allChildrenRendered}>
+		<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	 </div>
+	<!--Display the branded subheader-->
+	<template if:true={showBrandedNav}>
+		<lightning-layout multiple-rows>
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+				<div class="customNavTab pad">
+					<div class="grid-containerNavTab">
+						<button onclick={openArticlesPage} class="menuListActive">{articles}</button>
+						<button onclick={openSpevigoCategory} class="menuList">{spevigoArticleLabel}</button>
+						<button onclick={openPTVPage} class="menuList">{patientTreatmentVideos}</button>
+					</div>
+				</div>
+			</lightning-layout-item>
+		</lightning-layout>
+	</template>
+	<div class="containerh">
+		<div class="flexiirow">
+			<div>
+				<div class="flexi">
+					<div class="flexicolumn1">
+						<!--Display the Search avatar message-->
+						<div>
+							<c-bi-Pspb-Article-Search-Avatar site-urlq={siteUrlq} onchildrendered={handleChildRendered}></c-bi-Pspb-Article-Search-Avatar>
+						</div>
+					</div>
+					<hr class="linemb" />
+					<!--Display the search results-->
+					<div class="searchoption">
+						<div class="search-icon-container">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<g clip-path="url(#clip0_14614_32008)">
+									<path fill-rule="evenodd" clip-rule="evenodd"
+										d="M9.82997 0C4.40103 0 0 4.40103 0 9.82997C0 15.2589 4.40103 19.6599 9.82997 19.6599C12.243 19.6599 14.453 18.7905 16.1637 17.3477L22.5708 23.7556L22.6867 23.8525C23.013 24.0786 23.4641 24.0463 23.7547 23.7557C24.0817 23.4288 24.0818 22.8987 23.7548 22.5717L17.3477 16.1637C18.7905 14.453 19.6599 12.243 19.6599 9.82997C19.6599 4.40103 15.2589 0 9.82997 0ZM15.6222 15.5713C17.0831 14.0975 17.9855 12.0691 17.9855 9.82997C17.9855 5.32578 14.3342 1.67442 9.82997 1.67442C5.32578 1.67442 1.67442 5.32578 1.67442 9.82997C1.67442 14.3342 5.32578 17.9855 9.82997 17.9855C12.0692 17.9855 14.0976 17.0831 15.5714 15.6221C15.5795 15.6133 15.5878 15.6046 15.5963 15.5961C15.6048 15.5876 15.6134 15.5794 15.6222 15.5713Z"
+										fill="#696969" class="pathfil"></path>
+								</g>
+								<defs>
+									<clipPath id="clip0_14614_32007">
+										<rect width="24" height="24" fill="white" class="clippaths"></rect>
+									</clipPath>
+								</defs>
+							</svg>
+							<input class="search-bar" type="search" placeholder="Search for an article"
+								onchange={handleSearch} oninput={debouncedSearch} onkeyup={handleSearchInputKeyUp}
+								onfocus={handleSearchBarFocus} onblur={handleSearchBarBlur} value={searchInput} />
+
+							<svg class="clearInput" onclick={clearInput} width="16" height="16" viewBox="0 0 16 16"
+								fill="none" xmlns="http://www.w3.org/2000/svg" role="button" onkeydown={clearInput} tabindex="0">
+								<path fill-rule="evenodd" clip-rule="evenodd"
+									d="M0.875504 0.0988925L0.952804 0.163475L8 7.21023L15.0472 0.163475C15.2652 -0.0544918 15.6186 -0.0544918 15.8365 0.163475C16.0303 0.357224 16.0518 0.657977 15.9011 0.875504L15.8365 0.952804L8.78977 8L15.8365 15.0472C16.0545 15.2652 16.0545 15.6186 15.8365 15.8365C15.6428 16.0303 15.342 16.0518 15.1245 15.9011L15.0472 15.8365L8 8.78977L0.952804 15.8365C0.734837 16.0545 0.381442 16.0545 0.163475 15.8365C-0.0302732 15.6428 -0.0518008 15.342 0.0988925 15.1245L0.163475 15.0472L7.21023 8L0.163475 0.952804C-0.0544918 0.734837 -0.0544918 0.381442 0.163475 0.163475C0.333005 -0.00605464 0.58446 -0.043728 0.790401 0.0504553L0.875504 0.0988925Z"
+									fill="#696969" class="pathfil2" />
+							</svg>
+							<hr class="search-bar-border-bottom" />
+							<template if:true={showNoResults}>
+								<div class="noresultcontain" if:true={showNoResults}>
+									<p if:true={showNoResults} class="no-results-text">
+										{noSearchResult}!
+									</p>
+								</div>
+							</template>
+						</div>
+					</div>
+
+					<div class="column column1">
+						<div class="navlink">
+							<c-bi-Pspb-Article-Search-Navigation onchildrendered={handleChildRendered}></c-bi-Pspb-Article-Search-Navigation>
+						</div>
+						<div class="navlinkmb">
+							<div class="tags">
+								<template for:each={standarItems} for:item="relatedItem">
+									<button if:false={showNoResults} key={relatedItem.id} data-label={relatedItem.title}
+										title={relatedItem.title} class="end-btnnew"
+										data-id={relatedItem.id} data-name={relatedItem.title}
+										data-it-button={relatedItem.title}>
+										{relatedItem.title}</button>&nbsp;&nbsp;&nbsp;
+								</template>
+								<br />
+								<br />
+								<br />
+							</div>
+								<div class="QuickLinks">
+									<div class="display">
+										<h3 class="headingcategory">{articleCategories}</h3>
+										<div class="vicon">
+											<lightning-icon if:true={down} icon-name="utility:chevrondown"
+												alternative-text="Connected" size="xx-small" title="xx-small size"
+												onclick={click} onkeypress={click}></lightning-icon>
+											<lightning-icon if:true={up} icon-name="utility:chevronup"
+												alternative-text="Connected" size="xx-small" onclick={notClick} onkeypress={notClick}
+												title="xx-small size"></lightning-icon>
+										</div>
+									</div>
+									<span if:true={touch}>
+									<template if:true={showJustForMe}>
+										<button data-it-button="category: Just for me" if:true={showJustForMe}
+											label="Just for me &#8594;" data-name="Just for me"
+											onclick={navigateCategoryPage} class="end-btn" title="Just for me">
+											{justForMeCategory}
+											<svg width="16" height="16" class="svgtopcls" viewBox="0 0 16 16"
+												fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M2 7.44531H14" stroke="#403A60" class="svgpath"
+													stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60"
+													class="svgpath" stroke-width="1.5" stroke-linecap="round"
+													stroke-linejoin="round" />
+											</svg></button>&nbsp;&nbsp;&nbsp;
+									</template>
+
+									<template for:each={categoryList} for:item="relatedItem">
+										<button data-it-button={relatedItem.titleadb} key={relatedItem.id}
+											data-label={relatedItem.title} title={relatedItem.title} class="end-btn"
+											onclick={navigateCategoryPage} data-id={relatedItem.id}
+											data-name={relatedItem.title}>
+											{relatedItem.title}
+											<svg width="16" height="16" class="svgtopcls" viewBox="0 0 16 16"
+												fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M2 7.44531H14" stroke="#403A60" class="svgpath"
+													stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60"
+													class="svgpath" stroke-width="1.5" stroke-linecap="round"
+													stroke-linejoin="round" />
+											</svg></button>&nbsp;&nbsp;&nbsp;
+									</template>
+									<button if:true={categorytreatmentnew} data-it-button={categoryForAnalytics}
+										class="end-btn" data-name={categorytreatmentnew} onclick={navigateCategoryPage}>
+										{categorytreatmentnew}<svg class="svgleftcls" width="16" height="16"
+											viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M2 7.44531H14" stroke="#403A60" class="svgpath" stroke-width="1.5"
+												stroke-linecap="round" stroke-linejoin="round" />
+											<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60" class="svgpath"
+												stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
+									</button>
+								</span>
+									<hr class="line-article" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="containerList">
+					<div class="component">
+						<br />
+						<br />
+						<div class="search-icon-containerdk">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<g clip-path="url(#clip0_14614_32008)">
+									<path fill-rule="evenodd" clip-rule="evenodd"
+										d="M9.82997 0C4.40103 0 0 4.40103 0 9.82997C0 15.2589 4.40103 19.6599 9.82997 19.6599C12.243 19.6599 14.453 18.7905 16.1637 17.3477L22.5708 23.7556L22.6867 23.8525C23.013 24.0786 23.4641 24.0463 23.7547 23.7557C24.0817 23.4288 24.0818 22.8987 23.7548 22.5717L17.3477 16.1637C18.7905 14.453 19.6599 12.243 19.6599 9.82997C19.6599 4.40103 15.2589 0 9.82997 0ZM15.6222 15.5713C17.0831 14.0975 17.9855 12.0691 17.9855 9.82997C17.9855 5.32578 14.3342 1.67442 9.82997 1.67442C5.32578 1.67442 1.67442 5.32578 1.67442 9.82997C1.67442 14.3342 5.32578 17.9855 9.82997 17.9855C12.0692 17.9855 14.0976 17.0831 15.5714 15.6221C15.5795 15.6133 15.5878 15.6046 15.5963 15.5961C15.6048 15.5876 15.6134 15.5794 15.6222 15.5713Z"
+										fill="#696969" class="pathfil2"></path>
+								</g>
+								<defs>
+									<clipPath id="clip0_14614_32008">
+										<rect width="24" height="24" fill="white" class="clippaths"></rect>
+									</clipPath>
+								</defs>
+							</svg>
+
+							<input class="search-barnew" type="search" placeholder="Search for an article"
+							onchange={handleSearch} oninput={debouncedSearch} onkeyup={handleSearchInputKeyUp}
+							value={searchInput} onfocus={handleSearchBarFocus} onblur={handleSearchBarBlur} />
+							<svg class="clearInput" onclick={clearInputMob} width="24" height="24" viewBox="0 0 24 24"
+								fill="none" xmlns="http://www.w3.org/2000/svg" role="button" onkeydown={clearInputMob} tabindex="0">
+								<path fill-rule="evenodd" clip-rule="evenodd"
+									d="M3.09438 2.12362L3.191 2.20434L12 11.0128L20.809 2.20434C21.0815 1.93189 21.5232 1.93189 21.7957 2.20434C22.0378 2.44653 22.0648 2.82247 21.8764 3.09438L21.7957 3.191L12.9872 12L21.7957 20.809C22.0681 21.0815 22.0681 21.5232 21.7957 21.7957C21.5535 22.0378 21.1775 22.0648 20.9056 21.8764L20.809 21.7957L12 12.9872L3.191 21.7957C2.91855 22.0681 2.4768 22.0681 2.20434 21.7957C1.96216 21.5535 1.93525 21.1775 2.12362 20.9056L2.20434 20.809L11.0128 12L2.20434 3.191C1.93189 2.91855 1.93189 2.4768 2.20434 2.20434C2.41626 1.99243 2.73058 1.94534 2.988 2.06307L3.09438 2.12362Z"
+									fill="#403A60" class="svgpathfiln" />
+							</svg>
+						</div>
+						<hr class="search-bar-border-bottom" />
+						<template if:true={showNoResults}>
+							<div class="noresultcontain" if:true={showNoResults}>
+								<p if:true={showNoResults} class="no-results-text">
+									{noSearchResult}!
+								</p>
+							</div>
+						</template>
+
+						<div class="flexirow">
+							<template for:each={standarItems} for:item="relatedItem">
+								<button if:false={showNoResults} key={relatedItem.id} data-it-button={relatedItem.title}
+								data-label={relatedItem.title} title={relatedItem.title} class="end-btnnew"
+								 data-id={relatedItem.id} data-name={relatedItem.title}>
+								{relatedItem.title}</button>&nbsp;&nbsp;&nbsp;
+							</template>
+						</div>
+					</div>
+					<!--Display the no search result container if no results found-->
+					<div class="" if:false={showNoResults}>
+						<div class="options">
+							<div class="container-tag">
+								<div class="searchhead" if:true={showsearch}>
+									<template for:each={searchItems} for:item="relatedItem">
+										<button data-it-button={relatedItem.title} key={relatedItem.id}
+										title={relatedItem.text} onclick={handleSearchButtonClick}
+										data-id={relatedItem.id} class="end-btn">
+										{relatedItem.text}
+									</button>
+									</template>
+								</div>
+								<div if:true={searchItems} class="controlWidth">
+									<div class="container-itembox">
+										<div class="container-item">
+											<div class="article-container">
+												<div class="left-section">
+													<template for:each={searchItems} for:item="relatedItem">
+														<article data-name={relatedItem.text}
+															onclick={handleReloadAndNavigate} class="article first"
+															key={relatedItem.id} role="button" onkeydown={handleReloadAndNavigate}>
+															<img class="article_image" src={relatedItem.image}
+															alt="Article 1" />
+															<div class="headingcontainer">
+																<h2>{relatedItem.text}</h2>
+																<p>{relatedItem.text2}</p>
+																<hr class="minsline" />
+																<div class="minscls">
+																	<svg width="40" height="24" viewBox="0 0 24 24"
+																		fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path fill-rule="evenodd" clip-rule="evenodd"
+																			d="M12 3.42827C6.87482 3.42827 2.71395 7.58913 2.71395 12.7143C2.71395 17.8395 6.87482 22.0004 12 22.0004C17.1252 22.0004 21.286 17.8395 21.286 12.7143C21.286 7.58913 17.1252 3.42827 12 3.42827ZM11.2857 12.3707L7.982 15.0137C7.67413 15.2601 7.62413 15.7101 7.87056 16.018C8.117 16.3259 8.56702 16.3759 8.87489 16.1294L12.4464 13.2722C12.5329 13.2029 12.5986 13.1179 12.6436 13.0243L12.6443 13.0236C12.6893 12.93 12.7143 12.825 12.7143 12.7143V6.99982C12.7143 6.60552 12.3943 6.28551 12 6.28551C11.6057 6.28551 11.2857 6.60552 11.2857 6.99982V12.3707ZM5.06618 2.20894L2.20894 5.06618C1.93035 5.34476 1.93035 5.79764 2.20894 6.07622C2.48752 6.3548 2.94039 6.3548 3.21897 6.07622L6.07622 3.21897C6.3548 2.94039 6.3548 2.48752 6.07622 2.20894C5.79764 1.93035 5.34476 1.93035 5.06618 2.20894ZM17.9238 3.21897L20.781 6.07622C21.0596 6.3548 21.5125 6.3548 21.7911 6.07622C22.0696 5.79764 22.0696 5.34476 21.7911 5.06618L18.9338 2.20894C18.6552 1.93035 18.2024 1.93035 17.9238 2.20894C17.6452 2.48752 17.6452 2.94039 17.9238 3.21897Z"
+																			class="pathdisplayfil"></path>
+																	</svg>
+
+																	<strong>{relatedItem.readtime} minutes</strong>
+																</div>
+															</div>
+														</article>
+													</template>
+													<template if:true={showLoadMore}>
+														<button class="loadmorebtn" onclick={loadMore}>
+														{loadMoreLabel}
+													</button>
+													</template>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</template>

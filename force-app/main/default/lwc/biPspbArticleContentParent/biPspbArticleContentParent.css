@@ -1,0 +1,143 @@
+.flexi {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.flexrow {
+	display: flex;
+	flex-direction: row;
+	gap: -20px;
+	background-color: #fbfaf5;
+}
+
+.customNavTab {
+	background-color: #ffffff;
+}
+
+.pad {
+	padding-left: 5%;
+	border-bottom: 1px solid rgba(141, 137, 165, 0.5);
+}
+
+.grid-containerNavTab {
+	display: grid;
+	grid-template-columns: repeat(3, max-content);
+	gap: 15px;
+	padding: 10px;
+}
+
+.menuListActive {
+	color: #403a60;
+	font-size: 16px;
+	font-weight: 800;
+	font-family: "Eina-SemiBold", Arial, Helvetica, sans-serif;
+  	text-decoration: none;
+	background: none;
+	border: none;
+}
+
+.menuList {
+	color: #403a60;
+	font-size: 16px;
+	text-decoration: none;
+	background: none;
+	border: none;
+}
+
+/*media query*/
+
+@media only screen and (max-width: 400px) {
+	.flexrow {
+		display: flex;
+		flex-direction: column;
+		gap: -20px;
+		overflow: hidden;
+	}
+}
+
+@media only screen and (min-width: 400px) and (max-width: 768px) {
+
+	.flexrow {
+		display: flex;
+		flex-direction: column;
+		gap: -20px;
+	}
+}
+@media only screen and (min-width: 769px) and (max-width: 991px) {
+
+	.flexrow {
+		display: flex;
+		flex-direction: column;
+		gap: 140px;
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.flexi {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+	}
+
+	.flexrow {
+		display: flex;
+		flex-direction: row;
+		gap: -20px;
+	}
+
+	.customNavTab {
+		background-color: #ffffff;
+	}
+
+	.pad {
+		padding-left: 5%;
+	}
+
+	.grid-containerNavTab {
+		display: grid;
+		grid-template-columns: repeat(3, max-content);
+		gap: 15px;
+		padding: 10px;
+	}
+
+	.menuListActive {
+		color: #403a60;
+		font-size: 16px;
+		font-weight: 800;
+    	text-decoration: none;
+		background: none;
+		border: none;
+	}
+
+	.menuList {
+		color: black;
+		font-size: 16px;
+    	text-decoration: none;
+		background: none;
+		border: none;
+	}
+}
+
+
+/*--Font Declaration---*/
+
+@font-face {
+	font-family: "Eina-Regular";
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-Light";
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-SemiBold";
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-Bold";
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff") format("woff");
+}

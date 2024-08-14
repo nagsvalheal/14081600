@@ -1,0 +1,11 @@
+<!--This component is designed to display the ranks of the user based on their Challenges XP value-->
+<template>
+	<img class="main" alt={altValue} src={image}></img>
+	<template if:true={showBold}>
+		<p class="level">{level}</p>
+		<p class="date">{date}</p>
+	</template>
+	<template if:false={showBold}>
+		<p class="level1">{level}</p>
+	</template>
+</template>

@@ -1,0 +1,50 @@
+<template>
+    <lightning-layout multiple-rows class="main">
+        <lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+            <div class="custom-box2">
+                <div class="displayHeader">
+                    <div class="header-logo-container">
+                        <div>
+                            <img src={logoSrc} alt="logo" width="133px" />
+                        </div>
+                        <img src={beyandGpp} alt="logo" class="marTB201" />
+                    </div>
+                    <div class="home-icon-container">
+                        <c-bi-Pspb-Home-Icon-For-Thankyou-Msg></c-bi-Pspb-Home-Icon-For-Thankyou-Msg>
+                    </div>
+                </div>
+                <div class="maincmp">
+                    <div class="imageavatar">
+                        <div class="childavatar">
+                            <img src={selectedAvatarSrc} alt={selectedOption}
+                                class="Avatrimg rounded d-block bg-logo" />
+                            <p class="text-content">
+                               {congratulation}
+                            </p>
+                            <span class="Xmark">X</span>
+                        </div>
+                    </div>
+
+                    <div class="child">
+                        <img src={beyandGpp} alt="logo" class="marTB20" />
+
+                        <c-bi-Pspb-Hcp-Prepopulate-Summary></c-bi-Pspb-Hcp-Prepopulate-Summary>
+                    </div>
+                </div>
+                <div class="footer-container">
+                    <div class="footer-logo-container">
+                        <div>
+                            <img src={footerSrc} alt="logo" class="Foot" />
+                        </div>
+                    </div>
+                    <div class="footer-containerMobile">
+                        <c-bi-Pspb-Footer-Logo></c-bi-Pspb-Footer-Logo>
+                    </div>
+                    <div class="padR7">
+                        <c-bi-Pspb-Footer-Quick-Links></c-bi-Pspb-Footer-Quick-Links>
+                    </div>
+                </div>
+            </div>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

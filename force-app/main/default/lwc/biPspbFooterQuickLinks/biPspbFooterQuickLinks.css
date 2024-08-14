@@ -1,0 +1,64 @@
+/* Define styling for custom message with class slds-form-element__help */
+@font-face {
+	font-family: "Eina-Light",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff') format('woff');
+}
+
+@font-face {
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff') format('woff');
+}
+
+@font-face {
+	font-family: "Eina04-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff') format('woff');
+}
+
+@font-face {
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Regular.woff') format('woff');
+}
+
+.grid-containerfooter {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 10px 20px;
+	padding: 10px;
+	width: 340px;
+	float: right;
+	position: relative;
+	left: 77px;
+}
+
+
+.footerLink {
+    background: none;
+    border: none;
+    color: #403A60;
+    text-decoration: none;
+    cursor: pointer;
+    font: inherit;
+	font-size: 14px;
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	width: 109px;
+}
+
+
+
+@media only screen and (max-width: 400px) {
+	.grid-containerfooter {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 401px) and (max-width: 768px) {
+	.grid-containerfooter {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 850px) {
+	.grid-containerfooter {
+		display: none;
+	}
+}

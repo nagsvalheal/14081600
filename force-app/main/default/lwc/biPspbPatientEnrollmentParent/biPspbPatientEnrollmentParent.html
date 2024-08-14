@@ -1,0 +1,35 @@
+<!-- This component consolidates for PatientEnrollmentform -->
+<template>
+	<lightning-layout multiple-rows class="main">
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+			<div class="custom-box2">
+				<div class="displayHeader">
+					<div class="header-logo-container">
+						<div>
+							<img class="imgcl" src={logoSrc} alt="logo" />
+						</div>
+					</div>
+					<div class="home-icon-container">
+						<c-bi-Pspb-Home-Icon-Parent></c-bi-Pspb-Home-Icon-Parent>
+					</div>
+				</div>
+				<div>
+					<c-bi-Pspb-Patient-Enrollment-Form></c-bi-Pspb-Patient-Enrollment-Form>
+				</div>
+				<div class="footer-container">
+					<div class="footer-logo-container">
+						<div>
+							<img src={footerSrc} alt="logo" class="Foot" />
+						</div>
+					</div>
+					<div class="footer-containerMobile">
+						<c-bi-Pspb-Footer-Logo></c-bi-Pspb-Footer-Logo>
+					</div>
+					<div class="padR7">
+						<c-bi-Pspb-Footer-Quick-Links></c-bi-Pspb-Footer-Quick-Links>
+					</div>
+				</div>
+			</div>
+		</lightning-layout-item>
+	</lightning-layout>
+</template>

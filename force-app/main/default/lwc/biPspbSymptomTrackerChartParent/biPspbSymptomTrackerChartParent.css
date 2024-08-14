@@ -1,0 +1,157 @@
+.custom-box2 {
+	width: -webkit-fill-available;
+	position: relative;
+}
+
+.displayHeader {
+	display: flex;
+	justify-content: end;
+}
+
+.footerLink {
+	text-decoration: none;
+	color: #403A60;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.grid-containerfooter {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 10px 20px;
+	padding: 10px;
+	width: fit-content;
+}
+
+.layoutColor {
+	background-color: #FBFAF5;
+	min-height: 400px;
+	overflow: hidden;
+}
+
+.grid-containerTabs {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	gap: 10px 20px;
+	padding: 10px;
+	width: fit-content;
+}
+
+.tabsDiv {
+	width: 100%;
+	text-align: left;
+}
+
+.tabClass {
+	width: 100%;
+	background-color: white;
+}
+
+.anchorText {
+	text-decoration: none;
+	color: #403A60;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.anchorTextActive {
+	text-decoration: none;
+	color: #403A60;
+	font-size: 16px;
+	font-weight: 800;
+}
+
+/*--CSS Media Queries---*/
+
+
+@media only screen and (max-width: 400px) {
+	.pad {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.graph {
+
+		position: relative;
+		bottom: 81px;
+		
+	}
+
+	.custom-box2 {
+		position: relative;
+	
+
+	}
+
+	.custom-box1 {
+		margin-left: 0px;
+	}
+}
+
+@media only screen and (min-width:401px) and (max-width:600px) {
+	.custom-box2 {
+		position: relative;
+		margin-top: -84px;
+
+	}
+
+	.custom-box1 {
+		margin-left: 20px;
+	}
+}
+
+@media only screen and (min-width: 601px) {
+	.pad {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+@media only screen and (min-width: 769px) {
+	.pad {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+}
+
+@media only screen and (max-width: 992px) {
+	.pad {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.pad {
+		padding-left: 5%;
+		padding-right: 10%;
+		min-height: 68vh;
+	}
+
+}
+
+@media only screen and (min-width: 1200px) {
+	.pad {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+	.graph {
+		width: 91%;
+	}
+}
+
+@media only screen and (min-width: 1500px) {
+	.pad {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+	.custom-box2 {
+		bottom: 55px;
+
+	}
+}

@@ -1,0 +1,169 @@
+@font-face {
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina04-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff")
+    format("woff");
+}
+
+.divcolor {
+  background-color: #e3e1e8;
+  width: 100%;
+  height: 186px;
+  top: 180px;
+  border-radius: 12px;
+  opacity: 0.25px;
+}
+
+.updateCss {
+  width: 81px;
+  height: 40px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+
+  border-radius: 12px;
+  background-color: #403a60;
+  color: white;
+
+  font-size: 14px;
+  font-weight: 400px;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  border: none;
+  padding-left: 17px;
+}
+
+.imgclass {
+  width: 88px;
+  height: 88px;
+  top: 204px;
+}
+
+.ingclass1 {
+  position: relative;
+  margin-left: 5%;
+  top: 20%;
+}
+
+.infocss {
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  position: relative;
+  margin-left: 33%;
+  bottom: 21%;
+}
+
+.upRxCss {
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  position: relative;
+  margin-left: 33%;
+  bottom: 58px;
+}
+
+.padding {
+  position: relative;
+  margin-left: 33%;
+  bottom: 14%;
+}
+
+@media only screen and (max-width: 400px) {
+  .divcolor {
+    background-color: #e3e1e8;
+    width: 92%;
+    height: 146px;
+    position: relative;
+    top: 15%;
+    left: 2px;
+    border-radius: 12px;
+  }
+
+  .imgclass {
+    width: 64px;
+    height: 64px;
+  }
+
+  .infocss {
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    position: relative;
+    margin-left: 33%;
+    bottom: 35%;
+  }
+
+  .updateCss {
+    margin-top: -15px;
+  }
+}
+
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+  .divcolor {
+    background-color: #e3e1e8;
+    width: 100%;
+    height: 186px;
+    position: relative;
+    top: 0%;
+    left: 0px;
+    border-radius: 12px;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  .divcolor {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .divcolor {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .divcolor {
+    background-color: #e3e1e8;
+    width: 100%;
+    height: 186px;
+    position: relative;
+    top: 7%;
+    left: 0%;
+    border-radius: 12px;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1500px) {
+  .divcolor {
+    position: relative;
+    top: 0px;
+  }
+}

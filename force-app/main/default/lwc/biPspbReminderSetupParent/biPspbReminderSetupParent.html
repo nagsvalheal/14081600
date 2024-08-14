@@ -1,0 +1,26 @@
+<!--This Lightning Web Component defines a layout structure with two sections for reminder setup and notification settings, utilizing the Lightning Design System components-->
+<template>
+		 <div if:true={showSpinner}>
+		<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	 </div>
+<!--A consolidated component in the Reminder Setup page-->
+<lightning-layout multiple-rows class="layoutColor pad">
+<lightning-layout-item size="12" small-device-size="12" medium-device-size="4" large-device-size="4" class="slds-p-top_xx-large slds-p-bottom_xx-large">
+	<div class="custom-box1">				
+	</div>
+</lightning-layout-item>		
+<lightning-layout-item size="12" small-device-size="12" medium-device-size="8" large-device-size="8" class="slds-p-top_xx-large check slds-p-bottom_xx-large">
+	<div class="custom-box2">
+		<div>
+			<c-bi-Pspb-Reminder-Setup onload={handleComponentLoad}></c-bi-Pspb-Reminder-Setup>
+		</div>
+
+	<div class="custom-box">
+		<div>
+			<c-bi-Pspb-Reminder-Notification-Setting onload={handleComponentLoad}></c-bi-Pspb-Reminder-Notification-Setting>
+		</div>                   
+	</div>
+	</div>
+</lightning-layout-item>
+</lightning-layout>
+</template>

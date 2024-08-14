@@ -1,0 +1,340 @@
+.h1 {
+	margin-top: -290px;
+	width: 50%;
+	height: 40px;
+	padding-top: 389px;
+	margin-left: 45%;
+	font-size: 32px;
+	font-weight: 400;
+	line-height: 40px;
+	letter-spacing: 0em;
+	text-align: left;
+	font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.wholediv {
+	overflow: hidden;
+	background-color: #fbfaf5;
+}
+
+.h2 {
+	width: 411px;
+	height: 32px;
+	margin-left: 37%;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 32px;
+	letter-spacing: 0em;
+	text-align: center;
+	margin-bottom: 210px;
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.line {
+	display: none;
+}
+
+@font-face {
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff") format("woff");
+}
+
+@font-face {
+	font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff") format("woff");
+}
+
+@media only screen and (max-width: 400px) {
+	.p1 {
+		margin-left: 0px;
+	}
+
+	.h1 {
+		width: 45%;
+		height: 24px;
+		margin-top: -500px;
+		margin-left: 37%;
+		font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 24px;
+		letter-spacing: 0em;
+		text-align: left;
+		position: relative;
+		top: 162px;
+	}
+
+	.line {
+		display: block;
+		background-image: linear-gradient(90deg,
+				#744f0d 0%,
+				#99693e 17.19%,
+				#efdba1 58.85%,
+				#744f0d 100%);
+		height: 5px;
+		position: relative;
+		right: 20px;
+		width: 111.5%;
+		bottom: 34px;
+	}
+
+	.wholediv {
+		min-height: 49vh;
+	}
+
+	.h2 {
+		width: 95%;
+		height: 20px;
+		margin-top: 15px;
+		margin-left: 4%;
+		font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 20px;
+		letter-spacing: 0em;
+		text-align: center;
+		position: relative;
+		top: 118px;
+	}
+}
+
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+	.p1 {
+		margin-left: 0px;
+		position: relative;
+		top: 90px;
+	}
+
+	.line {
+		display: block;
+		background-image: linear-gradient(90deg,
+				#744f0d 0%,
+				#99693e 17.19%,
+				#efdba1 58.85%,
+				#744f0d 100%);
+		height: 5px;
+		position: relative;
+		right: 20px;
+		width: 111.5%;
+		bottom: 34px;
+	}
+
+	.wholediv {
+		min-height: 53vh;
+	}
+
+	.h1 {
+		width: 45%;
+		height: 24px;
+		margin-top: -442px;
+		margin-left: 36%;
+		font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 24px;
+		letter-spacing: 0em;
+		text-align: left;
+		position: relative;
+		top: 38px;
+	}
+
+	.h2 {
+		width: 92%;
+		height: auto;
+		margin-top: 15px;
+		margin-left: 5%;
+		margin-bottom: 0px;
+		font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 20px;
+		letter-spacing: 0em;
+		text-align: center;
+		position: relative;
+		top: -14px;
+	}
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+	.p1 {
+		margin-left: 0px;
+	}
+
+	.line {
+		display: none;
+	}
+
+	.wholediv {
+		min-height: 60vh;
+	}
+
+	.h1 {
+		width: 50%;
+		height: 24px;
+		margin-top: -360px;
+		margin-left: 40%;
+		font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 25px;
+		font-weight: 400;
+		line-height: 24px;
+		letter-spacing: 0em;
+		text-align: left;
+		position: relative;
+		top: 124px;
+	}
+
+	.h2 {
+		width: 80%;
+		height: 20px;
+		margin-top: -46px;
+		margin-left: 11%;
+		font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 20px;
+		letter-spacing: 0em;
+		text-align: center;
+		position: relative;
+		top: 150px;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+	.p1 {
+		margin-left: 0px;
+	}
+
+	.line {
+		display: none;
+	}
+
+	.wholediv {
+		min-height: 68vh;
+	}
+
+	.h1 {
+		width: 50%;
+		height: 24px;
+		margin-top: -360px;
+		font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 22px;
+		font-weight: 400;
+		line-height: 32px;
+		letter-spacing: 0em;
+		text-align: left;
+		margin-left: 43%;
+		position: relative;
+		top: 123px;
+	}
+
+	.h2 {
+		width: 60%;
+		height: 20px;
+		margin-left: 20%;
+		font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 20px;
+		letter-spacing: 0em;
+		text-align: center;
+		position: relative;
+		top: 106px;
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+	.p1 {
+		margin-left: 0px;
+	}
+
+	.h1 {
+		width: 50%;
+		height: 24px;
+		margin-top: -360px;
+		font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 22px;
+		font-weight: 400;
+		line-height: 32px;
+		letter-spacing: 0em;
+		text-align: left;
+		position: relative;
+		top: 112px;
+		margin-left: 45%;
+	}
+
+	.wholediv {
+		min-height: 66vh;
+	}
+
+	.line {
+		display: none;
+	}
+
+	.h2 {
+		width: 60%;
+		height: 20px;
+		margin-left: 21%;
+		font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 20px;
+		letter-spacing: 0em;
+		text-align: center;
+		position: relative;
+		top: 95px;
+	}
+}
+
+@media only screen and (min-width: 1500px) {
+	.h2 {
+		margin-left: 38%;
+	}
+
+	.wholediv {
+		min-height: 100vh;
+	}
+
+	.p1 {
+		margin-top: 20px;
+	}
+}
+
+@media only screen and (min-width: 1900px) {
+	.h2 {
+		margin-left: 39%;
+	}
+
+	.p1 {
+		margin-top: 20px;
+	}
+
+	.wholediv {
+		min-height: 100vh;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.line {
+		display: none;
+	}
+
+	.p1 {
+		position: relative;
+		right: 50px;
+		top: 35px;
+	}
+
+	.wholediv {
+		min-height: 70vh;
+	}
+}

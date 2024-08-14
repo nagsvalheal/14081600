@@ -1,0 +1,87 @@
+<!-- This lightning web component is used as a Widget that shows Challenges in dashboard -->
+
+<template>
+
+	<div class="TopImage" onclick={navigateChallenge} onkeypress={navigateChallenge} role="button" >
+		<template if:false={firsttime}>
+			<lightning-formatted-rich-text value={tImage}></lightning-formatted-rich-text>
+		</template>
+		<template if:true={firsttime}>
+			<img src={tImage} alt={altValue} width="148px" height="129px" />
+		</template>
+	</div>
+	<div class="challengeWidget" onclick={navigateChallenge} onkeypress={navigateChallenge} role="button"  >
+		<lightning-layout multiple-rows>
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+				<div class="grid-containerImageCh">
+					<div class="mobile"></div>
+					<div class="grid-containerChallenge">
+						<div class="disBlock">
+							<p class="semiBold">{challengesLabel}</p>
+							<template if:false={onlyXp}>
+								<p class="regularStyle">{xpNextrank} {xpTillLevel} {rankLevels}</p>
+							</template>
+							<template if:true={onlyXp}>
+								<p class="regularStyle">{xpNextrank} {challengesXp}</p>
+							</template>
+						</div>
+						<div class="displayCenter">
+							<p class="alignRightStyle">{rankLevel}</p>
+						</div>
+					</div>
+				</div>
+				<hr>
+			</lightning-layout-item>
+
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="12">
+				<template if:false={firsttime}>
+					<div class="grid-containerSingle">
+						<div>
+							<p class="ChallengeStyle ">{availableChallenges}</p>
+						</div>
+						<div class="grid-containerDouble">
+							<div>
+								<p class="TitleStyle">{Title}</p>
+							</div>
+							<div class="alignRight"><button class="xpButton"
+									data-it-button="challenges: RewardPoints">{RewardPoints} {challengesXp}</button></div>
+						</div>
+						<div>
+							<p class="ChallengeStyle">{Description}</p>
+						</div>
+					</div>
+				</template>
+				<template if:true={xpValue}>
+					<div class="grid-containerSingleXP">
+						<div>
+							<p class="semiBold">{challengeUnderstanding}</p>
+						</div>
+						<div>
+							<button class="challengeButton" onclick={navigateChallenge}
+								data-it-button="challenges: Start a challenge">{startChallenge}</button>
+						</div>
+					</div>
+				</template>
+				<template if:true={avaiChallenge}>
+					<div class="grid-containerSingleXP">
+						<div>
+							<p>{challengesLimit}</p>
+						</div>
+						<div><button class="challengeButton" onclick={navigateChallenge}
+								data-it-button="challenges: Start a challenge">{startChallenge}</button></div>
+					</div>
+				</template>
+				<template if:true={nullChallenge}>
+					<div class="grid-containerSingleXP">
+						<div>
+							<p class="semiBold">{completedChallenges}</p>
+						</div>
+						<div><button class="challengeButton" onclick={navigateTrophy}
+								data-it-button="challenges: View your Trophies">{viewTrophies}</button></div>
+					</div>
+				</template>
+			</lightning-layout-item>
+		</lightning-layout>
+	</div>
+
+</template>

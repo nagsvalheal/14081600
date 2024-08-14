@@ -1,0 +1,10 @@
+<!--This Lightning web component is used to display the like and unlike reactions on the article detail page-->
+<template>
+	<!--Like button-->
+	<div class="container" data-it-uid={userId}>		
+		<div class="DidYouFindThisArticleUseful">
+			<p>{artlicleLikeQuestion}</p>
+			<img data-it-button={articleTitle} src={thumbsUpIcon} alt="Thumbs up icon" onclick={handleReaction} onkeyup={handleReaction} />
+		</div>
+	</div>
+</template>

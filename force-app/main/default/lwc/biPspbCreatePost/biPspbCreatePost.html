@@ -1,0 +1,143 @@
+<!-- This lightning web component is used to Create Post by Selecting Category and Phrases in Patient Community Page  -->
+<!-- Strings are hard coded in this HTML file to comply with the mobile responsiveness-->
+<template>
+  <!-- whole container -->
+  <div data-it-uid={userId} class="row">
+    <br />
+    <!-- split the screen - leftside -->
+    <div class="left">
+      <img src={loggedUserAvatar} alt={alternateTextForAvatar} class="avatarImg" />
+      <div class="avatarContent">
+        <p class="avatarText">
+          {avatarContent}
+        </p>
+      </div>
+    </div>
+    <!-- This line is for Mobile responsiveness only -->
+    <hr class="line" />
+    <!-- split screen - right side -->
+    <div class="right">
+      <!-- spinner for loading -->
+      <div lwc:if={showSpinner}>
+        <c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+      </div>
+      <div class="container" id="blur">
+        <p class="headd">{createNewPost}</p>
+        <br />
+        <p class="valid">{categoryTitle}</p>
+        <br />
+        <!-- category dropdown  -->
+        <select
+          onchange={handleParentDropdownChange}
+          class={selectLengthWidthParent}
+        >
+          <option value="" disabled selected hidden>
+            {categoryPlaceHolder}
+          </option>
+          <template for:each={parentOptions} for:item="option">
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+            <hr key={option.value} />
+          </template>
+        </select>
+        <!-- Warning Text for Category if the Null -->
+        <template if:true={warningCategory}>
+          <p class="warningText">
+            &nbsp; <img src={warningIconImg} alt={alternateTextForWarningIcon} class="warningIconImg" /> {categoryValidation}
+          </p>
+        </template>
+        <br />
+        <br />
+        <br />
+        <!-- phrases dropdown - these options are dependent to category -->
+        <p class="secondValid">
+          {phraseTitle}
+        </p>
+        <br />
+        <select
+          onchange={handleChildDropdownChange}
+          class={selectLengthWidthChild}
+          disabled={childDropdownDisabled}
+        >
+          <option value="cancel" disabled selected hidden>
+            {phrasePlaceHolder}
+          </option>
+          <template for:each={childOptions} for:item="option">
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+            <hr key={option.value} />
+          </template>
+        </select>
+        <!-- Warning Text for Phrase if the Null -->
+        <template if:true={warningPhrase}>
+          <p class="warningText">
+            &nbsp;<img src={warningIconImg} alt={alternateTextForWarningIcon} class="warningIconImg" /> {phraseValidation}
+          </p>
+        </template>
+        <br />
+        <br />
+        <br />
+        <!-- Submit and Cancel Button -->
+        <div class="btns">
+          <button
+            class="cancel"
+            onclick={toggleCancel} tabindex="0" onkeypress={toggleCancel}
+            data-it-button="Create Post: Cancel"
+          >
+          {cancel}
+          </button>
+          <button
+            class="submit"
+            onclick={togglePopup} tabindex="0" onkeypress={togglePopup}
+            data-it-button="Create Post: Submit"
+          >
+          {submit}
+          </button>
+        </div>
+        <br /><br />
+        <!-- Confirmation popup after clinking the submit button -->
+        <div class={popupClass}>
+          <div class="popup-content">
+            <div class="content">
+              <div class="iconDiv">
+                <p class="heading">{readyToSubmit}</p>
+                <div class="closeIcon" > 
+                  <button
+                    class="close-button"
+                    onclick={checkClosBtn} tabindex="0" onkeypress={checkClosBtn}
+                  >
+                    x
+                  </button>
+                </div>
+              </div>
+              <p class="paragh">
+                {postConfirmation}
+              </p>
+              <br />
+              <div class="popBtn">
+                <button
+                  class="cancelBtn"
+                  onclick={checkClosBtn} tabindex="0" onkeypress={checkClosBtn}
+                  data-it-button="Create Post:ConfirmationPopup-No"
+                >
+                {no}
+                </button>
+                <button
+                  class="submitBtn"
+                  onclick={handleSubmit}
+                  data-it-button="Create Post:ConfirmationPopup-Yes "
+                >
+                {yes}
+                </button>
+              </div>
+              <br />
+            </div>
+            <br />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

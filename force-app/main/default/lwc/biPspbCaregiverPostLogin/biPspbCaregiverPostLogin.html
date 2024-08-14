@@ -1,0 +1,44 @@
+<template>
+  <!-- This lightning web component is used to select the patient for Caregiver -->
+  <div if:true={showSpinner}>
+		<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	   </div>
+  <div class="check">
+    <div class="parentHeader">
+      <h1 class="parentHeadertext">{myPatient}</h1>
+    </div>
+    <template if:true={caregiverAccounts.length}>
+      <div class="slds-grid slds-wrap">
+        <template for:each={caregiverAccounts} for:item="account">
+          <!-- "Select" button -->
+          <div key={account.Id} class="card">
+            <div class="container">
+              <div class="avatar">
+                <h1 class="firstlastNameDisplay">{account.initial}</h1>
+              </div>
+              <h4 class="fullNameDisplay">{account.Name}</h4>
+              <!-- "Select" button -->
+              <template if:true={account.showSelectButton}>
+                <button
+                  type="button"
+                  data-id={account.Id}
+                  onclick={handleViewDetails}
+                  class="btn slds-button slds-button_brand"
+                >
+                  Select
+                </button>
+              </template>
+              <!-- Access Blocked message -->
+              <template if:true={account.showBlockMessage}>
+                <p class="para">{account.blockMessageBody}</p>
+              </template>
+            </div>
+          </div>
+        </template>
+      </div>
+    </template>
+    <div class="spinner-wrapper" if:true={showSpinner}>
+      <div class="loader"></div>
+    </div>
+  </div>
+</template>

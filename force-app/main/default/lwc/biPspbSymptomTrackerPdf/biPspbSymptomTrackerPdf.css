@@ -1,0 +1,403 @@
+@font-face {
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff")
+        format("woff");
+}
+
+@font-face {
+    font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff")
+        format("woff");
+}
+
+@font-face {
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff")
+        format("woff");
+}
+
+@font-face {
+    font-family: "Eina04-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff")
+        format("woff");
+}
+.centeralign {
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	margin: auto;
+
+}
+h2 {
+    text-align: center;
+    position: relative;
+    top: 2.5rem;
+    font-size: 16px;
+    font-family: 'Eina-Bold',Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+@media print{
+  
+
+
+	.primarystyle{
+       page-break-after: always;
+
+	 }
+	 
+}
+
+	.printDoc{
+		background-color: #FBFAF5 !important;
+	}
+@media print {
+
+
+	.navBar{
+		    background-color: #F8F2DF !important;
+	}
+	.printDoc{
+		background-color: #FBFAF5 !important;
+	
+		 
+	}.padding{
+		    padding-left: 0 !important;
+    padding-right: 0 !important;
+	}
+.Symptomdata-date{
+    height: 90px !important;
+    width: 100% !important;
+    border-radius: 12px !important;
+    font-weight: bold !important;
+    border: #403a60 !important;
+    margin: 48px 8px 16px 0px !important;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px !important;
+    display: flex !important;
+}
+
+/* .primarysytle{
+	padding-left: 30px !important;
+    Width: 70% !important;
+} */
+
+
+}
+
+.chart-container {
+	display: flex;
+    justify-content: center;
+    margin-bottom: 59px;
+}
+
+/* To hide content during PDF Export*/
+.padding {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.navBar {
+	background-color: #F8F2DF;
+	height: 96px;
+}
+
+
+.grid-containerPatientDetials {
+	display: grid;
+    grid-template-columns: auto auto;
+    gap: 25px;
+    margin-left: 46%;
+}
+.grid-font{
+	    font-size: 14px;
+   font-family: 'Eina-Bold',Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+.grid-containerPatient {
+	display: grid;
+	grid-template-columns: auto;
+	gap: 5px;
+	margin-left: 0%;
+}
+.grid-containerPatient1 {
+	display: grid;
+	grid-template-columns: auto;
+	gap: 5px;
+	margin-left: 10%;
+}
+
+.paraStyle {
+	font-family: 'Eina-Regular',Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-weight: 400;
+	font-size: 11px;
+}
+
+.display-LogoLogin {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100px;
+}
+
+.grid-containerNav {
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 10px 0px;
+	width: -webkit-fill-available;
+	position: relative;
+}
+
+.bar.highlighted {
+	background-color: lightblue;
+	/* Add your desired highlighted color */
+}
+
+.chart {
+	display: flex;
+}
+
+.selected-image-container {
+	background-color: #ffcc00;
+	/* Set your desired background color */
+	/* Add any other styling for the selected image container */
+}
+
+.spinner-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #ffff;
+	/* semi-transparent white background */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 99999;
+	/* Ensure it appears above other elements */
+}
+
+.bar {
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container-bottom {
+	display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    height: 106%;
+}
+
+.image-container {
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+}
+
+.lineimg {
+	position: relative;
+    left: 50.1%;
+    height: 350px;
+    width: 2px;
+    top: -21px;
+    margin-top: 100px;
+}
+
+.chart-image {
+	margin-bottom: 5px;
+    position: relative;
+    bottom: 50px;
+}
+
+.label {
+	font-size: 12px;
+	margin-top: 5px;
+	/* Add margin at the top to separate date from images */
+}
+
+/* ends */
+.grid-containers {
+	display: grid;
+	grid-template-columns: repeat(7, auto);
+}
+
+/*.custom-box{
+	background-color : white;
+	border: 1px solid black;
+	border-radius: 10px;
+}*/
+.textAlignCenter {
+	text-align: center;
+}
+
+.grid-containerGraph {
+	display: grid;
+	grid-template-columns: 400px 150px 150px 150px 150px 150px;
+	gap: 10px;
+}
+
+.displayBlock {
+	display: block;
+	text-align: center;
+	padding: 10px;
+}
+
+.FlexCenter {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.grid-containerinline {
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 5px;
+}
+
+.FlexCircleCenter {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.FlexCircleCenterText {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: 5px;
+}
+
+.backcLOLOR {
+	background-color: #c6c5d3;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.grid-containerColorNotification {
+	display: grid;
+	grid-template-columns: repeat(7, max-content);
+	gap: 30px;
+	margin-left: 1%;
+}
+
+.grid-containerColors {
+	display: grid;
+	grid-template-columns: max-content max-content;
+	gap: 5px;
+}
+
+.height40 {
+	height: 40px;
+	width: 10px;
+}
+.wiDheight{
+	width:132px;
+	height:56px;
+}
+.vertical-line {
+	border-left: 1px solid #000;
+	height: 65px;
+}
+
+.lineDesign {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.padLeft10 {
+	padding-left: 10px;
+	margin: 0px 15px;
+}
+
+.showEnd {
+	display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin-bottom: -48px;
+}
+
+/*----Second Chart----*/
+.grid-containerBubble {
+	display: grid;
+	grid-template-columns: repeat(9, 80px);
+	gap: 10px;
+}
+
+.grid-containerChartBubbles {
+	display: grid;
+	grid-template-rows: repeat(9, auto);
+	gap: 5px;
+	margin: 30px 0px;
+}
+
+.FlexBubbleCenter {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	height: 20px;
+}
+
+.custom-Bubble-box {
+	background-color: white;
+	width: fit-content;
+}
+
+.highlightBack {
+	background-color: #f2e174;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.disInline {
+	display: inline-flex;
+}
+
+.grid-containerButtons {
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 10px;
+}
+
+.selectWidth {
+	width: 200px;
+	border: none;
+	border-radius: 2px;
+	height: 30px;
+}
+
+.bar .container-bottom>hr {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.pad10 {
+	padding: 5px 35px;
+}
+
+.highlighted {
+	background-color: red;
+}
+
+hr {
+	margin: 0px;
+	background-color: black;
+	width: 100%
+}
+
+.primarysytle {
+	padding-left: 30px;
+	Width: 100%;
+}
+@media print {
+	.display-LogoLogin{
+		padding-left: 3% !important;
+		position: relative !important;
+		bottom: 20px !important;
+	}
+}

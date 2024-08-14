@@ -1,0 +1,1105 @@
+/* Style for the custom message with class slds-form-element__help */
+
+@font-face {
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff")
+    format("woff");
+}
+.custom-checkbox-container {
+  display: flex;
+  align-items: center;
+}
+button{
+  background: none;
+  border: none;
+}
+.custom-checkbox {
+  display: none; /* Hide the default checkbox */
+}
+
+.custom-checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.custom-checkbox-box {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #8b99a7;
+  background-color: white;
+  margin-right: 8px;
+  margin-top: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
+  border-radius: 6px;
+}
+.custom-checkbox-box_Error {
+  border: 1px solid red;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+.custom-checkbox:checked + .custom-checkbox-label .custom-checkbox-box {
+  background-color: #ffffff;
+  border-color: #8b99a7;
+}
+
+.custom-checkbox:checked + .custom-checkbox-label .custom-checkbox-box::before {
+  content: "✓"; /* Checkmark */
+  color: #696969;
+  font-size: 16px;
+}
+
+.step-container {
+  width: 44%;
+  margin-left: 15%;
+  position: relative;
+  bottom: 32px;
+}
+
+.slds-grid {
+  height: 100%;
+}
+
+.colorstyle {
+  color: rgb(255, 255, 255);
+}
+
+.stepOne {
+  top: 0pc;
+}
+
+.stepTwo {
+  top: 0pc;
+}
+
+.closestyle {
+  font-size: 27px;
+  color: #FFFFFF;
+  margin-right: 10px;
+}
+
+.stepThree {
+  top: 0pc;
+}
+
+.stepFour {
+  top: 0pc;
+}
+
+.text-content-for-mobiles {
+  color: #fff;
+  background: rgba(102, 97, 132, 1);
+  border-radius: 5px;
+  margin: 0px auto 5px;
+}
+
+.flexclass {
+  display: flex;
+  flex-direction: row;
+  margin-right: 13px;
+  align-items: start;
+}
+
+.formContainer {
+  width: 66%;
+  display: flex;
+  margin-bottom: 32px;
+  padding-top: 30px;
+}
+
+.slds-input-has-icon_left-right .slds-input {
+  width: 94%;
+}
+
+.marTB20 {
+  width: 50%;
+  position: relative;
+  bottom: 100px;
+  right: 114px;
+}
+
+.InputDisabled {
+  -webkit-text-fill-color: #8d89a5;
+  --slds-c-input-color-border: #8b99a7;
+  --slds-c-textarea-color-border: #8b99a7;
+  margin: 8px 0px 0px 0px;
+  --lwc-heightInput: 40px;
+  border: 2px solid #8b99a7;
+  border-radius: 7px;
+}
+
+.slds-input {
+  background-color: #c5ccd3;
+}
+
+/* CSS for Sidebar and Avatar  -------------------------------------------------------------------------- */
+
+.sidebar-container {
+  width: 34%;
+  background: #413a63;
+}
+
+.sidebar-container::after {
+  content: "";
+  background: linear-gradient(
+    to bottom,
+    #744f0d 0%,
+    #8b5f2d 11.35%,
+    #efdba1 42.29%,
+    #744f0d 100%
+  );
+  position: absolute;
+  top: 0;
+  left: 34%;
+  height: 100%;
+  width: 6px;
+}
+
+.hrline {
+  display: none;
+}
+
+.avatar-content-container {
+  position: relative;
+  top: 40px;
+}
+
+.avatar-image {
+  width: 43%;
+}
+
+.avatar-img-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-content {
+  color: #fff;
+  background: rgba(102, 97, 132, 1);
+  border-radius: 5px;
+  padding: 10px;
+  width: 61%;
+  height: auto;
+  margin: 25px auto 5px;
+}
+
+.para {
+  color: #fff;
+  background: rgba(102, 97, 132, 1);
+  border-radius: 5px;
+  padding: 10px;
+  padding-left: 12px;
+  padding-right: 85px;
+  width: 61%;
+  margin: 0px auto 5px;
+  position: relative;
+}
+.paralast {
+  color: #fff;
+  background: rgba(102, 97, 132, 1);
+  border-radius: 5px;
+  padding: 10px;
+  padding-left: 12px;
+  padding-right: 85px;
+  width: 61%;
+  margin: 0px auto 5px;
+  position: relative;
+}
+
+.paras {
+  color: #fff;
+  background: rgba(102, 97, 132, 1);
+  border-radius: 5px;
+  padding: 10px;
+  padding-left: 28px;
+  width: auto;
+  margin-bottom: 5px;
+  margin-right: 12px;
+  position: relative;
+}
+
+.text-content-for-mobile {
+  color: #fff;
+  background: rgba(102, 97, 132, 1);
+  border-radius: 5px;
+  padding: 10px;
+  width: 57%;
+  margin: 0px auto 5px;
+}
+
+.threeclickclass {
+  color: #fff;
+  background: rgba(102, 97, 132, 1);
+  border-radius: 5px;
+  padding: 10px;
+  width: 10%;
+  margin: 5px 0%;
+}
+
+.iconclass {
+  margin-left: 45px;
+}
+
+.warningclass {
+  margin-right: 10px;
+  width: 12px;
+}
+
+.divclass {
+  display: flex;
+  align-items: center;
+  height: 51px;
+}
+
+.hrclass {
+  width: 50%;
+  border-top: 1.2px solid #8d89a5;
+}
+
+.hrclass2 {
+  margin-top: 24px;
+  margin-bottom: 20px;
+  border-top: 1.2px solid #8d89a5;
+}
+
+.hrclass3 {
+  margin-top: 20px;
+  border-top: 1.2px solid #8d89a5;
+}
+
+.spanclass {
+  margin: 0px 12px 6px;
+  color: #000000;
+  font-size: 14px;
+  font-family: "Eina01-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.text-content-div-for-mobile {
+  display: none;
+}
+
+.slds-text-color_error {
+  color: #ec4e4e;
+  font-size: 14px;
+  margin-top: -3px;
+  margin-left: 3px;
+}
+
+.Disable {
+  color: #8d89a5;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.inputred {
+  -webkit-text-fill-color: #403a60;
+  --slds-c-input-color-border: red;
+  --slds-c-textarea-color-border: red;
+  margin: 8px 0px 0px 0px;
+  --lwc-heightInput: 40px;
+}
+
+.red {
+  -webkit-text-fill-color: #403a60;
+  --slds-c-input-color-border: red;
+  --slds-c-textarea-color-border: red;
+  margin: 8px 0px 0px 0px;
+  --lwc-heightInput: 40px;
+}
+
+.labelred {
+  color: #ec4e4e;
+  font-weight: 600;
+  line-height: 24px;
+  font-style: normal;
+  font-size: 16px;
+}
+
+.popup-hidden {
+  display: none;
+}
+
+.popup-visible {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  max-height: 80%;
+  overflow-y: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.required {
+  color: #e93939;
+  font-size: 0.75rem;
+  margin-left: 0.125rem;
+  margin-bottom: 0.5rem !important;
+}
+
+.close-icon {
+  --lwc-colorTextLinkInverse: auto;
+  --lwc-colorTextLinkInverseHover: auto;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+span.Matching {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.heading {
+  font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-weight: 400;
+  color: #403a60;
+  margin: auto;
+  font-size: 32px;
+}
+
+.mobile-heading {
+  display: none;
+  font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-weight: 400;
+  color: #403a60;
+  margin: auto;
+  font-size: 30px;
+}
+
+/* CSS for input field  -------------------------------------------------------------------------------- */
+
+.textInput {
+  -webkit-text-fill-color: #8d89a5;
+  --slds-c-input-color-border: #423a66;
+  --slds-c-textarea-color-border: #423a66;
+  margin: 8px 0px 0px 0px;
+  --lwc-heightInput: 40px;
+  touch-action: manipulation;
+  max-width: 100%;
+  font-size: 16px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-weight: 400;
+  zoom: 1;
+}
+
+.textInput-err {
+  -webkit-text-fill-color: #8d89a5;
+  --slds-c-input-color-border: red;
+  --slds-c-textarea-color-border: red;
+  margin: 8px 0px 0px 0px;
+  --lwc-heightInput: 40px;
+  touch-action: manipulation;
+  max-width: 100%;
+  font-size: 16px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-weight: 400;
+  zoom: 1;
+}
+
+.input-div {
+  margin: 8px 0px;
+}
+
+.input-label {
+  color: #403a60;
+  font-weight: 600;
+  line-height: 24px;
+  font-size: 16px;
+  font-style: normal;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.input-label-front {
+  color: #2c333a;
+  font-weight: 600;
+  line-height: 24px;
+  font-size: 16px;
+  font-style: normal;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.input-error-label {
+  color: #ec4e4e;
+  font-weight: 600;
+  line-height: 24px;
+  font-style: bold;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 16px;
+}
+
+.slds-form-element__help {
+  color: #ec4e4e;
+  font-size: 14px;
+  margin-top: 2px;
+  margin-left: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.errorFieldMsg {
+  color: #ec4e4e;
+  font-size: 14px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  margin-top: -2px;
+}
+.exits {
+  color: #ec4e4e;
+  font-size: 14px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  margin-top: -5px;
+}
+
+.error {
+  color: #ec4e4e;
+  font-size: 14px;
+  font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  margin-top: 0px;
+}
+
+
+.demoFont {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  word-spacing: 1.5px;
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  margin-bottom: 5px;
+  margin-top: 13px;
+  font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.demoFont1 {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  word-spacing: 1.5px;
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  margin-bottom: 5px;
+  margin-top: 13px;
+  font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+/* CSS for Progress Bar  ------------------------------------------------------------------------------ */
+
+.progress-bar-container-parent {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: 7%;
+}
+
+.progress-bar-container {
+  position: relative;
+  top: 0px;
+}
+
+.progress-ol {
+  position: relative;
+}
+
+.slds-progress__list .slds-progress__marker {
+  border-color: #f7f5fa !important;
+}
+
+.slds-progress__list .slds-is-completed .slds-progress__marker {
+  background-color: #403a60 !important;
+}
+
+.slds-progress__list .slds-is-active .slds-progress__marker {
+  background-color: #403a60 !important;
+}
+
+.slds-progress__list .slds-is-active .slds-progress__marker::after {
+  content: "";
+  padding: 13px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  position: relative;
+  bottom: 0px;
+  right: 11px;
+}
+
+.progress-label {
+  font-weight: 400;
+  color: #403a60;
+  font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 16px;
+}
+
+.progress-label p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #403a60;
+  font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.slds-progress__list .slds-is-active .slds-progress__marker::before {
+  content: "";
+  padding: 7px;
+  border: 4px double #ccc;
+  border-radius: 50%;
+  position: relative;
+  bottom: 0px;
+  left: 14px;
+}
+
+.slds-progress_vertical .slds-progress__item.slds-is-completed:before {
+  background-color: #8d89a5 !important;
+}
+
+.slds-progress_vertical .slds-progress__item.slds-is-completed:after {
+  background-color: #8d89a5 !important;
+}
+
+.slds-progress_vertical .slds-progress__item.slds-is-active:before {
+  background-color: #8d89a5 !important;
+}
+
+.slds-progress .slds-progress-bar {
+  position: absolute;
+  top: 50%;
+  margin-top: -0.0625rem;
+  display: none !important;
+}
+
+.slds-progress_vertical .slds-progress__item {
+  padding: 20px 0px;
+}
+
+.progress-label-count {
+  color: #ccc;
+}
+
+/* CSS for Button ----------------------------------------------------------------------------------------- */
+.btn-div {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.next-button {
+  display: flex;
+  width: 79px;
+  height: 40px;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: #403a60;
+  color: #fff;
+  border-radius: 12px;
+  font-family: "Eina04-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  border-color: transparent;
+}
+.disable-button {
+  display: flex;
+  width: 79px;
+  height: 40px;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: grey;
+  color: #fff;
+  border-radius: 12px;
+  font-family: "Eina04-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  border-color: transparent;
+}
+
+.color1-properties {
+  display: flex;
+  margin-top: 10px;
+}
+
+.Agreeclass {
+  color: #2c333a;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.termclass {
+  cursor: pointer;
+  font-weight: 700;
+  color: #2c333a;
+  text-decoration: underline;
+  font-size: 16px;
+  background: none;
+  border: none;
+}
+
+.termheading {
+  font-size: 24px;
+  float: left;
+}
+
+.prev-button {
+  display: flex;
+  width: 106px;
+  height: 40px;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: "Eina04-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  background-color: #fff;
+  margin-right: 15px;
+  color: #423a66;
+  border-radius: 12px;
+  border: 1.5px solid #423a66;
+}
+
+.addNewHcpSection {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  background: none;
+  border: none;
+  width: 100%;
+  
+}
+
+.addNewHcpSection-disable {
+  cursor: no-drop;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.5;
+  background: none;
+  border: none;
+  width: 100%;
+}
+/* CSS Spinner ------------------------------------------------------------------------ */
+.spinner-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader:not(:required) {
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.loader:not(:required):after {
+  content: "";
+  display: block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  -webkit-animation: spinner 1500ms infinite linear;
+  -moz-animation: spinner 1500ms infinite linear;
+  -ms-animation: spinner 1500ms infinite linear;
+  -o-animation: spinner 1500ms infinite linear;
+  animation: spinner 1500ms infinite linear;
+  border-radius: 0.5em;
+  box-shadow:
+    #403a60 1.5em 0 0 0,
+    #403a60 1.1em 1.1em 0 0,
+    #403a60 0 1.5em 0 0,
+    #403a60 -1.1em 1.1em 0 0,
+    #403a60 -1.5em 0 0 0,
+    #403a60 -1.1em -1.1em 0 0,
+    #403a60 0 -1.5em 0 0,
+    #403a60 1.1em -1.1em 0 0;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/* CSS for Prescription form ------------------------------------------------------------------------ */
+
+.dosage-unit-input-container {
+  display: flex;
+}
+
+.dosage-unit-input-div {
+  width: 50%;
+}
+
+.dosage-frequency-input {
+  margin-right: 24px;
+}
+
+.terms-conditions-subheading {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.PI {
+  display: none;
+}
+
+
+
+@media only screen and (min-width: 769px) {
+  .marTB20 {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .para {
+    padding-left: 10px;
+    padding-right: 86px;
+  }
+  .paralast {
+    padding-left: 10px;
+    padding-right: 74px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .marTB20 {
+    right: 0px;
+  }
+}
+
+@media (width <=768px) {
+  /* CSS for Layout -------------------------------------------------------------------------------------- */
+  .slds-grid {
+    display: block;
+  }
+
+  .sidebar-container1 {
+    content: "";
+    background: linear-gradient(
+      90deg,
+      #744f0d 0%,
+      #8b5f2d 11.35%,
+      #efdba1 42.29%,
+      #744f0d 100%
+    );
+    position: absolute;
+    left: 0%;
+    height: 4px;
+    width: 100%;
+  }
+
+  .btn-div {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 24px;
+    margin-bottom: 30px;
+    flex-direction: column-reverse;
+  }
+  .para {
+    display: none;
+  }
+  .paralast {
+    display: none;
+  }
+
+  .one {
+    position: relative;
+    color: #ccc;
+    bottom: 20px;
+  }
+
+  .step-container {
+    width: 100%;
+    padding: 0px 10px;
+    margin-left: 0px;
+    position: relative;
+    bottom: 30px;
+  }
+
+  .marTB20 {
+    width: 220px;
+    position: relative;
+    bottom: 170px;
+    right: 0px;
+  }
+
+  .PI {
+    display: flex;
+    font-weight: 400;
+    color: #403a60;
+    font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-size: 16px;
+    position: relative;
+    bottom: 19px;
+  }
+
+  .demoFont {
+    margin-bottom: 10px;
+    margin-top: -20px;
+  }
+
+  .slds-form-element__helps {
+    position: relative;
+  }
+
+  .error {
+    position: relative;
+    top: 5px;
+  }
+
+  .formContainer {
+    width: 100%;
+    flex-direction: column-reverse;
+    position: relative;
+    top: 30px;
+    z-index: 0 !important;
+  }
+
+  .sidebar-container {
+    width: 100%;
+    top: 80px;
+    z-index: 1;
+  }
+
+  /* CSS for Button ------------------------------------------------------------------------------ */
+  
+
+  .prev-button {
+    width: 100%;
+    margin: 10px 0px;
+  }
+
+  .next-button {
+    width: 100%;
+  }
+
+  /* CSS for Sidebar and Avatar ------------------------------------------------------------------------- */
+
+  .sidebar-container::after {
+    height: 0%;
+  }
+
+  .avatar-img-div {
+    flex-direction: row;
+  }
+
+  .text-content {
+    display: none;
+  }
+
+  .avatar-image {
+    margin: 10px;
+    width: 20%;
+  }
+
+  .avatar-content-container {
+    display: flex;
+    top: 0px;
+  }
+
+  .text-content-for-mobile {
+    display: block;
+    width: 90%;
+  }
+
+  .threeclickclass {
+    display: block;
+    width: 10%;
+    margin: 5px 0%;
+  }
+
+  .text-content-div-for-mobile {
+    display: block;
+  }
+
+  /* CSS for Progress Bar ------------------------------------------------------------------------------ */
+
+  .progress-label-count {
+    display: none;
+  }
+
+  .slds-progress__item_content {
+    display: none;
+  }
+
+  .slds-progress_vertical .slds-progress__list {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 9px;
+    height: 50px;
+  }
+
+  .slds-progress_vertical .slds-progress__item {
+    padding: 23% 0px;
+    transform: rotate(270deg);
+  }
+
+  .progress-bar-container {
+    overflow-x: hidden;
+  }
+
+  .progress-bar-container-parent {
+    margin-left: 0;
+  }
+
+  .progress-label {
+    margin-left: 10px;
+  }
+
+  .heading {
+    display: none;
+  }
+
+  .mobile-heading {
+    display: block;
+    margin-left: 10px;
+    margin-top: 20px;
+    font-size: 18px;
+  }
+
+  /* CSS for inptut field --------------------------------------------------------------------------------- */
+  .dosage-unit-input-container {
+    gap: 10px;
+  }
+
+  .dosage-unit-input-div {
+    width: 100%;
+  }
+
+  .dosage-frequency-input {
+    margin-right: 0;
+  }
+}
+
+@media only screen and (min-width: 401px) and (max-width: 500px) {
+  .hrline {
+    display: block;
+    background: linear-gradient(
+      90deg,
+      #744f0d 0%,
+      #8b5f2d 11.35%,
+      #efdba1 42.29%,
+      #744f0d 100%
+    );
+  }
+}
+
+@media (max-width: 640px) {
+  .lightning-input[type="date"]:before {
+    content: "yourcontent" !important;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1110px) {
+  .formContainer {
+    gap: 50px;
+  }
+}

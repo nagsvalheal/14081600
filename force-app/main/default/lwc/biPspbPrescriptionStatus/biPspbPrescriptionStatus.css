@@ -1,0 +1,667 @@
+@font-face {
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff") format("woff");
+}
+
+@font-face {
+	font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff") format("woff");
+}
+
+.msgforpre {
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 32px;
+	color: #403a60;
+	margin-top: 10px;
+}
+
+.fulldiv1 {
+	display: none;
+}
+
+.date {
+	width: 48px;
+}
+
+.Submitted {
+	background-color: #fef4d7;
+	height: max-content;
+	padding: 4px;
+	border-radius: 4px;
+}
+
+.Verified {
+	height: max-content;
+	padding: 4px;
+	border-radius: 4px;
+
+	background-color: #dcf9d3;
+}
+
+.Prescription {
+	background-color: #dfdde0;
+	height: max-content;
+	padding: 4px;
+
+	border-radius: 4px;
+
+	width: 210px;
+}
+
+.Invalid {
+	background-color: #ffe0e0;
+	height: max-content;
+	padding: 4px;
+
+	width: 138px;
+	border-radius: 4px;
+}
+
+.headingflex {
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	display: flex;
+	border-bottom: 1px solid #403a60;
+	color: #000000;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+	letter-spacing: 0em;
+	text-align: left;
+	width: 100%;
+	padding-bottom: 5px;
+}
+
+.mobileflex2 {
+	display: flex;
+	gap: 50px;
+	border-bottom: 1px solid #8d89a540;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.mobileflex5 {
+	display: flex;
+	gap: 16px;
+	flex-direction: column;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.mobileflex3 {
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	display: flex;
+	gap: 62px;
+	border-bottom: 1px solid #403a60;
+	color: #403a60;
+
+	font-weight: 400;
+	font-size: 18px;
+}
+
+.datemobilecss {
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	color: #403a60;
+	font-weight: 400;
+	font-size: 14px;
+}
+
+.mobileflex {
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	color: #403a60;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 16px;
+	display: flex;
+	gap: 50px;
+	border-bottom: 1px solid #8d89a540;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.discriptionmobilecss {
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	color: #403a60;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 16px;
+}
+
+.discriptionmobilecss1 {
+	color: #403a60;
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+}
+
+.typemobilecss {
+	color: #403a60;
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+}
+
+.statuspad {
+	margin-left: 14px;
+}
+
+.loopclass {
+	border-bottom: 1px solid #8d89a5;
+}
+
+.classforcimbobox {
+	width: 226px;
+	margin-left: 70%;
+
+	position: relative;
+
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+	letter-spacing: 0em;
+	text-align: left;
+	color: #403a60;
+	--slds-c-input-color-border: rgba(44, 51, 58, 0.2);
+	--lwc-colorTextLabel: rgba(64, 58, 96, 1);
+	--lwc-colorTextPlaceholder: rgba(64, 58, 96, 1);
+	--sds-c-input-radius-border: 4px;
+	bottom: 58px;
+}
+
+.headingclass {
+	font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 32px;
+	font-weight: 700;
+	color: #403a60;
+	margin-top: 1%;
+}
+
+.padding2 {
+	padding-left: 63px;
+}
+
+.padding3 {
+	padding-left: 126px;
+}
+
+.padding4 {
+	padding-left: 231px;
+}
+
+.dateclass {
+	display: flex;
+	color: #403a60;
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+	letter-spacing: 0em;
+	text-align: left;
+	width: 16%;
+}
+
+.dateclass2 {
+	width: 153px;
+	color: #403a60;
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+	letter-spacing: 0em;
+	text-align: left;
+	position: relative;
+
+	right: 3%;
+}
+
+.dateclass3 {
+	height: auto;
+	overflow-wrap: break-word;
+	color: #403a60;
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+	letter-spacing: 0em;
+	text-align: left;
+	width: 36%;
+	position: relative;
+
+	right: 2%;
+}
+
+.dateclass4 {
+	width: 27%;
+	display: flex;
+	color: #403a60;
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+	letter-spacing: 0em;
+	text-align: left;
+	position: relative;
+	right: 2%;
+}
+
+.dateclass5 {
+	border-bottom: 1px solid #8d89a5;
+	display: flex;
+	width: 100%;
+	padding-top: 2%;
+	padding-bottom: 3px;
+}
+
+@media only screen and (min-width: px) and (max-width: 1200px) {
+	.headingclass {
+		font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 27px;
+		font-weight: 700;
+		color: #403a60;
+		margin-top: 1%;
+	}
+
+	.classforcimbobox {
+		width: 23%;
+		margin-left: 55%;
+		position: relative;
+		font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+		letter-spacing: 0em;
+		text-align: left;
+		color: #403a60;
+		--slds-c-input-color-border: rgba(44, 51, 58, 0.2);
+		--lwc-colorTextLabel: rgba(64, 58, 96, 1);
+		--lwc-colorTextPlaceholder: rgba(64, 58, 96, 1);
+		--sds-c-input-radius-border: 4px;
+		bottom: 58px;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.fulldiv {
+		display: none;
+	}
+
+	.fulldiv1 {
+		display: block;
+	}
+
+	.classforcimbobox {
+		width: 77%;
+		margin-left: -1%;
+		position: relative;
+		font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+		letter-spacing: 0em;
+		text-align: left;
+		color: #403a60;
+		--slds-c-input-color-border: rgba(44, 51, 58, 0.2);
+		--lwc-colorTextLabel: rgba(64, 58, 96, 1);
+		--lwc-colorTextPlaceholder: rgba(64, 58, 96, 1);
+		--sds-c-input-radius-border: 4px;
+		bottom: 25px;
+		padding-top: 14px;
+		padding-bottom: 14px;
+	}
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+	.classforcimbobox {
+		width: 59%;
+		margin-left: -1%;
+		position: relative;
+		font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+		letter-spacing: 0em;
+		text-align: left;
+		color: #403a60;
+		--slds-c-input-color-border: rgba(44, 51, 58, 0.2);
+		--lwc-colorTextLabel: rgba(64, 58, 96, 1);
+		--lwc-colorTextPlaceholder: rgba(64, 58, 96, 1);
+		--sds-c-input-radius-border: 4px;
+		bottom: 25px;
+		padding-top: 14px;
+		padding-bottom: 14px;
+	}
+
+	.fulldiv {
+		width: 88%;
+	}
+
+	.padding4 {
+		padding-left: 33%;
+	}
+
+	.padding3 {
+		padding-left: 16%;
+	}
+
+	.padding2 {
+		padding-left: 12%;
+	}
+
+	.dateclass2[c-biPspbPrescriptionstatus_biPspbPrescriptionstatus] {
+		color: #403a60;
+		font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 20px;
+		width: 29%;
+		margin-left: 10%;
+	}
+
+	.dateclass4[c-biPspbPrescriptionstatus_biPspbPrescriptionstatus] {
+		display: flex;
+		color: #403a60;
+		font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 20px;
+		width: 9%;
+		margin-right: 14%;
+	}
+
+	.headingflex {
+		width: 112%;
+	}
+
+	.dateclass5 {
+		width: 111%;
+	}
+
+	.dateclass3[c-biPspbPrescriptionstatus_biPspbPrescriptionstatus] {
+		height: auto;
+		overflow-wrap: break-word;
+		color: #403a60;
+		font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 20px;
+		letter-spacing: 0em;
+		text-align: left;
+		width: 59%;
+		position: relative;
+		right: 2%;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+	.classforcimbobox {
+		width: 31%;
+		position: relative;
+		font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+		letter-spacing: 0em;
+		text-align: left;
+		color: #403a60;
+		--slds-c-input-color-border: rgba(44, 51, 58, 0.2);
+		--lwc-colorTextLabel: rgba(64, 58, 96, 1);
+		--lwc-colorTextPlaceholder: rgba(64, 58, 96, 1);
+		--sds-c-input-radius-border: 4px;
+		bottom: 58px;
+		left: 40%;
+	}
+
+	.padding4 {
+		padding-left: 0%;
+		position: relative;
+		left: 36%;
+	}
+
+	.padding3 {
+		padding-left: 13%;
+	}
+
+	.padding2 {
+		padding-left: 10%;
+	}
+
+	.dateclass4 {
+		width: 24%;
+		display: flex;
+		color: #403a60;
+		font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 20px;
+		letter-spacing: 0em;
+		text-align: left;
+		position: relative;
+		left: 2%;
+	}
+
+	.dateclass3 {
+		height: auto;
+		overflow-wrap: break-word;
+		color: #403a60;
+		font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 20px;
+		letter-spacing: 0em;
+		text-align: left;
+		width: 35%;
+		position: relative;
+		right: 7%;
+	}
+
+	.dateclass2 {
+		width: 21%;
+		color: #403a60;
+		font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 20px;
+		letter-spacing: 0em;
+		text-align: left;
+	}
+
+	.headingflex {
+		font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		display: flex;
+		border-bottom: 1px solid #403a60;
+		color: #000000;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 20px;
+		letter-spacing: 0em;
+		text-align: left;
+		width: 153%;
+	}
+
+	.dateclass5 {
+		border-bottom: 1px solid #8d89a5;
+		display: flex;
+		width: 153%;
+		padding-top: 2%;
+		padding-bottom: 3px;
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+	.dateclass3[c-biPspbPrescriptionstatus_biPspbPrescriptionstatus] {
+		height: auto;
+		overflow-wrap: break-word;
+		color: #403a60;
+		font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 20px;
+		letter-spacing: 0em;
+		text-align: left;
+		width: 25%;
+		position: relative;
+		left: 6%;
+	}
+
+	.classforcimbobox {
+		width: 32%;
+		margin-left: 85%;
+		position: relative;
+		font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+		letter-spacing: 0em;
+		text-align: left;
+		color: #403a60;
+		--slds-c-input-color-border: rgba(44, 51, 58, 0.2);
+		--lwc-colorTextLabel: rgba(64, 58, 96, 1);
+		--lwc-colorTextPlaceholder: rgba(64, 58, 96, 1);
+		--sds-c-input-radius-border: 4px;
+		bottom: 58px;
+	}
+
+	.headingflex {
+		font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		display: flex;
+		border-bottom: 1px solid #403a60;
+		color: #000000;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 20px;
+		letter-spacing: 0em;
+		text-align: left;
+		width: 118%;
+	}
+
+	.dateclass5[c-biPspbPrescriptionstatus_biPspbPrescriptionstatus] {
+		border-bottom: 1px solid #8d89a5;
+		display: flex;
+		width: 118%;
+		padding-top: 2%;
+		padding-bottom: 3px;
+	}
+
+	.dateclass2[c-biPspbPrescriptionstatus_biPspbPrescriptionstatus] {
+		width: 12%;
+		color: #403a60;
+		font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 20px;
+		letter-spacing: 0em;
+		text-align: left;
+		position: relative;
+	}
+
+	.dateclass4[c-biPspbPrescriptionstatus_biPspbPrescriptionstatus] {
+		width: 29%;
+		display: flex;
+		color: #403a60;
+		font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 20px;
+		letter-spacing: 0em;
+		text-align: left;
+		position: relative;
+		left: 14%;
+	}
+
+	.padding2 {
+		padding-left: 9%;
+	}
+
+	.padding3 {
+		padding-left: 17%;
+	}
+
+	.padding4 {
+		padding-left: 22%;
+	}
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1500px) {
+	.dateclass4[c-biPspbPrescriptionstatus_biPspbPrescriptionstatus] {
+		right: -7%;
+	}
+
+	.padding4 {
+		padding-left: 0px;
+		margin-left: 36%;
+	}
+
+	.padding3 {
+		padding-left: 0px;
+		margin-left: 15%;
+	}
+
+	.padding2 {
+		padding-left: 0px;
+		margin-left: 9%;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.headingclass {
+		font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 25px;
+		font-weight: 700;
+		color: #403a60;
+		margin-top: -28%;
+	}
+
+	.Prescription {
+		background-color: #dfdde0;
+		height: max-content;
+		padding: 4px;
+		border-radius: 4px;
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 1801px) and (max-width: 2000px) {
+	.padding4 {
+		margin-left: 9%;
+	}
+
+	.padding3 {
+		margin-left: 1%;
+	}
+
+	.padding2 {
+		margin-left: 4%;
+	}
+}
+
+@media only screen and (min-width: 1501px) and (max-width: 1800px) {
+	.padding4 {
+		margin-left: 28%;
+		padding-left: 0px;
+	}
+
+	.padding3 {
+		margin-left: 13%;
+		padding-left: 0px;
+	}
+
+	.padding2 {
+		margin-left: 10%;
+		padding-left: 0px;
+	}
+}

@@ -1,0 +1,23 @@
+<!-- This LWC is used new entry page create  - biPspbsymtomtrackerlandingpageCmp -->
+<template>
+					<div class="spinner-wrapper" if:true={showSymptom}>
+        <div class="loader"></div>
+      </div>
+
+		<lightning-layout multiple-rows class="layoutColor pad slds-p-top_xx-large slds-p-bottom_xx-large">
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="4" large-device-size="4">
+				<div class="custom-box1">
+					<c-bi-Pspb-Avatar-Navigation></c-bi-Pspb-Avatar-Navigation>
+				</div>
+			</lightning-layout-item>
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="8" large-device-size="8">
+				<div class="custom-box2">
+					<div>
+						<c-bi-Pspb-Symptom-Landing-Page></c-bi-Pspb-Symptom-Landing-Page>
+					</div>
+				</div>
+			</lightning-layout-item>
+					</lightning-layout>
+	
+	
+</template>

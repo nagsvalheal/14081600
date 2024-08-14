@@ -1,0 +1,183 @@
+/* Define styling for custom message with class slds-form-element__help */
+.custom-box1 {
+	background-color: #403A60;
+}
+
+.custom-box2 {
+	width: -webkit-fill-available;
+	display: grid;
+	min-height: 100vh;
+	font-size: 0.8125rem;
+	position: relative;
+	right: 1px;
+	background-color: white;
+}
+
+.main {
+	position: relative;
+	bottom: 1px;
+	height: fit-content;
+}
+
+.imgcl {
+	width: 133px;
+	height: 56px;
+}
+
+/* CSS for Header */
+
+.displayHeader {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	top: 0px;
+
+}
+
+.home-icon-container {
+	margin-right: 5.4%;
+}
+
+.header-logo-container {
+	background-color: #413A63;
+	width: 34%;
+}
+
+.header-logo-container>div {
+	width: 57%;
+	margin: 10px auto;
+}
+
+/* CSS for Footer  */
+
+.footerLink {
+	text-decoration: none;
+	color: #403A60;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.grid-containerfooter {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 10px 20px;
+	padding: 10px;
+	width: fit-content;
+	margin-right: 5.4%;
+}
+
+.footer-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+
+}
+
+.footer-logo-container {
+	background-color: #413A63;
+	width: 34%;
+	display: flex;
+	justify-content: center;
+	height: 136%;
+	align-items: flex-end;
+}
+
+.footer-containerMobile {
+	display: none;
+}
+
+.footer-logo-container>div {
+	width: 370px;
+	margin: 10px auto;
+	margin-left: 22%;
+}
+
+.padR7 {
+	padding-right: 10%;
+}
+
+/*--CSS Media Queries for Mobile View*/
+
+@media (width <=850px) {
+
+	/* CSS for Header  */
+
+	.displayHeader {
+		overflow-x: hidden;
+		position: relative;
+		top: 0;
+		z-index: 6;
+	}
+
+	.imgcl {
+		width: 104px;
+		height: 44px;
+	}
+
+	.header-logo-container {
+		width: 91%;
+	}
+
+	.header-logo-container>div {
+		width: 57%;
+		margin: 10px;
+	}
+
+	.home-icon-container {
+		margin-right: 0%;
+		background-color: #413A63;
+	}
+
+	/* CSS for Footer  */
+
+	.footer-container {
+		position: static;
+		display: block;
+	}
+
+	.footer-containerMobile {
+		display: block;
+	}
+
+	.padR7 {
+		display: none;
+	}
+
+	.footer-logo-container {
+		width: 100%;
+		display: none;
+		height: auto;
+	}
+
+	.footer-logo-container>div {
+		width: 100%;
+		margin-left: 10px;
+	}
+
+	.footerLink {
+		color: #fff;
+		font-weight: 300;
+		font-size: 12px;
+	}
+
+	.grid-containerfooter {
+		display: none;
+		width: 100%;
+		background-color: #403A60;
+	}
+
+	.Foot {
+		width: 80%;
+	}
+}
+
+@media (width >=1800px) {
+	.padR7 {
+		padding-right: 11%;
+
+	}
+
+	.home-icon-container {
+		margin-right: 7%;
+	}
+}

@@ -1,0 +1,53 @@
+<!--This lightning web component is used as parent component to display the recent articles and landing avatar message-->
+<template>
+	<!-- Onload show spinner few seconds -->
+	<div if:true={showSpinner}>
+		<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	 </div>
+	<!-- Strings are hard coded in this HTML file to comply with the mobile responsiveness-->
+	<div class="overflowcontrol">
+		<!--Display the subheader tab-->
+		<template if:true={showTreatVideo}>
+			<lightning-layout multiple-rows>
+				<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+					<div class="customNavTab pad">
+						<div class="grid-containerNavTab">
+							<button onclick={openArticlesPage} class="menuListActive">{articles}</button>
+							<button if:true={showTreatVideo} onclick={openSpevigoCategory} class="menuList">{spevigoArticleLabel}</button>
+							<template if:true={showTreatVideo}>
+								<button onclick={openPTVPage} class="menuList">{patientTreatmentVideos}</button></template>
+						</div>
+					</div>
+				</lightning-layout-item>
+			</lightning-layout>
+		</template>
+		<!--Display the Banner image-->
+		<img class="displaymb" src={imageMob} alt="InformationCenter"/>
+		<hr class="mbline" />
+		<img class="displaydk" src={imageDesktop} alt="InformationCenter" />
+
+		<div class="textformb">
+			<div class="contentmb">
+				<p class="headingmb">
+					{infoCenterLandingMessage}
+				</p>
+				<br />
+				<p class="paramb">
+					{infoCenterLandingDetailMessage}
+				</p>
+				<br />
+			</div>
+		</div>
+		<div class="flexi">
+			<div class="personalizedcontent">
+				<c-bi-Pspb-Info-Landing-Avatar site-urlq={siteUrlq} onchildrendered={handleChildRendered}></c-bi-Pspb-Info-Landing-Avatar>
+			</div>
+			<div class="mbforoverflow">
+				<div class="article_list">
+					<c-bi-Pspb-Information-Center-Landing onchildrendered={handleChildRendered}></c-bi-Pspb-Information-Center-Landing>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</template>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+<apiVersion>57.0</apiVersion>
+<isExposed>true</isExposed>
+<description>
+This Lightning Web Component defines a layout structure with two sections for reminder setup and notification settings, utilizing the Lightning Design System components</description>
+<targets>
+<target>lightningCommunity__Page</target>
+<target>lightningCommunity__Default</target>
+<target>lightningCommunity__Page_Layout</target>
+<target>lightningCommunity__Theme_Layout</target>
+</targets>
+</LightningComponentBundle>

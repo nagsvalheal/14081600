@@ -1,0 +1,23 @@
+<!--This lightning web component is used to display the avatar message in the Information Center search article Page-->
+<template>
+	<div class="contain" data-it-uid={userid}>
+		<div>
+			<!--Display the Selected avatar of patient-->
+			<img src={cardImage} alt="selected Avatar" class="image" />
+		</div>
+		<!--Display the message content-->
+		<div class="message-container">
+			<div class="message-container">
+				<p class="para">
+					<span class="mbmess" onclick={displayExpandedMessage} onkeypress={displayExpandedMessage} role="button" tabindex="0" >
+						{acuteMessage}
+						</span>
+					<span class="dkmess">{articleSearchAvatarMessage}</span>
+				</p>
+			</div>
+		</div>
+		<div class="mbintm">
+			<a><span class="intmark" onclick={displayMessage} role="button" onkeydown={displayMessage} tabindex="0"> X</span></a>
+		</div>
+	</div>
+</template>

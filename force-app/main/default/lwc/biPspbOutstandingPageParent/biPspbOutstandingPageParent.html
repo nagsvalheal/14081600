@@ -1,0 +1,51 @@
+<!-- This is Consolidate Component(LWC) this contains Avatar and Questionnaire Cards to achieve mobile responsive. -->
+<template>
+	<div class="fullclass">
+		<lightning-layout multiple-rows class="tabClass">
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+				<!--Navigation tab-->
+				<div class="tabsDiv pad">
+					<div class="grid-containerTabs">
+						<a onclick={openOutQuestionnaires} class="anchorTextActive"
+							data-it-button="Outstanding Page: Outstanding Questionnaires">{outStandingLabel}</a>
+						<template if:true={showTabMenuSummary}>
+							<a onclick={openSummary} class="anchorText"
+								data-it-button="Outstanding Page: Summary">{summaryTxt}</a>
+						</template>
+						<template if:false={showTabMenuSummary}><a class="anchorText disabled"
+								data-it-button="Outstanding Page: Summary">{summaryTxt}</a>
+						</template>
+						<template if:true={showTabMenu}>
+							<a onclick={openComQuestionnaires} class="anchorText"
+								data-it-button="Outstanding Page:Completed Questionnaires">{completedTxt}</a>
+						</template>
+						
+						<template if:false={showTabMenu}>
+							<a class="anchorText disabled"
+								data-it-button="Outstanding Page: Completed Questionnaires">{completedTxt}</a>
+						</template>
+						<a onclick={openPersonalize} class="anchorText"
+							data-it-button="Outstanding Page: Let’s Personalize">{letPersonalizeTxt}</a>
+					</div>
+				</div>
+			</lightning-layout-item>
+		</lightning-layout>
+
+		<lightning-layout multiple-rows class="layoutColor pad">
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size={screenWidth}
+				class="slds-p-top_xx-large slds-p-bottom_xx-large">
+				<!--Avatar Component-->
+				<div class="custom-box1">
+					<c-bi-Pspb-Avatar-Navigation-Questionnaires></c-bi-Pspb-Avatar-Navigation-Questionnaires>
+				</div>
+			</lightning-layout-item>
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size={screenWidth}
+				class="slds-p-top_xx-large slds-p-bottom_xx-large">
+				<!--Consolidate Cards page-->
+				<div class="custom-box2">
+					<c-bi-Pspb-Outstanding-Page></c-bi-Pspb-Outstanding-Page>
+				</div>
+			</lightning-layout-item>
+		</lightning-layout>
+	</div>
+</template>

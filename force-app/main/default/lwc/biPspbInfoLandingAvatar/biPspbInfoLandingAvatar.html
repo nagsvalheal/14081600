@@ -1,0 +1,20 @@
+<!-- This lightning web component is used to display the landing avatar message in the Information Center Landing Page-->
+<!-- Strings are hard coded in this HTML file to comply with the mobile responsiveness-->
+<template>
+	<div class="contain">
+		<div>
+			<img src={cardImage} alt="Seletecd Avatar" class="image" />
+		</div>
+		<div class="mbintm">
+			<!--To display a message for mobile device-->
+			<p onclick={displaymessage} onkeydown={displaymessage} role="button"><span class="intmark"> X</span></p>
+		</div>
+
+		<div class="message-container">
+			<!--To display a message for a desktop-->
+			<p class="para">
+				{searchAvatarMessage}
+			</p>
+		</div>
+	</div>
+</template>

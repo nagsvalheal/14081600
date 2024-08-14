@@ -1,0 +1,171 @@
+<!-- This LWC is used User Fatiguesymptoms insert values  - biPspbSymptomTrackerMainCmp -->
+<template>
+	<div if:true={showSpinner}>
+		<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	</div>
+	<!-- To display ToastMessage -->
+	<div lwc:if={showDiv}>
+		<div class="toastForDesktop">
+			<c-bi-pspb-common-popup toast-message={ToastMsg} onbuttonclick={handleclose}></c-bi-pspb-common-popup>
+		</div>
+	</div>
+	<div data-it-uid={userId}>
+		<template if:true={updateValue}>
+			<div class="custom3">
+				<c-bi-Pspb-Primary-Page-Symptom symptomrecord={symptomIdGet}></c-bi-Pspb-Primary-Page-Symptom>
+			</div>
+		</template>
+		<lightning-layout class="myComponentClass" multiple-rows>
+			<lightning-layout-item class="lli" size="12" padding="around-small" small-device-size="12"
+				medium-device-size="6" large-device-size="6">
+				<div class="grid-containerHeadingsSingle">
+					<p class="past">{symptomTrackerLabel}</p>
+					<p class="past past1">{pastEntries}</p>
+				</div>
+			</lightning-layout-item>
+
+			<lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6"
+				large-device-size="6">
+				<div class="grid-containerButtons">
+					<div><button onclick={updatesymptom} class="downbtn">{addNewEntry}</button></div>
+					<div class="grid-containerDoubleSlide">
+						<div><select onchange={handleCategoryChange} class="selectWidth">
+								<option value={placeholder} disabled selected>{placeholder}</option>
+								<template for:each={picklistOptions1} for:item="option">
+									<option key={option.value} value={option.value}>{option.label}</option>
+								</template>
+							</select></div>
+						<div><template if:true={showChart}><button class="downbtn1"
+									onclick={openShowPopUp}>{downloadLabel}</button></template></div>
+
+
+
+					</div>
+				</div>
+			</lightning-layout-item>
+		</lightning-layout>
+		<template if:true={showChart}>
+			<lightning-layout multiple-rows class="slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_12-of-12 slds-large-size_12-of-12">
+				<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+					<template if:true={showLine}>
+						<div class="chart-container">
+							<div class="chart">
+								<template if:true={leftLess}>
+									<div class="showEnd"><a onclick={handleLeftClick} onkeypress={handleLeftClick}  role="button">&#10094;</a></div>
+								</template>
+							<template for:each={bars} for:item="bar">
+        <div key={bar.dates} data-item={bar.dates} class="bar">
+            <div class="container-bottom">
+                <div class="label">
+                    <div class="pad10">
+                        <a class="month" data-item={bar.dates} onkeypress={showHighlighter}  role="button" onclick={showHighlighter}>
+                            {bar.dates}
+                        </a>
+                    </div>
+                </div>
+                <hr>
+                <div class="image-container">
+                    <img class="lineimg" alt={alternateTextVerticalLine} src={verticalLine}>
+                    <template for:each={bar.imageUrls} for:item="imageUrl">
+                        <div class="pad10" key={imageUrl}>
+                            <img src={imageUrl} alt={alternateTextBallIcon} class="chart-image" />
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </template>
+								<template if:true={rightLess}>
+									<div class="showEnd"><a  onkeypress={handleRightClick}  role="button" onclick={handleRightClick}>&#10095;</a></div>
+								</template>
+							</div>
+						</div>
+
+                        <div class="New-addtext">{clickDateLabel}</div>
+					
+						<div class="slds-p-top_large grid-containerColorNotification  slds-align_absolute-center">
+							<div class="grid-containerinline">
+								<div class="height40"><img src={darkYellowEllipse} alt={alternateTextBallIcon}></div>
+									<div>
+										<p class="FlexCircleCenter" data-name='itchines'>{itchinessLabel}</p>
+									</div>
+								</div>
+								<div class="grid-containerinline">
+									<div class="height40"><img src={redEllipse} alt={alternateTextBallIcon} ></div>
+										<div>
+											<p class="FlexCircleCenter">{rednessLabel}</p>
+										</div>
+									</div>
+									<div class="grid-containerinline">
+										<div class="height40"><img src={violetEllipse} alt="violetEllipse" ></div>
+											<div>
+												<p class="FlexCircleCenter">{painLabel}</p>
+											</div>
+										</div>
+										<div class="grid-containerinline">
+											<div class="height40"><img src={greenEllipse} alt={alternateTextBallIcon} ></div>
+												<div>
+													<p class="FlexCircleCenter">{pustulesLabel}</p>
+												</div>
+											</div>
+											<div class="grid-containerinline">
+												<div class="height40"><img src={blueEllipse} alt={alternateTextBallIcon} ></div>
+													<div>
+														<p class="FlexCircleCenter">{fatigueLabel}</p>
+													</div>
+												</div>
+												<div class="grid-containerinline">
+													<div class="height40"><img src={darkRedEllipse} alt={alternateTextBallIcon} ></div>
+														<div>
+															<p class="FlexCircleCenter">{temperatureLabel}</p>
+														</div>
+													</div>
+													<div class="grid-containerinline">
+														<div class="height40"><img src={yellowEllipse}  alt={alternateTextBallIcon}></div>
+															<div>
+																<p class="FlexCircleCenter">{moodLabel}</p>
+															</div>
+														</div>
+													</div>
+					</template>
+				</lightning-layout-item>
+				<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+				</lightning-layout-item>
+			</lightning-layout>
+		</template>
+		<template if:true={checkValue}>
+			<c-bi-Pspb-Primary-Page-Symptom symptomrecord={symptomIdGet}></c-bi-Pspb-Primary-Page-Symptom>
+		</template>
+		<template if:true={understand}>
+			<div class="modal-background">
+				<div class="modal-content">
+					<button class="close" onclick={closeundersatand}>&times;</button>
+					<h3>{confirmSubmission}</h3>
+					<p>{aboveInformationCorrect}</p>
+					<div class="confirm-btn-head">
+						<button class="confirm-btn-understand" onclick={openundersatand}>{iUnderstand}</button>
+					</div>
+				</div>
+			</div>
+		</template>
+		<template if:true={showPopup}>
+			<div class="modal-backdrop"></div>
+			<div class="modal-visible">
+				<div class="modal-close" >
+					<button class="timescss" onclick={doNotLogout}>
+							&times;</button>
+				</div>
+				<div class="modal-content">
+					<p class="modalHead">{confirmSubmission}</p>
+					<p class="modalPara">{sureDownloadSymptom}</p>
+					<div class="width100">
+						<div class="grid-containermodals">
+							<button class="buttonLogoutCancel" onclick={doNotLogout}>{noLabel}</button>
+							<button class="ButtonLogoutYes" onclick={captureComponent}>{yesLabel}</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+	</div>
+</template>

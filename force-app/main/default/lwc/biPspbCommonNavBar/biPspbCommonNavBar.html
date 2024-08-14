@@ -1,0 +1,169 @@
+<!-- This LWC is designed for Account Manager which contains the profile details, avatar settings, notification settings and for logout functinality --><template>
+
+	<template if:true={showforNotLoggedIn}>
+		<div if:true={showSpinner}>
+			<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+		   </div>
+		<lightning-layout multiple-rows class="topHeader padding">
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+				<div class="grid-containerNavPatient">
+					<div class="display-text">
+						<p class="textp">
+							{beyondGppLabel}
+						</p>
+					</div>
+				</div>
+			</lightning-layout-item>
+		</lightning-layout>
+		<div class="gradientcolorNavbar"></div>
+		<!-- Naviagtion Bar-->
+		<lightning-layout multiple-rows class="navBar padding">
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+				<div class="display-LogoLogin">
+					<div class="grid-containerNav">
+						<div class="logo">
+							<a onclick={openHome}><img src={navLogo} width="132px" height="56px" /></a>
+						</div>
+						<div class="login">
+							<div class="displaylogincontent">
+									<div class="center-Text"></div>
+									<div>
+										<button class="logbtn" onclick={checkUser}>{loginLabel}</button>
+									</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</lightning-layout-item>
+		</lightning-layout>
+	</template>
+
+	<template if:true={openWithoutMenu}>
+		<div if:true={showSpinner}>
+			<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+		   </div>
+		<div class="menu-overlay">
+			<div class="menuMob">
+				<div class="display-MobileLogoLogin padding">
+					<div class="grid-containerNav">
+						<div class="logo">
+							<button onclick={openHome} class="buttonStyleTwo">
+								<img src={navLogo} width="104px" height="44px" alt="Home" />
+							</button>
+							
+							
+						</div>
+						
+							<div class="grid-containerMenuMobile">
+								<div class="displayWithoutCenter">
+									<div class="menuutop">
+										<button onclick={closeMobMenu} class="buttonStyleTwo">
+											<img src={CrossIcon} width="24px" alt="Close Menu" />
+										</button>
+										
+									</div>
+
+								</div>
+							</div>
+						
+					</div>
+				</div>
+				<div class="menuList padding">
+					<ul>
+						<li>
+							<button onclick={logoutFunc} class="textStyle" >
+								{logOut}
+							</button>
+							
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</template>
+	<template if:false={showforNotLoggedIn}>
+		<div if:true={showSpinner}>
+			<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+		   </div>
+		<!-- Top Header -->
+		<lightning-layout multiple-rows class="topHeader padding">
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+				<div class="grid-containerNavPatient">
+					<div class="display-text">
+						<p class="textp">
+							{beyondGppLabel}
+						</p>
+					</div>
+					<div class="custom-box">
+						<template if:true={showNavDetails}>
+							<div class="grid-containerLogout">
+								<div>
+									<button onclick={logoutFunc} class="logoutFunc" >
+										{logOut}
+									</button>
+								</div>
+							</div>
+						</template>
+					</div>
+				</div>
+			</lightning-layout-item>
+		</lightning-layout>
+		<div class="gradientcolorNavbar"></div>
+		<!-- Naviagtion Bar-->
+		<lightning-layout multiple-rows class="navBar padding">
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+				<div class="display-LogoLogin">
+					<div class="grid-containerNav">
+						<div class="logo">
+							<button onclick={openHome} class="buttonStyleTwo">
+								<img src={navLogo} width="132px" height="56px" alt="Home" />
+							</button>
+						</div>
+						<div class="loginMobilewithoutmenu">
+							<div class="grid-containerMenuMobile">
+								<div class="displayWithoutCenter">
+									<div class="menuutop">
+										<button onclick={openMobWithoutMenu} class="buttonStyleTwo">
+											<img src={menuIcon} width="24px" alt="menu Icon" />
+										</button>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</lightning-layout-item>
+		</lightning-layout>
+	</template>
+
+
+	<template if:true={showPopup}>
+		<div if:true={showSpinner}>
+			<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+		   </div>
+		<div class="modal-backdrop"></div>
+		<div class="modal-visible">
+			<div class="modal-close" onclick={handleClose} onkeypress={handleClose} role="button">
+				<button onclick={doNotLogout} class="buttonStyleTwo">
+					<span class="backTimestyle">&times;</span>
+				</button>
+			</div>
+			<div class="modal-content">
+				<p class="modalHead">{logoutWarning}</p>
+				<p class="modalPara">{logoutContent}</p>
+				<div class="width100">
+					<div class="grid-containermodals">
+						<button class="buttonLogoutCancel" onclick={doNotLogout}>
+							{cancel}
+						</button>
+						<button class="ButtonLogoutYes" onclick={logoutFromSite}>
+							{yes}
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</template>
+	
+</template>

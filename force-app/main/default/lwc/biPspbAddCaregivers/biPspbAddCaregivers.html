@@ -1,0 +1,196 @@
+<!-- This component is used to create and update caregiver details as well as to check for unique emails -->
+<template>
+    <div class="header" data-it-uid={userId}>
+
+
+        <div class="mycard">
+            <template if:true={showdiv}>
+                <div  class="check"><c-bi-pspb-common-popup  toast-message={toastContent} onbuttonclick={handleclose}></c-bi-pspb-common-popup></div>
+            </template>
+            <template if:true={updatepopup}>
+               <div class="check"> 
+                <c-bi-pspb-common-popup toast-message={toastContent} onbuttonclick={handleclose}></c-bi-pspb-common-popup></div>
+            </template>
+            <div class="flexclass">
+                <div class='autowid'>
+                    <h2 class="size" data-scroll-target>{CaregiverInfo}</h2>
+                    <div class="custom-div">
+                        <div class="input-div">
+                            <div for="FirstName" data-field="FirstName" class="input-label">{firstnamelabel}</div>
+                            <lightning-input class="textInput" field-name="FirstName" data-field="FirstName"
+                                 value={firstName} onchange={firstnamevalueget}
+                                placeholder={enterFirstName} variant="label-hidden"  maxlength="35">
+                            </lightning-input>
+                            <span class="slds-form-element__help" if:true={FirstNameErrorMessage}>
+                                <img class="imgClass" src={Warningicon} alt={warningIcon}>{name}
+                            </span>
+                            <div class="slds-form-element__help" if:true={firstNameErrorMessageValid}>
+                                <img class="imgClass" src={Warningicon} alt={warningIcon} width="12px" height="12px">
+                                <span class="slds-form-element__helps">{validFirstname}</span>
+                            </div>
+
+
+                        </div>
+                        <div class="input-div">
+                            <div for="LastName" data-field="LastName" class="input-label">{lastnameLabel}</div>
+                            <lightning-input field-name="LastName" data-field="LastName" value={lastName} id="LastName"
+                                 variant="label-hidden" class="textInput"
+                                onchange={Lastnamevalueget} placeholder={enterLastName} maxlength="60"></lightning-input>
+                            <span class="slds-form-element__help" if:true={LastNameerrorMessage}>
+                                <img class="imgClass" src={Warningicon} alt={warningIcon}>
+                                {surname}
+                            </span>
+                            <div class="slds-form-element__help" if:true={lastNameErrorMessageValid}>
+                                <img class="imgClass" src={Warningicon} alt={warningIcon} width="12px" height="12px">
+                                <span class="slds-form-element__helps">{validLastname}</span>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="input-div">
+                            <div for="Birthdate" data-field="Birthdate" class="input-label">{dobLabel}</div>
+                            <lightning-input class="textInput" field-name="BI_PSP_Birthdate__c" label="Date of Birth" type="date"
+                                onchange={agecalculationEvent} onkeydown={handleKeyDownThree} value={dobdate} data-field="Birthdate"
+                                variant="label-hidden" placeholder={enterDob} ></lightning-input>
+                            <span if:true={minorError} class="slds-form-element__help"><img class="imgClass" src={Warningicon} alt={warningIcon}>{minor}</span>
+                            <span if:true={minorErrorTwo} class="slds-form-element__help"><img class="imgClass" src={Warningicon} alt={warningIcon}>{abovedate}</span>
+                            <span if:true={minorErrorThree} class="slds-form-element__help"><img class="imgClass" src={Warningicon} alt={warningIcon}>{belowDate}</span>
+                            <span class="slds-form-element__help" if:true={dobErrorMessages}><img class="imgClass" src={Warningicon} alt={warningIcon}>{dateofbirth}
+                            </span>
+                            <div class="slds-form-element__help" if:true={dobErrorMessage}>
+                                <img class="imgClass" src={Warningicon} alt="warning Icon">
+                                <span class="slds-form-element__helps">{dobErrorMessage} </span>
+                            </div>
+                            <span if:true={required} class="slds-form-element__help"><img class="imgClass" src={Warningicon} alt={warningIcon}>{dobError}</span>
+
+
+                        </div>
+
+
+
+
+
+
+                        <div class="input-div">
+                            <div class="input-label" data-field="relationship">{relationshipLabel}</div>
+                            <lightning-combobox class="textInput cRel" label="Relationship" name="CaregiverRelationship" placeholder={select}
+                                data-field="relationship" value={relations} options={relation}
+                                onchange={relationshipEvent}  variant="label-hidden">
+                            </lightning-combobox>
+                            <div class="slds-form-element__help" if:true={relationshipErrorMessage}>
+                                <img class="imgClass" src={Warningicon} alt={warningIcon}>
+                                <span class="slds-form-element__helps">{relationshipError}</span>
+                            </div>
+                        </div>
+
+
+                        <div class="input-div">
+                            <div for="MobilePhone" class="input-label " data-field="phone">{phoneMandatory}</div>
+                            <lightning-input class="textInput" type="tel" field-name="MobilePhone" data-field="phone"
+                                onchange={phonenumberEvent} onpaste={handlePaste} onkeypress={validatePhoneInput} pattern="[0-9+]*"
+                                maxlength="16"  variant="label-hidden" value={mobilePhone}
+                                placeholder={enterPhone}
+                                message-when-pattern-mismatch="Please enter a valid phone number">
+                            </lightning-input>
+                            <span class="slds-form-element__help" if:true={mobileErrorMessage}>
+                                <img class="imgClass" src={Warningicon} alt={warningIcon}>
+                                {phone}
+                            </span>
+                        </div>
+
+
+                        <div class="input-div">
+                            <div for="Email" class="input-label" data-field="email">{caregiverEmail}</div>
+                            <lightning-input class="textInput" field-name="Email" data-field="email" variant="label-hidden" value={email}
+                                onchange={caremailevent} disabled={isEmailReadOnly} placeholder={enterEmail}
+                                ></lightning-input>
+                            <span class="slds-form-element__help" if:true={emailErrorMessage}>
+                                <img class="imgClass" src={Warningicon} alt={warningIcon}>
+                                {emailId}
+                            </span>
+                            <div class="slds-form-element__help" if:true={emailError}>
+                        <img class="imgClass" src={Warningicon} alt={warningIcon} width="12px" height="12px">
+                        <span class="slds-form-element__helps">{validEmail}</span>
+                    </div>
+                        </div>
+                        <div class="warningMessage" if:true={checkEmail}>
+                            <img class="imgClass" src={Warningicon} alt={warningIcon}>
+                            <div class ="errorflag">
+                                {existEmail}
+                            </div>
+                        </div>
+
+
+                        <div class="GAbtn2">
+                            <div class="GrantAcc" if:true={sliderView}>
+                                <label class="grantlabel">
+                                    <p class="GA">{grantAccess}</p>&nbsp;
+                                    <div> <input type="checkbox" class="toggle-checkbox" checked={slider}
+                                            onchange={handleCheckboxChange}>
+                                        <span class="toggle-slider"></span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div if:true={showPrompt} class="prompt-message">
+                                <div class="img">
+                                    <img src={Boxedicon} class="box-icon" alt={warningIcon}>
+                                    <div>
+                                        <p class="GA">{grantAccess}</p>
+                                        <p class="Parag">{boxContent}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="saveChanges">
+                            <button class="save-button" disabled={isSubmitButtonDisabled}  onclick={handlesave}
+                                data-it-button=" Caregiver Information: savebutton">{savebutton}</button>
+
+                        </div>
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+                <div class="GAbtn1">
+                    <div class="GrantAcc"><label class="grantlabel" if:true={sliderView}>
+                            <p class="GA">{grantAccess}</p>&nbsp;
+                            <div> <input type="checkbox" class="toggle-checkbox" checked={slider}
+                                    onchange={handleCheckboxChange}>
+                                <span class="toggle-slider"></span>
+                            </div>
+                        </label>
+                    </div>
+                    <div if:true={showPrompt} class="prompt-message"
+                        data-it-button=" Caregiver Information: Grant Access">
+                        <div class="img">
+                            <img src={Boxedicon} class="box-icon" alt="warning Icon">
+                            <div>
+                                <p class="GA">{grantAccess}</p>
+                                <p class="Parag">{boxContent}</p>
+                            </div>
+                            <!-- sourceComponent.html -->
+
+
+ 
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+   
+</template>

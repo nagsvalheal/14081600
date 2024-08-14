@@ -1,0 +1,120 @@
+<template>
+  <div if:true={showSpinner}>
+    <c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+   </div>
+  <!-- This lightning web component consolidates for thankyou message summary page -->
+  <div>
+    <div class="sidebar-container1"></div>
+    <div>
+      <div class="sidebar-container"></div>
+
+      <div class="container">
+        <img src={mailImg} alt="Mail Icon" class="img" /> <br />
+        <br />
+        <h1 class="tophead">{thanks}</h1>
+        <p class="pclass">{yourPatient}</p>
+        <br />
+        <h2 class="enroll">{enrollHead}</h2>
+        <br />
+        <!--if the candiate has no caregiver -->
+        <div if:true={recordId}>
+          <template if:false={age}>
+            <div class="slds-grid slds-gutters">
+              <div class="slds-col">
+                <span>
+                  <p class="shead">{patientinfo}</p>
+
+                  <template for:each={recordDetails} for:item="lead">
+                    <p key={lead.Id} class="title">
+                      {nameColan} {lead.FirstName} {lead.LastName} <br />
+                      {dobColan} {lead.HealthCloudGA__BirthDate__c} <br />
+                      {emailColan}
+                      <span class="underline-email">{lead.Email}</span>
+                      <br />
+                      {phoneColan} {lead.Phone} <br />
+                    </p>
+                  </template>
+                </span>
+              </div>
+              <br />
+              <div class="slds-col">
+                <span>
+                  <p class="shead">{prescriptionInfo}</p>
+
+                  <template for:each={presInfo} for:item="pres">
+                    <P key={pres.id} class="title">
+                      {productColan} {pres.BI_PSPB_Drug__r.Name} <br />
+                      {productCodeColan} {pres.BI_PSPB_Drug_Code__c} <br />
+                      {prescriptedColan} {pres.BI_PSPB_Prescribed_Date__c}
+                      <br />
+                      {dosageColan} {pres.BI_PSPB_Dosage__c} <br />
+                      {frequencyColan} {pres.BI_PSPB_Frequency__c} <br />
+                      {refilsColan} {pres.BI_PSPB_of_Refills__c}<br />
+                      {quentityColan} {pres.BI_PSPB_Quantity__c} <br />
+                    </P>
+                  </template>
+                </span>
+              </div>
+            </div>
+            <br />
+          </template>
+          <!--if the candiate has caregiver -->
+
+          <template if:true={age}>
+            <div class="slds-grid slds-gutters">
+              <div class="slds-col">
+                <span>
+                  <p class="shead">{patientinfo}</p>
+
+                  <template for:each={recordDetails} for:item="lead">
+                    <P key={lead.id} class="title">
+                      {nameColan} {lead.FirstName} {lead.LastName} <br />
+                      {dobColan} {lead.HealthCloudGA__BirthDate__c} <br />
+                    </P>
+                  </template>
+                </span>
+              </div>
+
+              <div class="slds-col">
+                <span>
+                  <p class="shead">{caregiverInfo}</p>
+
+                  <template for:each={caregiver} for:item="care">
+                    <P key={care.id} class="title">
+                      {nameColan} {care.BI_PSPB_First_Name__c}
+                      {care.BI_PSPB_Last_Name__c}<br />
+                      {relationColan} {care.BI_PSPB_Relationship_to_Patient__c}
+                      <br />
+                      {emailColan}
+                      <span class="underline-email"
+                        >{care.BI_PSPB_E_mail_ID__c}</span
+                      ><br />
+
+                      {phoneColan} {care.BI_PSPB_Phone_number__c} <br />
+                    </P>
+                  </template>
+                </span>
+              </div>
+              <br />
+            </div>
+            <div>
+              <p class="shead">{prescriptionInfo}</p>
+
+              <template for:each={presInfo} for:item="pres">
+                <P key={pres.id} class="title">
+                  {productColan} {pres.BI_PSPB_Drug__r.Name} <br />
+                  {productCodeColan} {pres.BI_PSPB_Drug_Code__c} <br />
+                  {prescriptedColan} {pres.BI_PSPB_Prescribed_Date__c} <br />
+                  {dosageColan} {pres.BI_PSPB_Dosage__c} <br />
+                  {frequencyColan} {pres.BI_PSPB_Frequency__c} <br />
+                  {refilsColan} {pres.BI_PSPB_of_Refills__c}<br />
+                  {quentityColan} {pres.BI_PSPB_Quantity__c} <br />
+                </P>
+              </template>
+            </div>
+          </template>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

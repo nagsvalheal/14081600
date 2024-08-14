@@ -1,0 +1,187 @@
+.para {
+	background-color: #ecdca8;
+	padding: 10px 10px;
+	border-radius: 8px;
+	display: inline-block;
+	left: 58px;
+	height: fit-content;
+	margin-left: 67px;
+	margin-top: -36px;
+	width: 266px;
+	padding-right: 10px;
+}
+
+.image {
+	height: 160px;
+	width: 160px;
+	display: block;
+	margin: auto;
+	margin-top: 7px;
+	margin-left: 122px;
+}
+
+.message-container {
+	margin: auto;
+	height: 150px;
+	width: 250px;
+	margin-top: 60px;
+}
+
+.contain {
+	height: 300px;
+	width: 150px;
+}
+
+.mbintm {
+	display: none;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 374px) {
+	.contain {
+		height: 160px;
+		width: 220px;
+		display: flex;
+		justify-content: space-around;
+		margin-left: -10%;
+	}
+
+	.image {
+        height: 64px;
+        width: 64px;
+        display: block;
+        margin: auto;
+        margin-top: 24px;
+        margin-left: 47px;
+		
+	}
+
+	.para {
+		width: 249px;
+		height: fit-content;
+		margin-left: 78px;
+		margin-top: -41px;
+		padding-left: 13px;
+		line-height: 16px;
+	}
+
+	.mbintm {
+		display: block;
+		background-color: #ecdca8;
+		height: fit-content;
+		margin-left: 140%;
+		position: absolute;
+		margin-top: 23px;
+	}
+
+	.intmark {
+		font-size: 15px;
+		color: grey;
+	}
+}
+
+@media only screen and (min-width: 375px) and (max-width: 400px) {
+	.contain {
+		height: 160px;
+		width: 220px;
+		display: flex;
+		justify-content: space-around;
+		margin-left: -10%;
+	}
+
+	.image {
+        height: 64px;
+        width: 64px;
+        display: block;
+        margin: auto;
+        margin-top: 24px;
+        margin-left: 47px;
+		
+	}
+
+	.para {
+		width: 249px;
+		height: fit-content;
+		margin-left: 78px;
+		margin-top: -41px;
+		padding-left: 13px;
+		line-height: 16px;
+	}
+
+	.mbintm {
+		display: none;
+		background-color: #ecdca8;
+		height: fit-content;
+		margin-left: 140%;
+		position: absolute;
+		margin-top: 23px;
+	}
+
+	.intmark {
+		font-size: 15px;
+		color: grey;
+	}
+}
+
+@media only screen and (min-width: 401px) and (max-width: 768px) {
+	.contain {
+		height: 160px;
+		width: 220px;
+		display: flex;
+		justify-content: space-around;
+		margin-left: -10%;
+	}
+
+	.image {
+		height: 64px;
+		width: 64px;
+		display: block;
+		margin: auto;
+		margin-top: 7px;
+		margin-left: 50px;
+	}
+
+	.para {
+		height: fit-content;
+		margin-left: 78px;
+		margin-top: -55px;
+		font-size: 15px;
+		width: 300px;
+	}
+
+	.mbintm {
+		display: block;
+		background-color: #ecdca8;
+		height: fit-content;
+		margin-left: 604px;
+		position: absolute;
+		margin-top: 7px;
+	}
+
+	.intmark {
+		font-size: 19px;
+		color: grey;
+	}
+}
+
+@media only screen and (min-width: 1500px) and (max-width: 1768px) {
+	.searchhead {
+		margin-left: 30%;
+	}
+
+	.para {
+		background-color: #ecdca8;
+		padding: 10px 10px;
+		border-radius: 8px;
+		display: inline-block;
+		left: 58px;
+		height: fit-content;
+		margin-left: 67px;
+		margin-top: -36px;
+		width: 266px;
+		padding-right: 10px;
+	}
+
+	.image {
+		margin-left: 122px;
+	}
+}

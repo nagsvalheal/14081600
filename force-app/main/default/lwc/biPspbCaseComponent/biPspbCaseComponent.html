@@ -1,0 +1,239 @@
+<!--This Lightning Web Component in Salesforce manages case records, enables filtering and view case details.-->
+<template>
+	<div if:true={showSpinner}>
+		<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	 </div>
+	<div class="main" data-it-uid={userId}>
+		<template if:true={ifNotCase}>
+		<div class="mainclass">
+			<p class="heading">{myCase}</p>			
+			<!--To display the Case Types and Status Comboboxes-->
+			<div if:true={checking} class="slds-m-around_medium">
+				
+				<div>
+					<lightning-combobox class="combobox" label="Type" placeholder="Type" variant="label-hidden"
+						value={caseTypeFilter} options={typeOptions} onchange={handleFilterChange}>
+					</lightning-combobox>
+				</div>
+				<div>
+					<lightning-combobox class="combobox combobax1" label="Status" placeholder="Status"
+						variant="label-hidden" value={statusFilter} options={statusOptions}
+						onchange={handleFilterChange}>
+					</lightning-combobox>
+				</div>
+			
+			</div>
+
+
+
+
+			<!--Display short description of cases-->
+			<template if:false={ifnorecord}>
+			<div class="filterDiv">
+				
+				<template for:each={cases} for:item="flitercase">
+					<h2 key={flitercase.Id}>
+						<div class="resultDiv" data-case-id={flitercase.Id} onclick={handleCaseClick} onkeypress={handleCaseClick}>
+							<div class="btnanddate">
+								<p class="date"><b>{flitercase.FormattedDate}</b></p>
+								<template if:true={flitercase.draftStatusNeedtfirst}>
+									<lightning-badge class={flitercase.Status} label={flitercase.draftStatusNeed}>
+									</lightning-badge>
+								</template>
+
+								<template if:true={flitercase.draftStatustfirst}>
+									<lightning-badge class={flitercase.Status} label={flitercase.draftStatus}>
+									</lightning-badge>
+								</template>
+								<template if:true={flitercase.draftStatusDraftFirst}>
+									<lightning-badge class={flitercase.Status} label={flitercase.draftStatusDraft}>
+									</lightning-badge>
+								</template>
+								<div class="display">
+									<div class="editflex">
+										<lightning-icon class="icon" if:true={flitercase.down}
+											data-case-id={flitercase.Id} icon-name="utility:chevrondown"
+											alternative-text="Connected" size="xx-small" title="xx-small size"
+											onclick={click} onkeypress={click}>
+										</lightning-icon>
+										<lightning-icon class="icon" if:false={flitercase.down}
+											data-case-id={flitercase.Id} icon-name="utility:chevronup"
+											alternative-text="Connected" size="xx-small" onclick={notclick}
+											title="xx-small size" onkeypress={notclick}>
+										</lightning-icon>
+										<template if:true={flitercase.imgforDraft}>
+											<button class="image1" onclick={handledraft} aria-label="Edit Draft">
+													<img src={editImg} alt="Edit Icon" />
+											</button>
+										</template>
+										<template if:true={flitercase.imgfordraft1}>
+											<button class="image1" onclick={handledraft} aria-label="Edit Draft">
+												<img src={editImg} alt="Edit Icon" />
+										</button>
+										</template>
+									</div>
+								</div>
+							</div>
+
+							<p class="head">{flitercase.Type}</p>
+							<!-- Display sub types based on type of the case-->
+							<p class="subtype subtypenone">
+								{flitercase.BI_PSPB_Sub_Type__c}
+							</p>
+							<P>{casesDate}</P>
+
+							<!--To display form based on design requirements-->
+							<span if:true={flitercase.touch}>
+								<div class="displayForm2">
+									<div>
+										<div class="displayform" if:true={displayForm}>
+											<template if:true={showCase}>
+												<template if:true={selectedCase}>
+													<div>
+														<hr class="Fline" />
+													</div>
+													<div class="imgclass">
+														<div>
+															<h3 class="SubTypeHead">{subType}</h3>
+															<p class="SubType2 subt">
+																{selectedCase.BI_PSPB_Sub_Type__c}
+															</p>
+
+															<!--Retrieve the attachments of the case record-->
+															<div class="attachmentclass">
+																<h3 class="Attachments">{attachment}</h3>
+
+																<template if:true={hasImage}>
+																	<img src={caseImageUrl} alt="Case Url"
+																		class="caseimg" />
+																</template>
+																<template if:false={hasImage}>
+																	<p class="Noneclass">{none}</p>
+																</template>
+															</div>
+														</div>
+													</div>
+													<!--Retrieve the description of the case record-->
+													<div class="descrip">
+														<h3 class="SubTypeHead">{desciption}</h3>
+														<p class="desc">{selectedCase.Description}</p>
+														<hr class="SecLine" />
+														<div class="row">
+															<div class="col-3 text-black">
+																<h3 class="SubTypeHead">{createdOn}</h3>
+																<br />
+																<p class="createdate SubType2">{recordDate}</p>
+															</div>
+															<div class="col-3 text-black">
+																<h3 class="SubTypeHead">{createdBy}</h3>
+																<br />
+																<p class="createdate SubType2">{userName}</p>
+															</div>
+														</div>
+													</div>
+												</template>
+											</template>
+										</div>
+									</div>
+								</div>
+							</span>
+						</div>
+					</h2>
+				</template>
+				<template for:each={casesDate} for:item="date">
+					<p key={date}>{date}</p>
+				</template>
+			</div>
+		</template>
+		</div>
+
+		<!--Display the case details on the right side of the page with type, subtype, description, attachment, created date, created by, status-->
+		<template if:false={ifnorecord}>
+		<div class="displayForm1">
+			<div class="div">
+				<div class="displayform" if:true={displayForm}>
+					<template if:true={showCase}>
+						<template if:true={selectedCase}>
+							<div>
+								<div>
+									<div class="classhead">
+										<div>
+											<h3 class="Type">{selectedCase.Type}</h3>
+										</div>
+										<div class="image" if:true={editIcon}>
+											<img src={editImg} alt="Edit Icon" onclick={handledraft} onkeypress={handledraft} />
+											<label for="draftImageButton"></label>
+											<button if:true={draftimg} data-case-id={selectedCase.Id}
+												data-it-button="mycase: View Draft Image" title="View Draft Image">
+											</button>
+										</div>
+									</div>
+									<hr class="Fline" />
+								</div>
+								<div class="imgclass">
+									<template if:true={hideSubtype}>
+										<div>
+											<h3 class="SubTypeHead">{subType}</h3>
+											<p class="SubType2 subt">
+												{selectedCase.BI_PSPB_Sub_Type__c}
+											</p>
+										</div>
+									</template>
+									<div class="attachmentclass">
+										<h3 class="Attachments">{attachment}</h3>
+										<template if:true={hasImage}>
+											<img src={caseImageUrl} alt="Case Icon" class="caseimg" />
+											<p class="fileName">{fileName}</p>
+										</template>
+										<template if:false={hasImage}>
+											<p class="Noneclass">{none}</p>
+										</template>
+									</div>
+								</div>
+								<h3 class="SubTypeHead">{desciption}</h3>
+								<p class="desc">{selectedCase.Description}</p>
+								<div>
+									<hr class="SecLine" />
+									<div class="row">
+										<div class="col-3 text-black">
+											<h3 class="SubTypeHead">{createdOn}</h3>
+											<br />
+											<p class="createdate SubType2">{recordDate}</p>
+										</div>
+										<div class="col-3 text-black col">
+											<h3 class="SubTypeHead">{createdBy}</h3>
+											<br />
+											<p class="createdate SubType2">{userName}</p>
+										</div>
+										<div class="col-2text">
+											<h3 class="SubTypeHead">{status}</h3>
+											<div class={changeStaus}>
+												<p class="badgeclass">{labelBtn}</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</template>
+					</template>
+				</div>
+			</div>
+		</div>
+		</template>
+	</template>
+	<template if:true={ifNotCaseFound}>
+		<template if:false={casevariable}>
+		<p class="heading">{myCase}</p>	
+		<div>
+			<p class="nocase">{noCase}</p>
+		</div>
+		</template>
+	</template>
+	<template if:true={casevar}>
+		
+		<div>
+			<p class="norecord">{noCase}</p>
+		</div>
+	</template>
+	</div>
+</template>

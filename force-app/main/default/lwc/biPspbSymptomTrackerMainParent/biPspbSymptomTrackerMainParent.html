@@ -1,0 +1,21 @@
+<!-- this components using patient new entry page all symptoms dispaly select your symptoms parts -->
+<template>
+	<div if:true={showSpinner}>
+		<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	</div>
+	<lightning-layout multiple-rows class="layoutColor pad slds-p-top_xx-large slds-p-bottom_xx-large">
+		
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="4" large-device-size="4">
+			<div class="custom-box1">
+				<c-bi-Pspb-Avatar-Navigation onavatardata={handleAvatarData} ></c-bi-Pspb-Avatar-Navigation>
+			</div>
+		</lightning-layout-item>
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="8" large-device-size="8">
+			<div class="custom-box2">
+				<div>
+					<c-bi-Pspb-Symptom-Tracker></c-bi-Pspb-Symptom-Tracker>
+				</div>
+			</div>
+		</lightning-layout-item>
+	</lightning-layout>
+</template>

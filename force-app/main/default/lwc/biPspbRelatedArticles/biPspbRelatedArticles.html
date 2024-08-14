@@ -1,0 +1,129 @@
+<!--This lightning web component is used for display the related articles of selected articles category-->
+<template>
+	<!-- Strings are hard coded in this HTML file to comply with the mobile responsiveness-->
+	<div class="component" if:true={showContent}>
+		<!--Previous and next button to navigate articles-->
+		<div class="prenxtutton">
+			<button class={isDisabledprev} data-name={prevPage} onclick={navigateToArticleContent} disabled={isFirst}>
+				<p data-name={prevPage} data-it-button={previousArticle} onclick={navigateToArticleContent}
+					class="button-anger-prev" role="button" onkeydown={navigateToArticleContent}>
+					<svg  if:false={prevBlur} width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<rect x="1" y="-1" width="46" height="46" rx="23" transform="matrix(1 0 0 -1 0 46)" stroke="#403A60" style="stroke:#403A60;stroke:color(display-p3 0.2510 0.2275 0.3765);stroke-opacity:1;" stroke-width="2"></rect>
+						<path d="M34.1641 23.834H14.1641" stroke="#403A60" style="stroke:#403A60;stroke:color(display-p3 0.2510 0.2275 0.3765);stroke-opacity:1;" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+						<path d="M24.1641 13.834L14.1641 23.834L24.1641 33.834" stroke="#403A60" style="stroke:#403A60;stroke:color(display-p3 0.2510 0.2275 0.3765);stroke-opacity:1;" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+					  </svg>
+					  <svg if:true ={prevBlur} width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<rect x="47" y="47" width="46" height="46" rx="23" transform="rotate(180 47 47)" stroke="#8D89A5" style="stroke:#8D89A5;stroke:color(display-p3 0.5529 0.5373 0.6471);stroke-opacity:1;" stroke-width="2"/>
+						<path d="M33.8359 23.834H13.8359" stroke="#8D89A5" style="stroke:#8D89A5;stroke:color(display-p3 0.5529 0.5373 0.6471);stroke-opacity:1;" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M23.8359 33.834L13.8359 23.834L23.8359 13.834" stroke="#8D89A5" style="stroke:#8D89A5;stroke:color(display-p3 0.5529 0.5373 0.6471);stroke-opacity:1;" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</p>
+
+				<h2 class="preheading">{previous}</h2>
+			</button>
+			<button data-name={nextPage} class={isDisablednext} onclick={navigateToArticleContent} disabled={isLast}>
+				<h2 class="nextheading">{next}</h2>
+				<p data-name={nextPage} onclick={navigateToArticleContent} class="button-anger"
+					data-it-button={nextArticle} role="button" onkeydown={navigateToArticleContent}>
+					<svg if:false = {nextBlur} width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<rect x="1" y="-1" width="46" height="46" rx="23" transform="matrix(1 0 0 -1 0 46)" stroke="#403A60" style="stroke:#403A60;stroke:color(display-p3 0.2510 0.2275 0.3765);stroke-opacity:1;" stroke-width="2"/>
+						<path d="M14.1641 23.834H34.1641" stroke="#403A60" style="stroke:#403A60;stroke:color(display-p3 0.2510 0.2275 0.3765);stroke-opacity:1;" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M24.1641 33.834L34.1641 23.834L24.1641 13.834" stroke="#403A60" style="stroke:#403A60;stroke:color(display-p3 0.2510 0.2275 0.3765);stroke-opacity:1;" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+						<svg if:true ={nextBlur} class='rotateBlur'  width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<rect x="47" y="47" width="46" height="46" rx="23" transform="rotate(180 47 47)" stroke="#8D89A5" style="stroke:#8D89A5;stroke:color(display-p3 0.5529 0.5373 0.6471);stroke-opacity:1;" stroke-width="2"/>
+						<path d="M33.8359 23.834H13.8359" stroke="#8D89A5" style="stroke:#8D89A5;stroke:color(display-p3 0.5529 0.5373 0.6471);stroke-opacity:1;" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M23.8359 33.834L13.8359 23.834L23.8359 13.834" stroke="#8D89A5" style="stroke:#8D89A5;stroke:color(display-p3 0.5529 0.5373 0.6471);stroke-opacity:1;" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg></p>
+			</button>
+		</div>
+		<hr class="lineforpnbtn" />
+		<h1 class="top-heading">{relatedArticles}</h1>
+		<!--Load the related articles-->
+		<div class="article-container">
+			<div class="left-section">
+				<article class="article second">
+					<div class="headingcontainer">
+						<div class="headmins">
+							<svg width="40" height="24" viewBox="0 0 24 24" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd"
+									d="M12 3.42827C6.87482 3.42827 2.71395 7.58913 2.71395 12.7143C2.71395 17.8395 6.87482 22.0004 12 22.0004C17.1252 22.0004 21.286 17.8395 21.286 12.7143C21.286 7.58913 17.1252 3.42827 12 3.42827ZM11.2857 12.3707L7.982 15.0137C7.67413 15.2601 7.62413 15.7101 7.87056 16.018C8.117 16.3259 8.56702 16.3759 8.87489 16.1294L12.4464 13.2722C12.5329 13.2029 12.5986 13.1179 12.6436 13.0243L12.6443 13.0236C12.6893 12.93 12.7143 12.825 12.7143 12.7143V6.99982C12.7143 6.60552 12.3943 6.28551 12 6.28551C11.6057 6.28551 11.2857 6.60552 11.2857 6.99982V12.3707ZM5.06618 2.20894L2.20894 5.06618C1.93035 5.34476 1.93035 5.79764 2.20894 6.07622C2.48752 6.3548 2.94039 6.3548 3.21897 6.07622L6.07622 3.21897C6.3548 2.94039 6.3548 2.48752 6.07622 2.20894C5.79764 1.93035 5.34476 1.93035 5.06618 2.20894ZM17.9238 3.21897L20.781 6.07622C21.0596 6.3548 21.5125 6.3548 21.7911 6.07622C22.0696 5.79764 22.0696 5.34476 21.7911 5.06618L18.9338 2.20894C18.6552 1.93035 18.2024 1.93035 17.9238 2.20894C17.6452 2.48752 17.6452 2.94039 17.9238 3.21897Z"
+									fill="#403A60" class="pathfil"></path>
+							</svg>
+
+							<strong class="timecal">{articleTwoReadTime} {minutes}</strong>
+						</div>
+
+						<h2 class="headingar">{secondHeading}</h2>
+						<p class="description">{secondDescription}</p>
+						<a  class="leftlink" href="#" >
+							<svg data-name={secondHeading} onclick={navigateToArticleContent}
+							data-it-button={titleTwoForAnalytics} role="button" onkeydown={navigateToArticleContent} tabindex="0" width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<rect x="1.68164" y="1" width="46" height="46" rx="23" stroke="#403A60" class = "svgstroke" stroke-width="2"/>
+								<path d="M14.8477 24.166H34.8477" stroke="#403A60" class = "svgstroke" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M24.8477 14.166L34.8477 24.166L24.8477 34.166" stroke="#403A60" class = "svgstroke" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</a>
+					</div>
+					<img class="secondimg" src={secondImg} alt="Article 2" />
+				</article>
+
+				<article class="article first">
+					<img class="firstimg" src={firstImg} alt="Article 1" />
+					<div class="headingcontainernew">
+						<div class="headmins">
+							<svg width="40" height="24" viewBox="0 0 24 24" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd"
+									d="M12 3.42827C6.87482 3.42827 2.71395 7.58913 2.71395 12.7143C2.71395 17.8395 6.87482 22.0004 12 22.0004C17.1252 22.0004 21.286 17.8395 21.286 12.7143C21.286 7.58913 17.1252 3.42827 12 3.42827ZM11.2857 12.3707L7.982 15.0137C7.67413 15.2601 7.62413 15.7101 7.87056 16.018C8.117 16.3259 8.56702 16.3759 8.87489 16.1294L12.4464 13.2722C12.5329 13.2029 12.5986 13.1179 12.6436 13.0243L12.6443 13.0236C12.6893 12.93 12.7143 12.825 12.7143 12.7143V6.99982C12.7143 6.60552 12.3943 6.28551 12 6.28551C11.6057 6.28551 11.2857 6.60552 11.2857 6.99982V12.3707ZM5.06618 2.20894L2.20894 5.06618C1.93035 5.34476 1.93035 5.79764 2.20894 6.07622C2.48752 6.3548 2.94039 6.3548 3.21897 6.07622L6.07622 3.21897C6.3548 2.94039 6.3548 2.48752 6.07622 2.20894C5.79764 1.93035 5.34476 1.93035 5.06618 2.20894ZM17.9238 3.21897L20.781 6.07622C21.0596 6.3548 21.5125 6.3548 21.7911 6.07622C22.0696 5.79764 22.0696 5.34476 21.7911 5.06618L18.9338 2.20894C18.6552 1.93035 18.2024 1.93035 17.9238 2.20894C17.6452 2.48752 17.6452 2.94039 17.9238 3.21897Z"
+									fill="#403A60" class="pathfil"></path>
+							</svg>
+
+							<strong class="timecal">{articleOneReadTime} {minutes}</strong>
+						</div>
+
+						<h2 class="headingar">{firstHeading}</h2>
+						<p class="description">{firstDescription}</p>
+						<a class="leftlink" href="#">
+							<svg data-name={firstHeading} onclick={navigateToArticleContent}
+							data-it-button={titleOneForAnalytics} role="button" onkeydown={navigateToArticleContent} tabindex="0" width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<rect x="1.68164" y="1" width="46" height="46" rx="23" stroke="#403A60" class = "svgstroke" stroke-width="2"/>
+								<path d="M14.8477 24.166H34.8477" stroke="#403A60" class = "svgstroke" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M24.8477 14.166L34.8477 24.166L24.8477 34.166" stroke="#403A60" class = "svgstroke" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</a>
+					</div>
+				</article>
+				<div if:true={findSpevigoCategory}>
+					<article class="article second">
+						<div class="headingcontainer">
+							<div class="headmins">
+								<svg width="40" height="24" viewBox="0 0 24 24" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd"
+										d="M12 3.42827C6.87482 3.42827 2.71395 7.58913 2.71395 12.7143C2.71395 17.8395 6.87482 22.0004 12 22.0004C17.1252 22.0004 21.286 17.8395 21.286 12.7143C21.286 7.58913 17.1252 3.42827 12 3.42827ZM11.2857 12.3707L7.982 15.0137C7.67413 15.2601 7.62413 15.7101 7.87056 16.018C8.117 16.3259 8.56702 16.3759 8.87489 16.1294L12.4464 13.2722C12.5329 13.2029 12.5986 13.1179 12.6436 13.0243L12.6443 13.0236C12.6893 12.93 12.7143 12.825 12.7143 12.7143V6.99982C12.7143 6.60552 12.3943 6.28551 12 6.28551C11.6057 6.28551 11.2857 6.60552 11.2857 6.99982V12.3707ZM5.06618 2.20894L2.20894 5.06618C1.93035 5.34476 1.93035 5.79764 2.20894 6.07622C2.48752 6.3548 2.94039 6.3548 3.21897 6.07622L6.07622 3.21897C6.3548 2.94039 6.3548 2.48752 6.07622 2.20894C5.79764 1.93035 5.34476 1.93035 5.06618 2.20894ZM17.9238 3.21897L20.781 6.07622C21.0596 6.3548 21.5125 6.3548 21.7911 6.07622C22.0696 5.79764 22.0696 5.34476 21.7911 5.06618L18.9338 2.20894C18.6552 1.93035 18.2024 1.93035 17.9238 2.20894C17.6452 2.48752 17.6452 2.94039 17.9238 3.21897Z"
+										fill="#403A60" class="pathfilnew"></path>
+								</svg>
+
+								<strong class="timecal">{articleThreeReadTime} {minutes}</strong>
+							</div>
+
+							<h2 class="headingar">{thirdHeading}</h2>
+							<p class="description">{thirdDescription}</p>
+							<a  href="#" class="leftlink">
+								<svg data-name={thirdHeading} onclick={navigateToArticleContent}
+								data-it-button={titleThreeForAnalytics} role="button" onkeydown={navigateToArticleContent} tabindex="0" width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect x="1.68164" y="1" width="46" height="46" rx="23" stroke="#403A60" class = "svgstroke" stroke-width="2"/>
+									<path d="M14.8477 24.166H34.8477" stroke="#403A60" class = "svgstroke" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M24.8477 14.166L34.8477 24.166L24.8477 34.166" stroke="#403A60" class = "svgstroke" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+									</a>
+						</div>
+						<img class="secondimg" src={thirdImg} alt="Article 3" />
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

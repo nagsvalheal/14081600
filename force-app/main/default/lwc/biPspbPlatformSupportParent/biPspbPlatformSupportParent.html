@@ -1,0 +1,32 @@
+<!--This LWC is designed for Platform Support Main page and contains consolidated component for Avatar, Message-->
+<template>
+	<div class="main">
+		<lightning-layout multiple-rows class="tabClass">
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+				<div class="tabsDiv pad">
+					<div class="grid-containerTabs">
+						<button onclick={openSupportCenter} class="anchorTextActive">{supportCenter}</button>
+						<button onclick={openMyCases} class="anchorText">{myCase}</button>
+					</div>
+				</div>
+			</lightning-layout-item>
+		</lightning-layout>
+
+		<lightning-layout multiple-rows class="layoutColor pad">
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="4" large-device-size="4"
+				class="slds-p-top_xx-large slds-p-bottom_xx-large">
+				<div class="custom-box1">
+					<c-bi-Pspb-Avatar-Navigation></c-bi-Pspb-Avatar-Navigation>
+				</div>
+			</lightning-layout-item>
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="8" large-device-size="8"
+				class="slds-p-top_xx-large slds-p-bottom_xx-large lightning-Card">
+				<div class="custom-box2">
+					<div>
+						<c-bi-Pspb-Platform-Support></c-bi-Pspb-Platform-Support>
+					</div>
+				</div>
+			</lightning-layout-item>
+		</lightning-layout>
+	</div>
+</template>

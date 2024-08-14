@@ -1,0 +1,518 @@
+@font-face {
+	font-family:  "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family:  "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff') format('woff');
+}
+
+@font-face {
+	font-family:  "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff') format('woff');
+}
+
+@font-face {
+	font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff') format('woff');
+}
+
+
+.imageee {
+	width: 56px;
+	height: 56px;
+}
+
+header h1 {
+	font-size: 32px;
+	font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	color: #403A60;
+}
+
+.checkbox-group {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	border: 1px solid #ccc;
+	/* Add a border to separate the checkbox group */
+	padding: 10px;
+	/* Add padding to create space around the group */
+	margin-bottom: 15px;
+	/* Add margin to separate each checkbox group */
+}
+
+.checkbox-container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	padding-top: 100px;
+	margin: right 100px;
+}
+
+
+.checkbox-container lightning-input {
+	margin-right: 10px;
+	/* Adjust as needed to control spacing between checkboxes */
+}
+
+
+.checkbox-group lightning-input {
+	margin-right: 10px;
+	/* Adjust as needed to control spacing between checkboxes */
+}
+
+.slds-tabs__item_selected {
+	background-color: #f2f2f2;
+}
+
+/* Header */
+
+.slds-box {
+	margin-bottom: 10px;
+}
+
+
+.togglebutton {
+	margin-right: 10px;
+}
+
+/* Lightning input */
+
+.slds-form-element__label {
+	display: block;
+	margin-bottom: 5px;
+	font-size: 16px;
+	font-family:  "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	color: #000000;
+
+}
+
+.flexclass2 {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+	margin-left: 25px;
+	margin-top: 12px;
+}
+
+/* Save button */
+.toggle {
+	position: relative;
+	display: block;
+	width: 52px;
+	height: 32px;
+	padding: 3px;
+	margin: auto;
+	border-radius: 16px;
+	cursor: pointer;
+}
+
+.toggle-input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+
+.toggle-label {
+	position: relative;
+	display: block;
+	height: 32px;
+	width: 52px;
+	font-size: 12px;
+	background: #8D89A5;
+	border-radius: 16px;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 3px rgba(0, 0, 0, 0.15);
+}
+
+.toggle-label:before,
+.toggle-label:after {
+	position: absolute;
+	top: 50%;
+	color: black;
+	margin-top: -.5em;
+	line-height: 1;
+}
+
+.toggle-label:before {
+	content: attr(data-off);
+	right: 11px;
+	color: #fff;
+	text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.toggle-label:after {
+	content: attr(data-on);
+	left: 11px;
+	color: #fff;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+	opacity: 0;
+}
+
+.toggle-input:checked~.toggle-label {
+	background: #403A60;
+
+}
+
+.toggle-input:checked~.toggle-label:before {
+	opacity: 0;
+}
+
+.toggle-input:checked~.toggle-label:after {
+	opacity: 1;
+}
+
+.toggle-handle {
+	position: absolute;
+	top: 9px;
+	left: 8px;
+	width: 20px;
+	height: 20px;
+	background: linear-gradient(to bottom, #FFFFFF 40%, #f0f0f0);
+	border-radius: 50%;
+}
+
+.toggle-handle:before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -6px 0 0 -6px;
+	width: 16px;
+	height: 16px;
+}
+
+.toggle-input:checked~.toggle-handle {
+	left: 29px;
+	top: 9px;
+	box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Transition*/
+.toggle-label,
+.toggle-handle {
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+	-moz-transition: All 0.3s ease;
+	-o-transition: All 0.3s ease;
+}
+
+label.insiteclass {
+	position: absolute;
+	margin-left: 22px;
+	color: grey;
+}
+
+.phoneclass {
+	margin-left: 105px;
+}
+
+.b2 {
+	padding-left: 185px;
+	margin-top: -27px;
+}
+
+
+
+.image-content {
+	width: 118px;
+	height: 106px;
+	background-color: #8D89A5;
+	top: 329px;
+	left: 520px;
+	border-radius: 12px 0px 0px 12px;
+
+}
+
+.heading {
+
+	width: 178px;
+	font-weight: 700;
+	font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 16px;
+	color: #000000;
+}
+
+.b {
+
+	margin-left: auto;
+	margin-right: 25px;
+	margin-top: 10px;
+}
+
+.main {
+	max-width: 1500px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 0.5rem;
+	padding-bottom: 0.5rem;
+	background-color: #FBFAF5;
+}
+
+.Save {
+	width: 144px;
+	background-color: #403A60;
+	color: white;
+	border-radius: 12px;
+	margin-top: 36px;
+	height: 40px;
+	font-family:  "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	border: 1px solid #403A60;
+}
+
+a.menu {
+	font-weight: 600 !important;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+.flexclass {
+	display: flex;
+	margin-top: 28px;
+	background-color: white;
+	border: 1px solid#C5CCD3;
+	border-radius: 17px;
+}
+
+.move {
+	top: 329px;
+	left: 520px;
+}
+
+img {
+	margin-left: 25px;
+	margin-top: 21px;
+}
+
+h1 {
+	font-size: 32px;
+	font-weight: 700;
+	line-height: 40px;
+	font-style: Avenir Next;
+	color: #384B59;
+}
+
+.togglebutton::before {
+	background-color: #8D89A5;
+
+}
+
+.togglebutton::after {
+	background-color: #403A60;
+}
+
+/* Change the color of the checkmark */
+.slds-checkbox input:checked+.slds-checkbox__faux::after {
+	display: block;
+	content: "";
+	height: 0.25rem;
+	width: var(--lwc-squareIconXSmallContent, 0.5rem);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0px) rotate(-45deg);
+	border-bottom: var(--lwc-borderWidthThick, 2px) solid var(--slds-c-checkbox-mark-color-foreground, var(--sds-c-checkbox-mark-color-foreground, var(--lwc-brandAccessible, #3079A1)));
+	border-left: var(--lwc-borderWidthThick, 2px) solid var(--slds-c-checkbox-mark-color-foreground, var(--sds-c-checkbox-mark-color-, var(--lwc-brandAccessible, #3079A1)));
+}
+
+.subclass {
+	
+	display: flex;
+	gap: 30px;
+}
+
+
+@media screen and (max-width: 1500px) {
+	.main {
+		max-width: 768px;
+	}
+
+}
+
+@media screen and (max-width: 1200px) {
+	.main {
+		max-width: 768px;
+	}
+
+
+}
+
+@media screen and (max-width: 992px) {
+	.main {
+		max-width: 768px;
+	}
+
+}
+
+@media screen and (min-width:601px) and (max-width: 768px) {
+	.main {
+		max-width: 600px;
+	}
+
+	img {
+		max-width: 50%;
+		margin-top: 27px;
+	}
+
+	.image-content {
+		width: 95px;
+	}
+
+	.heading {
+		left: 9px;
+	}
+
+	.b2 {
+		padding-left: 0.5cm;
+		position: relative;
+		left: 26%;
+	}
+}
+
+@media screen and (min-width:768px)and (max-width:1100px) {
+	.flexclass {
+		width: 700px;
+	}
+}
+
+@media screen and (min-width:992px) {
+	.flexclass {
+		width: 690px;
+	}
+
+	.b1 {
+		position: relative;
+		right: 40px;
+
+	}
+
+	.toggle {
+		position: relative;
+		right: 15px;
+	}
+
+	.b2 {
+		position: relative;
+		right: 2%;
+
+	}
+}
+
+@media screen and (min-width:1100px) and (max-width:1200px) {
+	.flexclass {
+		width: 100%;
+	}
+}
+
+@media screen and (min-width:1200px) {
+	.flexclass {
+		width: 700px;
+	}
+
+	.b2 {
+		position: relative;
+		left: 6%;
+	}
+}
+
+@media screen and (min-width:1500px) {
+	.flexclass {
+		width: 100%;
+	}
+
+	.b2 {
+		position: relative;
+		left: 20%;
+	}
+
+
+}
+
+@media screen and (max-width: 600px) {
+	.main {
+		max-width: 400px;
+		
+
+	}
+
+	header h1 {
+		font-size: 20px;
+		font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		color: #403A60;
+	}
+
+	.Save {
+		width: 100%;
+	}
+
+	.subclass {
+		position: unset;
+		flex-direction: column;
+		margin-top: 30px;
+	}
+
+	.flexclass {
+		flex-direction: column;
+	}
+
+	.phoneclass {
+		margin-left: 0px;
+	}
+
+	.heading {
+		left: 50px;
+	}
+
+	.b {
+
+		margin-right: auto;
+		margin-left: 25px;
+		margin-top: 10px;
+	}
+
+	.b2 {
+		padding-left: 0px;
+		margin-top: 0px;
+		margin-right: 270px;
+	}
+
+	.image-content {
+		margin-left: 30%;
+		width: 113px;
+		margin-top: 5%;
+		border-radius: 66px;
+		height: 110px;
+	}
+
+	.toggle {
+		height: 41px;
+	}
+
+	.toggle-label {
+		height: 32px;
+	}
+
+	.toggle-handle {
+		top: 8px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.main {
+		width: 320px;
+
+	}
+
+	.flexclass {
+		width: 300px;
+	}
+
+	.image-content {
+		width: 100px;
+		height: 100px;
+	}
+
+	.Save {
+		width: 296px;
+	}
+}

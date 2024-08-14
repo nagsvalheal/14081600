@@ -1,0 +1,389 @@
+/*--Font Declaration---*/
+
+@font-face {
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina01-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: "Eina-Light",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina04-Light.woff') format('woff');
+}
+
+@font-face {
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina04-SemiBold.woff') format('woff');
+}
+
+@font-face {
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina04-Bold.woff') format('woff');
+}
+
+.background {
+	background-color: white;
+}
+
+.newbg {
+	background-color: #f1f0f4;
+	color: #565173;
+	text-align: center;
+	font-size: medium;
+	border-radius: 20px;
+
+}
+
+.challenges {
+	text-align: left;
+	background-color: #f1f0f4;
+	color: #565173;
+	font-weight: bolder;
+	padding-top: -500px;
+
+}
+
+.button {
+	float: right;
+	background-color: #ecdca8;
+}
+
+.size {
+	font-size: medium;
+	padding-left: 95px;
+}
+
+.padding {
+	padding-top: 80px;
+	background-color: white;
+}
+
+.image {
+	height: 129px;
+	width: 148px;
+	margin-left: -248px;
+	margin-top: -80px;
+	margin-bottom: -70px;
+}
+
+.align {
+	margin-top: 20px;
+	margin-left: 50%;
+}
+
+.divsize {
+	height: 290px;
+	width: 493px;
+}
+
+
+
+/*---CSS Media Quries---*/
+@media only screen and (max-width: 400px) {
+	.mobile {
+		height: 58px;
+	}
+
+	.grid-containerImageCh {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 5px;
+		padding: 10px;
+	}
+
+	.challengeButton {
+
+		display: block;
+		position: relative;
+
+	}
+
+	img {
+		width: 140px;
+		height: 140px;
+	}
+
+
+	.xpButton {
+		position: relative;
+		bottom: 40px;
+	}
+
+	.challengeWidget {
+		width: 93%;
+		height: auto;
+	}
+
+}
+
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+	.mobile {
+		height: 58px;
+	}
+
+	.challengeButton {
+		display: block;
+	}
+
+	.alignRightStyle {
+		text-align: right;
+		font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 18px;
+		line-height: 28px;
+		font-weight: 400;
+		color: #737373;
+	}
+
+	.grid-containerImageCh {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 5px;
+		padding: 10px;
+	}
+
+
+	.challengeWidget {
+		width: 100%;
+		height: auto;
+	}
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+	.mobile {
+		height: 58px;
+	}
+
+	.challengeButton {
+		display: block;
+	}
+
+	.grid-containerImageCh {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 5px;
+		padding: 10px;
+	}
+
+	.challengeWidget {
+		width: 100%;
+		height: 330px;
+	}
+
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+	.mobile {
+		height: 0px;
+	}
+
+	.challengeButton {
+		display: block;
+	}
+
+	.grid-containerImageCh {
+		display: grid;
+		grid-template-columns: 150px auto;
+		gap: 5px;
+		padding: 10px;
+	}
+
+
+	.grid-containerChallenge {
+		margin-left: 80px;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.mobile {
+		height: 0px;
+	}
+
+	.challengeButton {
+		display: block;
+	}
+
+	.grid-containerImageCh {
+		display: grid;
+		grid-template-columns: 150px auto;
+		gap: 5px;
+		padding: 10px;
+	}
+
+
+
+	.grid-containerSingle {
+		width: 100%;
+	}
+
+}
+
+@media only screen and (min-width: 1200px) {
+	.mobile {
+		height: 0px;
+	}
+
+
+	.challengeWidget {
+		width: 100%;
+	}
+
+	.grid-containerImageCh {
+		display: grid;
+		grid-template-columns: 150px auto;
+		gap: 5px;
+		padding: 10px;
+	}
+}
+
+@media only screen and (min-width: 1500px) {
+	.mobile {
+		height: 0px;
+	}
+
+	.grid-containerImageCh {
+		display: grid;
+		grid-template-columns: 150px auto;
+		gap: 5px;
+		padding: 10px;
+	}
+}
+
+@media only screen and (min-width: 1700px) {
+	.mobile {
+		height: 0px;
+	}
+
+	.grid-containerImageCh {
+		display: grid;
+		grid-template-columns: 150px auto;
+		gap: 5px;
+		padding: 10px;
+	}
+}
+
+/*Challenge Widget*/
+.TopImage {
+	width: max-content;
+	margin-bottom: -90px;
+	margin-left: 20px;
+}
+
+.challengeWidget {
+
+	background-color: #e3e1e8;
+
+	padding: 10px;
+	border-radius: 10px;
+
+}
+
+
+
+.grid-containerChallenge {
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 5px;
+	padding: 10px;
+}
+
+.grid-containerSingle {
+	display: grid;
+	grid-template-columns: auto;
+	gap: 5px;
+	padding: 10px;
+}
+
+.grid-containerDouble {
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 5px;
+	padding: 10px 0px;
+}
+
+.alignRightStyle {
+	text-align: right;
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 16px;
+	line-height: 28px;
+	font-weight: 400;
+	color: #737373;
+}
+
+.alignRightStyle {
+	text-align: right;
+}
+
+.displayCenter {
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+}
+
+hr {
+	margin: 0px;
+	border-color:#8D89A5;
+}
+.disBlock{
+	display: block;
+}
+.semiBold {
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+	color: #403A60;
+}
+
+.regularStyle {
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+	color: #403A60;
+}
+
+.ChallengeStyle {
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 400;
+	color: #403A60;
+}
+
+.TitleStyle {
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 24px;
+	line-height: 20px;
+	font-weight: 400;
+	color: #403A60;
+}
+
+.xpButton {
+	background-color: #ECDCA8;
+	border-radius: 12px;
+	padding: 5px 10px;
+	border: none;
+	font-size: 16px;
+	font-weight: 800;
+}
+
+.alignRight {
+	text-align: right;
+}
+
+.challengeButton {
+	background-color: #403A60;
+	border-radius: 12px;
+	padding: 10px 15px;
+	border: none;
+	font-size: 16px;
+	font-weight: 800;
+	color: white;
+}
+
+.grid-containerSingleXP {
+	display: grid;
+	grid-template-columns: auto;
+	gap: 25px;
+	padding: 10px;
+}

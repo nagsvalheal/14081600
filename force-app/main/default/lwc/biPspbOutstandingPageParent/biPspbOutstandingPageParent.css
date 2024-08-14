@@ -1,0 +1,323 @@
+.custom-box2 {
+	width: -webkit-fill-available;
+	display: grid;
+	position: relative;
+	right: 0%;
+}
+
+.siteforceCptBody .siteforceContentArea.siteforceSldsOneColLayout>div.slds-col--padded.contentRegion {
+	background-color: #fbfaf5;
+}
+
+.fullclass {
+	background-color: #fbfaf5;
+}
+
+.displayHeader {
+	display: flex;
+	justify-content: end;
+}
+
+.footerLink {
+	text-decoration: none;
+	color: #403a60;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.grid-containerfooter {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 10px 20px;
+	padding: 10px;
+	width: fit-content;
+}
+
+.layoutColor {
+	background-color: #fbfaf5;
+	min-height: 400px;
+	position: relative;
+}
+
+.grid-containerTabs {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	gap: 10px 20px;
+	padding: 10px;
+	width: fit-content;
+}
+
+.tabsDiv {
+	width: 100%;
+	text-align: left;
+}
+
+.anchorText {
+	text-decoration: none;
+	color: #403a60;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.anchorTextActive {
+	text-decoration: none;
+	color: #403a60;
+	font-size: 16px;
+	font-weight: 800;
+}
+
+.disabled {
+
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+/*--CSS Media Queries---*/
+
+@media only screen and (min-width: 320px) and (max-width: 400px) {
+	.pad {
+		
+		display: flex;
+		flex-direction: column;
+		overflow-x: hidden;
+	}
+
+	.custom-box1 {
+		width: 100%;
+		margin-left: -261px;
+		position: relative;
+		bottom: 25px;
+	}
+
+	.tabsDiv {
+		display: none;
+	}
+
+	.custom-box2 {
+		bottom: 40px;
+	}
+}
+
+@media only screen and (min-width: 401px) and (max-width: 575px) {
+	.tabClass {
+		display: none;
+		width: 100%;
+		background-color: white;
+	}
+
+	.pad {
+		
+		display: flex;
+		flex-direction: column;
+		overflow-x: hidden;
+	}
+
+	.custom-box1 {
+		width: 96%;
+		margin-left: -256px;
+		position: relative;
+		bottom: 38px;
+	}
+
+	.tabsDiv {
+		display: none;
+	}
+
+	.custom-box2 {
+		bottom: 152px;
+	}
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+	.tabClass {
+		display: none;
+		width: 100%;
+		background-color: white;
+	}
+
+	.pad {
+		display: flex;
+		flex-direction: column;
+		overflow-x: hidden;
+	}
+
+	.tabsDiv {
+		display: none;
+	}
+
+	.custom-box1 {
+		width: 96%;
+		margin-left: -256px;
+		position: relative;
+		bottom: 38px;
+	}
+
+	.custom-box2 {
+		bottom: 41px;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.tabClass {
+		display: block;
+		width: 100%;
+		background-color: white;
+	}
+
+	.custom-box2 {
+		width: -webkit-fill-available;
+		display: grid;
+		position: relative;
+		bottom: 140px;
+	}
+
+	.pad {
+		display: flex;
+		flex-direction: column;
+		overflow-x: hidden;
+	}
+
+	.tabsDiv {
+		display: none;
+	}
+
+	.custom-box1 {
+		position: relative;
+		bottom: 38px;
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.tabClass {
+		display: block;
+		width: 100%;
+		background-color: white;
+	}
+
+	.pad {
+		display: flex;
+		flex-direction: column;
+		overflow-x: hidden;
+	}
+
+	.tabsDiv {
+		display: none;
+	}
+
+	.custom-box1 {
+		position: relative;
+		bottom: 38px;
+		left: 4%;
+	}
+
+	.custom-box2 {
+		bottom: 36px;
+	}
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1279px) {
+	.tabClass {
+		display: block;
+		width: 100%;
+		background-color: white;
+		border-bottom: 1.5px solid rgba(141, 137, 165, 0.5);
+	}
+
+	.pad {
+		padding-left: 4%;
+		padding-right: 2%;
+		overflow-x: hidden;
+	}
+
+	.custom-box1 {
+		margin-left: -15px;
+	}
+
+	.custom-box2 {
+		right: 24%;
+	}
+}
+
+@media only screen and (min-width: 1500px) {
+	.tabClass {
+		display: block;
+		width: 100%;
+		background-color: white;
+		border-bottom: 1.5px solid rgba(141, 137, 165, 0.5);
+	}
+
+	.pad {
+		padding-left: 5%;
+		padding-right: 5%;
+		overflow-x: hidden;
+	}
+}
+
+@media only screen and (min-width: 1280px) {
+	.tabClass {
+		display: block;
+		width: 100%;
+		background-color: white;
+		border-bottom: 1.5px solid rgba(141, 137, 165, 0.5);
+	}
+
+	.pad {
+		padding-left: 5%;
+		padding-right: 5%;
+		overflow-x: hidden;
+	}
+
+	.custom-box1 {
+		margin-left: 0px;
+	}
+
+	.custom-box2 {
+		right: 20%;
+	}
+}
+
+@media only screen and (min-width: 1366px) {
+	.tabClass {
+		display: block;
+		width: 100%;
+		background-color: white;
+		border-bottom: 1.5px solid rgba(141, 137, 165, 0.5);
+	}
+
+	.pad {
+		padding-left: 5%;
+		padding-right: 5%;
+		overflow-x: hidden;
+	}
+
+	.custom-box1 {
+		margin-left: 0px;
+	}
+
+	.custom-box2 {
+		right: 12%;
+	}
+}
+
+@media only screen and (min-width: 1500px) {
+	.tabClass {
+		display: block;
+		width: 100%;
+		background-color: white;
+		border-bottom: 1.5px solid rgba(141, 137, 165, 0.5);
+	}
+
+	.pad {
+		padding-left: 5%;
+		padding-right: 5%;
+		overflow-x: hidden;
+	}
+
+	.custom-box1 {
+		margin-left: 0px;
+	}
+
+	.custom-box2 {
+		right: 2%;
+	}
+}

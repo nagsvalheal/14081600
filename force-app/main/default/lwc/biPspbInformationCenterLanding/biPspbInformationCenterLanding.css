@@ -1,0 +1,893 @@
+/* Add CSS styles for the article page layout */
+.article-container {
+	justify-content: space-between;
+	margin: 20px;
+	width: 100%;
+	margin-left: 0px;
+}
+
+.line {
+	background-color: #403a60;
+	width: 950px;
+	margin-left: 45px;
+	margin-bottom: 20px;
+}
+
+.arrowbtn {
+	margin-left: 10px;
+}
+
+.search-bar-border-bottom {
+	width: 78%;
+	margin-top: 5px;
+	margin-left: 49px;
+	border-width: 2px;
+	border-color: rgba(111, 81, 29, 1);
+}
+
+.svgcls {
+	margin-left: 54px;
+}
+.svgfil{
+	fill:#403A60;
+	fill-opacity:1;
+}
+.vicon{
+	margin-left: 56px;
+}
+.pathstroke{
+	stroke:#403A60;
+	stroke-opacity:1;
+}
+
+.justformeleft{
+	margin-left:10px;
+}
+
+.svgstroke{
+	stroke:#403A60;
+	stroke-opacity:1;
+}
+
+.headercontain{
+	width:156px;
+	height:24px;
+	margin-left: 7px;
+	margin-top: 20px; 
+	font:'Eina-SemiBold', Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	
+	font-size:14px;
+}
+.svgdown{
+	margin-bottom:5px;
+}
+
+.descriptionsub {
+	font-size: 16px;
+	font-weight: 400;
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	width: auto;
+	padding-right: 15px !important;
+}
+
+.left-section,
+.right-section {
+	flex: 1;
+}
+
+.article {
+	margin-bottom: 20px;
+	display: flex;
+	height: auto;
+	width: auto;
+}
+
+article img {
+	width: 50%;
+	height: auto;
+	object-fit: cover;
+	border-radius: 0px 0px 0px 0px;
+}
+
+.secondarticlecont {
+	width: 50%;
+}
+.top-heading {
+	font-size: 24px;
+	font-weight: 400;
+	color: #403a60;
+	padding: 0px 0px;
+	margin-left: 65px;
+	margin-top: -26px;
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+article h2 {
+	padding: 10px 2px 2px 17px;
+	font-weight: 400;
+	font-size: 32px;
+	color: #403a60 !important;
+	font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.article p {
+	margin: 10px 0;
+	text-align: justify;
+	padding: 0px 0px 0px 19px;
+	color: rgba(64, 58, 96, 1) !important;
+}
+
+.leftlink {
+	text-decoration: none;
+	font-weight: bold;
+	margin-left: 17px;
+	padding: 4px;
+	font-size: 15px;
+	color: rgba(64, 58, 96, 1) !important;
+	position: relative;
+	height: auto;
+	width: 32px;
+	display: block;
+	margin-top: 0px;
+}
+
+.left-section {
+	margin: 0px 64px;
+}
+
+.headingcontainer {
+	width: 50%;
+}
+
+.headingcontainervideo {
+	width: 456px;
+	height: 296px;
+	margin-left: 75px;
+	margin-top: 52px;
+}
+
+.headingcontainersecond {
+	width: 100%;
+}
+
+.videobutton {
+	height: 40px;
+	width: 132px;
+	background-color: rgba(64, 58, 96, 1);
+	color: rgba(255, 255, 255, 1);
+	font-size: 14px;
+	font-weight: 400;
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	border-radius: 12px;
+	margin-top: 30px;
+	margin-left: 18px;
+	border: none;
+}
+
+.first {
+	background: rgba(141, 137, 165, 0.5) !important;
+}
+
+.second {
+	background: rgba(236, 220, 168, 1) !important;
+}
+
+.third {
+	background: rgba(141, 137, 165, 0.5) !important;
+}
+
+.fourth {
+	background: rgba(236, 220, 168, 1) !important;
+	height: 471px;
+    width: 100%;
+	padding-bottom: 3%;
+}
+
+.search-bar1 {
+	width: 867px;
+	height: 40px;
+	padding: 10px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-left: 25px;
+	margin-bottom: 10px;
+}
+
+.subheadingnew {
+	font-size: 20px;
+	font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	color: rgba(64, 58, 96, 1);
+	font-weight: 400;
+}
+
+.search-bar {
+	border: none;
+	border-bottom: none;
+	width: 72%;
+	height: 40px;
+	border-radius: 4px;
+	outline: none;
+	margin-left: 1.6%;
+	background-color: transparent;
+	font-size: 20px;
+	font-weight: 400;
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.QuickLinks {
+	display: none;
+}
+
+.related-items {
+	margin-top: 10px;
+	padding: 10px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.related-items li {
+	list-style-type: none;
+	margin-bottom: 5px;
+}
+
+.searchhead {
+	width: 80%;
+	margin-top: -250px;
+	margin-left: 363px;
+	margin-bottom: 63px;
+}
+
+.slds-m-left_x-small {
+	left: 20%;
+	bottom: 30px;
+}
+
+.end-btn {
+	background-color: #fbfaf5;
+	color: #403a60;
+	text-align: left;
+	text-decoration: none;
+	display: inline-block;
+	cursor: pointer;
+	padding: 8px;
+	border-radius: 12px;
+	/* Add border-radius for curved edges */
+	height: 40px;
+	width: fit-content;
+	margin-top: 9px;
+	margin-bottom: 9px;
+	margin-left: 2px;
+	border: 15px;
+	border-color: #403a60;
+	outline: 1px solid #403a60;
+	/* Add outline with the desired color on hover */
+	font-size: 16px;
+	margin-right: 19px;
+}
+
+.end-btn:hover {
+	background-color: #8d89a540;
+}
+
+.subheading {
+	font-size: 20px;
+	color: #403a60;
+}
+
+.head_btn_container {
+	margin-left: 50px;
+	width: 87%;
+}
+
+.headingvisual {
+	font-size: 24px !important;
+	font-weight: 400 !important;
+	font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+}
+
+.headingvisual2 {
+	font-size: 44px;
+	font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-weight: 400;
+}
+
+.paragraphvideo {
+	font-weight: 400;
+	font-size: 20px;
+	color: rgba(64, 58, 96, 1);
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.artformb {
+	display: none;
+}
+
+.imgforvide {
+	height: 391px;
+	width: 696px;
+	margin-left: 62px;
+	margin-top: 39px;
+}
+
+.videoformb {
+	display: none;
+}
+
+.secondimg {
+	margin-left: auto;
+	width: auto;
+}
+
+svg:focus {
+    outline: none; /* Removes the focus outline */
+}
+
+/*--Font Declaration---*/
+
+@font-face {
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff") format("woff");
+}
+
+@font-face {
+	font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff") format("woff");
+}
+
+@media only screen and (max-width: 400px) {
+	.display {
+		width: 100%;
+        display: flex;
+        margin-top: 20px;
+        font-size: 16px;
+        flex-direction: row;
+	}
+
+	.head_btn_container {
+		display: none;
+	}
+	.svgtop{
+		margin-top: -27px;
+	}
+
+	.svgcls {
+		margin-left: 0px;
+		width: 8%;
+	}
+
+	.search-bar {
+		margin-top: -8px;
+		width: 86%;
+		margin-left: 2%;
+	}
+
+	.searchhead {
+		width: 80%;
+		margin-top: 0px;
+		margin-left: 0px;
+		margin-bottom: 10px;
+	}
+
+	.flex_row {
+		border-bottom: 2px solid #696969;
+		width: 115%;
+		margin-left: 5%;
+		height: 45px;
+	}
+
+	.end-btn {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		border-color: transparent;
+		outline-color: transparent;
+	}
+
+	.article {
+		display: grid;
+		height: auto;
+		width: 400px;
+	}
+
+	.headingcontainer {
+		width: 95%;
+		padding-bottom: 2%;
+	}
+
+	.headingcontainersecond {
+		width: 95%;
+		padding-bottom: 2%;
+	}
+
+	.article img {
+		width: 97%;
+		height: 180px;
+	}
+
+	.article h2 {
+		width: 300px;
+		font-size: 24px;
+	}
+
+	.descriptionsub {
+		width: 347px;
+	}
+
+	.QuickLinks {
+		display: block;
+		width: 115%;
+		margin-left: 5%;
+		border-bottom: 1px solid;
+	}
+
+	.search-bar-border-bottom {
+		display: none;
+	}
+
+	.artfordesk {
+		display: none;
+	}
+
+	.secondimg {
+		top: 36.5% !important;
+		position: absolute;
+	}
+
+	.secondarticlecont {
+		margin-top: 191px;
+	}
+
+	.artformb {
+		display: block;
+	}
+
+	.imgforvide {
+		width: auto !important;
+		height: 319px !important;
+		margin-left: -1px;
+		margin-top: -1px;
+	}
+
+	.videoformb {
+		display: block;
+		margin-left: 31px;
+	}
+
+	.videofordes {
+		display: none;
+	}
+
+	.headingvisual {
+		font-size: 16px !important;
+	}
+
+	.headingvisual2 {
+		font-size: 32px;
+	}
+
+	.paragraphvideo {
+		font-size: 20px;
+		width: 300px;
+	}
+
+	.videobutton {
+		margin-top: -1px;
+		height: 50px;
+		width: 144px;
+	}
+
+	.headingcontainervideo {
+		margin-left: -5px;
+		margin-top: 10px;
+	}
+
+	.top-heading {
+		margin-top: 22px;
+		margin-left: 14px;
+	}
+
+	.mbheading {
+        margin-right: auto;
+	}
+
+	.article-container {
+		margin-left: -68px;
+	}
+
+	.right-section {
+		margin-left: -34px;
+	}
+	.vtag{
+		margin-left: auto;
+	}
+}
+
+@media only screen and (min-width: 401px) and (max-width: 768px) {
+	.display {
+		width: 102%;
+		display: flex;
+		justify-content: space-around;
+		margin-left: 77px;
+		margin-top: 20px;
+		font-size: 16px;
+	}
+
+	.head_btn_container {
+		display: none;
+	}
+
+	.svgcls {
+		margin-left: 0px;
+		width: 8%;
+	}
+
+	.search-bar {
+		margin-top: -8px;
+		width: 83%;
+		margin-left: 2%;
+	}
+
+	.searchhead {
+		width: 80%;
+		margin-top: 0px;
+		margin-left: 0px;
+		margin-bottom: 10px;
+	}
+
+	.flex_row {
+		border-bottom: 2px solid #696969;
+		width: 115%;
+		margin-left: 5%;
+		height: 45px;
+	}
+
+	.end-btn {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		border-color: #f4f4f4;
+		outline-color: #f4f4f4;
+	}
+
+	.article {
+		display: grid;
+		width: 119%;
+		height: auto;
+		overflow: hidden;
+		margin-left: -9%;
+	}
+
+	.headingcontainer {
+		width: 95%;
+		padding-bottom: 10%;
+	}
+
+	.article img {
+		width: -webkit-fill-available;
+		height: auto;
+	}
+
+	.article h2 {
+		width: auto;
+		font-size: 24px;
+	}
+
+	.descriptionsub {
+		width: auto;
+	}
+
+	.QuickLinks {
+		display: block;
+		width: 115%;
+		margin-left: 5%;
+		border-bottom: 1px solid;
+	}
+
+	.search-bar-border-bottom {
+		display: none;
+	}
+
+	.artfordesk {
+		display: none;
+	}
+
+	.secondimg {
+		top: 36.5% !important;
+		position: absolute;
+	}
+
+	.secondarticlecont {
+		margin-top: 191px;
+	}
+
+	.artformb {
+		display: block;
+	}
+
+	.imgforvide {
+		width: -webkit-fill-available !important;
+		height: 319px !important;
+		margin-left: -1px;
+		margin-top: -1px;
+	}
+
+	.videoformb {
+		display: block;
+		margin-left: 31px;
+	}
+
+	.videofordes {
+		display: none;
+	}
+
+	.headingvisual {
+		font-size: 16px !important;
+	}
+
+	.headingvisual2 {
+		font-size: 32px;
+	}
+
+	.paragraphvideo {
+		font-size: 20px;
+		width: 300px;
+	}
+
+	.videobutton {
+		margin-top: -1px;
+		height: 50px;
+		width: 144px;
+	}
+
+	.headingcontainervideo {
+		margin-left: 4%;
+		margin-top: 10px;
+	}
+
+	.top-heading {
+		margin-top: 22px;
+		margin-left: 14px;
+	}
+
+	.mbheading {
+		margin-left: -162px;
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1300px) {
+	.head_btn_container {
+		margin-left: 1%;
+		width: 98%;
+	}
+
+	.flex_row {
+		margin-left: -5%;
+	}
+
+	.search-bar-border-bottom {
+		width: 89%;
+		margin-top: 5px;
+		margin-left: 1%;
+		border-width: 2px;
+		border-color: rgba(111, 81, 29, 1);
+	}
+
+	.search-bar {
+		border: none;
+		border-bottom: none;
+		width: 77%;
+		height: 40px;
+		border-radius: 4px;
+		outline: none;
+		margin-left: 1.6%;
+		background-color: transparent;
+		font-size: 20px;
+		font-weight: 400;
+		font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+
+	.searchhead {
+		width: 70%;
+		margin-top: -250px;
+		margin-left: 363px;
+		margin-bottom: 63px;
+	}
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1120px) {
+	.display {
+		width: 138%;
+		display: flex;
+		justify-content: space-around;
+		margin-left: -13%;
+		margin-top: 20px;
+		font-size: 16px;
+	}
+
+	.svgcls {
+		margin-left: 0px;
+		width: 8%;
+	}
+
+	.search-bar {
+		margin-top: -8px;
+		width: 84%;
+		margin-left: 2%;
+	}
+
+	.searchhead {
+		width: 80%;
+		margin-top: 0px;
+		margin-left: 0px;
+		margin-bottom: 10px;
+	}
+
+	.flex_row {
+		border-bottom: 2px solid #6f511d;
+		width: 106%;
+		margin-left: 9%;
+	}
+
+	.end-btn {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		border-color: #f4f4f4;
+		outline-color: #f4f4f4;
+		border-radius: 12px;
+		/* Add border-radius for curved edges */
+	}
+
+	.article {
+		display: grid;
+		width: auto;
+		height: auto;
+		overflow: hidden;
+	}
+
+	.headingcontainer {
+		width: 95%;
+		padding-bottom: 10%;
+	}
+
+	.article img {
+		width: -webkit-fill-available;
+		height: auto;
+	}
+
+	.article h2 {
+		width: auto;
+	}
+
+	.descriptionsub {
+		width: auto;
+	}
+
+	.QuickLinks {
+		display: block;
+		width: 115%;
+		margin-left: 5%;
+		border-bottom: none;
+	}
+
+	.head_btn_container {
+		display: none;
+	}
+
+	.search-bar-border-bottom {
+		display: block;
+		width: 106%;
+		margin-left: 9%;
+	}
+
+	.artfordesk {
+		display: none;
+	}
+
+	.secondimg {
+		top: 36.5% !important;
+		position: absolute;
+	}
+
+	.secondarticlecont {
+		margin-top: 191px;
+	}
+
+	.artformb {
+		display: block;
+	}
+
+	.imgforvide {
+		width: -webkit-fill-available !important;
+		height: 319px !important;
+		margin-left: -1px;
+		margin-top: -1px;
+	}
+
+	.videoformb {
+		display: block;
+		margin-left: 31px;
+	}
+
+	.videofordes {
+		display: none;
+	}
+
+	.headingvisual {
+		font-size: 16px !important;
+	}
+
+	.headingvisual2 {
+		font-size: 32px;
+	}
+
+	.paragraphvideo {
+		font-size: 20px;
+		width: auto;
+	}
+
+	.videobutton {
+		margin-top: -1px;
+		height: 50px;
+		width: 144px;
+	}
+
+	.headingcontainervideo {
+		margin-left: 4%;
+		margin-top: 10px;
+	}
+
+	.top-heading {
+		margin-top: -3px;
+	}
+
+	.mbheading {
+		margin-left: -138px;
+	}
+}
+
+@media only screen and (min-width: 1380px) and (max-width: 1950px) {
+	.searchhead {
+		margin-left: 30%;
+	}
+
+	.para {
+		background-color: #ecdca8;
+		padding: 21px 20px;
+		border-radius: 8px;
+		display: inline-block;
+		left: 58px;
+		width: 357px;
+		height: 136px;
+		margin-left: 42px;
+		margin-top: -36px;
+		font-size: 16px;
+	}
+
+	.head_btn_container {
+		margin-left: 50px;
+		width: 75%;
+	}
+}
+
+@media only screen and (min-width: 1366px) and (max-width: 1400px) {
+	.search-bar-border-bottom {
+		width: 80%;
+	}
+
+	.search-bar {
+		width: 73.5%;
+	}
+}

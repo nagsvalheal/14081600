@@ -1,0 +1,33 @@
+<!--This component is used as Footer for all pages -->
+<!-- Strings are hardcoded to display it in UI -->
+<template>
+  <div class="bg pad" data-it-uid={userId}>
+	<div class="mobilediv">
+	  <div class="footer">
+		<!-- Link for ContactUs -->
+		<p class="contact" onclick={contactUs} onkeypress={contactUs} data-it-button="Footer: Contact Us">
+			{contactUsLab}
+		</p>
+		<!-- Link for TermsOfUse -->
+		<p class="contact" onclick={termsOfUse} onkeypress={termsOfUse} data-it-button="Footer: Terms of Use">
+			{termsOfUseLab}
+		</p>
+		<!-- Link for PrivacyNotice -->
+		<p class="contact" onclick={privacyNotice} onkeypress={privacyNotice} data-it-button="Footer: Privacy Notice">
+			{privacyNoticeLab}
+		</p>
+	  </div>
+	  <!-- Used to display the logo in the footer -->
+	  <div class="background">
+		<img src={imageOfLogo} class="imgsize" alt="Logo"/>
+	  </div>
+	</div>
+	<hr class="linecode" />
+	<!-- Used to display the copyrights message in the footer -->
+	<div class="copyrights">
+	  <p class="para">
+		{copyrights}
+	  </p>
+	</div>
+  </div>
+</template>

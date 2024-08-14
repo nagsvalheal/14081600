@@ -1,0 +1,643 @@
+@font-face {
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff")
+    format("woff");
+}
+
+/* whole container */
+.row {
+  display: flex;
+  background-color: #fbfaf5;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  padding-top: 4%;
+  padding-bottom: 90px;
+}
+
+.left {
+  padding-left: 5%;
+  padding-top: 20px;
+}
+
+.right {
+  padding-left: 90px;
+  padding-top: 10px;
+}
+
+.container {
+  background: #fbfaf5;
+}
+
+.line {
+  display: none;
+}
+
+.avatarImg {
+  margin-left: 78px;
+}
+
+.avatarContent {
+  width: 286px;
+  height: 120px;
+  padding: 10px;
+  border-radius: 8px;
+  background: #ecdca8;
+  position: relative;
+  top: 20px;
+}
+
+.avatarText {
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #403a60;
+}
+
+/* Create a post text line */
+.headd {
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 32px;
+  line-height: 44px;
+  text-align: left;
+}
+
+/* normal text without validation/error for category */
+.valid {
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: left;
+  color: #000000;
+  padding-right: 12px;
+  position: relative;
+  top: 5px;
+}
+
+/* normal text without validation/error for phrase */
+.secondValid {
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: left;
+  color: #000000;
+  padding-right: 20px;
+  position: relative;
+  top: 5px;
+}
+
+/* error message text without validation/error for category */
+.firstInvalid {
+  color: #ff0000;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: left;
+  position: relative;
+  top: 5px;
+}
+
+/* error message text without validation/error for phrase */
+.secondInvalid {
+  color: #ff0000;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: left;
+  position: relative;
+  top: 5px;
+}
+
+.warningText {
+  width: auto;
+  height: 14px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ff0000;
+  position: relative;
+  top: 4px;
+}
+
+.warningIconImg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Cancel and submit button  */
+.btns {
+  display: flex;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.submit {
+  height: 40px;
+  float: left;
+  padding: 12px 24px 12px 24px;
+  border-radius: 12px;
+  background-color: #403a60;
+  color: white;
+  border-style: none;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  min-width: 68px;
+}
+
+.cancel {
+  height: 40px;
+  color: #403a60;
+  background-color: #fbfaf5;
+  text-align: center;
+  width: auto;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0em;
+  padding: 12px 24px 12px 24px;
+  border-radius: 12px;
+  border: 1.5px solid #403a60;
+}
+
+/* Confirmation popup for submit after clicking submit */
+/* Blur background behind the popup  */
+.blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(67, 66, 66, 0.5);
+  z-index: 999;
+}
+
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.popup-container.hidden {
+  display: none;
+}
+
+.popup-content {
+  background: #fff;
+  border-radius: 12px;
+  width: 672px;
+  height: 252px;
+  padding: 7px;
+}
+
+.close-button {
+  font-size: 35px;
+  background: none;
+  border: 0px;
+  cursor: pointer;
+}
+
+.closeIcon {
+  position: relative;
+  bottom: 30px;
+  right: 10px;
+}
+
+.content {
+  padding: 20px;
+}
+
+.heading {
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 32px;
+  line-height: 44px;
+  letter-spacing: 0em;
+  text-align: left;
+  position: relative;
+}
+
+.iconDiv {
+  display: flex;
+  align-items: start;
+  width: 104%;
+  justify-content: space-between;
+}
+
+.paragh {
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 20px;
+  line-height: 32px;
+  color: #2c333a;
+  bottom: 70px;
+  left: 13px;
+}
+
+.popBtn {
+  display: flex;
+  gap: 19px;
+  float: right;
+}
+
+.cancelBtn {
+  color: #403a60;
+  background-color: white;
+  border-color: #403a60;
+  border-radius: 12px;
+  border-width: 1.5px;
+  text-align: center;
+  width: 68px;
+  height: 40px;
+  font-size: 14px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.submitBtn {
+  color: white;
+  background-color: #403a60;
+  border-radius: 12px;
+  text-align: center;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0em;
+  width: 72px;
+  height: 40px;
+  border-style: none;
+}
+
+.selectLengthWidth {
+  width: 660px;
+  height: 40px;
+  font-size: 16px;
+  border-radius: 4px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  border-style: solid;
+  border-color: #2c333a;
+  border-width: 1px;
+  color: #403a60;
+  cursor: pointer;
+}
+
+.selectLengthWidth option {
+  color: #403a60;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.selectLengthWidth option:checked {
+  color: #403a60;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.errorSelectLengthWidth {
+  width: 660px;
+  height: 40px;
+  font-size: 16px;
+  border-radius: 4px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  border-style: solid;
+  border-color: #2c333a;
+  border-width: 1px;
+  color: #403a60;
+  cursor: pointer;
+}
+
+.errorSelectLengthWidth option {
+  color: #403a60;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.errorSelectLengthWidth option:checked {
+  color: #403a60;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+/* ====================    Media Query       ++++++++++++++++++++++ */
+
+@media only screen and (max-width: 600px) {
+  .row {
+    flex-direction: column;
+    position: relative;
+    right: 1%;
+    width: 101%;
+    overflow-x: hidden;
+  }
+
+  .left {
+    position: relative;
+    bottom: 37px;
+    left: 0px;
+    display: flex;
+    background: #f6efd9;
+    padding-bottom: 45px;
+  }
+
+  .right {
+    position: relative;
+    bottom: 20px;
+    right: 0px;
+    padding-left: 4%;
+    left: 10%;
+    width: 97%;
+    padding-right: 5px;
+  }
+
+  .container {
+    width: 107%;
+    position: relative;
+    right: 13%;
+    margin-left: 2%;
+    bottom: 75px;
+  }
+
+  .line {
+    display: block;
+    background: linear-gradient(
+      90deg,
+      #6f511d 0%,
+      #926b45 17.19%,
+      #ecdca8 58.85%,
+      #6f511d 100%
+    );
+    width: 100%;
+    height: 4px;
+    position: relative;
+    bottom: 74px;
+    padding: none;
+  }
+
+  .avatarImg {
+    height: 64px;
+    width: 64px;
+    position: relative;
+    top: 17px;
+    left: 3%;
+    margin-left: 0px;
+  }
+
+  .avatarContent {
+    width: auto;
+    height: auto;
+    position: relative;
+    margin-left: 11%;
+    right: 3%;
+    top: 14px;
+  }
+
+  .selectLengthWidth {
+    width: 96%;
+    border-color: #2c333a;
+  }
+
+  .errorSelectLengthWidth {
+    width: 96%;
+    border-color: #ff0000;
+  }
+
+  .valid {
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    color: #403a60;
+    position: relative;
+    top: 10px;
+  }
+
+  .secondValid {
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    color: #403a60;
+    position: relative;
+    top: 10px;
+  }
+
+  .firstInvalid {
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    color: #ff0000;
+    position: relative;
+    top: 10px;
+  }
+
+  .secondInvalid {
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    color: #ff0000;
+    position: relative;
+    top: 10px;
+  }
+
+  .btns {
+    position: relative;
+    bottom: 390px;
+    width: 96%;
+    padding-top: 60px;
+    margin-bottom: -80px;
+  }
+
+  .cancel {
+    position: absolute;
+    top: 530px;
+    width: 100%;
+    height: 40px;
+  }
+
+  .submit {
+    position: relative;
+    top: 409px;
+    left: 0px;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+  }
+
+  .popup-content {
+    width: 95%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .submitBtn {
+    width: 100%;
+  }
+
+  .cancelBtn {
+    width: 100%;
+  }
+
+  .content {
+    padding: 5px;
+  }
+
+  .heading {
+    font-size: 23px;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #403a60;
+    width: auto;
+    height: auto;
+    top: 5px;
+  }
+
+  .popBtn {
+    flex-direction: column-reverse;
+    float: left;
+    width: 100%;
+  }
+
+  .slds-listbox_vertical .slds-listbox__option_plain,
+  .slds-listbox_vertical .slds-listbox__option--plain,
+  .slds-listbox--vertical .slds-listbox__option_plain,
+  .slds-listbox--vertical .slds-listbox__option--plain {
+    background-color: #403a60;
+  }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 600px) {
+  .heading {
+    font-size: 26px;
+  }
+
+  .iconDiv {
+    display: flex;
+    align-items: start;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+  .row {
+    width: 100%;
+  }
+
+  .left {
+    padding-left: 6%;
+    padding-top: 20px;
+    width: 30%;
+  }
+
+  .right {
+    padding-left: 0px;
+    padding-top: 20px;
+    width: 51%;
+    left: 18%;
+    position: relative;
+  }
+
+  .container {
+    width: auto;
+    position: relative;
+    right: 21%;
+  }
+
+  .avatarImg {
+    margin-left: 11%;
+  }
+
+  .avatarContent {
+    position: relative;
+    right: 7%;
+    width: auto;
+    height: auto;
+    max-width: 240px;
+  }
+
+  .selectLengthWidth {
+    width: 110%;
+  }
+
+  .errorSelectLengthWidth {
+    width: 110%;
+  }
+
+  .btns {
+    margin-top: 20px;
+  }
+
+  .popup-content {
+    border-radius: 12px;
+    width: 536px;
+    height: 252px;
+    padding: 7px;
+  }
+
+  .paragh {
+    padding-right: 19px;
+  }
+
+  .iconDiv {
+    display: flex;
+    align-items: start;
+  }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  .right {
+    padding-left: 43px;
+  }
+
+  .selectLengthWidth {
+    width: 90%;
+  }
+
+  .errorSelectLengthWidth {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 1401px) {
+  .right {
+    padding-left: 10%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .right {
+    position: relative;
+    bottom: 20px;
+    left: 13%;
+    padding-left: 7px;
+  }
+
+  .container {
+    width: 103%;
+    position: relative;
+  }
+
+  .paragh {
+    font-size: 18px;
+  }
+
+  .popBtn {
+    display: flex;
+    bottom: 0px;
+    flex-direction: column-reverse;
+    gap: 10px;
+    align-items: center;
+  }
+}

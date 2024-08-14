@@ -1,0 +1,1725 @@
+@font-face {
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    src: url("/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff")
+        format("woff");
+}
+
+@font-face {
+    font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff")
+        format("woff");
+}
+
+@font-face {
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff")
+        format("woff");
+}
+
+@font-face {
+    font-family: "Eina04-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff")
+        format("woff");
+}
+
+@font-face {
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Regular.woff")
+        format("woff");
+}
+
+.disflecCenter {
+    display: flex;
+    align-items: center;
+}
+
+.rich {
+    width: 104px;
+}
+.wiHeight {
+    width: 37px;
+    height: 24px;
+}
+
+.date-input-container {
+    display: inline;
+}
+
+.label {
+    position: relative;
+    top: 44px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+.cl {
+    font-size: 20px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    color: #403a60;
+    width: 92%;
+}
+
+.fourth-card .card-header-accord {
+    position: relative;
+    bottom: 14px;
+}
+.card-container {
+    cursor: pointer;
+}
+
+.card-header-accord .cl {
+    font-size: 20px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    color: #fff;
+    width: 92%;
+}
+
+.card-header-gpp .cl {
+    font-size: 20px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    color: #fff;
+    width: 92%;
+}
+
+.imgcl {
+    background-color: white;
+    width: 18px;
+    position: relative;
+    right: 25px;
+    top: 6px;
+    z-index: 1;
+}
+/* CSS for date input field */
+/* Hide the default arrow */
+input[type="date"]::-webkit-inner-spin-button,
+/* CSS for date input field */
+input[type="date"] {
+    /* Reset default styles */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* Set padding and border */
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    /* Optional: Adjust font size and color */
+    font-size: 16px;
+    color: #333;
+    /* Optional: Adjust background and text color on focus */
+}
+
+p {
+    font-size: 16px;
+    color: #2c333a !important;
+    font-weight: 300 !important;
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+:host {
+    font-family: "Eina-regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.select-btn {
+    /* Your default button styles here */
+    padding: 8px 16px;
+    background-color: #ffc107;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.textInput ::placeholder {
+    /* Change the color to your desired color */
+    color: black !important;
+    background-color: black;
+}
+
+.selected {
+    /* Your selected button styles here */
+    background-color: #28a745;
+}
+
+.slds-m-top_medium1 {
+    display: none;
+}
+
+.dropdown-content-gpp {
+    height: 98px;
+    width: 100%;
+}
+
+.dropdown-content-gpp h2 {
+    cursor: pointer;
+    margin: 0;
+    color: white;
+    font-family: "Eina-regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    letter-spacing: -6px;
+    font-size: 154px;
+}
+
+.dropdown-content h2 {
+    cursor: pointer;
+    margin: 0;
+    color: white;
+    font-family: "Eina-regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    letter-spacing: -6px;
+    font-size: 154px;
+}
+
+.popup-content {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    width: 300px;
+    background-color: blue;
+}
+
+.popup-content h3 {
+    margin: 10px;
+    color: white;
+    font-family: "Eina-regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    letter-spacing: -3px;
+    font-size: 80px;
+}
+
+.popup-background {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.a {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    /* This makes the element a circle */
+    background-color: #f00;
+    /* You can change the background color as needed */
+    display: inline-block;
+    /* This ensures the circle appears inline with the text */
+    margin-right: 5;
+}
+
+/* Add a hover effect */
+svg {
+    width: 100px;
+}
+
+p.virus {
+    font-size: 14px;
+    font-weight: 400;
+
+    text-align: initial;
+    position: relative;
+    left: 24px;
+    bottom: 23px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.col-1 {
+    width: 158px;
+}
+
+.buttonClass:hover {
+    background-image: linear-gradient(
+        90deg,
+        #00c0ff 0%,
+        #ffcf00 49%,
+        #fc4f4f 80%,
+        #00c0ff 100%
+    );
+    animation: slidebg 5s linear infinite;
+}
+
+.slds-m-around_medium {
+    margin: 0;
+}
+
+.slidervalue-intersity {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 41px;
+}
+
+p.slidervalue-intersity-text {
+    position: relative;
+    left: 158px;
+    bottom: 27px;
+}
+
+span.defalut-value {
+    position: relative;
+    top: 22px;
+    left: 12px;
+    font-size: 17px;
+}
+
+.inputypedate {
+    width: 206px;
+    position: relative;
+    margin-left: 29px;
+    right: 25px;
+    height: 41px;
+    margin-top: 2rem;
+}
+
+button.slds-button.slds-button_neutral {
+    margin: 1px 13px;
+}
+
+span.value {
+    position: relative;
+    left: 25px;
+}
+
+span.sliderval {
+    position: relative;
+    top: 24px;
+    left: 36px;
+    font-size: 15px;
+}
+
+.buttonClass {
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 8px 16px;
+    margin: 9px 8px;
+}
+
+h1.header {
+    font-size: 22px;
+    margin: 34px 0px;
+}
+
+.edit-date {
+    margin: 44px 0px;
+}
+
+span.dt1 {
+    font-size: 21px;
+    position: relative;
+    top: 2px;
+}
+
+button.bt1 {
+    margin: 3px 28px;
+    width: 14%;
+    padding: 10px 4px;
+}
+
+@keyframes slidebg {
+    to {
+        background-position: 20vw;
+    }
+}
+
+/* Symptom Tracker */
+.st-heading {
+    line-height: 44px;
+    font-size: 32px;
+    font-weight: 400;
+    color: #403a60;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    position: relative;
+    top: -2px;
+}
+
+.st-date-row {
+    margin: -19px 0px 30px 0px;
+}
+
+.st-date-label {
+    font-size: 16px;
+    font-weight: 400;
+    color: #403a60;
+}
+
+.st-date-input {
+    height: 40px;
+    width: 234px;
+    border-radius: 4px;
+    border: 2px solid #403a60;
+    padding: 12px;
+    margin-top: 5px;
+    left: 0px;
+}
+
+/* Change the size of the date picker icon */
+.st-date-input::-webkit-calendar-picker-indicator {
+    width: 16px;
+    height: 16px;
+}
+
+/* For Firefox */
+.st-date-input::-moz-calendar-picker-indicator {
+    width: 16px;
+    height: 16px;
+}
+
+/* For Edge and IE */
+.st-date-input::-ms-clear {
+    width: 16px;
+    height: 16px;
+}
+
+.symptomButton{
+	border: none;
+	background: none;
+}
+
+.st-date-btn {
+    height: 40px;
+    width: 154px;
+    border-radius: 12px;
+    background-color: #403a60;
+    font-weight: 400;
+    margin-left: 25px;
+    color: white;
+    border: #403a60;
+}
+
+.card {
+    margin: 20px 0px;
+    background-color: #ffff;
+}
+
+
+
+.card-header {
+    cursor: pointer;
+    border: 2px solid #c6aa76;
+    border-radius: 4px 4px 0px 0px;
+    background-color: #ecdca833;
+    height: 72px;
+}
+
+.card-header-accord .dropdown-arrow-button {
+    height: 20px;
+    width: 20px;
+    border-top: solid 3px #ffff;
+    border-left: solid 3px #ffff;
+    transform: rotate(225deg);
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+    bottom: 46px;
+}
+
+.card-header-accord {
+    cursor: pointer;
+
+    border-radius: 4px 4px 0px 0px;
+    background-color: #ecdca833;
+    height: auto;
+}
+
+.card-header-gpp .card-header-text {
+    flex: 0.95;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    color: #fff;
+    border: 1px solid #c6aa76;
+    background: #c6aa76;
+    padding: 20px 9px;
+    cursor: pointer;
+}
+
+.card-header-gpp .dropdown-arrow-button {
+    height: 16px;
+    width: 16px;
+    border-top: solid 3px #ffff;
+    border-left: solid 3px #ffff;
+    transform: rotate(225deg);
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+    bottom: 46px;
+}
+
+.card-header-accord .card-header-text {
+    flex: 0.95;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    color: #fff;
+    border: 1px solid #c6aa76;
+    background: #c6aa76;
+    padding: 20px 9px;
+}
+
+.card-header-accord-symptoms .dropdown-arrow-button {
+    height: 20px;
+    width: 20px;
+    border-top: solid 3px #ffff;
+    border-left: solid 3px #ffff;
+    transform: rotate(225deg);
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+    bottom: 46px;
+}
+
+.card-header-accord-symptoms .card-header-text {
+    flex: 0.95;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    color: #fff;
+    border: 1px solid #c6aa76;
+    background: #c6aa76;
+    padding: 7px 5px;
+}
+
+.card-header-accord-symptoms {
+    cursor: pointer;
+    border: 2px solid #c6aa76;
+    border-radius: 4px 4px 0px 0px;
+    background-color: #ecdca833;
+    height: 72px;
+}
+
+.card-header-accord-btn .dropdown-arrow-button {
+    height: 20px;
+    width: 20px;
+    border-top: solid 3px #ffff;
+    border-left: solid 3px #ffff;
+    transform: rotate(225deg);
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+    bottom: 46px;
+}
+
+.card-header-accord-btn .card-header-text {
+    flex: 0.95;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    color: #fff;
+    border: 1px solid #c6aa76;
+    background: #c6aa76;
+    padding: 20px 9px;
+}
+
+.card-header-accord-btn {
+    cursor: pointer;
+    border: 2px solid #c6aa76;
+    border-radius: 4px 4px 0px 0px;
+    background-color: #ecdca833;
+    height: auto;
+}
+
+.card-header-accordfile-btn {
+    cursor: pointer;
+    border: 2px solid #c6aa76;
+    border-radius: 4px 4px 0px 0px;
+    background-color: #ecdca833;
+    height: auto;
+}
+
+.card-header-accordfile-btn .card-header-text {
+    flex: 0.95;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    color: #fff;
+    border: 1px solid #c6aa76;
+    background: #c6aa76;
+    padding: 20px 9px;
+}
+
+.card-header-accordfile-btn .dropdown-arrow-button {
+    height: 20px;
+    width: 20px;
+    border-top: solid 3px #ffff;
+    border-left: solid 3px #ffff;
+    transform: rotate(225deg);
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+    bottom: 46px;
+}
+
+.card-header-border-bottom {
+    border-bottom: none !important;
+}
+
+.card-header-text {
+    flex: 0.95;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    color: #403a60;
+    border: 2px solid #c6aa76;
+    background: #ecdca833;
+    padding: 20px 9px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.card-header-arrow {
+    cursor: pointer;
+    float: right;
+    padding: 0px 18px;
+}
+
+.dropdown-arrow-button {
+    height: 16px;
+    width: 16px;
+    border-top: solid 3px #403a60;
+    border-left: solid 3px #403a60;
+    transform: rotate(225deg);
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+    bottom: 46px;
+}
+
+.dropdown-arrow-button-open {
+    transform: rotate(45deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+.card-body {
+    border-left: 2px solid #c6aa76;
+    border-right: 2px solid #c6aa76;
+    border-bottom: 2px solid #c6aa76;
+    border-radius: 0px 0px 4px 4px;
+    margin-top: -3px;
+}
+
+.confirm-btn-date {
+    height: 34px;
+    width: 115px;
+    border-radius: 12px;
+    background-color: #403a60;
+    font-weight: 400;
+    color: white;
+    border: #403a60;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    margin-top: 20px;
+    margin-left: 49px;
+    font-size: 14px;
+}
+
+.confirm-btn {
+    height: 40px;
+    width: 77px;
+    border-radius: 12px;
+    background-color: #403a60;
+    font-weight: 400;
+    color: white;
+    border: #403a60;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    margin-top: 20px;
+}
+
+.confirm-btn-understand {
+    height: 40px;
+    width: 170px;
+    border-radius: 12px;
+    background-color: #403a60;
+    font-weight: 400;
+    color: white;
+    border: #403a60;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    margin-top: 20px;
+}
+
+.confirm-btn-activity {
+    height: 40px;
+    width: 170px;
+    border-radius: 12px;
+    background-color: #403a60;
+    font-weight: 400;
+    color: white;
+    border: #403a60;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    margin-top: 20px;
+}
+
+.confirm-btn-file {
+    height: 40px;
+    width: 168px;
+    border-radius: 12px;
+    background-color: #403a60;
+    font-weight: 400;
+    color: white;
+    border: #403a60;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-family: "Eina04-SemiBold", Helvetica, Arial, Verdana, Tahoma,
+        sans-serif;
+}
+
+.submit-btn {
+    width: 135px;
+    height: 40px;
+    background: #403a60;
+    color: white;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    border: #403a60;
+    margin-top: 20px;
+    font-family: "Eina04-SemiBold", Helvetica, Arial, Verdana, Tahoma,
+        sans-serif;
+}
+
+/* Dropdown 1 */
+.dropdown1-row {
+    padding: 29px 22px;
+    margin-bottom: -17px;
+}
+
+.dropdown2-row {
+    padding: 20px;
+}
+
+.dropdown2-text {
+    font-size: 16px;
+    padding: 10px 0px 30px 0px;
+    color: #000000;
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.symptoms-row {
+    display: flex;
+    gap: 27px;
+    flex-wrap: wrap;
+}
+
+.colorchange {
+    background-color: #c6aa76 !important;
+    width: 104px;
+    height: 300px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.colorchange1 {
+    background-color: #c6aa76 !important;
+    width: 104px;
+    height: 100px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.colorchange2 {
+    background-color: #c6aa76 !important;
+    width: 104px;
+    height: 100px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.colorchange3 {
+    background-color: #c6aa76 !important;
+    width: 104px;
+    height: 100px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.colorchange4 {
+    background-color: #c6aa76 !important;
+    width: 104px;
+    height: 100px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.colorchange5 {
+    background-color: #c6aa76 !important;
+    width: 104px;
+    height: 100px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.colorchange6 {
+    background-color: #c6aa76 !important;
+    width: 104px;
+    height: 100px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.relativeRight {
+    position: relative;
+    right: 45px;
+    color: red;
+}
+
+.marLeft {
+    margin-left: 15px;
+}
+
+.symptoms {
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 110px;
+}
+
+.symptoms-image {
+    height: 40px;
+    width: 40px;
+}
+
+.symptoms-text {
+    font-size: 14px;
+    font-weight: 400;
+    color: #403a60;
+    margin-top: 10px;
+    position: relative;
+    bottom: 7px;
+}
+
+/* Popup Modal */
+.modal-background {
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #8d89a5;
+    border-radius: 8px;
+    width: fit-content;
+    height: fit-content;
+}
+
+.close {
+    color: #403a60;
+    float: right;
+    text-align: right;
+    font-size: 40px;
+    cursor: pointer;
+    position: relative;
+    bottom: 0px;
+    align-content: start;
+    display: flex;
+    height: 20px;
+    align-items: center;
+    z-index: 1;
+	border: none;
+	background: none;
+}
+
+.modal-header {
+    color: #403a60;
+    font-size: 32px;
+    font-weight: 400;
+    position: absolute;
+    border: none;
+    font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.modal-header-text {
+    color: #000000;
+    font-size: 16px;
+    margin: 60px 0px;
+    margin-bottom: 0px;
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.modal-btn-row {
+    display: flex;
+    justify-content: center;
+}
+
+.modal-confirm-btn {
+    height: 40px;
+    width: 154px;
+    border-radius: 12px;
+    background-color: #403a60;
+    font-weight: 400;
+    color: white;
+    border: #403a60;
+    margin: 20px 0px;
+}
+
+/* Mood Modal */
+.modal-mood-text {
+    color: #000000;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 45px;
+}
+
+.modal-mood-row {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px 0px 10px 0px;
+}
+
+.mood-image {
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+}
+
+.slds-form-element__control {
+    display: flex;
+}
+
+.dropdown3-row {
+    padding: 20px;
+}
+
+.dropdown3-text {
+    font-size: 16px;
+    padding: 10px 0px 30px 0px;
+    color: #000000;
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.dropdown3-line {
+    height: 1px;
+    background-color: #8d89a580;
+    margin-bottom: 30px;
+}
+
+.dropdown3-activity-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.dropdown3-activity-btn {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+    background-color: #fff;
+    padding: 12px 16px;
+    border: 1px solid #926b45;
+    border-radius: 24px;
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    text-align: start;
+}
+
+.dropdown3-activity-btn:hover {
+    background-color: #ecdca8;
+    font-weight: 400;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.dropdown4-row {
+    padding: 4%;
+}
+
+.dropdown4-text {
+    font-size: 16px;
+    padding: 10px 0px 30px 0px;
+    color: #000000;
+}
+
+.dropdown4-upload-label {
+    width: 100%;
+    height: 137px;
+    background-color: #d5d8d99c;
+    border-radius: 8px;
+    border: 3px dashed #8d89a5;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: #000000;
+    padding-right: 0px;
+}
+
+.dropdown4-upload-input {
+    display: none;
+}
+
+.dropdown4-help-text {
+    font-size: 14px;
+    color: #403a60;
+    margin-top: 3px;
+    margin-bottom: 10px;
+    padding: 0px 9px;
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.dropdown4-help-text-link {
+    text-decoration: underline;
+    cursor: pointer;
+	border: none;
+	background: none;
+}
+
+.radio-group-flex {
+    display: flex;
+    /* Add any additional flex properties or styling as needed */
+}
+
+h3.confirm-ct {
+    font-size: 32px;
+    color: #403a60;
+    font-weight: 600;
+    font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.img {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.slds-m-top_medium img {
+    width: 19px;
+    margin: 0px 8px;
+    padding: 4px 0px;
+}
+
+p.fatique-content {
+    text-align: center;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-size: "14px";
+}
+
+.lastmodifieddate {
+    float: right;
+    position: relative;
+    top: -40px;
+    right: 15px;
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    color: #8d89a5;
+}
+
+.file-container {
+    border-right: 1px solid #ccc;
+    padding-right: 10px;
+    /* Adjust as needed for spacing */
+    margin-right: 10px;
+    /* Adjust as needed for spacing */
+    display: inline-block;
+    /* Ensures each container is on the same line */
+}
+
+/* Style for the uploaded image */
+.file-image {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+}
+
+.newclasstest {
+    display: none;
+}
+
+.Upload-alert-mseg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icontext {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Upload-alert-mseg img {
+    width: 18px;
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    margin-top: 11px;
+    gap: 10px;
+}
+
+.image {
+    margin: 14px 14px;
+    /* Adjust the margin as needed */
+}
+
+img.uploaded-image {
+    max-height: 100px;
+    width: 100%;
+    border: 1px solid #c4c1cd;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 21px;
+    margin: 3px 0px;
+}
+
+.image-wrapper {
+    position: relative;
+    margin: 5px;
+}
+
+.remove-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.CHead {
+    font-size: 32px;
+    font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    margin-bottom: 11px;
+}
+
+button.fileuploadbtn {
+    float: right;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    border-radius: 25px;
+    background-color: #403a60;
+    color: #fff;
+    border: none;
+    width: 28px;
+    height: 28px;
+}
+
+input.file-imge {
+    width: 100%;
+    position: relative;
+    left: 0px;
+
+    opacity: 0;
+
+    cursor: pointer;
+    height: 100px;
+}
+
+.here {
+    display: flex;
+    padding-left: 20px;
+}
+
+.image-file-set {
+    border: 2px solid #c4c1cd;
+    position: relative;
+    top: 10px;
+    align-items: center;
+    align-content: center;
+    padding: 11px 10px;
+    border-radius: 10px;
+}
+
+h3.Entiredate {
+    position: relative;
+    top: 38px;
+    font-size: 16px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+img.symptomcompletetickcheck {
+    width: 25px;
+    position: relative;
+    bottom: 0px;
+    left: 57px;
+}
+
+.adduploadbtn p {
+    position: relative;
+    left: 16px;
+    line-height: 1;
+    color: #000000;
+    font-size: 16px;
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    top: 12px;
+}
+
+p.onlyallowd {
+    position: relative !important;
+
+    color: #546372 !important;
+    font-size: 12px !important;
+}
+
+.adduploadbtn {
+    position: absolute;
+}
+
+.symptoms img {
+    width: 300px;
+    height: 100px;
+    margin-bottom: 13px;
+}
+
+img.tickclass {
+    right: 0rem;
+    left: 7rem;
+    bottom: 1.5rem;
+    width: 25px;
+    position: relative;
+    display: flex;
+    padding: 0px 0px;
+}
+
+img.tickclass-21 {
+    padding: 2px 0px;
+    margin-left: 10px;
+    width: 25px;
+}
+
+img.tickclass-imges {
+    right: 0rem;
+    left: 1rem;
+    width: 25px;
+    position: relative;
+
+    padding: 0px 0px;
+}
+
+img.currentlygpp-icon {
+    width: 27px;
+    height: 27px;
+    margin-left: 10px;
+}
+
+@media only screen and (max-width: 400px) {
+    .lastmodifieddate {
+        position: absolute;
+        top: 490px;
+        right: 10px;
+    }
+
+    .confirm-btn {
+        width: 100%;
+    }
+
+    .modal-content {
+        width: 100%;
+    }
+
+    .confirm-btn-understand {
+        width: 100%;
+    }
+
+    .modal-header {
+        font-size: 23px;
+        margin-top: 10px;
+        width: 50%;
+    }
+
+    .CHead {
+        font-size: 24px;
+        font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+        margin-bottom: 11px;
+    }
+
+    .symptoms img {
+        width: 118px;
+        height: 118px;
+        margin-bottom: 13px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .slds-m-top_medium1 {
+        display: block;
+    }
+
+    .slds-m-top_medium {
+        display: none !important;
+    }
+
+    .adduploadbtn {
+        position: absolute;
+        left: 21%;
+    }
+
+    .symptoms img {
+        width: 100%;
+        margin-bottom: 13px;
+    }
+
+    p.alredy-data {
+        position: relative;
+        top: 43px !important;
+    }
+
+    .input-div {
+        width: 103% !important;
+    }
+
+    .ClBtn {
+        width: 100% !important;
+        margin-left: 0% !important;
+    }
+
+    .textInput {
+        width: 100% !important;
+    }
+
+    .here {
+        display: flex;
+        width: 100%;
+        padding-left: 20px;
+    }
+
+    .image-file-set {
+        padding: 11px 50px;
+    }
+
+    img.uploaded-image {
+        max-height: fit-content;
+        width: 100%;
+        border: 1px solid #c4c1cd;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        border-radius: 21px;
+        margin: 3px 0px;
+    }
+
+    .inputypedate {
+        z-index: 1;
+        width: 98%;
+        margin-top: 28px;
+    }
+
+    button.fileuploadbtn {
+        float: right;
+        position: relative;
+        left: 40px;
+        top: 0px;
+        border-radius: 25px;
+        background-color: #403a60;
+        color: #fff;
+        border: none;
+        width: 28px;
+        height: 28px;
+    }
+
+    .confirm-btn-understand {
+        width: 100%;
+    }
+
+    .modal-content-symptoms {
+        height: auto;
+    }
+
+    .confirm-btn {
+        width: 100%;
+    }
+
+    .modal-content {
+        width: 94%;
+    }
+
+    .confirm-btn-date {
+        width: 100%;
+        position: relative;
+        right: 3rem;
+        top: 2rem;
+        margin-top: 10px;
+        margin-left: 48px;
+        margin-bottom: 20px;
+    }
+
+    .st-heading {
+        font-size: 18px;
+        margin-top: 42px;
+    }
+
+    .image-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 11px;
+    }
+
+    .modal-header {
+        font-size: 23px;
+        margin-top: 10px;
+        width: 50%;
+    }
+
+    .lastmodifieddate {
+        position: relative;
+        top: -94px;
+        left: -2px;
+        width: 100%;
+        float: left;
+
+        font-size: 14px;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+
+    .card-header-accord .card-header-text {
+        font-size: 20px;
+        padding: 20px 9px;
+    }
+
+    .card-header-accordfile-btn .card-header-text {
+        font-size: 16px;
+    }
+
+    .card-header-accord-symptoms .card-header-text {
+        font-size: 16px;
+        padding: 10px 5px;
+    }
+
+    .card-header-accord-btn .card-header-text {
+        font-size: 16px;
+    }
+
+    h3.confirm-ct {
+        font-size: 24px;
+        color: #403a60;
+        font-weight: 600;
+        font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    }
+}
+
+.btn {
+    background-color: #28a745;
+}
+
+.date-container {
+    position: relative;
+}
+
+.placeholder {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    /* adjust as needed */
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.inputypedate:focus + .placeholder,
+.inputypedate:valid + .placeholder {
+    display: none;
+}
+
+.hideesm {
+    background-color: blue;
+}
+
+.confirm-btn-head {
+    display: flex;
+    justify-content: right;
+}
+
+.modal-content-symptoms {
+    background-color: #fefefe;
+    margin: 0.5% auto;
+    padding: 15px;
+    border: 1px solid #8d89a5;
+    border-radius: 8px;
+    width: fit-content;
+    height: fit-content;
+    overflow: hidden;
+}
+
+p.alredy-data {
+    position: relative;
+    top: 23px;
+}
+
+.Gpp-yes-btn[c-biPspbSymptomTracker_biPspbSymptomTracker] {
+    color: #2c333a !important;
+    font-weight: 300 !important;
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    float: right;
+    position: relative;
+    bottom: 30px;
+    font-size: 14px;
+    right: 110px;
+}
+
+.Gpp-yes-btn1[c-biPspbSymptomTracker_biPspbSymptomTracker] {
+    color: #2c333a !important;
+    font-weight: 300 !important;
+    float: right;
+    position: relative;
+    bottom: 104px;
+    font-size: 14px;
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    right: 10px;
+    display: none;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .st-date-row {
+        margin-left: 13%;
+    }
+
+    h3.Entiredate {
+        margin-left: 12%;
+    }
+
+    .st-heading {
+        margin-left: 12%;
+    }
+
+    .label {
+        position: relative;
+        top: 44px;
+        left: 60px;
+        font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma,
+            sans-serif;
+        font-size: 16px;
+    }
+
+    .lastmodifieddate {
+        top: -32px;
+        right: 0px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .st-date-row {
+        margin-left: 10%;
+    }
+
+    h3.Entiredate {
+        margin-left: 10%;
+    }
+
+    .st-heading {
+        margin-left: 10%;
+    }
+
+    .label {
+        position: relative;
+        top: 44px;
+        left: 60px;
+        font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma,
+            sans-serif;
+        font-size: 16px;
+    }
+
+    .confirm-btn-date {
+        margin-left: 10px;
+    }
+
+    .lastmodifieddate {
+        float: right;
+        position: relative;
+        top: -30px;
+        right: 0px;
+        left: 90px;
+        font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma,
+            sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0em;
+        color: #8d89a5;
+    }
+
+    .card {
+        width: 117%;
+    }
+
+    .card-body {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .Gpp-yes-btn {
+        float: none !important;
+        bottom: 0px !important;
+        right: 0px !important;
+    }
+
+    .slds-m-top_medium {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1400px) {
+    /* Styling for .Gpp-yes-btn within the specified media query */
+    .Gpp-yes-btn {
+        margin-right: -17%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .Upload-alert-mseg img {
+        width: 18px;
+    }
+
+    .card-header-accord-btn .card-header-text {
+        padding: 20px 9px;
+    }
+
+    .card-header-accord-symptoms .card-header-text {
+        padding: 7px 5px;
+    }
+
+    .card-header-accordfile-btn .card-header-text {
+        padding: 20px 9px;
+        border: 0px;
+    }
+
+    .confirm-btn-date {
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    .card-header-accord .card-header-text {
+        padding: 20px 9px;
+    }
+
+    .confirm-btn-date {
+        margin-left: 10px;
+    }
+
+    .Upload-alert-mseg img {
+        width: 18px;
+    }
+
+    .symptoms-row {
+        gap: 40px;
+    }
+}
+
+.displaynone {
+    display: none;
+}
+
+img.tickfile {
+    width: 24px;
+    position: relative;
+    left: 6rem;
+    top: 3rem;
+}
+
+.custom-date-input {
+    position: relative;
+}
+
+.custom-date-input input.inputypedate {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background: #fff;
+    /* Adjust background color */
+}
+
+.custom-date-input input.inputypedate:focus {
+    outline: none;
+    border-color: #0070c9;
+    /* Adjust focus border color */
+}
+
+.custom-date-input .hidden-date-input {
+    display: none;
+    /* Hide the actual date input */
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 30px;
+    margin-top: 15px;
+}
+
+.ClBtn {
+    height: 40px;
+    width: 87px;
+    border-radius: 12px;
+    background-color: #403a60;
+    font-weight: 400;
+    color: white;
+    border: #403a60;
+    margin-left: 70%;
+}
+
+.input-div {
+    width: 200px;
+    display: inline-block;
+    margin-top: 25px;
+}
+
+.input-label {
+    font-size: 16px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    color: #2c333a;
+    line-height: 24px;
+}
+
+.textInput {
+    border: 1.2px solid #403a60;
+    border-radius: 4px;
+    z-index: 1;
+    margin-top: 10px;
+    width: 234px;
+}
+
+.futuredateerror {
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-size: 16px;
+    color: red;
+    margin-top: 10px;
+}
+
+.gpptickmark {
+    flex: 0.95;
+    font-size: 20px;
+    color: #403a60;
+    font-weight: 400;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    border: 2px solid #c6aa76;
+    background: #ecdca8 20%;
+    padding: 20px 9px;
+}
+
+.accordcolorbtn {
+    flex: 0.95;
+    color: #403a60;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    border: 2px solid #c6aa76;
+    background: #ecdca8 20%;
+    padding: 20px 9px;
+}
+
+input[type="date"]::placeholder {
+    color: #ff0000;
+    /* Red color code */
+}
+
+img {
+    width: 100px;
+}

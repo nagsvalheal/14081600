@@ -1,0 +1,485 @@
+<!-- This introductory questionnaire allows you to provide information about yourself -->
+<template>
+  <div class="tophead">{aboutmyself}</div>
+  <div class="containercolumn" data-it-uid={userid}>
+    <div class="column1">
+      <!-- 1 -->
+      <div class="nds-form-element nds-form-container">
+        <legend class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+          <span class="nds-m-right_x-small">{firstQuestionText}</span><br />
+        </legend>
+        <div class="nds-form-element__control nds-horizontal_radio">
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input
+                type="radio"
+                name="firstQuestionResponse"
+                value="Less than a month"
+                id="firstQuestionResponseLessThanMonth"
+                onchange={handleFirstQuestionChange}
+                checked={isFirstLessThanMonth}
+              />
+              <label class="nds-radio__label" for="firstQuestionResponseLessThanMonth" data-index="0">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label">{lessthanamonth}</span>
+              </label>
+            </div>
+          </span>
+
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input
+                type="radio"
+                name="firstQuestionResponse"
+                value="Less than 6 months"
+                id="firstQuestionResponseLessThan6Months"
+                onchange={handleFirstQuestionChange}
+                checked={isFirstLessSix}
+              />
+              <label class="nds-radio__label" for="firstQuestionResponseLessThan6Months" data-index="1">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label">{lessthan6months}</span>
+              </label>
+            </div>
+          </span>
+
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input
+                type="radio"
+                name="firstQuestionResponse"
+                value="Less than a year"
+                id="firstQuestionResponseLessThanYear"
+                onchange={handleFirstQuestionChange}
+                checked={isFirstLessYear}
+              />
+              <label class="nds-radio__label" for="firstQuestionResponseLessThanYear" data-index="2">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label">{lessthanyear}</span>
+              </label>
+            </div>
+          </span>
+
+          <span class="nds-radio last-option">
+            <div class="radio-container">
+              <input
+                type="radio"
+                name="firstQuestionResponse"
+                value="More than a year"
+                id="firstQuestionResponseMoreThanYear"
+                onchange={handleFirstQuestionChange}
+                checked={isFirstMoreYear}
+              />
+              <label class="nds-radio__label" for="firstQuestionResponseMoreThanYear" data-index="3">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label">{morethanyear}</span>
+              </label>
+            </div>
+          </span>
+        </div>
+      </div>
+
+      <!-- What is your gender -->
+      <div class="nds-form-element nds-form-container">
+        <legend class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+          <span class="nds-m-right_x-small">{secondQuestionText}</span><br />
+        </legend>
+        <div class="nds-form-element__control nds-horizontal_radio">
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input
+                type="radio"
+                name="secondQuestionResponse"
+                value="Male"
+                id="secondQuestionResponseMale"
+                onchange={handleSecondQuestionChange}
+                checked={isMale}
+              />
+              <label class="nds-radio__label" for="secondQuestionResponseMale" data-index="0">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label">{male}</span>
+              </label>
+            </div>
+          </span>
+
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input
+                type="radio"
+                name="secondQuestionResponse"
+                value="Female"
+                id="secondQuestionResponseFemale"
+                onchange={handleSecondQuestionChange}
+                checked={isFemale}
+              />
+              <label class="nds-radio__label" for="secondQuestionResponseFemale" data-index="1">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label">{female}</span>
+              </label>
+            </div>
+          </span>
+
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input
+                type="radio"
+                name="secondQuestionResponse"
+                value="Other"
+                id="secondQuestionResponseOther"
+                onchange={handleSecondQuestionChange}
+                checked={isOther}
+              />
+              <label class="nds-radio__label" for="secondQuestionResponseOther" data-index="2">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label">{other}</span>
+              </label>
+            </div>
+          </span>
+
+          <span class="nds-radio last-option">
+            <div class="radio-container">
+              <input
+                type="radio"
+                name="secondQuestionResponse"
+                value="Prefer not to say"
+                id="secondQuestionResponsePreferNotToSay"
+                onchange={handleSecondQuestionChange}
+                checked={iSPrefferNotToSay}
+              />
+              <label class="nds-radio__label" for="secondQuestionResponsePreferNotToSay" data-index="3">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label">{prefernot}</span>
+              </label>
+            </div>
+          </span>
+        </div>
+      </div>
+
+      <div class="nds-form-element nds-form-container">
+        <legend class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+          <span class="nds-m-right_x-small">{thirdQuestionText}</span><br />
+        </legend>
+        <div class="nds-form-element__control nds-horizontal_radio">
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input
+                type="radio"
+                name="thirdQuestionRespo"
+                value="Yes"
+                id="thirdQuestionResponseYes"
+                onchange={handlethirdQuestionChange}
+                checked={thirdIsYes}
+              />
+              <label class="nds-radio__label" for="thirdQuestionResponseYes" data-index="0">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{yes}</span>
+              </label>
+            </div>
+          </span>
+          <span class="nds-radio last-option">
+            <div class="radio-container">
+              <input
+                type="radio"
+                name="thirdQuestionRespo"
+                value="No"
+                id="thirdQuestionResponseNo"
+                onchange={handlethirdQuestionChange}
+                checked={thirdIsNo}
+              />
+              <label class="nds-radio__label" for="thirdQuestionResponseNo" data-index="1">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{no}</span>
+              </label>
+            </div>
+          </span>
+        </div>
+      </div>
+
+      <div class="nds-horizontal-form-element nds-form-container">
+        <legend class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+          <span class="nds-m-right_x-small">{fourthQuestionText}<br />{selectall}</span><br />
+        </legend>
+        <div class="nds-form-element__controll nds-vertical_radio">
+          <div class="nds-checkbox-wrapper">
+            <input
+              type="checkbox"
+              name="fourthQuestionResponse"
+              value="Relationships with friends and family"
+              id="fourthQuestionResponseFriendsFamily"
+              onchange={handleFourthQuestionChange}
+              checked={fourthCheckRelatFam}
+            />
+            <label class="nds-radio-label" for="fourthQuestionResponseFriendsFamily">{relationshipwithff}</label><br />
+          </div>
+          <div class="nds-checkbox-wrapper">
+            <input
+              type="checkbox"
+              name="fifteenthQuestionResponse"
+              value="Relationship with Partner"
+              id="fourthQuestionResponsePartner"
+              onchange={handleFourthQuestionChange}
+              checked={fourthCheckWithPartner}
+            />
+            <label class="nds-radio-label" for="fourthQuestionResponsePartner">{relationshipwithpartner}</label><br />
+          </div>
+          <div class="nds-checkbox-wrapper last-option">
+            <input
+              type="checkbox"
+              name="fifteenthQuestionResponse"
+              value="Self Esteem"
+              id="fourthQuestionResponseSelfEsteem"
+              onchange={handleFourthQuestionChange}
+              checked={fourthCheckSelfEsteem}
+            />
+            <label class="nds-radio-label" for="fourthQuestionResponseSelfEsteem">{selfesteem}</label><br />
+          </div>
+        </div>
+      </div>
+
+      <div class={customClass}>
+        <legend class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+          <span class="nds-m-right_x-small">{fifthQuestionText}</span><br />
+        </legend>
+        <div class="nds-form-element__control nds-horizontal_radiotwo">
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input
+                type="radio"
+                name="NinthQuestionResponse"
+                value="Yes"
+                id="fifthQuestionResponseYes"
+                onchange={handleFifthQuestionChange}
+                checked={fifthRadYes}
+              />
+              <label class="nds-radio__label" for="fifthQuestionResponseYes" data-index="0">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{yes}</span>
+              </label>
+            </div>
+          </span>
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input
+                type="radio"
+                name="NinthQuestionResponse"
+                value="No"
+                id="fifthQuestionResponseNo"
+                onchange={handleFifthQuestionChange}
+                checked={fifthRadNo}
+              />
+              <label class="nds-radio__label" for="fifthQuestionResponseNo" data-index="1">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{no}</span>
+              </label>
+            </div>
+          </span>
+        </div>
+      </div>
+
+      <div if:true={sixthQuestionVisible}>
+        <div class="nds-horizontal-form-element nds-form-containertwo">
+          <legend class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_lefttwo">
+            <span class="nds-m-right_x-small">{sixthQuestionText}</span><br />
+          </legend>
+          <div class="nds-form-element__controll nds-vertical_radio">
+            <div class="nds-checkbox-wrapper">
+              <input
+                type="checkbox"
+                value="Asthma"
+                name="tenthQuestionResponse"
+                id="sixthQuestionResponseAsthma"
+                onchange={handleSixthQuestionchange}
+                checked={tenthCheckAsthma}
+              />
+              <label class="nds-radio-label" for="sixthQuestionResponseAsthma">{asthma}</label>
+            </div>
+            <div class="nds-checkbox-wrapper">
+              <input
+                type="checkbox"
+                value="Diabetes mellitus"
+                name="tenthQuestionResponse"
+                id="sixthQuestionResponseDiabetes"
+                onchange={handleSixthQuestionchange}
+                checked={tenthCheckDiabetes}
+              />
+              <label class="nds-radio-label" for="sixthQuestionResponseDiabetes">{diabetes}</label>
+            </div>
+            <div class="nds-checkbox-wrapper">
+              <input
+                type="checkbox"
+                value="Depression"
+                name="tenthQuestionResponse"
+                id="sixthQuestionResponseDepression"
+                onchange={handleSixthQuestionchange}
+                checked={tenthCheckDepression}
+              />
+              <label class="nds-radio-label" for="sixthQuestionResponseDepression">{depression}</label>
+            </div>
+            <div class="nds-checkbox-wrapper">
+              <input
+                type="checkbox"
+                value="Hay fever / Allergic conditions"
+                name="tenthQuestionResponse"
+                id="sixthQuestionResponseHayFever"
+                onchange={handleSixthQuestionchange}
+                checked={tenthCheckHayFever}
+              />
+              <label class="nds-radio-label" for="sixthQuestionResponseHayFever">{hayFever}</label>
+            </div>
+            <div class="nds-checkbox-wrapper">
+              <input
+                type="checkbox"
+                value="High blood pressure / Hypertension"
+                name="tenthQuestionResponse"
+                id="sixthQuestionResponseHypertension"
+                onchange={handleSixthQuestionchange}
+                checked={tenthCheckBp}
+              />
+              <label class="nds-radio-label" for="sixthQuestionResponseHypertension">{hypertension}</label>
+            </div>
+            <div class="nds-checkbox-wrapper">
+              <input
+                type="checkbox"
+                value="High Cholesterol"
+                name="tenthQuestionResponse"
+                id="sixthQuestionResponseCholesterol"
+                onchange={handleSixthQuestionchange}
+                checked={tenthCheckHighChol}
+              />
+              <label class="nds-radio-label" for="sixthQuestionResponseCholesterol">{highcholestrol}</label>
+            </div>
+            <div class="nds-checkbox-wrapper">
+              <input
+                type="checkbox"
+                value="Obesity"
+                name="tenthQuestionResponse"
+                id="sixthQuestionResponseObesity"
+                onchange={handleSixthQuestionchange}
+                checked={tenthCheckObesity}
+              />
+              <label class="nds-radio-label" for="sixthQuestionResponseObesity">{obesityc}</label>
+            </div>
+            <div class="nds-checkbox-wrapper">
+              <input
+                type="checkbox"
+                value="Osteoporosis"
+                name="tenthQuestionResponse"
+                id="sixthQuestionResponseOsteoporosis"
+                onchange={handleSixthQuestionchange}
+                checked={tenthCheckOsteo}
+              />
+              <label class="nds-radio-label" for="sixthQuestionResponseOsteoporosis">{osteoporosisc}</label>
+            </div>
+            <div class="nds-checkbox-wrapper">
+              <input
+                type="checkbox"
+                value="Peptic ulcer / Gastric ulcer"
+                name="tenthQuestionResponse"
+                id="sixthQuestionResponsePepticUlcer"
+                onchange={handleSixthQuestionchange}
+                checked={tenthCheckPeptic}
+              />
+              <label class="nds-radio-label" for="sixthQuestionResponsePepticUlcer">{ulcer}</label>
+            </div>
+            <div class="nds-checkbox-wrapper">
+              <input
+                type="checkbox"
+                value="Plaque psoriasis"
+                name="tenthQuestionResponse"
+                id="sixthQuestionResponsePlaquePsoriasis"
+                onchange={handleSixthQuestionchange}
+                checked={tenthCheckplaque}
+              />
+              <label class="nds-radio-label" for="sixthQuestionResponsePlaquePsoriasis">{psoriasis}</label>
+            </div>
+            <div class="nds-checkbox-wrapper">
+              <input
+                type="checkbox"
+                value="Psoriatic arthritis"
+                name="tenthQuestionResponse"
+                id="sixthQuestionResponsePsoriaticArthritis"
+                onchange={handleSixthQuestionchange}
+                checked={tenthCheckpsoriatic}
+              />
+              <label class="nds-radio-label" for="sixthQuestionResponsePsoriaticArthritis">{psoriaticarthritis}</label>
+            </div>
+            <div class="nds-checkbox-wrapper last-option">
+              <input
+                type="checkbox"
+                value="Others"
+                name="tenthQuestionResponse"
+                id="sixthQuestionResponseOthers"
+                onchange={handleSixthQuestionchange}
+                checked={tenthCheckOthers}
+              />
+              <label class="nds-radio-label" for="sixthQuestionResponseOthers">{others}</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column2">
+      <div class="box">
+        <div class="button-container">
+          <button label="Submit" onclick={submitResponses} class="retbutton1">{next}</button>&nbsp;&nbsp;&nbsp;
+          <button label="Save As Draft" onclick={navigationMethod} class="savebutton1">{skip}</button>
+        </div>
+        <div class="line"></div>
+      </div>
+    </div>
+  </div>
+
+  <template if:true={customFormModal}>
+    <div class="modal-backdrop"></div>
+    <div class="modal-visible">
+      <div class={popupClass1}>
+        <div class="popup2-container">
+          <button onclick={closePopup1} class="times">&times;</button>
+          <p class="message">{message}</p><br />
+          <p class="content1">{content1}</p><br /><br />
+          <button onclick={closePopup1} class="retbutton">{returnbackc}</button>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template if:true={isPopupOpen}>
+    <div class="modal-backdrop"></div>
+    <div class="modal-visible">
+      <div class={popupClass}>
+        <div class="popup">
+          <button class="close-button" title="Close" onclick={closePopup}>&times;</button>
+          <div class="content">
+            <p class="heading">{confirmsub}</p><br />
+            <p class="paragh">{cannotedit}</p><br />
+            <div class="btn">
+              <button class="cancelbtn" onclick={closePopup}>&nbsp;{cancelbt} &nbsp;</button>&emsp;
+              <button class="submitbtn" onclick={confirmSubmission}>{confirmbt}</button>&emsp;<br /><br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template if:true={isConfirmationDialogOpen}>
+    <div class={popupClass}>
+      <div class="popup">
+        <button class="close-button" title="Close" onclick={closePopup}>&times;</button>
+        <div class="content">
+          <p class="heading">{confirmsub}</p><br />
+          <p class="paragh">{cannotedit}</p><br />
+          <div class="btn">
+            <button class="cancelbtn" onclick={closePopup}>&nbsp;{cancelbt} &nbsp;</button>&emsp;
+            <button class="submitbtn" onclick={saveAsDraft}>{confirmbt}</button>&emsp;<br /><br />
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+   <div class="button-container-bottom">
+          <button label="Submit" onclick={submitResponses} class="retbutton1-bottom">{next}</button>&nbsp;&nbsp;&nbsp;
+          <button label="Save As Draft" onclick={navigationMethod} class="savebutton1-bottom">{skip}</button>
+        </div>
+</template>

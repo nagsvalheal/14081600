@@ -1,0 +1,218 @@
+/* Define styling for custom message with class slds-form-element__help */
+/*--Font Declaration---*/
+@font-face {
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff") format("woff");
+}
+
+@font-face {
+	font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff") format("woff");
+}
+
+.closeclass {
+	font-size: 40px;
+}
+
+.modal-visible {
+	display: block;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 33px;
+	border: 1px solid #ccc;
+	z-index: 1000;
+	border-radius: 12px;
+}
+
+.hiconmobile {
+	display: none;
+}
+
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 999;
+}
+
+.modal-content {
+	text-align: left;
+}
+
+.modal-buttons {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.modalHead {
+	font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 44px;
+	color: #403a60;
+}
+
+.modalPara {
+	margin-top: 20px;
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 32px;
+	color: #403a60;
+}
+
+.modal-close {
+	position: absolute;
+	top: -10px;
+	right: 10px;
+	cursor: pointer;
+	font-size: 45px;
+	color: #403a60;
+}
+.modal-close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 45px; 
+    padding: 0;
+}
+ .home-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.modal-close:hover {
+	color: #000;
+}
+
+.button-Div {
+	background-color: #403a60;
+	border-radius: 15px;
+	color: white;
+	font-weight: 800;
+	border-style: none;
+	padding: 10px 25px;
+	font-size: 14px;
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.button-DivNoBack {
+	margin-right: 20px;
+	background-color: white;
+	border-radius: 15px;
+	color: #403a60;
+	font-weight: 800;
+	border-style: solid;
+	border-color: #403a60;
+	padding: 10px 25px;
+	font-size: 14px;
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.hicon {
+	display: block;
+	margin: 20px;
+	width: 40px;
+}
+
+a {
+	text-decoration: none;
+	color: #403a60;
+}
+
+.modal-content {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 99%;
+	pointer-events: auto;
+	background-clip: padding-box;
+	border-radius: 0.3rem;
+	outline: 0;
+	border: none;
+}
+
+@media only screen and (max-width: 768px) {
+	.hicon {
+		display: none;
+	}
+
+	.hiconmobile {
+		display: block;
+		margin: 20px;
+		width: 40px;
+	}
+
+	.a {
+		text-decoration: none;
+		color: #403a60;
+	}
+
+	.button-DivNoBack {
+		width: 100%;
+	}
+
+	.modal-buttons {
+		margin-top: 20px;
+		display: flex;
+		flex-direction: column-reverse;
+		justify-content: flex-end;
+		gap: 10px;
+	}
+
+	.modal-visible {
+		width: 95%;
+	}
+}
+
+@media only screen and (min-width: 769px) and (max-width: 850px) {
+	.hicon {
+		display: none;
+	}
+
+	.hiconmobile {
+		display: block;
+		margin: 20px;
+		width: 40px;
+	}
+
+	.a {
+		text-decoration: none;
+		color: #403a60;
+	}
+}
+
+@media only screen and (min-width: 856px) {
+	.hicon {
+		display: block;
+		margin: 20px;
+		width: 40px;
+	}
+
+	.hiconmobile {
+		display: none;
+	}
+
+	.a {
+		text-decoration: none;
+		color: #403a60;
+	}
+}

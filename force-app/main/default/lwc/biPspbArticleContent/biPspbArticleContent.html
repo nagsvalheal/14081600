@@ -1,0 +1,163 @@
+<!--This lightning web component is used to show the article content from Content Management System.-->
+<template>
+	<!--Display the article categories navigation for mobile view-->
+	<div class="mobilew" if:true ={showContent}>
+		<div class="QuickLinks">
+			<div class="display">
+				<h3 class="headingcategory">{articleCategories}</h3>
+				<div class="vicon">
+					<lightning-icon class="updowniconcat" if:true={down} icon-name="utility:chevrondown"
+						alternative-text="Connected" size="xx-small" title="xx-small size"
+						onclick={click} onkeydown={click}></lightning-icon>
+					<lightning-icon class="updowniconcat" if:true={up} icon-name="utility:chevronup"
+						alternative-text="Connected" size="xx-small" onclick={notclick}
+						title="xx-small size" onkeydown={notclick}></lightning-icon>
+				</div>
+			</div>
+			<span if:true={touch}>
+				<template if:true={showJustForMe}>
+					<button if:true={showJustForMe} label="Just for me &#8594;" data-name="Just for me"
+						onclick={handleButtonClicknew} class="end-btn" title="Just for me">
+						{justForMeLabel}
+						<svg width="16" height="16" class="categorytag" viewBox="0 0 16 16" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path d="M2 7.44531H14" stroke="#403A60" class="svgsty" stroke-width="1.5"
+								stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60" class="svgsty" stroke-width="1.5"
+								stroke-linecap="round" stroke-linejoin="round" />
+						</svg></button>&nbsp;&nbsp;&nbsp;
+				</template>
+
+				<template for:each={standarItems} for:item="relatedItem">
+					<button key={relatedItem.id} data-label={relatedItem.title} title={relatedItem.title}
+						class={relatedItem.category} onclick={handleButtonClicknew} data-id={relatedItem.id}
+						data-name={relatedItem.title}>
+						{relatedItem.title}
+						<svg width="16" height="16" class="categorytag" viewBox="0 0 16 16" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path d="M2 7.44531H14" stroke="#403A60" class="svgsty" stroke-width="1.5"
+								stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60" class="svgsty" stroke-width="1.5"
+								stroke-linecap="round" stroke-linejoin="round" />
+						</svg></button>&nbsp;&nbsp;&nbsp;
+				</template>
+
+				<button class={spevigoCategory} data-name={treatmentCategoryLabel} onclick={handleButtonClicknew}>
+					{treatmentCategoryLabel}<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M2 7.44531H14" stroke="#403A60" class="svgsty" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60" class="svgsty" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</button>
+			</span>
+			<hr class="line-article" />
+		</div>
+		<div class="title"></div>
+		<div class="article-container">
+			<div if:true={showThreeTag}>
+				<div class="tagcontainer">
+					<div>
+						<p class="compliment">
+							{firstTag}
+						</p>
+						&nbsp;
+					</div>
+					<div>
+						<p class="emily">{secondTag}</p>
+						&nbsp;
+					</div>
+					<div>
+						<p class="hello">{thirdTag}</p>
+					</div>
+				</div>
+			</div>
+			<div if:true={showTwoTag}>
+				<div class="tagcontainer">
+					<p class="compliment">
+						{firstTag}
+					</p>
+					<p class="emily">{secondTag}</p>
+					<p class="hello"></p>
+				</div>
+			</div>
+			<div class="para">
+				<svg width="40" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M12 3.42827C6.87482 3.42827 2.71395 7.58913 2.71395 12.7143C2.71395 17.8395 6.87482 22.0004 12 22.0004C17.1252 22.0004 21.286 17.8395 21.286 12.7143C21.286 7.58913 17.1252 3.42827 12 3.42827ZM11.2857 12.3707L7.982 15.0137C7.67413 15.2601 7.62413 15.7101 7.87056 16.018C8.117 16.3259 8.56702 16.3759 8.87489 16.1294L12.4464 13.2722C12.5329 13.2029 12.5986 13.1179 12.6436 13.0243L12.6443 13.0236C12.6893 12.93 12.7143 12.825 12.7143 12.7143V6.99982C12.7143 6.60552 12.3943 6.28551 12 6.28551C11.6057 6.28551 11.2857 6.60552 11.2857 6.99982V12.3707ZM5.06618 2.20894L2.20894 5.06618C1.93035 5.34476 1.93035 5.79764 2.20894 6.07622C2.48752 6.3548 2.94039 6.3548 3.21897 6.07622L6.07622 3.21897C6.3548 2.94039 6.3548 2.48752 6.07622 2.20894C5.79764 1.93035 5.34476 1.93035 5.06618 2.20894ZM17.9238 3.21897L20.781 6.07622C21.0596 6.3548 21.5125 6.3548 21.7911 6.07622C22.0696 5.79764 22.0696 5.34476 21.7911 5.06618L18.9338 2.20894C18.6552 1.93035 18.2024 1.93035 17.9238 2.20894C17.6452 2.48752 17.6452 2.94039 17.9238 3.21897Z"
+						fill="#403A60" class="svgfil"></path>
+				</svg>
+
+				<strong>{dynamicProperty} {minutes}</strong>
+			</div>
+
+			<div class="minsformb">
+				<svg width="40" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M12 3.42827C6.87482 3.42827 2.71395 7.58913 2.71395 12.7143C2.71395 17.8395 6.87482 22.0004 12 22.0004C17.1252 22.0004 21.286 17.8395 21.286 12.7143C21.286 7.58913 17.1252 3.42827 12 3.42827ZM11.2857 12.3707L7.982 15.0137C7.67413 15.2601 7.62413 15.7101 7.87056 16.018C8.117 16.3259 8.56702 16.3759 8.87489 16.1294L12.4464 13.2722C12.5329 13.2029 12.5986 13.1179 12.6436 13.0243L12.6443 13.0236C12.6893 12.93 12.7143 12.825 12.7143 12.7143V6.99982C12.7143 6.60552 12.3943 6.28551 12 6.28551C11.6057 6.28551 11.2857 6.60552 11.2857 6.99982V12.3707ZM5.06618 2.20894L2.20894 5.06618C1.93035 5.34476 1.93035 5.79764 2.20894 6.07622C2.48752 6.3548 2.94039 6.3548 3.21897 6.07622L6.07622 3.21897C6.3548 2.94039 6.3548 2.48752 6.07622 2.20894C5.79764 1.93035 5.34476 1.93035 5.06618 2.20894ZM17.9238 3.21897L20.781 6.07622C21.0596 6.3548 21.5125 6.3548 21.7911 6.07622C22.0696 5.79764 22.0696 5.34476 21.7911 5.06618L18.9338 2.20894C18.6552 1.93035 18.2024 1.93035 17.9238 2.20894C17.6452 2.48752 17.6452 2.94039 17.9238 3.21897Z"
+						fill="#403A60" class="svgfil"></path>
+				</svg>
+
+				<strong>{dynamicProperty} {minutes}</strong>
+			</div>
+
+			<lightning-formatted-rich-text value={articleContent}>
+			</lightning-formatted-rich-text>
+
+			<div class="minstag">
+				<svg width="40" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M12 3.42827C6.87482 3.42827 2.71395 7.58913 2.71395 12.7143C2.71395 17.8395 6.87482 22.0004 12 22.0004C17.1252 22.0004 21.286 17.8395 21.286 12.7143C21.286 7.58913 17.1252 3.42827 12 3.42827ZM11.2857 12.3707L7.982 15.0137C7.67413 15.2601 7.62413 15.7101 7.87056 16.018C8.117 16.3259 8.56702 16.3759 8.87489 16.1294L12.4464 13.2722C12.5329 13.2029 12.5986 13.1179 12.6436 13.0243L12.6443 13.0236C12.6893 12.93 12.7143 12.825 12.7143 12.7143V6.99982C12.7143 6.60552 12.3943 6.28551 12 6.28551C11.6057 6.28551 11.2857 6.60552 11.2857 6.99982V12.3707ZM5.06618 2.20894L2.20894 5.06618C1.93035 5.34476 1.93035 5.79764 2.20894 6.07622C2.48752 6.3548 2.94039 6.3548 3.21897 6.07622L6.07622 3.21897C6.3548 2.94039 6.3548 2.48752 6.07622 2.20894C5.79764 1.93035 5.34476 1.93035 5.06618 2.20894ZM17.9238 3.21897L20.781 6.07622C21.0596 6.3548 21.5125 6.3548 21.7911 6.07622C22.0696 5.79764 22.0696 5.34476 21.7911 5.06618L18.9338 2.20894C18.6552 1.93035 18.2024 1.93035 17.9238 2.20894C17.6452 2.48752 17.6452 2.94039 17.9238 3.21897Z"
+						fill="#403A60" class="svgfil"></path>
+				</svg>
+
+				<strong>{dynamicProperty} {minutes}</strong>
+			</div>
+			<!--Display the articles tags-->
+			<div class="tags">
+				<button data-label={firstTag} class="end-btnnew">
+					<lightning-formatted-rich-text value={firstTag}>
+					</lightning-formatted-rich-text>
+				</button>
+				&nbsp;&nbsp;
+				<button data-label={secondTag} class="end-btnnew">
+					<lightning-formatted-rich-text value={secondTag}>
+					</lightning-formatted-rich-text>
+				</button>
+				&nbsp;&nbsp;
+				<template if:true={thirdTag}>
+					<button data-label={thirdTag} class="end-btnnew">
+						<lightning-formatted-rich-text value={thirdTag}>
+						</lightning-formatted-rich-text>
+					</button>
+					&nbsp;&nbsp;
+				</template>
+				<template if:true={fourthTag}>
+					<button data-label={fourthTag} class="end-btnnew">
+						<lightning-formatted-rich-text value={fourthTag}>
+						</lightning-formatted-rich-text>
+					</button>
+					&nbsp;&nbsp;
+				</template>
+			</div>
+			<!--Display the article content-->
+			<lightning-formatted-rich-text value={remainContent}>
+			</lightning-formatted-rich-text>
+			<hr class="linedsk" />
+
+			<div class="container">
+				<!--Display the articles references content-->
+				<h2 class="reference-text">{references}</h2>
+				<lightning-icon class="updownicon" icon-name={iconName} alternative-text={iconAltText}
+					onclick={toggleContent} onkeypress={toggleContent}> 
+				</lightning-icon>
+			</div>
+			<div class={contentClass}>
+				<lightning-formatted-rich-text value={referenceContent}></lightning-formatted-rich-text>
+			</div>
+			<hr class="linedsk" />
+		</div>
+		<c-bi-Pspb-Related-Articles onarticlesloaded ={handleArticlesLoaded}></c-bi-Pspb-Related-Articles>
+	</div>
+</template>

@@ -1,0 +1,240 @@
+.para {
+	background-color: #ecdca8;
+	padding: 10px 17px;
+	border-radius: 8px;
+	display: inline-block;
+	position: absolute;
+	margin-left: -32px;
+	width: 286px;
+	height: fit-content;
+	top: 366px;
+	left: 110px;
+}
+
+.svgstyl {
+	fill: #696969;
+	fill: color(display-p3 0.4125 0.4125 0.4125);
+	fill-opacity: 1;
+}
+
+.svgfil {
+	fill: white;
+	fill-opacity: 1;
+}
+
+
+.image {
+	height: 160px;
+	width: 160px;
+	display: block;
+	margin: auto;
+	margin-top: 16px;
+	margin-left: 155px;
+}
+
+.message-container {
+	margin: auto;
+	height: 150px;
+	width: 250px;
+	margin-top: 60px;
+}
+
+.contain {
+	height: 300px;
+	width: 150px;
+}
+
+.searchoption {
+	display: none;
+}
+
+.gradientline {
+	display: none;
+}
+
+.mbintm {
+	display: none;
+}
+
+.paranew {
+	display: none;
+}
+
+@media only screen and (max-width: 430px) {
+	.image {
+		width: 56px;
+		height: 84.18px;
+		flex-shrink: 0;
+		margin-left: 10px;
+		margin-top: 10px;
+	}
+
+	.para {
+		display: flex;
+		width: 74%;
+		padding: 8px 5px;
+		justify-content: flex-end;
+		align-items: flex-start;
+		gap: 4px;
+		margin-top: -245px;
+		margin-left: -26px;
+		height: fit-content;
+		font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 16px;
+		padding-right: 15%;
+	}
+
+	.searchoption {
+		display: block;
+	}
+
+	.search-bar {
+		border: none;
+		border-bottom: none;
+		width: 79%;
+		height: 28px;
+		outline: none;
+		margin-left: 20px;
+		background-color: #fbfaf5;
+		font-size: 16px;
+		font-weight: 400;
+		color: rgba(44, 51, 58, 1);
+		font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+
+	.search-bar-border-bottom {
+		width: 97%;
+		margin-top: 8px;
+		border-width: 2px;
+		border-color: rgba(105, 105, 105, 1);
+	}
+
+	.search-icon-container {
+		margin-top: -183px;
+		margin-left: 3%;
+	}
+
+	.gradientline {
+		display: block;
+		border-width: 2px;
+		background: var(--Gradient,
+				linear-gradient(90deg,
+					#744f0d 0%,
+					#99693e 17.19%,
+					#efdba1 58.85%,
+					#744f0d 100%));
+		margin-top: -204px;
+		position: absolute;
+		margin-left: 3px;
+		height: 4px;
+		width: -webkit-fill-available;
+	}
+
+	.mbintm {
+		display: block;
+		background-color: #ecdca8;
+		height: fit-content;
+		margin-left: 92%;
+		position: absolute;
+		margin-top: -283px;
+	}
+
+	.intmark {
+		font-size: 19px;
+		color: grey;
+	}
+
+	.paranew {
+		width: 10%;
+		margin: 5px 5%;
+		position: relative;
+		left: 29%;
+		top: -71px;
+		background-color: #ecdca8;
+		border-radius: 5px;
+		text-align: center;
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 431px) and (max-width: 768px) {
+	.image {
+		width: 56px;
+		height: 84.18px;
+		flex-shrink: 0;
+		margin-left: 10px;
+	}
+
+	.para {
+		display: flex;
+		width: auto;
+		padding: 8px 5px;
+		justify-content: flex-end;
+		align-items: flex-start;
+		gap: 4px;
+		margin-top: -218px;
+		margin-left: -8%;
+		height: fit-content;
+
+		font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 16px;
+	}
+
+	.searchoption {
+		display: block;
+	}
+
+	.search-bar {
+		border: none;
+		border-bottom: none;
+		/* Remove border */
+		width: 84%;
+		height: 28px;
+		outline: none;
+		/* Remove focus outline */
+		margin-left: 20px;
+		background-color: #fbfaf5;
+		font-size: 16px;
+		font-weight: 400;
+		color: rgba(44, 51, 58, 1);
+		font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+
+	.search-bar-border-bottom {
+		width: auto;
+		margin-top: 8px;
+		border-width: 2px;
+		border-color: rgba(105, 105, 105, 1);
+	}
+
+	.search-icon-container {
+		margin-top: -183px;
+		margin-left: 27px;
+	}
+
+	.gradientline {
+		display: block;
+		border-width: 2px;
+		background: var(--Gradient,
+				linear-gradient(90deg,
+					#744f0d 0%,
+					#99693e 17.19%,
+					#efdba1 58.85%,
+					#744f0d 100%));
+		margin-top: -204px;
+		position: absolute;
+		margin-left: 3px;
+		height: 4px;
+		width: -webkit-fill-available;
+	}
+
+	.valueclear {
+		margin-left: auto;
+	}
+}

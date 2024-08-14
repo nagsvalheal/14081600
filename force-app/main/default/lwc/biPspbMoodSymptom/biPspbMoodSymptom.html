@@ -1,0 +1,53 @@
+<!-- This components using user reaction save values store this lwc -->
+    <template>
+        <div class="emoji-para" data-it-uid={userId}>
+            <div class="emoji-container">
+                <span class="custom-tooltip" data-tooltip="I am sad">
+                    <button class="moodButton" onclick={handleEmojiClick} onkeypress={handleEmojiClick} data-name="Unhappy">
+                    <img src={imgUrlWorried} alt={alternateTextWorried} class={emoji} 
+                        data-name="Unhappy"></img></img>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                </span>
+                <span class="custom-tooltip" data-tooltip="I am worried">
+                    <button class="moodButton" onclick={handleEmojiClick} onkeypress={handleEmojiClick} data-name="sad">
+                    <img src={imgUrlSad} alt={alternateTextSad} class={emoji} 
+                        data-name="sad"></img></img>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                </span>
+                <span class="custom-tooltip" data-tooltip="I am speechless">
+                    <button class="moodButton" onclick={handleEmojiClick} onkeypress={handleEmojiClick} data-name="speechless">
+                    <img src={imgUrlSpeechless} alt={alternateTextSpeechless} class={emoji} 
+                        data-name="speechless"></img></img>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                </span>
+                <span class="custom-tooltip" data-tooltip="I am joyfull">
+                    <button class="moodButton" onclick={handleEmojiClick} onkeypress={handleEmojiClick} data-name="Happy">
+                    <img src={imgUrlJoyfull} alt={alternateTextJoyful} class={emoji} 
+                        data-name="Happy"></img></img>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                </span>
+                <span class="custom-tooltip" data-tooltip="I am happy">
+                    <button class="moodButton" onclick={handleEmojiClick} onkeypress={handleEmojiClick} data-name="extremely happy">
+                    <img src={imgUrlHappy} alt={alternateTextHappy} class={emoji} 
+                        data-name="extremely happy"></img>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                </span>
+            </div>
+            <br>
+            <br>
+            <div class="itchiness"> {moodInfo} </div>
+        </div>
+        <div class="modal-btn-row">
+            <button class="modal-confirm-btn" type="button" onclick={onchangeAccept}  if:true={fatiqueErrors} disabled={moodTrack}
+                data-it-button="Mood: Confirm and Save">{confirmAndSave}</button>
+        </div>
+        <template if:true={currentMoodErrorSad}>
+            <div class="modal-message">
+                <p class="p">
+                    <img src={boxedIcon} alt={alternateTextIcon}>
+                    {extremeSadness}
+                </p>
+            </div>
+            <div class="modal-message1">
+                <p class="p">
+                    <img src={boxedIcon} alt={alternateTextIcon}>
+                    {extremeSadness}
+                </p>
+            </div>
+        </template>
+    </template>

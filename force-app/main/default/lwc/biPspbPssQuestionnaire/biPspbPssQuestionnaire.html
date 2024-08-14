@@ -1,0 +1,575 @@
+<!--This Lightning Web Component enables users to assess the severity of their psoriasis condition using the Psoriasis Symptom Scale (PSS) questionnaire.-->
+<template>
+    <div class={nonscrolling}>
+        <div class={popuphide}>
+            <div class="tophead">{pss}<sup>1</sup></div>
+            <div class="containercolumn" data-it-uid={userid}>
+                <!--To display Questions-->
+                <div class="column1">
+                    <div class="nds-form-element nds-form-container">
+                        <legend class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+                            <span class="nds-m-right_x-small">{firstQuestionText}</span><br />
+                        </legend>
+
+                        <div class="nds-form-element__control nds-horizontal_radio">
+                            <span class="nds-radio">
+                                <div class="radio-container">
+                                    <input
+                                        type="radio"
+                                        name="firstQuestionResponse"
+                                        value="Very Severe"
+                                        id="verySevere"
+                                        onchange={handleFirstQuestionChange}
+                                        checked={isBarVerySeverChecked}
+                                    />
+                                    <label class="nds-radio__label" for="verySevere" data-index="4">
+                                        <span class="nds-radio_faux"></span>
+                                        <span class="nds-form-element__label">{verySevere}</span>
+                                    </label>
+                                </div>
+                            </span>
+                            <span class="nds-radio">
+                                <div class="radio-container">
+                                    <input
+                                        type="radio"
+                                        name="firstQuestionResponse"
+                                        value="Severe"
+                                        id="severe"
+                                        onchange={handleFirstQuestionChange}
+                                        checked={isSevereChecked}
+                                    />
+                                    <label class="nds-radio__label" for="severe" data-index="3">
+                                        <span class="nds-radio_faux"></span>
+                                        <span class="nds-form-element__label">{severe}</span>
+                                    </label>
+                                </div>
+                            </span>
+                            <span class="nds-radio">
+                                <div class="radio-container">
+                                    <input
+                                        type="radio"
+                                        name="firstQuestionResponse"
+                                        value="Moderate"
+                                        id="moderate"
+                                        onchange={handleFirstQuestionChange}
+                                        checked={isModerateChecked}
+                                    />
+                                    <label class="nds-radio__label" for="moderate" data-index="2">
+                                        <span class="nds-radio_faux"></span>
+                                        <span class="nds-form-element__label">{moderate}</span>
+                                    </label>
+                                </div>
+                            </span>
+                            <span class="nds-radio">
+                                <div class="radio-container">
+                                    <input
+                                        type="radio"
+                                        name="firstQuestionResponse"
+                                        value="Mild"
+                                        id="mild"
+                                        onchange={handleFirstQuestionChange}
+                                        checked={isMildChecked}
+                                    />
+                                    <label class="nds-radio__label" for="mild" data-index="1">
+                                        <span class="nds-radio_faux"></span>
+                                        <span class="nds-form-element__label">{mild}</span>
+                                    </label>
+                                </div>
+                            </span>
+                            <span class="nds-radio last-option">
+                                <div class="radio-container">
+                                    <input
+                                        type="radio"
+                                        name="firstQuestionResponse"
+                                        value="None"
+                                        id="noneFirst"
+                                        onchange={handleFirstQuestionChange}
+                                        checked={isNoneChecked}
+                                    />
+                                    <label class="nds-radio__label" for="noneFirst" data-index="0">
+                                        <span class="nds-radio_faux"></span>
+                                        <span class="nds-form-element__label">{none}</span>
+                                    </label>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="nds-form-element nds-form-container">
+                        <legend class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+                            <span class="nds-m-right_x-small">{secondQuestionText}</span><br />
+                        </legend>
+                        <div class="nds-form-element__control nds-horizontal_radio">
+                            <span class="nds-radio">
+                                <div class="radio-container">
+                                    <input
+                                        type="radio"
+                                        name="secondQuestionResponse"
+                                        value="Very Severe"
+                                        id="verySevereSecond"
+                                        onchange={handleSecondQuestionChange}
+                                        checked={secondVerySever}
+                                    />
+                                    <label class="nds-radio__label" for="verySevereSecond" data-index="4">
+                                        <span class="nds-radio_faux"></span>
+                                        <span class="nds-form-element__label">{verySevere}</span>
+                                    </label>
+                                </div>
+                            </span>
+                            <span class="nds-radio">
+                                <div class="radio-container">
+                                    <input
+                                        type="radio"
+                                        name="secondQuestionResponse"
+                                        value="Severe"
+                                        id="severeSecond"
+                                        onchange={handleSecondQuestionChange}
+                                        checked={secondSevere}
+                                    />
+                                    <label class="nds-radio__label" for="severeSecond" data-index="3">
+                                        <span class="nds-radio_faux"></span>
+                                        <span class="nds-form-element__label">{severe}</span>
+                                    </label>
+                                </div>
+                            </span>
+                            <span class="nds-radio">
+                                <div class="radio-container">
+                                    <input
+                                        type="radio"
+                                        name="secondQuestionResponse"
+                                        value="Moderate"
+                                        id="moderateSecond"
+                                        onchange={handleSecondQuestionChange}
+                                        checked={secondModerate}
+                                    />
+                                    <label class="nds-radio__label" for="moderateSecond" data-index="2">
+                                        <span class="nds-radio_faux"></span>
+                                        <span class="nds-form-element__label">{moderate}</span>
+                                    </label>
+                                </div>
+                            </span>
+                            <span class="nds-radio">
+                                <div class="radio-container">
+                                    <input
+                                        type="radio"
+                                        name="secondQuestionResponse"
+                                        value="Mild"
+                                        id="mildSecond"
+                                        onchange={handleSecondQuestionChange}
+                                        checked={secondMild}
+                                    />
+                                    <label class="nds-radio__label" for="mildSecond" data-index="1">
+                                        <span class="nds-radio_faux"></span>
+                                        <span class="nds-form-element__label">{mild}</span>
+                                    </label>
+                                </div>
+                            </span>
+                            <span class="nds-radio last-option">
+                                <div class="radio-container">
+                                    <input
+                                        type="radio"
+                                        name="secondQuestionResponse"
+                                        value="None"
+                                        id="noneSecond"
+                                        onchange={handleSecondQuestionChange}
+                                        checked={secondNone}
+                                    />
+                                    <label class="nds-radio__label" for="noneSecond" data-index="0">
+                                        <span class="nds-radio_faux"></span>
+                                        <span class="nds-form-element__label">{none}</span>
+                                    </label>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="nds-form-element nds-form-container">
+                        <legend class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+                            <span class="nds-m-right_x-small">{thirdQuestionText}</span><br />
+                        </legend>
+                        <div class="nds-form-element__control nds-horizontal_radio">
+                            <span class="nds-radio">
+                                <div class="radio-container">
+                                    <input
+                                        type="radio"
+                                        name="thirdQuestionResponse"
+                                        value="Very Severe"
+                                        id="verySevereThird"
+                                        onchange={handleThirdQuestionChange}
+                                        checked={thirdVerySever}
+                                    />
+                                    <label class="nds-radio__label" for="verySevereThird" data-index="4">
+                                        <span class="nds-radio_faux"></span>
+                                        <span class="nds-form-element__label">{verySevere}</span>
+                                    </label>
+                                </div>
+                            </span>
+                            <span class="nds-radio">
+                                <div class="radio-container">
+                                    <input
+                                        type="radio"
+                                        name="thirdQuestionResponse"
+                                        value="Severe"
+                                        id="severeThird"
+                                        onchange={handleThirdQuestionChange}
+                                        checked={thirdSevere}
+                                    />
+                                    <label class="nds-radio__label" for="severeThird" data-index="3">
+                                        <span class="nds-radio_faux"></span>
+                                        <span class="nds-form-element__label">{severe}</span>
+                                    </label>
+                                </div>
+                            </span>
+                            <span class="nds-radio">
+                                <div class="radio-container">
+                                    <input
+                                        type="radio"
+                                        name="thirdQuestionResponse"
+                                        value="Moderate"
+                                        id="moderateThird"
+                                        onchange={handleThirdQuestionChange}
+                                        checked={thirdModerate}
+                                    />
+                                    <label class="nds-radio__label" for="moderateThird" data-index="2">
+                                        <span class="nds-radio_faux"></span>
+                                        <span class="nds-form-element__label">{moderate}</span>
+                                    </label>
+                                </div>
+                            </span>
+                            <span class="nds-radio">
+                                <div class="radio-container">
+                                    <input
+                                        type="radio"
+                                        name="thirdQuestionResponse"
+                                        value="Mild"
+                                        id="mildThird"
+                                        onchange={handleThirdQuestionChange}
+                                        checked={thirdMild}
+                                    />
+                                    <label class="nds-radio__label" for="mildThird" data-index="1">
+                                        <span class="nds-radio_faux"></span>
+                                        <span class="nds-form-element__label">{mild}</span>
+                                    </label>
+                                </div>
+                            </span>
+                            <span class="nds-radio last-option">
+                                <div class="radio-container">
+                                    <input
+                                        type="radio"
+                                        name="thirdQuestionResponse"
+                                        value="None"
+                                        id="noneThird"
+                                        onchange={handleThirdQuestionChange}
+                                        checked={thirdNone}
+                                    />
+                                    <label class="nds-radio__label" for="noneThird" data-index="0">
+                                        <span class="nds-radio_faux"></span>
+                                        <span class="nds-form-element__label">{none}</span>
+                                    </label>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="nds-form-element nds-form-container">
+                        <legend class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+                            <span class="nds-m-right_x-small">{fourthQuestionText}</span><br />
+                        </legend>
+                        <div class="nds-form-element__control nds-horizontal_radio">
+                            <span class="nds-radio">
+                                <div class="radio-container">
+                                    <input
+                                        type="radio"
+                                        name="fourthQuestionResponse"
+                                        value="Very Severe"
+                                        id="verySevereFourth"
+                                        onchange={handleFourthQuestionChange}
+                                        checked={fourthVerySevere}
+                                    />
+                                    <label class="nds-radio__label" for="verySevereFourth" data-index="4">
+                                        <span class="nds-radio_faux"></span>
+                                        <span class="nds-form-element__label">{verySevere}</span>
+                                    </label>
+                                </div>
+                            </span>
+                            <span class="nds-radio">
+                                <div class="radio-container">
+                                    <input
+                                        type="radio"
+                                        name="fourthQuestionResponse"
+                                        value="Severe"
+                                        id="severeFourth"
+                                        onchange={handleFourthQuestionChange}
+                                        checked={fourthSevere}
+                                    />
+                                    <label class="nds-radio__label" for="severeFourth" data-index="3">
+                                        <span class="nds-radio_faux"></span>
+                                        <span class="nds-form-element__label">{severe}</span>
+                                    </label>
+                                </div>
+                            </span>
+                            <span class="nds-radio">
+                                <div class="radio-container">
+                                    <input
+                                        type="radio"
+                                        name="fourthQuestionResponse"
+                                        value="Moderate"
+                                        id="moderateFourth"
+                                        onchange={handleFourthQuestionChange}
+                                        checked={fourthModerte}
+                                    />
+                                    <label class="nds-radio__label" for="moderateFourth" data-index="2">
+                                        <span class="nds-radio_faux"></span>
+                                        <span class="nds-form-element__label">{moderate}</span>
+                                    </label>
+                                </div>
+                            </span>
+                            <span class="nds-radio">
+                                <div class="radio-container">
+                                    <input
+                                        type="radio"
+                                        name="fourthQuestionResponse"
+                                        value="Mild"
+                                        id="mildFourth"
+                                        onchange={handleFourthQuestionChange}
+                                        checked={fourthMild}
+                                    />
+                                    <label class="nds-radio__label" for="mildFourth" data-index="1">
+                                        <span class="nds-radio_faux"></span>
+                                        <span class="nds-form-element__label">{mild}</span>
+                                    </label>
+                                </div>
+                            </span>
+                            <span class="nds-radio last-option">
+                                <div class="radio-container">
+                                    <input
+                                        type="radio"
+                                        name="fourthQuestionResponse"
+                                        value="None"
+                                        id="noneFourth"
+                                        onchange={handleFourthQuestionChange}
+                                        checked={fourthNone}
+                                    />
+                                    <label class="nds-radio__label" for="noneFourth" data-index="0">
+                                        <span class="nds-radio_faux"></span>
+                                        <span class="nds-form-element__label">{none}</span>
+                                    </label>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column2">
+                    <div class="box">
+                        <h2 class="ans">
+                            <span class="ansq">{totalDraftResponses}</span>/{countquestion}
+                            <span class="smalltxt"> {answered}</span>
+                        </h2>
+                        <div class="line"></div>
+                        <div class="button-container">
+                            <button
+                                label="Submit"
+                                onclick={submitResponses}
+                                class="retbutton1"
+                                data-it-button="PSS Questionnaire Page: submit">
+                                {submit}</button>&nbsp;&nbsp;&nbsp;
+                            <button
+                                label="Save As Draft"
+                                onclick={saveAsDraft}
+                                class="savebutton1"
+                                data-it-button="PSS Questionnaire Page: saveasdraft">
+                                {draftLabel}
+                            </button>
+                        </div>
+                        <br /><br />
+
+                        <div class="statusRE">
+                            <div class="roll1">
+                                <p class="rollout">{rolloutWithoutSpaceDate}</p>
+                                <p class="rddate">{rolloutDate}</p>
+                            </div>
+                            <br />
+                            <div class="roll2">
+                                <p class="expires">{expiresOn}</p>
+                                <p class="eddate">{expireDate}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box2">
+                        <div class="texts">{outStandingQue}</div>
+                        <div class="line"></div>
+
+                        <div class="category-names">
+                            <div class={checkdlqi}>
+                                <div class="category-box" onclick={navigateToCategory2} onkeydown={navigateToCategory2}>
+                                    <img src={dlqiImage} alt="Your Image" class="image" />
+                                    <div class="b">{dlqi}</div>
+                                </div>
+                            </div>
+                            <div class="category-box1">
+                                <img src={pssImage} alt="Your Image" class="image" />
+                                <div class="c">{pss}</div>
+                            </div>
+                            <div class={checkwai}>
+                                <div class="category-box" onclick={navigateToCategory4} onkeydown={navigateToCategory4}>
+                                    <img src={wpaiImage} alt="Your Image" class="image" />
+                                    <div class="d">{workAndActivity}</div>
+                                </div>
+                            </div>
+                            <div class={checkqsq}>
+                                <div class="category-box" onclick={navigateToCategory5} onkeydown={navigateToCategory5}>
+                                    <img src={qualitativeImage} alt="Your Image" class="image1" />
+                                    <div class="e">{qsq}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <template if:true={customFormModal}>
+            <div class="modal-backdrop"></div>
+            <div class="modal-visible">
+                <div class={popupClass1}>
+                    <div class="popup2-container">
+                        <button
+                            onclick={closePopup1}
+                            data-it-button="PSS Questionnaire Page: closePopup1"
+                            class="times">
+                            &times;
+                        </button>
+                        <p class="message">{message}</p>
+                        <br />
+                        <p class="content1">{saveAsDrfatContent}</p>
+                        <br /><br />
+
+                        <div>
+                            <button
+                                class="savebutton"
+                                onclick={saveAsDraft}
+                                data-it-button="PSS Questionnaire Page: saveasdraft">
+                                {draftLabel}
+                            </button>
+                            <button
+                                onclick={closePopup1}
+                                data-it-button="PSS Questionnaire Page: returnbackc"
+                                class="retbutton">
+                                {returnBackc}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <template if:true={isPopupOpen}>
+            <div class="modal-backdrop"></div>
+            <div class="modal-visible">
+                <div class={popupClass}>
+                    <div class="popup">
+                        <!-- close button -->
+                        <button
+                            class="close-button"
+                            title="Close"
+                            data-it-button="PSS Questionnaire Page: closePopup"
+                            onclick={closePopup}>
+                            &times;
+                        </button>
+                        <!-- text and confirmation question-->
+                        <div class="content">
+                            <p class="heading">{confirmSub}</p>
+                            <br />
+                            <p class="paragh">{cannotEdit}</p>
+                            <br />
+                            <!-- buttons for cancel and submit-->
+                            <div class="btn">
+                                <button
+                                    class="cancelbtn"
+                                    data-it-button="PSS Questionnaire Page: cancelbt"
+                                    onclick={closePopup}>
+                                    &nbsp;{cancelbt} &nbsp;</button>&emsp;
+                                <button
+                                    class="submitbtn"
+                                    data-it-button="PSS Questionnaire Page: confirmbt"
+                                    onclick={confirmSubmission}>
+                                    {confirmbt}</button>&emsp; <br /><br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <!-- ... Confirmation Button starts -->
+
+        <template if:true={isConfirmationDialogOpen}>
+            <div class="modal-backdrop"></div>
+            <div class="modal-visible">
+                <div class={popupClass}>
+                    <div class="popup">
+                        <!-- close button -->
+                        <button
+                            class="close-button"
+                            data-it-button="PSS Questionnaire Page: close"
+                            title="Close"
+                            onclick={closePopup}>
+                            &times;
+                        </button>
+                        <!-- text and confirmation question-->
+                        <div class="content">
+                            <p class="heading">{confirmSub}</p>
+                            <br />
+                            <p class="paragh">{cannotEdit}</p>
+                            <br />
+                            <!-- buttons for cancel and submit-->
+                            <div class="btn">
+                                <button
+                                    class="cancelbtn"
+                                    data-it-button="PSS Questionnaire Page: cancelbt"
+                                    onclick={closePopup}>
+                                    &nbsp;{cancelbt} &nbsp;</button>&emsp;
+                                <button
+                                    class="submitbtn"
+                                    data-it-button="PSS Questionnaire Page: confirmbt"
+                                    onclick={confirmSubmission}>
+                                    {confirmbt}</button>&emsp; <br /><br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template if:true={isDraftSavedPopupOpen}>
+		<div class={popupClassSaveDraft}>
+			<div class="popup">	
+				<c-bi-pspb-common-popup toast-message={draftSavedMessage} onbuttonclick={closeDraftSavedPopup}></c-bi-pspb-common-popup>
+			</div>
+		</div>
+	    </template>
+
+        <br />
+                  <div if:true={visibleButton} class="button-container-bottom">
+                            <button
+                                label="Submit"
+                                onclick={submitResponses}
+                                class="retbutton1-bottom"
+                                data-it-button="PSS Questionnaire Page: submit">
+                                {submit}</button>&nbsp;&nbsp;&nbsp;
+                            <button
+                                label="Save As Draft"
+                                onclick={saveAsDraft}
+                                class="savebutton1-bottom"
+                                data-it-button="PSS Questionnaire Page: saveasdraft">
+                                {draftLabel}
+                            </button>
+                        </div>
+        <div class="botcontainer">
+            <div class="bot1">1.&nbsp;{pssbottom1}</div>
+            <br />
+        </div>
+
+        
+    </div>
+</template>

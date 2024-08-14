@@ -1,0 +1,27 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+<template>
+	<button onclick={openHome} class="home-button">
+		<img class="hicon" src={home_Icon} alt="Home Icon"/>
+		<img src={home_Icon_Mobile} class="hiconmobile" alt="Home Icon Mobile"/>
+	</button>
+
+	<template if:true={openModal}>
+		<div class="modal-backdrop"></div>
+		<div class="modal-visible">
+			<div class="modal-close">
+				<button class="modal-close-button" onclick={handleNo}>
+					<span>&times;</span>
+				</button>
+			</div>
+			<div class="modal-content">
+				<p class="modalHead">{leaveThisPage}</p>
+				<p class="modalPara">{changeMade}</p>
+				<div class="modal-buttons">
+					<button class="button-DivNoBack" onclick={handleNo}>{cancelLabel}</button>
+					<button class="button-Div" onclick={handleYes}>{okay}</button>
+				</div>
+			</div>
+		</div>
+	</template>
+</template>

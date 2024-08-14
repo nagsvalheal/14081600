@@ -1,0 +1,58 @@
+<!--This is Consolidate Component(LWC) this contains Avatar and Dermatology Life Quality Index (DLQI) Questionnaire to achieve mobile responsive.-->
+<template>
+	<div class="spinner-wrapper" if:true={showSpinner}>
+	<div class="loader"></div>
+	</div>
+	<!-- Strings are hard coded in this HTML file to comply with the mobile responsiveness-->
+	<lightning-layout multiple-rows class="tabClass">
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+			<!--Navigations Tabs-->
+			<div class="tabsDiv pad">
+				<div class="grid-containerTabs">
+					<a onclick={openOutQuestionnaires} class="anchorTextActive"
+						data-it-button="Outstanding Page: Outstanding Questionnaires">{outStandingLabel}</a>
+					<template if:true={showTabMenuSummary}>
+							<a onclick={openSummary} class="anchorText"
+								data-it-button="Outstanding Page: Summary">{summaryTxt}</a>
+						</template>
+						<template if:false={showTabMenuSummary}><a class="anchorText disabled"
+								data-it-button="Outstanding Page: Summary">{summaryTxt}</a>
+						</template>
+						<template if:true={showTabMenu}>
+							<a onclick={openComQuestionnaires} class="anchorText"
+								data-it-button="Outstanding Page:Completed Questionnaires">{completedTxt}</a>
+						</template>
+						
+						<template if:false={showTabMenu}>
+							<a class="anchorText disabled"
+								data-it-button="Outstanding Page: Completed Questionnaires">{completedTxt}</a>
+						</template>
+					<a onclick={openPersonalize} class="anchorText"
+						data-it-button="Outstanding Page: Let’s Personalize">{letPersonalizeTxt}</a>
+				</div>
+			</div>
+		</lightning-layout-item>
+	</lightning-layout>
+
+	<lightning-layout multiple-rows class="layoutColor pad">
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size={screenWidth}
+			class="slds-p-top_xx-large slds-p-bottom_xx-large">
+			<!--Avatar Component-->
+			<div class="custom-box1">
+				<c-bi-Pspb-Avatar-Navigation-Questionnaires onvaluechange={handleValueChange}> </c-bi-Pspb-Avatar-Navigation-Questionnaires>
+			</div>
+		</lightning-layout-item>
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="8" large-device-size="8"
+			class="slds-p-top_xx-large slds-p-bottom_xx-large">
+			<!--DLQI Questionnaire-->
+			<div class="custom-box2">
+				<div>
+					<c-bi-Pspb-Dlqi-Questionnaire onvaluechange={handleValueChange}></c-bi-Pspb-Dlqi-Questionnaire>
+				</div>
+			</div>
+		</lightning-layout-item>
+		<c-bi-pspb-common-url-validation 
+			final-part-of-url={finalPartOfUrl} onvaluechange={handleUrlChange}>
+    	</c-bi-pspb-common-url-validation>
+	</lightning-layout>
+</template>

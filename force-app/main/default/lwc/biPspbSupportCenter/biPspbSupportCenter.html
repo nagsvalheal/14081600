@@ -1,0 +1,83 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+<!--This LWC is designed for support center main page-->
+<template>
+    <div if:true={showSpinner}>
+		<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	 </div>
+	<div class="main" data-it-uid = {userId}>
+		<div class="response">
+			<div class="heading">
+				<h2>{supportCenter}</h2>
+			</div>
+			<div if:true={showCollectButton} class="collectbutton" id="buttonid">
+			<div class="threebtn">
+    <button class={classOne} onclick={medicalInformationtoggle} data-value="Medical Information Enquiry" data-it-button="supportcenter: Medical Information Enquiry">
+        <div class="colclass">
+            <div>
+                <img class="imgclass" alt="Health Kit" src={medicalInformation} width="30px" height="30px">
+            </div>
+            <div>
+                <div class="info1">
+                    <p class="MInfo">{medical}</p>
+                    <p class="Enquiry">{enquiry}</p>
+                </div>
+            </div>
+        </div>
+    </button>
+</div>
+<div class="threebtn">
+    <button class={classTwo} onclick={reportAdverseEventstoggle} data-value="Report Adverse Events" data-it-button="supportcenter: Report Adverse Events">
+        <div class="colclass">
+            <div>
+                <img class="imgclass" alt="Warning Icon" src={reportAdverse} width="30px" height="30px">
+            </div>
+            <div class="info3">
+                <div class="info1">
+                    <p class="pinfo">{report}</p>
+                </div>
+                <div class="info2">
+                    <p class="pinfo1">{event}</p>
+                </div>
+            </div>
+        </div>
+    </button>
+</div>
+<div class="threebtn">
+    <button class={classThree} onclick={platformSupporttoggle} data-value="PSP Platform Support" data-it-button="supportcenter: PSP Platform Support">
+        <div class="colclass">
+            <div>
+                <img class="imgclass" alt="Box" src={platformSupport} width="30px" height="30px">
+            </div>
+            <div class="info4">
+                <div class="info1">
+                    <p class="pinfo2">{platform}</p>
+                </div>
+                <div class="info2">
+                    <p class="pinfo1">{support}</p>
+                </div>
+            </div>
+        </div>
+    </button>
+</div>
+
+			</div><br><br>
+			<div  if:true={contact} class="form-container">
+				<!-- Your form content goes here -->
+				<div class="medicalform">
+					<div class="flexclass">
+						<div><img class="img" src={phnimg} alt="Phone" width="32px" height="32px"></div>
+					<div><ul>{supportAssist}<br>
+						{supportService}</ul><br></div></div>
+					<ul class="noclass"><b>{supportSms}</b></ul>
+					<ul class="tymclass">{supportFriday}</ul><br><br>
+					
+					<div class="flexclass">
+					<div><img class="img1"  src={emailimg} alt="Email" width="32px" height="32px"></div>
+					<div><ul>{supportMail} </ul></div></div>
+					<ul class="noclass"><b  class="line">{supportEmail}</b></ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

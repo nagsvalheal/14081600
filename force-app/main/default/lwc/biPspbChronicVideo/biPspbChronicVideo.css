@@ -1,0 +1,358 @@
+.video-container {
+	width: 908px;
+	height: 511px;
+	border-radius: 12px;
+	margin: 0 auto;
+}
+
+.responsive-iframe {
+	border-radius: 8px;
+}
+
+.reference-text {
+	font-size: 20px;
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-weight: 400;
+	color: rgba(64, 58, 96, 1);
+}
+
+/* toggleContent.css */
+.container {
+	display: flex;
+	align-items: center;
+}
+
+.content {
+	display: none;
+}
+
+.visible {
+	display: block;
+}
+
+.heading {
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 44px;
+	/* 137.5% */
+}
+
+.transcript {
+	color: var(--grey-white-grey-100, #2a333b);
+
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 22px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 28px;
+	/* 127.273% */
+}
+
+.disclaimer {
+	color: #413a63;
+
+	/* Body Default/Grey100-Semibold */
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 24px;
+}
+
+.messagedisclaimer {
+	width: 904px;
+	color: rgba(64, 58, 96, 1);
+	font-size: 16px;
+	font-weight: 400;
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.videosreel {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}
+
+.prenxtutton {
+	display: flex;
+	justify-content: space-between;
+}
+
+.button-disable {
+	border: none;
+	padding: 0;
+	/* Optional: Remove padding for a cleaner look */
+	background-color: transparent;
+	/* Optional: Make the background transparent */
+	color: #8d89a5;
+	font-size: 24px;
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	display: flex;
+	pointer-events: none;
+	/* Disable pointer events to make it non-interactive */
+
+}
+
+.button-disable-next {
+	border: none;
+	padding: 0;
+	/* Optional: Remove padding for a cleaner look */
+	background-color: transparent;
+	/* Optional: Make the background transparent */
+	color: #8d89a5;
+	font-size: 18px;
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	margin-left: 40%;
+	display: flex;
+	
+}
+
+.borderless-button {
+	cursor: pointer;
+	border: none;
+	padding: 0;
+	/* Optional: Remove padding for a cleaner look */
+	background-color: transparent;
+	/* Optional: Make the background transparent */
+	color: #403a60;
+	font-size: 24px;
+	width: 400px;
+	height: 30px;
+	top: 8px;
+	font-style: bold;
+	line-height: 38px;
+
+	display: flex;
+
+	/* Add any other styling as needed */
+}
+
+.borderless-button-next {
+	cursor: pointer;
+	border: none;
+	padding: 0;
+	/* Optional: Remove padding for a cleaner look */
+	background-color: transparent;
+	/* Optional: Make the background transparent */
+	color: #403a60;
+	font-size: 24px;
+	font-style: bold;
+
+	margin-left: 40%;
+	display: flex;
+
+	/* Add any other styling as needed */
+}
+
+.button-anger {
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 50%;
+	border: 1px solid black;
+	margin-left: 10px;
+	padding: 8px;
+	font-size: 15px;
+	display: flex;
+	color: rgba(64, 58, 96, 1) !important;
+}
+
+.button-anger-prev {
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 18px;
+	border-radius: 50%;
+	border: 1px solid black;
+	margin-right: 10px;
+	padding: 8px;
+	display: flex;
+	color: rgba(64, 58, 96, 1) !important;
+}
+
+.button-anger-prev svg {
+	transform: rotate(180deg);
+}
+
+.video-containermb {
+	display: none;
+}
+
+.vicon {
+	margin-left: 85%;
+}
+
+.videosreelmb {
+	display: none;
+}
+
+/*--Font Declaration---*/
+
+@font-face {
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff") format("woff");
+}
+
+@font-face {
+	font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff") format("woff");
+}
+
+/* media query ----------------------------------------*/
+
+@media only screen and (min-width: 320px) and (max-width: 360px) {
+	.heading {
+		font-size: 24px;
+	}
+
+	.video-containermb {
+		width: 296px;
+		height: 166px;
+		display: block;
+		margin-left: 0px;
+	}
+
+	.video-container {
+		display: none;
+	}
+
+	.messagedisclaimer {
+		width: 90%;
+	}
+
+	.vicon {
+		margin-left: 54%;
+	}
+
+	.prenxtutton {
+		width: 77%;
+	}
+
+	.videosreel {
+		display: none;
+	}
+
+	.mbalign {
+		margin-left: 10px;
+	}
+
+	.videosreelmb {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		width: 97%;
+	}
+}
+
+@media only screen and (min-width: 361px) and (max-width: 400px) {
+	.heading {
+		font-size: 24px;
+		margin: 0px auto 0 10%;
+	}
+
+	.video-containermb {
+		width: 296px;
+		height: 166px;
+		display: block;
+		margin: 0 auto;
+	}
+
+	.video-container {
+		display: none;
+	}
+
+	.messagedisclaimer {
+		width: 90%;
+	}
+
+	.vicon {
+		margin-left: 54%;
+	}
+
+	.prenxtutton {
+		width: 77%;
+	}
+
+	.videosreel {
+		display: none;
+	}
+
+	.mbalign {
+		margin-left: 10px;
+	}
+
+	.videosreelmb {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		width: 97%;
+	}
+}
+
+@media only screen and (min-width: 401px) and (max-width: 1100px) {
+	.video-containermb {
+		width: 67%;
+		height: 166px;
+		display: block;
+		margin: 0 auto;
+	}
+
+	.video-container {
+		display: none;
+	}
+
+	.messagedisclaimer {
+		width: 90%;
+	}
+
+	.vicon {
+		margin-left: 61%;
+	}
+
+	.prenxtutton {
+		width: 77%;
+	}
+
+	.videosreel {
+		display: flex;
+		flex-direction: column;
+		margin-left: 5%;
+	}
+}
+@media only screen and (min-width: 1101px) and (max-width: 1199px) {
+.heading{
+	width: 83%;
+}
+.mbalign{
+	width: 90%;
+}
+.vicon{
+	margin-left: 81%;
+}
+.transcript{
+	display: flex;
+}
+.messagedisclaimer{
+	width: 100%;
+}
+.video-container {
+	width: auto
+}
+}
+
+
+@media only screen and (min-width: 1320px) and (max-width: 1500px) {
+	.vicon {
+		margin-left: 85%;
+	}
+}

@@ -1,0 +1,63 @@
+<!--A Lightning Web Component displaying treatment timeline reminders for patients with dynamic date calculations and navigation features.-->
+<template>
+	<div if:false={isDataAvailable}  onclick={handleReminder} role = "button" onkeydown={handleReminder} class="slds-box1 hand">
+		
+	
+			<header class="slds-card__header">
+				<h2 class="head remind">{reminders}</h2>
+			</header>
+			<div class="sub">
+				<div if:true={showAlarm}>
+					<img src={imgAlarm} class="alarm" alt = {alternateForAlarm}>
+				</div>
+				<div>
+					<p class="remainder">{noReminders}</p>
+				</div>
+			</div>
+			<button class="buttonadd" onclick={handleReminder} data-it-button="Upcoming Reminder: Add Dates">{addDate}</button>
+		
+	</div>
+	<div if:true={isDataAvailable} onclick={handleReminder} onkeydown={handleReminder} role="button" class="slds-box2 hand">
+		<header class="slds-card__header">
+			<h2 class="head">{reminders}</h2>
+		</header>
+		<template if:true={timelineData}>
+			<div class="slds-grid ">
+					<img class="img1" src={imgAlarm} alt = {alternateForAlarm}>
+				<template for:each={timelineData} for:item="Remainder" for:index="index">
+					<div key={Remainder.Id} class="slds-col  slds-m-around_medium">
+						<h1>{cardTitle}</h1>
+						<div class="remainder">
+							<p>{upcomingDays}
+								<span class="wholespan">
+									&nbsp; {Remainder.DaysLeft} <span class="dayscls"><b>{days}</b></span>
+								</span>
+							</p>
+						</div>
+					</div>
+				</template>
+			</div>
+			<div class="timeline" if:true={isDataAvailable}>
+				<template for:each={timelineData} for:item="Remainder" for:index="index">
+					<div key={Remainder.Id} class="container1">
+						<template for:each={Remainder.AdditionalDates} for:item="date">
+							<div key={date.date} class="container">
+								<div class="row">
+										<span class="circle tooltip-container ">
+									<div if:true={showTooltip} class="tooltip">{tooltipText}</div>	
+										<button class="circlebutton" onmouseover={handleMouseOver} onmouseout={handleMouseOut}
+										onfocus={handleMouseOver} onblur={handleMouseOut} data-it-button="Upcoming Reminder: date" data-datavalues={date.dateandmonth}>{date.date}</button>															
+									</span>
+									<span class={date.month}></span>
+								</div>
+								<div class="row1">
+									<span class={date.monthname}></span>
+								</div>
+							</div>
+						</template>
+					</div>
+				</template>
+			</div>
+		</template>
+	</div>
+</template>

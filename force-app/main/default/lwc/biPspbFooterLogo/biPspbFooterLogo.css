@@ -1,0 +1,258 @@
+@font-face {
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family:   "Eina04-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff")
+    format("woff");
+}
+
+.contact {
+  cursor: pointer;
+}
+
+.imgsize {
+  height: 70px;
+}
+
+.mobilediv {
+  padding: 10px 0px 30px 10px;
+}
+
+.footer p {
+  background-color: #403a60;
+  float: right;
+  color: white;
+  white-space: normal;
+  padding: 10px 10px;
+  text-decoration: none;
+  font-family:   "Eina04-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 14px;
+}
+
+.background p {
+  background-color: #403a60;
+}
+
+.copyrights {
+  color: white;
+  background-color: #403a60;
+  white-space: normal;
+  padding: 2px 0px 20px 0px;
+  text-decoration: none;
+}
+
+.para {
+  text-align: right;
+  font-family:   "Eina04-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 14px;
+}
+
+.bg {
+  background-color: #403a60;
+}
+
+.background {
+  margin-left: 0px;
+  background-color: #403a60;
+}
+
+@media only screen and (min-width: 600px) {
+  .pad {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .footer {
+    margin-right: -6px;
+    background-color: #403a60;
+  }
+}
+
+@media only screen and (max-width: 409px) {
+  .mobilediv {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 10px 0px 30px 10px;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: #403a60;
+    margin-left: -7%;
+    width: 47%;
+  }
+
+  .para {
+    text-align: left;
+
+    width: auto;
+  }
+
+  .spinner-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffff;
+    /* semi-transparent white background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    /* Ensure it appears above other elements */
+}
+
+
+  .Term {
+    display: none;
+  }
+
+  .Faq {
+    display: none;
+  }
+
+  .background {
+    margin-left: -11px;
+    background-color: #403a60;
+  }
+}
+
+@media only screen and (min-width: 410px) and (max-width: 649px) {
+  .mobilediv {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 10px 0px 30px 10px;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: #403a60;
+    margin-right: 70%;
+  }
+
+  .para {
+    text-align: left;
+
+    width: auto;
+  }
+
+
+  .Term {
+    display: none;
+  }
+
+  .Faq {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 410px) and (max-width: 600px) {
+  .footer p {
+    position: relative;
+    right: 8%;
+  }
+}
+
+@media only screen and (min-width: 650px) and (max-width: 850px) {
+  .mobilediv {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 10px 0px 30px 10px;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: #403a60;
+    margin-right: 83%;
+  }
+
+  .para {
+    text-align: left;
+  }
+
+
+  .Term {
+    display: none;
+  }
+
+  .Faq {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .pad {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .footer p {
+    background-color: #403a60;
+
+    float: right;
+    color: white;
+    white-space: normal;
+    padding: 10px 10px;
+    text-decoration: none;
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .pad {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .pad {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .pad {
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .pad {
+    padding-left: 5%;
+    padding-right: 5%;
+    top: 2146px;
+    gap: 32px;
+  }
+}
+
+.linecode {
+  margin-top: -15px;
+  background: linear-gradient(
+    90deg,
+    color(display-p3 0.435 0.318 0.114) 0%,
+    color(display-p3 0.573 0.42 0.271) 17.19%,
+    color(display-p3 0.925 0.863 0.659) 58.85%,
+    color(display-p3 0.435 0.318 0.114) 100%
+  );
+  border: none;
+  height: 1px;
+}

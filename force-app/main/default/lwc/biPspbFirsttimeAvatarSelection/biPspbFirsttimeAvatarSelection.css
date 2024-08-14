@@ -1,0 +1,368 @@
+@font-face {
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: "Eina-Light",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff') format('woff');
+}
+
+@font-face {
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff') format('woff');
+}
+
+@font-face {
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff') format('woff');
+}
+
+
+
+h3 {
+	
+	font-weight: 900;
+	font-size: 1.8em;
+	color: #403A60;
+}
+
+.custom-save-button {
+	background-color: #403A60;
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	color: white;
+	border: none;
+	padding: 10px 30px;
+	border-radius: 12px;
+	margin-top: 50px;
+	width: 100%;
+}
+button{
+	background: none;
+	border: none;
+}
+/* blur background for spinner */
+.spinner-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.loader:not(:required) {
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.loader:not(:required):after {
+  content: '';
+  display: block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  -webkit-animation: spinner 1500ms infinite linear;
+  -moz-animation: spinner 1500ms infinite linear;
+  -ms-animation: spinner 1500ms infinite linear;
+  -o-animation: spinner 1500ms infinite linear;
+  animation: spinner 1500ms infinite linear;
+  border-radius: 0.5em;
+  box-shadow:
+    #403a60 1.5em 0 0 0,
+    #403a60 1.1em 1.1em 0 0,
+    #403a60 0 1.5em 0 0,
+    #403a60 -1.1em 1.1em 0 0,
+    #403a60 -1.5em 0 0 0,
+    #403a60 -1.1em -1.1em 0 0,
+    #403a60 0 -1.5em 0 0,
+    #403a60 1.1em -1.1em 0 0;
+}
+ 
+  /* Animation for Spinner*/
+  @-webkit-keyframes spinner {
+	0% {
+	  -webkit-transform: rotate(0deg);
+	  -moz-transform: rotate(0deg);
+	  -ms-transform: rotate(0deg);
+	  -o-transform: rotate(0deg);
+	  transform: rotate(0deg);
+	}
+  
+	100% {
+	  -webkit-transform: rotate(360deg);
+	  -moz-transform: rotate(360deg);
+	  -ms-transform: rotate(360deg);
+	  -o-transform: rotate(360deg);
+	  transform: rotate(360deg);
+	}
+  }
+  
+  @-moz-keyframes spinner {
+	0% {
+	  -webkit-transform: rotate(0deg);
+	  -moz-transform: rotate(0deg);
+	  -ms-transform: rotate(0deg);
+	  -o-transform: rotate(0deg);
+	  transform: rotate(0deg);
+	}
+  
+	100% {
+	  -webkit-transform: rotate(360deg);
+	  -moz-transform: rotate(360deg);
+	  -ms-transform: rotate(360deg);
+	  -o-transform: rotate(360deg);
+	  transform: rotate(360deg);
+	}
+  }
+  
+  @-o-keyframes spinner {
+	0% {
+	  -webkit-transform: rotate(0deg);
+	  -moz-transform: rotate(0deg);
+	  -ms-transform: rotate(0deg);
+	  -o-transform: rotate(0deg);
+	  transform: rotate(0deg);
+	}
+  
+	100% {
+	  -webkit-transform: rotate(360deg);
+	  -moz-transform: rotate(360deg);
+	  -ms-transform: rotate(360deg);
+	  -o-transform: rotate(360deg);
+	  transform: rotate(360deg);
+	}
+  }
+  
+  @keyframes spinner {
+	0% {
+	  -webkit-transform: rotate(0deg);
+	  -moz-transform: rotate(0deg);
+	  -ms-transform: rotate(0deg);
+	  -o-transform: rotate(0deg);
+	  transform: rotate(0deg);
+	}
+  
+	100% {
+	  -webkit-transform: rotate(360deg);
+	  -moz-transform: rotate(360deg);
+	  -ms-transform: rotate(360deg);
+	  -o-transform: rotate(360deg);
+	  transform: rotate(360deg);
+	}
+  }
+  
+  
+  
+.bannerclass {
+	background-color: #EBEBEB;
+	padding: 60px 0px;
+}
+.line{
+	border: 1px solid #403A60;
+    width: 197px;
+    display: inline-block;
+}
+.all-images {
+	display: flex;
+}
+
+.avatar-list {
+	list-style: none;
+	display: flex;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+
+.avatar-list li {
+	padding: 10px;
+	/* Adjust the margin as needed */
+	cursor: pointer;
+
+}
+
+
+.avatar {
+	width: 120px;
+	height: auto;
+}
+
+.selected {
+	border: 1px solid #8D89A5;
+	border-radius: 12px;
+	width: 120px;
+	height: auto;
+
+}
+
+.selectedname {
+	color: #403a60;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.avatarName {
+	margin-top: 10px;
+}
+
+.avatarchoose {
+	margin-bottom: 30px;
+}
+
+.avatar-row {
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.image-column {
+	width: calc(95% / 4);
+	/* Adjust width as needed */
+	margin-bottom: 20px;
+	/* Adjust as needed */
+}
+
+.image-column img {
+
+	cursor: pointer;
+	padding: 8px;
+}
+
+.image-column p {
+	text-align: center;
+	margin-top: 5px;
+	/* Adjust as needed */
+}
+
+.avatar-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.spinner-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #ffff;
+	/* semi-transparent white background */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 99999;
+	/* Ensure it appears above other elements */
+}
+
+@media screen and (max-width: 1500px) {
+	.main {
+		max-width: 1200px;
+	}
+
+	.buttondiv {
+		margin-right: 50px;
+	}
+
+	.custom-save-button {
+		width: 100%;
+	}
+
+}
+
+@media screen and (max-width: 1200px) {
+	.main {
+		max-width: 992px;
+	}
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+	.main {
+		max-width: 768px;
+		position: relative;
+		left: 50px;
+	}
+
+	.image-column {
+		width: calc(95% / 3);
+		margin-bottom: 20px;
+	}
+
+	.buttondiv {
+		margin-right: 74px;
+	}
+
+	.custom-save-button {
+		width: 100%;
+	}
+
+}
+
+@media screen and (max-width: 768px) {
+	.main {
+		max-width: 600px;
+	}
+
+	.image-column {
+		width: calc(95% / 2);
+		margin-bottom: 20px;
+	}
+
+}
+
+@media screen and (max-width: 600px) {
+	.main {
+		max-width: 400px;
+	}
+.line{
+	   
+        display: none;
+    
+}
+	.avatar-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.buttondiv {
+		border-top: 1px solid;
+	}
+
+	.custom-save-button {
+		width: 101%;
+	}
+
+	.avatarchoose {
+		font-size: 20px;
+	}
+
+
+}
+
+@media screen and (max-width: 400px) {
+	.main {
+		width: 284px;
+	}
+
+	.buttondiv {
+		width: 294px;
+	}
+
+	.custom-save-button {
+		width: 294px;
+	}
+
+	.avatarchoose {
+		font-size: 18px;
+	}
+}

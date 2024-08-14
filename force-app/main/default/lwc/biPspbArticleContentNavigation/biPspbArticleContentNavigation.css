@@ -1,0 +1,371 @@
+.component {
+	width: 400px;
+	height: 412px;
+	margin-left: 83px;
+	padding-top: 19px;
+}
+
+.flex {
+	display: flex;
+	flex-direction: column;
+	width: 350px;
+	gap: 8px;
+}
+
+.article_image {
+	width: 187px;
+	height: 187px;
+}
+
+.left-section.img {
+	height: 187px;
+	width: 187px;
+}
+
+.options {
+	height: 320px;
+	width: 310px;
+	gap: 13px;
+}
+
+.svgtopele {
+	margin-top: 6px;
+}
+
+svg:focus {
+    outline: none; /* Removes the focus outline */
+}
+
+.pathst {
+	stroke: #403a60;
+	stroke-opacity: 1;
+}
+
+.pathfill {
+	fill: #696969;
+	fill: color(display-p3 0.4125 0.4125 0.4125);
+	fill-opacity: 1;
+}
+
+.pathfillnew {
+	fill: white;
+	fill-opacity: 1;
+}
+
+.arrowleft {
+	margin-left: 10px;
+}
+
+.headline {
+	margin-left: -7px;
+}
+
+.heading {
+	width: 260px;
+	height: 45px;
+	font-size: 24px;
+	margin-left: 10px;
+}
+
+.search-icon-container {
+	display: flex;
+	flex-direction: row;
+}
+
+.search-bar {
+	border: none;
+	border-bottom: none;
+	/* Remove border */
+	width: 226px;
+	height: 28px;
+	outline: none;
+	/* Remove focus outline */
+	margin-left: 20px;
+	background-color: #fbfaf5;
+	font-size: 16px;
+	font-weight: 400;
+	color: rgba(44, 51, 58, 1);
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.container-tag {
+	width: 750px;
+	display: flex;
+}
+
+.searchhead {
+	display: flex;
+	gap: 16px;
+	flex-direction: row;
+}
+
+.search-container {
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid blueviolet;
+	/* Underline effect */
+	margin-bottom: 10px;
+	/* Add margin for spacing */
+	flex-direction: row;
+}
+
+.end-btn {
+	background-color: #fbfaf5;
+	color: #403a60;
+	text-align: left;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+
+	margin: 4px 2px;
+	cursor: pointer;
+	padding: 8px;
+	border-radius: 15px;
+	/* Add border-radius for curved edges */
+	height: 40px;
+	width: fit-content;
+
+	border: 15px;
+	border-color: #403a60;
+	outline: 1px solid #403a60;
+	/* Add outline with the desired color on hover */
+}
+
+.end-btn:hover {
+	background-color: #8d89a540;
+}
+
+.end-btn-selected {
+	background-color: #8d89a540;
+	color: #403a60;
+	text-align: left;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+
+	margin: 4px 2px;
+	cursor: pointer;
+	padding: 10px;
+	border-radius: 15px;
+	/* Add border-radius for curved edges */
+	height: 40px;
+	width: fit-content;
+
+	border: 15px;
+	border-color: #403a60;
+	outline: 1px solid #403a60;
+	/* Add outline with the desired color on hover */
+}
+
+.container-itembox {
+	height: 800px;
+	width: 1031px;
+}
+
+.container-item {
+	width: 800px;
+	height: 187px;
+}
+
+.article-container {
+	justify-content: space-between;
+	margin: 20px;
+}
+
+.line {
+	background-color: #403a60;
+	width: 950px;
+	margin-left: 45px;
+	margin-bottom: 20px;
+}
+
+.svgcls {
+	margin-left: 54px;
+}
+
+.left-section,
+.right-section {
+	flex: 1;
+}
+
+.search-bar-border-bottom {
+	width: 286px;
+	margin-top: 8px;
+	border-width: 2px;
+	border-color: rgba(105, 105, 105, 1);
+}
+
+.article {
+	margin-bottom: 20px;
+	border: 1px solid rgba(0, 0, 0, 0.125);
+	height: 50%;
+	display: flex;
+}
+
+.article.first {
+	width: 800px;
+	height: 187px;
+	background-color: #8d89a580;
+}
+
+.top-heading {
+	font-size: 24px;
+	font-weight: bold;
+	color: #378dba;
+	padding: 0px 50px;
+}
+
+article h2 {
+	padding: 10px 2px 2px 17px;
+	font-weight: 800;
+	font-size: 1.563rem;
+	color: rgba(64, 58, 96, 1) !important;
+}
+
+.article p {
+	margin: 10px 0;
+	text-align: justify;
+	padding: 0px 0px 0px 19px;
+	color: rgba(64, 58, 96, 1) !important;
+}
+
+.article a {
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 50%;
+	border: 1px solid black;
+	margin-left: 17px;
+	padding: 3px;
+	font-size: 15px;
+	color: rgba(64, 58, 96, 1) !important;
+}
+
+.left-section {
+	margin: 0px 31px;
+}
+
+.QuickLinks {
+	display: none;
+}
+
+/*--Font Declaration---*/
+
+@font-face {
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff") format("woff");
+}
+
+@font-face {
+	font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff") format("woff");
+}
+
+@media only screen and (max-width: 400px) {
+	.component {
+		display: none;
+	}
+
+	.heading {
+		display: none;
+	}
+
+	.flex {
+		display: none;
+	}
+
+	.QuickLinks {
+		display: none;
+		width: 296px;
+	}
+
+	.end-btn {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		border-color: #f4f4f4;
+		outline-color: #f4f4f4;
+		height: fit-content;
+	}
+
+	.display {
+		width: 296px;
+		display: flex;
+		justify-content: space-around;
+		margin-left: 67px;
+		margin-top: -32px;
+	}
+
+	.headingcategory {
+		color: #413a63;
+		font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 24px;
+		margin-left: -120px;
+	}
+
+	.line-article {
+		width: 296px;
+		border-width: 1px;
+		background: #000;
+		margin-left: 10px;
+		margin-top: 10px;
+	}
+}
+
+@media only screen and (min-width: 400px) and (max-width: 768px) {
+	.component {
+		display: none;
+	}
+
+	.QuickLinks {
+		display: none;
+		width: 296px;
+	}
+
+	.end-btn {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		border-color: #f4f4f4;
+		outline-color: #f4f4f4;
+		height: fit-content;
+	}
+
+	.display {
+		width: 296px;
+		display: flex;
+		justify-content: space-around;
+		margin-left: 67px;
+		margin-top: -32px;
+	}
+
+	.headingcategory {
+		color: #413a63;
+		font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 24px;
+		margin-left: -120px;
+	}
+
+	.line-article {
+		width: 296px;
+		border-width: 1px;
+		background: #000;
+		margin-left: 10px;
+		margin-top: 10px;
+	}
+}

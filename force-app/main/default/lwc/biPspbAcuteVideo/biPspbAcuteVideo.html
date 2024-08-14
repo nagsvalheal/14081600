@@ -1,0 +1,49 @@
+<!--This lightning web component is used for display the acute patient customized video-->
+<template>
+	<div class="flexele">
+		<!-- Strings are hard coded in this HTML file to comply with the mobile responsiveness-->
+		<h1 class="heading">
+			{flareTreatmentHeading}
+			
+		</h1>
+		<div if:true={showContent}>
+			<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+		 </div>
+		
+		<!--Display the video for desktop view-->
+		<div class="video-container">
+			<iframe class="responsive-iframe" src={videoUrl} height={videoHeight} width={videoWidth} allowfullscreen
+				title="Video Player">
+			</iframe>
+		</div>
+		<!--Display the video for mobile view-->
+		<div class="video-containermb">
+			<iframe class="responsive-iframe" src={videoUrl} height="190" width="auto" allowfullscreen
+				title="Video Player">
+			</iframe>
+		</div>
+		<div class="mbalign">
+			<hr class="linetranscript" />
+			<div class="transcript">
+				{transcript}
+				<lightning-icon class="vicon" icon-name={iconName} alternative-text={iconAltText}
+					onclick={toggleContent} onkeyup={toggleContent}>
+				</lightning-icon>
+				<div class={contentClass}>
+					<!-- Taggled content -->
+					<p><!-- This is the content that can be toggled. --></p>
+				</div>
+			</div>
+			<hr class="linetranscript" />
+
+			<h2 class="disclaimer">{disclaimer}</h2>
+			<br />
+
+			<div class="messagedisclaimer">
+				<p>
+					{disclaimerMessage}
+				</p>
+			</div>
+		</div>
+	</div>
+</template>

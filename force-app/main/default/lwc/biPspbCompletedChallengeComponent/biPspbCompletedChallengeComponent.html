@@ -1,0 +1,46 @@
+<!--The LWC displays a card that includes challenge title, description, reward points, and an optional link to an article based on challenge criteria-->
+<template>
+  <div class="grid-containerAC">
+    <div class="AChallenges">
+      <div class="ChallengeTrophy slds-align_absolute-center">
+        <lightning-formatted-rich-text
+          value={Image}
+        ></lightning-formatted-rich-text>
+      </div>
+      <div class="ActiveChallenges">
+        <div
+          class="grid-containerXPButtons slds-align_absolute-center slds-p-bottom_xx-large"
+        >
+          <p class="XPButton">{RewardPoints}xp</p>
+          <p class="PerButton">100%</p>
+        </div>
+        <div class="grid-containerCardDetails">
+          <div class="slds-align_absolute-center slds-p-top_xx-large">
+            <p class="CardTitle">{Title}</p>
+          </div>
+          <div>
+            <hr />
+          </div>
+          <div class="slds-align_absolute-center">
+            <p class="CardPara">
+              {Description}
+              <template if:true={LinktoArticle}
+                ><a class="noDecoration" onclick={openArticles}
+                  > "<u>{linkArticle}</u>"</a
+                ></template
+              >
+              <template if:true={WhyBeingActive}
+                ><a class="noDecoration" onclick={openArticlesActive}
+                  > "<u>{beingActiveLink}</u>"</a
+                ></template
+              >
+            </p>
+          </div>
+          <div class="slds-align_absolute-center">
+            <p class="Cardpara1">Challenge Completed !</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

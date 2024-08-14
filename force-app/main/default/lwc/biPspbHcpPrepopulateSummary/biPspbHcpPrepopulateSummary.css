@@ -1,0 +1,157 @@
+.tophead {
+  color: #403a60;
+  font-size: 32px;
+  padding-bottom: 15px;
+  font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.enroll {
+  color: #403a60;
+  font-size: 20px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  margin-top: 16px;
+}
+
+.shead {
+  color: #403a60;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-family: "Eina-bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.sidebar-container {
+  width: 34.5%;
+  background: #413a63;
+}
+
+.titlee {
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 14px;
+  color: #000000;
+  line-height: 24px;
+}
+
+.sidebar-container::after {
+  content: "";
+  background: linear-gradient(
+    to bottom,
+    #744f0d 0%,
+    #8b5f2d 11.35%,
+    #efdba1 42.29%,
+    #744f0d 100%
+  );
+  position: absolute;
+  top: 0;
+  left: 33%;
+  height: 100%;
+  width: 6px;
+}
+
+.container {
+  padding-top: 0%;
+  padding-left: 3%;
+  position: relative;
+  bottom: 75px;
+}
+
+.marTB20 {
+  width: 200px;
+  position: absolute;
+  bottom: 877px;
+}
+
+.img {
+  width: 168px;
+  height: 151px;
+}
+
+@media (width <=850px) {
+  .container {
+    padding-top: 0%;
+    padding-left: 3%;
+    position: relative;
+    bottom: 0px;
+    margin-top: 40px;
+    margin-left: 10px;
+  }
+
+  .marTB20 {
+    width: 200px;
+    position: absolute;
+    bottom: 759px;
+    left: 36px;
+  }
+
+  .divclass {
+    height: auto;
+  }
+
+  .sidebar-container::after {
+    display: none;
+  }
+
+  .img {
+    width: 168px;
+    height: 183px;
+  }
+
+  .sidebar-container1 {
+    content: "";
+    background: linear-gradient(
+      90deg,
+      #744f0d 0%,
+      #8b5f2d 11.35%,
+      #efdba1 42.29%,
+      #744f0d 100%
+    );
+    position: absolute;
+    top: 208px !important;
+    height: 5px;
+    width: 100%;
+  }
+
+  .tophead {
+    color: #403a60;
+    font-size: 18px;
+    padding-bottom: 15px;
+    font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  }
+}
+
+@media (width <=400px) {
+  .marTB20 {
+    width: 200px;
+    position: absolute;
+    bottom: 825px !important;
+    left: 22px !important;
+  }
+
+  .sidebar-container1 {
+    content: "";
+    background: linear-gradient(
+      90deg,
+      #744f0d 0%,
+      #8b5f2d 11.35%,
+      #efdba1 42.29%,
+      #744f0d 100%
+    );
+    position: absolute;
+    top: 220px !important;
+    height: 5px;
+    width: 100%;
+  }
+
+  .class {
+    display: flex;
+    flex-direction: column;
+    gap: 39px;
+  }
+}
+
+@media (width <=600px) {
+  .class {
+    display: flex;
+    flex-direction: column;
+    gap: 39px;
+  }
+}

@@ -1,0 +1,17 @@
+<!--To design the footer with copyright text and links in the login page-->
+<template>
+	<div class="main">
+		<!-- Footer Text for Login Page -->
+		<div class="link">
+			<a class="mobileViewPrivacy" onclick={privacyNotice}>{privacyNoticeLab}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a class="mobileViewTerms" onclick={termsOfUse}>{termsOfUseLab}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a class="mobileViewContact" onclick={contactUs}>{contactUsLab}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		</div>
+		<div class="hrline"></div>
+		<div class="copyrights">
+			<p class="para">
+				{loginCopyrights}
+			</p>
+		</div>
+	</div>
+</template>

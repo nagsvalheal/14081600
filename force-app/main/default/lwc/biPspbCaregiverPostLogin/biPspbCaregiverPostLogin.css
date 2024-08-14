@@ -1,0 +1,314 @@
+.parentHeader {
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 32px;
+  font-weight: 400;
+  font-family: "Eina04-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  height: 40px;
+  margin-left: 10px;
+}
+/* blur background for spinner */
+.spinner-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(1.5px);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+.loader:not(:required) {
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.loader:not(:required):after {
+  content: "";
+  display: block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  -webkit-animation: spinner 1500ms infinite linear;
+  -moz-animation: spinner 1500ms infinite linear;
+  -ms-animation: spinner 1500ms infinite linear;
+  -o-animation: spinner 1500ms infinite linear;
+  animation: spinner 1500ms infinite linear;
+  border-radius: 0.5em;
+  box-shadow:
+    #403a60 1.5em 0 0 0,
+    #403a60 1.1em 1.1em 0 0,
+    #403a60 0 1.5em 0 0,
+    #403a60 -1.1em 1.1em 0 0,
+    #403a60 -1.5em 0 0 0,
+    #403a60 -1.1em -1.1em 0 0,
+    #403a60 0 -1.5em 0 0,
+    #403a60 1.1em -1.1em 0 0;
+}
+
+/* Animation for Spinner*/
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@font-face {
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff")
+    format("woff");
+}
+
+.para {
+  padding-top: 10%;
+  font-size: 16px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  color: #8d89a5;
+}
+
+.card {
+  border: 1px solid #8d89a580;
+  transition: 0.3s;
+  width: 285px;
+  height: 256px;
+  text-align: center;
+  margin-left: 25px;
+  margin-top: 30px;
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+
+.btn {
+  background-color: #403a60;
+  color: white;
+  width: 78px;
+  height: 40px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  border-radius: 12px;
+  margin-top: 20px;
+  margin-left: 3%;
+  border-color: white;
+}
+
+.container {
+  padding: 2px 16px;
+  text-align: center;
+}
+
+.avatar {
+  border-radius: 100%;
+  border: 1px solid #8d89a5;
+  height: 104px;
+  width: 104px;
+  margin-left: 30%;
+  margin-top: 21px;
+  padding: 30px;
+}
+
+.selectbutton {
+  background-color: hsla(212, 100%, 30%, 0.5);
+  color: white;
+  border-radius: 20%;
+  border-color: #403a60;
+  width: 50%;
+  height: 10vh;
+}
+
+.fullNameDisplay {
+  margin-top: 20px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 16px;
+  color: #403a60;
+}
+
+.submitbutton {
+  margin-top: 27px;
+  background-color: #403a60;
+  color: white;
+  border-radius: 12px;
+  height: 40px;
+  width: 78px;
+}
+
+.firstlastNameDisplay {
+  width: 40px;
+  font-size: 34px;
+  font-weight: 400;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  color: #403a60;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 7px;
+  left: 1px;
+}
+
+
+
+@media only screen and (max-width: 400px) {
+  .card {
+    width: 190px;
+    margin-left: 20%;
+  }
+
+  .parentHeader {
+    font-size: 24px;
+  }
+
+  .avatar {
+    margin-left: 16%;
+  }
+
+  .firstlastNameDisplay {
+    width: 40px;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    color: #403a60;
+    position: relative;
+    right: 0px;
+    top: 6px;
+  }
+}
+
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+  .card {
+    margin-left: 23%;
+    width: 190px;
+  }
+
+  .parentHeader {
+    font-size: 24px;
+  }
+
+  .avatar {
+    margin-left: 16%;
+  }
+
+  .firstlastNameDisplay {
+    width: 40px;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    color: #403a60;
+    position: relative;
+    right: 0px;
+    top: 6px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .slds-wrap {
+    margin-left: 20%;
+  }
+
+  .parentHeader {
+    margin-left: 8%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .check {
+    position: relative;
+    right: 7%;
+  }
+}

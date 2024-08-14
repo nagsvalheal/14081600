@@ -1,0 +1,731 @@
+<!--This Lwc display the completed questionnaires Dlqi,Wapi,pss summarize-->
+<template>
+	<div class="spinner-wrapper" if:true={showSpinner}>
+	<div class="loader"></div>
+	</div>
+	<lightning-layout multiple-rows class="tabClass slds-no-print">
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+			<div class="tabsDiv pad">
+				<div class="grid-containerTabs">
+					<a onclick={openOutQuestionnaires} class="anchorText">{outStandingLabel}</a>
+					<template if:true={showTabMenu}><a onclick={openSummary} class="anchorTextActive">{summaryTxt}</a>
+						<a onclick={openComQuestionnaires} class="anchorText">{completedTxt}</a></template>
+					<template if:false={showTabMenu}><a class="anchorText disabled">{summaryTxt}</a>
+						<a class="anchorText disabled">{completedTxt}</a></template>
+					<a onclick={openPersonalize} class="anchorText">{letPersonalizeTxt}</a>
+				</div>
+			</div>
+		</lightning-layout-item>
+	</lightning-layout>
+
+	<lightning-layout multiple-rows class="layoutColor pad ">
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="4" large-device-size="4"
+			class="slds-p-top_xx-large">
+			<div class="custom-box11 slds-no-print">
+				<c-bi-Pspb-Avatar-Navigation receivedcategory={selectedCategory}></c-bi-Pspb-Avatar-Navigation>
+			</div>
+		</lightning-layout-item>
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="8" large-device-size="8"
+			class="marTop50 slds-p-bottom_xx-large">
+			<div class="custom-box22" id="html2Pdf-">
+				<div>
+					<lightning-layout multiple-rows>
+						<lightning-layout-item size="12" small-device-size="12" medium-device-size="12"
+							large-device-size="12">
+							<div class="viewSummaryHeading">
+								<p class="chartSummary">{summaryTxt}</p>
+							</div>
+							<div class="custom-box1">
+
+								<div class="grid-containerCategory">
+									<div class="slds-no-print">
+										<p class="monthSelectionBlack">{selectQuestionnaire}</p>
+									</div>
+									<div if:true={onPrint}>
+										<p class="enrolleeName"><b>{patientName}</b></p>
+										<p class="enrolleeTxt">{enrolleName}</p>
+										<p class="questionnaireTxt"><b>{questionnaire}</b></p>
+									</div>
+									<div>
+										<template if:true={picklistOptions}>
+											<div class="custom-combobox slds-no-print">
+												<select onchange={handleCategoryChange} class="selectlengthWidth">
+													<template for:each={picklistOptions} for:item="option">
+														<option key={option.value} value={option.value}
+															selected={option.selected}>{option.label}</option>
+														<hr key={option.value}>
+													</template>
+												</select>
+											</div>
+										</template>
+										<template if:true={onPrint}>
+											<div>
+												<p class="questionTxt">{selectedCategory}</p>
+											</div>
+										</template>
+									</div>
+								</div>
+							</div>
+						</lightning-layout-item>
+						<lightning-layout-item size="12" small-device-size="12" medium-device-size="12"
+							large-device-size="12">
+							<div class="custom-box2">
+								<div class="grid-containerMonth">
+
+									<div class="grid-containerCategory">
+										<div class="slds-no-print">
+											<p class="monthSelection">{rangeTxt}*</p>
+										</div>
+										<div if:true={onPrint}>
+											<p class="monthSelection"><b>{durationTxt}</b></p>
+										</div>
+										<div class="grid-containerDownload">
+											<div>
+												<template if:true={picklistOptionsdate}>
+													<div class="custom-combobox slds-no-print">
+														<select onchange={handleMonthChange} class="selectWidth">
+															<template for:each={picklistOptionsdate} for:item="option">
+																<option key={option.value} value={option.value}>
+																	{option.label}</option>
+																<hr key={option.value}>
+															</template>
+														</select>
+													</div>
+												</template>
+												<template if:true={onPrint}>
+													<p class="oneMonth">{selectedMonthValue}</p>
+												</template>
+											</div>
+										</div>
+									</div>
+									<div>
+										<template if:true={showMonthSelector}>
+											<div class="grid-containerCategory">
+												<div class="slds-no-print">
+													<p class="monthSelection">{selectMonth}*</p>
+												</div>
+												<div if:true={onPrint}>
+													<p class="selectedMonth"><b>{monthTxt}</b></p>
+												</div>
+												<div class="custom-combobox slds-no-print">
+													<select onchange={handleSingleMonthChange} class="selectWidth">
+														<template for:each={previousMonths} for:item="option">
+															<option key={option.value} value={option.value}
+																selected={option.selected}>{option.label}</option>
+															<hr key={option.value}>
+														</template>
+													</select>
+												</div>
+												<p if:true={onPrint} class="monthTxt">{calculatedMonths}</p>
+											</div>
+										</template>
+									</div>
+									<div class="displayFlexEnd slds-no-print">
+										<div class="displayCenter" onclick={captureComponent} onkeydown={captureComponent}><button
+												class="downloadButton">{downloadTxt}</button></div>
+									</div>
+
+								</div>
+							</div>
+						</lightning-layout-item>
+					</lightning-layout>
+					<template if:true={gotData}>
+						<template if:true={showChart}>
+							<template if:true={dlqiShowValue}>
+								<br>
+								<br>
+								<lightning-layout multiple-rows>
+									<lightning-layout-item size="12" padding="around-small" small-device-size="12"
+										medium-device-size="12" large-device-size="12">
+										<p class="chartHead">{timePeriod}</p>
+										<div class="custom-box">
+											<table>
+												<tbody>
+													<!-- Loop through each question in the transformedData -->
+													<template for:each={dlqiFirstQuestion} for:item="questionItem">
+														<tr key={questionItem.Question}>
+															<td class="widthcustom">
+																<p class="chartPara">{questionItem.Question}</p>
+															</td>
+															<!-- Loop through each month in the 'months' array -->
+															<template for:each={questionItem.months}
+																for:item="monthItem">
+																<td key={monthItem.Month} class="textCenter">
+																	<div class={wpaiChanges}>
+																		<div><img src={monthItem.Value}></div>
+																	</div>
+																	<hr>
+																</td>
+															</template>
+														</tr>
+														<hr key={questionItem.Question} >
+													</template>
+													<tr class="backRed">
+														<td></td>
+														<template for:each={months} for:item="month">
+															<td key={month} class="textCenter">{month}</td>
+														</template>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<div class="slds-p-top_large grid-containerColorNotification">
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={redCircle} width="40px"></div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">{veryMuchTxt}</p>
+												</div>
+											</div>
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={orangeCircle} width="30px">
+												</div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">{alotTxt}</p>
+												</div>
+											</div>
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={yellowCircle} width="25px">
+												</div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">{aLittleTxt}</p>
+												</div>
+											</div>
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={greenCircle} width="20px"></div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">{notAtAllTxt}</p>
+												</div>
+											</div>
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={greyCircle} width="10px"></div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">{notReleventTxt}</p>
+												</div>
+											</div>
+										</div>
+									</lightning-layout-item>
+								</lightning-layout>
+
+							</template>
+							
+							<template if:true={dlqiShowValueTwo}>
+								<p if:true={onPrint} class="spacing"></p>
+								<p if:true={onPrint} class="spacingDlqi"></p>
+								<lightning-layout multiple-rows>
+									<lightning-layout-item size="12" padding="around-small" small-device-size="12"
+										medium-device-size="12" large-device-size="12">
+										<p class="chartHead">{skinIssue}</p>
+										<div class="custom-box">
+											<table>
+												<tbody>
+													<!-- Loop through each question in the transformedData -->
+													<template for:each={dlqiSecondQuestion} for:item="questionItem">
+														<tr key={questionItem.Question}>
+															<td class="widthcustom">
+																<p class="chartPara">{questionItem.Question}</p>
+															</td>
+															<!-- Loop through each month in the 'months' array -->
+															<template for:each={questionItem.months}
+																for:item="monthItem">
+																<td key={monthItem.Month} class="textCenter">
+																	<div class={wpaiChanges}>
+																		<div><img src={monthItem.Value}></div>
+																	</div>
+																	<hr >
+																</td>
+															</template>
+														</tr>
+														<hr key={questionItem.Question} >
+													</template>
+													<tr class="backRed">
+														<td></td>
+														<template for:each={months} for:item="month">
+															<td key={month} class="textCenter">{month}</td>
+														</template>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<div class="slds-p-top_large grid-containerColorNotification">
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={redCircle} width="40px"></div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">{veryMuchTxt}</p>
+												</div>
+											</div>
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={orangeCircle} width="30px">
+												</div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">{alotTxt}</p>
+												</div>
+											</div>
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={yellowCircle} width="25px">
+												</div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">{aLittleTxt}</p>
+												</div>
+											</div>
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={greenCircle} width="20px"></div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">{notAtAllTxt}</p>
+												</div>
+											</div>
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={greyCircle} width="10px"></div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">{notReleventTxt}</p>
+												</div>
+											</div>
+										</div>
+									</lightning-layout-item>
+								</lightning-layout>
+							</template>
+
+							<template if:true={dlqiShowValueThree}>
+								<p if:true={onPrint} class="spacing"></p>
+								<p if:true={onPrint} class="spacingDlqi"></p>
+								<lightning-layout multiple-rows>
+									<lightning-layout-item size="12" padding="around-small" small-device-size="12"
+										medium-device-size="12" large-device-size="12">
+										<p class="chartHead">{preventSkin}
+										</p>
+										<div class="custom-box">
+											<table>
+												<tbody>
+													<!-- Loop through each question in the transformedData -->
+													<template for:each={dlqiThirdQuestion} for:item="questionItem">
+														<tr key={questionItem.Question}>
+
+															<!-- Loop through each month in the 'months' array -->
+															<template for:each={questionItem.months}
+																for:item="monthItem">
+																<td key={monthItem.Month} class="textCenter">
+																	<div class={dlqiChanges}>
+																		<div><img src={monthItem.Value}></div>
+																	</div>
+																	<hr >
+																</td>
+															</template>
+														</tr>
+														<hr key={questionItem.Question}>
+													</template>
+													<tr class="backRed">
+														<template for:each={months} for:item="month">
+															<td key={month} class="textCenter">{month}</td>
+														</template>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<div class="slds-p-top_large grid-containerColorNotification">
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={correctTxt} width="30px">
+												</div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">Yes</p>
+												</div>
+											</div>
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={wrongTxt} width="30px">
+												</div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">No</p>
+												</div>
+											</div>
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={notApplicableTxt}
+														width="30px"></div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">Not relevant</p>
+												</div>
+											</div>
+										</div>
+									</lightning-layout-item>
+								</lightning-layout>
+							</template>
+							<!-- <template if:true={onPrint}>
+								<template if:false={dlqiShowValueFour}>
+									<template if:true={dlqiValue}>
+										<p class="spacing"></p>
+										<p class="spacing"></p>
+										<p class="spacing"></p>
+									</template>
+								</template>
+							</template> -->
+
+							<template if:true={dlqiShowValueFour}>
+								<p if:true={onPrint} class="spacing"></p>
+									<p if:true={onPrint} class="spacingDlqiFour"></p> 
+								<lightning-layout multiple-rows>
+									<lightning-layout-item size="12" padding="around-small" small-device-size="12"
+										medium-device-size="12" large-device-size="12">
+										<p class="chartHead">{shortQuestionSixDescription}</p>
+										<div class="custom-box">
+											<table>
+												<tbody>
+													<!-- Loop through each question in the transformedData -->
+													<template for:each={dlqiFourthQuestion} for:item="questionItem">
+														<tr key={questionItem.Question}>
+
+															<!-- Loop through each month in the 'months' array -->
+															<template for:each={questionItem.months}
+																for:item="monthItem">
+																<td key={monthItem.Month} class="textCenter">
+																	<div class={dlqiChanges}>
+																		<div><img src={monthItem.Value}></div>
+																	</div>
+																	<hr >
+																</td>
+															</template>
+														</tr>
+														<hr key={questionItem.Question} >
+													</template>
+													<tr class="backRed">
+														<template for:each={months} for:item="month">
+															<td key={month} class="textCenter">{month}</td>
+														</template>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<div class="slds-p-top_large grid-containerColorNotification">
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={orangeCircle} width="30px">
+												</div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">{alotTxt}</p>
+												</div>
+											</div>
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={yellowCircle} width="25px">
+												</div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">{aLittleTxt}</p>
+												</div>
+											</div>
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={greenCircle} width="20px"></div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">{notAtAllTxt}</p>
+												</div>
+											</div>
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={naTxtImg} width="25px"></div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">{notApplicabeTxt}</p>
+												</div>
+											</div>
+										</div>
+									</lightning-layout-item>
+								</lightning-layout>
+							</template>
+
+							<template if:true={dlqiShowValueFive}>
+									<!-- <p if:true={onPrint} class="spacing"></p>
+									<p if:true={onPrint} class="spacingDlqi"></p> -->
+									
+								<lightning-layout multiple-rows>
+									<lightning-layout-item size="12" padding="around-small" small-device-size="12"
+										medium-device-size="12" large-device-size="12">
+										<p class="chartHead">{dlqiShortTxt}
+										</p>
+										<div class="custom-box">
+											<table>
+												<tbody>
+													<!-- Loop through each question in the transformedData -->
+													<template for:each={dlqiFifthQuestion} for:item="questionItem">
+														<tr key={questionItem.Question}>
+															<td class="widthcustom">
+																<p class="chartPara">{questionItem.Question}</p>
+															</td>
+															<!-- Loop through each month in the 'months' array -->
+															<template for:each={questionItem.months}
+																for:item="monthItem">
+																<td key={monthItem.Month} class="textCenter">
+																	<div class={wpaiChanges}>
+																		<div><img src={monthItem.Value}></div>
+																	</div>
+																	<hr >
+																</td>
+															</template>
+														</tr>
+														<hr key={questionItem.Question} >
+													</template>
+													<tr class="backRed">
+														<td></td>
+														<template for:each={months} for:item="month">
+															<td key={month} class="textCenter">{month}</td>
+														</template>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<div class="slds-p-top_large grid-containerColorNotification">
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={redCircle} width="40px"></div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">{veryMuchTxt}</p>
+												</div>
+											</div>
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={orangeCircle} width="30px">
+												</div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">{alotTxt}</p>
+												</div>
+											</div>
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={yellowCircle} width="25px">
+												</div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">{aLittleTxt}</p>
+												</div>
+											</div>
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={greenCircle} width="20px"></div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">{notAtAllTxt}</p>
+												</div>
+											</div>
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={greyCircle} width="10px"></div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">{notReleventTxt}</p>
+												</div>
+											</div>
+										</div>
+									</lightning-layout-item>
+								</lightning-layout>
+							</template>
+							<template if:true={pssShow}>
+								<lightning-layout multiple-rows>
+									<lightning-layout-item size="12" padding="around-small" small-device-size="12"
+										medium-device-size="12" large-device-size="12">
+										<p class="chartHead">{psoriasisTxt}
+										</p>
+										<div class="custom-box">
+											<table>
+												<tbody>
+													<!-- Loop through each question in the transformedData -->
+													<template for:each={pss} for:item="questionItem">
+														<tr key={questionItem.Question}>
+															<td class="widthcustom">
+																<p class="chartPara">{questionItem.Question}</p>
+															</td>
+															<!-- Loop through each month in the 'months' array -->
+															<template for:each={questionItem.months}
+																for:item="monthItem">
+																<td key={monthItem.Month} class="textCenter">
+																	<div class={wpaiChanges}>
+																		<div><img src={monthItem.Value}></div>
+																	</div>
+																	<hr>
+																</td>
+															</template>
+														</tr>
+														<hr key={questionItem.Question}>
+													</template>
+													<tr class="backRed">
+														<td></td>
+														<template for:each={months} for:item="month">
+															<td key={month} class="textCenter">{month}</td>
+														</template>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<div class="slds-p-top_large grid-containerColorNotification">
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={redCircle} width="40px"></div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">{veryMuchTxt}</p>
+												</div>
+											</div>
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={orangeCircle} width="30px">
+												</div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">{alotTxt}</p>
+												</div>
+											</div>
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={yellowCircle} width="25px">
+												</div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">{aLittleTxt}</p>
+												</div>
+											</div>
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={greenCircle} width="20px"></div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">{notAtAllTxt}</p>
+												</div>
+											</div>
+											<div class="grid-containerOneline">
+												<div class="FlexCircleCenter"><img src={greyCircle} width="10px"></div>
+												<div class="FlexCircleCenter">
+													<p class="FlexCircleCenterText">{notReleventTxt}</p>
+												</div>
+											</div>
+										</div>
+									</lightning-layout-item>
+								</lightning-layout>
+							</template>
+						</template>
+						<template if:true={wpaiFirstshow}>
+							<lightning-layout multiple-rows>
+								<lightning-layout-item size="12" padding="around-small" small-device-size="12"
+									medium-device-size="12" large-device-size="12">
+									<p class="chartHead">{shortQuestionTenDescription}</p>
+									<div class="custom-box">
+										<table>
+											<tbody>
+												<!-- Loop through each question in the transformedData -->
+												<template for:each={wpaiFirst} for:item="questionItem">
+													<tr key={questionItem.Question}>
+
+														<!-- Loop through each month in the 'months' array -->
+														<template for:each={questionItem.months} for:item="monthItem">
+															<td key={monthItem.Month} class="textCenter">
+																<div class={wpaiChanges}>
+																	<div><img src={monthItem.Value}></div>
+																</div>
+																<hr>
+															</td>
+														</template>
+													</tr>
+													<hr key={questionItem.Question}>
+												</template>
+												<tr class="backRed">
+													<template for:each={months} for:item="month">
+														<td key={month} class="textCenter">{month}</td>
+													</template>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="slds-p-top_large grid-containerColorNotification">
+										<div class="grid-containerOneline">
+											<div class="FlexCircleCenter"><img src={correctTxt} width="30px"></div>
+											<div class="FlexCircleCenter">
+												<p class="FlexCircleCenterText">Yes</p>
+											</div>
+										</div>
+										<div class="grid-containerOneline">
+											<div class="FlexCircleCenter"><img src={wrongTxt} width="30px"></div>
+											<div class="FlexCircleCenter">
+												<p class="FlexCircleCenterText">No</p>
+											</div>
+										</div>
+									</div>
+								</lightning-layout-item>
+							</lightning-layout>
+						</template>
+						<template if:true={wpaiShow}>
+							<div>
+								<p class="chartHead">{breakDownTxt}</p>
+								<div class="borderChart">
+									<p class="hours">{hrTxt}</p>
+									<canvas class="line-chart" lwc:dom="manual" width="200px"></canvas>
+								</div>
+								<div class="slds-p-top_large grid-containerColorNotification">
+									<div class="disInline">
+										<div class="mRight5">
+											<img src={lineGrey} width="10px">
+										</div>
+										<p class="FlexCircleCenterText">
+											{shortQuestionThirteenDescription}
+										</p>
+									</div>
+									<div class="disInline">
+										<div class="mRight5">
+											<img src={lineYellow} width="12px">
+										</div>
+										<p class="FlexCircleCenterText">
+											{shortQuestionEleventhDescription}
+										</p>
+									</div>
+									<div class="disInline">
+										<div class="mRight5">
+											<img src={lineBrown} width="29px" class="brownDot">
+										</div>
+										<p class="FlexCircleCenterText">
+											{shortQuestionFifteenDescription}
+										</p>
+									</div>
+								</div>
+							</div>
+						</template>
+						<template if:true={wpaiThirdshow}>
+							<p if:true={onPrint} class="spacingWapiGraphTwo"></p>
+							<div class="mTop30">
+								<p class="chartHead">{productivtyTxt}
+								</p>
+
+								<div class="borderChart">
+									<p class="effect">{effectGppTxt} </p>
+									<canvas class="line-chart1" lwc:dom="manual"></canvas>
+								</div>
+								<div class="slds-p-top_large grid-containerColorNotification">
+									<div class="disInline">
+										<div class="FlexCircleCenter mRight5">
+											<img src={lineGrey} width="10px">
+										</div>
+										<p class="FlexCircleCenterText">
+											{shortQuestionTwelethDescription}
+										</p>
+									</div>
+									<div class="disInline">
+										<div class="FlexCircleCenter mRight5">
+											<img src={lineBrown} width="15px" class="brownSec">
+										</div>
+										<p class="FlexCircleCenterText">
+											{shortQuestionFourteenDescription}
+										</p>
+									</div>
+								</div>
+							</div>
+						</template>
+					</template>
+					<template if:false={gotData}>
+						<p>No Data has been Found</p>
+					</template>
+				</div>
+				<div class="disBlock slds-no-print">
+					<template if:true={showDlqiBottom}>
+						<p class="bottomText slds-p-top_large slds-no-print">*{dlqiBottom}</p>
+						<p class="bottomText slds-no-print">{dlqiBottomFour}</p>
+						<p class="bottomText slds-p-top_large slds-p-bottom_large slds-no-print">{dlqiBottomTwo}</p>
+					</template>
+					<template if:true={showPssBottom}>
+						<p class="bottomText slds-p-top_large slds-p-bottom_large slds-no-print">*{pssBottomTxt}</p>
+					</template>
+					<template if:true={showWapiBottom}>
+						<p class="bottomText slds-p-top_large slds-p-bottom_large slds-no-print">*{wpaiBottomTxt}</p>
+					</template>
+				</div>
+			</div>
+		</lightning-layout-item>
+	</lightning-layout>
+	<template if:true={showPopup}>
+		<div class="modal-backdrop"></div>
+		<div class="modal-visible">
+			<div class="modal-close slds-no-print" onclick={cancelDownload} onkeydown={cancelDownload}>
+				<a onclick={cancelDownload}><span class="timestyle">&times;</span></a>
+			</div>
+			<div class="modal-content slds-no-print">
+				<p class="modalPara slds-no-print">{downloadMessage} <span>{selectedCategory}</span> {entryTxt}</p>
+				<div class="width100">
+					<div class="grid-containermodals slds-no-print">
+						<button class="buttonLogoutCancel" onclick={cancelDownload}>{cancelBtn}</button>
+						<button class="ButtonLogoutYes" onclick={yesDownload}>{downloadTxt}</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</template>
+
+</template>

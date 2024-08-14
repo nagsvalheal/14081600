@@ -1,0 +1,845 @@
+<!-- sldsValidatorIgnore -->
+<template>
+	<div class="slds-grid">
+		<div class="sidebar-container">
+			<div class="avatar-content-container">
+				<div class="avatar-img-div">
+					<img src={selectedAvatarSrc} alt="..." class="avatar-image" />
+					<p class="text-content avatar-content">
+						<span>{avatarContentTop}</span>
+						<br>
+						<br>
+						<span>{avatarContentMid}</span>
+					</p>
+					<p class={fieldsMandatory}>
+						{fieldWidth} <b class="colorstyle">*</b> {areMandotory}
+					</p>
+					<div class="text-content-div-for-mobile">
+						<div class='flexclass text-content-for-mobiles'>
+							<div>
+								<p class="text-content-for-mobile">
+									{mobileValue}
+								</p>
+							</div>
+							<button onclick={handleClose}>
+								<a><span class="closestyle">&times;</span></a>
+							</button>
+						</div>
+						<p class="paras" if:true={fieldMobile}>
+							{fieldWidth} <b class="colorstyle">*</b> {areMandotory}
+						</p>
+						<button if:true={divFalse} class="threeclickclass" onclick={threeclick}> ... </button>
+					</div>
+				</div>
+			</div>
+			<div class="hrline"></div>
+			<div class="sidebar-container1"></div>
+		</div>
+
+		<div class="formContainer">
+
+			<div class="stepOne step-container">
+				<img src={BGpp} class="marTB20" alt="Beyond Gpp">
+				<h1 class="heading">{enrollPatient}</h1>
+				<div class="slds-form-element__help" if:true={referringErrorMessage}>
+					<span class="errorFieldMsg error">{refferingPractice}</span>
+				</div>
+				<div class="PI ">
+					<div class="one">{numOne}&nbsp;</div>
+					<div class="PI">
+						{physicianInfo}
+					</div>
+				</div>
+				<h1 class="demoFont">{physicianInfoMand}</h1>
+				<div class="slds-form-element">
+					<div class="slds-form-element__control">
+						<div class="input-label-front searchHCPName">{physicianName}</div>
+						<div class=" slds-input-has-icon slds-input-has-icon_right">
+							<lightning-icon if:true={searchMain} size="x-small"
+								class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default"
+								icon-name="utility:search"></lightning-icon>
+
+							<lightning-input label="Physician Name*" type="search" onclick={showHcpNamePicklist} onkeypress={showHcpNamePicklist}
+								onchange={hcpNameOnChange} value={selectedValueOne} class="textInput searchHCPName"
+								variant="label-hidden" placeholder={placePhysician}
+								disabled={physicianNameInputDisabled} >
+							</lightning-input>
+						</div>
+						<div if:true={searchResultsOne} class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid"
+							>
+							<ul class="slds-listbox slds-listbox_vertical" >
+								<template for:each={searchResultsOne} for:item="searchResultOne">
+									<li key={searchResultOne.value} data-value={searchResultOne.value}
+										onclick={handleHcpNameOptionClick} onkeypress={handleHcpNameOptionClick} class="slds-listbox__item" >
+										<div class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small"
+											>
+											<span class="slds-media__body">
+												<span class="slds-truncate" title={searchResultOne.label}>
+													{searchResultOne.label} | {searchResultOne.labelForSpecialist} | {labelCity}:
+													{searchResultOne.labelForCity}
+												</span>
+											</span>
+										</div>
+									</li>
+								</template>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+				<div class="slds-form-element__help" if:true={searchResultEmptyOne}>
+								<img class="warningclass" alt="Warning" src={warning}>
+								<span class="errorFieldMsg">{unableToFind}</span>
+				</div>
+
+				<div class="divclass">	
+					<hr class="hrclass" />
+
+					<span class="spanclass">{or}</span>
+					<hr class="hrclass" />
+				</div>
+				<div class="slds-form-element">
+					<div class="slds-form-element__control">
+						<div class="input-label-front searchHCPId">{physicianId}</div>
+						<div class=" slds-input-has-icon slds-input-has-icon_right">
+							<lightning-icon if:true={searchMainTwo} size="x-small"
+								class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default"
+								icon-name="utility:search"></lightning-icon>
+
+							<lightning-input label="" type="search" onclick={showHcpIdPicklist} onkeypress={showHcpIdPicklist} onchange={hcpIdOnChange}
+								value={selectedValueTwo} placeholder={placeLicense} class="textInput searchHCPId"
+								variant="label-hidden" disabled={physicianIdInputDisabled}
+								>
+							</lightning-input>
+						</div>
+						<div if:true={searchResultsTwo} class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid"
+							>
+							<ul class="slds-listbox slds-listbox_vertical" >
+								<template for:each={searchResultsTwo} for:item="searchResultTwo">
+									<li key={searchResultTwo.value} data-value={searchResultTwo.value} onkeypress={handleHcpIdOptionClick}
+										onclick={handleHcpIdOptionClick} class="slds-listbox__item">
+										<div class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small"
+											>
+											<span class="slds-media__body">
+												<span class="slds-truncate" title={searchResultTwo.label}>
+													{searchResultTwo.label}
+												</span>
+											</span>
+										</div>
+									</li>
+								</template>
+							</ul>
+						</div>
+					</div>
+				</div>
+                <div class="slds-form-element__help" if:true={searchResultEmptyTwo}>
+								<img class="warningclass" alt="Warning" src={warning}>
+								<span class="errorFieldMsg">{unableToFind}</span>
+				</div>
+				<hr class="hrclass2" />
+				<button class={addNewHcpSectionClass} onclick={expandAddNewForm}>
+					{clickHere} &nbsp;
+					<lightning-icon icon-name='utility:chevrondown' alternative-text='chevrondown' size='x-small'
+						title='chevrondown' if:false={isAddNew} class="iconclass">
+					</lightning-icon>
+					<lightning-icon icon-name='utility:chevronup' alternative-text='chevronup' size='x-small'
+						title='chevronup' if:true={isAddNew} class="iconclass">
+					</lightning-icon>
+				</button>
+
+				<div if:true={isAddNew}>
+					<div>
+						<h1 class="demoFont1">{physicianInfo}</h1>
+					</div>
+					<div>
+						<div class="input-div">
+							<div for="hFN" data-field="hFN" class="input-label">{firstNameLabel}</div>
+							<lightning-input name="FirstName" value={hcpFields.firstname} 
+								onchange={handleInputChangehcp} data-field="hFN" variant="label-hidden" id="hFN"
+								class="textInput" placeholder={placeFirst} maxlength="35"
+								>
+							</lightning-input>
+							<div class="slds-form-element__help" if:true={rpFirstnameErrorMessage}>
+								<img class="warningclass" alt="Warning" src={warning}>
+								<span class="errorFieldMsg">{firstNameError}</span>
+							</div>
+							<div class="slds-form-element__help" if:true={rpFirstnameErrorMessageVaild}>
+								<img class="warningclass" alt="Warning" src={warning}>
+								<span class="errorFieldMsg">{firstNameValid}</span>
+							</div>
+						</div>
+						<div class="input-div">
+							<div for="hLN" data-field="hLN" class="input-label">{lastNameLabel}</div>
+							<lightning-input name="LastName" value={hcpFields.lastname} 
+								onchange={handleInputChangehcp} data-field="hLN" id="hLN" variant="label-hidden"
+								class="textInput" placeholder={placeLast} maxlength="60"></lightning-input>
+							<div class="slds-form-element__help" if:true={rpLastnameErrorMessage}>
+								<img class="warningclass" alt="Warning" src={warning}>
+								<span class="errorFieldMsg">{lastName}</span>
+							</div>
+							<div class="slds-form-element__help" if:true={rpLastnameErrorMessageValid}>
+								<img class="warningclass" alt="Warning" src={warning}>
+								<span class="errorFieldMsg">{lastNameValid}</span>
+							</div>
+						</div>
+						<div class="input-div">
+							<div for="hLicense" data-field="hLicense" class="input-label">{licenseNumberLabel}</div>
+							<lightning-input name="BI_PSPB_License_number__c" value={hcpFields.license}
+								onchange={handleInputChangehcp} data-field="hLicense" id="hLicense"
+								variant="label-hidden" class="textInput" placeholder={placeLicense} maxlength="80">
+							</lightning-input>
+							<div class="slds-form-element__help" if:true={rpStateLicenseErrorMessage}>
+								<img class="warningclass" alt="Warning" src={warning}>
+								<span class="errorFieldMsg">{licenseNumber}</span>
+							</div>
+							<div class="slds-form-element__help" if:true={rpStateLicenseErrorMessageValid}>
+								<img class="warningclass" alt="Warning" src={warning}>
+								<span class="errorFieldMsg">{licenseValid}</span>
+							</div>
+						</div>
+
+						<div class="input-div">
+							<div for="hPN" data-field="hPN" class="input-label">{practiceName}</div>
+							<lightning-input name="Practice Name" value={hcpFields.Practicename}
+								 onchange={handleInputChangehcp} data-field="hPN"
+								variant="label-hidden" id="hPN" class="textInput" placeholder={placePractice} maxlength="200">
+							</lightning-input>
+							<div class="slds-form-element__help" if:true={rpPracticeNameErrorMessage}>
+								<img class="warningclass" alt="Warning" src={warning}>
+								<span class="errorFieldMsg">{practiceRequired}</span>
+							</div>
+							<div class="slds-form-element__help" if:true={RPPracticenameerrorMessagevalid}>
+								<img class="warningclass" alt="Warning" src={warning}>
+								<span class="errorFieldMsg">{practiceValid}</span>
+							</div>
+						</div>
+
+
+
+
+						<div class="input-div">
+							<div for="hType" class="input-label" data-field="hType">{practiceType}</div>
+							<lightning-combobox name="Practice_Type__c" value={selectedtype}
+								onchange={handleInputChangehcp} options={practicetype} data-field="hType" id="hType"
+								variant="label-hidden" class="textInput" placeholder={placeSelect}>
+							</lightning-combobox>
+							<div class="slds-form-element__help" if:true={rpPracticeTypeErrorMessage}>
+								<img class="warningclass" alt="Warning" src={warning}>
+								<span class="errorFieldMsg">{practicetypeError}</span>
+							</div>
+						</div>
+
+					</div>
+					<div>
+						<h1 class="demoFont1">{contactInfo}</h1>
+					</div>
+					<div>
+						<div class="input-div">
+							<div for="hEmail" class="input-label" data-field="hEmail">{emailLabelMand}</div>
+							<lightning-input name="Email" value={hcpFields.email} onchange={handleInputChangehcp}
+								data-field="hEmail" class="textInput" variant="label-hidden" id="hEmail"
+								placeholder={placeEmail}></lightning-input>
+							<div class="slds-form-element__help" if:true={rpEmailErrorMessage}>
+								<img class="warningclass" alt="Warning" src={warning}>
+								<span class="errorFieldMsg">{physicianEmail}</span>
+							</div>
+							<div class="slds-form-element__help" if:true={RpEmailErrorValid}>
+								<img class="warningclass" alt="Warning" src={warning}>
+								<span class="errorFieldMsg">{validEmail}</span>
+							</div>
+						</div>
+						<div class="input-div">
+							<div for="hPhone" class="input-label" data-field="hPhone">{phoneNum}</div>
+							<lightning-input name="Phone" value={hcpFields.phone} onchange={handleInputChangehcp}
+								data-field="hPhone" onkeypress={handleKeyDown} class="textInput" maxlength="16"
+								variant="label-hidden" id="hPhone" placeholder={placePhone}></lightning-input>
+							<div class="slds-form-element__help" if:true={rpPhoneErrorMessage}>
+								<img class="warningclass" alt="Warning" src={warning}>
+								<span class="errorFieldMsg">{phoneError}</span>
+							</div>
+						</div>
+						<div class="input-div">
+							<div for="hFax" class="input-label" data-field="hFax">{faxValue}</div>
+							<lightning-input name="Fax" value={hcpFields.fax} onchange={handleInputChangehcp}
+								data-field="hFax" onkeypress={handleKeyDown} class="textInput" maxlength="16"
+								variant="label-hidden" id="hFax" placeholder={placeFax}></lightning-input>
+
+							<div class="slds-form-element__help" if:true={rpFaxErrorMessage}>
+								<img class="warningclass" alt="Warning" src={warning}>
+								<span class="errorFieldMsg">{faxValid}</span>
+							</div>
+						</div>
+						<div class="input-div">
+							<div for="hcc" class="input-label" data-field="hcc">{countryLabel}</div>
+							<lightning-combobox name="mailingCountryCode" value={selectedCountry}
+								onchange={handleCountryChange} options={CountryCode} data-field="hcc" class="textInput"
+								variant="label-hidden" id="hcc" placeholder={placeCountry}>
+							</lightning-combobox>
+							<div class="slds-form-element__help" if:true={RPcountryerrorMessage}>
+								<img class="warningclass" alt="Warning" src={warning}>
+								<span class="errorFieldMsg">{countrycode}</span>
+							</div>
+						</div>
+						<div class="input-div">
+							<div for="hLicense" class="input-label" data-field="hsc">{stateLabel}</div>
+							<lightning-combobox name="MailingStateCode" value={selectedstate}
+								onchange={handleInputChangehcp} options={StateCode} data-field="hsc" class="textInput"
+								variant="label-hidden" placeholder={placeState}>
+							</lightning-combobox>
+							<div class="slds-form-element__help" if:true={rpStateCodeErrorMessage}>
+								<img class="warningclass" alt="Warning" src={warning}>
+								<span class="errorFieldMsg">{stateCodeError}</span>
+							</div>
+						</div>
+						<div class="input-div">
+							<div for="hcity" class="input-label" data-field="hc">{cityLabel}</div>
+							<lightning-input name="MailingCity" value={hcpFields.city} onchange={handleInputChangehcp}
+								data-field="hc" class="textInput" variant="label-hidden" placeholder={placeCity} maxlength="35">
+							</lightning-input>
+							<div class="slds-form-element__help" if:true={rpCityErrorMessage}>
+								<img class="warningclass" alt="Warning" src={warning}>
+								<span class="errorFieldMsg">{cityError}</span>
+							</div>
+							<div class="slds-form-element__help" if:true={rpCityErrorMessageValid}>
+								<img class="warningclass" alt="Warning" src={warning}>
+								<span class="errorFieldMsg">{validCity}</span>
+							</div>
+						</div>
+						<div class="input-div">
+							<div for="hLicense" class="input-label" data-field="hs">{streetLabel}</div>
+							<lightning-textarea name="MailingStreet" value={hcpFields.street}
+								onchange={handleInputChangehcp} data-field="hs" class="textInput" variant="label-hidden"
+								placeholder={placeStreet}>
+							</lightning-textarea>
+							<div class="slds-form-element__help" if:true={rpStreetErrorMessage}>
+								<img class="warningclass" alt="Warning" src={warning}>
+								<span class="errorFieldMsg">{streetError}</span>
+							</div>
+						</div>
+						<div class="input-div">
+							<div for="hLicense" class="input-label" data-field="hpc">{zipCodeValue}</div>
+							<lightning-input name="MailingPostalCode" value={hcpFields.code}
+								onchange={handleInputChangehcp} data-field="hpc" class="textInput"
+								variant="label-hidden" placeholder={placeZip}>
+							</lightning-input>
+							<div class="slds-form-element__help" if:true={rpPostalCodeErrorMessage}>
+								<img class="warningclass" alt="Warning" src={warning}>
+								<span class="errorFieldMsg">{pinCodeError}</span>
+							</div>
+							<div class="slds-form-element__help" if:true={RPpostalerrorMessagevalid}>
+								<img class="warningclass" alt="Warning" src={warning}>
+								<span class="errorFieldMsg">{validZipCode}</span>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<hr class="hrclass3" />
+				<div class="btn-div">
+					<button class="prev-button" onclick={goToHome}>{cancelLabel}</button>
+					<button class="next-button" onclick={goToStepTwo}>{nextLabel}</button>
+				</div>
+			</div>
+			<div class="stepTwo step-container slds-hide">
+				<img src={BGpp} class="marTB20" alt="Beyond Gpp">
+				<h1 class="heading">{enrollPatient}</h1>
+
+				<div class="slds-form-element__help" if:true={unique}>
+
+					<span class="Matching">{matchingInfo}<br> {alreadyExit}</span>
+				</div>
+				<div class="PI ">
+					<div class="one">{numTwo}&nbsp;</div>
+					<div class="PI">
+						{patientinfo}
+					</div>
+				</div>
+				<h1 class="demoFont">{patientinfo}</h1>
+				<div class="input-div">
+					<div class="input-label" data-field="pFN">{firstNameLabel}</div>
+					<lightning-input label="First Name*" name="FirstName" value={leadFields.FirstName} class="textInput"
+						 onchange={handleInputChange} placeholder={placeFirst}
+						variant="label-hidden" data-field="pFN" maxlength="35">
+					</lightning-input>
+					<div class="slds-form-element__help" if:true={firstnameErrorMessage}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class="errorFieldMsg">{firstNameError}</span>
+					</div>
+					<div class="slds-form-element__help" if:true={firstnameErrorMessagevaild}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class="errorFieldMsg">{firstNameValid}</span>
+					</div>
+				</div>
+				<div class="input-div">
+					<div class="input-label" data-field="pLN">{lastNameLabel}</div>
+					<lightning-input label="Last Name*" name="LastName" value={leadFields.LastName} class="textInput"
+						 onchange={handleInputChange} placeholder={placeLast}
+						variant="label-hidden" data-field="pLN" maxlength="60">
+					</lightning-input>
+					<div class="slds-form-element__help" if:true={lastnameErrorMessage}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class="errorFieldMsg">{lastName}</span>
+					</div>
+					<div class="slds-form-element__help" if:true={lastnameErrorMessagevaild}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class="errorFieldMsg">{lastNameValid}</span>
+					</div>
+				</div>
+				<div class="input-div">
+					<div class="input-label" data-field="pdob">{dobLabel}</div>
+					<lightning-input type="date" label="Date of Birth*" name="dob" value={leadFields.dob}
+						class="textInput" onchange={agecalculationEvent} placeholder={placeDob} variant="label-hidden"
+						onkeydown={handleKeyDownThree} data-field="pdob" onclick={onClickCalendar} onblur={onBlurCalendar}>
+					</lightning-input>
+					<div class="slds-form-element__help" if:true={dobErrorMessage}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class="errorFieldMsg">{patientDob}</span>
+					</div>
+
+					<div class="slds-form-element__help" if:true={error}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class="errorFieldMsg">{futureDateError}</span>
+					</div>
+					<div class="slds-form-element__help" if:true={oneNineZeroZeroErrors}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class="errorFieldMsg">{yearOlder}</span>
+					</div>
+				</div>
+				<div class="input-div">
+					<div class="input-label" data-field="pGender">{generalLabel}</div>
+					<lightning-combobox name="HealthCloudGA__Gender__c" label="Gender*" placeholder={placeSelect}
+						class="textInput" options={leadGender} value={selectedGender} onchange={PatientGenderChange}
+						variant="label-hidden" data-field="pGender">
+					</lightning-combobox>
+					<div class="slds-form-element__help" if:true={genderErrorMessage}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class="errorFieldMsg">{genderField}</span>
+					</div>
+				</div>
+				<div class="input-div" if:true={isAdult}>
+					<div class="input-label" data-field="pEmail">{emailLabelMand}</div>
+					<lightning-input label="E-mail ID*" name="Email" value={leadFields.Email} class="textInput"
+						onchange={handleInputChange} placeholder={placeEmail} variant="label-hidden"
+						data-field="pEmail">
+					</lightning-input>
+					<div class="slds-form-element__help" if:true={emailErrorMessage}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class="errorFieldMsg">{physicianEmail}</span>
+					</div>
+					<div class="slds-form-element__help" if:true={emailErrorValid}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class="errorFieldMsg">{validEmail}</span>
+					</div>
+					<div class="slds-form-element__help flexclass" if:true={matchEmail}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class="errorFieldMsg exits">{existingEmail}.</span>
+					</div>
+				</div>
+				<div class="input-div" if:true={isAdult}>
+					<div class="input-label" data-field="pPhone">{phoneNum}</div>
+					<lightning-input label="Phone number" type="tel" name="Phone" value={leadFields.Phone}
+						onkeypress={handleKeyDown} class="textInput" maxlength="16" onchange={handleInputChange}
+						placeholder={placePhone} variant="label-hidden" data-field="pPhone">
+					</lightning-input>
+					<div class="slds-form-element__help" if:true={phnErrorValid}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class="errorFieldMsg">{validPhone}</span>
+					</div>
+				</div>
+				<div class="btn-div">
+					<button class="prev-button" onclick={goBackToStepOne}>{previousValue}</button>
+					<button class="next-button" onclick={goToStepThree}>{nextLabel}</button>
+				</div>
+			</div>
+			<div class="stepThree step-container slds-hide">
+				
+				<img src={BGpp} class="marTB20" alt="Beyond Gpp">
+				<h1 class="heading">{enrollPatient}</h1>
+				<div class="PI ">
+					<div class="one">{numberThree}&nbsp;</div>
+					<div class="PI">
+						{caregiverInfo}
+					</div>
+				</div>
+				<h1 class="demoFont">{caregiverInfo}</h1>
+				<div class="input-div">
+					<div class="input-label cFN">{firstNameLabel}</div>
+					<lightning-input label="First Name*" name="CaregiverFirstName" value={caregiverFields.FirstName}
+						 onchange={handleInputChangeCaregiver} class="textInput cFN"
+						variant="label-hidden" placeholder={placeFirst} maxlength="35">
+					</lightning-input>
+					<div class="slds-form-element__help" if:true={careFirstnameErrorMessage}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class="errorFieldMsg">{firstNameError}</span>
+					</div>
+					<div class="slds-form-element__help" if:true={careFirstnameErrorMessageValid}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class='errorFieldMsg'>{firstNameValid}</span>
+					</div>
+				</div>
+				<div class="input-div">
+					<div class="input-label cLN">{lastNameLabel}</div>
+					<lightning-input label="Last Name*" name="CaregiverLastName" value={caregiverFields.LastName}
+					 onchange={handleInputChangeCaregiver} class="textInput cLN"
+						variant="label-hidden" placeholder={placeLast} maxlength="60"> 
+					</lightning-input>
+					<div class="slds-form-element__help" if:true={careLastnameErrorMessage}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class="errorFieldMsg">{lastName}</span>
+					</div>
+					<div class="slds-form-element__help" if:true={careLastnameErrorMessageValid}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class="errorFieldMsg">{lastNameValid}</span>
+					</div>
+
+
+				</div>
+				<div class="input-div">
+					<div class="input-label cDob">{dobLabel}</div>
+					<lightning-input type="date" label="Date of Birth*" name="caredob" value={caregiverFields.dob}
+						onchange={careagecalculation} class="textInput cDob" variant="label-hidden"
+						onkeydown={handleKeyDownThree} placeholder={placeDob} onclick={onClickCalendar} onblur={onBlurCalendar}>
+					</lightning-input>
+					<div class="slds-form-element__help" if:true={careDobErrorMessage}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class="errorFieldMsg">{patientDob}</span>
+					</div>
+					<div class="slds-form-element__help" if:true={errors}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class="errorFieldMsg">{futureDateError}</span>
+					</div>
+					<div class="slds-form-element__help" if:true={careOneNineZerZeroErrors}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class="errorFieldMsg">{yearOlder}</span>
+					</div>
+					<div class="slds-form-element__help" if:true={minorError}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class="errorFieldMsg">{beforeAge}</span>
+					</div>
+				</div>
+				<div class="input-div">
+					<div class="input-label cRel">{relationLabel}</div>
+					<lightning-combobox label="Relationship" name="CaregiverRelationship" placeholder={placeSelect}
+						value={selectedRelationship} options={Relationship} onchange={handleInputChangeCaregiver}
+						class="textInput cRel" variant="label-hidden">
+					</lightning-combobox>
+					<div class="slds-form-element__help" if:true={relationshipErrorMessage}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class="errorFieldMsg">{relationshipError}</span>
+					</div>
+				</div>
+				<div class="input-div">
+					<div class="input-label cEmail">{emailLabelMand}</div>
+					<lightning-input label="E-mail ID*" name="CaregiverEmail" value={caregiverFields.Email}
+						onchange={handleInputChangeCaregiver} class="textInput cEmail" variant="label-hidden"
+						placeholder={placeEmail}>
+					</lightning-input>
+					<div class="slds-form-element__help" if:true={careEmailErrorMessage}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class="errorFieldMsg">{physicianEmail}</span>
+					</div>
+					<div class="slds-form-element__help" if:true={cEmailErrorValid}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class="errorFieldMsg">{validEmail}</span>
+					</div>
+					<div class="slds-form-element__help flexclass" if:true={matchCaregiverEmail}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class="errorFieldMsg exits">{existingEmail}</span>
+					</div>
+				</div>
+				<div class="input-div">
+					<div class="input-label cPhone" data-field="cPhone">{phoneNum}</div>
+					<lightning-input label="Phone" type="tel" data-field="cPhone" name="CaregiverPhone"
+						value={caregiverFields.Phone} onkeypress={handleKeyDown} onchange={handleInputChangeCaregiver}
+						maxlength="16" class="textInput cPhone" variant="label-hidden"
+						placeholder={placePhone}>
+					</lightning-input>
+					<div class="slds-form-element__help" if:true={cphoneerrorvalid}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class='errorFieldMsg'>{validPhone}</span>
+					</div>
+				</div>
+
+				<div class="btn-div">
+					<button class="prev-button" onclick={goBackToStepTwo}>{previousValue}</button>
+					<button class="next-button" onclick={goToStepFour}>{nextLabel}</button>
+				</div>
+			</div>
+			<div class="stepFour step-container slds-hide">
+				<img src={BGpp} class="marTB20" alt="Beyond Gpp">
+				<h1 class="heading">{enrollPatient}</h1>
+				<div class="PI">
+					<div class="one" if:true={numThree}>{numberThree}&nbsp;</div>
+					<div class="one" if:true={numFour}>{numberFour}&nbsp;</div>
+					<div class="PI">
+						{prescriptionInfo}
+					</div>
+				</div>
+				<h1 class="demoFont">{prescriptionInfo}</h1>
+				<div class="slds-form-element">
+					<div class="slds-form-element__control">
+						<div class="input-label hDrug">{drugLabel}</div>
+						<div class=" slds-input-has-icon slds-input-has-icon_right">
+							<lightning-icon if:true={searchValueLogo} size="x-small"
+								class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default"
+								icon-name="utility:search"></lightning-icon>
+							<lightning-input label="Drug*" type="search" onclick={showPicklistOptions} onchange={search}
+								value={SELECTED_VALUE} class="textInput hDrug" variant="label-hidden"
+								placeholder={placeDrug} onkeypress={showPicklistOptions}>
+							</lightning-input>
+						</div>
+						<div if:true={searchResults} class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid"
+							>
+							<ul class="slds-listbox slds-listbox_vertical" >
+								<template for:each={searchResults} for:item="searchResult">
+									<li key={searchResult.value} data-value={searchResult.value} onkeypress={selectSearchResult}
+										onclick={selectSearchResult} class="slds-listbox__item">
+										<div class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small"
+											>
+											<span class="slds-media__body">
+												<span class="slds-truncate" title={searchResult.label}>
+													{searchResult.label}
+												</span>
+											</span>
+										</div>
+									</li>
+								</template>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="slds-form-element__help" if:true={drugErrorMessage}>
+					<img class="warningclass" alt="Warning" src={warning}>
+					<span class="errorFieldMsg">{drugError}</span>
+				</div>
+				<div class="slds-form-element__help" if:true={searchResultEmpty}>
+					<img class="warningclass" alt="Warning" src={warning}>
+					<span class="errorFieldMsg">{unableToDrug}</span>
+				</div>
+				<div class="input-div">
+					<div class="input-label">Drug Code</div>
+					<lightning-input label="Drug Code*" name="DosageCode" value={prescriptionFields.DosageCode}
+						onchange={handleInputChange2} class="textInput" disabled variant="label-hidden"
+						placeholder={placeDrugCode}>
+					</lightning-input>
+				</div>
+				<div class="dosage-unit-input-container">
+					<div class="input-div dosage-unit-input-div">
+						<div class="input-label">{dosage}</div>
+						<lightning-input label="Dosage*" name="Dosage" value={prescriptionFields.Dosage}
+							onchange={handleInputChange2} class="textInput dosage-frequency-input" disabled
+							variant="label-hidden" placeholder="0">
+						</lightning-input>
+					</div>
+					<div class="input-div dosage-unit-input-div">
+						<div class="input-label">{units}</div>
+						<lightning-input label="Unit" name="Unit" value={prescriptionFields.Unit}
+							onchange={handleInputChange2} class="textInput" disabled variant="label-hidden"
+							placeholder={placeMg}>
+						</lightning-input>
+					</div>
+				</div>
+				<div class="input-div">
+					<div class="input-label">{quentity}</div>
+					<lightning-input label="Quantity*" name="Quantity" value={prescriptionFields.Quantity}
+						onkeydown={handleKeyDownTwo} onchange={handleInputChange2} class="textInput" variant="label-hidden"
+						placeholder={placeQuantity}>
+					</lightning-input>
+				</div>
+				<div class="dosage-unit-input-container">
+					<div class="input-div dosage-unit-input-div">
+						<div class="input-label hFreq">{frequency}</div>
+						<lightning-input label="Frequency*" name="Frequency" value={prescriptionFields.Frequency}
+							onkeydown={handleKeyDownTwo} onchange={handleInputChange2}
+							class="textInput hFreq dosage-frequency-input" variant="label-hidden" placeholder="0">
+						</lightning-input>
+
+					</div>
+					<div class="input-div dosage-unit-input-div">
+						<div class="input-label hFreqUnit">{units}</div>
+						<lightning-combobox name="frequcncyunit" label="Unit*" placeholder={placeSelect}
+							options={FrequencyUnit} value={selectedunit} onchange={handleInputChange2}
+							class="textInput hFreqUnit" variant="label-hidden">
+						</lightning-combobox>
+
+					</div>
+				</div>
+				<div class="input-div">
+					<div class="input-label">{numberOfRefills}</div>
+					<lightning-input label="No of refills*" name="refill" value={prescriptionFields.refill}
+						onkeydown={handleKeyDownTwo} onchange={handleInputChange2} class="textInput" variant="label-hidden"
+						placeholder={placeRefills}>
+					</lightning-input>
+				</div>
+				<div class="input-div">
+					<div class="input-label hpdate">{prescriptedDate}</div>
+					<lightning-input type="date" label="Prescribed Date*" name="Prescribed_Date__c"
+						value={prescriptionFields.date} onchange={datecalculation} class="textInput hpdate"
+						onkeydown={handleKeyDownThree} variant="label-hidden" placeholder={placeDob} onclick={onClickCalendar} date-style="short"
+						onblur={onBlurCalendar}>
+					</lightning-input>
+					<div class="slds-form-element__help" if:true={dateErrorMessage}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class="errorFieldMsg">{prescriptedError}</span>
+					</div>
+					<div class="slds-form-element__help" if:true={errorss}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class="errorFieldMsg">{preFutureDate}</span>
+					</div>
+					<div class="slds-form-element__help" if:true={presOneNineZeroZeroErrors}>
+						<img class="warningclass" alt="Warning" src={warning}>
+						<span class="errorFieldMsg">{yearOlder}</span>
+					</div>
+				</div>
+				<h1 class="demoFont1">{consentInfo}</h1>
+				<div class="color1-properties">
+<div class="custom-checkbox-container">
+        <input type="checkbox" id="customCheckbox" class="custom-checkbox" onchange={handleInputChange3} value={consentFields.authorize} />
+        <label for="customCheckbox" class="custom-checkbox-label">
+              <span class="custom-checkbox-box" data-field="checkbox"></span>
+        </label>
+    </div>
+					<span class="Agreeclass">{agree}&nbsp;</span>
+					<button onclick={showModal} class="termclass">{terms}
+					</button>
+				</div>
+				<template if:true={openModal}>
+					<div class="slds-modal slds-fade-in-open slds-backdrop">
+						<div class="slds-modal__container">
+							<!--HEADER Section-->
+							<div class="slds-modal__header">
+								<lightning-button-icon icon-name="utility:close" alternative-text="Close this window"
+									size="large" variant="bare-inverse" onclick={closeModal} class="close-icon">
+								</lightning-button-icon>
+								<h2>Terms and Conditions</h2>
+							</div>
+							<!------Body Section-->
+							<div class="slds-modal__content slds-p-around_medium">
+								<p>Lorem ipsum dolor sit amet. Quo saepe inventore ut galisum dicta et perferendis
+									laborum. Sed fugit consequatur qui praesentium internos id officiis tempore eum
+									veniam culpa ad ipsam repudiandae aut veniam natus aut assumenda repellat. Eum
+									delectus vitae aut nisi enim aut velit dolorem eos labore reprehenderit.</p>
+								<h2 class="terms-conditions-subheading">Et adipisci tempora eum dolor iure</h2>
+								<p>Est atque neque qui dignissimos galisum in distinctio eveniet ab esse nobis eum
+									iusto consequuntur est fugit maiores et dolores sint. Qui voluptatum tempore vel
+									molestiae architecto ut nostrum autem qui optio dicta?</p>
+								<h2 class="terms-conditions-subheading">Your loved ones are here to support you</h2>
+								<p>Lorem ipsum dolor sit amet. Quo saepe inventore ut galisum dicta et perferendis
+									laborum. Sed fugit consequatur qui praesentium internos id officiis tempore eum
+									veniam culpa ad ipsam repudiandae aut veniam natus aut assumenda repellat. Eum
+									delectus vitae aut nisi enim aut velit dolorem eos labore reprehenderit.</p>
+								<p>Lorem ipsum dolor sit amet. Quo saepe inventore ut galisum dicta et perferendis
+									laborum. Sed fugit consequatur qui praesentium internos id officiis tempore eum
+									veniam culpa ad ipsam repudiandae aut veniam natus aut assumenda repellat. Eum
+									delectus vitae aut nisi enim aut velit dolorem eos labore reprehenderit.</p>
+								<p>Lorem ipsum dolor sit amet. Quo saepe inventore ut galisum dicta et perferendis
+									laborum. Sed fugit consequatur qui praesentium internos id officiis tempore eum
+									veniam culpa ad ipsam repudiandae aut veniam natus aut assumenda repellat. Eum
+									delectus vitae aut nisi enim aut velit dolorem eos labore reprehenderit.Lorem
+									ipsum dolor sit amet. Quo saepe inventore ut galisum dicta et perferendis
+									laborum. Sed fugit consequatur qui praesentium internos id officiis tempore eum
+									veniam culpa ad ipsam repudiandae aut veniam natus aut assumenda repellat. Eum
+									delectus vitae aut nisi enim aut velit dolorem eos labore reprehenderit.</p>
+								<h2 class="terms-conditions-subheading">Et adipisci tempora eum dolor iure.</h2>
+								<p>Lorem ipsum dolor sit amet. Quo saepe inventore ut galisum dicta et perferendis
+									laborum. Sed fugit consequatur qui praesentium internos id officiis tempore eum
+									veniam culpa ad ipsam repudiandae aut veniam natus aut assumenda repellat. Eum
+									delectus vitae aut nisi enim aut velit dolorem eos labore reprehenderit. Lorem
+									ipsum dolor sit amet. Quo saepe inventore ut galisum dicta et perferendis
+									laborum. Sed fugit consequatur qui praesentium internos id officiis tempore eum
+									veniam culpa ad ipsam repudiandae aut veniam natus aut assumenda repellat. Eum
+									delectus vitae aut nisi enim aut velit dolorem eos labore reprehenderit.</p>
+								<p>Lorem ipsum dolor sit amet. Quo saepe inventore ut galisum dicta et perferendis
+									laborum. Sed fugit consequatur qui praesentium internos id officiis tempore eum
+									veniam culpa ad ipsam repudiandae aut veniam natus aut assumenda repellat. Eum
+									delectus vitae aut nisi enim aut velit dolorem eos labore reprehenderit.Lorem
+									ipsum dolor sit amet. Quo saepe inventore ut galisum dicta et perferendis
+									laborum. Sed fugit consequatur qui praesentium internos id officiis tempore eum
+									veniam culpa ad ipsam repudiandae aut veniam natus aut assumenda repellat. Eum
+									delectus vitae aut nisi enim aut velit dolorem eos labore reprehenderit.</p>
+								<h2 class="terms-conditions-subheading">Et adipisci tempora eum dolor iure</h2>
+								<p>Est atque neque qui dignissimos galisum in distinctio eveniet ab esse nobis eum
+									iusto consequuntur est fugit maiores et dolores sint. Qui voluptatum tempore vel
+									molestiae architecto ut nostrum autem qui optio dicta?</p>
+								<h2 class="terms-conditions-subheading">Your loved ones are here to support you</h2>
+								<p>Lorem ipsum dolor sit amet. Quo saepe inventore ut galisum dicta et perferendis
+									laborum. Sed fugit consequatur qui praesentium internos id officiis tempore eum
+									veniam culpa ad ipsam repudiandae aut veniam natus aut assumenda repellat. Eum
+									delectus vitae aut nisi enim aut velit dolorem eos labore reprehenderit.</p>
+								<p>Lorem ipsum dolor sit amet. Quo saepe inventore ut galisum dicta et perferendis
+									laborum. Sed fugit consequatur qui praesentium internos id officiis tempore eum
+									veniam culpa ad ipsam repudiandae aut veniam natus aut assumenda repellat. Eum
+									delectus vitae aut nisi enim aut velit dolorem eos labore reprehenderit.</p>
+								<p>Lorem ipsum dolor sit amet. Quo saepe inventore ut galisum dicta et perferendis
+									laborum. Sed fugit consequatur qui praesentium internos id officiis tempore eum
+									veniam culpa ad ipsam repudiandae aut veniam natus aut assumenda repellat. Eum
+									delectus vitae aut nisi enim aut velit dolorem eos labore reprehenderit.Lorem
+									ipsum dolor sit amet. Quo saepe inventore ut galisum dicta et perferendis
+									laborum. Sed fugit consequatur qui praesentium internos id officiis tempore eum
+									veniam culpa ad ipsam repudiandae aut veniam natus aut assumenda repellat. Eum
+									delectus vitae aut nisi enim aut velit dolorem eos labore reprehenderit.</p>
+							</div>
+
+						</div>
+					</div>
+				</template>
+
+				<div class="slds-form-element__help" if:true={authorizeErrorMessage}>
+					<img class="warningclass"  src={warning} alt="Warning Icon">
+					<span class="errorFieldMsg">{agreeError}</span>
+				</div>
+				<div class="btn-div" if:false={isButtonDisabled}>
+					<button class="prev-button" onclick={goBackToStepThree}>{previousValue}</button>
+					<button type="button" onclick={handleCreateLead} class="next-button">{submit}</button>
+				</div>
+				<div class="btn-div" if:true={isButtonDisabled}>
+					<button class="prev-button" onclick={goBackToStepThree}>{previousValue}</button>
+					<button type="button" onclick={handleCreateLead}  disabled={isButtonDisabled} class="disable-button">{submit}</button>
+				</div>
+
+
+			</div>
+			<div class="progress-bar-container-parent">
+				<div class="slds-progress slds-progress_vertical progress-bar-container">
+
+					<h1 class="mobile-heading">{enrollPatient}</h1>
+					<div class="progress-label">{progressLabel}</div>
+					<ol class="slds-progress__list progress-ol">
+						<li class="slds-progress__item slds-is-active li-one">
+							<div class="slds-progress__marker"></div>
+							<div class="progress-label-count">{numOne}&nbsp;</div>
+							<div class="slds-progress__item_content slds-grid slds-grid_align-spread progress-label">
+								{physicianInfo}
+							</div>
+						</li>
+						<li class="slds-progress__item li-two">
+							<div class="slds-progress__marker"></div>
+							<div class="progress-label-count">{numTwo}&nbsp;</div>
+							<div class="slds-progress__item_content slds-grid slds-grid_align-spread progress-label">
+								{patientinfo}
+							</div>
+						</li>
+						<li class="slds-progress__item li-three slds-hide">
+							<div class="slds-progress__marker"></div>
+							<div class="progress-label-count">{numberThree}&nbsp;</div>
+							<div class="slds-progress__item_content slds-grid slds-grid_align-spread progress-label">
+								{caregiverInfo}
+							</div>
+						</li>
+						<li class="slds-progress__item li-four">
+							<div class="slds-progress__marker"></div>
+							<div class="prescription-label progress-label-count">{level}&nbsp;</div>
+							<div class="slds-progress__item_content slds-grid slds-grid_align-spread progress-label">
+								{prescriptionInfo}
+							</div>
+						</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+		<div class="spinner-wrapper" if:true={isLoaded}>
+			<div class="loader"></div>
+		</div>
+	</div>
+</template>

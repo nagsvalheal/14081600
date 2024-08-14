@@ -1,0 +1,96 @@
+<!--This component is designed for creating a case based on the report advers events-->
+<template>
+	<div if:true={showSpinner}>
+		<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	 </div>
+	<template if:true={casePopup}>
+		<div class="check"><c-bi-pspb-common-popup toast-message={successMsg} onbuttonclick={casePopup}></c-bi-pspb-common-popup></div>
+	</template>	
+<template if:true={draftPopup}>
+	<div class="check"><c-bi-pspb-common-popup toast-message={successMessage} onbuttonclick={ClosePopup}></c-bi-pspb-common-popup></div>
+</template>
+	<div class="main" data-it-uid={userId}>
+
+		<div class="response">
+
+			<div class="heading">
+
+				<button class="back" onclick={handleBack} onkeypress={handleBack}>
+					<div><img src={backArrow} class="imgmod" alt="Back Arrow" width="12px" height="24px"></div>
+					<div>
+						<p>{backValue}</p>
+					</div>
+				</button>
+			</div>
+			<div class="medicalheading">
+				<h2>{reportTitle}</h2>
+			</div>
+			<div class="icon">
+				<img src={boxedicon} alt="Box Icon" class="img">
+				<div>
+					<p class="parag">{reportContent}</p>
+				</div>
+			</div>
+			<div class="form-container">
+				<!-- Your form content goes here -->
+				<div class="medicalform">
+					<div class={radioBtnColorChange}>
+						<label for="radioGroup">{selectType}</label>
+						<div class="medicalInput">
+							<lightning-radio-group name="options" options={subTypeOptions} value={selectedOption}
+								onchange={handleRadioChange} disabled={isReadOnly}></lightning-radio-group>
+						</div>
+					</div><br>
+					<div class="error-throwtitle" if:true={subTypeError}> {subTypeErr}</div>
+
+					<div data-field="desc" class="desnot">{descriptionValue}</div><br>
+					<lightning-textarea  class={class5} data-field="desc" variant="label-hidden" value={description} onchange={handledescription}></lightning-textarea>
+					<div class="error-throw" if:true={descriptionError}>
+						<img src={iconWarning} alt="Warning" class="imgwarning">
+						<p class="p">&nbsp;
+							{descriptionErr}</p>
+					</div>
+					<div class="error-throw" if:true={descriptionLengthError}>
+						<img src={iconWarning} alt="Warning" class="imgwarning">&nbsp;
+						{descritionErrChar}
+					</div>
+					<br>
+					<div class="attachment">{attachment}</div>
+					<div class="fileBox">
+						<div class="BoxAndMb">
+							<p class="fileLabelName" if:true={browserName}>{browesAndUpload}</P>
+							<template if:true={fileNames} for:each={fileNames} for:item="fileName">
+								<p key={fileName} class="fileLabelName">{fileName}</p>
+							</template>
+
+							<div><img class="imgclass" alt="Warning" src={fileIcon}></div>
+							<div></div>
+							<h4 class="fivemb"><span><b>{fiveMb}</b></span>
+								<p class="max">{maxLimit}</p>
+							</h4>
+						</div>
+					</div>
+					<div class="fileBoxHide">
+						<div class="fileUploadSelector">
+							<lightning-file-upload name="fileUploader" accept={acceptedFormats}
+								onuploadfinished={handleUploadFinished} record-id={recordId} 
+								class="file-selector-image Upload">
+							</lightning-file-upload>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="buttondiv">
+					<div><button class="button1" onclick={handleInsertUpdate} data-value="Report an Adverse Events"
+							data-it-button="reportadverseevents: Create New Case" disabled={isSubmitButtonDisabled}>{createCase}</button></div>
+					<div><button class="button2" onclick={handleInsertDraft} data-value="Report an Adverse Events" 
+							data-it-button="reportadverseevents: Save as Draft" disabled={isButtonDisabled}>{createDraft}</button></div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</template>

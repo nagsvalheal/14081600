@@ -1,0 +1,77 @@
+<!--This component is used to Display Tasks based on the General notification on clicking the Notification icon from the Dashboard.-->
+<template>
+	<div class="main" data-it-uid={userId}>
+		  <div class="secondMain">
+			<div class="notification">
+				<h3> {notificationHeading} {activeMenuItem}</h3><br>
+
+				<template if:true={general}>
+					<lightning-combobox class="textInput" value={value} placeholder="Select category" options={options}
+						onchange={handleChange}></lightning-combobox>
+					<div if:true={noRecords}>
+						<p class="recordclass">{noNotifications}</p>
+					</div>
+					<template if:true={displayedGeneralValue}>
+						<template for:each={displayedGeneralValue} for:item="generalItem">
+							<h2 key={generalItem.Id}>
+								<div class="generalnotify">
+									<div class="classdate">
+										<p>{generalItem.FormattedDate}</p>
+									</div>
+									<div class="actionclass">
+										<div class="classimg">
+											<img if:true={generalItem.sympimg} class="imgclass" src={symptomImg} alt = {alternateForSymptoms} />
+											<img if:true={generalItem.challimg} class="imgclass" src={challengeImg} alt = {alternateForChallenges} />
+											<img if:true={generalItem.contentsimg} class="imgclass" src={contentImg} alt = {alternateForQuestions} />
+											<img if:true={generalItem.Questimg} class="imgclass" src={questionImg} alt = {alternateForQuestions} />
+											<img if:true={generalItem.Treatmentimg} class="imgclass" src={treatmentImg} alt = {alternateForReminders} />
+											<img if:true={generalItem.treatmentVideoImg} class="imgclass" src={treatmentVideoImg} alt = {alternateForReminders} />
+											<img if:true={generalItem.Comunityimage} class="imgclass"
+												src={communityImg} alt = {alternateForCommunity} />
+										</div>
+										<div class="classSubject">
+											<p>{generalItem.Subject}</p>
+										</div>
+									</div>
+									<div class="actionbtn">
+										<button class="clickhere" if:true={generalItem.trackButton}
+											data-task-id={generalItem.Id} onclick={updategeneraltask}
+											data-it-button="General Notification: Click here and Discover Why">{symptomButton}</button>
+										<button class="start" if:true={generalItem.viewButton}
+											data-task-id={generalItem.Id} onclick={updategeneraltask}
+											data-it-button="General Notification: Start Now">{startButton}</button>
+										<button class="readbtn" if:true={generalItem.Readbutton}
+											data-task-id={generalItem.Id} onclick={updategeneraltask}
+											data-it-button="General Notification:Read Now">{readButton}</button>
+										<button class="viewpostbtn" if:true={generalItem.Combutton}
+											data-task-id={generalItem.Id} onclick={updategeneraltask}
+											data-it-button="General Notification: View Post">{postButton}</button>
+										<button class="viewcommentbtn" if:true={generalItem.Commentsbutton}
+											data-task-id={generalItem.Id} onclick={updategeneraltask}
+											data-it-button="General Notification: View Comments">{commentButton}</button>
+										<button class="viewreactbtn" if:true={generalItem.Reactionbutton}
+											data-task-id={generalItem.Id} onclick={updategeneraltask}
+											data-it-button="General Notification: View Reaction">{reactionButton}</button>
+										<button class="viewfollowbtn" if:true={generalItem.Follwersbutton}
+											data-task-id={generalItem.Id} onclick={updategeneraltask}
+											data-it-button="General Notification: View Followers">{followButton}</button>
+										<button class="clicktowatch" if:true={generalItem.treatmentVideoButton}
+											data-task-id={generalItem.Id} onclick={updategeneraltask}
+											data-it-button="General Notification: Click to watch">{watchButton}</button>
+										
+									</div>
+								</div>
+							</h2>
+						</template>
+						<!-- Load More button -->
+						<button class="buttonclass" if:true={showLoadMoreButton} onclick={loadMore}
+							data-it-button="General Notification: Load More">{loadMoreButton}</button>
+					</template>
+				</template>
+			</div>
+		</div>
+	</div>
+	<div if:true={showSpinner}>
+        <c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+     </div>
+</template>

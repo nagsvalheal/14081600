@@ -1,0 +1,107 @@
+<!-- this component get the patients status and show the case created date ,type ,status,and discriptions -->
+<template>
+	<!-- Component template starts here -->
+	<div data-it-uid={userid}>
+		<p class="headingclass">{validationLabel}</p>
+		<template if:true={noPresription}>
+			<p class="msgforpre">{noPrescriptionLabel}</p>
+		</template>
+		<template if:true={withPrescription}>
+			<!-- Lightning combobox component for case staus picklist field -->
+			<lightning-combobox value={statusvalue} placeholder="Status type" options={Statusoptions}
+				onchange={handleChange} class="classforcimbobox"></lightning-combobox>
+			<!-- Main heading div -->
+			<div class="fulldiv">
+				<div if:true={headingOnly}>
+					<div class="headingflex">
+						<p class="padding1">{dateLabel}</p>
+						<p class="padding2">{typeLabel}</p>
+						<p class="padding3">{descriptionLabel}</p>
+						<p class="padding4">{statusLabel}</p>
+					</div>
+				</div>
+				<!-- Loop through cases -->
+				<div class="fullclass">
+					<template for:each={cases} for:item="item">
+						<div key={item.Id} class="dateclass5">
+							<!-- display the record created date -->
+							<div class="dateclass">
+								<p if:true={item.FormattedDate}>{item.FormattedDate}</p>
+								<p if:false={item.FormattedDate}>N/A</p>
+							</div>
+							<!-- display the type -->
+							<div class="dateclass2">
+								<p if:true={item.BI_PSP_Type__c}>{item.BI_PSP_Type__c}</p>
+								<p if:false={item.BI_PSP_Type__c}>N/A</p>
+							</div>
+							<!-- display the description  -->
+							<div class="dateclass3">
+								<p if:true={item.BI_PSPB_Additional_Comments__c}>
+									{item.BI_PSPB_Additional_Comments__c}
+								</p>
+								<p if:false={item.BI_PSPB_Additional_Comments__c}>N/A</p>
+							</div>
+							<!-- display the status  -->
+							<div class="dateclass4">
+								<p if:true={item.Status} class={item.status}>{item.Status}</p>
+								<p if:false={item.Status} class="valuecss">N/A</p>
+							</div>
+						</div>
+					</template>
+				</div>
+			</div>
+		</template>
+
+		<template if:true={mobilePrescrition}>
+			<!-- Mobile view content -->
+			<div class="fulldiv1">
+				<!-- Header row for mobile view  of date and type  -->
+				<div class="mobileflex3">
+					<div class="date">{dateLabel}</div>
+					<div>Type</div>
+				</div>
+				<!-- Loop through cases for mobile view -->
+				<template for:each={cases} for:item="item">
+					<div class="loopclass" key={item.Id}>
+						<div>
+							<!-- Date column in mobile view -->
+
+							<div class="mobileflex2">
+								<div class="datemobilecss">
+									<p if:true={item.FormattedDate}>{item.FormattedDate}</p>
+									<p if:false={item.FormattedDate}>N/A</p>
+
+									<!-- Type column in mobile view -->
+								</div>
+								<div class="typemobilecss">
+									<p if:true={item.BI_PSP_Type__c}>{item.BI_PSP_Type__c}</p>
+									<p if:false={item.BI_PSP_Type__c}>N/A</p>
+								</div>
+							</div>
+						</div>
+						<div>
+							<!-- Status column in mobile view -->
+							<div class="mobileflex">
+								<div class="date">{statusLabel}</div>
+								<div class="statuspad">
+									<p if:true={item.Status} class={item.status}>{item.Status}</p>
+									<p if:false={item.Status} class="valuecss">N/A</p>
+								</div>
+							</div>
+							<!-- Description column in mobile view -->
+							<div class="mobileflex5">
+								<div class="discriptionmobilecss">{descriptionLabel}</div>
+								<div class="discriptionmobilecss1">
+									<p if:true={item.BI_PSPB_Additional_Comments__c}>
+										{item.BI_PSPB_Additional_Comments__c}
+									</p>
+									<p if:false={item.BI_PSPB_Additional_Comments__c}>N/A</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</template>
+			</div>
+		</template>
+	</div>
+</template>

@@ -1,0 +1,781 @@
+/*--Font Declaration---*/
+
+@font-face {
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: "Eina-Light",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff') format('woff');
+}
+
+@font-face {
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff') format('woff');
+}
+
+@font-face {
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff') format('woff');
+}
+
+/*--Banner Starts--*/
+
+.bannerclass {
+	background-color: #EBEBEB;
+	padding: 80px 0px;
+}
+
+.video {
+	width: 76%;
+	margin-left: 25px;
+}
+
+.padding {
+	padding-right: 5%;
+	padding-left: 5%;
+	overflow: hidden;
+}
+
+.head {
+	background-color: white;
+	height: 490px;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: auto;
+	gap: 20px 0px;
+	width: -webkit-fill-available;
+}
+
+.TiltleHeading {
+	font-size: 44px;
+	line-height: 56px;
+	font-weight: 400;
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.paraHead {
+	font-size: 10px;
+}
+
+.spanHeading {
+	font-size: 15px;
+	font-weight: 800;
+}
+
+.TiltleHeadingUnbold {
+	font-size: 24px;
+	line-height: 32px;
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-weight: 400;
+}
+
+.gpp {
+	position: relative;
+	bottom: 10px;
+}
+
+.textSmall {
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 20px;
+	line-height: 32px;
+	font-weight: 400;
+	margin-bottom: 10px;
+	color: #2C333A;
+	width: 537px;
+	height: 140px;
+}
+
+.textSmallBold {
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 20px;
+	line-height: 32px;
+	font-weight: 400;
+	margin-top: 20px;
+}
+
+.desk {
+	position: relative;
+	top: 10px;
+}
+
+.grid-containerButtons {
+	display: grid;
+	grid-template-columns: auto;
+	gap: 10px 15px;
+	width: auto;
+}
+
+.button-Div {
+	background-color: #403A60;
+	border-radius: 15px;
+	color: white;
+	font-weight: 800;
+	border-style: none;
+	padding: 10px 25px;
+	font-size: 14px;
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.help {
+	margin-top: -5px;
+}
+
+.button-DivNoBack {
+	background-color: white;
+	border-radius: 15px;
+	color: #403A60;
+	font-weight: 800;
+	border-style: solid;
+	border-color: #403A60;
+	padding: 10px 25px;
+	font-size: 14px;
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+/*--Banner Ends--*/
+
+/*---Track & Features Section Starts---*/
+.textalignCenter {
+	text-align: center;
+}
+
+.check {
+	display: none;
+}
+
+.bodyHeadText {
+	color: #403A60;
+	font-size: 44px;
+	font-weight: 400;
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	line-height: 52px;
+}
+
+.bodyParaText {
+	color: #2C333A;
+	font-size: 24px;
+	font-weight: 400;
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	line-height: 32px;
+}
+.bodyPara {
+	color: #2C333A;
+	font-size: 20px;
+	font-weight: 400;
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	line-height: 32px;
+	position: relative;
+        left: 29%;
+}
+
+.grid-containerTrackBoxes {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 15px;
+	padding: 10px;
+}
+
+.trackBox {
+	background-color: white;
+	text-align: center;
+	border-radius: 12px;
+	box-shadow: 0px 0px 4px 0px #00000026
+}
+
+.grid-containerTrackBoxContents {
+	display: grid;
+	grid-template-columns: 250px;
+	gap: 15px;
+	padding: 35px;
+}
+
+.grid-containerFeatureBoxContents {
+	display: grid;
+	grid-template-columns: 225px;
+	gap: 15px;
+	padding: 20px;
+}
+
+.trackBoxTextHead {
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 32px;
+	line-height: 40px;
+	font-weight: 400;
+}
+
+.backColor {
+	background-color: #f5f4f1;
+}
+
+.backBannerclass {
+	background-color: #FBFAF5;
+}
+
+.paddingBottom50 {
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-bottom: 5%;
+}
+
+.bodyHeadText32 {
+	color: #403A60;
+	font-size: 32px;
+	font-weight: 400;
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	line-height: 40px;
+}
+
+.featureBoxTextHead {
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 24px;
+	line-height: 32px;
+	font-weight: 400;
+}
+
+.text {
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 16px;
+	width: 248px;
+	position: relative;
+	right: 7px;
+	line-height: 24px;
+	height: 96px;
+	color: #2C333A;
+}
+
+.displayblock {
+	display: block;
+}
+
+.marTB20 {
+	margin: 10px 0px;
+}
+
+.display {
+	display: none;
+}
+
+/*---Track & Features Section Ends---*/
+@media only screen and (max-width: 400px) {
+	.display {
+		display: block;
+	}
+
+	.bannerclass {
+		display: none;
+	}
+
+	.btn1 {
+		width: 88%;
+		margin-left: 25px;
+	}
+.featureBoxTextHead{
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 400;
+    width: 230px;
+    margin:0 auto;
+}
+
+	.btn2 {
+		width: 88%;
+		margin-left: 25px;
+		margin-top: 8px;
+	}
+
+	.video {
+		width: 58%;
+		margin-left: 62px;
+	}
+
+	.check1 {
+		display: none;
+	}
+
+	.bodyParaText {
+		font-size: 18px;
+		line-height: 28px;
+		font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		padding-bottom: 5%;
+	}
+
+	.head {
+		background-color: white;
+		height: auto;
+		padding-bottom: 7%;
+		width: 105%;
+		position: relative;
+		right: 5%;
+	}
+
+	.backColor {
+		background-color: none;
+	}
+
+	.grid-containerButtons {
+		margin-left: 0%;
+        margin-top: 60px;
+        position: relative;
+        left: 4px;
+	}
+
+	.check {
+		display: block;
+	}
+
+	.marTB20 {
+		width: 90%;
+		position: relative;
+		left: 24px;
+	}
+
+	.textSmall {
+		font-size: 19px;
+		line-height: 32px;
+		margin-left: 8%;
+		width: 90%;
+		height: 200px;
+	}
+
+	.textSmallBold {
+		margin-left: 7%;
+	}
+
+	.bodyHeadText {
+		width: 76%;
+		font-size: 24px;
+		line-height: 34px;
+	}
+
+	.bodyHeadText32 {
+		margin-top: 10%;
+		font-size: 25px;
+		line-height: 35px;
+	}
+}
+
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+	.display {
+		display: block;
+	}
+
+	.bannerclass {
+		display: none;
+	}
+
+	.bodyHeadText {
+		font-size: 24px;
+		width: 70%;
+		line-height: 40px;
+	}
+
+	.bodyParaText {
+		font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		position: relative;
+		bottom: 14px;
+		font-size: 18px;
+	}
+
+	.para2 {
+		position: relative;
+		bottom: 25px;
+		font-size: 21px;
+		width: 81%;
+		left: 8%;
+	}
+
+	.text {
+		width: 75%;
+		position: relative;
+		left: 46px;
+	}
+
+	.support {
+		height: 265px;
+	}
+
+	.bodyHeadText32 {
+		margin-top: 5%;
+		font-size: 22px;
+		line-height: 32px;
+	}
+
+	.head {
+		background-color: white;
+		height: auto;
+		padding-bottom: 7%;
+		width: 110%;
+		position: relative;
+		right: 15px;
+	}
+
+	.marTB20 {
+		width: 82%;
+		position: relative;
+		left: 34px;
+	}
+
+	.grid-containerButtons {
+		margin-left: 10%;
+        margin-top: 75px;
+        padding-top: 5%;
+        position: relative;
+        left: 1px;
+	}
+
+	.check {
+		display: block;
+	}
+
+	.check1 {
+		display: none;
+	}
+
+	.btn1 {
+		width: 94%;
+		position: relative;
+		right: 15px;
+	}
+
+	.btn2 {
+		width: 94%;
+		position: relative;
+		right: 15px;
+		top: 15%;
+	}
+
+	.featureBoxTextHead {
+		width: 69%;
+        margin-left: 16%;
+	}
+
+	.textSmallBold {
+		margin-left: 8%;
+		font-size: 22px;
+		width: 85%;
+		padding-bottom: 3%;
+	}
+	.video{
+		width: 52%;
+        margin-left: 24%;
+	}
+.trackBox{
+	height: 260px;
+}
+	.textSmall {
+		margin-left: 8%;
+		width: 85%;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.widthSize {
+		width: 396px;
+	}
+
+	.grid-containerFeatureBoxes {
+		display: flex;
+		gap: 15px;
+		padding: 0px;
+		padding-top: 20px;
+		margin-left: 0%;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.bann {
+		padding-right: 5%;
+		padding-left: 5%;
+	}
+
+	.grid-containerFeatureBoxContents {
+		display: flex;
+		grid-template-columns: 225px;
+		gap: 15px;
+		padding: 20px;
+		flex-direction: column;
+	}
+
+	.text {
+		font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 14px;
+		width: 93%;
+		position: relative;
+		left: 15px;
+	}
+
+	.bannerclass {
+		background-image: none;
+	}
+}
+
+@media only screen and (min-width: 601px) {
+	.widthSize {
+		width: 396px;
+	}
+
+	.grid-containerFeatureBoxes {
+		display: grid;
+		grid-template-columns: repeat(1, auto);
+		gap: 15px;
+		padding: 10px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.widthSize {
+		width: 396px;
+	}
+
+	.grid-containerFeatureBoxes {
+		display: grid;
+		grid-template-columns: repeat(2, auto);
+		gap: 15px;
+		padding: 10px;
+	}
+
+	.help {
+		margin-left: 8px;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.widthSize {
+		width: 902px;
+	}
+
+	.grid-containerFeatureBoxes {
+		display: grid;
+		grid-template-columns: repeat(2, auto);
+		gap: 22px;
+		padding: 10px;
+		margin-left: 30px;
+	}
+
+	.grid-containerButtons {
+		position: relative;
+		bottom: 38px;
+	}
+}
+
+@media only screen and (min-width:1060px) and (max-width:1200px) {
+	.widthSize {
+		width: 902px;
+	}
+
+	.grid-containerFeatureBoxes {
+		display: grid;
+		grid-template-columns: repeat(4, auto);
+		gap: 15px;
+		padding: 10px;
+		margin-left: 0px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.widthSize {
+		width: 902px;
+	}
+
+	.grid-containerFeatureBoxes {
+		grid-template-columns: repeat(4, auto);
+		gap: 18px;
+		padding: 10px;
+		position: relative;
+		right: 16px;
+	}
+
+	.bodyParaText {
+		font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+        position: relative;
+        color: #2C333A;
+        font-size: 24px;
+	}
+
+	.trackBox {
+		width: 270px;
+	}
+
+	.bodyHeadText32 {
+		height: 80px;
+		margin-top: 70px;
+	}
+}
+
+@media only screen and (min-width:1300px) and (max-width:1500px) {
+	.widthSize {
+		width: 902px;
+	}
+
+	.bannerclass {
+		padding: 100px;
+	}
+
+	.help {
+		position: relative;
+		right: 40px;
+	}
+}
+
+@media only screen and (min-width:1300px) and (max-width:1400px) {
+	.widthSize {
+		width: 902px;
+	}
+
+	.grid-containerFeatureBoxes {
+		gap: 45px;
+		position: relative;
+		right: 20px;
+	}
+
+	.trackBox {
+		width: 106%;
+		padding-left: 2%;
+	}
+}
+
+@media only screen and (min-width:1400px) and (max-width:1500px) {
+	.widthSize {
+		width: 902px;
+	}
+
+	.grid-containerFeatureBoxes {
+		gap: 55px;
+		position: relative;
+		right: 30px;
+	}
+.bannerclass{
+	padding: 110px;
+}
+	.trackBox {
+		width: 112%;
+		padding-left: 5%;
+	}
+}
+
+@media only screen and (min-width: 1500px) {
+	.widthSize {
+		width: 902px;
+	}
+
+	.grid-containerFeatureBoxes {
+		display: grid;
+		grid-template-columns: repeat(4, auto);
+		gap: 15px;
+		padding: 33px;
+		position: relative;
+		right: 28px;
+		padding-right: 40px;
+        padding-left: 0px;
+	}
+
+	.help {
+		position: relative;
+		right: 80px;
+	}
+
+
+	.trackBox {
+		width: 126%;
+		padding-left: 12%;
+	}
+
+	.bannerclass {
+		padding: 150px;
+	}
+}
+
+@media only screen and (min-width:1600px) {
+	.widthSize {
+		width: 902px;
+	}
+
+	.grid-containerFeatureBoxes {
+		position: relative;
+		right: 47px;
+	}
+}
+
+@media only screen and (min-width:1800px) and (max-width:1900px) {
+	.widthSize {
+		width: 902px;
+	}
+
+	.grid-containerFeatureBoxes {
+		display: grid;
+		grid-template-columns: repeat(4, auto);
+		gap: 150px;
+		padding: 10px;
+		position: relative;
+		right: 75px;
+	}
+
+	.trackBox {
+		width: 135%;
+		padding-left: 17%;
+	}
+
+	.bannerclass {
+		gap: 180px;
+		padding: 190px;
+	}
+}
+
+@media only screen and (min-width: 1700px) and (max-width:1800px) {
+	.widthSize {
+		width: 902px;
+	}
+
+	.grid-containerFeatureBoxes {
+		display: grid;
+		grid-template-columns: repeat(4, auto);
+		gap: 120px;
+		padding: 10px;
+		position: relative;
+		right: 60px;
+	}
+
+	.trackBox {
+		width: 135%;
+		padding-left: 17%;
+	}
+
+	.bannerclass {
+		gap: 180px;
+		padding: 180px;
+	}
+}
+
+@media only screen and (min-width: 1900px) {
+	.widthSize {
+		width: 902px;
+	}
+
+	.grid-containerFeatureBoxes {
+		display: grid;
+		grid-template-columns: repeat(4, auto);
+		gap: 170px;
+		padding: 10px;
+		position: relative;
+		right: 75px;
+	}
+
+	.trackBox {
+		width: 152%;
+		padding-left: 26%;
+	}
+
+	.help {
+		position: relative;
+		right: 122px;
+	}
+
+	.bannerclass {
+		padding: 210px;
+	}
+}

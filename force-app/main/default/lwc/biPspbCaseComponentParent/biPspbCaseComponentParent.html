@@ -1,0 +1,38 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+<!--*********************************************************
+Lighting Web Component Name    : biPspbCaseComponentCmp
+Created Date       :  15.12.2023,
+@description       : This Lightning web component (BiPspbCaseComponentCmp) is designed to determine whether the current URL corresponds to a 
+branded or unassigned site within a Salesforce org. Based on this determination, it sets a URL variable (this.urlq) to either the branded or unassigned site URL.
+Additionally, it provides functionality to open different sections of the application based on the determined URL, such as the Support Center or My Cases
+@author            : Rajaa
+Modification Log:
+Ver   Date         Author                               Modification
+59   06-01-2024   Rajaa                                Initial Version
+********************************************************* -->
+<template>
+
+	<lightning-layout multiple-rows class="tabClass">
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+			<div class="tabsDiv pad">
+				<div class="grid-containerTabs">
+					<button onclick={openSupportCenter} class="anchorTextActive">{supportCenter}</button>
+					<button onclick={openMyCases} class="anchorText">{myCase}</button>
+				</div>
+			</div>
+		</lightning-layout-item>
+	</lightning-layout>
+	<hr class="showMobileBorder">
+	<lightning-layout multiple-rows class="layoutColor pad">
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="8" large-device-size="8"
+			class="wholediv slds-p-top_xx-large slds-p-bottom_xx-large">
+			<div class="custom-box2" >
+				<div class="custom-box2dup">
+					<c-bi-Pspb-Case-Component></c-bi-Pspb-Case-Component>
+				</div>
+			</div>
+		</lightning-layout-item>
+	</lightning-layout>
+
+</template>

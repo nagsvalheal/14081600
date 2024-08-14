@@ -1,0 +1,261 @@
+<!--To design the Patient Landing Page based on the given designs / labels and buttons-->
+<template>
+		 <div if:true={showSpinner}>
+		<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	 </div>
+	<div class="head ">
+		<div class="display">
+			<!--Display Patient Banner-->
+			<img class="imgcl" src={patientBanner}  onload={handleComponentLoad} alt={patientBannerIcon}>
+			<div class="padding">
+				<div>
+					<!--Display Banner Image-->
+					<img src={BGpp} class="marTB20" alt={beyondGpp}>
+				</div>
+				<div>
+					<p class="textSmallBold">Your Personalized Generalized Pustular Psoriasis (GPP) Journey Companion
+					</p>
+				</div>
+				<div>
+					<p class="textSmall">Traveling the GPP path might be tricky, but you don't have to do it by
+						yourself. You can get important info, engage with others, and keep an eye on your progress. This
+						special tool helps you every step of your journey.</p>
+				</div>
+				<div class="grid-containerButtons">
+					<div>
+						<!--Display Enrollment buttons-->
+						<button class="button-Div" onclick={openPAENpage}>{enrollPsp}
+						</button>
+						<button class="button-Div1" onclick={openPAENpage}>{enrollSpevigo} </button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<lightning-layout multiple-rows class="bannerclass padding"   style={displayBackgroundImage}>
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="6"
+			class="padding">
+			<div class="grid-container align">
+				<div class="head">
+					<div>
+						<!--Display Banner Image-->
+						<img src={BGpp} class="marTB20" alt={beyondGpp}>
+					</div>
+					<div>
+						<p class="textSmallBold">Your Personalized Generalized Pustular Psoriasis (GPP) Journey
+							Companion</p>
+					</div>
+					<div>
+						<p class="textSmall">Traveling the GPP path might be tricky, but you don't have to do it by
+							yourself. You can get important info, engage with others, and keep an eye on your progress.
+							This special tool helps you every step of your journey.</p>
+					</div>
+					<div class="grid-containerButtons margintop">
+						<div>
+							<!--Display Enrollment buttons-->
+							<button class="button-Div" onclick={openPAENpage}>{enrollPsp}
+								</button>
+							<button class="button-Div1" onclick={openPAENpage}>{enrollSpevigo}</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</lightning-layout-item>
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="6"
+			large-device-size="6"></lightning-layout-item>
+	</lightning-layout></div>
+	<!---Banner Section Ends-->
+
+	<!--Track & Features Section Starts-->
+	<lightning-layout multiple-rows class="backColor">
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="12"   large-device-size="12"
+			class="slds-p-top_xx-large slds-p-bottom_xx-large padding">
+			<div class="grid-container align1">
+				<div class="tracker">
+					<p class="bodyHeadText">{stayTrack}</p>
+					<div class="slds-align_absolute-center textalignCenter">
+					</div>
+					<div class="slds-align_absolute-center textalignCenter disBlock">
+						<p class="bodyParaText control">Take control of your GPP journey with our comprehensive suite of
+							tools designed to support your health and well-being.</p>
+					</div>
+				</div>
+				<div class="slds-align_absolute-center trackbox">
+					<div class="grid-containerTrackBoxes">
+						<div class="trackBoxx">
+							<div class="grid-containerTrackBoxContents">
+								<!--Display Personalized Dashboard Image-->
+								<div><img src={patientIconCalender} width="68px" alt={calendarIcon}></div>
+								<div>
+									<p class="trackBoxTextHead">{personalisedDashboard}</p>
+								</div>
+								<div class="displayFlexCenter">
+									<p class="fontTrack">Make this journey uniquely yours with a personalized dashboard
+										that puts you in control.</p>
+								</div>
+							</div>
+						</div>
+						<div class="trackBoxx">
+							<div class="grid-containerTrackBoxContents">
+								<!--Display Information Center Image-->
+								<div><img src={patientIconCenter} width="68px" alt={infoCenterIcon}></div>
+								<div>
+									<p class="trackBoxTextHead info">{infoCenter}</p>
+								</div>
+								<div class="displayFlexCenter">
+									<p class="fontTrack">Uncover a wealth of knowledge at your fingertips to help you
+										learn more about your condition.</p>
+								</div>
+							</div>
+						</div>
+						<div class="trackBoxx">
+							<div class="grid-containerTrackBoxContents">
+								<!--Display Symptom Tracker Image-->
+								<div><img src={patientIconSecurity} width="68px" alt={securityIcon}></div>
+								<div>
+									<p class="trackBoxTextHead sympt">{symptomTracker}</p>
+								</div>
+								<div class="displayFlexCenter">
+									<p class="fontTrack">Gain valuable insights into your GPP symptoms and patterns with
+										our easy-to-use symptom tracker.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="aligncontent">
+					<div class="grid-containerTrackBoxes">
+						<div class="trackBoxx">
+							<div class="grid-containerTrackBoxContents">
+								<!--Display Personalized Dashboard Image-->
+								<div><img src={patientIconCalender} width="68px" alt={calendarIcon} ></div>
+								<div>
+									<p class="trackBoxTextHead">{personalisedDashboard}</p>
+								</div>
+								<div class="displayFlexCenter">
+									<p class="fontTrack">Make this journey uniquely yours with a personalized dashboard
+										that puts you in control.</p>
+								</div>
+							</div>
+						</div>
+						<div class="trackBoxx">
+							<div class="grid-containerTrackBoxContents">
+								<!--Display Symptom Tracker Image-->
+								<div><img src={patientIconSecurity} width="68px" alt={securityIcon}></div>
+								<div>
+									<p class="trackBoxTextHead">{symptomTracker}</p>
+								</div>
+								<div class="displayFlexCenter">
+									<p class="fontTrack">Gain valuable insights into your GPP symptoms and patterns with
+										our easy-to-use symptom tracker.</p>
+								</div>
+							</div>
+						</div>
+						<div class="trackBoxx">
+							<div class="grid-containerTrackBoxContents">
+								<!--Display Information Center Image-->
+								<div><img src={patientIconCenter} width="68px" alt={infoCenter}></div>
+								<div>
+									<p class="trackBoxTextHead">{infoCenter}</p>
+								</div>
+								<div class="displayFlexCenter">
+									<p class="fontTrack">Uncover a wealth of knowledge at your fingertips to help you
+										make better-informed decisions.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</lightning-layout-item>
+		<lightning-layout-item size="12" small-device-size="12"   medium-device-size="12" large-device-size="12"
+			class="slds-p-bottom_xx-large padding">
+			<div class="grid-container align book">
+				<div class="slds-align_absolute-center textalignCenter">
+					<div class="grid-container feature">
+						<p class="featurestext">Features</p>
+						<div class="disBlock">
+							<p class="bodyParaText take">Take control of your GPP journey with our comprehensive suite
+								of tools designed to support your health and well-being.</p>
+						</div>
+						<p class="bodyParaText experience">Experience our comprehensive suite of health and well-being
+							tools with engaging/user-friendly features.</p>
+					</div>
+				</div>
+				<div class="slds-align_absolute-center textalignCenter">
+					<img class="bookimg" src={patientFeatureBanner} width="902px" alt={patientBannerIcon}>
+				</div>
+				<div class="mobwidth">
+					<img class="mobileimg" src={mobilepic} width="550px" alt={patientBannerIcon}>
+				</div>
+			</div>
+		</lightning-layout-item>
+		<lightning-layout-item size="12" small-device-size="12"  medium-device-size="12" large-device-size="12"
+			class="slds-p-bottom_xx-large padding Bottom50">
+			<div class="slds-align_absolute-center textalignCenter align">
+				<div class="grid-containerFeatureBoxes">
+					<div class="trackBox">
+						<div class="grid-containerFeatureBoxContents">
+							<!--Display Knowledge / Skill Enhancement Image-->
+							<div><img src={patientIconEarn} width="68px" alt={displayIcon}></div>
+							<div>
+								<p class="uhead">{learnAndExplore}</p>
+							</div>
+							<div class="ptag">
+								<p class="font">Expand your GPP knowledge, enhance your skills, and achieve milestones.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="trackBox">
+						<div class="grid-containerFeatureBoxContents">
+							<!--Display Articles Image-->
+							<div><img src={patientIconHub} width="68px" alt={articlesIcon}></div>
+							<div>
+								<p class="uhead">{knowledgeHub}</p>
+							</div>
+							<div class="ptag">
+								<p class="font">Gain deeper insights into GPP with our curated collection of articles
+									and resources.</p>
+							</div>
+						</div>
+					</div>
+					<div class="trackBox">
+						<div class="grid-containerFeatureBoxContents">
+							<!--Display Video Demonstrations Image-->
+							<div><img src={patientIconVisual} width="68px" alt={demoVideoIcon}></div>
+							<div>
+								<p class=" uhead">{visualLearning}</p>
+							</div>
+							<div class="ptag ptag2">
+								<p>Explore your GPP treatment journey with these engaging animated videos.</p>
+							</div>
+							<div class="ptag ptag1">
+								<p class="font">Discover practical GPP life skills through our library of engaging video
+									demonstrations.</p>
+							</div>
+						</div>
+					</div>
+					<div class="trackBox">
+						<div class="grid-containerFeatureBoxContents">
+							<!--Display self-discovery Image-->
+							<div><img src={patientIconUnique} width="68px" alt={selfDiscoveryIcon}></div>
+							<div>
+								<p class="uhead">{unique}</p>
+							</div>
+							<div class="ptag">
+								<p class="font">Embark on a journey of self-discovery by creating a profile that mirrors
+									your true self.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="spinner-wrapper" if:true={showSpinner}>
+				<div class="loader"></div>
+			  </div>
+		</lightning-layout-item>
+	</lightning-layout>
+	<!--Track & Features Section Ends-->
+</template>

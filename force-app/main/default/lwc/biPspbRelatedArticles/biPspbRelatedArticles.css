@@ -1,0 +1,796 @@
+/* Add CSS styles for the article page layout */
+.component {
+	width: 806px;
+}
+
+.article-container {
+	justify-content: space-between;
+	margin: 20px;
+	width: 100%;
+	margin-left: 0px;
+}
+
+.line {
+	background-color: #403a60;
+	width: 950px;
+	margin-left: 45px;
+	margin-bottom: 20px;
+}
+
+.article p {
+	font-size: 16px;
+	margin: 10px 0;
+	text-align: justify;
+	padding: 0px 0px 0px 19px;
+	color: rgba(64, 58, 96, 1) !important;
+}
+
+.article h2 {
+	font-size: 24px;
+}
+
+.lineforpnbtn {
+	background: linear-gradient(90deg,
+			#744f0d 0%,
+			#99693e 17.19%,
+			#efdba1 58.85%,
+			#744f0d 100%);
+	border: none;
+	border-width: 1px;
+}
+
+.content_space {
+	height: 340px;
+	width: 790px;
+	display: flex;
+	flex-direction: row;
+}
+
+.svgcls {
+	margin-left: 54px;
+}
+
+.left-section,
+.right-section {
+	flex: 1;
+}
+.svgstroke{
+	stroke:#403A60;
+	stroke-opacity:1;
+}
+
+.article {
+	border: 1px solid #ccc;
+	margin-bottom: 20px;
+	height: 50%;
+	display: flex;
+}
+
+article img {
+	width: 386px;
+	height: 340px;
+	object-fit: cover;
+	border-radius: 0px 0px 0px 0px;
+}
+
+.top-heading {
+	font-size: 32px;
+	font-weight: bold;
+	color: #403a60;
+}
+
+article h2 {
+	padding: 10px 2px 2px 17px;
+	font-weight: 400;
+	font-size: 24px;
+	font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+
+	color: rgba(64, 58, 96, 1) !important;
+}
+
+
+.timecal {
+	font-weight: 400;
+	font-size: 14px;
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.description {
+	width: 397px;
+	font-size: 16px;
+	font-weight: 400;
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.headingar {
+	font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 24px;
+	font-weight: 400;
+}
+.leftlink {
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 17px;
+    font-size: 15px;
+    color: rgba(64, 58, 96, 1) !important;
+    height: 32px;
+    width: 32px;
+    display: block;
+    position: absolute;
+    bottom: 38px;
+}
+
+.left-section {
+	margin: 0px 0px;
+}
+
+.headingcontainer {
+	width: 50%;
+	position: relative;
+}
+
+.headingcontainernew {
+	width: 50%;
+	position: relative;
+}
+
+.first {
+	background: rgba(141, 137, 165, 0.5) !important;
+	height: 340px;
+	width: 799px;
+}
+
+.second {
+	background: rgba(236, 220, 168, 1) !important;
+	height: 340px;
+	width: 799px;
+}
+
+.third {
+	background: rgba(141, 137, 165, 0.5) !important;
+}
+
+.fourth {
+	background: rgba(236, 220, 168, 1) !important;
+}
+
+.search-bar1 {
+	width: 867px;
+	height: 40px;
+	padding: 10px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-left: 25px;
+	margin-bottom: 10px;
+}
+
+.search-bar {
+	border: none;
+
+	border-bottom: none;
+	/* Remove border */
+	width: 867px;
+	height: 40px;
+	border-radius: 4px;
+
+	outline: none;
+	/* Remove focus outline */
+	margin-left: 25px;
+	background-color: transparent;
+}
+
+.related-items {
+	margin-top: 10px;
+	padding: 10px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.related-items li {
+	list-style-type: none;
+	margin-bottom: 5px;
+}
+
+.searchhead {
+	width: 80%;
+	margin-top: -185px;
+	margin-left: 267px;
+	margin-bottom: 63px;
+}
+
+.slds-m-left_x-small {
+	left: 20%;
+	bottom: 30px;
+}
+
+svg:focus {
+    outline: none; /* Removes the focus outline */
+}
+
+.end-btn {
+	background-color: whitesmoke;
+	color: #403a60;
+	text-align: left;
+	text-decoration: none;
+	display: inline-block;
+	margin: 4px 2px;
+	cursor: pointer;
+	padding: 10px;
+	border-radius: 15px;
+	/* Add border-radius for curved edges */
+	height: 35px;
+	width: fit-content;
+
+	border: 15px;
+	border-color: #403a60;
+	outline: 2px solid #403a60;
+	/* Add outline with the desired color on hover */
+	font-size: 16px;
+}
+
+.end-btn:hover {
+	background-color: rgb(185, 181, 207);
+}
+
+.subheading {
+	font-size: 20px;
+	color: #403a60;
+}
+
+.head_btn_container {
+	margin-left: 50px;
+}
+
+.prenxtutton {
+	display: flex;
+	justify-content: space-between;
+}
+
+.borderless-button {
+	cursor: pointer;
+	border: none;
+	padding: 0;
+	/* Optional: Remove padding for a cleaner look */
+	background-color: transparent;
+	/* Optional: Make the background transparent */
+	color: #403a60;
+	font-size: 24px;
+	width: 400px;
+	height: 30px;
+	top: 8px;
+	font-style: bold;
+	line-height: 38px;
+
+	display: flex;
+
+	/* Add any other styling as needed */
+}
+
+.borderless-button-next {
+	cursor: pointer;
+	border: none;
+	padding: 0;
+	/* Optional: Remove padding for a cleaner look */
+	background-color: transparent;
+	/* Optional: Make the background transparent */
+	color: #403a60;
+	font-size: 24px;
+	font-style: bold;
+
+	margin-left: 40%;
+	display: flex;
+
+	/* Add any other styling as needed */
+}
+
+.button-disable {
+	border: none;
+	padding: 0;
+	/* Optional: Remove padding for a cleaner look */
+	background-color: transparent;
+	/* Optional: Make the background transparent */
+	color: #8d89a5;
+	font-size: 24px;
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	display: flex;
+	pointer-events: none;
+	/* Disable pointer events to make it non-interactive */
+
+}
+
+.button-disable-next {
+	border: none;
+	padding: 0;
+	/* Optional: Remove padding for a cleaner look */
+	background-color: transparent;
+	/* Optional: Make the background transparent */
+	color: #8d89a5;
+	font-size: 18px;
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	margin-left: 40%;
+	display: flex;
+}
+
+.button-anger {
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 10px;
+    font-size: 15px;
+    display: flex;
+    color: rgba(64, 58, 96, 1) !important;
+    margin-top: -3px;
+}
+
+.button-anger-prev {
+	text-decoration: none;
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 15px;
+    display: flex;
+    color: rgba(64, 58, 96, 1) !important;
+    margin-top: -3px;
+}
+
+.pathfil {
+	fill: #403a60;
+	fill-opacity: 1;
+}
+
+.arrowalign {
+	margin-top: -5px;
+}
+
+.button-anger-prev svg {
+	transform: rotate(0deg);
+}
+
+.rotateBlur{
+	transform: rotate(180deg);
+
+}
+
+.headmins {
+	width: 156px;
+	height: 24px;
+	margin-left: 10px;
+	margin-top: 21px;
+	font: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 14px;
+}
+
+.secondimg {
+	margin-left: 13px;
+
+}
+
+.pathfilnew {
+	fill: #403a60;
+	fill-opacity: 1;
+
+}
+.imagecls {
+	cursor: pointer;
+}
+
+
+/*--Font Declaration---*/
+
+@font-face {
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff") format("woff");
+}
+
+@font-face {
+	font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff") format("woff");
+}
+
+/*----------- Media Query for mobile responce--------------- */
+@media only screen and (max-width: 400px) {
+	.component {
+		width: 93%;
+		margin-left: 2%;
+	}
+
+	.leftlink {
+		position: relative;
+	}
+	.arrowalign {
+		margin-top: 0px;
+	}
+
+	.headingcontainer {
+		width: 320px;
+		height: auto;
+		margin-top: 143px;
+		margin-left: 20px;
+	}
+
+	.headingcontainernew {
+		width: 320px;
+		height: auto;
+		margin-top: 143px;
+		margin-left: -361px;
+	}
+
+	.article p {
+		width: 100%;
+		padding-bottom: 5%;
+	}
+
+	.prenxtutton {
+		width: 100%;
+	}
+
+	.first {
+		height: auto;
+		width: 380px;
+		padding-bottom: 20px;
+	}
+
+	.second {
+		height: auto;
+		width: 380px;
+		padding-bottom: 20px;
+	}
+
+	.firstimg {
+		margin-left: 0px !important;
+		margin-top: -1px;
+		height: 180px !important;
+		width: auto;
+	}
+
+	.secondimg {
+		margin-left: -328px !important;
+		margin-top: -1px;
+		height: 180px !important;
+		width: auto;
+	}
+
+	p.description {
+		font-size: 14px;
+	}
+
+	.headmins {
+		margin-top: 50px;
+	}
+
+	h2.headingar {
+		width: auto;
+	}
+
+	.article a {
+		top: -7px;
+	}
+
+	.button-disable {
+		margin-left: auto;
+	}
+
+	.preheading {
+		font-size: 20px;
+		font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+
+	.nextheading {
+		font-size: 21px;
+		margin-top: 5px;
+		font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+
+	.lineforpnbtn {
+		border-top: 1px solid #000000;
+		background: none;
+		width: 102%;
+	}
+
+	.borderless-button-next {
+		margin-left: auto;
+	}
+	.borderless-button{
+		cursor: pointer;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    color: #403a60;
+    font-size: 24px;
+    width: 400px;
+    height: 30px;
+    top: 8px;
+    font-style: bold;
+    line-height: 38px;
+    display: flex;
+	}
+	.button-anger{
+	text-decoration: none;
+    font-weight: bold;
+    margin-left: 10px;
+    font-size: 15px;
+    display: flex;
+    color: rgba(64, 58, 96, 1) !important;
+    margin-top: -3px;
+	}
+
+	.article-container {
+		width: 100%;
+		margin-left: -7%;
+	}
+}
+
+@media only screen and (min-width: 401px) and (max-width: 430px) {
+	.component {
+		width: 93%;
+		margin-left: 10px;
+	}
+
+	.headingcontainer {
+		width: 320px;
+		height: auto;
+		margin-top: 143px;
+	}
+
+	.headingcontainernew {
+		width: 320px;
+		height: auto;
+		margin-top: 143px;
+		margin-left: -375px;
+	}
+
+	.article p {
+		width: 100%;
+	}
+
+	.prenxtutton {
+		width: 195px;
+	}
+
+	.first {
+		height: auto;
+		width: 380px;
+	}
+
+	.second {
+		height: auto;
+		width: 380px;
+	}
+
+	.firstimg {
+		margin-left: 0px !important;
+		margin-top: -1px;
+		height: 180px !important;
+		width: auto;
+	}
+
+	.secondimg {
+		margin-left: -316px !important;
+		margin-top: -1px;
+		height: 180px !important;
+		width: auto;
+	}
+
+	p.description {
+		font-size: 14px;
+	}
+
+	.headmins {
+		margin-top: 50px;
+	}
+
+	h2.headingar {
+		width: 100%;
+	}
+
+	.article a {
+		top: -7px;
+	}
+
+	.button-disable {
+		margin-left: 73px;
+	}
+
+	.preheading {
+		font-size: 20px;
+		font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+
+	.nextheading {
+		font-size: 21px;
+		margin-top: 5px;
+		font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+
+	.lineforpnbtn {
+		border-top: 1px solid #000000;
+		background: none;
+	}
+
+	.borderless-button-next {
+		margin-left: 55%;
+	}
+
+	.article-container {
+		width: 100%;
+		margin-left: -3%;
+	}
+	.leftlink{
+		position: relative;
+		height: 50px;
+	}
+}
+
+@media only screen and (min-width: 431px) and (max-width: 768px) {
+	.component {
+		width: auto;
+		margin-left: 10px;
+	}
+
+	.headingcontainer {
+		width: auto;
+		height: auto;
+		margin-top: 143px;
+	}
+
+	.headingcontainernew {
+		width: auto;
+		height: auto;
+		margin-top: 143px;
+	}
+
+	.article p {
+		width: 88%;
+	}
+
+	.prenxtutton {
+		width: auto;
+	}
+
+	.first {
+		height: auto;
+		width: auto;
+	}
+
+	.second {
+		height: auto;
+		width: auto;
+	}
+
+	.firstimg {
+		margin: 0 auto !important;
+		width:  -webkit-fill-available !important;
+		height: 180px !important;
+		position: absolute;
+	}
+
+	.secondimg {
+        margin: 0 auto;
+        width: -webkit-fill-available !important;
+        height: 180px !important;
+        position: absolute;
+	}
+
+	p.description {
+		font-size: 14px;
+	}
+
+	.headmins {
+		margin-top: 50px;
+	}
+
+	h2.headingar {
+		width: auto;
+	}
+
+	.article a {
+		top: -7px;
+	}
+
+	.button-disable {
+		margin-left: 73px;
+	}
+	.leftlink{
+		position: relative;
+		height: 50px;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.component {
+		width: 84%;
+	}
+
+	.headingcontainer {
+		width: 50%;
+	}
+
+	.article p {
+		width: 90%;
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.article p {
+		font-size: 13px;
+	}
+
+	.article h2 {
+		font-size: 19px;
+	}
+
+	.article img {
+		width: 50%;
+		height: 340px;
+		object-fit: cover;
+		border-radius: 0px 0px 0px 0px;
+	}
+
+	.first {
+		width: 100%;
+	}
+
+	.second {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.component {
+		width: 85%;
+	}
+
+	.headingcontainer {
+		width: 50%;
+	}
+
+	.second {
+		width: 100%;
+	}
+
+	.first {
+		width: 100%;
+	}
+
+	.article img {
+		width: 50%;
+	}
+}
+
+@media only screen and (min-width: 1500px) {
+	.component {
+		width: 806px;
+	}
+
+	.headingcontainer {
+		width: 50%;
+	}
+}
+
+@media only screen and (min-width: 1401px) and (max-width: 1925px) {
+	.component {
+		width: 88%;
+	}
+
+	.second {
+		width: 100%;
+	}
+
+	.first {
+		width: 100%;
+	}
+
+	.article img {
+		width: 49%;
+	}
+}

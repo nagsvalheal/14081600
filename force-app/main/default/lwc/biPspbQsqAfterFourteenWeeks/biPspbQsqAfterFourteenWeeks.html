@@ -1,0 +1,346 @@
+<!--This Lightning Web Component allows users to input responses for qualitative questionnaire questions, enhancing the collection of subjective feedback and opinions.-->
+<template>
+	<!-- QUESTIONNAIRE with 7 questions -->
+	<div class={popuphide}>
+		<div class="tophead">{qsq}</div>
+		<div class="containercolumn" data-it-uid={userid}>
+			<div class="column1">
+				<div class="outerCOntainer">
+					<div class="container-box">
+						<span class="nds-m-right_x-small">{firstQuestionText}</span><br />
+					</div>
+					<!--Silder one-->
+					<div class="compress">
+						<div class="slidecontainer">
+							<div class="start-label">0</div>
+							<div class="end-label">10</div>
+							<input type="range" min="0" max="10" value={sliderValue} name="thirdQuestionname"
+								class="slider" id="myRange" list="tickmarks" onchange={handleInputChange} />
+							<div class="thumb-label" id="demo">
+								{sliderValue}
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="nds-form-element nds-form-container">
+					<legend
+						class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+						<span class="nds-m-right_x-small">{secondQuestionText}</span><br />
+					</legend>
+
+					<div class="nds-form-element__control nds-horizontal_radio">
+						<span class="nds-radio">
+							<div class="radio-container">
+								<input type="radio" name="firstQuestionResponse"  value="Yes"
+									onchange={handleFirstQuestionChange} checked={isYesChecked} id="secondYes" />
+								<label for="secondYes" class="nds-radio__label" data-index="0">
+									<span class="nds-radio_faux"></span>
+									<span class="nds-form-element__label slds-p-left_small">{yes}</span>
+								</label>
+							</div>
+						</span>
+						<span class="nds-radio last-option">
+							<div class="radio-container">
+								<input type="radio" name="firstQuestionResponse"  value="No"
+									onchange={handleFirstQuestionChange} checked={isNoChecked} id="secondNo" />
+								<label for="secondNo" class="nds-radio__label" data-index="1">
+									<span class="nds-radio_faux"></span>
+									<span class="nds-form-element__label slds-p-left_small">{no}</span>
+								</label>
+							</div>
+						</span>
+					</div>
+				</div>
+
+				<div class="outerCOntainer">
+					<div class="container-box">
+						<span class="nds-m-right_x-small">{thirdQuestionText} {qsqText}</span><br />
+					</div>
+					<!--Silder Two-->
+					<div class="compress">
+						<div class="slidecontainersec">
+							<div class="start-labelsec">0</div>
+							<div class="end-labelsec">10</div>
+							<input type="range" min="0" max="10" value={sliderValuesec} name="fourthQuestionName"
+								class="slidersec" id="myRangesec" list="tickmarks" onchange={handleInputChangesec} />
+							<div class="thumb-labelsec" id="demosec">
+								{sliderValuesec}
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="outerCOntainer">
+					<div class="container-box">
+						<span class="nds-m-right_x-small">{fourthQuestionText}?</span><br />
+					</div>
+					<!--Silder Three-->
+					<div class="compress">
+						<div class="slidecontainerthree">
+							<div class="start-labelthree">0</div>
+							<div class="end-labelthree">10</div>
+							<input type="range" min="0" max="10" name="eigthQuestionName" value={sliderValueThree}
+								class="sliderthree" id="myRangethree" list="tickmarks"
+								onchange={handleInputChangethree} />
+
+							<div class="thumb-labelthree" id="demothree">
+								{sliderValueThree}
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="nds-horizontal-form-element nds-form-container">
+					<legend
+						class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+						<span class="nds-m-right_x-small">{fifthQuestionText}</span><br />
+					</legend>
+					<div class="nds-form-element__controll nds-vertical_radio">
+						<div class="nds-checkbox-wrapper">
+							<input type="checkbox" name="fifthque" value="Information Centre" onchange={handleSeven}
+								checked={fifthinfo} id="fifthInfo" />
+							<label for="fifthInfo" class="nds-radio-label">{informationCentre}</label>
+						</div>
+						<div class="nds-checkbox-wrapper">
+							<input type="checkbox" name="fifthque" value="Symptom Tracker" onchange={handleSeven}
+								checked={fifthSyTr} id="fifthSyTr" />
+							<label for="fifthSyTr" class="nds-radio-label">{symptomTracker}</label>
+						</div>
+						<div class="nds-checkbox-wrapper">
+							<input type="checkbox" name="fifthque" value="Challenges" onchange={handleSeven}
+								checked={fifthChallenges} id="fifthChallenges" />
+							<label for="fifthChallenges" class="nds-radio-label">{challenges}</label>
+						</div>
+						<div class="nds-checkbox-wrapper">
+							<input type="checkbox" name="fifthque" value="Questionnaire" onchange={handleSeven}
+								checked={fifthQuestionnaire} id="fifthQuestionnaire" />
+							<label for="fifthQuestionnaire" class="nds-radio-label">{questionnaire}</label>
+						</div>
+						<div class="nds-checkbox-wrapper">
+							<input type="checkbox" name="fifthque" value="Treatment Videos" onchange={handleSeven}
+								checked={fifthTreatmentVideo} id="fifthTreatmentVideo" />
+							<label for="fifthTreatmentVideo" class="nds-radio-label">{treatmentVideos}</label>
+						</div>
+						<div class="nds-checkbox-wrapper last-option">
+							<input type="checkbox" name="fifthque" value="Support" onchange={handleSeven}
+								checked={fifthSupport} id="fifthSupport" />
+							<label for="fifthSupport" class="nds-radio-label">{support}</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="nds-form-element nds-form-container">
+					<legend
+						class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+						<span class="nds-m-right_x-small">{seventhQuestionText}</span><br />
+					</legend>
+					<div class="nds-form-element__control nds-horizontal_radio">
+						<span class="nds-radio">
+							<div class="radio-container">
+								<input type="radio" name="seventhQuestionResponse" value="Yes"
+									onchange={handlerealSeventhQuestionChange} checked={seventhYess} id="seventhYes" />
+								<label for="seventhYes" class="nds-radio__label" data-index="0">
+									<span class="nds-radio_faux"></span>
+									<span class="nds-form-element__label slds-p-left_small">{yes}</span>
+								</label>
+							</div>
+						</span>
+						<span class="nds-radio last-option">
+							<div class="radio-container">
+								<input type="radio" name="seventhQuestionResponse" value="No"
+									onchange={handlerealSeventhQuestionChange} checked={seventhNoo} id="seventhNo" />
+								<label for="seventhNo" class="nds-radio__label" data-index="1">
+									<span class="nds-radio_faux"></span>
+									<span class="nds-form-element__label slds-p-left_small">{no}</span>
+								</label>
+							</div>
+						</span>
+					</div>
+				</div>
+				<div class="nds-form-element nds-form-container">
+					<legend
+						class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+						<span class="nds-m-right_x-small">{eightQuestionText}</span><br />
+					</legend>
+					<div class="nds-form-element__control nds-horizontal_radio">
+						<span class="nds-radio">
+							<div class="radio-container">
+								<input type="radio" name="eigthQuestionResponse" value="Yes"
+									onchange={handleEigthQuestionChange} checked={eighthYess} id="eighthYes" />
+								<label for="eighthYes" class="nds-radio__label" data-index="0">
+									<span class="nds-radio_faux"></span>
+									<span class="nds-form-element__label slds-p-left_small">{yes}</span>
+								</label>
+							</div>
+						</span>
+						<span class="nds-radio last-option">
+							<div class="radio-container">
+								<input type="radio" name="eigthQuestionResponse" value="No"
+									onchange={handleEigthQuestionChange} checked={eighthNoo} id="eighthNo" />
+								<label for="eighthNo" class="nds-radio__label" data-index="1">
+									<span class="nds-radio_faux"></span>
+									<span class="nds-form-element__label slds-p-left_small">{no}</span>
+								</label>
+							</div>
+						</span>
+					</div>
+				</div>
+			</div>
+			<!--column-->
+
+			<div class="column2">
+				<div class="box">
+					<div class="smalltxt">{clickBelow}</div>
+
+					<div class="line"></div>
+					<div class="button-container">
+						<button label="Submit" onclick={submitResponses} data-it-button="QSQ: Submit"
+							class="retbutton1">
+							{submit}</button>&nbsp;&nbsp;&nbsp;
+						<button label="Save As Draft" onclick={saveAsDraft} class="savebutton1"
+							data-it-button="QSQ: Saveasdraft">
+							{saveasdraft}
+						</button>
+					</div>
+					<br />
+				</div>
+				<div class="box2">
+					<div class="texts">{outstandingQue}</div>
+					<div class="line"></div>
+					<!-- Category names with clickable boxes -->
+
+					<div class="category-names">
+						<div class={checkdlqi}>
+							<div class="category-box" onclick={navigateToCategory2} onkeydown={navigateToCategory2}
+								data-it-button="QSQ: Navigate to DLQI">
+								<img src={dlqiCardImage} alt="Your Image" class="image" />
+								<p class="b">{dlqi}</p>
+							</div>
+						</div>
+						<div class={checkpss}>
+							<div class="category-box" onclick={navigateToCategory3} onkeydown={navigateToCategory3}
+								data-it-button="QSQ: Navigate to PSS">
+								<img src={pssCardImage} alt="Your Image" class="image" />
+								<p class="c">{pss}</p>
+							</div>
+						</div>
+						<div class={checkwai}>
+							<div class="category-box" onclick={navigateToCategory4} onkeydown={navigateToCategory4}
+								data-it-button="QSQ: Navigate to WAPI">
+								<img src={wpaiCardImage} alt="Your Image" class="image" />
+								<p class="d">{wpaiText}</p>
+							</div>
+						</div>
+						<div class="category-box1" data-it-button="QSQ: Navigate to QSQ">
+							<img src={qsqCardImage} alt="Your Image" class="image1" />
+							<p class="e">{qsq}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- </lightning-card> -->
+	</div>
+
+	<template if:true={customFormModal}>
+		<div class="modal-backdrop"></div>
+		<div class="modal-visiblenew">
+			<div class={popupClass1}>
+				<button onclick={closePopup1} class="times" data-it-button="QSQ: Close saveasdraft popup">
+					&times;
+				</button>
+				<p class="message">{message}</p>
+				<br />
+				<p class="content1">{submitLabel}</p>
+				<br /><br />
+
+				<div class="forMob">
+					<button class="savebutton" onclick={saveAsDraft} data-it-button="QSQ: Save as draft ">
+						{saveasdraft}
+					</button>
+					<button onclick={closePopup1} class="retbutton" data-it-button="QSQ: Return back">
+						{returnBackc}
+					</button>
+				</div>
+
+				<!-- </div> -->
+			</div>
+		</div>
+	</template>
+	<template if:true={isPopupOpen}>
+		<div class="modal-backdrop"></div>
+		<div class="modal-visiblenew">
+			<div class={popupClass}>
+				<div class="popup">
+					<!-- close button -->
+					<button class="close-button" title="Close" data-it-button="QSQ: Close confirm popup"
+						onclick={closePopup}>
+						&times;
+					</button>
+					<!-- text and confirmation question-->
+					<div class="content">
+						<p class="heading">{confirmSub}</p>
+						<br />
+						<p class="paragh">{cannotEdit}</p>
+						<br />
+						<!-- buttons for cancel and submit-->
+						<div class="btn">
+							<button class="cancelbtn" onclick={closePopup} data-it-button="QSQ: Cancel">
+								&nbsp;{cancelbt} &nbsp;</button>&emsp;
+							<button class="submitbtn" onclick={confirmSubmission} data-it-button="QSQ: Confirm">
+								{confirmbt}</button>&emsp; <br /><br />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</template>
+	<!-- ... Confirmation Button starts -->
+
+	<template if:true={isConfirmationDialogOpen}>
+		<div class={popupClass}>
+			<div class="popup">
+				<!-- close button -->
+				<button class="close-button" title="Close" data-it-button="QSQ: Close confirm popup"
+					onclick={closePopup}>
+					&times;
+				</button>
+				<!-- text and confirmation question-->
+				<div class="content">
+					<p class="heading">{confirmSub}</p>
+					<br />
+					<p class="paragh">{cannotEdit}</p>
+					<br />
+					<!-- buttons for cancel and submit-->
+					<div class="btn">
+						<button class="cancelbtn" onclick={closePopup} data-it-button="QSQ: Cancel">
+							&nbsp;{cancelbt} &nbsp;</button>&emsp;
+						<button class="submitbtn" onclick={confirmSubmission} data-it-button="QSQ : Confirm">
+							{confirmbt}</button>&emsp; <br /><br />
+					</div>
+				</div>
+			</div>
+		</div>
+	</template>
+	<div class="button-container-bottom">
+						<button label="Submit" onclick={submitResponses} data-it-button="QSQ: Submit"
+							class="retbutton1-bottom">
+							{submit}</button>&nbsp;&nbsp;&nbsp;
+						<button label="Save As Draft" onclick={saveAsDraft} class="savebutton1-bottom"
+							data-it-button="QSQ: Saveasdraft">
+							{saveasdraft}
+						</button>
+					</div>
+
+	  <template if:true={isDraftSavedPopupOpen}>
+		<div class={popupClassSaveDraft}>
+			<div class="popup">	
+				<c-bi-pspb-common-popup toast-message={draftSavedMessage} onbuttonclick={closeDraftSavedPopup}></c-bi-pspb-common-popup>
+			</div>
+		</div>
+	</template>
+
+
+</template>

@@ -1,0 +1,458 @@
+<!-- This introductory questionnaire allows you to provide information about yourself -->
+<template>
+  <div class="text2">{meandgpp}</div>
+  <h1 class="text">{doyouagree}</h1>
+
+  <div class="containercolumn" data-it-uid={userid}>
+    <div class="column1">
+      <!-- 1 -->
+
+      <div class="nds-form-element nds-form-container">
+        <legend class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+          <span class="nds-m-right_x-small">{seventhQuestionText}</span><br />
+        </legend>
+        <div class="nds-form-element__control nds-horizontal_radio">
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input type="radio" name="firstQu" value="Yes" id="seventhQuestionYes"
+                onchange={handleSeventhQuestionChange} checked={afterSixthRadYes} />
+              <label class="nds-radio__label" for="seventhQuestionYes" data-index="0">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{yes}</span>
+              </label>
+            </div>
+          </span>
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input type="radio" name="firstQu" value="No" id="seventhQuestionNo"
+                onchange={handleSeventhQuestionChange} checked={afterSixthRadNo} />
+              <label class="nds-radio__label" for="seventhQuestionNo" data-index="2">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{no}</span>
+              </label>
+            </div>
+          </span>
+          <span class="nds-radio last-option">
+            <div class="radio-container">
+              <input type="radio" name="firstQu" value="Maybe" id="seventhQuestionMaybe"
+                onchange={handleSeventhQuestionChange} checked={afterSixthRadMaybe} />
+              <label class="nds-radio__label" for="seventhQuestionMaybe" data-index="1">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{maybe}</span>
+              </label>
+            </div>
+          </span>
+        </div>
+      </div>
+
+      <div class="nds-form-element nds-form-container">
+        <legend class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+          <span class="nds-m-right_x-small">{eightQuestionText}</span><br />
+        </legend>
+        <div class="nds-form-element__control nds-horizontal_radio">
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input type="radio" name="sixthQuestionResponse" value="Yes" id="eighthQuestionYes"
+                onchange={handleEigthQuestionChange} checked={sixthRadYes} />
+              <label class="nds-radio__label" for="eighthQuestionYes" data-index="0">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{yes}</span>
+              </label>
+            </div>
+          </span>
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input type="radio" name="sixthQuestionResponse" value="No" id="eighthQuestionNo"
+                onchange={handleEigthQuestionChange} checked={sixthRadNo} />
+              <label class="nds-radio__label" for="eighthQuestionNo" data-index="2">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{no}</span>
+              </label>
+            </div>
+          </span>
+          <span class="nds-radio last-option">
+            <div class="radio-container">
+              <input type="radio" name="sixthQuestionResponse" value="Maybe" id="eighthQuestionMaybe"
+                onchange={handleEigthQuestionChange} checked={sixthRadMayBe} />
+              <label class="nds-radio__label" for="eighthQuestionMaybe" data-index="1">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{maybe}</span>
+              </label>
+            </div>
+          </span>
+        </div>
+      </div>
+
+      <div class="nds-form-element nds-form-container">
+        <legend class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+          <span class="nds-m-right_x-small">{ninthQuestionText}</span><br />
+        </legend>
+        <div class="nds-form-element__control nds-horizontal_radio">
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input type="radio" name="eleventhQuestionResponse" value="Yes" id="ninthQuestionYes"
+                onchange={handleNinthQuestionChange} checked={eleventhRadYes} />
+              <label class="nds-radio__label" for="ninthQuestionYes" data-index="0">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{yes}</span>
+              </label>
+            </div>
+          </span>
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input type="radio" name="eleventhQuestionResponse" value="No" id="ninthQuestionNo"
+                onchange={handleNinthQuestionChange} checked={eleventhRadNo} />
+              <label class="nds-radio__label" for="ninthQuestionNo" data-index="2">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{no}</span>
+              </label>
+            </div>
+          </span>
+          <span class="nds-radio last-option">
+            <div class="radio-container">
+              <input type="radio" name="eleventhQuestionResponse" value="Maybe" id="ninthQuestionMaybe"
+                onchange={handleNinthQuestionChange} checked={eleventhRadMaybe} />
+              <label class="nds-radio__label" for="ninthQuestionMaybe" data-index="1">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{maybe}</span>
+              </label>
+            </div>
+          </span>
+        </div>
+      </div>
+
+      <div class="nds-form-element nds-form-container">
+        <legend class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+          <span class="nds-m-right_x-small">{tenthQuestionText}</span><br />
+        </legend>
+        <div class="nds-form-element__control nds-horizontal_radio">
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input type="radio" name="secondQue" value="Yes" id="tenthQuestionYes"
+                onchange={handleTenthQuestionChange} checked={secondRadYes} />
+              <label class="nds-radio__label" for="tenthQuestionYes" data-index="0">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{yes}</span>
+              </label>
+            </div>
+          </span>
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input type="radio" name="secondQue" value="No" id="tenthQuestionNo"
+                onchange={handleTenthQuestionChange} checked={secondRadNo} />
+              <label class="nds-radio__label" for="tenthQuestionNo" data-index="2">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{no}</span>
+              </label>
+            </div>
+          </span>
+          <span class="nds-radio last-option">
+            <div class="radio-container">
+              <input type="radio" name="secondQue" value="Maybe" id="tenthQuestionMaybe"
+                onchange={handleTenthQuestionChange} checked={secondRadMaybe} />
+              <label class="nds-radio__label" for="tenthQuestionMaybe" data-index="1">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{maybe}</span>
+              </label>
+            </div>
+          </span>
+        </div>
+      </div>
+
+      <div class="nds-form-element nds-form-container">
+        <legend class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+          <span class="nds-m-right_x-small">{eleventhQuestionText}</span><br />
+        </legend>
+        <div class="nds-form-element__control nds-horizontal_radio">
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input type="radio" name="thirdQuestionResponse" value="Yes" id="eleventhQuestionYes"
+                onchange={handleEleventhQuestionChange} checked={thirdRadYes} />
+              <label class="nds-radio__label" for="eleventhQuestionYes" data-index="0">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{yes}</span>
+              </label>
+            </div>
+          </span>
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input type="radio" name="thirdQuestionResponse" value="No" id="eleventhQuestionNo"
+                onchange={handleEleventhQuestionChange} checked={thirdRadNo} />
+              <label class="nds-radio__label" for="eleventhQuestionNo" data-index="2">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{no}</span>
+              </label>
+            </div>
+          </span>
+          <span class="nds-radio last-option">
+            <div class="radio-container">
+              <input type="radio" name="thirdQuestionResponse" value="Maybe" id="eleventhQuestionMaybe"
+                onchange={handleEleventhQuestionChange} checked={thirdRadMaybe} />
+              <label class="nds-radio__label" for="eleventhQuestionMaybe" data-index="1">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{maybe}</span>
+              </label>
+            </div>
+          </span>
+        </div>
+      </div>
+
+      <div class="nds-form-element nds-form-container">
+        <legend class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+          <span class="nds-m-right_x-small">{twelthQuestionText}</span><br />
+        </legend>
+        <div class="nds-form-element__control nds-horizontal_radio">
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input type="radio" name="fourthQuestionResponse" value="Yes" id="twelthQuestionYes"
+                onchange={handleTwelthQuestionChange} checked={fourthRadYes} />
+              <label class="nds-radio__label" for="twelthQuestionYes" data-index="0">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{yes}</span>
+              </label>
+            </div>
+          </span>
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input type="radio" name="fourthQuestionResponse" value="No" id="twelthQuestionNo"
+                onchange={handleTwelthQuestionChange} checked={fourthRadNo} />
+              <label class="nds-radio__label" for="twelthQuestionNo" data-index="2">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{no}</span>
+              </label>
+            </div>
+          </span>
+          <span class="nds-radio last-option">
+            <div class="radio-container">
+              <input type="radio" name="fourthQuestionResponse" value="Maybe" id="twelthQuestionMaybe"
+                onchange={handleTwelthQuestionChange} checked={fourthRadMaybe} />
+              <label class="nds-radio__label" for="twelthQuestionMaybe" data-index="1">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{maybe}</span>
+              </label>
+            </div>
+          </span>
+        </div>
+      </div>
+
+      <div class="nds-form-element nds-form-container">
+        <legend class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+          <span class="nds-m-right_x-small">{thirteeenthQuestionText}</span><br />
+        </legend>
+        <div class="nds-form-element__control nds-horizontal_radio">
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input type="radio" name="seventhQuestionResponse" value="Yes" id="thirteenthQuestionYes"
+                onchange={handleThirteenthQuestionChange} checked={seventhRadYes} />
+              <label class="nds-radio__label" for="thirteenthQuestionYes" data-index="0">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{yes}</span>
+              </label>
+            </div>
+          </span>
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input type="radio" name="seventhQuestionResponse" value="No" id="thirteenthQuestionNo"
+                onchange={handleThirteenthQuestionChange} checked={seventhRadNo} />
+              <label class="nds-radio__label" for="thirteenthQuestionNo" data-index="2">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{no}</span>
+              </label>
+            </div>
+          </span>
+          <span class="nds-radio last-option">
+            <div class="radio-container">
+              <input type="radio" name="seventhQuestionResponse" value="Maybe" id="thirteenthQuestionMaybe"
+                onchange={handleThirteenthQuestionChange} checked={seventhRadMaybe} />
+              <label class="nds-radio__label" for="thirteenthQuestionMaybe" data-index="1">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{maybe}</span>
+              </label>
+            </div>
+          </span>
+        </div>
+      </div>
+
+      <div class="nds-form-element nds-form-container">
+        <legend class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+          <span class="nds-m-right_x-small">{foteenthQuestionText}</span><br />
+        </legend>
+        <div class="nds-form-element__control nds-horizontal_radio">
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input type="radio" name="twelwthQuestionResponse" value="Yes" id="fourteenthQuestionYes"
+                onchange={handleFourteenthQuestionChange} checked={twelthRadYes} />
+              <label class="nds-radio__label" for="fourteenthQuestionYes" data-index="0">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{yes}</span>
+              </label>
+            </div>
+          </span>
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input type="radio" name="twelwthQuestionResponse" value="No" id="fourteenthQuestionNo"
+                onchange={handleFourteenthQuestionChange} checked={twelthRadNo} />
+              <label class="nds-radio__label" for="fourteenthQuestionNo" data-index="2">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{no}</span>
+              </label>
+            </div>
+          </span>
+          <span class="nds-radio last-option">
+            <div class="radio-container">
+              <input type="radio" name="twelwthQuestionResponse" value="Maybe" id="fourteenthQuestionMaybe"
+                onchange={handleFourteenthQuestionChange} checked={twelthRadMaybe} />
+              <label class="nds-radio__label" for="fourteenthQuestionMaybe" data-index="1">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{maybe}</span>
+              </label>
+            </div>
+          </span>
+        </div>
+      </div>
+
+      <div class="nds-form-element nds-form-container">
+        <legend class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+          <span class="nds-m-right_x-small">{fifteenthQuestionText}</span><br />
+        </legend>
+        <div class="nds-form-element__control nds-horizontal_radio">
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input type="radio" name="thirteenthQuestionResponse" value="Yes" id="fifteenthQuestionYes"
+                onchange={handleFifteenthQuestionChange} checked={thirteenththRadYes} />
+              <label class="nds-radio__label" for="fifteenthQuestionYes" data-index="0">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{yes}</span>
+              </label>
+            </div>
+          </span>
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input type="radio" name="thirteenthQuestionResponse" value="No" id="fifteenthQuestionNo"
+                onchange={handleFifteenthQuestionChange} checked={thirteenththRadNo} />
+              <label class="nds-radio__label" for="fifteenthQuestionNo" data-index="2">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{no}</span>
+              </label>
+            </div>
+          </span>
+          <span class="nds-radio last-option">
+            <div class="radio-container">
+              <input type="radio" name="thirteenthQuestionResponse" value="Maybe" id="fifteenthQuestionMaybe"
+                onchange={handleFifteenthQuestionChange} checked={thirteenththRadMaybe} />
+              <label class="nds-radio__label" for="fifteenthQuestionMaybe" data-index="1">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{maybe}</span>
+              </label>
+            </div>
+          </span>
+        </div>
+      </div>
+
+      <div class="nds-form-element nds-form-container">
+        <legend class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+          <span class="nds-m-right_x-small">{sixteenthQuestionText}</span><br />
+        </legend>
+        <div class="nds-form-element__control nds-horizontal_radio">
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input type="radio" name="fourtenthQue" value="Yes" id="sixteenthQuestionYes"
+                onchange={handleSixteenthQuestionChange} checked={forteenththRadYes} />
+              <label class="nds-radio__label" for="sixteenthQuestionYes" data-index="0">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{yes}</span>
+              </label>
+            </div>
+          </span>
+          <span class="nds-radio">
+            <div class="radio-container">
+              <input type="radio" name="fourtenthQue" value="No" id="sixteenthQuestionNo"
+                onchange={handleSixteenthQuestionChange} checked={forteenthRadNo} />
+              <label class="nds-radio__label" for="sixteenthQuestionNo" data-index="2">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{no}</span>
+              </label>
+            </div>
+          </span>
+          <span class="nds-radio last-option">
+            <div class="radio-container">
+              <input type="radio" name="fourtenthQue" value="Maybe" id="sixteenthQuestionMaybe"
+                onchange={handleSixteenthQuestionChange} checked={forteenthRadMaybe} />
+              <label class="nds-radio__label" for="sixteenthQuestionMaybe" data-index="1">
+                <span class="nds-radio_faux"></span>
+                <span class="nds-form-element__label slds-p-left_small">{maybe}</span>
+              </label>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="column2">
+      <div class="box">
+        <div class="button-container">
+          <button label="Submit" onclick={submitResponses} class="retbutton1">{next}</button>&nbsp;&nbsp;&nbsp;
+          <button label="Save As Draft" onclick={navigationMethod} class="savebutton1">{skip}</button>
+        </div>
+        <div class="line"></div>
+      </div>
+    </div>
+  </div>
+
+  <template if:true={customFormModal}>
+    <div class="modal-backdrop"></div>
+    <div class="modal-visible">
+      <div class={popupClass1}>
+        <div class="popup2-container">
+          <button onclick={closePopup1} class="times">&times;</button>
+          <p class="message">{message}</p><br />
+          <p class="content1">{content1}</p><br /><br />
+          <button onclick={closePopup1} class="retbutton">{returnbackc}</button>
+        </div>
+      </div>
+    </div>
+  </template>
+  <template if:true={isPopupOpen}>
+    <div class="modal-backdrop"></div>
+    <div class="modal-visible">
+      <div class={popupClass}>
+        <div class="popup">
+          <button class="close-button" title="Close" onclick={closePopup}>&times;</button>
+          <div class="content">
+            <p class="heading">{confirmsub}</p><br />
+            <p class="paragh">{cannotedit}</p><br />
+            <div class="btn">
+              <button class="cancelbtn" onclick={closePopup}>&nbsp;{cancelbt} &nbsp;</button>&emsp;
+              <button class="submitbtn" onclick={saveAsDraft}>{confirmbt}</button>&emsp;<br /><br />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template if:true={isConfirmationDialogOpen}>
+    <div class={popupClass}>
+      <div class="popup">
+        <button class="close-button" title="Close" onclick={closePopup}>&times;</button>
+        <div class="content">
+          <p class="heading">{confirmsub}</p><br />
+          <p class="paragh">{cannotedit}</p><br />
+          <div class="btn">
+            <button class="cancelbtn" onclick={closePopup}>&nbsp;{cancelbt} &nbsp;</button>&emsp;
+            <button class="submitbtn" onclick={confirmSubmission}>{confirmbt}</button>&emsp;<br /><br />
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <br />
+   <div class="button-container-bottom">
+          <button label="Submit" onclick={submitResponses} class="retbutton1-bottom">{next}</button>&nbsp;&nbsp;&nbsp;
+          <button label="Save As Draft" onclick={navigationMethod} class="savebutton1-bottom">{skip}</button>
+        </div>
+  <div class="botcontainer">
+    <div class="bot1">*{footerText}</div>
+  </div>
+</template>

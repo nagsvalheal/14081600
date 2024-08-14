@@ -1,0 +1,367 @@
+<!-- This LWC dynamically renders error messages, challenges, and congratulatory messages based on various conditions, enhancing user engagement and interaction in challenges -->
+<template>
+		<!-- <div if:true={showSpinner}>
+		<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	 </div> -->
+	<div class="pageBackground">
+		<template if:true={showError}>
+			<div class="slds-align_absolute-Center">
+				<p class="textAligncenter">{errorMessage}</p>
+			</div>
+		
+		</template>
+		<template if:true={showChallenges}>
+			<lightning-layout multiple-rows>
+				<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+					<div class="custom-box FontStyleChallenge">{challenges}</div>
+					<div class="chartLevelsforMobile">
+						<div class="grid-containerChart">
+							<div class="slds-align_absolute-center">
+								<c-bi-Pspb-Chart-Percentage currentxp={currentXP} nextrankxp={nextrankxp}
+									percentage={percentage}>
+								</c-bi-Pspb-Chart-Percentage>
+							</div>
+							<div class="allignCenter">
+								<div class="clevelMobile">{rankLevel}</div>
+								<template if:false={showCongratsPre}>
+									<div class="ranksMobile">{currentXP}/{nextrankxp} {challengesXp}</div>
+								</template>
+								<template if:true={showNoneFive}>
+									<div class="ranksMobile">{currentXP} {challengesXp}</div>
+								</template>
+								<template if:true={showFiveHund}>
+									<div class="ranksMobile">{currentXP}/{totalXp}</div>
+								</template>
+							</div>
+						</div>
+						<div class="grid-containerChallengeMobile">
+							<div class="line-container">
+								<div>
+									<template if:false={showCongratsPre}>
+										<p class="ranksHrMobile">
+											<span class="ranksHrMobileBold">{xpNextrank}{challengesXp}</span> {challengesReach} '<span class="ranksHrMobileBold">{level}
+												{rankLevels}</span>'
+										</p>
+									</template>
+									<template if:true={showCongratsPre}>
+										<p class="textCenter">
+											{challengesMaxLevel}
+										</p>
+									</template>
+									<div>
+										<img src={challengeArrowLarge}  alt={altValue} class="fillWidth" />
+									</div>
+									<template if:true={showCongratsPre}>
+										<p class="textCenter">
+											{challengesExcellent}
+										</p>
+									</template>
+								</div>
+							</div>
+							<div class="TrophyImg">
+								<div class="imgCenter">
+									<img src={tImage} alt={altValue}  width="135px" class="marginTop45" />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="chartLevelsforDesktop">
+						<div class="grid-containerChallenge">
+							<div>
+								<div class="slds-align_absolute-left">
+									<c-bi-Pspb-Chart-Percentage currentxp={currentXP} nextrankxp={nextrankxp}
+										percentage={percentage}>
+									</c-bi-Pspb-Chart-Percentage>
+								</div>
+							</div>
+							<div class="allignCenter">
+								<div class="clevel">{rankLevel}</div>
+								<template if:false={showCongratsPre}>
+									<div class="ranks">{currentXP}/{nextrankxp} {challengesXp}</div>
+								</template>
+								<template if:true={showNoneFive}>
+									<div class="ranksMobile">{currentXP} {challengesXp}</div>
+								</template>
+								<template if:true={showFiveHund}>
+									<div class="ranksMobile">{currentXP}/{totalXp}</div>
+								</template>
+							</div>
+							<div class="line-container">
+								<template if:false={showCongratsPre}>
+									<p class="ranksHr">
+										{xpNextrank}{challengesXp} {challengesReach} '{level} {rankLevels}'
+									</p>
+								</template>
+								<template if:true={showCongratsPre}>
+									<p class="textCenter">{challengesMaxLevel}</p>
+								</template>
+								<div>
+									<img src={challengeArrowLarge} alt={altValue}  class="width100" />
+								</div>
+								<template if:true={showCongratsPre}>
+									<p class="textCenter">
+										{challengesExcellent}
+									</p>
+								</template>
+							</div>
+							<div class="TrophyImg">
+								<img src={tImage} alt={altValue}  width="135px" />
+							</div>
+						</div>
+					</div>
+				</lightning-layout-item>
+			</lightning-layout>
+			<!-- Row 1 -->
+			<lightning-layout multiple-rows>
+				<hr class="displayhr" />
+				<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+					<div class="custom-box FontStyle">
+						{activeChallengesLabel} ({activeCount})
+					</div>
+					<!-- Row 1 -->
+					<div class="grid-containerAC">
+						<template for:each={activeChallenges} for:item="challenge" for:index="index">
+							<div key={challenge.challengeIdToUpdate}>
+								<c-bi-Pspb-Active-Challenges oncompletechallenge={completeChallenge}
+									oncancelchallenge={removeActiveChallenge}
+									challengeidtoupdate={challenge.challengeIdToUpdate}
+									activechallengeid={challenge.availableChallenge}>
+								</c-bi-Pspb-Active-Challenges>
+							</div>
+						</template>
+					</div>
+					<template if:true={showInfo}>
+						<div class="acavai">
+							<img width="135px" alt={altValue}  src={activeNo} />
+							<div class="text">{noActiveChallenges}</div>
+							<div class="text1">
+								{acceptChallenge}
+							</div>
+						</div>
+					</template>
+					<hr />
+				</lightning-layout-item>
+			</lightning-layout>
+			<lightning-layout class="slds-p-bottom_large" multiple-rows>
+				<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+					<div class="custom-box FontStyles">
+						{availabelChallenges} ({availableCount})
+					</div>
+					<div class="grid-containerAC">
+						<template for:each={availableChallenges} for:item="challenge" for:index="index">
+							<div key={challenge.challengeIdToUpdate}>
+								<c-bi-Pspb-Available-Challenges onacceptchallenge={removeAvailableChallenge}
+									challengeidtoupdate={challenge.challengeIdToUpdate}
+									challengeid={challenge.availableChallenge}>
+								</c-bi-Pspb-Available-Challenges>
+							</div>
+						</template>
+					</div>
+					<lightning-layout-item class="slds-p-top_large" size="12" small-device-size="12"
+						medium-device-size="12" large-device-size="12">
+						<template if:true={showMore}>
+							<div class="showmore">
+								<button class="ComChaButtonLoad" onclick={handleShowMoreClick}
+									data-it-button="challenges: Load more">
+									{loadMore}
+								</button>
+							</div>
+						</template>
+						<template if:true={showLess}>
+							<div class="showmore">
+								<button class="ComChaButtonLoad" onclick={handleShowLessClick}
+									data-it-button="challenges: Load more">
+									{loadLess}
+								</button>
+							</div>
+						</template>
+						<template if:true={showInfo1}>
+							<div class="slds-align_absolute_centre text">
+								<p class="textBold">
+									{noAvailableChallenge}
+								</p>
+								<p class="text">
+									{completeChallengePoints}
+								</p>
+							</div>
+						</template>
+					</lightning-layout-item>
+				</lightning-layout-item>
+			</lightning-layout>
+			<template if:true={showmodal}>
+				<div class="search-overlay">
+					<div class="search">
+						<div class="slds-align_absolute-center divMarginStyle">
+							<div class="grid-containerACModal">
+								<div class="AChallengesModal">
+									<template if:true={congrats}>
+										<div class="ChallengeTrophy1 slds-align_absolute-center">
+											<lightning-formatted-rich-text value={image}>
+											</lightning-formatted-rich-text>
+										</div>
+										<div class="crossClass">
+											<a onclick={closeMobMenu1}><img src={crossIcon} alt={altValue}  width="13px" /></a>
+										</div>
+									</template>
+									<template if:false={congrats}>
+										<div class="ChallengeTrophy slds-align_absolute-center">
+											<lightning-formatted-rich-text value={image}>
+											</lightning-formatted-rich-text>
+										</div>
+										<div class="crossClass">
+											<a onclick={closeMobMenu1}><img src={crossIcon} alt={altValue}  width="13px" /></a>
+										</div>
+									</template>
+									<div class="ActiveChallenges">
+										<div class="grid-containerCardDetails">
+											<template if:true={congrats}>
+												<div class="slds-align_absolute-center slds-p-top_small">
+													<p class="CardTitleModal">{congratulations}</p>
+												</div>
+												<div class="slds-align_absolute-center slds-p-top_small">
+													<p class="CardParaModal">
+														{youEarned} {rewardPoints}{challengesXp} {successChallenges}
+													</p>
+												</div>
+												<div class="slds-align_absolute-center slds-p-top_small">
+													<p class="CardcongModal">{title}</p>
+												</div>
+											</template>
+											<template if:false={congrats}>
+												<div class="slds-align_absolute-center slds-p-top_small">
+													<p class="CardTitleModal">{title}</p>
+												</div>
+											</template>
+											<div class="slds-align_absolute-center">
+												<p class="CardParaModal">{description} {bookLvlTwo}</p>
+											</div>
+											<template if:false={congrats}>
+												<template if:true={showQuestion}>
+													<div class="slds-align_absolute-center slds-p-top_small">
+														<p class="CardTitleModal">
+															{confirmChallenges}
+														</p>
+													</div>
+												</template>
+												<template if:false={showQuestion}>
+													<div class="slds-align_absolute-center">
+														<button class="percentButton"
+															data-it-button="challenges: percentageCompleted">
+															{percentageCompleted}%
+														</button>
+													</div>
+												</template>
+												<div class="slds-align_absolute-center">
+													<p class="CardParaModal">
+														{challengesHelp}
+													</p>
+												</div>
+												<template if:true={showQuestion}>
+													<div class="slds-align_absolute-center ButtonModal">
+														<button class="ComChaButton" onclick={afterComplete}
+															data-it-button="challenges: Complete Challenge">
+															{completeChallengeLabel}
+														</button>
+														<button class="cancelButton" onclick={closeModal}
+															data-it-button="challenges: Cancel">
+															{cancel}
+														</button>
+													</div>
+												</template>
+												<template if:false={showQuestion}>
+													<div class="slds-align_absolute-center slds-p-top_small">
+														<p class="CardTitleModal1">
+															{cannotCompleteChallenge}
+														</p>
+													</div>
+												</template>
+											</template>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</template>
+			<template if:true={isLoading}>
+				<div class="slds-spinner_container">
+					<div role="status" class="slds-spinner slds-spinner_medium">
+						<span class="slds-assistive-text">{loading}</span>
+						<div class="slds-spinner__dot-a"></div>
+						<div class="slds-spinner__dot-b"></div>
+					</div>
+				</div>
+			</template>
+		</template>
+		<template if:true={showCongrats}>
+			<div class="coloBlack">
+				<div class="grid-containerACModal">
+					<div class="AChallengesModalConga">
+						<div class="ActiveChallengesConga">
+							<div class="grid-containerCardDetails">
+								<div class="slds-p-top_small">
+									<p class="CongaTitleModal">{congratulations}</p>
+								</div>
+								<div>
+									<p class="CongaRegularModal">
+										{challengesMaxLevel}
+									</p>
+								</div>
+								<div>
+									<div class="grid-congaChallengeDesktop">
+										<div>
+											<div class="slds-align_absolute-left">
+												<c-bi-Pspb-Chart-Percentage currentxp={currentXP}
+													nextrankxp={nextrankxp} percentage={percentage}>
+												</c-bi-Pspb-Chart-Percentage>
+											</div>
+										</div>
+										<div class="allignCenter">
+											<div class="clevelMobile">{rankLevel}</div>
+											<div class="ranks">{currentXP} {challengesXp}</div>
+										</div>
+										<div>
+											<div class="conImage">
+												<img src={tImage} alt={altValue}  width="200px" />
+											</div>
+										</div>
+									</div>
+									<div class="grid-congaChallengeMobile congaCenter">
+										<div>
+											<div class="slds-align_absolute-center">
+												<c-bi-Pspb-Chart-Percentage currentxp={currentXP}
+													nextrankxp={nextrankxp} percentage={percentage}>
+												</c-bi-Pspb-Chart-Percentage>
+											</div>
+										</div>
+										<div class="allignCenter">
+											<div class="clevelMobile">{rankLevel}</div>
+											<div class="ranks">{currentXP} {challengesXp}</div>
+										</div>
+									</div>
+									<div class="displayOnlyOnMobile">
+										<div class="conImage">
+											<img src={tImage} alt={altValue}  width="200px" />
+										</div>
+									</div>
+								</div>
+								<div>
+									<p class="CongaRegularModal">
+										{noChallengesNow}
+									</p>
+								</div>
+								<div>
+									<p class="CongaBoldModal">
+										{checkTrophies}
+										<span class="addUnderline">‘{trophyCase}’</span> {tapAbove}
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+	</div>
+</template>

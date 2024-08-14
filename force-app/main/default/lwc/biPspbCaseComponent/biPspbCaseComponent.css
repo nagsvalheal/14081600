@@ -1,0 +1,1208 @@
+.combobox {
+	border-color: black;
+	width: 222px;
+	height: 48px;
+}
+
+.btnanddate {
+	display: flex;
+}
+
+.caseimg {
+	width: 64px;
+}
+.fileName{
+	font-size: 24px;
+    font-weight: 400;
+   font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+.nocase{
+    font-size: 24px;
+    font-weight: 400;
+   font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    position: relative;
+    top: 50px;
+    right: 38%;
+
+}
+.norecord{
+	font-size: 24px;
+    font-weight: 400;
+   font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    position: relative;
+    top: 100px;
+    right: 105%;
+}
+.Noneclass {
+	font-size: 12px;
+	line-height: 20px;
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	color: #000000;
+}
+
+.descrip {
+	position: relative;
+	top: 90px;
+}
+
+.box {
+	background-color: red;
+}
+
+.text-black {
+	width: 30%;
+}
+
+.image1 {
+	width: 20px;
+	height: 20px;
+	position: relative;
+	top: 27px;
+	right: 4px;
+}
+
+.editflex {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	left: 8px;
+}
+
+.white-background {
+	padding-left: 10px;
+	padding-top: 10px;
+	height: 107px;
+	background-color: white;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	border-bottom: 1px solid #8d89a580;
+}
+
+.small-screen-background {
+	background-color: #fef4d7;
+	padding-left: 10px;
+	padding-top: 10px;
+	height: 107px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	border-bottom: 1px solid #8d89a580;
+}
+
+.large-screen-background {
+	background-color: #ecdca8;
+	padding-left: 10px;
+	padding-top: 10px;
+	height: 107px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	border-bottom: 1px solid #8d89a580;
+}
+
+
+
+.slds-m-around_medium {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	margin-left: 1.5cm;
+	position: relative;
+	top: 20px;
+}
+
+.resultDiv:focus {
+	background-color: #ecdca8;
+}
+
+.resultDiv {
+	padding-left: 10px;
+	padding-top: 10px;
+	height: 107px;
+	background-color: white;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	border-bottom: 1px solid #8d89a580;
+}
+
+.filterDiv {
+	margin-top: 0.5cm;
+	margin-left: 1.5cm;
+	border: 2px solid #d1c9c9;
+	border-radius: 8px;
+	height: 319px;
+	width: 383px;
+	overflow-y: scroll;
+}
+
+.main {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	right: 50px;
+	height: 34pc;
+	width: 104%;
+}
+
+.displayform {
+	padding-left: 1cm;
+	margin-top: 5pc;
+	border-radius: 8px;
+	margin-left: 0cm;
+	width: 786px;
+	height: 365px;
+	border: 2px solid #d1c9c9;
+	background-color: white;
+	padding-top: 5px;
+}
+
+.Fline {
+	margin-bottom: 10px;
+	position: absolute;
+}
+
+.displayrecordform {
+	padding-left: 1cm;
+	padding-top: 10px;
+	margin-top: 4.2cm;
+	border-radius: 8px;
+	margin-left: 2cm;
+	width: 15cm;
+	height: 18cm;
+	border: 5px solid whitesmoke;
+}
+
+.submittedClass {
+	border-radius: 12px;
+	background-color: #403a60;
+	color: white;
+	margin-top: 0px;
+	position: relative;
+	width: 76px;
+	height: 24px;
+	align-items: center;
+	text-align: center;
+}
+
+.submittedClass p {
+	color: #ffffff;
+	padding: 3px;
+	font-size: 12px;
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.Type {
+	position: absolute;
+	bottom: 330px;
+	font-size: 16px;
+	font-family: 'Eina04-bold',  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-style: normal;
+	color: #403a60;
+	width: 100%;
+}
+
+.Submitted {
+	border-radius: 12px;
+	background-color: #403a60;
+	margin-left: 55%;
+	color: white;
+	font-size: 12px;
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.Draft {
+	border-radius: 12px;
+	background-color: #ecdca8;
+	margin-left: 14pc;
+	color: #403a60;
+	font-size: 12px;
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	width: 45px;
+	height: 24px;
+}
+
+.Need {
+	border-radius: 12px;
+	background-color: #ecdca8;
+	margin-left: 13pc;
+	color: #403a60;
+	font-size: 12px;
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	width: 71px;
+	height: 24px;
+}
+
+.draftClass {
+	border-radius: 12px;
+	color: white;
+	background-color: #ecdca8;
+	width: 45px;
+	height: 24px;
+	margin-top: 5px;
+	text-align: center;
+	align-items: center;
+	position: relative;
+	padding: 2px;
+}
+
+.draftClass p {
+	color: #403a60;
+	width: 45px;
+	height: 24px;
+	font-size: 12px;
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.NeedClass {
+	border-radius: 12px;
+	color: #403a60;
+	background-color: #ecdca8;
+	width: 75px;
+	height: 24px;
+	margin-top: 5px;
+	text-align: center;
+	align-items: center;
+	position: relative;
+	padding: 2px;
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.heading {
+	color: #403a60;
+	font-size: 32px;
+	margin-left: 1.6cm;
+	line-height: 0px;
+	font-family: "Eina04-bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.image {
+	width: 24px;
+	height: 24px;
+	cursor: pointer;
+	position: relative;
+	right: 6%;
+}
+
+.head {
+	font-size: 16px;
+	color: #403a60;
+	line-height: 24px;
+	font-style: normal;
+	font-family: "Eina04-bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	padding-bottom: 8px;
+	padding-top: 10px;
+}
+
+.subtype {
+	font-size: 14px;
+	line-height: 20px;
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-weight: 400;
+	color: #2c333a;
+}
+
+.SubType2 {
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	color: #403a60;
+}
+
+.Attachments {
+	font-size: 14px;
+	line-height: 20px;
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	color: #403a60;
+}
+
+.date {
+	color: #2c333a;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 400;
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.SubTypeHead {
+	font-size: 14px;
+	line-height: 20px;
+	font-style: normal;
+	color: #403a60;
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	margin-left: 0px;
+}
+
+.desc {
+	width: 50%;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	color: #403a60;
+	overflow: scroll;
+	height: 142px;
+}
+
+.createdate {
+	position: relative;
+	bottom: 18px;
+}
+
+.imgclass {
+	display: flex;
+	gap: 9cm;
+	margin-bottom: 10px;
+	margin-top: 50px;
+}
+
+.combobax1 {
+	width: 152px;
+	height: 40px;
+}
+
+.col-2text {
+	display: flex;
+	flex-direction: column;
+	align-content: space-around;
+	align-items: end;
+}
+
+.row {
+	display: flex;
+	justify-content: space-between;
+	position: absolute;
+	top: 299px;
+	left: 37px;
+	width: 92%;
+}
+
+.display {
+	display: none;
+}
+
+.classhead {
+	display: flex;
+	justify-content: space-between;
+	height: 0px;
+	margin-top: 4px;
+	width: 101%;
+}
+
+::-webkit-scrollbar {
+	width: 0px;
+}
+
+.SecLine {
+	margin-bottom: 0px;
+    margin-top: 40px;
+    position: absolute;
+    top: 188px;
+
+}
+
+.attachmentclass {
+	position: absolute;
+	left: 61%;
+}
+
+@media only screen and (max-width: 400px) {
+	.editimg {
+		width: 20px;
+		height: 20px;
+		position: relative;
+		top: 30px;
+	}
+.nocase{
+	font-size: 24px;
+	position: relative;
+	left: 15%;
+}
+	.image {
+		width: 24px;
+		height: 24px;
+		cursor: pointer;
+		position: relative;
+		right: 24%;
+		top: 71%;
+	}
+
+	.main {
+		display: flex;
+        flex-direction: column;
+        position: relative;
+        height: auto;
+        width: 100%;
+	}
+	.btnanddate {
+		display: flex;
+		justify-content: space-between;
+		width: 96%;
+	}
+
+	.descrip {
+		position: relative;
+		top: 0px;
+		margin-top: 130px;
+	}
+
+	.subt {
+		display: block !important;
+		width: 70%;
+	}
+
+	.heading {
+		color: #403a60;
+		font-size: 25px;
+		margin-left: 15%;
+		line-height: 0px;
+		font-family: "Eina04-bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+
+	
+
+	
+	.row {
+		gap: 3%;
+        top: 0pc;
+        left: 0px;
+        width: 100%;
+        justify-content: space-between;
+        position: relative;
+	}
+	.filterDiv {
+		width: 97%;
+		margin-top: 55px;
+		height: auto;
+	}
+
+	.Submitted {
+		margin-left: 5pc;
+	}
+
+	.Draft {
+		margin-left: 10pc;
+	}
+
+	.classhead {
+		gap: 30%;
+	}
+
+	.attachmentclass {
+		position: absolute;
+		left: 0px;
+		top: 0;
+		margin-top: 90px;
+	}
+
+	.secline {
+		margin-bottom: 0px;
+		margin-top: 40px;
+		position: absolute;
+		top: 188px;
+	}
+
+	.displayform div hr {
+		color: #403a60;
+        width: 93%;
+        margin-top: 0px;
+        background-color: #c4c1cd;
+	}
+	
+	.slds-m-around_medium {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		gap: 15px;
+	}
+
+	.SubType2 {
+		font-size: 14px;
+	}
+
+	.displayForm1 {
+		display: none;
+	}
+
+	.displayForm2 {
+		display: block;
+	}
+
+	.combobox {
+		width: 97%;
+		border: 1px solid;
+		border-radius: 5px;
+		height: 34px;
+	}
+
+	.combobax1 {
+		width: 97%;
+		border: 1px solid;
+		border-radius: 5px;
+	}
+
+	.display {
+		display: block;
+	}
+
+	.subtypenone {
+		display: none;
+	}
+
+	.desc {
+		width: 96%;
+		height: 183px;
+	}
+
+	.displayform {
+		position: relative;
+		padding-left: 0px;
+		left: 0px;
+		width: 104%;
+		height: auto;
+		bottom: 0cm;
+		margin-top: 0pc;
+		border: 2px solid #fef4d7;
+		background-color: #fef4d7;
+	}
+
+	.resultDiv:hover {
+		background-color: #fef4d7;
+	}
+
+	.resultDiv {
+		height: auto;
+		border-bottom: 1px solid #c4c1cd;
+	}
+
+	.small-screen-background {
+		height: auto;
+		border-bottom: 1px solid #c4c1cd;
+	}
+
+	.imgclass {
+		margin-top: 15px;
+		width: 95%;
+	}
+
+	.Need {
+		border-radius: 12px;
+		background-color: #ecdca8;
+		margin-left: 5pc;
+		color: #403a60;
+		font-size: 12px;
+		font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		width: 71px;
+		height: 24px;
+	}
+	.norecord{
+	    font-size: 24px;
+    font-weight: 400;
+   font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+ 
+        width: 100%;
+    
+}
+}
+
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+	.editimg {
+		width: 20px;
+		height: 20px;
+		position: relative;
+		top: 30px;
+	}
+	.norecord{
+	    font-size: 24px;
+    font-weight: 400;
+   font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    position: relative;
+    top: 50px;
+    left: 18%;
+}
+.nocase{
+	font-size: 24px;
+	position: relative;
+	left: 20%;
+	bottom: -140px;
+}
+
+	.image {
+		width: 24px;
+		height: 24px;
+		cursor: pointer;
+		position: relative;
+		right: 24%;
+		top: 71%;
+	}
+
+	.main {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		right: 18px;
+		height: auto;
+		width: 100%;
+	}
+	
+	.btnanddate {
+		display: flex;
+		justify-content: space-between;
+		width: 96%;
+	}
+
+	.descrip {
+		position: relative;
+		top: 0px;
+		margin-top: 130px;
+	}
+
+	.subt {
+		display: block !important;
+		width: 70%;
+	}
+
+	.heading {
+		color: #403a60;
+		font-size: 25px;
+        margin-left: 15%;
+		line-height: 0px;
+		font-family: "Eina04-bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		position: relative;
+    	top: 5%;
+	}
+
+	.displayform {
+		position: relative;
+        padding-left: 0px;
+        left: 0%;
+        width: 100%;
+        height: 14cm;
+        bottom: 0cm;
+        margin-top: 0pc;
+        border: 2px solid #fef4d7;
+        background-color: #fef4d7;
+	}
+	
+	.row {
+		gap: 3%;
+        top: 3pc;
+        left: 0px;
+        width: 100%;
+        justify-content: space-between;
+        position: relative;
+	}
+	
+
+	.Submitted {
+		margin-left: 5pc;
+	}
+
+	.Draft {
+		margin-left: 10pc;
+	}
+
+	.classhead {
+		gap: 30%;
+	}
+
+	.attachmentclass {
+		position: absolute;
+		left: 0px;
+		top: 0;
+		margin-top: 90px;
+	}
+
+	.secline {
+		margin-bottom: 0px;
+		margin-top: 50px;
+		position: absolute;
+		top: 83%;
+		width: 80%;
+	}
+
+	.SecLine {
+		top: 85%;
+	}
+	
+	.displayform div hr {
+		color: #403a60;
+        width: 98%;
+        margin-top: 0px;
+        background-color: #c4c1cd;
+	}
+	
+	.slds-m-around_medium {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		gap: 15px;
+	}
+
+	.SubType2 {
+		font-size: 14px;
+	}
+
+	
+
+	.filterDiv {
+		width: 97%;
+		margin-top: 55px;
+		height: auto;
+	}
+
+	
+
+	.displayForm1 {
+		display: none;
+	}
+
+	.displayForm2 {
+		display: block;
+	}
+
+	.combobox {
+		width: 97%;
+		border: 1px solid;
+		border-radius: 5px;
+		height: 34px;
+	}
+
+	.combobax1 {
+		width: 97%;
+		border: 1px solid;
+		border-radius: 5px;
+	}
+
+	.display {
+		display: block;
+	}
+
+	.subtypenone {
+		display: none;
+	}
+
+	.desc {
+		width: 96%;
+		height: 183px;
+	}
+
+
+	.resultDiv:hover {
+		background-color: #fef4d7;
+	}
+
+	
+
+	
+
+	.resultDiv {
+		height: auto;
+		border-bottom: 1px solid #c4c1cd;
+	}
+
+	.small-screen-background {
+		height: auto;
+		border-bottom: 1px solid #c4c1cd;
+	}
+
+	.imgclass {
+		margin-top: 15px;
+		width: 95%;
+	}
+
+	.Need {
+		border-radius: 12px;
+		background-color: #ecdca8;
+		margin-left: 5pc;
+		color: #403a60;
+		font-size: 12px;
+		font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		width: 71px;
+		height: 24px;
+	}
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+	.main {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		right: 0px;
+		height: 64pc;
+		width: 75%;
+	}
+		.norecord{
+	    font-size: 24px;
+    font-weight: 400;
+   font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    position: relative;
+    top: 100px;
+    left: 20%;
+}
+.nocase{
+	position: relative;
+	left: 20%;
+	top: 100px;
+}
+.heading{
+	position: relative;
+    top: 15px;
+}
+	.displayform {
+		position: relative;
+		left: 6%;
+		width: 120%;
+	}
+
+	.displayForm1 {
+		margin-left: 9px;
+		width: 100%;
+	}
+
+	.row {
+		top: 83%;
+		width: 90%;
+		gap: 12%;
+	}
+
+	.displayform div hr {
+		color: #403a60;
+		width: 90%;
+		margin-top: 40px;
+	}
+
+	.SecLine {
+		top: 70%;
+	}
+
+	.displayForm2 {
+		display: none;
+	}
+
+	.col {
+		position: relative;
+		right: 20%;
+	}
+
+	.mainclass {
+		width: 120%;
+		position: relative;
+		right: 20px;
+	}
+
+	.slds-m-around_medium {
+		width: 100%;
+		flex-direction: column;
+	}
+
+	.combobox {
+		width: 100%;
+	}
+
+	.combobax1 {
+		width: 100%;
+	}
+
+	.filterDiv {
+		width: 100%;
+	}
+
+	.btnanddate {
+		justify-content: space-between;
+		width: 98%;
+	}
+
+	.SubType2 {
+		width: 99%;
+	}
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+	.main {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		right: 0px;
+		height: 64pc;
+		width: 100%;
+	}
+	.norecord{
+	    font-size: 24px;
+    font-weight: 400;
+   font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    position: relative;
+    top: 70px;
+    left: 20%;
+}
+	.nocase{
+	position: relative;
+	left: 20%;
+	top: 100px;
+}
+	.displayform {
+		position: relative;
+		left: 38px;
+		width: 100%;
+	}
+
+	.btnanddate {
+		justify-content: space-between;
+		width: 98%;
+	}
+
+	.row {
+		top: 83%;
+		width: 90%;
+		gap: 12%;
+	}
+
+	.displayform div hr {
+		color: #403a60;
+		width: 90%;
+		margin-top: 40px;
+	}
+
+	.SecLine {
+		top: 70%;
+	}
+
+	.displayForm2 {
+		display: none;
+	}
+
+	.col {
+		position: relative;
+		right: 20%;
+	}
+
+	.mainclass {
+		position: relative;
+		right: 20px;
+	}
+
+	.slds-m-around_medium {
+		width: 100%;
+		flex-direction: column;
+	}
+
+	.combobox {
+		width: 100%;
+	}
+
+	.combobax1 {
+		width: 100%;
+	}
+
+	.filterDiv {
+		width: 100%;
+	}
+
+	.subt {
+		width: 70%;
+		height: auto;
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+	.displayForm2 {
+		display: none;
+	}
+
+	.div {
+		width: 100%;
+	}
+
+	.classhead {
+		width: 100%;
+	}
+
+	.attachmentclass {
+		left: 66%;
+	}
+
+	.displayform {
+		padding-left: 1cm;
+		margin-top: 2.3pc;
+		border-radius: 8px;
+		margin-left: 0cm;
+		width: 100%;
+		height: 365px;
+		border: 2px solid #d1c9c9;
+		background-color: white;
+		padding-top: 5px;
+		position: relative;
+	}
+
+	.col {
+		position: relative;
+		right: 10%;
+	}
+
+	.displayForm1 {
+		width: 100%;
+	}
+
+	.displayform div hr {
+		width: 85%;
+	}
+
+	.row {
+		width: 85%;
+	}
+	.norecord{
+	    font-size: 24px;
+    font-weight: 400;
+   font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    position: relative;
+    top: 50px;
+    left: 20%;
+}
+	.subt {
+		width: 70%;
+		height: auto;
+	}
+	.SecLine{
+		margin-bottom: 0px;
+		margin-top: 40px;
+		position: absolute;
+		top: 69%;
+	}
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1300px) {
+	.displayForm2 {
+		display: none;
+	}
+
+	.displayform div hr {
+		width: 91%;
+	}
+
+	.div {
+		width: 100%;
+	}
+
+
+	.displayform {
+		padding-left: 1cm;
+		margin-top: 2.3pc;
+		border-radius: 8px;
+		margin-left: 0cm;
+		width: 100%;
+		height: 365px;
+		border: 2px solid #d1c9c9;
+		background-color: white;
+		padding-top: 5px;
+		position: relative;
+	}
+
+	.classhead {
+		display: flex;
+		justify-content: space-between;
+		height: 0px;
+		margin-top: 4px;
+		width: 100%;
+	}
+
+	.col {
+		position: relative;
+		right: 22%;
+	}
+
+	.displayForm1 {
+		width: 100%;
+	}
+	.SecLine{
+		margin-bottom: 0px;
+		margin-top: 40px;
+		position: absolute;
+		top: 70%;
+	}
+}
+
+@media only screen and (min-width: 1300px) and (max-width: 1500px) {
+	.displayForm2 {
+		display: none;
+	}
+
+	.displayform div hr {
+		width: 91%;
+	}
+
+	.div {
+		width: 100%;
+	}
+	.SecLine{
+		margin-bottom: 0px;
+		margin-top: 40px;
+		position: absolute;
+		top: 70%;
+	}
+	.classhead {
+		display: flex;
+		justify-content: space-between;
+		height: 0px;
+		margin-top: 4px;
+		width: 100%;
+	}
+	.displayform {
+		padding-left: 1cm;
+		margin-top: 2.3pc;
+		border-radius: 8px;
+		margin-left: 0cm;
+		width: 100%;
+		height: 365px;
+		border: 2px solid #d1c9c9;
+		background-color: white;
+		padding-top: 5px;
+		position: relative;
+	}
+
+
+
+	.col {
+		position: relative;
+		right: 22%;
+	}
+
+	.displayForm1 {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 1500px) {
+	.displayForm2 {
+		display: none;
+	}
+	.SecLine{
+		margin-bottom: 0px;
+		margin-top: 40px;
+		position: absolute;
+		top: 70%;
+		width: 91%;
+	}
+	.displayform {
+		padding-left: 1cm;
+		margin-top: 2.3pc;
+		border-radius: 8px;
+		margin-left: 0cm;
+		width: 100%;
+		height: 365px;
+		border: 2px solid #d1c9c9;
+		background-color: white;
+		padding-top: 5px;
+		position: relative;
+	}
+
+	.col {
+		position: relative;
+		right: 265px;
+	}
+
+	.displayForm1 {
+		width: 100%;
+	}
+	.Fline{
+		width: 92%;
+	}
+	
+}

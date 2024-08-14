@@ -1,0 +1,57 @@
+<!-- This component is consolidate component used for avatar,message and prepopulate form. -->
+<template>
+	<lightning-layout multiple-rows class="main">
+
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+			<div class="custom-box2">
+				<div class="displayHeader">
+					<div class="header-logo-container">
+						<div>
+							<img src={LogoSrc} alt="logo" width="133px" />
+						</div>
+						<img src={beyandGpp} alt="logo" class='marTB201' />
+					</div>
+					<div class="home-icon-container">
+						<c-bi-Pspb-Home-Icon-For-Thankyou-Msg></c-bi-Pspb-Home-Icon-For-Thankyou-Msg>
+					</div>
+				</div>
+				<div class="maincmp">
+					<div class="imageavatar">
+						<div class='imageiiii'>
+							<img if:false={caregiverValue} src={selectedAvatarSrc} alt={selectedOption}
+								class="Avatrimg rounded  d-block bg-logo" />
+							<img if:true={caregiverValue} src={selectAvatar} alt={selectedOption}
+								class="Avatrimg rounded  d-block bg-logo" />
+							<div class='flexi'>
+								<div>
+									<p class="text-content">
+										{verifyComplete}<br>
+										{allSet}</p>
+								</div>
+								<div class='markclass'><span class="Xmark">X</span></div>
+							</div>
+						</div>
+					</div>
+					<div class="child">
+						<img src={beyandGpp} alt="logo" class='marTB20' />
+						<c-bi-Pspb-Prepopulate-Summary-Page
+							onsendavatar={avatarvalue}></c-bi-Pspb-Prepopulate-Summary-Page>
+					</div>
+				</div>
+				<div class="footer-container">
+					<div class="footer-logo-container">
+						<div>
+							<img src={footerSrc} alt="logo" class="Foot" />
+						</div>
+					</div>
+					<div class="footer-containerMobile">
+						<c-bi-Pspb-Footer-Logo></c-bi-Pspb-Footer-Logo>
+					</div>
+					<div class="padR7">
+						<c-bi-Pspb-Footer-Quick-Links></c-bi-Pspb-Footer-Quick-Links>
+					</div>
+				</div>
+			</div>
+		</lightning-layout-item>
+	</lightning-layout>
+</template>

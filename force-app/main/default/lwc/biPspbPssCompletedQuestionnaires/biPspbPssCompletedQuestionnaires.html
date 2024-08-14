@@ -1,0 +1,124 @@
+<!-- This is Psoriasis Symptom Scale (PSS) completed Questionnaire (LWC),this allows you to see Completed Questionnaire with submitted responses.-->
+<template>
+	<div class="tophead">{pss}<sup>1</sup></div>
+	<div class="containercolumn" data-it-uid={userid}>
+		<!--To display Questions and Response-->
+		<div class="column1">
+			<div class="dropdowncolumn">
+				<div class="dropdowncolumn">
+					<template if:true={records}>
+						<div class="comboboxtext">{selectMonth}</div>
+						<lightning-combobox value={selectedAssessment} options={assessmentOptions}
+							onchange={handleAssessmentChange}>
+						</lightning-combobox>
+					</template>
+				</div>
+				<template if:false={records}>
+					<p>{notFound}</p>
+				</template>
+			</div>
+
+			<template if:true={records}>
+				<template for:each={records} for:item="record">
+					<div key={record.Id}>
+						<div class="nds-form-element nds-form-container">
+							<legend
+								class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+								<span class="nds-m-right_x-small"
+				>{record.AssessmentQuestion.QuestionText}</span><br />
+			</legend>
+								<div class="nds-form-element__control nds-horizontal_radio">
+									<span class="nds-radio">
+				<div class="radio-container">
+					<input
+					type="radio"
+					aria-invalid="false"
+					value="Yes"
+					checked
+					disabled
+					id="InputQuestionBox"
+					/>
+					<label class="nds-radio__label" for="InputQuestionBox">
+					<span class="nds-radio_faux"></span>
+									<span class="nds-form-element__label slds-p-left_small">
+						{record.ResponseText}</span>
+									</label>
+								</div>
+								</span>
+						</div>
+					</div>
+		</div>
+		<!-- Adjust the key and display fields based on your object structure -->
+</template>
+
+<!-- </div> -->
+</template>
+
+<!-- Display error if there is any -->
+<template if:true={error}>
+	<div class="slds-m-top_medium">
+		<p>Error: {error}</p>
+	</div>
+</template>
+</div>
+<!--COLUMN1-->
+<!--To dispay Rollout and Completed Date-->
+<div class="column2">
+	<div class="box">
+		<div class="statusRE">
+			<div class="rollout">
+				{rollOut}<br />
+				<p class="rddate">{rolloutDate}</p>
+			</div>
+
+			<div class="expires">
+				{completedOn}<br />
+				<p class="eddate">{expireDate}</p>
+			</div>
+		</div>
+	</div>
+	<div class="box2">
+		<br />
+		<br />
+		<div class="texts">{completedQn}</div>
+		<div class="line"></div>
+
+		<div class="category-names">
+			<div class={checkdlqi}>
+				<div class="category-box" role="button" onclick={navigateToCategory2} onkeydown={navigateToCategory2}
+					data-it-button="PSS Completed Questionnaire: Navigate to DLQI">
+					<img src={cardImageDlqi} alt="Dermatology" class="imageNavi" />
+					<p class="b">{dlqi}</p>
+				</div>
+			</div>
+			<div class="category-box1"  data-it-button="PSS Completed Questionnaire: Navigate to PSS">
+				<img src={cardImagePss} alt="Psoriasis" class="imageNavi" />
+				<p class="c">{pss}</p>
+			</div>
+			<div class={checkwai}>
+				<div class="category-box" role="button" onclick={navigateToCategory4} onkeydown={navigateToCategory4}
+					data-it-button="PSS Completed Questionnaire: Navigate to WAPI">
+					<img src={cardImageWpai} alt="Work and Activity" class="imageNavi" />
+					<p class="d">{workAPI}</p>
+				</div>
+			</div>
+			<div class={checkqsq}>
+				<div class="category-box" role="button" onclick={navigateToCategory5} onkeydown={navigateToCategory5}
+					data-it-button="PSS Completed Questionnaire: Navigate to QSQ">
+					<img src={cardImageQsq} alt="Qualitative" class="imageNaviNxt" />
+					<p class="e">{qsq}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--column2-->
+</div>
+<!--CONTAINER COLUMN-->
+<br />
+<!--Footer message-->
+<div class="botcontainer">
+	<div class="bot1">1. {pssBottomTxt}</div>
+	<br /><br />
+</div>
+</template>

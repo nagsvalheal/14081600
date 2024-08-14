@@ -1,0 +1,55 @@
+<!-- This Lightning Web Component fetches user enrollment, ranks, and completed challenges from Apex methods, dynamically updating the UI with pagination controls.-->
+<template>
+	
+	<template if:true={showError}>
+		<div class="slds-align_absolute-Center">
+			<p class="texCenter">{errorMessage}</p>
+		</div>
+	</template>
+	<template if:false={showError}>
+		<lightning-layout class="slds-p-bottom_large" multiple-rows>
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12"
+				padding="horizontal-small">
+				<div class="custom-box slds-align_absolute-left FontStyleChallenge">{trophyCase}</div>
+				<div class=" grid-container">
+					<template for:each={imageRanksToSend} for:item="imageRank" for:index="index">
+						<div key={imageRank.image}>
+							<c-bi-Psp-Rank-Component image={imageRank.image} level={imageRank.level}
+								date={imageRank.date}></c-bi-Psp-Rank-Component>
+						</div>
+					</template>
+				</div>
+			</lightning-layout-item>
+		</lightning-layout>
+		<lightning-layout class="slds-p-bottom_large" multiple-rows>
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12"
+				padding="horizontal-small">
+				<div class="custom-box FontStyles slds-p-bottom_small">{challengesCompleted} ({recordcount})</div>
+				<!-- Row 1 -->
+				<div class="grid-containerAC">
+					<template for:each={completedChallenges} for:item="challenge" for:index="index">
+						<div key={challenge.availableChallenge}>
+							<c-bi-Pspb-Completed-Challenge-Component completechallengeid={challenge.availableChallenge}>
+							</c-bi-Pspb-Completed-Challenge-Component>
+						</div>
+					</template>
+				</div>
+				<template if:true={showInfo}>
+					<div class="slds-align_absolute_centre text">
+						{challengesNotCompleted}
+					</div>
+				</template>
+			</lightning-layout-item>
+			<template if:true={showMore}>
+				<div class="fTright slds-p-top_small">
+					<button class="ComChaButton custom-boxLoad" onclick={handleShowMoreClick}>{loadMore}</button>
+				</div>
+			</template>
+			<template if:true={showLess}>
+				<div class="fTright slds-p-top_small">
+					<button class="ComChaButton custom-boxLoad" onclick={handleShowLessClick}>{loadLess}</button>
+				</div>
+			</template>
+		</lightning-layout>
+	</template>
+</template>

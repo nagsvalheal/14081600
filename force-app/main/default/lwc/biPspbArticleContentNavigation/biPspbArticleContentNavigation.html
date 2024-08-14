@@ -1,0 +1,185 @@
+<!--This lightning web component is used navigation of article categorypage-->
+<template>
+	<!--Display the articles categories for mobile view-->
+	<div class="QuickLinks">
+		<div class="display">
+			<h3 class='headingcategory'>{articleCategories}</h3>
+			<div> <lightning-icon if:true={down} icon-name="utility:chevrondown" onkeydown={click} alternative-text="Connected"
+					size="xx-small" title="xx-small size" onclick={click}></lightning-icon>
+				<lightning-icon if:true={up} icon-name="utility:chevronup" alternative-text="Connected" size="xx-small"
+					onclick={notClick} onkeydown={notClick} title="xx-small size"></lightning-icon>
+			</div>
+		</div>
+		<span if:true={touch}>
+			<template if:true={showJustForMe}>
+				<button if:true={showJustForMe} label="Just for me &#8594;" data-name="Just for me"
+					data-it-button="category: Just for me" onclick={navigateToCategory} class='end-btn'
+					title="Just for me">{justForMeLabel} <svg width="16" height="16" class="svgtopele" viewBox="0 0 16 16"
+						fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M2 7.44531H14" stroke="#403A60" class="pathst" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60" class="pathst" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg></button>&nbsp;&nbsp;&nbsp;
+			</template>
+
+			<template for:each={standarItems} for:item="relatedItem">
+				<button key={relatedItem.id} data-label={relatedItem.title} title={relatedItem.title} class="end-btn"
+					onclick={navigateToCategory} data-id={relatedItem.id} data-name={relatedItem.title}
+					data-it-button={relatedItem.titleval}>{relatedItem.title} <svg width="16" height="16"
+						class="svgtopele" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M2 7.44531H14" stroke="#403A60" class="pathst" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60" class="pathst" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg></button>&nbsp;&nbsp;&nbsp;
+			</template>
+
+		</span>
+		<hr class='line-article'>
+	</div>
+	<div class='component'>
+		<div class="search-icon-container">
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<g clip-path="url(#clip0_14614_32008)">
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M9.82997 0C4.40103 0 0 4.40103 0 9.82997C0 15.2589 4.40103 19.6599 9.82997 19.6599C12.243 19.6599 14.453 18.7905 16.1637 17.3477L22.5708 23.7556L22.6867 23.8525C23.013 24.0786 23.4641 24.0463 23.7547 23.7557C24.0817 23.4288 24.0818 22.8987 23.7548 22.5717L17.3477 16.1637C18.7905 14.453 19.6599 12.243 19.6599 9.82997C19.6599 4.40103 15.2589 0 9.82997 0ZM15.6222 15.5713C17.0831 14.0975 17.9855 12.0691 17.9855 9.82997C17.9855 5.32578 14.3342 1.67442 9.82997 1.67442C5.32578 1.67442 1.67442 5.32578 1.67442 9.82997C1.67442 14.3342 5.32578 17.9855 9.82997 17.9855C12.0692 17.9855 14.0976 17.0831 15.5714 15.6221C15.5795 15.6133 15.5878 15.6046 15.5963 15.5961C15.6048 15.5876 15.6134 15.5794 15.6222 15.5713Z"
+						fill="#696969" class="pathfill"></path>
+				</g>
+				<defs>
+					<clipPath id="clip0_14614_32008">
+						<rect width="24" height="24" fill="white" class="pathfillnew"></rect>
+					</clipPath>
+				</defs>
+			</svg>
+			<input class="search-bar" type="search" placeholder="Search for an article" onchange={handleSearch}
+				oninput={debouncedSearch} onkeyup={handleSearchInputKeyUp} onfocus={handleSearchBarFocus}
+				onblur={handleSearchBarBlur}>
+
+			<svg onclick={clearInput} width="16" height="16" viewBox="0 0 16 16" fill="none"
+				xmlns="http://www.w3.org/2000/svg" role="button" onkeydown={clearInput} tabindex="0">
+				<path fill-rule="evenodd" clip-rule="evenodd"
+					d="M0.875504 0.0988925L0.952804 0.163475L8 7.21023L15.0472 0.163475C15.2652 -0.0544918 15.6186 -0.0544918 15.8365 0.163475C16.0303 0.357224 16.0518 0.657977 15.9011 0.875504L15.8365 0.952804L8.78977 8L15.8365 15.0472C16.0545 15.2652 16.0545 15.6186 15.8365 15.8365C15.6428 16.0303 15.342 16.0518 15.1245 15.9011L15.0472 15.8365L8 8.78977L0.952804 15.8365C0.734837 16.0545 0.381442 16.0545 0.163475 15.8365C-0.0302732 15.6428 -0.0518008 15.342 0.0988925 15.1245L0.163475 15.0472L7.21023 8L0.163475 0.952804C-0.0544918 0.734837 -0.0544918 0.381442 0.163475 0.163475C0.333005 -0.00605464 0.58446 -0.043728 0.790401 0.0504553L0.875504 0.0988925Z"
+					fill="#696969" class="pathfill" />
+			</svg>
+
+
+		</div>
+		<hr class="search-bar-border-bottom">
+		<!--Display the article categories for desktop view-->
+		<div class="heading">
+			<h2 class="headline"> {articleCategories}</h2>
+		</div>
+		<div class="options">
+			<div class='flex'>
+				<button if:true={showJustForMe} class="end-btn" data-it-button="category: Just for me"
+					data-name="Just for me" onclick={navigateToCategory}> {justForMeLabel} <svg class="arrowleft"
+						width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M2 7.44531H14" stroke="#403A60" class="pathst" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60" class="pathst" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg> </button>
+				<button class={whatIsGpp} data-it-button="category: What is GPP?" data-name="What is GPP?"
+					onclick={navigateToCategory}> {whatIsGppLabel} <svg class="arrowleft" width="16" height="16"
+						viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M2 7.44531H14" stroke="#403A60" class="pathst" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60" class="pathst" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg> </button>
+				<button class={gppHealth} data-it-button="category: GPP’s effect on mental health"
+					data-name="GPP’s effect on mental health" onclick={navigateToCategory}> {gppHealthLabel} <svg class="arrowleft" width="16" height="16" viewBox="0 0 16 16" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M2 7.44531H14" stroke="#403A60" class="pathst" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60" class="pathst" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg> </button>
+				<button class={talkHcp} data-it-button="category: Talking with your HCP"
+					data-name="Talking with your HCP" onclick={navigateToCategory}> {talkHcpLabel} <svg
+						class="arrowleft" width="16" height="16" viewBox="0 0 16 16" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M2 7.44531H14" stroke="#403A60" class="pathst" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60" class="pathst" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg> </button>
+				<button class={manageGpp} data-it-button="category: How to manage GPP" data-name="How to manage GPP"
+					onclick={navigateToCategory}> {manageGppCategory} <svg class="arrowleft" width="16" height="16"
+						viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M2 7.44531H14" stroke="#403A60" class="pathst" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60" class="pathst" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg> </button>
+				<button class={flaresCategory} data-it-button="category: What you need to know about flares"
+					data-name="What you need to know about flares" onclick={navigateToCategory}> {flaresCatLabel}<svg class="arrowleft" width="16" height="16" viewBox="0 0 16 16" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
+						<path d="M2 7.44531H14" stroke="#403A60" class="pathst" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60" class="pathst" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg> </button>
+
+				<template if:true={showSpevigoCategory}> <button class={spevigoCategory}
+						data-it-button={categoryData} data-name={categoryLabel}
+						onclick={navigateToCategory}>{categoryLabel}<svg class="arrowleft" width="16"
+							height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M2 7.44531H14" stroke="#403A60" class="pathst" stroke-width="1.5"
+								stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60" class="pathst" stroke-width="1.5"
+								stroke-linecap="round" stroke-linejoin="round" />
+						</svg> </button>
+				</template>
+
+
+			</div>
+			<div class="container-tag">
+
+				<div class='searchhead' if:true={showSearch}>
+
+
+				</div>
+				<div class="container-itembox">
+					<div class="container-item">
+						<div class="article-container">
+
+							<div class="left-section">
+								<template for:each={searchList} for:item="relatedItem">
+									<article class="article first" key={relatedItem.text}>
+
+										<img class='article_image' src={relatedItem.image} alt="Article 1" />
+										<div class="headingcontainer">
+
+											<h2>{relatedItem.text}</h2>
+											<a href="#">
+												<svg data-name={relatedItem.text} onclick={handleNavigation} role="button" onkeydown={handleNavigation} tabindex="0" width="1.3em" height="1.3em" viewBox="0 0 20 12" fill="none"
+													xmlns="http://www.w3.org/2000/svg" class="ml-2">
+													<path
+														d="M13.9232 11.5892C13.766 11.741 13.5555 11.825 13.337 11.8231C13.1185 11.8212 12.9095 11.7335 12.755 11.579C12.6005 11.4245 12.5128 11.2155 12.5109 10.997C12.509 10.7785 12.593 10.568 12.7448 10.4108L16.3223 6.83333L1.66732 6.83334C1.44631 6.83334 1.23434 6.74554 1.07806 6.58926C0.921783 6.43298 0.833985 6.22102 0.833985 6C0.833985 5.77899 0.921783 5.56703 1.07806 5.41075C1.23434 5.25447 1.4463 5.16667 1.66732 5.16667L16.3223 5.16667L12.7448 1.58917C12.593 1.432 12.509 1.2215 12.5109 1.003C12.5128 0.784503 12.6005 0.575493 12.755 0.420986C12.9095 0.266479 13.1185 0.178838 13.337 0.17694C13.5555 0.175041 13.766 0.259037 13.9232 0.410835L18.9232 5.41083C19.0794 5.56711 19.1671 5.77903 19.1671 6C19.1671 6.22097 19.0794 6.43289 18.9232 6.58917L13.9232 11.5892Z"
+														fill="currentColor"></path>
+												</svg></a>
+										</div>
+
+									</article>
+								</template>
+							</div>
+						</div>
+					</div>
+
+
+
+
+
+				</div>
+			</div>
+
+
+
+		</div>
+
+
+	</div>
+
+</template>

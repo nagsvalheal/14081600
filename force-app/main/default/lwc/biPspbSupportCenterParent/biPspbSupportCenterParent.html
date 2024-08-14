@@ -1,0 +1,36 @@
+<!--This LWC is a design for My Support main page which contains the consolidated components like Avatar and releavant Messages-->
+<template>
+	<div if:true={showSpinner}>
+		<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	 </div>
+	<lightning-layout multiple-rows class="tabClass">
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+			<div class="tabsDiv pad">
+				<div class="grid-containerTabs">
+					<button onclick={openSupportCenter} class="anchorTextActive">{successMsg}</button>
+					<button onclick={openMyCases} class="anchorText">{myCase}</button>
+				</div>
+			</div>
+		</lightning-layout-item>	
+	</lightning-layout>
+	<div>
+		<lightning-layout multiple-rows class="layoutColor pad">
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="4" large-device-size="4"
+				class="slds-p-top_xx-large slds-p-bottom_xx-large lightning-card1">
+				<div class="custom-box1">
+					<!-- Show avatar and message for supportcenter -->
+					<c-bi-Pspb-Avatar-Navigation onavatardata={handleAvatarData}></c-bi-Pspb-Avatar-Navigation>
+				</div>
+			</lightning-layout-item>
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="8" large-device-size="8"
+				class="slds-p-top_xx-large slds-p-bottom_xx-large lightning-card">
+				<div class="custom-box2">
+					<div>
+						<!-- This component is used for support center main page -->
+						<c-bi-Pspb-Support-Center></c-bi-Pspb-Support-Center>
+					</div>
+				</div>
+			</lightning-layout-item>
+		</lightning-layout>
+	</div>
+</template>

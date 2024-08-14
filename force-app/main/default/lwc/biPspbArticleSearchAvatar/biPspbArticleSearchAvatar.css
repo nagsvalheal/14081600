@@ -1,0 +1,265 @@
+.para {
+	background-color: #ecdca8;
+	padding: 10px;
+	border-radius: 8px;
+	display: inline-block;
+	position: absolute;
+	margin-left: 73px;
+	width: 266px;
+	height: fit-content;
+	top: 398px;
+}
+.image {
+	height: 160px;
+	width: 160px;
+	display: block;
+	margin: auto;
+	margin-top: 45px;
+	margin-left: 130px;
+}
+
+.message-container {
+	margin: auto;
+	height: 150px;
+	width: 250px;
+	margin-top: 60px;
+}
+
+.message-container1 {
+	background-color: #ecdca8;
+	padding: 2px 11px 7px 18px;
+	font-size: -0.75em;
+	border-radius: 0.5em;
+	margin-top: 26px;
+	left: -5px;
+	width: 227px;
+	align-items: center;
+}
+.contain {
+	height: 300px;
+	width: 150px;
+}
+
+.mbintm {
+	display: none;
+}
+.mbmess {
+	display: none;
+}
+
+@media only screen and (max-width: 430px) {
+	.image {
+		width: 64px;
+		height: 64px;
+		flex-shrink: 0;
+		margin-left: 28px;
+		margin-top: 25px;
+	}
+	.para {
+		display: flex;
+        width: 69%;
+        padding: 12px 9px;
+        justify-content: flex-end;
+        align-items: flex-start;
+        gap: 4px;
+        margin-top: -306px;
+        margin-left: 28%;
+        font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px;
+        top: 426px;
+        padding-right: 22px;
+	}
+	.contain {
+		height: fit-content;
+	}
+	.message-container {
+		height: fit-content;
+	}
+	.mbintm {
+        display: block;
+        background-color: #ecdca8;
+        height: fit-content;
+        margin-left: 92%;
+        position: absolute;
+        margin-top: -128px;
+	}
+	.intmark {
+		font-size: 15px;
+		color: grey;
+	}
+	.mbmess {
+		display: block;
+	}
+	.dkmess {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 431px) and (max-width: 600px) {
+	.image {
+		width: 56px;
+		height: 84.18px;
+		flex-shrink: 0;
+		margin-left: 10px;
+		margin-top: 26px;
+	}
+	.para {
+		display: flex;
+		width: 73%;
+		padding: 8px 5px;
+		justify-content: flex-end;
+		align-items: flex-start;
+		gap: 4px;
+		margin-top: -274px;
+		margin-left: 14%;
+		height: fit-content;
+		font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 16px;
+		top: 426px;
+	}
+	.contain {
+		height: fit-content;
+	}
+	.message-container {
+		height: fit-content;
+	}
+	.mbintm {
+		display: none;
+	}
+	.dkmess {
+		display: block;
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.para {
+		background-color: #ecdca8;
+		padding: 10px 20px;
+		border-radius: 8px;
+		display: inline-block;
+		position: absolute;
+		left: -11px;
+		width: 286px;
+		height: 110px;
+		top: 398px;
+	}
+	.emily {
+		font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 32px;
+		font-weight: 400;
+		line-height: 36px;
+		letter-spacing: 0em;
+		text-align: left;
+		width: 260px;
+		height: 35px;
+		top: 46px;
+		left: 256px;
+		position: absolute;
+		background: white;
+		color: #403a60; /* Corrected the semicolon placement */
+		padding: 1px;
+	}
+
+	.compliment {
+		width: 336px;
+		height: 24px;
+		top: 90px;
+		left: 251px;
+		position: absolute;
+		font-family: "Eina04-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+		letter-spacing: 0em;
+		text-align: left;
+		background: #ffffff;
+		color: #403a60;
+		padding: 10px;
+	}
+
+	.image {
+		height: 160px;
+		width: 160px;
+		display: block;
+		margin: auto;
+		margin-top: 45px;
+		margin-left: 107px;
+	}
+	.image1 {
+		width: 129px;
+		height: 129px;
+		left: 50px;
+		position: relative;
+	}
+
+	.message-container {
+		margin: auto;
+		height: 150px;
+		width: 250px;
+		margin-top: 60px;
+	}
+
+	.message-container1 {
+		background-color: #ecdca8;
+		padding: 2px 11px 7px 18px;
+		font-size: -0.75em;
+		border-radius: 0.5em;
+		margin-top: 26px;
+		left: -5px;
+		width: 227px;
+		align-items: center;
+	}
+	.contain {
+		height: 300px;
+		width: 150px;
+	}
+
+	.mbintm {
+		display: none;
+	}
+	.mbmess {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+	.image {
+		width: 56px;
+		height: 84.18px;
+		flex-shrink: 0;
+		margin-left: 10px;
+		margin-top: 26px;
+	}
+	.para {
+		display: flex;
+		width: 73%;
+		padding: 8px 5px;
+		justify-content: flex-end;
+		align-items: flex-start;
+		gap: 4px;
+		margin-top: -274px;
+		margin-left: 14%;
+		height: fit-content;
+		font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 16px;
+		top: 426px;
+	}
+	.contain {
+		height: fit-content;
+	}
+	.message-container {
+		height: fit-content;
+	}
+	.dkmess {
+		display: block;
+	}
+}

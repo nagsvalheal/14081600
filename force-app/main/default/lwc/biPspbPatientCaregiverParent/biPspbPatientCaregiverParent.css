@@ -1,0 +1,242 @@
+.custom-box2 {
+	display: grid;
+	width: 100%;
+}
+
+.displayHeader {
+	display: flex;
+	justify-content: end;
+}
+
+.footerLink {
+	text-decoration: none;
+	color: #403a60;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.grid-containerfooter {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 10px 20px;
+	padding: 10px;
+	width: fit-content;
+}
+.pad{
+	 border-bottom: 1px solid #dad7d7;
+}
+.layoutColor {
+	background-color: #fbfaf5;
+	min-height: 400px;
+}
+
+.grid-containerTabs {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	gap: 10px 20px;
+	padding: 10px;
+	width: fit-content;
+}
+
+.tabsDiv {
+	width: 100%;
+	text-align: left;
+}
+
+.tabClass {
+	width: 100%;
+	background-color: white;
+}
+
+.anchorText {
+	text-decoration: none;
+	background: none;
+	border-style: none;
+	color: #403a60;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.anchorTextActive {
+	text-decoration: none;
+	background: none;
+	border-style: none;
+	color: #403a60;
+	font-size: 16px;
+	font-weight: 800;
+}
+
+/*--CSS Media Queries---*/
+
+@media only screen and (max-width: 400px) {
+	.pad {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.slds-input {
+		width: 50%;
+	}
+.lightninglayA{
+	padding-bottom: 0px;
+}.lightninglayC{
+	    padding-top: 0px;
+}
+	.custom-box1 {
+		position: relative;
+		bottom: 40px;
+	}
+
+	.tabClass {
+		display: none;
+		width: 100%;
+		background-color: white;
+	}
+
+	.custom-box2 {
+		position: relative;
+		bottom: 0px;
+	}
+
+	.showMobileBorder {
+		display: flex;
+		height: 5px;
+		width: 100%;
+		background: linear-gradient(90deg,
+				#744f0d 0%,
+				#99693e 17.19%,
+				#efdba1 58.85%,
+				#744f0d 100%);
+	}
+}
+
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+	.grid-containerTabs {
+		display: none;
+	}
+
+	.custom-box2 {
+		position: relative;
+		bottom: 95px;
+	}
+.lightninglayC{
+	    padding-top: 0px;
+    padding-bottom: 0px;
+}
+	.pad {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.custom-box1 {
+		position: relative;
+		bottom: 40px;
+	}
+}
+
+@media only screen and (min-width: 601px) {
+	.pad {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.tabClass {
+		display: none;
+		width: 100%;
+		background-color: white;
+	}
+
+	.showMobileBorder {
+		display: flex;
+		height: 5px;
+		width: 100%;
+		background: linear-gradient(90deg,
+				#744f0d 0%,
+				#99693e 17.19%,
+				#efdba1 58.85%,
+				#744f0d 100%);
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.pad {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.tabClass {
+		display: none;
+		width: 100%;
+		background-color: white;
+	}
+
+	.showMobileBorder {
+		display: none;
+	}
+
+	.custom-box2 {
+		padding-top: 0%;
+		margin-left: 10%;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.pad {
+		padding-left: 5%;
+		padding-right: 10%;
+	}
+
+	.tabClass {
+		display: grid;
+		width: 100%;
+		background-color: white;
+	}
+
+	.showMobileBorder {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.pad {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+	.tabClass {
+		display: grid;
+		width: 100%;
+		background-color: white;
+	}
+
+	.showMobileBorder {
+		display: none;
+	}
+
+	.custom-box2 {
+		padding-top: 0%;
+		margin-left: 0%;
+	}
+}
+
+@media only screen and (min-width: 1500px) {
+	.pad {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+	.tabClass {
+		display: grid;
+		width: 100%;
+		background-color: white;
+	}
+
+	.showMobileBorder {
+		display: none;
+	}
+
+	.custom-box2 {
+		padding-top: 0%;
+		margin-left: 0%;
+	}
+}

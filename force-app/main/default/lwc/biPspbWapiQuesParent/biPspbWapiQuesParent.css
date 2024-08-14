@@ -1,0 +1,376 @@
+.custom-box2 {
+	width: -webkit-fill-available;
+	display: grid;
+	position: relative;
+	
+}
+
+.spinner-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader:not(:required) {
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.loader:not(:required):after {
+  content: "";
+  display: block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  -webkit-animation: spinner 1500ms infinite linear;
+  -moz-animation: spinner 1500ms infinite linear;
+  -ms-animation: spinner 1500ms infinite linear;
+  -o-animation: spinner 1500ms infinite linear;
+  animation: spinner 1500ms infinite linear;
+  border-radius: 0.5em;
+  box-shadow:
+    #403a60 1.5em 0 0 0,
+    #403a60 1.1em 1.1em 0 0,
+    #403a60 0 1.5em 0 0,
+    #403a60 -1.1em 1.1em 0 0,
+    #403a60 -1.5em 0 0 0,
+    #403a60 -1.1em -1.1em 0 0,
+    #403a60 0 -1.5em 0 0,
+    #403a60 1.1em -1.1em 0 0;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+
+.displayHeader {
+	display: flex;
+	justify-content: end;
+}
+
+.disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.footerLink {
+	text-decoration: none;
+	color: #403a60;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.grid-containerfooter {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 10px 20px;
+	padding: 10px;
+	width: fit-content;
+}
+
+.layoutColor {
+	background-color: #fbfaf5;
+	min-height: 400px;
+	position: relative;
+	width: 100%;
+	
+}
+
+.grid-containerTabs {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	gap: 10px 20px;
+	padding: 10px;
+	width: fit-content;
+}
+
+.tabsDiv {
+	width: 100%;
+	text-align: left;
+}
+
+.tabClass {
+	width: 100%;
+	background-color: white;
+}
+
+.anchorText {
+	text-decoration: none;
+	color: #403a60;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.anchorTextActive {
+	text-decoration: none;
+	color: #403a60;
+	font-size: 16px;
+	font-weight: 800;
+}
+
+/*--CSS Media Queries---*/
+
+
+@media only screen and (min-width: 1500px) {
+	.pad {
+		padding-left: 5%;
+		padding-right: 5%;
+		overflow-x: hidden;
+	}
+
+	
+	.custom-box2 {
+		right: 6%;
+	}
+
+	.tabClass {
+		border-bottom: 1.5px solid rgba(141, 137, 165, 0.5);
+	}
+}
+
+@media only screen and (min-width: 1360px) and (max-width: 1500px) {
+	.pad {
+		padding-left: 5%;
+		padding-right: 5%;
+		overflow-x: hidden;
+	}
+
+	.custom-box2 {
+		right: 10%;
+	}
+
+	.tabClass {
+		border-bottom: 1.5px solid rgba(141, 137, 165, 0.5);
+	}
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1360px) {
+	.pad {
+		padding-left: 5%;
+		padding-right: 5%;
+		overflow-x: hidden;
+	}
+
+	.custom-box2 {
+		right: 6%;
+	}
+
+	.tabClass {
+		border-bottom: 1.5px solid rgba(141, 137, 165, 0.5);
+	}
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+	.pad {
+		
+		display: flex;
+		overflow-x: hidden;
+		flex-direction: column;
+	}
+
+	.custom-box2 {
+		width: -webkit-fill-available;
+		display: grid;
+		position: relative;
+		bottom: 100px;
+	}
+
+	.custom-box1 {
+		
+		width: 112%;
+		margin-left: 8%;
+	}
+
+	.tabsDiv {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 767px) and (max-width: 992px) {
+	.pad {
+		padding-left: 20px;
+		padding-right: 20px;
+		overflow-x: hidden;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.tabsDiv {
+		display: none;
+	}
+
+	.custom-box1 {
+		
+		width: 112%;
+		margin-left: -10%;
+	}
+
+	.custom-box2 {
+		width: -webkit-fill-available;
+		display: grid;
+		position: relative;
+		bottom: 100px;
+	}
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+	.pad {
+		
+		overflow-x: hidden;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.tabsDiv {
+		display: none;
+	}
+
+	.custom-box1 {
+	
+		width: 112%;
+		margin: 0 45px;
+		margin-left: -270px;
+	}
+
+	.custom-box2 {
+		width: -webkit-fill-available;
+		display: grid;
+		position: relative;
+		bottom: 100px;
+	}
+}
+
+
+@media only screen and (min-width: 399px) and (max-width: 576px) {
+	.pad {
+		
+		overflow-x: hidden;
+	}
+
+	.custom-box2 {
+		width: -webkit-fill-available;
+		display: grid;
+		position: relative;
+		bottom: 100px;
+		
+	}
+
+	.custom-box1 {
+		width: 100%;
+		margin: 0 25px;
+		margin-left: -270px;
+	}
+
+	.tabsDiv {
+		display: none;
+	}
+}
+
+
+
+@media only screen and (min-width: 320px) and (max-width: 399px) {
+	.pad {
+		
+		overflow-x: hidden;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.custom-box2 {
+		width: -webkit-fill-available;
+		display: grid;
+		position: relative;
+		bottom: 142px;
+		
+	}
+
+	.custom-box1 {
+		width: 100%;
+		margin-left: -262px;
+		position: relative;
+		bottom: 28px;
+	}
+
+	.tabsDiv {
+		display: none;
+	}
+}

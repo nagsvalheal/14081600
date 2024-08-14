@@ -1,0 +1,33 @@
+<!--This Consolidated component is used to display the Action Notification For Patient on click of the notification icon in Dashboard-->
+<template>
+	<lightning-layout multiple-rows class="tabClass">
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+			<div class="tabsDiv pad">
+				<!-- navigation tabs for Genera,Action Required,History -->
+				<div class="grid-containerTabs">
+					<button onclick={openGeneral} class="anchorText noButton">{general}</button>
+					<button onclick={openActionReq} class="anchorTextActive noButton">{actionRequired}</button>
+					<button onclick={openHistory} class="anchorText noButton">{history}</button>
+				</div>
+			</div>
+		</lightning-layout-item>
+	</lightning-layout>
+	<!-- get the Avatar navigation component for this component  -->
+	<lightning-layout multiple-rows class="layoutColor pad">
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="4" large-device-size="4"
+			class="slds-p-top_xx-large slds-p-bottom_xx-large">
+			<div class="custom-box1">
+				<c-bi-Pspb-Avatar-Navigation></c-bi-Pspb-Avatar-Navigation>
+			</div>
+			<!-- get the Notification Action component for this component  -->
+		</lightning-layout-item>
+		<lightning-layout-item size="12" small-device-size="12" medium-device-size="8" large-device-size="8"
+			class="slds-p-top_xx-large slds-p-bottom_xx-large">
+			<div class="custom-box2">
+				<div>
+					<c-bi-Pspb-Notification-Action-Form></c-bi-Pspb-Notification-Action-Form>
+				</div>
+			</div>
+		</lightning-layout-item>
+	</lightning-layout>
+</template>

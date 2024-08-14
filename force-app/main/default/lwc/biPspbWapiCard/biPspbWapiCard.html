@@ -1,0 +1,54 @@
+<!--This Card displays information related to the Work and Activity Impairment (WPAI), aiding in the presentation and understanding of its contents.-->
+<template>
+	<div class={flexCard}>
+		<div class="content">
+			<div>
+				<p class="dlqi">Work Productivity & Activity <br />Impairment (WPAI)</p>
+			</div>
+			<!--To Display Rollout and Completed Date-->
+			<p class={dlqiText}>{rollOut}</p>
+			<p class={dlqiSecondTxt}>{rolloutDate}</p>
+			<br />
+			<div if:false={showCompletedDate}>
+				<p class={dlqiText}>{expiresIntext}</p>
+				<p class={dlqiSecondTxt}>{expiresIn} days</p>
+			</div>
+			<div if:true={showCompletedDate}>
+				<p class={dlqiText}>{completedOn}</p>
+				<p class={dlqiSecondTxt}>{completedOnDate}</p>
+			</div>
+			<img src={cardImage} alt="Work Activity and Productivity" class={shiftImage} />
+	</div>
+			<div class={bottomBar}>
+				<!--To Display Total number of Answered Questions and Total number of Questions-->
+				<p class={ans}>
+					<span class="ansq">{answeredQuestions}</span>/{totalQuestionCount}
+					<span class="smalltxt"> {ansText}</span>
+				</p>
+				<div class="right">
+					<!--To Display the button with Dynamic Custom labels-->
+					<template if:false={isStartLabel}>
+						<button
+			label={buttonLabel}
+			onclick={handleButtonClick}
+			class="button"
+			data-it-button="WAPI: Resume"
+		  >
+			{buttonLabel}
+		  </button>
+					</template>
+					<template if:true={isStartLabel}>
+						<svg class='svgtop' onclick={handleButtonClick} onkeydown={handleButtonClick} viewBox="0 0 49 48" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<rect x="1.68164" y="1" width="46" height="46" rx="23" stroke="#403A60" class="svgstroke"
+								stroke-width="2" />
+							<path d="M14.8477 24.166H34.8477" stroke="#403A60" class="svgstroke" stroke-width="2"
+								stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M24.8477 14.166L34.8477 24.166L24.8477 34.166" stroke="#403A60" class="svgstroke"
+								stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</template>
+				</div>
+			</div>
+		</div>
+</template>

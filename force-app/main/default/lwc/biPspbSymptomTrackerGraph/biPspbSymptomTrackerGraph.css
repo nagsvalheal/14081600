@@ -1,0 +1,2018 @@
+@font-face {
+	font-family: 'Eina-Regular', Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Eina-Light', Helvetica, Arial, Verdana, Tahoma, sans-serif;;
+	src: url('/resource/WebEinaFonts/WebFonts/Eina04-Light.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Eina-SemiBold' , Helvetica, Arial, Verdana, Tahoma, sans-serif;;
+	src: url('/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Eina04-Bold' , Helvetica, Arial, Verdana, Tahoma, sans-serif;;
+
+	src: url('/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff') format('woff');
+}
+
+.toastForDesktop{
+    position: relative;
+    right: 70%;
+    width: 191%;
+    bottom: 233px;
+    z-index: 3;
+}
+
+.downbtn1 {
+	position: relative;
+	height: 40px;
+	width: 117px;
+	border-radius: 12px;
+	background-color: #ffffff;
+	font-weight: 400;
+	border: 2px solid #403a60;
+	color: #403a60;
+	font-size: 14px;
+	font-family: 'Eina-semibold' , Helvetica, Arial, Verdana, Tahoma, sans-serif;;
+	float: inline-end;
+}
+
+.downbtn {
+	position: relative;
+	height: 40px;
+	width: 172px;
+	border-radius: 12px;
+	background-color: #403a60;
+	font-weight: 400;
+	color: white;
+	border: #403a60;
+	float: right;
+	font-family: 'Eina-SemiBold' , Helvetica, Arial, Verdana, Tahoma, sans-serif;;
+	font-size: 14px;
+}
+
+.buttonLogoutCancel {
+	background-color: white;
+	border-radius: 15px;
+	color: #403A60;
+	font-weight: 800;
+	border-style: solid;
+	border-color: #403A60;
+	padding: 5px 25px;
+	font-size: 14px;
+	font-family: 'Eina-SemiBold' , Helvetica, Arial, Verdana, Tahoma, sans-serif;;
+	height: 40px;
+	width: 68px;
+	order: 1;
+	border: 1.5px solid #403a60;
+}
+
+.ButtonLogoutYes {
+	background-color: #403A60;
+	border-radius: 15px;
+	color: white;
+	font-weight: 800;
+	border-style: none;
+	padding: 5px 25px;
+	height: 40px;
+	width: 72px;
+	order: 2;
+}
+
+
+.chart-container {
+	display: flex;
+	justify-content: center;
+}
+
+.bar.highlighted {
+	background-color: lightblue;
+	/* Add your desired highlighted color */
+}
+
+.chart {
+	display: flex;
+
+}
+
+.selected-image-container {
+	background-color: #ffcc00;
+	/* Set your desired background color */
+	/* Add any other styling for the selected image container */
+}
+
+.graphicon {
+
+	/* width: 115%;
+    margin-left: 30px; */
+	position: relative;
+	bottom: 60px;
+
+}
+
+.bar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 400px;
+}
+
+.para2 {
+	font-family: 'Eina-Regular' , Helvetica, Arial, Verdana, Tahoma, sans-serif;;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+	letter-spacing: 0em;
+	text-align: left;
+	margin-left: 38px;
+	width: 69%;
+
+
+}
+
+.container-bottom {
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+	height: 100%;
+}
+
+.image-container {
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+
+}
+
+.notify {
+	background-color: none;
+	position: absolute;
+	top: -30px;
+	right: 70px;
+}
+
+.para {
+	font-size: 15px;
+	font-weight: 400;
+	padding-left: 40px;
+	padding-top: 10px;
+	width: 68%;
+	display: flex;
+
+}
+
+.btncls {
+	position: relative;
+	top: 55px;
+	left: 10px;
+	background-color: rgb(194 240 194);
+	border: 0px;
+	font-size: 24px;
+
+}
+
+.chart-image {
+	max-width: 100%;
+	max-height: 60px;
+	margin-bottom: 5px;
+}
+
+.label {
+	font-size: 12px;
+	margin-top: 5px;
+	width: 114%;
+
+}
+
+/* ends */
+
+.grid-containers {
+	display: grid;
+	grid-template-columns: repeat(7, auto);
+}
+
+/*.custom-box{
+	background-color : white;
+	border: 1px solid black;
+	border-radius: 10px;
+}*/
+.textAlignCenter {
+	text-align: center;
+}
+
+.grid-containerGraph {
+	display: grid;
+	grid-template-columns: 400px 150px 150px 150px 150px 150px;
+	gap: 10px;
+}
+
+.displayBlock {
+	display: block;
+	text-align: center;
+	padding: 10px;
+}
+
+.FlexCenter {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.grid-containerinline {
+	display: flex;
+	grid-template-columns: auto auto;
+	padding: 20px;
+	gap: 10px;
+}
+
+.FlexCircleCenter {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.FlexCircleCenterText {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: 5px;
+}
+
+.past {
+	font-family: Eina-Bold , Helvetica, Arial, Verdana, Tahoma, sans-serif;;
+	font-size: 32px;
+	font-weight: 400;
+	line-height: 44px;
+	letter-spacing: 0em;
+	text-align: left;
+	color: #403A60;
+	position: relative;
+}
+
+.backcLOLOR {
+	background-color: #c6c5d3;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.grid-containerColorNotification {
+	/* display: grid;
+    grid-template-columns: repeat(7, max-content);
+    gap: 45px;
+    position: relative;
+    right: 7%; */
+	margin-right: -122px;
+}
+
+.grid-containerColors {
+	display: grid;
+	grid-template-columns: max-content max-content;
+	gap: 5px;
+}
+
+.height40 {
+	height: 40px;
+	width: 13px;
+	margin: 0px 5px;
+}
+
+.vertical-line {
+	border-left: 1px solid #000;
+	height: 65px;
+	padding-right: 7px;
+}
+
+.lineDesign {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.padLeft10 {
+	padding-left: 10px;
+	margin: 0px 15px;
+}
+
+.showEnd {
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	position: relative;
+	bottom: 0px;
+
+}
+
+/*----Second Chart----*/
+.grid-containerBubble {
+	display: grid;
+	grid-template-columns: repeat(9, 80px);
+	gap: 10px;
+}
+
+.grid-containerChartBubbles {
+	display: grid;
+	grid-template-rows: repeat(9, auto);
+	gap: 5px;
+	margin: 30px 0px;
+}
+
+.FlexBubbleCenter {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	height: 20px;
+}
+
+.custom-Bubble-box {
+	background-color: white;
+	width: fit-content;
+}
+
+.highlightBack {
+	background-color: #f2e174;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+	position: relative;
+}
+
+.disInline {
+	display: inline-flex;
+}
+
+.grid-containerButtons {
+	display: grid;
+	grid-template-columns: auto;
+	gap: 50px;
+	z-index: 1;
+	position: relative;
+}
+
+.line {
+	width: 20px;
+	height: 10px;
+	color: blue;
+}
+
+.lineimg {
+	height: 320px;
+}
+
+.month {
+	position: relative;
+	bottom: 290px;
+	text-decoration: underline;
+	color: #403A60;
+	font-size: 16px;
+}
+
+.selectWidth {
+	width: 200px;
+	border-style: solid;
+	border-color: #2C333A;
+	border-width: 1.5px;
+	border-radius: 4px;
+	height: 40px;
+	position: relative;
+}
+
+.bar .container-bottom>hr {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 1px solid black;
+	height: 0px;
+}
+
+.pad10 {
+	padding: 5px 35px;
+	position: relative;
+	top: 289px;
+}
+
+.highlighted {
+	background-color: red;
+}
+
+.month {
+	position: relative;
+	bottom: 290px;
+	text-decoration: underline;
+	color: #403A60;
+	font-size: 16px;
+}
+
+
+.confirm-btn-file {
+	position: relative;
+	height: 45px;
+	width: 213px;
+	border-radius: 12px;
+	background-color: #403a60;
+	font-weight: 400;
+	color: white;
+	border: #403a60;
+	margin-top: 20px;
+	margin-bottom: 27px;
+	left: 81px;
+}
+
+
+.updatebtn {
+	display: flex;
+	justify-content: end;
+	position: relative;
+	right: 58%;
+	top: 13px;
+}
+
+
+.symptomtrackergrpah h1 {
+	font-family: Eina-Bold , Helvetica, Arial, Verdana, Tahoma, sans-serif;;
+	font-weight: 400;
+	line-height: 44px;
+	letter-spacing: 0em;
+	text-align: left;
+	color: #403A60;
+	position: relative;
+	font-size: 32px;
+}
+
+.width100 {
+	width: 100%;
+	margin-top: 20px;
+}
+
+@media only screen and (max-width:400px) {
+    .toastForDesktop{
+        right: 6%;
+        width: 108%;
+        bottom: 9px;
+    }
+	.grid-containerHeadingsSingle {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 20px;
+	}
+
+	.showEnd {
+		display: flex;
+		flex-direction: column;
+		justify-content: end;
+		position: relative;
+		top: 12px;
+		left: 14px;
+		right: 20px;
+		z-index: 1;
+
+
+	}
+
+	.para {
+		margin-left: -4%;
+		font-size: 16px;
+		font-weight: bold;
+		padding-left: 1px;
+		padding-top: 10px;
+		width: 81%;
+		display: flex;
+		gap: 27px;
+
+	}
+
+	.btncls {
+		position: relative;
+		top: 55px;
+		left: 45px;
+	}
+
+	.img4 {
+		position: relative;
+		top: 35px;
+		left: 6%;
+	}
+
+	.para2 {
+		font-size: 16px;
+
+		padding-left: 0px;
+		padding-top: 25px;
+		width: 80%;
+		display: flex;
+		gap: 27px;
+		margin-left: 30px;
+	}
+
+	.past1 {
+		position: relative;
+		top: 40px;
+
+	}
+
+	.modal-visible {
+		display: block;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: white;
+		padding: 33px;
+		border: 1px solid #ccc;
+		z-index: 1000;
+		border-radius: 12px;
+		width: 100%;
+	}
+
+	.ButtonLogoutYes {
+		background-color: #403A60;
+		border-radius: 15px;
+		color: white;
+		font-weight: 800;
+		border-style: none;
+		padding: 5px 25px;
+		height: 45px;
+		width: auto;
+		order: 1;
+	}
+
+	.buttonLogoutCancel {
+		background-color: white;
+		border-radius: 15px;
+		color: #403A60;
+		font-weight: 800;
+		border-style: solid;
+		border-color: #403A60;
+		padding: 5px 25px;
+		font-size: 14px;
+		font-family: 'Eina-SemiBold' , Helvetica, Arial, Verdana, Tahoma, sans-serif;;
+		width: auto;
+		height: 45px;
+		order: 2;
+	}
+
+	.grid-containermodals {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 15px;
+
+	}
+
+	.grid-containerDoubleSlide {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 15px;
+	}
+
+	.downbtn1 {
+		width: 100%;
+		background-color: #403a60;
+		/* border-color: black; */
+		border: 2px solid #403a60;
+		color: white;
+	}
+
+	.chart-container {
+		display: flex;
+		width: 114%;
+		/* align-items: center; */
+		justify-content: center;
+	}
+
+	.graph {
+		width: 468px;
+	}
+
+	.grid-containerButtons {
+		/* width: 115%; */
+		position: relative;
+		left: 0px;
+		gap: 10px;
+		bottom: 25px;
+	}
+
+	.chart {
+		width: 80%;
+		justify-content: center;
+
+	}
+
+	a {
+		text-decoration: none;
+		color: black;
+		position: relative;
+		width: 60px;
+	}
+
+	.updatebtn {
+
+		position: relative;
+		right: -4%;
+	}
+
+	.bar {
+		width: 15%;
+		/* position: relative;
+    top: 18px;
+    right: 94px; */
+
+
+	}
+
+	.past {
+		font-size: 18px;
+
+		position: relative;
+
+	}
+
+	.confirm-btn-file {
+		width: 352px;
+		position: relative;
+		margin: 0;
+		right: 4px;
+		top: 29px;
+		height: 40px;
+		margin-bottom: 1rem;
+
+	}
+
+	.grid-containerColorNotification {
+		display: grid;
+		grid-template-columns: repeat(3, max-content);
+		margin-right: 10px;
+		/* gap: 9px; */
+		/* position: relative;
+    left: -10%;
+    top: 26px; */
+	}
+
+	.downbtn {
+		position: relative;
+		height: 40px;
+		width: 100%;
+		border-radius: 12px;
+		background-color: #403a60;
+		font-weight: 400;
+		color: white;
+		border: #403a60;
+		bottom: 60px;
+	}
+
+	.selectWidth {
+		width: 100%;
+		height: 35px;
+		position: relative;
+		border-style: solid;
+		border-color: #2C333A;
+		border-width: 1.5px;
+		border-radius: 4px;
+	}
+
+	.symptomtrackergrpah h1 {
+		font-family: Eina-Bold , Helvetica, Arial, Verdana, Tahoma, sans-serif;;
+		font-weight: 400;
+		line-height: 44px;
+		letter-spacing: 0em;
+		text-align: left;
+		color: #403A60;
+		position: relative;
+		font-size: 18px;
+	}
+
+	.grid-containerinline[c-biPspbSymptomTrackerGraph_biPspbSymptomTrackerGraph] {
+		display: flex;
+		grid-template-columns: auto auto;
+		padding: 12px;
+		gap: 0px;
+	}
+}
+
+@media only screen and (min-width:401px) and (max-width:600px) {
+    .toastForDesktop{
+    left: 3%;
+    width: 92%;
+    bottom: 6px;
+}
+
+	.grid-containerHeadingsSingle {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 20px;
+	}
+
+	.showEnd {
+		display: flex;
+		flex-direction: column;
+		justify-content: end;
+		position: relative;
+		top: 12px;
+		left: -20px;
+		right: 20px;
+		z-index: 1;
+
+
+	}
+
+	.past1 {
+		position: relative;
+		top: 40px;
+
+	}
+
+	.img4 {
+		position: relative;
+		top: 3px;
+		left: 0%;
+	}
+
+	.para {
+		margin-left: -6%;
+		padding-bottom: 3%;
+		font-weight: bold;
+	}
+
+	.modal-visible {
+		display: block;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: white;
+		padding: 33px;
+		border: 1px solid #ccc;
+		z-index: 1000;
+		border-radius: 12px;
+		width: 100%;
+	}
+
+	.ButtonLogoutYes {
+		background-color: #403A60;
+		border-radius: 15px;
+		color: white;
+		font-weight: 800;
+		border-style: none;
+		padding: 5px 25px;
+		height: 45px;
+		width: auto;
+		order: 1;
+	}
+
+	.buttonLogoutCancel {
+		background-color: white;
+		border-radius: 15px;
+		color: #403A60;
+		font-weight: 800;
+		border-style: solid;
+		border-color: #403A60;
+		padding: 5px 25px;
+		font-size: 14px;
+		font-family: 'Eina-SemiBold' , Helvetica, Arial, Verdana, Tahoma, sans-serif;;
+		width: auto;
+		height: 45px;
+		order: 2;
+	}
+
+	.grid-containermodals {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 15px;
+
+	}
+
+	.grid-containerDoubleSlide {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 15px;
+	}
+
+	.downbtn1 {
+		width: 100%;
+		background-color: #403a60;
+		/* border-color: black; */
+		border: 2px solid #403a60;
+		color: white;
+	}
+
+	.chart-container {
+		width: 116%;
+	}
+
+	.graph {
+		width: 468px;
+	}
+
+	.grid-containerButtons {
+		width: 100%;
+		position: relative;
+		left: 0px;
+		gap: 10px;
+		bottom: 25px;
+	}
+
+	.chart {
+		width: 100%;
+		justify-content: center;
+
+	}
+
+	a {
+		text-decoration: none;
+		color: black;
+		position: relative;
+		width: 60px;
+	}
+
+	.updatebtn {
+
+		position: relative;
+		right: -4%;
+	}
+
+	.bar {
+		width: 10%;
+	}
+
+	.past {
+		font-size: 18px;
+
+		position: relative;
+
+	}
+
+	.confirm-btn-file {
+		width: 352px;
+		position: relative;
+		margin: 0;
+		right: 4px;
+		top: 29px;
+		height: 40px;
+		margin-bottom: 1rem;
+
+	}
+
+	.grid-containerColorNotification {
+		display: grid;
+		grid-template-columns: repeat(3, max-content);
+		/* gap: 14px; */
+		position: relative;
+		/* left: -21%; */
+		margin-right: 10px;
+		top: 23px;
+	}
+
+	.downbtn {
+		position: relative;
+		height: 40px;
+		width: 100%;
+		border-radius: 12px;
+		background-color: #403a60;
+		font-weight: 400;
+		color: white;
+		border: #403a60;
+		bottom: 60px;
+	}
+
+	.selectWidth {
+		width: 100%;
+		height: 35px;
+		position: relative;
+		border-style: solid;
+		border-color: #2C333A;
+		border-width: 1.5px;
+		border-radius: 4px;
+	}
+
+	.symptomtrackergrpah h1 {
+		font-family: Eina-Bold , Helvetica, Arial, Verdana, Tahoma, sans-serif;;
+		font-weight: 400;
+		line-height: 44px;
+		letter-spacing: 0em;
+		text-align: left;
+		color: #403A60;
+		position: relative;
+		font-size: 18px;
+	}
+
+
+}
+
+@media only screen and (min-width:601px) and (max-width:767px) {
+    .toastForDesktop{
+    right: 14%;
+    width: 120%;
+    bottom: 495px;
+}
+	.grid-containerHeadingsSingle {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 20px;
+	}
+
+	.showEnd {
+		display: flex;
+		flex-direction: column;
+		justify-content: end;
+		position: relative;
+		bottom: -12px;
+		right: 0px;
+		left: 62px;
+		z-index: 1;
+
+	}
+
+	.past1 {
+		position: relative;
+		top: 70px;
+
+	}
+
+	.img4 {
+		position: relative;
+		top: 4px;
+		left: 1%;
+	}
+
+	.para {
+		margin-left: -5%;
+		padding-bottom: 3%;
+		font-weight: bold;
+	}
+
+	.modal-visible {
+		display: block;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: white;
+		padding: 33px;
+		border: 1px solid #ccc;
+		z-index: 1000;
+		border-radius: 12px;
+		width: 100%;
+	}
+
+	.ButtonLogoutYes {
+		background-color: #403A60;
+		border-radius: 15px;
+		color: white;
+		font-weight: 800;
+		border-style: none;
+		padding: 5px 25px;
+		height: 45px;
+		width: auto;
+		order: 1;
+	}
+
+	.buttonLogoutCancel {
+		background-color: white;
+		border-radius: 15px;
+		color: #403A60;
+		font-weight: 800;
+		border-style: solid;
+		border-color: #403A60;
+		padding: 5px 25px;
+		font-size: 14px;
+		font-family: 'Eina-SemiBold' , Helvetica, Arial, Verdana, Tahoma, sans-serif;;
+		width: auto;
+		height: 45px;
+		order: 2;
+	}
+
+	.grid-containermodals {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 15px;
+
+	}
+
+	.grid-containerDoubleSlide {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 10px;
+	}
+
+	.downbtn1 {
+		width: 100%;
+		background-color: #403a60;
+		/* border-color: black; */
+		border: 2px solid #403a60;
+		color: white;
+	}
+
+	.graph {
+		width: 468px;
+	}
+
+	.grid-containerButtons {
+		width: 100%;
+		position: relative;
+		right: 17px;
+		left: 0%;
+	}
+
+
+	.updatebtn {
+
+		position: relative;
+		right: -4%;
+	}
+
+	.bar {
+		/* width: 29%; */
+		position: relative;
+		top: 18px;
+		/* right: -60px; */
+
+
+	}
+
+	.past {
+		font-size: 18px;
+
+		position: relative;
+
+	}
+
+	.confirm-btn-file {
+		width: 352px;
+		position: relative;
+		margin: 0;
+		right: 4px;
+		top: 29px;
+		height: 40px;
+		margin-bottom: 1rem;
+
+	}
+
+	.grid-containerColorNotification {
+		display: grid;
+		grid-template-columns: repeat(5, max-content);
+		/* gap: 14px; */
+		position: relative;
+		/* left: -11%; */
+		top: 15px;
+		/* right: 24px; */
+		margin-right: 10px;
+	}
+
+	.downbtn {
+		position: absolute;
+		height: 40px;
+		width: 100%;
+		border-radius: 12px;
+		background-color: #403a60;
+		font-weight: 400;
+		color: white;
+		border: #403a60;
+		bottom: 135px;
+		float: left;
+		right: 7px;
+	}
+
+	.selectWidth {
+		width: 100%;
+		height: 35px;
+		position: relative;
+		border-style: solid;
+		border-color: #2C333A;
+		border-width: 1.5px;
+		border-radius: 4px;
+	}
+
+	.symptomtrackergrpah h1 {
+		font-family: Eina-Bold , Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-weight: 400;
+		line-height: 44px;
+		letter-spacing: 0em;
+		text-align: left;
+		color: #403A60;
+		position: relative;
+		font-size: 18px;
+	}
+}
+
+@media only screen and (min-width:768px) and (max-width:992px) {
+.toastForDesktop{
+    right: 41%;
+    width: 173%;
+    bottom: 495px;
+}
+
+	.grid-containerHeadingsSingle {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 50px;
+	}
+
+	.grid-containerButtons {
+		position: relative;
+		right: 15%;
+		left: 0%;
+
+	}
+
+	.lli {
+		position: relative;
+		right: 20%;
+	}
+
+	.img4 {
+		position: relative;
+		top: 2px;
+		left: 1%;
+	}
+
+	.para {
+		margin-left: -3%;
+		padding-bottom: 6%;
+		position: relative;
+		bottom: 4px;
+		font-weight: bold;
+	}
+
+	.para2 {
+		position: relative;
+		bottom: 45px;
+	}
+
+	.modal-visible {
+		display: block;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: white;
+		padding: 33px;
+		border: 1px solid #ccc;
+		z-index: 1000;
+		border-radius: 12px;
+		width: 660px;
+	}
+
+	.ButtonLogoutYes {
+		background-color: #403A60;
+		border-radius: 15px;
+		color: white;
+		font-weight: 800;
+		border-style: none;
+		padding: 5px 25px;
+		height: 40px;
+		width: 72px;
+		order: 2;
+	}
+
+	.buttonLogoutCancel {
+		background-color: white;
+		border-radius: 15px;
+		color: #403A60;
+		font-weight: 800;
+		border-style: solid;
+		border-color: #403A60;
+		padding: 5px 25px;
+		font-size: 14px;
+		font-family: 'Eina-SemiBold' , Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		height: 40px;
+		width: 68px;
+		order: 1;
+		border: 1.5px solid #403a60;
+	}
+
+	.grid-containermodals {
+		display: grid;
+		grid-template-columns: auto auto;
+		gap: 24px;
+		float: right;
+	}
+
+	.grid-containerDoubleSlide {
+		display: flex;
+		grid-template-columns: auto auto;
+		gap: 10px;
+		flex-direction: row;
+	}
+
+
+	.downbtn {
+		position: relative;
+		height: 40px;
+		width: 172px;
+		border-radius: 12px;
+		background-color: #403a60;
+		font-weight: 400;
+		color: white;
+		border: #403a60;
+		float: right;
+	}
+
+	.grid-containerColorNotification {
+		display: grid;
+		grid-template-columns: repeat(4, max-content);
+		gap: 20px;
+		position: relative;
+		right: 0%;
+		top: 30px;
+		margin-right: 10px;
+
+	}
+
+	.chart-container {
+		position: relative;
+		right: 23%;
+	}
+
+	.graph {
+		width: 50%;
+	}
+
+	.selectWidth {
+		width: 199px;
+		border-style: solid;
+		border-color: #2C333A;
+		border-width: 1.5px;
+		border-radius: 4px;
+		height: 45px;
+		position: relative;
+	}
+
+	.chart-container {
+		position: relative;
+		right: 0%;
+		top: 40px;
+	}
+
+	.confirm-btn-file {
+		position: relative;
+		right: 7%;
+		top: 95px;
+
+	}
+
+	.past {
+		font-size: 25px;
+		position: relative;
+	}
+
+
+	.updatebtn {
+		display: flex;
+		justify-content: end;
+		position: relative;
+		right: 15% !important;
+		top: 13px;
+	}
+}
+
+@media only screen and (min-width:992px) and (max-width:1050px) {
+    .toastForDesktop{
+        right: 68%;
+        width: 189%;
+    }
+	.grid-containerHeadingsSingle {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 50px;
+		margin-left: 20%;
+	}
+
+	.grid-containerButtons {
+		position: relative;
+		right: 13%;
+		left: 0%;
+	}
+
+	.graphicon {
+		width: 100%;
+		margin-left: 300px;
+		position: relative;
+		bottom: 70px;
+
+	}
+
+	.modal-visible {
+		display: block;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: white;
+		padding: 33px;
+		border: 1px solid #ccc;
+		z-index: 1000;
+		border-radius: 12px;
+		width: 660px;
+	}
+
+	.ButtonLogoutYes {
+		background-color: #403A60;
+		border-radius: 15px;
+		color: white;
+		font-weight: 800;
+		border-style: none;
+		padding: 5px 25px;
+		height: 40px;
+		width: 72px;
+		order: 2;
+	}
+
+	.buttonLogoutCancel {
+		background-color: white;
+		border-radius: 15px;
+		color: #403A60;
+		font-weight: 800;
+		border-style: solid;
+		border-color: #403A60;
+		padding: 5px 25px;
+		font-size: 14px;
+		font-family: 'Eina-SemiBold' , Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		height: 40px;
+		width: 68px;
+		order: 1;
+		border: 1.5px solid #403a60;
+	}
+
+	.grid-containermodals {
+		display: grid;
+		grid-template-columns: auto auto;
+		gap: 24px;
+		float: right;
+	}
+
+	.grid-containerDoubleSlide {
+		display: flex;
+		grid-template-columns: auto auto;
+		gap: 10px;
+		flex-direction: row;
+	}
+
+
+	.downbtn {
+		position: relative;
+		height: 40px;
+		width: 172px;
+		border-radius: 12px;
+		background-color: #403a60;
+		font-weight: 400;
+		color: white;
+		border: #403a60;
+		float: right;
+	}
+
+	.grid-containerColorNotification {
+		display: grid;
+		grid-template-columns: repeat(5, max-content);
+		gap: 6px;
+		position: relative;
+		right: 40%;
+		top: 30px;
+
+	}
+
+	.bar {
+		width: 12%;
+	}
+
+	.chart-container {
+		position: relative;
+		right: 23%;
+	}
+
+	.graph {
+		width: 50%;
+	}
+
+	.selectWidth {
+		width: 199px;
+		border-style: solid;
+		border-color: #2C333A;
+		border-width: 1.5px;
+		border-radius: 4px;
+		height: 45px;
+		position: relative;
+	}
+
+	.chart-container {
+		position: relative;
+		left: 110px;
+		top: 40px;
+	}
+
+	.confirm-btn-file {
+		position: relative;
+		right: 7%;
+		top: 95px;
+
+	}
+
+	.past {
+		font-size: 25px;
+		position: relative;
+		width: 400px;
+	}
+
+
+	.updatebtn {
+		display: flex;
+		justify-content: end;
+		position: relative;
+		right: 15% !important;
+		top: 13px;
+	}
+}
+
+@media only screen and (min-width:1050px) and (max-width:1200px) {
+	.grid-containerHeadingsSingle {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 50px;
+	}
+
+	.modal-visible {
+		display: block;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: white;
+		padding: 33px;
+		border: 1px solid #ccc;
+		z-index: 1000;
+		border-radius: 12px;
+		width: 660px;
+	}
+
+	.ButtonLogoutYes {
+		background-color: #403A60;
+		border-radius: 15px;
+		color: white;
+		font-weight: 800;
+		border-style: none;
+		padding: 5px 25px;
+		height: 40px;
+		width: 72px;
+		order: 2;
+	}
+
+	.buttonLogoutCancel {
+		background-color: white;
+		border-radius: 15px;
+		color: #403A60;
+		font-weight: 800;
+		border-style: solid;
+		border-color: #403A60;
+		padding: 5px 25px;
+		font-size: 14px;
+		font-family: 'Eina-SemiBold' , Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		height: 40px;
+		width: 68px;
+		order: 1;
+		border: 1.5px solid #403a60;
+	}
+
+	.grid-containermodals {
+		display: grid;
+		grid-template-columns: auto auto;
+		gap: 24px;
+		float: right;
+	}
+
+	.grid-containerDoubleSlide {
+		display: flex;
+		grid-template-columns: auto auto;
+		gap: 10px;
+		flex-direction: row;
+		justify-content: end;
+	}
+
+	.chart-container {
+		position: relative;
+		right: 12%;
+		top: 40px;
+	}
+
+	.grid-containerColorNotification {
+		display: grid;
+		grid-template-columns: repeat(7, max-content);
+		gap: 0px;
+		position: relative;
+		right: 14%;
+		top: 45px;
+
+	}
+
+	.selectWidth {
+		width: 199px;
+		border-style: solid;
+		border-color: #2C333A;
+		border-width: 1.5px;
+		border-radius: 4px;
+		height: 40px;
+		position: relative;
+	}
+
+	.grid-containerButtons {
+		position: relative;
+		right: 0%;
+		left: 0%;
+		width: 120%;
+	}
+
+	.past {
+		font-family: Eina-Bold , Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 28px;
+		font-weight: 400;
+		line-height: 44px;
+		letter-spacing: 0em;
+		text-align: left;
+		color: #403A60;
+		position: relative;
+	}
+
+	.downbtn {
+		position: relative;
+		height: 40px;
+		width: 172px;
+		border-radius: 12px;
+		background-color: #403a60;
+		font-weight: 400;
+		color: white;
+		border: #403a60;
+		float: right;
+	}
+
+	.past {
+		font-size: 25px;
+		position: relative;
+
+	}
+
+	.confirm-btn-file {
+		position: relative;
+		right: 11%;
+		top: 80px;
+
+	}
+
+	.img4 {
+		position: relative;
+		left: 5px;
+		top: 0px;
+	}
+
+	.para {
+		position: relative;
+		bottom: 20px;
+		font-weight: bold;
+	}
+
+	.para2 {
+		position: relative;
+		bottom: 14px;
+		right: 34px;
+	}
+
+	.confirm-btn-file {
+		position: relative;
+		right: 3%;
+	}
+
+	.graphicon {
+		width: 89%;
+		margin-left: 142px;
+		position: relative;
+		bottom: 100px;
+	}
+}
+
+@media only screen and (min-width:1200px) {
+	.img4 {
+		position: relative;
+		left: 5px;
+		top: 1px;
+	}
+
+
+	.head {
+		margin-left: 5%;
+	}
+
+	.para {
+		position: relative;
+		bottom: -1px;
+		font-weight: bold;
+		padding-bottom: 7px;
+	}
+
+	.para2 {
+		position: relative;
+		bottom: 0px;
+		right: -35px;
+	}
+}
+
+@media only screen and (min-width:1500px) {
+	.chart-container {
+		position: relative;
+		right: 0%;
+		top: 0px;
+		left: 9%;
+
+	}
+
+	.grid-containerHeadingsSingle {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 50px;
+	}
+
+	.img4 {
+		position: relative;
+		left: 2px;
+		top: 4px;
+	}
+
+	.para {
+		position: relative;
+		bottom: -4px;
+		font-weight: bold;
+		padding-left: 10px;
+	}
+
+	.para2 {
+		position: relative;
+		bottom: -5px;
+		right: -8px;
+	}
+
+	.modal-visible {
+		display: block;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: white;
+		padding: 33px;
+		border: 1px solid #ccc;
+		z-index: 1000;
+		border-radius: 12px;
+		width: 660px;
+	}
+
+	.ButtonLogoutYes {
+		background-color: #403A60;
+		border-radius: 15px;
+		color: white;
+		font-weight: 800;
+		border-style: none;
+		padding: 5px 25px;
+		height: 40px;
+		width: 72px;
+		order: 2;
+	}
+
+	.buttonLogoutCancel {
+		background-color: white;
+		border-radius: 15px;
+		color: #403A60;
+		font-weight: 800;
+		border-style: solid;
+		border-color: #403A60;
+		padding: 5px 25px;
+		font-size: 14px;
+		font-family: 'Eina-SemiBold' , Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		height: 40px;
+		width: 68px;
+		order: 1;
+		border: 1.5px solid #403a60;
+	}
+
+	.grid-containermodals {
+		display: grid;
+		grid-template-columns: auto auto;
+		gap: 24px;
+		float: right;
+	}
+
+	.grid-containerDoubleSlide {
+		display: grid;
+		grid-template-columns: auto auto;
+		gap: 10px;
+	}
+
+	/* .grid-containerColorNotification{
+         display: grid;
+    grid-template-rows: repeat(1, max-content);
+    gap: 30px;
+    position: relative;
+    right: 0%;
+    top: 45px;
+    left: 10%;
+
+    } */
+	.selectWidth {
+		width: 199px;
+		border-style: solid;
+		border-color: #2C333A;
+		border-width: 1.5px;
+		border-radius: 4px;
+		height: 40px;
+		position: relative;
+	}
+
+	.past {
+		font-family: Eina-Bold , Helvetica, Arial, Verdana, Tahoma, sans-serif;;
+		font-size: 28px;
+		font-weight: 400;
+		line-height: 44px;
+		letter-spacing: 0em;
+		text-align: left;
+		color: #403A60;
+		position: relative;
+	}
+
+	.downbtn {
+		position: relative;
+		height: 40px;
+		width: 172px;
+		border-radius: 12px;
+		background-color: #403a60;
+		font-weight: 400;
+		color: white;
+		border: #403a60;
+		float: right;
+		position: relative;
+
+	}
+
+	.past {
+		font-size: 32px;
+		position: relative;
+
+	}
+
+	.confirm-btn-file {
+		position: relative;
+		right: 11%;
+		top: 80px;
+
+	}
+
+	.confirm-btn-file {
+		position: relative;
+		right: 3%;
+	}
+
+	.downbtn1 {
+		margin-left: -50px;
+	}
+}
+
+@media only screen and (min-width:1201px) and (max-width:1500px) {
+	.grid-containerHeadingsSingle {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 50px;
+	}
+
+	.modal-visible {
+		display: block;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: white;
+		padding: 33px;
+		border: 1px solid #ccc;
+		z-index: 1000;
+		border-radius: 12px;
+		width: 660px;
+	}
+
+	.ButtonLogoutYes {
+		background-color: #403A60;
+		border-radius: 15px;
+		color: white;
+		font-weight: 800;
+		border-style: none;
+		padding: 5px 25px;
+		height: 40px;
+		width: 72px;
+		order: 2;
+	}
+
+	.buttonLogoutCancel {
+		background-color: white;
+		border-radius: 15px;
+		color: #403A60;
+		font-weight: 800;
+		border-style: solid;
+		border-color: #403A60;
+		padding: 5px 25px;
+		font-size: 14px;
+		font-family: 'Eina-SemiBold', Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		height: 40px;
+		width: 68px;
+		order: 1;
+		border: 1.5px solid #403a60;
+	}
+
+	.grid-containermodals {
+		display: grid;
+		grid-template-columns: auto auto;
+		gap: 24px;
+		float: right;
+	}
+
+	.grid-containerDoubleSlide {
+		display: grid;
+		grid-template-columns: auto auto;
+		gap: 10px;
+	}
+
+	.chart-container {
+		position: relative;
+		right: 0%;
+		top: 40px;
+		left: -4%;
+	}
+
+	.grid-containerColorNotification {
+		display: grid;
+		grid-template-columns: repeat(7, max-content);
+		gap: 0px;
+		position: relative;
+		right: 15%;
+		top: 45px;
+		/* left: 0%;*/
+
+	}
+
+	.selectWidth {
+		width: 199px;
+		border-style: solid;
+		border-color: #2C333A;
+		border-width: 1.5px;
+		border-radius: 4px;
+		height: 40px;
+		position: relative;
+	}
+
+	.past {
+		font-family: Eina-Bold , Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 28px;
+		font-weight: 400;
+		line-height: 44px;
+		letter-spacing: 0em;
+		text-align: left;
+		color: #403A60;
+		position: relative;
+	}
+
+	.graphicon {
+		width: 115%;
+		margin-left: 75px;
+		position: relative;
+		bottom: 100px;
+	}
+
+	.downbtn {
+
+		height: 40px;
+		width: 172px;
+		border-radius: 12px;
+		background-color: #403a60;
+		font-weight: 400;
+		color: white;
+		border: #403a60;
+		float: right;
+		position: relative;
+
+	}
+
+	.past {
+		font-size: 32px;
+		position: relative;
+
+	}
+
+	.confirm-btn-file {
+		position: relative;
+		right: 11%;
+		top: 80px;
+
+	}
+
+	.confirm-btn-file {
+		position: relative;
+		right: 3%;
+	}
+}
+
+
+/* Popup Screen */
+
+
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 999;
+}
+
+.modal-content {
+	text-align: left;
+}
+
+.modal-buttons {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.modalHead {
+	font-family: 'Eina-Bold', Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 44px;
+	color: #403A60;
+}
+
+.modalPara {
+	margin-top: 20px;
+	font-family: 'Eina-Regular', Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	color: #2C333A;
+}
+
+.timescss {
+	border: none;
+	background: none;
+}
+
+.modal-close {
+	position: absolute;
+	top: 0px;
+	right: 10px;
+	cursor: pointer;
+	font-size: 30px;
+	color: #403A60;
+}
+
+.modal-close:hover {
+	color: #000;
+}
+
+.button-DivNoBack {
+	margin-right: 20px;
+	background-color: white;
+	border-radius: 15px;
+	color: #403A60;
+	font-weight: 800;
+	border-style: solid;
+	border-color: #403A60;
+	padding: 10px 25px;
+	font-size: 14px;
+	font-family: 'Eina-SemiBold', Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.modal-content {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	pointer-events: auto;
+	background-clip: padding-box;
+	border-radius: 0.3rem;
+	outline: 0;
+	border: none;
+}
+
+
+.New-addtext {
+
+	display: flex;
+	justify-content: center;
+	position: relative;
+	left: 3rem;
+	top: 1rem;
+	color: #403A60;
+	font-size: 16px;
+	font-family: 'Eina04-Bold' , Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+
+/* Styling for the dropdown options */

@@ -1,0 +1,15 @@
+<!--This LWC (BiPspbReminderNotificationSett) creates a reminder notification interface. 
+It features an icon and text to prompt users to choose their preferred reminder method and includes a link to the notification settings page for configuring preferences.-->
+<template>
+	<div class="reminder-container">
+		<img src={boxedIcon} class="box-icon" alt={alternateForBackground}/>
+		<div>
+			<p class="reminder-text">{question}</p>
+			<div class="notification-settings">
+				<p class="para">{preferredWay}&nbsp;
+					<button class="link nobutton" onclick={openNotificationSettings} onkeydown={openNotificationSettings}>{notificationSettings}</button>.
+				</p> 
+			</div>
+		</div>
+	</div>
+</template>

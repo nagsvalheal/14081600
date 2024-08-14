@@ -1,0 +1,651 @@
+<!-- This component is used to retrieve caregiver data, access patient information, and create cases based on the account settings. -->
+<template>
+
+  <div class="container" data-scroll-target data-it-uid={userId}>
+    
+    <template if:true={showDiv}>
+      <div class="check"><c-bi-pspb-common-popup toast-message={almostThere} onbuttonclick={handleClose}></c-bi-pspb-common-popup></div>
+    </template>
+    <template if:true={updatePopup}>
+      <div class="check"><c-bi-pspb-common-popup toast-message={updatePatientInfo} onbuttonclick={handleClose}></c-bi-pspb-common-popup></div>
+    </template>
+    <template if:true={showDiv1}>
+      <div class="check"><c-bi-pspb-common-popup toast-message={deleteAccount} onbuttonclick={handleClose}></c-bi-pspb-common-popup></div>
+    </template>
+
+    <div class="mainclass">
+      <div class="patientinfobox">
+        <h2 class="size">{personalInformation}</h2>
+        <div class="QuickLinks1">
+          <div class="display">
+            <h3>{quickLinks}</h3>
+            <div>
+              <lightning-icon
+                if:true={down}
+                icon-name="utility:chevrondown"
+                alternative-text="Connected"
+                size="xx-small"
+                title="xx-small size"
+                onclick={click}
+                onkeypress={handleKeyPress}
+              >
+              </lightning-icon>
+              <lightning-icon
+                if:true={up}
+                icon-name="utility:chevronup"
+                alternative-text="Connected"
+                size="xx-small"
+                onclick={notclick}
+                onkeypress={handleKeyPress}
+                title="xx-small size"
+              ></lightning-icon>
+            </div>
+          </div>
+          <span if:true={touch}>
+            <ul class="quick-links-list">
+              <li class="li active">
+                <div class="bullet bullet-active"></div>
+                <a href="#1" class="a-tags">{personalInformation}</a>
+              </li>
+              <li class="li">
+                <div class="bullet"></div>
+                <a href="#2" class="a-tag">{communicationDetails}</a>
+              </li>
+              <li class="li">
+                <div class="bullet"></div>
+                <a href="#3" class="a-tag">{address}</a>
+              </li>
+              <li class="li">
+                <div class="bullet"></div>
+                <a href="#4" class="a-tag">{accountSettings}</a>
+              </li>
+            </ul>
+          </span>
+        </div>
+        <div class="slds-p-around_medium">
+          <div class="slds-col">
+            <div class="fieldwidth" id="1">
+              <h1 class="h1 color">{personalInformation}</h1>
+
+              <br />
+
+              <div class="input-div">
+                <label
+                  for="FirstName"
+                  data-field="FirstName"
+                  class="input-label"
+                  >{firstnamelabel}</label
+                >
+                <lightning-input
+                  class="textInput"
+                  field-name="FirstName"
+                  data-field="FirstName"
+                  value={patientFirstName}
+                  disabled={isFirstNameDisabled}
+                  onchange={handleFieldChange}
+                  placeholder={enterFirstName}
+                  variant="label-hidden"
+                  maxlength="35"
+                >
+                </lightning-input>
+                <span
+                  class="slds-form-element__help"
+                  if:true={firstNameErrorMessage}
+                >
+                  <img
+                    class="css"
+                    src={Warningicon}
+                    alt={warningIcon}
+                  />{firstNameError}
+                </span>
+                <div
+                  class="slds-form-element__help"
+                  if:true={firstNameErrorMessageValid}
+                >
+                  <img
+                    class="css"
+                    src={Warningicon}
+                    alt={warningIcon}
+                    width="12px"
+                    height="12px"
+                  />
+                  <span class="slds-form-element__helps"
+                    >{validateFirstNameError}</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-div">
+            <label for="LastName" data-field="LastName" class="input-label"
+              >{lastnameLabel}</label
+            >
+            <lightning-input
+              field-name="LastName"
+              data-field="LastName"
+              value={patientLastName}
+              id="LastName"
+              variant="label-hidden"
+              class="textInput"
+              onchange={handlelastname}
+              disabled={isLastNameDisabled}
+              placeholder={enterLastName}
+              maxlength="60"
+            ></lightning-input>
+            <span
+              class="slds-form-element__help"
+              if:true={lastNameErrorMessage}
+            >
+              <img class="css" src={Warningicon} alt={warningIcon} />
+              {lastNameError}
+            </span>
+            <div
+              class="slds-form-element__help"
+              if:true={lastNameErrorMessageValid}
+            >
+              <img
+                class="css"
+                src={Warningicon}
+                alt={warningIcon}
+                width="12px"
+                height="12px"
+              />
+              <span class="slds-form-element__helps"
+                >{validateLastNameError}</span
+              >
+            </div>
+          </div>
+
+          <div class="input-div">
+            <label for="Birthdate" data-field="Birthdate" class="input-label"
+              >{dobLabel}</label
+            >
+            <lightning-input
+              field-name="BI_PSP_Birthdate__c"
+              label="Date of Birth"
+              type="date"
+              onchange={agecalculationEvent}
+              onkeydown={handleKeyDownThree}
+              value={patientDOB}
+              data-field="Birthdate"
+              class="textInput"
+              disabled={isDOBDisabled}
+              variant="label-hidden"
+              placeholder={enterDob}
+              date-style="short"
+            ></lightning-input>
+            <span if:true={minorError} class="slds-form-element__help"
+              ><img
+                class="css"
+                src={Warningicon}
+                alt={warningIcon}
+              />{minorMsg}</span
+            >
+            <span if:true={minorErrorTwo} class="slds-form-element__help"
+              ><img
+                class="css"
+                src={Warningicon}
+                alt={warningIcon}
+              />{aboveError}</span
+            >
+            <span if:true={minorErrorThree} class="slds-form-element__help"
+              ><img
+                class="css"
+                src={Warningicon}
+                alt={warningIcon}
+              />{futureError}</span
+            >
+            <span if:true={dobrequired} class="slds-form-element__help">
+              <img src={Warningicon} alt={warningIcon} /> {dateError}
+            </span>
+          </div>
+
+          <div class="input-div">
+            <label class="input-label" for="gender" data-field="relationship"
+              >{genderLabel}</label
+            >
+            <lightning-combobox
+              label="Relationship"
+              name="CaregiverRelationship"
+              placeholder={select}
+              data-field="relationship"
+              value={relations}
+              options={leadPmc}
+              onchange={relationshipEvent}
+              disabled={isGenderDisabled}
+              class="textInput"
+              variant="label-hidden"
+            >
+            </lightning-combobox>
+            <div
+              class="slds-form-element__help"
+              if:true={relationshipErrorMessage}
+            >
+              <img class="css" src={Warningicon} alt={warningIcon} />
+              <span class="slds-form-element__helps">{genderError}</span>
+            </div>
+          </div>
+
+          <div class="slds-col" if:false={phoneNumberMandatory}>
+            <div class="fieldwidth" id="2">
+              <br />
+              <h1 class="h1 color">{communicationDetails}</h1>
+              <br />
+              <div class="input-div">
+                <label for="email" data-field="email" class="inputlable-email"
+                  >{emailLabel}</label
+                >
+
+                <span
+                  ><lightning-input
+                    variant="label-hidden"
+                    class="textInput"
+                    field-name="PersonEmail"
+                    data-field="email"
+                    value={patientEmail}
+                    onchange={handle_Email}
+                    disabled="false"
+                  >
+                  </lightning-input
+                ></span>
+                <div
+                  class="slds-form-element__help"
+                  if:true={emailErrorMessage}
+                >
+                  <img
+                    class="css"
+                    src={Warningicon}
+                    alt={warningIcon}
+                  />{emailError}
+                </div>
+              </div>
+              <div class="input-div">
+                <label for="phn" data-field="phone" class="input-label"
+                  >{pmcName}</label
+                >
+                <span
+                  ><lightning-input
+                    class="textInput"
+                    variant="label-hidden"
+                    field-name="Phone"
+                    data-field="phone"
+                    maxlength="16"
+                    onkeydown={handleKeyDown}
+                    onkeypress={validatePhoneInput}
+                    value={patientMobilePhone}
+                    onchange={handleFielphone}
+                    onpaste={handlePaste}
+                    disabled={isMobilePhoneDisabled}
+                    placeholder={enterPhone}
+                  ></lightning-input
+                ></span>
+                <div
+                  class="slds-form-element__help"
+                  if:true={phoneErrorMessage}
+                >
+                  <img
+                    class="css"
+                    src={Warningicon}
+                    alt={warningIcon}
+                  />{phoneError}
+                </div>
+                <div
+                  class="slds-form-element__help"
+                  if:true={MobileErrorMessage}
+                >
+                  <img
+                    class="css"
+                    src={Warningicon}
+                    alt={warningIcon}
+                  />{mobileError}
+                </div>
+              </div>
+
+              <div class="input-div">
+                <label
+                  class="input-label"
+                  for="preferredContactMethod"
+                  data-field="conPmc"
+                  >{preferredLabel}</label
+                >
+                <lightning-combobox
+                  options={preffer}
+                  value={preferredCommunication}
+                  onchange={handlePmcChange}
+                  variant="label-hidden"
+                  class="textInput"
+                  data-field="conPmc"
+                  disabled={isPOMDisabled}
+                  placeholder={select}
+                ></lightning-combobox>
+                <div
+                  class="slds-form-element__help"
+                  if:true={conPmcErrorMessage}
+                >
+                  <span class="slds-form-element__help">
+                    <img class="css" src={Warningicon} alt={warningIcon} />
+                    {preferredMode}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="fieldwidth" id="3">
+            <br />
+            <h1 class="h1 color">{address}</h1>
+            <br />
+
+            <div class="input-div">
+              <label for="country" data-field="country" class="input-label"
+                >{countryLabel}</label
+              >
+              <lightning-combobox
+                class="textInput"
+                name="Country"
+                label="Country"
+                data-field="country"
+                value={country}
+                placeholder={enterCountry}
+                variant="label-hidden"
+                options={countryCode}
+                onchange={handleFielcountry}
+                disabled={isMaillingCountryDisabled}
+              >
+              </lightning-combobox>
+              <div class="slds-form-element__help" if:true={countryCodeMessage}>
+                <img
+                  class="css"
+                  src={Warningicon}
+                  alt={warningIcon}
+                />{countryError}
+              </div>
+            </div>
+            <div class="input-div">
+              <label for="state" data-field="state" class="input-label"
+                >{stateLabel}</label
+              >
+              <lightning-combobox
+                class="textInput"
+                name="Country"
+                label="Country"
+                data-field="state"
+                value={state}
+                placeholder={enterState}
+                variant="label-hidden"
+                options={StateCode}
+                onchange={handleFieldstate}
+                disabled={isMaillingStateDisabled}
+              >
+              </lightning-combobox>
+              <div class="slds-form-element__help" if:true={stateCodeMessage}>
+                <img
+                  class="css"
+                  src={Warningicon}
+                  alt={warningIcon}
+                />{stateError}
+              </div>
+            </div>
+
+            <div class="input-div">
+              <label for="c" data-field="city" class="input-label"
+                >{citylabel}</label
+              >
+              <span
+                ><lightning-input
+                  class="textInput"
+                  variant="label-hidden"
+                  field-name="PersonMailingCity"
+                  data-field="city"
+                  value={patientCity}
+                  onchange={handleFieldCity}
+                  maxlength="35"
+                  disabled={isMaillingCityDisabled}
+                  placeholder={enterCity}
+                >
+                </lightning-input>
+              </span>
+              <div class="slds-form-element__help" if:true={cityMessage}>
+                <img
+                  class="css"
+                  src={Warningicon}
+                  alt={warningIcon}
+                />{cityError}
+              </div>
+              <div
+                class="slds-form-element__help"
+                if:true={RpCityErrorMessageValid}
+              >
+                <img
+                  class="css"
+                  src={Warningicon}
+                  alt={warningIcon}
+                  width="12px"
+                  height="12px"
+                />
+                <span class="slds-form-element__helps">{validCity}</span>
+              </div>
+            </div>
+
+            <div class="input-div">
+              <label for="s" data-field="street" class="input-label"
+                >{streetAddress}</label
+              >
+              <span
+                ><lightning-input
+                  class="textInput"
+                  variant="label-hidden"
+                  field-name="PersonMailingStreet"
+                  data-field="street"
+                  value={patientStreet}
+                  onchange={handleFieldstreet}
+                  disabled={isMaillingStreetDisabled}
+                  placeholder={enterStreet}
+                >
+                </lightning-input
+              ></span>
+              <div class="slds-form-element__help" if:true={streetMessage}>
+                <img
+                  class="css"
+                  src={Warningicon}
+                  alt={warningIcon}
+                />{streetError}
+              </div>
+            </div>
+            <div class="input-div">
+              <label for="pc" data-field="zipcode" class="input-label"
+                >{zipcodeLabel}</label
+              >
+              <span
+                ><lightning-input
+                  class="textInput"
+                  variant="label-hidden"
+                  field-name="PersonMailingPostalCode"
+                  data-field="zipcode"
+                  value={patientZipCode}
+                  onchange={handleFieldcode}
+                  placeholder={enterZipcode}
+                  disabled={isMaillingPostalcodeDisabled}
+                >
+                </lightning-input
+              ></span>
+              <div class="slds-form-element__help" if:true={postalCodeMessage}>
+                <img
+                  class="css"
+                  src={Warningicon}
+                  alt={warningIcon}
+                />{pincodeError}
+              </div>
+              <div
+                class="slds-form-element__help"
+                if:true={ZipErrorMessagevalid}
+              >
+                <img
+                  class="css"
+                  src={Warningicon}
+                 alt={warningIcon}
+                  width="12px"
+                  height="12px"
+                />
+                <span class="slds-form-element__helps">{validError}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="slds-m-top_medium">
+            <div class="slds-c-button-color-background">
+              <div class="slds-c-button-text-color">
+                <button
+                  class="slds-button"
+                  onclick={handle_Success}
+                  data-it-button="myprofile: Save Changes"
+                >
+                  {saveChanges}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accsettings" id="4" if:true={isAdult}>
+          <br />
+          <h1 class="h1">{accountSettings}</h1>
+          <br />
+          <div class="msg">
+            <b>{deleteAccountLabel}</b>
+          </div>
+          <div class="message" if:true={DeleteMessage}>
+            <img src={boxedIcon} alt={warningIcon} class="boxedimg" />
+            <p>{deleteRequest}</p>
+          </div>
+          <!-- Used for creating a case for delete access for patient -->
+          <button
+            class={colorChnage}
+            id="buttonD"
+            onclick={handleDeletPopupopen}
+            disabled={isButtonDeleteDisabled}
+            data-it-button="myprofile: Delete Account"
+          >
+            <b>{deleteButton}</b>
+          </button>
+          <br />
+          <div class="msg"><b>{personalInfo}</b></div>
+          <div class="message" if:true={accessMessage}>
+            <img src={boxedIcon} alt={warningIcon} class="boxedimg" />
+            <p>{accessRequest}</p>
+          </div>
+          <!-- Used for creating a case for request access for patient -->
+          <button
+            class={colorChnage}
+            onclick={handleAccessPopupopen}
+            disabled={isAccessButtonDisabled}
+            data-it-button="myprofile: Request Access"
+          >
+            <b>{requestButton}</b>
+          </button>
+        </div>
+      </div>
+
+      <div class="Ql">
+        <h3 class="h1 QAColor">{quickLinks}</h3>
+        <ul class="ULClass">
+          <li class="li active">
+            <div class="bullet bullet-active"></div>
+            <div class="Piclass">
+              <a href="#1" class="a-tags">{personalInformation}</a>
+            </div>
+          </li>
+          <li class="li" if:false={phoneNumberMandatory}>
+            <div class="bullet"></div>
+            <div class="Piclass">
+              <a href="#2" class="a-tag">{communicationDetails}</a>
+            </div>
+          </li>
+          <li class="li">
+            <div class="bullet"></div>
+            <div class="Piclass">
+              <a href="#3" class="a-tag">{address}</a>
+            </div>
+          </li>
+          <li class="li" if:true={accountSettingHide}>
+            <div class="bullet"></div>
+            <div class="Piclass">
+              <a href="#4" class="a-tag">{accountSettings}</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <template if:true={isDeletePopupOpen}>
+      <div class="popup">
+        <div class="popup-content">
+          <lightning-button-icon
+            class="close-icon"
+            icon-name="utility:close"
+            alternative-text="Close"
+            onclick={handleDeletPopup}
+          >
+          </lightning-button-icon>
+          <div class="popubhead">
+            <div class="popup-heading">{requestDelete}</div>
+            <div class="popup-confirmation">{requestAccess}</div>
+            <div class="btn">
+              <button
+                data-value="No"
+                class="outlined-button OTBTN"
+                onclick={handleDeletPopup}
+              >
+                {noButton}
+              </button>
+              &nbsp;&nbsp;
+              <button
+                data-value="Yes"
+                class="save-button"
+                onclick={handleYesButtonClick}
+              >
+                {yesButton}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template if:true={isAccessPopupOpen}>
+      <div class="popup">
+        <div>
+          <div class="popup-content">
+            <lightning-button-icon
+              class="close-icon"
+              icon-name="utility:close"
+              alternative-text="Close"
+              onclick={handleAccessPopup}
+            >
+            </lightning-button-icon>
+            <div class="popubhead">
+              <div class="popup-heading">{personalRequest}</div>
+              <div class="popup-confirmation">{sendRequest}</div>
+              <div class="btn">
+                <button
+                  data-value="No"
+                  class="outlined-button OTBTN"
+                  onclick={handleAccessPopup}
+                >
+                  {noButton}
+                </button>
+                &nbsp;&nbsp;
+                <button
+                  data-value="Yes"
+                  class="save-button"
+                  onclick={handleYesButtonClickTwo}
+                >
+                  {yesButton}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+  </div>
+</template>

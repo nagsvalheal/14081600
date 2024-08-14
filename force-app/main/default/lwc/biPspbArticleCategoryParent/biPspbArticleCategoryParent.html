@@ -1,0 +1,446 @@
+<template>
+	<!--This Lightning web component is used to display articles from different categories based on the selected category-->
+	<!-- Onload show spinner -->
+	 <div if:true={showSpinner}>
+<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	</div>
+	<template if:true={showBrandedNav}>
+		<lightning-layout multiple-rows>
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+				<div class="customNavTab pad" data-it-uid={userId}>
+					<div class="grid-containerNavTab">
+						<button onclick={openArticlesPage} class={anchorText}>{articles}</button>
+						<button onclick={openSpevigoCategory} class={anchorTextForSpevigo}>{spevigoArticleLabel}</button>
+						<button onclick={openPTVPage} class="menuList">{patientTreatmentVideos}</button>
+					</div>
+				</div>
+			</lightning-layout-item>
+		</lightning-layout>
+	</template>
+	<div class='flexi'>
+		<div class="column column1">
+			<div class="avator">
+				<br>
+				<br>
+				<!--Display the avatar message component-->
+				<c-bi-Pspb-Article-Category-Avatar site-urlq={siteUrlq} onchildrendered={handleChildRendered}></c-bi-Pspb-Article-Category-Avatar>
+			</div>
+		</div>
+
+		<div class="flexrowart">
+			<div class="artdisplay1">
+				<div class='container-large'>
+					<div class="Category">
+						<div class='component'>
+							<div class="search-icon-container">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<g clip-path="url(#clip0_14614_32008)">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+											d="M9.82997 0C4.40103 0 0 4.40103 0 9.82997C0 15.2589 4.40103 19.6599 9.82997 19.6599C12.243 19.6599 14.453 18.7905 16.1637 17.3477L22.5708 23.7556L22.6867 23.8525C23.013 24.0786 23.4641 24.0463 23.7547 23.7557C24.0817 23.4288 24.0818 22.8987 23.7548 22.5717L17.3477 16.1637C18.7905 14.453 19.6599 12.243 19.6599 9.82997C19.6599 4.40103 15.2589 0 9.82997 0ZM15.6222 15.5713C17.0831 14.0975 17.9855 12.0691 17.9855 9.82997C17.9855 5.32578 14.3342 1.67442 9.82997 1.67442C5.32578 1.67442 1.67442 5.32578 1.67442 9.82997C1.67442 14.3342 5.32578 17.9855 9.82997 17.9855C12.0692 17.9855 14.0976 17.0831 15.5714 15.6221C15.5795 15.6133 15.5878 15.6046 15.5963 15.5961C15.6048 15.5876 15.6134 15.5794 15.6222 15.5713Z"
+											fill="#696969" class="svgfil"></path>
+									</g>
+									<defs>
+										<clipPath id="clip0_14614_32008">
+											<rect width="24" height="24" fill="white" class="pathsty"></rect>
+										</clipPath>
+									</defs>
+								</svg>
+								<input class="search-bar" type="search" placeholder="Search for an article"
+									onchange={handleSearch} oninput={debouncedSearch} onkeyup={handleSearchInputKeyUp}
+									onfocus={handleSearchBarFocus} onblur={handleSearchBarBlur}>
+								<svg onclick={clearInput} onkeypress={clearInput} width="16" height="16" viewBox="0 0 16 16" fill="none"
+									xmlns="http://www.w3.org/2000/svg" role = 'button' tabindex="0">
+									<path fill-rule="evenodd" clip-rule="evenodd"
+										d="M0.875504 0.0988925L0.952804 0.163475L8 7.21023L15.0472 0.163475C15.2652 -0.0544918 15.6186 -0.0544918 15.8365 0.163475C16.0303 0.357224 16.0518 0.657977 15.9011 0.875504L15.8365 0.952804L8.78977 8L15.8365 15.0472C16.0545 15.2652 16.0545 15.6186 15.8365 15.8365C15.6428 16.0303 15.342 16.0518 15.1245 15.9011L15.0472 15.8365L8 8.78977L0.952804 15.8365C0.734837 16.0545 0.381442 16.0545 0.163475 15.8365C-0.0302732 15.6428 -0.0518008 15.342 0.0988925 15.1245L0.163475 15.0472L7.21023 8L0.163475 0.952804C-0.0544918 0.734837 -0.0544918 0.381442 0.163475 0.163475C0.333005 -0.00605464 0.58446 -0.043728 0.790401 0.0504553L0.875504 0.0988925Z"
+										fill="#696969" class="svgfil" />
+								</svg>
+							</div>
+							<!--Display the categories for mobile-->
+							<div class="QuickLinks">
+								<div class="display">
+									<h3 class="subheading">{final}</h3>
+									<div> <lightning-icon class='mbchricon' if:true={down}
+											icon-name="utility:chevrondown" alternative-text="Connected" size="xx-small"
+											title="xx-small size" onclick={click} onkeypress={click}></lightning-icon>
+										<lightning-icon onkeypress={notclick} class='mbchricon' if:true={up} icon-name="utility:chevronup"
+											alternative-text="Connected" size="xx-small" onclick={notclick}
+											title="xx-small size"></lightning-icon>
+									</div>
+								</div>
+								<template if:true={touch}>
+									<div class='flex'>
+										<button if:true={showJustForMe} class={justForMeCategory}
+											data-it-button="category: Just for me" data-name="Just for me"
+											onclick={handlesubmit}> {justForMeLabel} <svg class='svgleft' width="16"
+												height="16" viewBox="0 0 16 16" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path d="M2 7.44531H14" stroke="#403A60" class="svgpathsty"
+													stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60"
+													class="svgpathsty" stroke-width="1.5" stroke-linecap="round"
+													stroke-linejoin="round" />
+											</svg> </button>
+										<button class={whatIsGpp} data-name="What is GPP?"
+											data-it-button="category: What is GPP?" onclick={handlesubmit}> {whatIsGppLabel}
+											<svg class="svgleft" width="16" height="16" viewBox="0 0 16 16" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path d="M2 7.44531H14" stroke="#403A60" class="svgpathsty"
+													stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60"
+													class="svgpathsty" stroke-width="1.5" stroke-linecap="round"
+													stroke-linejoin="round" />
+											</svg> </button>
+										<button class={gppHealth} data-name="GPP’s effect on mental health"
+											data-it-button="category: GPP’s effect on mental health"
+											onclick={handlesubmit}> {gppHealthCategoryLabel} <svg class="svgleft"
+												width="16" height="16" viewBox="0 0 16 16" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path d="M2 7.44531H14" stroke="#403A60" class="svgpathsty"
+													stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60"
+													class="svgpathsty" stroke-width="1.5" stroke-linecap="round"
+													stroke-linejoin="round" />
+											</svg> </button>
+										<button class={talkHcp} data-name="Talking with your HCP"
+											data-it-button="category: Talking with your HCP" onclick={handlesubmit}>
+											{talkHcpCategoryLabel} <svg class="svgleft" width="16" height="16"
+												viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M2 7.44531H14" stroke="#403A60" class="svgpathsty"
+													stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60"
+													class="svgpathsty" stroke-width="1.5" stroke-linecap="round"
+													stroke-linejoin="round" />
+											</svg> </button>
+										<button class={manageGpp} data-name="How to manage GPP"
+											data-it-button="category: How to manage GPP" onclick={handlesubmit}> {manageGppCategoryLabel} <svg class="svgleft" width="16" height="16" viewBox="0 0 16 16"
+												fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M2 7.44531H14" stroke="#403A60" class="svgpathsty"
+													stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60"
+													class="svgpathsty" stroke-width="1.5" stroke-linecap="round"
+													stroke-linejoin="round" />
+											</svg> </button>
+										<button class={flaresCategory} data-name="What you need to know about flares"
+											data-it-button="category: What you need to know about flares"
+											onclick={handlesubmit}> What you need to know about flares<svg
+												class="svgleft" width="16" height="16" viewBox="0 0 16 16" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path d="M2 7.44531H14" stroke="#403A60" class="svgpathsty"
+													stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60"
+													class="svgpathsty" stroke-width="1.5" stroke-linecap="round"
+													stroke-linejoin="round" />
+											</svg> </button>
+
+										<template if:true={showBrandedNav}> <button if:true={treatmentSpevigoCategory}
+												data-it-button={treatmentCategoryAnalytics} class={treatmentCategory}
+												data-name={treatmentSpevigoCategory} onclick={handlesubmit}>
+												{treatmentSpevigoCategory}
+												<svg class="svgleft" width="16" height="16" viewBox="0 0 16 16"
+													fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M2 7.44531H14" stroke="#403A60" class="svgpathsty"
+														stroke-width="1.5" stroke-linecap="round"
+														stroke-linejoin="round" />
+													<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60"
+														class="svgpathsty" stroke-width="1.5" stroke-linecap="round"
+														stroke-linejoin="round" />
+												</svg>
+											</button>
+										</template>
+
+									</div>
+								</template>
+							</div>
+							<!--Display the categories for desktop-->
+							<hr class="search-bar-border-bottom">
+							<div class="Heading2">
+								<div class="heading">
+									<h2 class='headingcategory'> Article Categories </h2>
+								</div>
+								<div class="options">
+									<div class='flex'>
+										<button if:true={showJustForMe} class={justForMeCategory}
+											data-name="Just for me" data-it-button="category: Just for me"
+											onclick={handlesubmit}> Just for me <svg class="svgleft" width="16"
+												height="16" viewBox="0 0 16 16" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path d="M2 7.44531H14" stroke="#403A60" class="svgpathsty"
+													stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60"
+													class="svgpathsty" stroke-width="1.5" stroke-linecap="round"
+													stroke-linejoin="round" />
+											</svg> </button>
+										<button class={whatIsGpp} data-name="What is GPP?"
+											data-it-button="category: What is GPP?" onclick={handlesubmit}> What is GPP?
+											<svg class="svgleft" width="16" height="16" viewBox="0 0 16 16" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path d="M2 7.44531H14" stroke="#403A60" class="svgpathsty"
+													stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60"
+													class="svgpathsty" stroke-width="1.5" stroke-linecap="round"
+													stroke-linejoin="round" />
+											</svg> </button>
+										<button class={gppHealth} data-name="GPP’s effect on mental health"
+											data-it-button="category: GPP’s effect on mental health"
+											onclick={handlesubmit}> GPP’s effect on mental health <svg class="svgleft"
+												width="16" height="16" viewBox="0 0 16 16" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path d="M2 7.44531H14" stroke="#403A60" class="svgpathsty"
+													stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60"
+													class="svgpathsty" stroke-width="1.5" stroke-linecap="round"
+													stroke-linejoin="round" />
+											</svg> </button>
+										<button class={talkHcp} data-name="Talking with your HCP"
+											data-it-button="category: Talking with your HCP" onclick={handlesubmit}>
+											Talking with your HCP <svg class="svgleft" width="16" height="16"
+												viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M2 7.44531H14" stroke="#403A60" class="svgpathsty"
+													stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60"
+													class="svgpathsty" stroke-width="1.5" stroke-linecap="round"
+													stroke-linejoin="round" />
+											</svg> </button>
+										<button class={manageGpp} data-name="How to manage GPP"
+											data-it-button="category: How to manage GPP" onclick={handlesubmit}> How to
+											manage GPP <svg class="svgleft" width="16" height="16" viewBox="0 0 16 16"
+												fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M2 7.44531H14" stroke="#403A60" class="svgpathsty"
+													stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60"
+													class="svgpathsty" stroke-width="1.5" stroke-linecap="round"
+													stroke-linejoin="round" />
+											</svg> </button>
+										<button class={flaresCategory} data-name="What you need to know about flares"
+											data-it-button="category: What you need to know about flares"
+											onclick={handlesubmit}> {flaresCategoryLabel}<svg
+												class="svgleft" width="16" height="16" viewBox="0 0 16 16" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path d="M2 7.44531H14" stroke="#403A60" class="svgpathsty"
+													stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60"
+													class="svgpathsty" stroke-width="1.5" stroke-linecap="round"
+													stroke-linejoin="round" />
+											</svg> </button>
+										<template if:true={showBrandedNav}> <button if:true={treatmentSpevigoCategory}
+												data-it-button={treatmentCategoryAnalytics} class={treatmentCategory}
+												data-name={treatmentSpevigoCategory} onclick={handlesubmit}>
+												{treatmentSpevigoCategory}
+												<svg class="svgleft" width="16" height="16" viewBox="0 0 16 16"
+													fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M2 7.44531H14" stroke="#403A60" class="svgpathsty"
+														stroke-width="1.5" stroke-linecap="round"
+														stroke-linejoin="round" />
+													<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60"
+														class="svgpathsty" stroke-width="1.5" stroke-linecap="round"
+														stroke-linejoin="round" />
+												</svg>
+											</button>
+										</template>
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class='artdisplay'>
+							<div class="container-tag">
+								<div class='searchhead' if:true={showSearch}>
+								</div>
+								<div class="container-itembox">
+									<div class="container-item">
+										<template if:false={showBrandedNav}>
+											<div class="article-container">
+												<div class='heading_category'>
+													<h2>{final}</h2>
+												</div>
+												<div class="left-section">
+													<template for:each={searchItems} for:item="relatedItem">
+														<div key={relatedItem.text} if:true={relatedItem.count}>
+															<article class="article first">
+																<img src={relatedItem.image} alt="Article 1" />
+																<div class="headingcontainer">
+																	<div class='minvalu'><svg width="40" height="24"
+																			viewBox="0 0 24 24" fill="none"
+																			xmlns="http://www.w3.org/2000/svg">
+																			<path fill-rule="evenodd"
+																				clip-rule="evenodd"
+																				d="M12 3.42827C6.87482 3.42827 2.71395 7.58913 2.71395 12.7143C2.71395 17.8395 6.87482 22.0004 12 22.0004C17.1252 22.0004 21.286 17.8395 21.286 12.7143C21.286 7.58913 17.1252 3.42827 12 3.42827ZM11.2857 12.3707L7.982 15.0137C7.67413 15.2601 7.62413 15.7101 7.87056 16.018C8.117 16.3259 8.56702 16.3759 8.87489 16.1294L12.4464 13.2722C12.5329 13.2029 12.5986 13.1179 12.6436 13.0243L12.6443 13.0236C12.6893 12.93 12.7143 12.825 12.7143 12.7143V6.99982C12.7143 6.60552 12.3943 6.28551 12 6.28551C11.6057 6.28551 11.2857 6.60552 11.2857 6.99982V12.3707ZM5.06618 2.20894L2.20894 5.06618C1.93035 5.34476 1.93035 5.79764 2.20894 6.07622C2.48752 6.3548 2.94039 6.3548 3.21897 6.07622L6.07622 3.21897C6.3548 2.94039 6.3548 2.48752 6.07622 2.20894C5.79764 1.93035 5.34476 1.93035 5.06618 2.20894ZM17.9238 3.21897L20.781 6.07622C21.0596 6.3548 21.5125 6.3548 21.7911 6.07622C22.0696 5.79764 22.0696 5.34476 21.7911 5.06618L18.9338 2.20894C18.6552 1.93035 18.2024 1.93035 17.9238 2.20894C17.6452 2.48752 17.6452 2.94039 17.9238 3.21897Z"
+																				fill="#403A60" class="svgstylefil">
+																			</path>
+																		</svg>
+																		<strong>&nbsp;{relatedItem.readtime} {minutes}</strong>
+																	</div>
+
+																	<h2>{relatedItem.text}</h2>
+																	<p class='descriptionsub'>{relatedItem.text2}</p>
+
+																	<a class='leftlink' href="#"
+																	>
+																		<svg data-name={relatedItem.text}
+																		data-it-button={relatedItem.articlehe}
+																		onclick={handleButtonClick} role="button" tabindex="0" onkeypress={handleButtonClick} width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+																			<rect x="1.68164" y="1" width="46" height="46" rx="23" stroke="#403A60" class = "svgpathsty" stroke-width="2"/>
+																			<path d="M14.8477 24.166H34.8477" stroke="#403A60" class = "svgpathsty" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+																			<path d="M24.8477 14.166L34.8477 24.166L24.8477 34.166" stroke="#403A60" class = "svgpathsty" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+																			</svg></a>
+																</div>
+															</article>
+														</div>
+
+														<div key={relatedItem.text} if:false={relatedItem.count}>
+															<article class="article second">
+																<div class="headingcontainersecond">
+																	<div class='articleheadwithdesc'>
+																		<div class='minstagnew'><svg width="40"
+																				height="24" viewBox="0 0 24 24"
+																				fill="none"
+																				xmlns="http://www.w3.org/2000/svg">
+																				<path fill-rule="evenodd"
+																					clip-rule="evenodd"
+																					d="M12 3.42827C6.87482 3.42827 2.71395 7.58913 2.71395 12.7143C2.71395 17.8395 6.87482 22.0004 12 22.0004C17.1252 22.0004 21.286 17.8395 21.286 12.7143C21.286 7.58913 17.1252 3.42827 12 3.42827ZM11.2857 12.3707L7.982 15.0137C7.67413 15.2601 7.62413 15.7101 7.87056 16.018C8.117 16.3259 8.56702 16.3759 8.87489 16.1294L12.4464 13.2722C12.5329 13.2029 12.5986 13.1179 12.6436 13.0243L12.6443 13.0236C12.6893 12.93 12.7143 12.825 12.7143 12.7143V6.99982C12.7143 6.60552 12.3943 6.28551 12 6.28551C11.6057 6.28551 11.2857 6.60552 11.2857 6.99982V12.3707ZM5.06618 2.20894L2.20894 5.06618C1.93035 5.34476 1.93035 5.79764 2.20894 6.07622C2.48752 6.3548 2.94039 6.3548 3.21897 6.07622L6.07622 3.21897C6.3548 2.94039 6.3548 2.48752 6.07622 2.20894C5.79764 1.93035 5.34476 1.93035 5.06618 2.20894ZM17.9238 3.21897L20.781 6.07622C21.0596 6.3548 21.5125 6.3548 21.7911 6.07622C22.0696 5.79764 22.0696 5.34476 21.7911 5.06618L18.9338 2.20894C18.6552 1.93035 18.2024 1.93035 17.9238 2.20894C17.6452 2.48752 17.6452 2.94039 17.9238 3.21897Z"
+																					fill="#403A60" class="svgstylefil">
+																				</path>
+																			</svg>
+
+																			<strong>&nbsp;{relatedItem.readtime}
+																				{minutes}</strong>
+																		</div>
+
+																		<h2>{relatedItem.text}</h2>
+																		<p class='descriptionsub'>{relatedItem.text2}
+																		</p>
+																	</div>
+
+																	<a class='rightlink' href="#"
+																		> <svg data-name={relatedItem.text}
+																		data-it-button={relatedItem.articlehe}
+																		onclick={handleButtonClick} role="button" onkeypress={handleButtonClick} tabindex="0" width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+																			<rect x="1.68164" y="1" width="46" height="46" rx="23" stroke="#403A60" class = "svgpathsty" stroke-width="2"/>
+																			<path d="M14.8477 24.166H34.8477" stroke="#403A60" class = "svgpathsty" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+																			<path d="M24.8477 14.166L34.8477 24.166L24.8477 34.166" stroke="#403A60" class = "svgpathsty" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+																			</svg></a>
+																</div>
+																<img class="secondimg" src={relatedItem.image}
+																	alt="Article 2" />
+
+
+															</article>
+														</div>
+													</template>
+
+													<template if:true={showLoadMore}>
+														<div class="loadmorediv">
+															<button class='loadmorebtn' onclick={loadmore}> {loadMoreLabel}</button>
+														</div>
+													</template>
+
+												</div>
+											</div>
+										</template>
+										<template if:true={showBrandedNav}>
+											<div class="article-containerbranded">
+												<div class='heading_category'>
+													<h2>{final}</h2>
+												</div>
+												<div class="left-section">
+													<template for:each={searchItems} for:item="relatedItem">
+														<div key={relatedItem.text} if:true={relatedItem.count}>
+															<article class="article first">
+																<img src={relatedItem.image} alt="Article 1" />
+																<div class="headingcontainer">
+																	<div class="minstagnew"><svg width="40" height="24"
+																			viewBox="0 0 24 24" fill="none"
+																			xmlns="http://www.w3.org/2000/svg">
+																			<path fill-rule="evenodd"
+																				clip-rule="evenodd"
+																				d="M12 3.42827C6.87482 3.42827 2.71395 7.58913 2.71395 12.7143C2.71395 17.8395 6.87482 22.0004 12 22.0004C17.1252 22.0004 21.286 17.8395 21.286 12.7143C21.286 7.58913 17.1252 3.42827 12 3.42827ZM11.2857 12.3707L7.982 15.0137C7.67413 15.2601 7.62413 15.7101 7.87056 16.018C8.117 16.3259 8.56702 16.3759 8.87489 16.1294L12.4464 13.2722C12.5329 13.2029 12.5986 13.1179 12.6436 13.0243L12.6443 13.0236C12.6893 12.93 12.7143 12.825 12.7143 12.7143V6.99982C12.7143 6.60552 12.3943 6.28551 12 6.28551C11.6057 6.28551 11.2857 6.60552 11.2857 6.99982V12.3707ZM5.06618 2.20894L2.20894 5.06618C1.93035 5.34476 1.93035 5.79764 2.20894 6.07622C2.48752 6.3548 2.94039 6.3548 3.21897 6.07622L6.07622 3.21897C6.3548 2.94039 6.3548 2.48752 6.07622 2.20894C5.79764 1.93035 5.34476 1.93035 5.06618 2.20894ZM17.9238 3.21897L20.781 6.07622C21.0596 6.3548 21.5125 6.3548 21.7911 6.07622C22.0696 5.79764 22.0696 5.34476 21.7911 5.06618L18.9338 2.20894C18.6552 1.93035 18.2024 1.93035 17.9238 2.20894C17.6452 2.48752 17.6452 2.94039 17.9238 3.21897Z"
+																				fill="#403A60" class="svgstylefil">
+																			</path>
+																		</svg>
+																		<strong>&nbsp; {relatedItem.readtime}
+																			{minutes}</strong>
+																	</div>
+
+																	<h2>{relatedItem.text}</h2>
+																	<p class='descriptionsub'>{relatedItem.text2}</p>
+
+																	<a class='leftlink' href="#"
+																		>
+																		<svg data-name={relatedItem.text}
+																		data-it-button={relatedItem.articlehe}
+																		onclick={handleButtonClick} role="button" onkeypress={handleButtonClick} tabindex="0" width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+																			<rect x="1.68164" y="1" width="46" height="46" rx="23" stroke="#403A60" class = "svgpathsty" stroke-width="2"/>
+																			<path d="M14.8477 24.166H34.8477" stroke="#403A60" class = "svgpathsty" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+																			<path d="M24.8477 14.166L34.8477 24.166L24.8477 34.166" stroke="#403A60" class = "svgpathsty" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+																			</svg></a>
+																	<br class="mbbreak">
+																</div>
+															</article>
+														</div>
+
+														<div key={relatedItem.text} if:false={relatedItem.count}>
+															<article class="article second">
+																<div class="headingcontainersecond">
+																	<div class='articleheadwithdesc'>
+																		<div class="minstagnew"><svg width="40"
+																				height="24" viewBox="0 0 24 24"
+																				fill="none"
+																				xmlns="http://www.w3.org/2000/svg">
+																				<path fill-rule="evenodd"
+																					clip-rule="evenodd"
+																					d="M12 3.42827C6.87482 3.42827 2.71395 7.58913 2.71395 12.7143C2.71395 17.8395 6.87482 22.0004 12 22.0004C17.1252 22.0004 21.286 17.8395 21.286 12.7143C21.286 7.58913 17.1252 3.42827 12 3.42827ZM11.2857 12.3707L7.982 15.0137C7.67413 15.2601 7.62413 15.7101 7.87056 16.018C8.117 16.3259 8.56702 16.3759 8.87489 16.1294L12.4464 13.2722C12.5329 13.2029 12.5986 13.1179 12.6436 13.0243L12.6443 13.0236C12.6893 12.93 12.7143 12.825 12.7143 12.7143V6.99982C12.7143 6.60552 12.3943 6.28551 12 6.28551C11.6057 6.28551 11.2857 6.60552 11.2857 6.99982V12.3707ZM5.06618 2.20894L2.20894 5.06618C1.93035 5.34476 1.93035 5.79764 2.20894 6.07622C2.48752 6.3548 2.94039 6.3548 3.21897 6.07622L6.07622 3.21897C6.3548 2.94039 6.3548 2.48752 6.07622 2.20894C5.79764 1.93035 5.34476 1.93035 5.06618 2.20894ZM17.9238 3.21897L20.781 6.07622C21.0596 6.3548 21.5125 6.3548 21.7911 6.07622C22.0696 5.79764 22.0696 5.34476 21.7911 5.06618L18.9338 2.20894C18.6552 1.93035 18.2024 1.93035 17.9238 2.20894C17.6452 2.48752 17.6452 2.94039 17.9238 3.21897Z"
+																					fill="#403A60" class="svgstylefil">
+																				</path>
+																			</svg>
+
+																			<strong>&nbsp;{relatedItem.readtime}
+																				{minutes}</strong>
+																		</div>
+
+																		<h2>{relatedItem.text}</h2>
+																		<p class='descriptionsub'>{relatedItem.text2}
+																		</p>
+																	</div>
+
+																	<a class='rightlink' href="#"
+																		> 	<svg data-name={relatedItem.text}
+																		data-it-button={relatedItem.articlehe}
+																		onclick={handleButtonClick} role="button" onkeypress={handleButtonClick} tabindex="0" width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+																			<rect x="1.68164" y="1" width="46" height="46" rx="23" stroke="#403A60" class = "svgpathsty" stroke-width="2"/>
+																			<path d="M14.8477 24.166H34.8477" stroke="#403A60" class = "svgpathsty" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+																			<path d="M24.8477 14.166L34.8477 24.166L24.8477 34.166" stroke="#403A60" class = "svgpathsty" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+																			</svg></a>
+																	<br class="mbbreak">
+																</div>
+																<img class="secondimg" src={relatedItem.image}
+																	alt="Article 2" />
+
+
+															</article>
+														</div>
+													</template>
+													<template if:true={showLoadMore}>
+														<div class="loadmorediv">
+															<button class='loadmorebtn' onclick={loadmore}> {loadMoreLabel}</button>
+														</div>
+													</template>
+												</div>
+											</div>
+										</template>
+									</div>
+								</div>
+							</div>
+							<div class="desktopextspace">
+								<br if:true={spevigoSpace}>
+								<br if:true={spevigoSpace}>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

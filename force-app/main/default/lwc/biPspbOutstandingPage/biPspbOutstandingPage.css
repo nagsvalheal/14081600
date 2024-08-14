@@ -1,0 +1,382 @@
+@font-face {
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina01-Regular.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina04-Light.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina04-SemiBold.woff") format("woff");
+}
+
+@font-face {
+	font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina04-Bold.woff") format("woff");
+}
+
+.heading {
+	font-size: 32px;
+	color: #403a60;
+	font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+.cards {
+	left: 0px;
+}
+
+.splicard {
+	display: flex;
+	flex: 1;
+
+	flex-direction: row;
+}
+
+.splicard2 {
+	display: flex;
+	flex: 1;
+
+	flex-direction: row;
+}
+
+.card1 {
+	padding: 10px;
+}
+
+.card2 {
+	padding: 10px;
+}
+
+.card3 {
+	padding: 10px;
+}
+
+.card4 {
+	padding: 10px;
+}
+
+.card5 {
+	padding: 10px;
+}
+
+.grid-containerMenu {
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	gap: 0px auto;
+	width: -webkit-fill-available;
+}
+
+.grid-containerMenu1 {
+	display: grid;
+	grid-template-columns: repeat(2, auto);
+	gap: 0px 20px;
+	width: -webkit-fill-available;
+}
+.spinner-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader:not(:required) {
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.loader:not(:required):after {
+  content: "";
+  display: block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  -webkit-animation: spinner 1500ms infinite linear;
+  -moz-animation: spinner 1500ms infinite linear;
+  -ms-animation: spinner 1500ms infinite linear;
+  -o-animation: spinner 1500ms infinite linear;
+  animation: spinner 1500ms infinite linear;
+  border-radius: 0.5em;
+  box-shadow:
+    #403a60 1.5em 0 0 0,
+    #403a60 1.1em 1.1em 0 0,
+    #403a60 0 1.5em 0 0,
+    #403a60 -1.1em 1.1em 0 0,
+    #403a60 -1.5em 0 0 0,
+    #403a60 -1.1em -1.1em 0 0,
+    #403a60 0 -1.5em 0 0,
+    #403a60 1.1em -1.1em 0 0;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1499) {
+	.splicard {
+		display: flex;
+		flex: 1;
+		margin-left: 40px;
+		flex-direction: column;
+	}
+
+	.splicard2 {
+		display: flex;
+		flex: 1;
+		margin-left: 40px;
+		flex-direction: column;
+	}
+
+	.heading {
+		margin-left: 33px;
+		margin-top: -85px;
+		width: 436px;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.splicard {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.card1 {
+		width: 100%;
+	}
+
+	.card2 {
+		width: 100%;
+	}
+
+	.card3 {
+		width: 100%;
+	}
+
+	.splicard2 {
+		display: flex;
+		flex: 1;
+		width: 100%;
+		flex-direction: column;
+	}
+
+	.card4 {
+		width: 100%;
+	}
+
+	.card5 {
+		width: 100%;
+	}
+
+	.heading {
+		margin-top: 0%;
+
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.splicard {
+		display: flex;
+		flex: 1;
+
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.card1 {
+		width: 100%;
+	}
+
+	.card2 {
+		width: 100%;
+	}
+
+	.card3 {
+		width: 100%;
+	}
+
+	.splicard2 {
+		display: flex;
+		flex: 1;
+
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.card4 {
+		width: 100%;
+	}
+
+	.card5 {
+		width: 100%;
+	}
+
+	.heading {
+		margin-top: -105px;
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+	.splicard {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.card1 {
+		width: 100%;
+	}
+
+	.card2 {
+		width: 100%;
+	}
+
+	.card3 {
+		width: 100%;
+	}
+
+	.splicard2 {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.card4 {
+		width: 100%;
+	}
+
+	.card5 {
+		width: 100%;
+	}
+
+	.heading {
+		margin-left: 4%;
+		margin-top: -103px;
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 401px) and (max-width: 575px) {
+	.splicard {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.splicard2 {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.heading {
+		margin-left: 6%;
+	}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 400px) {
+	.heading {
+		margin-left: 6%;
+		margin-top: -105px;
+	}
+
+	.splicard {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+	}
+
+	.splicard2 {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+	}
+}

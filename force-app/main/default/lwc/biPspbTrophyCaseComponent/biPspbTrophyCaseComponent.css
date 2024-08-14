@@ -1,0 +1,412 @@
+/*--Font Declaration---*/
+@font-face {
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina01-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: "Eina-Light",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina04-Light.woff') format('woff');
+}
+
+@font-face {
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina04-SemiBold.woff') format('woff');
+}
+
+@font-face {
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina04-Bold.woff') format('woff');
+}
+
+.avatar-container {
+	position: relative;
+	margin-left: 150px;
+
+}
+
+.texCenter {
+	text-align: center;
+}
+
+.FontStyle {
+	font-size: 50px;
+	font-weight: 900;
+	color: #358DBA;
+}
+
+.FontStyles {
+	font-size: 24px;
+	font-weight: 400;
+	color: #403A60;
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.text {
+	color: #403A60;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	padding-top: 5px;
+}
+
+.ComChaButton {
+	padding: 0px 20px 0px 20px;
+	border-radius: 12px;
+	border-style: solid;
+	border-width: 1.5px;
+	border-color: #403A60;
+	background-color: white;
+	font-size: 14px;
+	font-weight: 400;
+	width: fit-content;
+	color: #403A60;
+	height: 40px;
+	float: right;
+}
+
+.FontStyleChallenge {
+	font-size: 32px;
+	font-weight: 400;
+	color: #403A60;
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.background {
+	background-color: #F9F4ED;
+	border-radius: 5px;
+	width: 675px;
+	height: auto;
+}
+
+/*---CSS Media Quries---*/
+@media only screen and (max-width: 400px) {
+	.grid-container {
+		display: grid;
+		grid-template-columns: repeat(2, 125px);
+		gap: 15px;
+		padding: 15px 15px 15px 0px;
+	}
+
+	.grid-containerAC {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 10px 20px;
+		max-width: 320px;
+	}
+
+	.pad {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+
+	.custom-boxLoad {
+		float: right;
+		font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+
+	.fTright {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 401px) {
+	.grid-container {
+		display: grid;
+		grid-template-columns: repeat(2, 125px);
+		gap: 15px;
+		padding: 15px 15px 15px 0px;
+	}
+
+	.grid-containerAC {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 10px 20px;
+		max-width: 320px;
+	}
+
+	.pad {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+
+	.custom-boxLoad {
+		float: right;
+		font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+
+	.fTright {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	.grid-container {
+		display: grid;
+		grid-template-columns: repeat(2, 142px);
+		gap: 15px;
+		padding: 15px 15px 15px 0px;
+	}
+
+	.grid-containerAC {
+		display: grid;
+		grid-template-columns: auto;
+		gap: 10px 20px;
+		max-width: 320px;
+	}
+
+	.pad {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+
+	.custom-boxLoad {
+		float: right;
+		font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+
+	.fTright {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 710px) {
+	.grid-container {
+		display: grid;
+		grid-template-columns: repeat(3, 154px);
+		gap: 15px;
+		padding: 15px 15px 15px 0px;
+	}
+
+	.grid-containerAC {
+		display: grid;
+		grid-template-columns: auto auto;
+		gap: 10px 20px;
+		max-width: 320px;
+	}
+
+	.pad {
+		padding-right: 10%;
+		padding-left: 10%;
+	}
+
+	.custom-boxLoad {
+		float: right;
+		font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+
+	.fTright {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.grid-container {
+		display: grid;
+		grid-template-columns: repeat(3, 154px);
+		gap: 15px;
+		padding: 15px 15px 15px 0px;
+	}
+
+	.grid-containerAC {
+		display: grid;
+		grid-template-columns: auto auto;
+		gap: 10px 20px;
+		max-width: 320px;
+	}
+
+	.pad {
+		padding-right: 10%;
+		padding-left: 10%;
+	}
+
+	.custom-boxLoad {
+		float: right;
+		font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+
+	.fTright {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.grid-container {
+		display: grid;
+		grid-template-columns: repeat(5, 154px);
+		gap: 15px;
+		padding: 15px 15px 15px 0px;
+	}
+
+	.grid-containerAC {
+		display: grid;
+		grid-template-columns: auto auto auto;
+		gap: 10px 20px;
+		max-width: 320px;
+	}
+
+	.pad {
+		padding-right: 10%;
+		padding-left: 10%;
+	}
+
+	.custom-boxLoad {
+		float: right;
+		font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+
+	.fTright {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 1500px) {
+	.grid-container {
+		display: grid;
+		grid-template-columns: repeat(5, 154px);
+		gap: 15px;
+		padding: 15px 15px 15px 0px;
+	}
+
+	.grid-containerAC {
+		display: grid;
+		grid-template-columns: auto auto auto;
+		gap: 10px 20px;
+		max-width: 320px;
+	}
+
+	.pad {
+		padding-right: 10%;
+		padding-left: 10%;
+	}
+
+	.custom-boxLoad {
+		float: right;
+		font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+
+	.fTright {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 1600px) {
+	.grid-container {
+		display: grid;
+		grid-template-columns: repeat(5, 154px);
+		gap: 15px;
+		padding: 15px 15px 15px 0px;
+	}
+
+	.grid-containerAC {
+		display: grid;
+		grid-template-columns: auto auto auto;
+		gap: 10px 20px;
+		max-width: 320px;
+	}
+
+	.pad {
+		padding-right: 10%;
+		padding-left: 10%;
+	}
+
+	.custom-boxLoad {
+		float: right;
+		font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+
+	.fTright {
+		width: 98%;
+	}
+}
+
+@media only screen and (min-width: 1700px) {
+	.grid-container {
+		display: grid;
+		grid-template-columns: repeat(5, 154px);
+		gap: 15px;
+		padding: 15px 15px 15px 0px;
+	}
+
+	.grid-containerAC {
+		display: grid;
+		grid-template-columns: auto auto auto;
+		gap: 10px 20px;
+		max-width: 320px;
+	}
+
+	.pad {
+		padding-right: 10%;
+		padding-left: 10%;
+	}
+
+	.custom-boxLoad {
+		float: right;
+		font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+
+	.fTright {
+		width: 90%;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	.grid-container {
+		display: grid;
+		grid-template-columns: repeat(5, 154px);
+		gap: 15px;
+		padding: 15px 15px 15px 0px;
+	}
+
+	.grid-containerAC {
+		display: grid;
+		grid-template-columns: auto auto auto;
+		gap: 10px 20px;
+		max-width: 320px;
+	}
+
+	.pad {
+		padding-right: 10%;
+		padding-left: 10%;
+	}
+
+	.custom-boxLoad {
+		float: right;
+		font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+
+	.fTright {
+		width: 80%;
+	}
+}
+
+@media only screen and (min-width: 1900px) {
+	.grid-container {
+		display: grid;
+		grid-template-columns: repeat(5, 154px);
+		gap: 15px;
+		padding: 15px 15px 15px 0px;
+	}
+
+	.grid-containerAC {
+		display: grid;
+		grid-template-columns: auto auto auto;
+		gap: 10px 20px;
+		max-width: 320px;
+	}
+
+	.pad {
+		padding-right: 10%;
+		padding-left: 10%;
+	}
+
+	.custom-boxLoad {
+		float: right;
+		font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+
+	.fTright {
+		width: 80%;
+	}
+}

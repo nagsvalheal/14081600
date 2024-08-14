@@ -1,0 +1,4470 @@
+@font-face {
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff")
+    format("woff");
+}
+
+.profilediv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-left: 15px;
+}
+.toastForDesktop{
+  display: block;
+}
+.toastForMblResponse{
+  display: none;
+}
+
+.fulltemplate {
+  background: #fbfaf5;
+  height: auto;
+  min-height: 500px;
+}
+
+.row {
+  background-color: #fbfaf5;
+  height: auto;
+  padding: 30px 5% 5px 5%;
+  display: flex;
+  overflow-x: hidden;
+}
+
+.leftside {
+  width: 24%;
+
+  padding-top: 2%;
+}
+
+.rightside {
+  width: 27%;
+  padding-left: 5%;
+  padding-bottom: 50px;
+}
+
+.avatarimg {
+  margin-left: 78px;
+}
+
+.avatarcontent {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  background: #ecdca8;
+  width: 287px;
+}
+
+.avatarclose {
+  display: none;
+}
+
+.avatartext {
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+
+  font-size: 14px;
+
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #403a60;
+
+  width: 265px;
+}
+
+.forMblresponse {
+  display: none;
+}
+
+.allpostNone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  left: 23%;
+  top: 30px;
+  padding-bottom: 200px;
+}
+
+.mypost {
+  font-size: 32px;
+  line-height: 44px;
+  text-align: left;
+  color: #403a60;
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+}
+
+.mypostbtn {
+  width: 160px;
+  height: 40px;
+  float: right;
+  padding: 12px 24px 12px 24px;
+  border-radius: 12px;
+  background-color: #403a60;
+  color: #ffffff;
+  border-style: none;
+  font-size: 14px;
+  line-height: 16px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  left: 225%;
+  position: relative;
+  bottom: 45px;
+  margin-right: 0%;
+}
+
+.postimage {
+  width: 140px;
+  height: 120px;
+}
+
+.mypostmsg {
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  font-size: 16px;
+  line-height: 28px;
+  padding: 20px 38px;
+  text-align: center;
+  color: #403a60;
+
+  width: 622px;
+}
+
+.postcontainer {
+  border-color: rgb(139, 139, 139, 0.5);
+  border-style: solid;
+  border-width: 0.1px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 24px 0px 10px 1px;
+  width: 326%;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.post-header {
+  background: #f1f0f4;
+  height: 164px;
+  width: auto;
+  padding: 24px 24px 25px 24px;
+  border-radius: 12px 12px 0px 0px;
+  right: 1px;
+  position: relative;
+  bottom: 24px;
+}
+
+.category {
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  color: #403a60;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.useravatarimg {
+  border-radius: 50%;
+
+  width: 50.43px;
+  height: 60px;
+}
+
+.username {
+  margin-left: 56px;
+  padding: 10px;
+  font-size: 20px;
+  line-height: 24px;
+  color: #403a60;
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  bottom: 65px;
+  position: relative;
+}
+
+.time {
+  font-size: 12px;
+
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #333333;
+  position: relative;
+  padding: 10px;
+  margin-left: 77px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  bottom: 98px;
+  right: 18px;
+}
+
+.postbody {
+  font-size: 15px;
+
+  line-height: 24px;
+  text-align: left;
+  color: #403a60;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  width: 817px;
+  height: 24px;
+  position: relative;
+  bottom: 32px;
+  left: 22px;
+}
+
+.totalreaction {
+  border: none;
+  background: none;
+  float: inline-start;
+  cursor: pointer;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #403a60;
+  padding-left: 21px;
+}
+
+.totalcomment {
+  float: inline-end;
+  cursor: pointer;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0em;
+  padding-right: 22px;
+  color: #403a60;
+  border: none;
+  background: none;
+}
+
+.Reactbtn {
+  width: 68px;
+  height: 40px;
+  border-radius: 12px;
+  color: #403a60;
+  border: 1px solid #403a60;
+  background-color: white;
+
+  padding: 12px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  font-size: 14px;
+
+  line-height: 16px;
+  letter-spacing: 0em;
+
+  position: relative;
+  left: 22px;
+}
+
+.Reactbtnresult {
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #ffffff;
+  border: 1px solid #403a60;
+  background: linear-gradient(0deg, #403a60, #403a60),
+    linear-gradient(0deg, #403a60, #403a60);
+  width: 130px;
+  height: 40px;
+  padding: 12px 8px 12px 8px;
+  border-radius: 12px;
+  position: relative;
+  left: 22px;
+}
+
+.commentbtncss {
+  width: 91px;
+  height: 40px;
+  border-radius: 12px;
+  color: #403a60;
+  border: 1px solid #403a60;
+  background-color: white;
+  margin-left: 7%;
+  padding: 12px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0em;
+}
+
+.line {
+  width: 96%;
+  left: 2%;
+  position: relative;
+}
+
+.open-new-popup-button {
+  float: right;
+  border-style: none;
+  background: none;
+}
+
+.delete {
+  cursor: pointer;
+
+  background: none;
+}
+
+.new-popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.new-popup-container.hidden {
+  display: none;
+}
+
+.new-popup-content {
+  background: #ffffff;
+  width: 672px;
+  bottom: 5px;
+  left: 1%;
+  padding: 40px;
+  border-radius: 12px;
+  position: relative;
+}
+
+.content {
+  padding: 10px 2px;
+}
+
+.new-popup-content .times {
+  float: right;
+  background: none;
+  border: none;
+  font-size: 25px;
+  position: relative;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  bottom: 45px;
+  left: 30px;
+  z-index: 1;
+}
+
+.new-popup-content .heading {
+  color: #403a60;
+  font-weight: bold;
+  width: 592px;
+  height: 44px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  font-size: 32px;
+  line-height: 44px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.new-popup-content .paragh {
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #2c333a;
+}
+
+.new-popup-content .newpopupbtndiv {
+  display: flex;
+  width: 164px;
+  height: 72px;
+  padding: 32px 0px 32px 0px;
+  float: inline-end;
+  gap: 20px;
+}
+
+.new-popup-content .cancelbtn {
+  color: #403a60;
+  background-color: white;
+  border: 1.5px solid #403a60;
+  border-radius: 12px;
+  border-width: 1.5px;
+  padding: 12px 24px 12px 24px;
+  width: 68px;
+  height: 40px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  margin: 0;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.new-popup-content .submitbtn {
+  margin: 0;
+  color: white;
+  background-color: #403a60;
+  border-style: none;
+  width: 72px;
+  height: 40px;
+  padding: 12px 24px 12px 24px;
+  border-radius: 12px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.popupbgblur {
+  left: 0px;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  position: fixed;
+  z-index: 999;
+}
+
+.second-popup.hidden {
+  display: none;
+}
+
+.second-popup .popup-content {
+  background: #fff;
+  padding: 32px 40px 32px 40px;
+  width: 672px;
+  height: auto;
+  top: 15%;
+  left: 26%;
+  justify-content: space-around;
+  text-align: center;
+  border-radius: 12px;
+  position: fixed;
+}
+
+.timesemoji {
+  border-style: none;
+  float: right;
+  font-size: 30px;
+  background: none;
+  position: relative;
+  bottom: 30px;
+  font-weight: lighter;
+  z-index: 1;
+  left: 20px;
+  cursor: pointer;
+}
+
+.reactiontext {
+  float: left;
+  color: #403a60;
+  width: 582px;
+  height: 44px;
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  font-size: 32px;
+
+  line-height: 44px;
+  letter-spacing: 0em;
+  text-align: left;
+  position: relative;
+  bottom: 70px;
+  margin-top: 30px;
+}
+
+.mypostemoji-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 554px;
+  height: 70px;
+  position: relative;
+  bottom: 63px;
+  right: 39px;
+}
+
+.emoji-button {
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+.reactionEmojiButton{
+  border: none;
+  background: none;
+}
+
+.emojiReactedImg {
+  position: relative;
+  bottom: 2px;
+}
+
+.emojthumbs:hover,
+.emojsmile:hover,
+.emojhands:hover,
+.emojheart:hover,
+.emojthinks:hover {
+  background-color: #f6efda4d;
+  border-radius: 5px;
+  padding: 4px, 0px, 4px, 0px;
+}
+
+.viewreactionthumbsimg {
+  position: relative;
+  left: 20px;
+}
+
+.viewreactionsmileimg {
+  position: relative;
+  left: 2px;
+}
+
+.viewreactionhandsfoldedimg {
+  position: relative;
+  left: 27px;
+}
+
+.viewreactionthoughtimg {
+  position: relative;
+  left: 19px;
+}
+
+.emoji-container {
+  background-color: #403a60;
+  width: 234px;
+  text-align: center;
+  border-radius: 10px;
+  height: 40px;
+  position: relative;
+  right: 60px;
+  padding-top: 3.5px;
+  bottom: 94px;
+  z-index: 2;
+}
+
+.emojiText {
+  margin-top: 15%;
+  color: #403a60;
+  white-space: nowrap;
+
+  width: 75px;
+  height: 16px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  right: 0px;
+}
+
+.emojiTextBox {
+  margin-top: 15%;
+  display: block;
+  border-bottom: 3px solid #403a60;
+  padding-bottom: 18px;
+  color: #403a60;
+  white-space: nowrap;
+  width: fit-content;
+  height: 16px;
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  cursor: pointer;
+  right: 0px;
+  position: relative;
+}
+
+.reactedusers {
+  width: auto;
+  height: 220px;
+  overflow-y: scroll;
+  position: relative;
+  bottom: 20px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.reactedusers::-webkit-scrollbar {
+  display: none;
+}
+
+.noreacteduser {
+  margin-left: 0%;
+  color: #403a60;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0em;
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  position: relative;
+  top: 30px;
+}
+
+.avatarImgandReactedUsercompress {
+  position: relative;
+  height: 63px;
+}
+
+.avatarImgandReactedUser {
+  position: relative;
+  bottom: 40px;
+}
+
+.emojiprofile {
+  float: inline-start;
+  width: 40px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  top: 45px;
+}
+
+.emojiusername {
+  color: #403a60;
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  position: relative;
+  top: 53px;
+  left: 2%;
+}
+
+.lineforreactcount {
+  background-color: black;
+  width: 600px;
+  position: relative;
+  opacity: 0.2;
+  right: 83px;
+  top: 43px;
+}
+
+.emoji-container .emoji:hover {
+  background-color: #f6efda4d;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.emojthumbs {
+  width: 12%;
+  top: 6px;
+  position: absolute;
+  right: 195px;
+}
+
+.emojhands {
+  width: 12%;
+  top: 6px;
+  position: absolute;
+  right: 99px;
+}
+
+.emojheart {
+  width: 12%;
+  top: 6px;
+  position: absolute;
+  right: 50px;
+}
+
+.emojthinks {
+  width: 12%;
+  top: 6px;
+  position: absolute;
+  right: 5px;
+}
+
+.emojsmile {
+  width: 12%;
+  top: 6px;
+  position: absolute;
+  right: 146px;
+}
+
+.emoji-popup {
+  position: absolute;
+  top: -40px;
+  left: 15%;
+  width: 82px;
+  height: 32px;
+  padding-top: 5px;
+  justify-content: center;
+  transform: translateX(-50%);
+  background-color: #f6efda;
+  border-radius: 5px;
+  display: none;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0em;
+  color: #403a60;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+}
+
+
+
+.emoji-popup2 {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  width: 100px;
+  height: 32px;
+  padding-top: 5px;
+  justify-content: center;
+  transform: translateX(-50%);
+  background-color: #f6efda;
+  border-radius: 5px;
+  display: none;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0em;
+  color: #403a60;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+}
+
+.emoji-popup3 {
+  top: -40px;
+  position: absolute;
+  left: 68%;
+  width: 55px;
+  height: 32px;
+  padding-top: 5px;
+  justify-content: center;
+  transform: translateX(-50%);
+  background-color: #f6efda;
+  border-radius: 5px;
+  display: none;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0em;
+  color: #403a60;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+}
+
+.emoji-popup4 {
+  top: -40px;
+  position: absolute;
+  left: 83%;
+  width: 80px;
+  height: 32px;
+  padding-top: 5px;
+  justify-content: center;
+  transform: translateX(-50%);
+  background-color: #f6efda;
+  border-radius: 5px;
+  display: none;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0em;
+  color: #403a60;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+}
+
+.emoji:hover .emoji-popup {
+  display: block;
+}
+
+.emoji:hover .emoji-popup1 {
+  display: block;
+}
+
+.emoji:hover .emoji-popup2 {
+  display: block;
+}
+
+.emoji:hover .emoji-popup3 {
+  display: block;
+}
+
+.emoji:hover .emoji-popup4 {
+  display: block;
+}
+
+.slds-nubbin_bottom:after,
+.slds-nubbin--bottom:after {
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  transform: rotate(45deg);
+  content: "";
+  background-color: inherit;
+  left: 50%;
+  bottom: -0.5rem;
+  margin-left: -0.5rem;
+}
+
+.commentdiv {
+  position: relative;
+  left: 25px;
+}
+
+.NoCommentImage {
+  width: 150px;
+  height: 150px;
+}
+
+.NoCommentImagecomment {
+  width: 150px;
+  height: 150px;
+}
+
+.CommentContent {
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 24px;
+  text-align: left;
+  color: #403a60;
+  position: relative;
+  top: 20px;
+}
+
+.selectcomenttext {
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  position: relative;
+  top: 30px;
+  color: #000000;
+}
+
+.imgandbox {
+  display: flex;
+  position: relative;
+  top: 20px;
+}
+
+.commentimage {
+  margin-top: 30px;
+  border-radius: 50%;
+  width: 33.62px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.dropdowncomments {
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0em;
+  width: 89%;
+  height: 40px;
+  color: #403a60;
+  border-radius: 4px;
+  text-align: left;
+  margin-top: 8px;
+  margin-left: 1%;
+  --slds-c-input-color-border: rgba(44, 51, 58, 1);
+  --lwc-colorTextLabel: rgba(64, 58, 96, 1);
+  --lwc-colorTextPlaceholder: rgba(64, 58, 96, 1);
+  --sds-c-input-radius-border: 4px;
+  position: relative;
+  top: 22px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.noCommentContainer {
+  margin-left: 40%;
+}
+
+.noCommentTxt {
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.CommentContainer {
+  padding: 0px 4px;
+
+  margin-right: 20%;
+}
+
+.oneCommentContainer {
+  margin-left: 6%;
+  position: relative;
+}
+
+.commentavttobody {
+  position: relative;
+  bottom: 40px;
+  margin-top: 0px;
+}
+
+.commentimageforinside {
+  margin-top: 0%;
+  border-radius: 50%;
+  width: 33.62px;
+  height: 40px;
+  cursor: pointer;
+  position: relative;
+  right: 48px;
+  top: 61px;
+}
+
+.commentUserName {
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #403a60;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+.commenttime {
+  color: #333333;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  position: relative;
+  top: 12px;
+}
+
+.commentBody {
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #403a60;
+  position: relative;
+  top: 26px;
+}
+
+.showEditTheCommentcompress {
+  height: 0px;
+  position: relative;
+  bottom: 21px;
+  right: 15px;
+}
+
+.editTheCommentTxt {
+  display: block;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgba(0, 0, 0, 1);
+  position: relative;
+  top: 10px;
+}
+
+.HideeditTheCommentTxt {
+  display: none;
+}
+
+.closeShowEditTheComment {
+  display: block;
+  font-size: 45px;
+  border-style: none;
+  background: none;
+  position: relative;
+  left: 100%;
+  opacity: 0.6;
+  bottom: 3px;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.editanddelete {
+  display: flex;
+  flex-direction: row;
+  float: right;
+  gap: 25px;
+  position: relative;
+  left: 17%;
+}
+
+.editDeleteButton{
+  border: none;
+  background: none;
+}
+
+.editCmt {
+  cursor: pointer;
+  height: 23px;
+}
+
+.deletecomment {
+  cursor: pointer;
+  width: 27px;
+  height: 24px;
+  background: none;
+}
+
+.editdropdowncomments {
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0em;
+  height: 40px;
+  width: 117%;
+  text-align: left;
+  border: 1px solid #2c333a;
+  background: #ffffff;
+  padding: 8px, 12px, 8px, 12px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  position: relative;
+  top: 12px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.lineforcomment {
+  background-color: black;
+  margin-top: 15px;
+  width: 125%;
+  position: relative;
+  opacity: 0.2;
+  right: 45px;
+  top: 10px;
+}
+
+.closeshowEditTheCommentthreedot {
+  display: none;
+}
+
+.threedot-container.hidden {
+  display: none;
+}
+
+.threedot-popup.hidden {
+  display: none;
+}
+
+.threedotbtn {
+  display: none;
+}
+
+.threedot-container {
+  display: none;
+}
+
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.popup-container.hidden {
+  display: none;
+}
+
+.popup-content {
+  background: #fff;
+  background: #ffffff;
+  width: 672px;
+  height: 236px;
+  top: 244px;
+  left: 347px;
+  padding: 40px;
+  border-radius: 12px;
+}
+
+.popup-content .times {
+  float: right;
+  background: none;
+  border: none;
+  font-size: 45px;
+  position: relative;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  bottom: 65px;
+  left: 28px;
+}
+
+.heading {
+  color: #403a60;
+  font-weight: bold;
+  width: auto;
+  height: 44px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  font-size: 32px;
+  line-height: 44px;
+  letter-spacing: 0em;
+  text-align: left;
+  position: relative;
+  bottom: 10px;
+}
+
+.paragh {
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  font-size: 20px;
+
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #2c333a;
+}
+
+.popup-content .newpopupbtndivforcomment {
+  display: flex;
+  width: 164px;
+  height: 72px;
+  padding: 32px 0px 32px 0px;
+
+  float: inline-end;
+  gap: 20px;
+}
+
+.cancelbtn {
+  color: #403a60;
+  background-color: white;
+  border: 1.5px solid #403a60;
+  border-radius: 12px;
+  border-width: 1.5px;
+  padding: 12px 24px 12px 24px;
+  width: 68px;
+  height: 40px;
+
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  margin: 0;
+
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.submitbtn {
+  margin: 0;
+  color: white;
+  background-color: #403a60;
+  border-style: none;
+  width: 72px;
+  height: 40px;
+  padding: 12px 24px 12px 24px;
+  border-radius: 12px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  font-size: 14px;
+
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.back {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+.backcomment {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.follow-popup-container {
+  position: fixed;
+  top: 244px;
+  left: 50%;
+  height: auto;
+  width: 672px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.1);
+  background: #3f3f3d;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  padding: 38px 40px 32px 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  z-index: 2;
+}
+
+.emojiprofile1 {
+  width: 592px;
+  position: relative;
+  bottom: 10px;
+  padding-right: 500px;
+  left: auto;
+  height: 44px;
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 32px;
+
+  line-height: 44px;
+}
+
+.times3 {
+  float: right;
+  font-size: 45px;
+  position: relative;
+  background: none;
+  border: none;
+  bottom: 96px;
+  left: 25px;
+  cursor: pointer;
+  font-weight: 300;
+}
+
+.times3followcmt {
+  float: right;
+  font-size: 45px;
+  background: none;
+  border: none;
+  position: relative;
+  bottom: 94px;
+  left: 26px;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.times3unfollowcmt {
+  float: right;
+  font-size: 45px;
+  background: none;
+  border: none;
+  position: relative;
+  bottom: 90px;
+  left: 30px;
+  opacity: 0.7;
+  cursor: pointer;
+
+  font-weight: 300;
+}
+
+.emojipopavatar {
+  height: 100px;
+  width: auto;
+  position: relative;
+  border-radius: 40px;
+}
+
+.cmntpopavatar {
+  position: relative;
+
+  height: 100px;
+  width: auto;
+  float: center;
+  border-radius: 40px;
+}
+
+.username123 {
+  height: 24px;
+  font-size: 20px;
+  position: relative;
+  line-height: 24px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.username123followcmt {
+  height: 24px;
+  font-size: 20px;
+  line-height: 24px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.flexclassavatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.username123unfollowcmt {
+  height: 24px;
+  font-size: 20px;
+  line-height: 24px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.popupbutton {
+  width: 109px;
+  height: 40px;
+  border-radius: 12px;
+  padding: 9px 24px 12px 24px;
+  color: #403a60;
+  border: #403a60 solid 1.5px;
+  margin: 42px 0px 0px 0px;
+  background-color: white;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  position: relative;
+  float: right;
+  margin-left: 90%;
+}
+
+.popupbuttonfollowing {
+  width: auto;
+  height: 40px;
+  border-radius: 12px;
+  padding: 9px 24px 12px 24px;
+  background-color: #403a60;
+  float: c;
+  border: #403a60 solid 1.5px;
+  color: white;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  top: 19%;
+  position: relative;
+  left: 40%;
+  margin-top: 40px;
+}
+
+.popupbuttonfollowingcomment {
+  width: auto;
+  height: 40px;
+  border-radius: 12px;
+  padding: 9px 24px 12px 24px;
+  background-color: #403a60;
+  float: c;
+  border: #403a60 solid 1.5px;
+
+  color: white;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  top: 19%;
+  position: relative;
+  left: 45%;
+}
+
+.emojipopuptitle {
+  color: #403a60;
+  padding-right: 384px;
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 32px;
+  line-height: 44px;
+  position: relative;
+  bottom: 15px;
+  right: 5px;
+}
+
+.emojifollowingpopuptitle {
+  color: #403a60;
+
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+
+  font-size: 32px;
+  line-height: 44px;
+  position: relative;
+  bottom: 15px;
+  right: 183px;
+}
+
+.emojifollowingpopuptitleunfollow {
+  color: #403a60;
+  margin-top: -10px;
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 32px;
+  line-height: 44px;
+  position: relative;
+  bottom: 0px;
+  right: 168px;
+}
+
+.emojifollowingpopuptitlecomment {
+  color: #403a60;
+  margin-top: -10px;
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+
+  font-size: 32px;
+  line-height: 44px;
+  position: relative;
+  bottom: 5px;
+  right: 3px;
+}
+
+.commentpopuptitle {
+  color: #403a60;
+  padding-right: 384px;
+  font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+
+  font-size: 32px;
+  line-height: 44px;
+  position: relative;
+  bottom: 15px;
+  right: 0px;
+}
+
+.emojipopupcontent {
+  color: #403a60;
+
+  font-size: 20px;
+  line-height: 32px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  text-align: left;
+}
+
+.emojipopupcontentemojiunfollow {
+  color: #403a60;
+
+  font-size: 20px;
+  line-height: 32px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  text-align: left;
+}
+
+.emojipopupcontentcmtfollow {
+  color: #403a60;
+
+  font-size: 20px;
+  line-height: 32px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  text-align: left;
+}
+
+.emojipopupcontentcmtunfollow {
+  color: #403a60;
+
+  font-size: 20px;
+  line-height: 32px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  text-align: left;
+}
+
+.followno {
+  width: 68px;
+  height: 40px;
+  border-radius: 12px;
+  border: #403a60 solid 1.5px;
+  background-color: white;
+  color: #403a60;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  padding: 10px 24px 30px 22px;
+  margin-left: 411px;
+  margin-top: 30px;
+  margin-right: 10px;
+}
+
+.follownocmtfollow {
+  width: 68px;
+  height: 40px;
+  border-radius: 12px;
+  border: #403a60 solid 1.5px;
+  background-color: white;
+  color: #403a60;
+  padding: 10px 24px 30px 22px;
+  margin-top: 30px;
+  margin-left: 71%;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  margin-right: 20px;
+}
+
+.follownocmtunfollow {
+  width: 68px;
+  height: 40px;
+  border-radius: 12px;
+  border: #403a60 solid 1.5px;
+  background-color: white;
+  color: #403a60;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  padding: 10px 24px 30px 22px;
+  margin-top: 30px !important;
+  margin-left: 69%;
+  margin-right: 20px;
+}
+
+.followyes {
+  width: 68px;
+  height: 40px;
+  border-radius: 12px;
+  border: white solid 1.5px;
+  background-color: #403a60;
+  color: white;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  padding: 10px 24px 30px 22px;
+}
+
+.followyescmtfollow {
+  width: 68px;
+  height: 40px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  border-radius: 12px;
+  border: white solid 1.5px;
+  background-color: #403a60;
+  color: white;
+  padding: 10px 24px 30px 22px;
+}
+
+.followyescmtunfollow {
+  width: 68px;
+  height: 40px;
+  border-radius: 12px;
+  border: white solid 1.5px;
+  background-color: #403a60;
+  color: white;
+  padding: 10px 24px 30px 22px;
+}
+
+.times2 {
+  float: right;
+  font-size: 45px;
+  background: none;
+  border: none;
+  position: relative;
+  bottom: 49px;
+  left: 30px;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.times2unfollow {
+  float: right;
+  font-size: 45px;
+  background: none;
+  border: none;
+  position: relative;
+  bottom: 50px;
+  left: 25px;
+  cursor: pointer;
+  font-weight: 300;
+}
+
+.times2followcmt {
+  float: right;
+  font-size: 45px;
+  background: none;
+  border: none;
+  position: relative;
+  bottom: 53px;
+  left: 24px;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.times2unfollowcmt {
+  float: right;
+  font-size: 45px;
+  background: none;
+  border: none;
+  position: relative;
+  bottom: 50px;
+  left: 24px;
+  font-weight: 300;
+  cursor: pointer;
+}
+@media  (width <= 992px) {
+  .toastForDesktop{
+    display: block;
+    position: relative;
+    bottom: 99px;
+    right: 60px;
+    width: 109%;
+}
+}
+@media only screen and (max-width: 400px) {
+  .toastForDesktop{
+    display: none;
+  }
+  .toastForMblResponse{
+    display: block;
+    position: relative;
+    bottom: 36px;
+    width: 90%;
+    left: 27px;
+}
+  .row {
+    height: auto;
+    padding: 0px;
+    width: 107%;
+    right: 23px;
+    position: relative;
+    min-height: 500px;
+    display: block;
+
+    padding-bottom: 25px;
+  }
+
+  .leftside {
+    display: flex;
+    gap: 4px;
+    width: 100%;
+    height: auto;
+    padding-left: 4%;
+    padding-top: 8%;
+    background-color: #f6efd9;
+  }
+
+  .Mblbgcolor {
+    background: #f6efd9;
+  }
+
+  .avatarimg {
+    width: 60px;
+    height: 63px;
+    position: relative;
+    top: 0px;
+    margin: 0px;
+    left: 10%;
+  }
+
+  .avatarcontent {
+    padding: 8px;
+    border-radius: 8px;
+    position: relative;
+    bottom: 0px;
+    top: -8px;
+    margin: 0px;
+    width: auto;
+    height: auto;
+    left: 15%;
+    margin-right: 18%;
+  }
+
+  .hideavatarcontent {
+    opacity: 0;
+  }
+
+  .avatarclose {
+    display: block;
+    background: none;
+    border: none;
+    float: right;
+    z-index: 999;
+    margin-top: -15px;
+    font-size: 20px;
+    opacity: 0.8;
+    padding-left: 16px;
+    margin-right: -6px;
+  }
+
+  .avatartext {
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #403a60;
+    width: auto;
+    height: auto;
+    position: relative;
+  }
+
+  .forMblresponse {
+    display: block;
+    background: linear-gradient(
+      90deg,
+      #6f511d 0%,
+      #926b45 17.19%,
+      #ecdca8 58.85%,
+      #6f511d 100%
+    );
+    height: 4px;
+    position: relative;
+    padding: none;
+    width: 100%;
+    bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .allpostNone {
+    display: block;
+    left: 0px;
+    top: 35px;
+  }
+
+  .rightside {
+    position: relative;
+    width: 100%;
+    padding-left: 14%;
+    padding-right: 1%;
+  }
+
+  .mypost {
+    font-size: 25px;
+    line-height: 32px;
+    text-align: left;
+    color: #403a60;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+    width: 38%;
+    position: relative;
+
+    right: 11px;
+    bottom: 10px;
+  }
+
+  .mypostbtn {
+    float: right;
+    border-radius: 12px;
+    background-color: #403a60;
+    color: #ffffff;
+    border-style: none;
+    font-size: 12px;
+    line-height: 16px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+    left: -11px;
+    position: relative;
+    bottom: 42px;
+    padding: 13px 11px;
+    margin: 0px 16px 0px 0px;
+    height: auto;
+  }
+
+  .postimage {
+    margin-left: 0%;
+    height: 91px;
+    position: relative;
+    top: 20px;
+    width: auto;
+    left: 31%;
+  }
+
+  .mypostmsg {
+    font-size: 14px;
+    margin-left: 0px;
+    position: relative;
+    width: 100%;
+    right: 15px;
+  }
+
+  .postcontainer {
+    top: 0px;
+    border-color: rgb(139, 139, 139, 0.5);
+    border-style: solid;
+    border-width: 0.1px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 24px 0px 10px 0px;
+    padding-bottom: 20px;
+    position: relative;
+    width: 102%;
+    right: 5%;
+  }
+
+  .post-header {
+    background: #f1f0f4;
+    border-radius: 12px 12px 0px 0px;
+    right: 0px;
+    position: relative;
+    bottom: 23px;
+    width: auto;
+  }
+
+  .category {
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+    color: #403a60;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    position: relative;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .useravatarimg {
+    border-radius: 50%;
+    width: 40.43px;
+    height: 50px;
+    position: relative;
+    bottom: 16px;
+    right: 10px;
+  }
+
+  .username {
+    margin-left: 15%;
+    padding: 10px;
+    font-size: 20px;
+    line-height: 24px;
+    color: #403a60;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+    bottom: 75px;
+    position: relative;
+  }
+
+  .time {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #333333;
+    position: relative;
+    padding: 10px;
+    margin-left: 0px;
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+    bottom: 108px;
+    left: 15%;
+  }
+
+  .postbody {
+    left: 0px;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: left;
+    color: #403a60;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+    height: 24px;
+    position: relative;
+    bottom: 32px;
+    width: auto;
+    padding: 0px 3%;
+    margin-bottom: 7%;
+  }
+
+  .totalreaction {
+    padding-left: 4%;
+  }
+
+  .totalcomment {
+    padding-right: 3%;
+  }
+
+  .Reactbtn {
+    position: relative;
+    left: 5%;
+  }
+
+  .Reactbtnresult {
+    position: relative;
+    left: 5%;
+  }
+
+  .commentbtncss {
+    margin-left: 12%;
+  }
+
+  .open-new-popup-button {
+    position: relative;
+    left: 24px;
+    bottom: 5px;
+  }
+
+  .new-popup-content {
+    background: #ffffff;
+    width: 292px;
+    top: 7px;
+    left: 0px;
+    padding: 40px;
+    border-radius: 12px;
+    position: relative;
+    padding-right: 31px;
+  }
+
+  .new-popup-content .heading {
+    width: 85%;
+    font-size: 26px;
+    position: relative;
+    right: 16px;
+    bottom: 30px;
+  }
+
+  .new-popup-content .paragh {
+    position: relative;
+    right: 16px;
+    bottom: 30px;
+  }
+
+  .new-popup-content .newpopupbtndiv {
+    display: block;
+    width: auto;
+    padding: 32px 0px 32px 0px;
+  }
+
+  .new-popup-content .submitbtn {
+    margin: 0;
+    color: white;
+    background-color: #403a60;
+    border-style: none;
+    width: 235px;
+    height: 40px;
+    padding: 12px 24px 12px 24px;
+    border-radius: 12px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: center;
+    position: relative;
+
+    bottom: 91px;
+    left: 2px;
+  }
+
+  .new-popup-content .cancelbtn {
+    color: #403a60;
+    background-color: white;
+    border: 1.5px solid #403a60;
+    border-radius: 12px;
+    border-width: 1.5px;
+    padding: 12px 24px 12px 24px;
+    width: 235px;
+    height: 40px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+    margin: 0;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: center;
+
+    left: 3px;
+    position: relative;
+  }
+
+  .popupbgblur {
+    width: 100%;
+    position: fixed;
+  }
+
+  .second-popup .popup-content {
+    width: 99%;
+    left: -16px;
+    padding-right: 44px;
+  }
+
+  .timesemojidiv {
+    position: relative;
+  }
+
+  .timesemoji {
+    bottom: 10px;
+  }
+
+  .reactiontext {
+    font-size: 28px;
+    right: 15px;
+  }
+
+  .mypostemoji-buttons {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    position: relative;
+    bottom: 70px;
+    gap: 14%;
+    width: 381px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-padding-top: 24px;
+    scrollbar-width: none;
+    background: linear-gradient(
+      268deg,
+      rgba(0, 0, 0, 0.42) -2.73%,
+      rgba(0, 0, 0, 0) 8.99%
+    );
+    float: right;
+    left: 19px;
+  }
+
+  .emoji-button {
+    position: relative;
+    left: 30px;
+  }
+
+  .mypostemoji-buttons::-webkit-scrollbar {
+    display: none;
+  }
+
+  .reactedusers {
+    width: 100%;
+  }
+
+  .NoCommentImage {
+    position: relative;
+    right: 0%;
+  }
+
+  .noreacteduser {
+    margin-left: 0%;
+    color: #403a60;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0em;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+    position: relative;
+    top: 19px;
+    right: 0%;
+    width: auto;
+  }
+
+  .emojiusername {
+    margin-left: 17%;
+  }
+
+  .lineforreactcount {
+    background-color: black;
+    width: 357px;
+    position: relative;
+    opacity: 0.2;
+    right: 119px;
+    top: 43px;
+  }
+
+  .emoji-container {
+    background-color: #403a60;
+    width: 215px;
+    text-align: center;
+    border-radius: 10px;
+    height: 40px;
+    position: relative;
+    padding-top: 3.5px;
+    bottom: 94px;
+    left: 7%;
+  }
+
+  .slds-nubbin_bottom:before,
+  .slds-nubbin--bottom:before {
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    transform: rotate(45deg);
+    content: "";
+    background-color: inherit;
+    left: 12%;
+    bottom: -0.5rem;
+    margin-left: -0.5rem;
+    z-index: -1;
+  }
+
+  .slds-nubbin_bottom:after,
+  .slds-nubbin--bottom:after {
+    width: 1rem;
+    height: 0rem;
+    position: absolute;
+    transform: rotate(45deg);
+    content: "";
+    background-color: inherit;
+    left: 50%;
+    bottom: -0.5rem;
+    margin-left: -0.5rem;
+  }
+
+  .emojthumbs {
+    right: 185px;
+  }
+
+  .emojsmile {
+    right: 142px;
+  }
+
+  .commentdiv {
+    left: 0px;
+  }
+
+  .CommentContent {
+    position: relative;
+    left: 5%;
+  }
+
+  .selectcomenttext {
+    position: relative;
+    left: 5%;
+  }
+
+  .commentimage {
+    position: relative;
+    left: 10px;
+    bottom: 9px;
+  }
+
+  .dropdowncomments {
+    margin-left: 9px;
+    position: relative;
+    top: 11px;
+    left: 2%;
+    width: 81%;
+  }
+
+  .noCommentContainer {
+    margin-left: 25%;
+  }
+
+  .NoCommentImagecomment {
+    position: relative;
+    right: 0%;
+  }
+
+  .CommentContainer {
+    padding: 0px 0px;
+  }
+
+  .oneCommentContainer {
+    margin-left: 10%;
+    position: relative;
+    height: auto;
+    width: 110%;
+
+    bottom: 20px;
+  }
+
+  .commentavttobody {
+    position: relative;
+    bottom: 40px;
+    margin-top: 0px;
+    width: 80%;
+  }
+
+  .commentimageforinside {
+    margin-top: 0%;
+    border-radius: 50%;
+    width: 33.62px;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+    top: 78px;
+    right: 15px;
+  }
+
+  .commentUserName {
+    margin-top: 0px;
+    position: relative;
+    left: 20%;
+    width: 90%;
+    top: 32px;
+    font-size: 14px;
+  }
+
+  .commenttime {
+    color: #333333;
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-top: 0px;
+    position: relative;
+    left: 20%;
+    bottom: 0px;
+    top: 40px;
+  }
+
+  .commentBody {
+    position: relative;
+    bottom: 5px;
+    left: 19%;
+    width: 100%;
+    padding-right: 4%;
+    top: 64px;
+    font-size: 13px;
+  }
+
+  .editanddelete {
+    display: none;
+  }
+
+  .editdropdowncomments {
+    font-size: 16px;
+
+    position: relative;
+    right: 3%;
+    width: 102%;
+    padding: 0px 10px;
+    margin-bottom: 0px;
+  }
+
+  .lineforcomment {
+    background-color: black;
+    margin-top: 15px;
+    width: 100%;
+    position: relative;
+    opacity: 0.2;
+    right: 5px;
+    top: 35px;
+  }
+
+  .threedotblurbg {
+    left: 0px;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    position: fixed;
+    z-index: 999;
+  }
+
+  .threedot-container {
+    position: absolute;
+
+    display: block;
+  }
+
+  .threedot-container.hidden {
+    display: none;
+  }
+
+  .edit {
+    right: 20px;
+    position: relative;
+  }
+
+  .threedot-content {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    position: fixed;
+    bottom: 400px;
+    border-radius: 12px;
+    padding: 12px 13px 19px 12px;
+    z-index: 999;
+    width: 77%;
+    left: 11%;
+    top: 20%;
+    height: 200px;
+  }
+
+  .threedotclose {
+    background: none;
+    border: none;
+    font-size: 33px;
+    cursor: pointer;
+    position: relative;
+    float: right;
+    bottom: 15px;
+    opacity: 0.7;
+    z-index: 999;
+  }
+
+  .action {
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #403a60;
+  }
+
+  .editanddeletethreedots {
+    display: block;
+    position: relative;
+    background: none;
+    right: 20%;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  .editthreedots {
+    cursor: pointer;
+    color: #403a60;
+    border: none;
+    background: none;
+    position: relative;
+    left: 32%;
+    top: 10px;
+    font-size: 19px;
+    line-height: 16px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  .threedotbtn {
+    display: block;
+    background: none;
+    position: relative;
+    border: none;
+    font-size: 22px;
+    color: black;
+    opacity: 0.5;
+    top: 40px;
+    float: right;
+    right: 5%;
+    width: 40px;
+  }
+
+  .deletethreedots {
+    cursor: pointer;
+    color: #403a60;
+    border: none;
+    background: none;
+    font-size: 19px;
+    line-height: 16px;
+    position: relative;
+    top: 10px;
+    left: 24%;
+  }
+
+  .deletecomment {
+    width: 21px;
+  }
+
+  .showEditTheCommentcompress {
+    right: 48px;
+    bottom: 10px;
+  }
+
+  .closeshowEditTheCommentthreedot {
+    display: block;
+    font-size: 40px;
+    border-style: none;
+    background: none;
+    position: relative;
+    left: 88%;
+    opacity: 0.6;
+    bottom: 0px;
+    z-index: 999;
+    top: 46px;
+  }
+
+  .editTheCommentTxt {
+    right: 3%;
+
+    font-size: 14px;
+  }
+
+  .popup-content {
+    background: #fff;
+    background: #ffffff;
+    width: 100%;
+    height: auto;
+    top: 244px;
+    left: 347px;
+    padding: 30px 15px;
+    border-radius: 12px;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+
+  .popup-content .heading {
+    position: relative;
+    bottom: 20px;
+    font-size: 24px;
+    width: auto;
+    padding-left: 5%;
+  }
+
+  .popup-content .paragh {
+    position: relative;
+    bottom: 14px;
+    width: auto;
+    padding-left: 5%;
+  }
+
+  .popup-content .times {
+    float: right;
+    font-size: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    bottom: 48px;
+    left: -2px;
+    margin: 0px;
+  }
+
+  .popup-content .newpopupbtndivforcomment {
+    display: block;
+    width: 89%;
+    padding: 32px 22px 32px 0px;
+    right: 14px;
+    position: relative;
+  }
+
+  .submitbtn {
+    margin: 0;
+    color: white;
+    background-color: #403a60;
+    border-style: none;
+    width: 100%;
+    height: auto;
+    padding: 12px 24px 12px 24px;
+    border-radius: 12px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: center;
+    position: relative;
+    bottom: 91px;
+  }
+
+  .cancelbtn {
+    color: #403a60;
+    background-color: white;
+    border: 1.5px solid #403a60;
+    border-radius: 12px;
+    border-width: 1.5px;
+    padding: 12px 24px 12px 24px;
+    width: 100%;
+    height: auto;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+    margin: 0;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: center;
+    position: relative;
+  }
+
+  .follow-popup-container {
+    width: 300px;
+    height: auto;
+    top: 270px;
+  }
+
+  .username123 {
+    position: relative;
+    padding: 0px;
+    top: 0px;
+    margin-left: 0px;
+  }
+
+  .username123followcmt {
+    position: relative;
+    padding: 0px;
+  }
+
+  .username123unfollowcmt {
+    position: relative;
+    right: 0%;
+    bottom: 0px;
+    width: 100%;
+    padding: 0px;
+    text-align: center;
+  }
+
+  .popupbutton {
+    width: 109px;
+    height: 40px;
+    border-radius: 12px;
+    padding: 9px 24px 12px 24px;
+    color: #403a60;
+    border: #403a60 solid 1.5px;
+    margin: 0;
+    margin-left: 0%;
+    background-color: white;
+    position: relative;
+    right: 0px;
+    left: 0px;
+  }
+
+  .emojiprofile1 {
+    bottom: 20px;
+  }
+
+  .emojipopavatar {
+    bottom: 0px;
+    top: 0px;
+    height: 70px;
+  }
+
+  .popupbuttonfollowing {
+    width: auto;
+    height: 40px;
+    border-radius: 12px;
+    padding: 9px 24px 12px 24px;
+    background-color: #403a60;
+    float: c;
+    border: #403a60 solid 1.5px;
+    color: white;
+    top: 19%;
+    position: relative;
+    left: 0%;
+    margin-top: 29px;
+  }
+
+  .popupbuttonfollowingcomment {
+    left: 0%;
+    margin-top: 30px;
+  }
+
+  .commentpopuptitle {
+    padding: none;
+    font-size: 24px;
+    line-height: 28px;
+    padding-right: 0px;
+    bottom: 25px;
+  }
+
+  .emojifollowingpopuptitle {
+    padding: 0%;
+    top: 0px;
+    right: 5%;
+    font-size: 25px;
+    line-height: 26px;
+  }
+
+  .emojifollowingpopuptitleunfollow {
+    padding: 0%;
+    top: 0px;
+    right: 18px;
+    font-size: 25px;
+    line-height: 26px;
+  }
+
+  .emojipopuptitle {
+    color: #403a60;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-size: 26px;
+    line-height: 35px;
+    position: relative;
+    bottom: 15px;
+    right: 27px;
+    padding-block-end: 20px;
+    padding-right: 0px;
+  }
+
+  .emojipopupcontent {
+    font-size: 16px;
+    line-height: 23px;
+    position: relative;
+    bottom: 13px;
+  }
+
+  .emojipopupcontentcmtfollow {
+    font-size: 16px;
+    line-height: 23px;
+    position: relative;
+    bottom: 13px;
+  }
+
+  .emojipopupcontentcmtunfollow {
+    font-size: 17px;
+    line-height: 23px;
+    position: relative;
+    bottom: 0px;
+    top: 20px;
+  }
+
+  .emojipopupcontentemojiunfollow {
+    font-size: 16px;
+    line-height: 23px;
+    position: relative;
+    top: 30px;
+  }
+
+  .followno {
+    width: -webkit-fill-available;
+    height: auto;
+    border-radius: 12px;
+    border: #403a60 solid 1.5px;
+    background-color: white;
+    color: #403a60;
+    position: relative;
+    top: 60px;
+    margin: 0px;
+    right: 5px;
+    margin-top: 50px;
+  }
+
+  .followcmtflex {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+
+  .follownocmtfollow {
+    width: -webkit-fill-available;
+    height: auto;
+    border-radius: 12px;
+    border: #403a60 solid 1.5px;
+    background-color: white;
+    color: #403a60;
+    position: relative;
+    margin: 0px;
+  }
+
+  .unfollowcmtflex {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 14px;
+    margin-top: 48px;
+  }
+
+  .follownocmtunfollow {
+    width: -webkit-fill-available;
+    height: auto;
+    border-radius: 12px;
+    border: #403a60 solid 1.5px;
+    background-color: white;
+    color: #403a60;
+    position: relative;
+    margin: 0px;
+    margin-top: 0px !important;
+  }
+
+  .followyes {
+    width: -webkit-fill-available;
+    height: auto;
+    border-radius: 12px;
+    border: white solid 1.5px;
+    background-color: #403a60;
+    color: white;
+    position: relative;
+    bottom: 35px;
+    margin: 0px;
+    right: 5px;
+  }
+
+  .followyescmtfollow {
+    width: -webkit-fill-available;
+    height: auto;
+    border-radius: 12px;
+    border: white solid 1.5px;
+    background-color: #403a60;
+    color: white;
+    position: relative;
+    margin: 0px;
+  }
+
+  .followyescmtunfollow {
+    width: -webkit-fill-available;
+    height: auto;
+    border-radius: 12px;
+    border: white solid 1.5px;
+    background-color: #403a60;
+    color: white;
+    position: relative;
+    margin: 0px;
+  }
+
+  .times2 {
+    float: right;
+    font-size: 35px;
+    background: none;
+    border: none;
+    position: relative;
+    bottom: 43px;
+    left: 25px;
+    font-weight: 300;
+  }
+
+  .times2followcmt {
+    float: right;
+    font-size: 45px;
+    background: none;
+    border: none;
+    position: relative;
+    bottom: 53px;
+    left: 30px;
+    font-weight: 300;
+  }
+
+  .times2unfollowcmt {
+    float: right;
+    font-size: 45px;
+    background: none;
+    border: none;
+    position: relative;
+    bottom: 50px;
+    left: 25px;
+    font-weight: 300;
+  }
+
+  .emojifollowingpopuptitlecomment {
+    font-size: 24px;
+  }
+
+  .times2unfollow {
+    float: right;
+    font-size: 45px;
+    background: none;
+    border: none;
+    position: relative;
+    bottom: 43px;
+    left: 24px;
+    font-weight: 300;
+  }
+
+  .closeShowEditTheComment {
+    display: none;
+    font-size: 35px;
+    border-style: none;
+    background: none;
+    position: relative;
+    left: 102%;
+    opacity: 0.6;
+    bottom: -1px;
+    z-index: 999;
+  }
+}
+
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+  .toastForDesktop{
+    display: none;
+  }
+  .toastForMblResponse{
+    display: block;
+    position: relative;
+    bottom: 36px;
+    width: 88%;
+    left: 38px;
+}
+  .closeShowEditTheComment {
+    display: block;
+    font-size: 35px;
+    border-style: none;
+    background: none;
+    position: relative;
+    left: 102%;
+    opacity: 0.6;
+    bottom: -1px;
+    z-index: 999;
+  }
+
+  .row {
+    padding: 0px;
+    width: 104%;
+    right: 15px;
+    position: relative;
+
+    display: block;
+  }
+
+  .leftside {
+    display: flex;
+    gap: 4px;
+    width: 100%;
+    height: auto;
+
+    background-color: #f6efd9;
+    padding-left: 4%;
+    padding-top: 5%;
+  }
+
+  .emojiprofile1 {
+    bottom: 20px;
+  }
+
+  .emojipopavatar {
+    height: 90px;
+    top: 0px;
+  }
+
+  .rightside {
+    position: relative;
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .avatarimg {
+    width: 60px;
+    height: 63px;
+    position: relative;
+    top: -8px;
+    margin: 0px;
+    left: 8%;
+  }
+
+  .avatarcontent {
+    position: relative;
+    top: -10px;
+    margin: 0px;
+    width: auto;
+    height: auto;
+    left: 13%;
+    margin-right: 17%;
+  }
+
+  .hideavatarcontent {
+    opacity: 0;
+    margin-top: 15px;
+  }
+
+  .avatarclose {
+    display: block;
+    background: none;
+    border: none;
+    float: right;
+    z-index: 999;
+    margin-top: -15px;
+    font-size: 20px;
+    opacity: 0.8;
+    padding-left: 16px;
+    margin-right: -6px;
+  }
+
+  .avatartext {
+    font-size: 13px;
+    width: auto;
+    height: auto;
+  }
+
+  .forMblresponse {
+    display: block;
+    background: linear-gradient(
+      90deg,
+      #6f511d 0%,
+      #926b45 17.19%,
+      #ecdca8 58.85%,
+      #6f511d 100%
+    );
+    height: 4px;
+    position: relative;
+    padding: none;
+    width: 100%;
+    bottom: 10px;
+    left: 13px;
+    margin-top: 8px;
+  }
+
+  .allpostNone {
+    display: block;
+    left: 0px;
+    top: 30px;
+  }
+
+  .mypost {
+    font-size: 29px;
+    line-height: 32px;
+    width: 38%;
+    position: relative;
+
+    left: 16px;
+    bottom: 7px;
+  }
+
+  .mypostbtn {
+    left: 5px;
+    float: right;
+    bottom: 45px;
+    padding: 12px 16px;
+    margin: 0px 16px 0px 0px;
+    height: auto;
+  }
+
+  .postimage {
+    margin-left: 0%;
+    position: relative;
+    left: 40%;
+  }
+
+  .mypostmsg {
+    font-size: 14px;
+    margin-left: 9px;
+    position: relative;
+    width: 96%;
+    padding: 20px;
+    padding-bottom: 90px;
+  }
+
+  .postcontainer {
+    top: 0px;
+    padding: 24px 0px 10px 0px;
+    padding-bottom: 20px;
+    position: relative;
+    width: 99%;
+    left: 12px;
+  }
+
+  .post-header {
+    right: 0px;
+    width: auto;
+  }
+
+  .category {
+    position: relative;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .useravatarimg {
+    position: relative;
+    bottom: 7px;
+    right: 10px;
+  }
+
+  .username {
+    margin-left: 45px;
+  }
+
+  .time {
+    margin-left: 0px;
+    left: 45px;
+  }
+
+  .postbody {
+    left: 0px;
+    font-size: 14px;
+    bottom: 42px;
+    width: auto;
+    padding: 0px 3%;
+  }
+
+  .totalreaction {
+    padding-left: 4%;
+  }
+
+  .totalcomment {
+    padding-right: 3%;
+  }
+
+  .Reactbtn {
+    position: relative;
+    left: 5%;
+  }
+
+  .Reactbtnresult {
+    position: relative;
+    left: 5%;
+  }
+
+  .commentbtncss {
+    margin-left: 12%;
+  }
+
+  .open-new-popup-button {
+    position: relative;
+    left: 24px;
+    bottom: 5px;
+  }
+
+  .new-popup-content {
+    width: 310px;
+  }
+
+  .new-popup-content .heading {
+    font-size: 30px;
+    position: relative;
+    bottom: 30px;
+    right: 15px;
+  }
+
+  .new-popup-content .paragh {
+    position: relative;
+    bottom: 30px;
+    right: 15px;
+  }
+
+  .new-popup-content .newpopupbtndiv {
+    display: block;
+    width: auto;
+    padding: 32px 0px 32px 32px;
+  }
+
+  .new-popup-content .submitbtn {
+    width: 245px;
+    text-align: center;
+    bottom: 92px;
+    position: relative;
+  }
+
+  .new-popup-content .cancelbtn {
+    text-align: center;
+    width: 245px;
+  }
+
+  .popupbgblur {
+    width: 100%;
+    position: fixed;
+  }
+
+  .second-popup .popup-content {
+    width: 97%;
+    left: -14px;
+    justify-content: space-around;
+  }
+
+  .timesemoji {
+    left: 38px;
+    width: 45px;
+    bottom: 10px;
+  }
+
+  .reactiontext {
+    font-size: 28px;
+    right: 15px;
+    width: 460px;
+  }
+
+  .mypostemoji-buttons {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    position: relative;
+    bottom: 68px;
+    gap: 10%;
+    width: auto;
+    scroll-behavior: smooth;
+    scroll-padding-top: 24px;
+    scrollbar-width: none;
+    float: none;
+    min-width: 15%;
+    right: 60px;
+  }
+
+  .mypostemoji-buttons::-webkit-scrollbar {
+    display: none;
+  }
+
+  .emojiText {
+    font-size: 12px;
+  }
+
+  .emojiTextBox {
+    font-size: 12px;
+  }
+
+  .reactedusers {
+    width: 100%;
+  }
+
+  .noreacteduser {
+    width: auto;
+  }
+
+  .emoji-container {
+    width: 215px;
+    left: 6%;
+  }
+
+  .slds-nubbin_bottom:before,
+  .slds-nubbin--bottom:before {
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    transform: rotate(45deg);
+    content: "";
+    background-color: inherit;
+    left: 12%;
+    bottom: -0.5rem;
+    margin-left: -0.5rem;
+    z-index: -1;
+  }
+
+  .slds-nubbin_bottom:after,
+  .slds-nubbin--bottom:after {
+    width: 1rem;
+    height: 0rem;
+    position: absolute;
+    transform: rotate(45deg);
+    content: "";
+    background-color: inherit;
+    left: 50%;
+    bottom: -0.5rem;
+    margin-left: -0.5rem;
+  }
+
+  .emojthumbs {
+    right: 183px;
+  }
+
+  .commentdiv {
+    left: 0px;
+  }
+
+  .CommentContent {
+    position: relative;
+    left: 5%;
+  }
+
+  .selectcomenttext {
+    position: relative;
+    left: 5%;
+  }
+
+  .commentimage {
+    position: relative;
+    left: 15px;
+  }
+
+  .dropdowncomments {
+    margin-left: 20px;
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+    width: 84%;
+  }
+
+  .noCommentContainer {
+    margin-left: 38%;
+  }
+
+  .CommentContainer {
+    padding: 0px 0px;
+  }
+
+  .oneCommentContainer {
+    margin-left: 12%;
+    position: relative;
+    height: auto;
+    top: 38px;
+    width: 110%;
+  }
+
+  .commentavttobody {
+    width: 80%;
+  }
+
+  .commentimageforinside {
+    margin-top: 3%;
+    top: 43px;
+
+    right: 20px;
+  }
+
+  .commentUserName {
+    margin-top: 0px;
+    position: relative;
+    left: 17%;
+    width: 90px;
+    bottom: 10px;
+    font-size: 19px;
+  }
+
+  .commenttime {
+    margin-top: 0px;
+    left: 17%;
+    bottom: 4px;
+    top: 0px;
+  }
+
+  .commentBody {
+    position: relative;
+    bottom: 5px;
+    left: 16%;
+    width: 100%;
+    padding-right: 5px;
+  }
+
+  .editanddelete {
+    display: none;
+  }
+
+  .editdropdowncomments {
+    position: relative;
+    right: 3%;
+    margin-bottom: 0px;
+    width: 100%;
+    top: 14px;
+  }
+
+  .lineforcomment {
+    right: 5px;
+    width: 100%;
+    top: 19px;
+    margin-top: 0px;
+  }
+
+  .threedotbtn {
+    display: block;
+    background: none;
+    position: relative;
+    border: none;
+    font-size: 22px;
+    color: black;
+    opacity: 0.5;
+    top: 8px;
+    float: right;
+    right: 5%;
+    width: 40px;
+    z-index: 999;
+  }
+
+  .threedotblurbg {
+    left: 0px;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    position: fixed;
+    z-index: 999;
+  }
+
+  .threedot-container {
+    position: absolute;
+
+    display: block;
+  }
+
+  .threedot-container.hidden {
+    display: none;
+  }
+
+  .threedot-content {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    position: fixed;
+    bottom: 400px;
+    border-radius: 12px;
+    padding: 13px 13px 14px 10px;
+    z-index: 999;
+    width: 277px;
+    left: 20%;
+    height: 200px;
+    top: 20%;
+  }
+
+  .threedotclose {
+    background: none;
+    border: none;
+    font-size: 33px;
+    cursor: pointer;
+    position: relative;
+    float: right;
+    bottom: 15px;
+    opacity: 0.7;
+  }
+
+  .action {
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #403a60;
+  }
+
+  .editanddeletethreedots {
+    display: block;
+    background: none;
+    position: relative;
+    bottom: 13px;
+    right: 20%;
+  }
+
+  .edit {
+    border-style: none;
+    background: none;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    position: relative;
+    top: 2px;
+    left: -23px;
+    right: 37px;
+  }
+
+  .showEditTheCommentcompress {
+    right: 48px;
+    bottom: 5px;
+  }
+
+  .editTheCommentTxt {
+    right: 3%;
+    font-size: 14px;
+  }
+
+  .editthreedots {
+    cursor: pointer;
+    color: #403a60;
+    border: none;
+    background: none;
+    position: relative;
+    left: 91px;
+    top: 22px;
+    font-size: 20px;
+    line-height: 16px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  .deletethreedots {
+    cursor: pointer;
+    color: #403a60;
+    border: none;
+    background: none;
+    font-size: 20px;
+    line-height: 16px;
+    position: relative;
+    top: 24px;
+    left: 66px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  .popup-content {
+    width: 90%;
+    height: auto;
+    top: 244px;
+    left: 347px;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+
+  .popup-content .times {
+    bottom: 66px;
+  }
+
+  .popup-content .heading {
+    position: relative;
+    bottom: 20px;
+    font-size: 26px;
+  }
+
+  .popup-content .newpopupbtndivforcomment {
+    display: block;
+    width: 100%;
+    padding: 60px 0px 32px 0px;
+  }
+
+  .cancelbtn {
+    width: 100%;
+    text-align: center;
+    position: relative;
+  }
+
+  .submitbtn {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    bottom: 86px;
+  }
+
+  .follow-popup-container {
+    width: 370px;
+    height: auto;
+    top: 273px;
+  }
+
+  .emojifollowingpopuptitle {
+    padding: 0%;
+    top: 0px;
+    right: 5%;
+    font-size: 25px;
+    line-height: 26px;
+  }
+
+  .emojifollowingpopuptitleunfollow {
+    padding: 0%;
+    top: 0px;
+    right: 15%;
+    font-size: 25px;
+    line-height: 26px;
+  }
+
+  .username123 {
+    position: relative;
+    top: 0px;
+    margin-left: 0px;
+  }
+
+  .username123followcmt {
+    position: relative;
+
+    bottom: 0px;
+  }
+
+  .username123unfollowcmt {
+    position: relative;
+  }
+
+  .popupbutton {
+    width: 109px;
+    height: 40px;
+    margin-left: 0%;
+    border-radius: 12px;
+    padding: 9px 24px 12px 24px;
+    color: #403a60;
+    float: right;
+    border: #403a60 solid 1.5px;
+    background-color: white;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    position: relative;
+    right: 0%;
+    left: 0px;
+  }
+
+  .popupbuttonfollowing {
+    width: auto;
+    height: 40px;
+    border-radius: 12px;
+    padding: 9px 24px 12px 24px;
+    background-color: #403a60;
+    float: c;
+    border: #403a60 solid 1.5px;
+    color: white;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    top: 19%;
+    position: relative;
+    left: 0%;
+    margin-top: 24px;
+  }
+
+  .popupbuttonfollowingcomment {
+    top: 17px;
+    left: 0%;
+    margin-top: 30px;
+  }
+
+  .emojipopuptitle {
+    color: #403a60;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-size: 26px;
+    line-height: 35px;
+    position: relative;
+    bottom: 15px;
+    right: 19%;
+    padding-block-end: 20px;
+    padding-right: 0px;
+  }
+
+  .commentpopuptitle {
+    padding: none;
+    font-size: 24px;
+    line-height: 28px;
+    padding-right: 0px;
+    bottom: 25px;
+  }
+
+  .emojipopupcontent {
+    font-size: 16px;
+    line-height: 23px;
+    position: relative;
+    bottom: 20px;
+  }
+
+  .emojipopupcontentemojiunfollow {
+    position: relative;
+    top: 25px;
+  }
+
+  .emojipopupcontentcmtfollow {
+    font-size: 16px;
+    line-height: 23px;
+    position: relative;
+    bottom: 5px;
+  }
+
+  .emojipopupcontentcmtunfollow {
+    font-size: 17px;
+    line-height: 23px;
+    position: relative;
+    bottom: 0px;
+    top: 20px;
+  }
+
+  .followno {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: #403a60 solid 1.5px;
+    background-color: white;
+    color: #403a60;
+    position: relative;
+    top: 58px;
+    margin: 0px;
+    right: 5px;
+    margin-top: 50px;
+  }
+
+  .follownocmtfollow {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: #403a60 solid 1.5px;
+    background-color: white;
+    color: #403a60;
+    position: relative;
+    margin: 0px;
+  }
+
+  .unfollowcmtflex {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 14px;
+    margin-top: 48px;
+  }
+
+  .follownocmtunfollow {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: #403a60 solid 1.5px;
+    background-color: white;
+    color: #403a60;
+    position: relative;
+    margin: 0px;
+    margin-top: 0px !important;
+  }
+
+  .followyes {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: white solid 1.5px;
+    background-color: #403a60;
+    color: white;
+    position: relative;
+    bottom: 35px;
+    margin: 0px;
+    right: 5px;
+  }
+
+  .followyescmtfollow {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: white solid 1.5px;
+    background-color: #403a60;
+    color: white;
+    position: relative;
+    margin: 0px;
+  }
+
+  .followyescmtunfollow {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: #403a60 solid 1.5px;
+    background-color: #403a60;
+    color: white;
+    position: relative;
+    margin: 0px;
+    margin-top: 0px;
+  }
+
+  .followcmtflex {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .times2 {
+    float: right;
+    font-size: 35px;
+    background: none;
+    border: none;
+    position: relative;
+    bottom: 45px;
+    left: 27px;
+    font-weight: 300;
+  }
+
+  .times2unfollow {
+    float: right;
+    font-size: 45px;
+    background: none;
+    border: none;
+    position: relative;
+    bottom: 47px;
+    left: 25px;
+    font-weight: 300;
+  }
+
+  .times2followcmt {
+    float: right;
+    font-size: 45px;
+    background: none;
+    border: none;
+    position: relative;
+    bottom: 48px;
+    left: 25px;
+    font-weight: 300;
+  }
+
+  .times2unfollowcmt {
+    bottom: 50px;
+    left: 28px;
+  }
+
+  .emojifollowingpopuptitlecomment {
+    font-size: 24px;
+  }
+}
+
+
+@media only screen and (min-width: 601px) and (max-width: 800px) {
+  .rightside {
+    width: 74%;
+    padding-left: 2%;
+    padding-right: 3%;
+  }
+
+  .popup-content .times {
+    float: right;
+    background: none;
+    border: none;
+    font-size: 45px;
+    position: relative;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+
+    bottom: 33px;
+    left: 25px;
+  }
+
+  .leftside {
+    padding-left: 0px;
+  }
+
+  .avatarimg {
+    margin-left: 18%;
+    width: 91px;
+  }
+
+  .avatarcontent {
+    width: auto;
+    height: auto;
+  }
+
+  .avatartext {
+    width: auto;
+    height: auto;
+  }
+
+  .postimage {
+    margin-left: 0%;
+    position: relative;
+  }
+
+  .mypostbtn {
+    left: 7%;
+  }
+
+  .mypostmsg {
+    margin-left: 0px;
+    width: 100%;
+  }
+
+  .postcontainer {
+    top: 0px;
+    width: 108%;
+    padding: 24px 0px 10px 0px;
+  }
+
+  .post-header {
+    width: 100%;
+    right: 0%;
+  }
+
+  .username {
+    margin-left: 56px;
+  }
+
+  .postbody {
+    left: 0px;
+    padding: 0px 15px;
+    width: 96%;
+    font-size: 14px;
+  }
+
+  .totalreaction {
+    padding-left: 4%;
+  }
+
+  .totalcomment {
+    padding-right: 3%;
+  }
+
+  .Reactbtn {
+    position: relative;
+    left: 5%;
+  }
+
+  .Reactbtnresult {
+    position: relative;
+    left: 5%;
+  }
+
+  .commentbtncss {
+    margin-left: 10%;
+  }
+
+
+  .new-popup-content {
+    width: 88%;
+  }
+
+  .popupbgblur {
+    width: 100%;
+    position: fixed;
+  }
+
+  .second-popup .popup-content {
+    background: #fff;
+    padding: 32px 40px 32px 40px;
+    width: auto;
+    height: auto;
+    left: 12%;
+    justify-content: space-around;
+    text-align: center;
+    border-radius: 12px;
+    position: relative;
+    margin-right: 23%;
+  }
+
+  .reactiontext {
+    float: left;
+    color: #403a60;
+    height: 44px;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+    font-size: 28px;
+    line-height: 44px;
+    letter-spacing: 0em;
+    text-align: left;
+    position: relative;
+    right: 15px;
+    width: 513px;
+  }
+
+  .mypostemoji-buttons {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    position: relative;
+    bottom: 70px;
+    gap: 10%;
+    width: auto;
+    scroll-behavior: smooth;
+    scroll-padding-top: 24px;
+    scrollbar-width: none;
+    float: none;
+    min-width: 15%;
+  }
+
+  .reactedusers {
+    width: auto;
+  }
+
+  .commentdiv {
+    left: 0px;
+  }
+
+  .CommentContent {
+    position: relative;
+    left: 5%;
+  }
+
+  .selectcomenttext {
+    position: relative;
+    left: 5%;
+  }
+
+  .commentimage {
+    position: relative;
+    left: 5%;
+  }
+
+  .dropdowncomments {
+    margin-left: 6%;
+
+    width: 83%;
+  }
+
+  .oneCommentContainer {
+    margin-left: 50px;
+    position: relative;
+    line-height: 5%;
+    width: 106%;
+  }
+
+  .commentimageforinside {
+    margin-top: 0%;
+    border-radius: 50%;
+    width: 33.62px;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+
+    right: 26px;
+    top: 73px;
+  }
+
+  .commentUserName {
+    margin-top: 0px;
+    position: relative;
+    left: 15%;
+    width: 90px;
+    bottom: 0px;
+    top: 18px;
+    font-size: 18px;
+  }
+
+  .commenttime {
+    left: 15%;
+    color: #333333;
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    position: relative;
+    bottom: 0%;
+    top: 21px;
+  }
+
+  .commentBody {
+    position: relative;
+
+    width: 100%;
+    padding-right: 20%;
+    left: 15%;
+    top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .edit {
+    left: 30%;
+  }
+
+  .editanddelete {
+    left: 2%;
+  }
+
+  .editdropdowncomments {
+    width: 110%;
+
+    right: 30px;
+  }
+
+  .showEditTheCommentcompress {
+    right: 107px;
+    top: 10px;
+  }
+
+  .editTheCommentTxt {
+    top: 15px;
+    right: 30px;
+  }
+
+  .lineforcomment {
+    background-color: black;
+    margin-top: 15px;
+    position: relative;
+    opacity: 0.2;
+    width: 110%;
+
+    right: 30px;
+  }
+
+  .threedot-container.hidden {
+    display: none;
+  }
+
+  .threedot-popup.hidden {
+    display: none;
+  }
+
+  .popup-content {
+    width: 90%;
+  }
+
+  .emojifollowingpopuptitleunfollow {
+    margin-top: 0px;
+    right: 128px;
+    font-size: 30px;
+  }
+
+  .popupbuttonfollowing {
+    width: auto;
+    height: 40px;
+    border-radius: 12px;
+    padding: 9px 24px 12px 24px;
+    background-color: #403a60;
+    float: c;
+    border: #403a60 solid 1.5px;
+
+    color: white;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    top: 19%;
+    position: relative;
+    left: 40%;
+    margin-top: 15px;
+  }
+
+  .follow-popup-container {
+    position: fixed;
+    top: 244px;
+    left: 50%;
+    height: auto;
+    width: 574px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.1);
+    background: #3f3f3d;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 38px 40px 50px 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    z-index: 2;
+  }
+
+  .times3 {
+    bottom: 96px;
+  }
+
+  .times3followcmt {
+    bottom: 90px;
+  }
+
+  .times3unfollowcmt {
+    bottom: 90px;
+  }
+
+  .username123 {
+    position: relative;
+
+    padding: 0px;
+  }
+
+  .username123followcmt {
+    position: relative;
+
+    padding: 0px;
+    top: 10px;
+  }
+
+  .username123unfollowcmt {
+    position: relative;
+
+    padding: 0px;
+  }
+
+  .emojipopuptitle {
+    padding-right: 0px;
+    right: 30%;
+  }
+
+  .commentpopuptitle {
+    padding: 0px;
+  }
+
+  .emojipopupcontent {
+    font-size: 17px;
+    line-height: 28px;
+  }
+
+  .emojipopupcontentemojiunfollow {
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .emojipopupcontentcmtfollow {
+    font-size: 17px;
+    line-height: 26px;
+  }
+
+  .emojipopupcontentcmtunfollow {
+    font-size: 17px;
+    line-height: 28px;
+  }
+
+  .cmntpopavatar {
+    position: relative;
+    padding: 0px;
+  }
+
+  .followno {
+    position: relative;
+    left: 52%;
+    top: 20px;
+    margin: 0px;
+  }
+
+  .follownocmtfollow {
+    position: relative;
+    left: 80%;
+    top: 20px;
+    margin: 0px;
+  }
+
+  .follownocmtunfollow {
+    position: relative;
+    left: 87%;
+    top: 20px;
+    margin: 0px;
+  }
+
+  .followyes {
+    position: relative;
+    left: 21%;
+    top: 19px;
+  }
+
+  .followyescmtfollow {
+    position: relative;
+    left: 46%;
+    top: 19px;
+  }
+
+  .followyescmtunfollow {
+    position: relative;
+    left: 51%;
+    top: 19px;
+  }
+
+  .times2 {
+    bottom: 245px;
+    position: absolute;
+    left: 93%;
+  }
+
+  .times2unfollow {
+    bottom: 50px;
+  }
+
+  .times2followcmt {
+    bottom: 289px;
+    position: absolute;
+    left: 92%;
+  }
+
+  .times2unfollowcmt {
+    bottom: 287px;
+    position: absolute;
+    left: 92%;
+  }
+}
+
+@media only screen and (min-width: 801px) and (max-width: 1100px) {
+  .rightside {
+    width: 74%;
+    padding-left: 2%;
+  }
+
+  .popup-content .times {
+    float: right;
+    background: none;
+    border: none;
+    font-size: 45px;
+    position: relative;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+
+    bottom: 33px;
+    left: 25px;
+  }
+
+  .emojipopupcontentemojiunfollow {
+    color: #403a60;
+    font-size: 20px;
+    line-height: 32px;
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    text-align: left;
+    margin-top: 40px;
+  }
+
+  .mypostbtn {
+    left: 3%;
+    bottom: 44px;
+  }
+
+  .avatarimg {
+    margin-left: 20%;
+  }
+
+  .avatarcontent {
+    width: auto;
+    height: auto;
+  }
+
+  .avatartext {
+    width: auto;
+    height: auto;
+  }
+
+  .allpostNone {
+    left: 18%;
+  }
+
+  .postimage {
+    margin-left: 0%;
+    position: relative;
+  }
+
+  .mypostmsg {
+    margin-left: 0px;
+    position: relative;
+    width: 90%;
+  }
+
+  .postcontainer {
+    top: 0px;
+    width: 104%;
+    padding: 24px 0px 10px 0px;
+  }
+
+  .post-header {
+    width: 100%;
+    right: 0%;
+  }
+
+  .username {
+    margin-left: 56px;
+  }
+
+  .postbody {
+    left: 0px;
+    padding: 0px 15px;
+    width: auto;
+  }
+
+  .totalreaction {
+    padding-left: 4%;
+  }
+
+  .totalcomment {
+    padding-right: 3%;
+  }
+
+  .Reactbtn {
+    position: relative;
+    left: 5%;
+  }
+
+  .Reactbtnresult {
+    position: relative;
+    left: 5%;
+  }
+
+  .commentbtncss {
+    margin-left: 10%;
+  }
+
+  .popupbgblur {
+    left: 0px;
+
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    position: fixed;
+    z-index: 999;
+  }
+
+  .second-popup .popup-content {
+    background: #fff;
+    padding: 32px 40px 32px 40px;
+    height: auto;
+    left: 12%;
+    justify-content: space-around;
+    text-align: center;
+    border-radius: 12px;
+    position: relative;
+    margin-right: 23%;
+  }
+
+  .reactiontext {
+    float: left;
+    color: #403a60;
+    height: 44px;
+    font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+    font-size: 28px;
+    line-height: 44px;
+    letter-spacing: 0em;
+    text-align: left;
+    position: relative;
+    right: 15px;
+  }
+
+  .mypostemoji-buttons {
+    margin-left: 2%;
+    gap: 10%;
+  }
+
+  .commentdiv {
+    left: 0px;
+  }
+
+  .CommentContent {
+    position: relative;
+    left: 5%;
+  }
+
+  .showEditTheCommentcompress {
+    right: 90px;
+    top: 10px;
+  }
+
+  .selectcomenttext {
+    position: relative;
+    left: 5%;
+  }
+
+  .editanddelete {
+    left: 6%;
+  }
+
+  .commentimage {
+    position: relative;
+    left: 18px;
+  }
+
+  .oneCommentContainer {
+    margin-left: 45px;
+    position: relative;
+    line-height: 5%;
+    width: 106%;
+  }
+
+  .dropdowncomments {
+    margin-left: 4%;
+    width: 88%;
+  }
+
+  .editTheCommentTxt {
+    top: 15px;
+    left: 8%;
+  }
+
+  .commentUserName {
+    margin-top: 0px;
+    position: relative;
+    left: 9%;
+    width: 90px;
+    bottom: 0px;
+  }
+
+  .commenttime {
+    left: 9%;
+    color: #333333;
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    position: relative;
+    bottom: 35px;
+  }
+
+  .commentimageforinside {
+    margin-top: 0%;
+    border-radius: 50%;
+    width: 33.62px;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+    top: 60px;
+    right: 30px;
+  }
+
+  .commentBody {
+    position: relative;
+    bottom: 5px;
+    width: 85%;
+    left: 8.5%;
+    margin-bottom: 25px;
+  }
+
+  .lineforcomment {
+    background-color: black;
+    margin-top: 0px;
+    position: relative;
+    opacity: 0.2;
+    width: 114%;
+    top: 33px;
+    right: 30px;
+  }
+
+  .edit {
+    left: 48%;
+  }
+
+  .threedot-container.hidden {
+    display: none;
+  }
+
+  .threedot-popup.hidden {
+    display: none;
+  }
+
+  .times3 {
+    bottom: 90px;
+  }
+
+  .times3followcmt {
+    bottom: 90px;
+  }
+
+  .times3unfollowcmt {
+    bottom: 90px;
+  }
+
+  .username123unfollowcmt {
+    margin-left: 24px;
+  }
+
+  .commentavttobody {
+    bottom: 20px;
+  }
+
+  .editdropdowncomments {
+    width: 98%;
+
+    left: 8%;
+  }
+
+  .times2 {
+    bottom: 51px;
+    left: 25px;
+  }
+
+  .times2followcmt {
+    bottom: 20px;
+  }
+
+  .times2unfollowcmt {
+    bottom: 20px;
+  }
+
+  .lineforreactcount {
+    background-color: black;
+    width: 100%;
+    position: relative;
+    opacity: 0.2;
+    right: 117px;
+    top: 60px;
+    margin-top: 0px;
+  }
+}
+@media only screen and (min-width: 901px) and (max-width: 1000px) {
+  .second-popup .popup-content {
+    left: 16%;
+  }
+}
+@media only screen and (min-width: 1001px) and (max-width: 1099px) {
+  .second-popup .popup-content {
+    left: 19.5%;
+  }
+}
+@media only screen and (min-width: 1101px) and (max-width: 1280px) {
+  .mypostmsg {
+    margin-left: 40px;
+  }
+
+  .avatarcontent {
+    width: 115%;
+  }
+
+  .avatartext {
+    width: auto;
+  }
+
+  .allpostNone {
+    top: 30px;
+    display: grid;
+  }
+
+  .postimage {
+    width: 140px;
+    height: 120px;
+    margin-left: 40%;
+  }
+
+  .postcontainer {
+    width: 327%;
+  }
+
+  .postbody {
+    font-size: 15px;
+    line-height: 24px;
+    text-align: left;
+    color: #403a60;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+    width: 95%;
+    height: 24px;
+    position: relative;
+    bottom: 32px;
+  }
+
+  .second-popup .popup-content {
+    left: 23.5%;
+  }
+
+  .CommentContainer {
+    padding: 0px 4px;
+    margin-right: 14%;
+    left: 20px;
+    position: relative;
+  }
+
+  .commentimageforinside {
+    right: 60px;
+    top: 75px;
+  }
+
+  .editanddelete {
+    left: 6%;
+  }
+
+  .showEditTheCommentcompress {
+    bottom: 20px;
+    right: 13%;
+  }
+
+  .editdropdowncomments {
+    width: 106%;
+  }
+
+  .lineforcomment {
+    width: 112%;
+  }
+
+  .threedot-container.hidden {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1101px) {
+  .emojipopupcontentemojiunfollow {
+    color: #403a60;
+    font-size: 20px;
+    line-height: 32px;
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    text-align: left;
+    margin-top: 40px;
+  }
+}
+
+@media only screen and (min-width: 1281px) {
+  .allpostNone {
+    left: 120%;
+    width: 150px;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 1601px) {
+  .postimage {
+    width: auto;
+    height: auto;
+  }
+
+  .postcontainer {
+    bottom: 0px;
+    width: 326%;
+  }
+  .second-popup .popup-content {
+    left: 34%;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .mypostemoji-buttons {
+    left: 16%;
+    padding-left: 9px;
+    gap: 10%;
+  }
+
+  .emoji-button {
+    position: relative;
+    left: 17%;
+  }
+}

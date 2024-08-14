@@ -1,0 +1,30 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+<!--Whenever a Caregiver logs in, this component displays the list of patients to select and navigate-->
+<template>
+	<div class="grid-container">
+		<div><a onclick={openShowPopup} class={getstyleforPatient}>{patientname}</a></div>
+		<div><template if:true={showSwitchIcon}><img src={switchIcon} alt="switchIcon" class="switchIconClass"></template></div>
+	</div>
+	<!--Confirmation Popup-->
+	<template if:true={showPopup}>
+		<div class="modal-backdrop"></div>
+		<div class="modal-visible">
+			<div class="modal-close" onclick={handleClose} onkeypress={handleClose}>
+				<button type="button" class="close-button" onclick={handleClose}>
+					<span class="times">&times;</span>
+				</button>
+			</div>
+			<div class="modal-content">
+				<p class="modalHead">{switchPatients}</p>
+				<p class="modalPara">{patientSwitchMessage}</p>
+				<div class="width100">
+					<div class="grid-containermodals">
+						<button class="ButtonLogoutYes" onclick={updateSwitchPatient}>{okayLabel}</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</template>
+	<!--Confirmation Popup Ends-->
+</template>

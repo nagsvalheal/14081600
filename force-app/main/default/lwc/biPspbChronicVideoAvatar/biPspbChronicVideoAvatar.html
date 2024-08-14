@@ -1,0 +1,26 @@
+<!--This lightning web component is used for display the chronic treatment avatar message-->
+<template>
+	<!-- Strings are hard coded in this HTML file to comply with the mobile responsiveness-->
+	<div class='contain'>
+		<!--Display the avatar selected by user-->
+		<div data-it-uid={userid}>
+			<img src={selectedAvatarSrc} alt="Selected Avatar" class="avatar" />
+		</div>
+		<!--Display the message content-->
+		<div class='mbintm'><p onclick={displayMessage} onkeydown={displayMessage} role="button" tabindex="0"><span class='intmark'> X</span></p></div>
+
+		<div class="message-container">
+			<p class="para">{treatmentVideoAvatarHeading}
+				<br><br>
+				{videoAvatarMessageChronic} </p>
+		</div>
+
+		<div class="message-containermb">
+			<p class="paramb">{messageText}
+			</p>
+			<p class="paranew" onclick={displayExpandedMessage} role="button" onkeydown={displayExpandedMessage}>...</p>
+		</div>
+
+	</div>
+	<hr class='mblinechr'>
+</template>

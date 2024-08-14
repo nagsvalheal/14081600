@@ -1,0 +1,31 @@
+<!--This lightning web component used to show the acute treatment avatar message-->
+<template>
+	<!-- Strings are hard coded in this HTML file to comply with the mobile responsiveness-->
+
+	<div class='contain' data-it-uid={userid}>
+		<!--Display the avatar selected by user-->
+		<div>
+			<img src={selectedAvatarSrc} alt="Selected Avatar" class="avatar" />
+		</div>
+		<div class='mbintm'>
+			<button class='xBtn' onclick={displayMessage}>
+			<a><span class='intmark'> X</span></a>
+			</button>
+		</div>
+		<!--Display the message content-->
+		<div class="message-container">
+			<p class="para">Guide to Spevigo® intravenous infusion:
+				<br><br>
+				I'm here to help! On this page, you will find a helpful guide and demonstration videos on Spevigo®
+				infusions for treatment of flares in GPP. </p>
+		</div>
+
+		<div class="message-containermb">
+			<p class="paramb">{acuteMessage}
+			</p>
+			<p onclick={displayExpandedMessage} onkeypress={displayExpandedMessage} class="dot">...</p>
+		</div>
+
+	</div>
+	<hr class='mblinechr'>
+</template>

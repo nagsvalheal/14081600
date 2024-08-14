@@ -1,0 +1,710 @@
+@font-face {
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina01-Regular.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina04-Light.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina04-SemiBold.woff") format("woff");
+}
+
+@font-face {
+	font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina04-Bold.woff") format("woff");
+}
+
+.flexCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 308px;
+	/* Adjust the height as needed */
+	width: 286px;
+	/* Adjust the width as needed */
+	border: 1px solid #ccc;
+	border-bottom-left-radius: 20px;
+	/* Adjust the radius as needed */
+	border-bottom-right-radius: 20px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	background-color: white;
+	/* Set the background color to white */
+}
+
+.content {
+	text-align: left;
+}
+
+.dlqi {
+	font-size: 18px;
+	margin: 0;
+	margin-left: 15px;
+	color: #403a60;
+	margin-top: 25px;
+	font-weight: 400;
+	font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.dlqi1 {
+	font-size: 14px;
+	color: #403a60;
+	margin: 0;
+	margin-top: 50px;
+	margin-right: 0px;
+	font-weight: 400;
+	margin-left: 10px;
+}
+
+.dlqi2 {
+	font-size: 14px;
+	margin: 0;
+	margin-left: 15px;
+	color: #403a60;
+	font-weight: 400;
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.dlqi3 {
+	font-size: 16px;
+	margin: 0;
+	margin-left: 15px;
+	color: #403a60;
+	font-weight: 400;
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.answerFewQns {
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0;
+}
+
+.image {
+	height: 136px;
+	width: 122px;
+	margin-left: 150px;
+	margin-top: -145px;
+
+	/* Adjust the maximum width of the image as needed */
+	
+}
+
+.image1 {
+	height: 117px;
+	width: 136px;
+	margin-left: 140px;
+	margin-top: -145px;
+
+	/* Adjust the maximum width of the image as needed */
+	
+}
+
+.bottomBar {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	background-color: rgba(141, 137, 165, 0.25);
+	width: 100%;
+	height: 80px;
+	border-bottom-left-radius: 20px;
+	/* Adjust the radius as needed */
+	border-bottom-right-radius: 20px;
+}
+
+.left {
+	text-align: left;
+}
+
+.right {
+	text-align: right;
+}
+
+.circular-icon {
+	border-radius: 50%;
+	border: 2px solid #403a60;
+
+	padding: 0.55rem;
+	/* Adjust padding to control the size of the circle */
+	box-shadow: #403a60;
+	/* Optional: Add a shadow effect */
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+.button {
+	
+	border: 1px solid #403a60;
+	width: 87px;
+	/* Adjust the width to your desired size */
+	height: 40px;
+	border-radius: 8px;
+	
+	background-color: #403a60;
+	color: white;
+	font-weight: 400;
+	display: inline-block;
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	margin-top: 10px;
+}
+
+.ans {
+	font-size: 24px;
+	color: #403a60;
+	margin-top: 10px;
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-weight: 400;
+}
+
+.ansq {
+	font-size: 24px;
+	color: color(display-p3 0.553 0.537 0.647);
+
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.smalltxt {
+	font-size: 15px;
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-weight: 400;
+}
+.svgtop
+{
+	margin-top: 8px;
+	width: 49px;
+	height:48px;
+	cursor: pointer;
+	
+}
+
+@media only screen and (min-width: 320px) and (max-width: 400px) {
+	.svgtop {
+		margin-top: -3px;
+		width: 49px;
+		height: 41px;
+}
+	.flexCard {
+		width: 100%;
+		height: 218px;
+	}
+
+	.flexCard1 {
+		height: 309px;
+		width: 100%;
+		border: 1px solid #ccc;
+		border-bottom-left-radius: 20px;
+		border-bottom-right-radius: 20px;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		background-color: white;
+	}
+
+	.dlqi {
+		margin-top: 12px;
+	}
+
+	.dlqi2 {
+		margin-top: -15px;
+	}
+
+	.dlqi22 {
+		margin-top: -2px;
+		margin-left: 18px;
+		color: #403a60;
+		font-size: 14px;
+		font-weight: 400;
+	}
+
+	.dlqi33 {
+		margin-left: 19px;
+		color: #403a60;
+		font-size: 14px;
+		font-weight: bold;
+	}
+
+	.image {
+		width: 31%;
+		height: 81px;
+		margin-left: 63%;
+		margin-bottom: -8%;
+	}
+
+	.image1 {
+		width: 34%;
+		height: 81px;
+		margin-left: 62%;
+		margin-bottom: -14%;
+	}
+
+	.bottomBar {
+		width: 100%;
+		height: 56px;
+		margin-top: -7%;
+	}
+
+	.bottomBar1 {
+		padding: 10px;
+		background-color: rgba(141, 137, 165, 0.25);
+		width: 100%;
+		height: 102px;
+		margin-top: 18px;
+		border-bottom-left-radius: 20px;
+		border-bottom-right-radius: 20px;
+	}
+
+	.circular-icon {
+		margin-top: 0px;
+		border-radius: 50%;
+		padding: 0.25rem;
+	}
+
+	.ans {
+		margin-top: 0px;
+	}
+
+	.ans1 {
+		margin-top: 0px;
+		margin-left: 26%;
+		margin-bottom: 2%;
+		font-size: 22px;
+	}
+
+	.button {
+		margin-left: 0%;
+		margin-top: 0%;
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 401px) and (max-width: 575px) {
+	.svgtop {
+		margin-top: -3px;
+		width: 49px;
+		height: 41px;
+	}
+	.flexCard {
+		width: 100%;
+		height: 218px;
+	}
+
+	.flexCard1 {
+		height: 314px;
+		width: 100%;
+		border: 1px solid #ccc;
+		border-bottom-left-radius: 20px;
+		border-bottom-right-radius: 20px;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		background-color: white;
+	}
+
+	.dlqi {
+		margin-top: 16px;
+	}
+
+	.dlqi2 {
+		margin-top: -15px;
+	}
+
+	.dlqi22 {
+		margin-top: -2px;
+		margin-left: 20px;
+		color: #403a60;
+		font-size: 14px;
+		font-weight: 400;
+	}
+
+	.dlqi33 {
+		margin-left: 20px;
+		color: #403a60;
+		font-size: 14px;
+		font-weight: bold;
+	}
+
+	.image {
+		width: 29%;
+		height: 81px;
+		margin-left: 65%;
+	}
+
+	.image1 {
+		width: 31%;
+		height: 81px;
+		margin-left: 63%;
+		margin-bottom: -10%;
+	}
+
+	.bottomBar {
+		width: 100%;
+		height: 56px;
+		margin-top: -5%;
+	}
+
+	.bottomBar1 {
+		padding: 10px;
+		background-color: rgba(141, 137, 165, 0.25);
+		width: 100%;
+		height: 102px;
+		margin-top: 18px;
+		border-bottom-left-radius: 20px;
+		border-bottom-right-radius: 20px;
+	}
+
+	.circular-icon {
+		margin-top: 0px;
+		border-radius: 50%;
+		padding: 0.25rem;
+	}
+
+	.ans {
+		margin-top: 0px;
+	}
+
+	.ans1 {
+		margin-top: 0%;
+		margin-left: 31%;
+		margin-bottom: 2%;
+		font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-weight: 400;
+		font-size: 24px;
+		color: #403a60;
+	}
+
+	.button {
+		margin-left: 0%;
+		margin-top: 0%;
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+	.svgtop {
+		margin-top: -3px;
+		width: 49px;
+		height: 41px;
+	}
+	.flexCard {
+		width: 100%;
+		height: 218px;
+	}
+
+	.flexCard1 {
+		height: 304px;
+		width: 100%;
+		border: 1px solid #ccc;
+		border-bottom-left-radius: 20px;
+		border-bottom-right-radius: 20px;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		background-color: white;
+	}
+
+	.button {
+		margin-left: 0%;
+		margin-top: 0%;
+		width: 100%;
+	}
+
+	.ans1 {
+		margin-top: 0px;
+		margin-left: 37%;
+		margin-bottom: 1%;
+		font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-weight: 400;
+		font-size: 24px;
+		color: #403a60;
+	}
+
+	.image1 {
+		width: 24%;
+		height: 96px;
+		margin-left: 63%;
+		margin-bottom: -4%;
+	}
+
+	.dlqi22 {
+		margin-top: -2px;
+		margin-left: 53px;
+		color: #403a60;
+		font-size: 14px;
+		font-weight: 400;
+	}
+
+	.dlqi33 {
+		margin-left: 53px;
+		color: #403a60;
+		font-size: 14px;
+		font-weight: bold;
+	}
+
+	.dlqi {
+		margin-top: 8px;
+		margin-left: 48px;
+	}
+
+	.bottomBar {
+		width: 100%;
+		height: 56px;
+		margin-top: -3%;
+	}
+
+	.dlqi2 {
+		margin-top: -15px;
+		margin-left: 48px;
+	}
+
+	.dlqi3 {
+		font-size: 16px;
+		margin: 0;
+		margin-left: 48px;
+		color: #403a60;
+		font-weight: 400;
+		font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+
+	.ans {
+		margin-top: 0px;
+		margin-left: 33px;
+	}
+
+	.circular-icon {
+		margin-top: 0px;
+		border-radius: 50%;
+		padding: 0.25rem;
+		cursor: pointer;
+		margin-right: 31px;
+	}
+
+	.image {
+		width: 23%;
+		height: 87px;
+		margin-left: 66%;
+	}
+
+	.bottomBar1 {
+		padding: 10px;
+		background-color: rgba(141, 137, 165, 0.25);
+		width: 100%;
+		height: 102px;
+		margin-top: 3%;
+		border-bottom-left-radius: 20px;
+		border-bottom-right-radius: 20px;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.flexCard {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 308px;
+		width: 100%;
+		border: 1px solid #ccc;
+		border-bottom-left-radius: 20px;
+		border-bottom-right-radius: 20px;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		background-color: white;
+	}
+
+	.button {
+		border: 1px solid #403a60;
+		width: 166px;
+		height: 40px;
+		border-radius: 8px;
+		background-color: #403a60;
+		color: white;
+		font-weight: 400;
+		display: inline-block;
+		font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		margin-top: 10px;
+	}
+
+	.circular-icon {
+		border-radius: 50%;
+		border: 2px solid #403a60;
+		padding: 0.55rem;
+		margin-top: 10px;
+		cursor: pointer;
+		margin-right: 54px;
+	}
+
+	.ans {
+		font-size: 24px;
+		color: #403a60;
+		margin-top: 10px;
+		font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-weight: 400;
+		margin-left: 63px;
+	}
+
+	.image1 {
+		height: 59%;
+		width: 20%;
+		margin-left: 68%;
+		margin-top: -18%;
+	}
+
+	.dlqi2 {
+		font-size: 14px;
+		margin: 0;
+		margin-left: 84px;
+		color: #403a60;
+		font-weight: 400;
+		font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+
+	.dlqi3 {
+		font-size: 16px;
+		margin: 0;
+		margin-left: 82px;
+		color: #403a60;
+		font-weight: 400;
+		font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+
+	.dlqi {
+		font-size: 18px;
+		margin: 0;
+		margin-left: 80px;
+		color: #403a60;
+		margin-top: 25px;
+		font-weight: 400;
+		font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+	.flexCard {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 308px;
+		width: 100%;
+		border: 1px solid #ccc;
+		border-bottom-left-radius: 20px;
+		border-bottom-right-radius: 20px;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		background-color: white;
+	}
+
+	.dlqi1 {
+		font-size: 16px;
+		color: #403a60;
+		margin: 0;
+		font-weight: 400;
+		margin-top: 35px;
+		margin-right: 0px;
+		margin-left: 103px;
+		font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+
+	.dlqi {
+		font-size: 21px;
+		font-weight: 400;
+		margin: 0;
+		margin-left: 9%;
+		color: #403a60;
+		margin-top: 17px;
+		font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+
+	.image {
+		height: 122px;
+		width: 136px;
+		margin-left: 532px;
+		margin-top: -145px;
+	}
+
+	.ans {
+		font-size: 24px;
+		color: #403a60;
+		margin-top: 10px;
+		font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-weight: 400;
+		margin-left: 63%;
+		width: 100%;
+	}
+
+	.circular-icon {
+		border-radius: 50%;
+		border: 2px solid #403a60;
+		padding: 0.55rem;
+		margin-top: 10px;
+		cursor: pointer;
+		margin-right: 103px;
+	}
+
+	.button {
+		border: 1px solid #403a60;
+		width: 181px;
+		height: 40px;
+		border-radius: 8px;
+		background-color: #403a60;
+		color: white;
+		font-weight: 400;
+		display: inline-block;
+		font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		margin-top: 10px;
+	}
+
+	.image1 {
+		height: 65%;
+		width: 16%;
+		margin-left: 63%;
+		margin-top: -15%;
+	}
+
+	.dlqi2 {
+		font-size: 15px;
+		margin: 0;
+		margin-left: 9%;
+		color: #403a60;
+		font-weight: 400;
+		font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+
+	.dlqi3 {
+		font-size: 16px;
+		margin: 0;
+		margin-left: 9%;
+		color: #403a60;
+		font-weight: 400;
+		font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1499px) {
+	.flexCard {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 308px;
+		width: 270px;
+		border: 1px solid #ccc;
+		border-bottom-left-radius: 20px;
+		border-bottom-right-radius: 20px;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		background-color: white;
+	}
+
+	.image1 {
+		height: 100px;
+		width: 123px;
+		margin-left: 140px;
+		margin-top: -145px;
+	}
+}

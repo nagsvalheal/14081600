@@ -1,0 +1,95 @@
+<!--This lightning web component is used for navigation of article categorypage and spevigo article category page based on patient status-->
+<template>
+	<div class="component" data-it-uid={userId}>
+		<div class="options">
+			<!--Display the article navigation button-->
+			<div class="flex">
+				<div class="heading">
+					<h2>{articleCategories}</h2>
+				</div>
+				<!--Load Just for me navigation-->
+				<button if:true={showJustForMe} class="end-btn" data-name="Just for me"
+					onclick={navigateToCategory} data-it-button="category: Just for me">
+					{justForMeCategory}
+					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+						class="arrow-svg">
+						<path d="M2 7.44531H14" stroke="#403A60" class="svgpathcls" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60" class="svgpathcls" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</button>
+				<button class="end-btn" data-name="What is GPP?" onclick={navigateToCategory}
+					data-it-button="category: What is GPP?">
+					{whatIsGppCategory}
+					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+						class="arrow-svg">
+						<path d="M2 7.44531H14" stroke="#403A60" class="svgpathcls" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60" class="svgpathcls" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</button>
+				<button class="end-btn" data-name="GPP’s effect on mental health"
+					data-it-button="category: GPP’s effect on mental health" onclick={navigateToCategory}>
+					{gppHealthCategory}
+					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+						class="arrow-svg">
+						<path d="M2 7.44531H14" stroke="#403A60" class="svgpathcls" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60" class="svgpathcls" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</button>
+				<button class="end-btn" data-name="Talking with your HCP"
+					data-it-button="category: Talking with your HCP" onclick={navigateToCategory}>
+					{talkHcpCategory}
+					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+						class="arrow-svg">
+						<path d="M2 7.44531H14" stroke="#403A60" class="svgpathcls" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60" class="svgpathcls" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</button>
+				<button class="end-btn" data-name="How to manage GPP" data-it-button="category: How to manage GPP"
+					onclick={navigateToCategory}>
+					{manageGppCategory}
+					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+						class="arrow-svg">
+						<path d="M2 7.44531H14" stroke="#403A60" class="svgpathcls" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60" class="svgpathcls" stroke-width="1.5"
+							stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</button>
+				<div class="rowcls">
+					<button class="end-btn" data-name="What you need to know about flares"
+						data-it-button="category: What you need to know about flares" onclick={navigateToCategory}>
+						{flaresCategory}<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+							xmlns="http://www.w3.org/2000/svg" class="arrow-svg">
+							<path d="M2 7.44531H14" stroke="#403A60" class="svgpathcls" stroke-width="1.5"
+								stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60" class="svgpathcls"
+								stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</button>
+				</div>
+				<!--Display the Spevigo category navigation based on patient status-->
+				<template if:true={treatmentCategoryLabel}>
+					<button class="end-btn" data-name={treatmentCategoryLabel} onclick={navigateToCategory}
+						data-it-button={adobeTreatmentTag}>
+						{treatmentCategoryLabel}
+						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+							class="arrow-svg">
+							<path d="M2 7.44531H14" stroke="#403A60" class="svgpathcls" stroke-width="1.5"
+								stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M8 1.44531L14 7.44531L8 13.4453" stroke="#403A60" class="svgpathcls"
+								stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</button>
+				</template>
+			</div>
+		</div>
+	</div>
+</template>

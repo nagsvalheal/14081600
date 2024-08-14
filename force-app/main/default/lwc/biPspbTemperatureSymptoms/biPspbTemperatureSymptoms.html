@@ -1,0 +1,31 @@
+<!--This components using user  Temperaturesymtom values stroe this component-->
+<template>
+	<div class="itchenesline">{currentBodyTemperature}</div>
+	<p class="p">{provideTemperature}</p>
+	<div class="Temperature-content" data-it-uid={userid}>
+		<br>
+		<div class="temprutre-box">
+			<input type="number" min="33.8" max="41.6" value={valOfTemp} name="Temperature" oninput={onchangeOfTempa}
+				step="0.10" inputmode="numeric" pattern="\d*\.?\d*" /> <span class="temperatureDegree"> ° C</span>
+			<lightning-formatted-text class="text" value={formatedTextVal}>{formatedTextVal}</lightning-formatted-text>
+		</div>
+		<br>
+		<div class="modal-btn-row">
+			<button class="modal-confirm-btn" type="button" onclick={onchangeAccept} disabled={tempvaluesfill}
+				data-it-button="Temperature: Confirm and Save">{confirmAndSave}</button>
+		</div>
+
+	</div>
+	<template if:true={showMessage}>
+		<div class="modal-message">
+			<p class="para">
+				<img src={boxedIcon} alt={alternateTextIcon}>
+				{feverTemperature}
+			</p>
+			<p class="para1">
+				<img src={boxedIcon} alt={alternateTextIcon}>
+				{feverTemperature}
+			</p>
+		</div>
+	</template>
+</template>

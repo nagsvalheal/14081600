@@ -1,0 +1,66 @@
+<!--This component is used to Display the Read,Complete,Expired notification based on  both General and Action Notification-->
+<template>
+	<div class="main">
+		<div class="secondMain">
+			<div class="notification">
+				<h3>{historyHeading}</h3>
+				<br />
+				<div class="ActionCombo">
+					<div>
+						<lightning-combobox class="combobox2" placeholder={typePlaceHolder} value={typeOfNotification}
+							options={notifyTypeOptions} onchange={handletypeChange}></lightning-combobox>
+					</div>
+					<div>
+						<lightning-combobox class="combobox1" placeholder={categoryPlaceHolder} value={categoryType}
+							options={notificationOptions} onchange={handleCategoryChange} disabled={disableCategory}></lightning-combobox>
+					</div>
+					<div>
+						<lightning-combobox class="combobox2 cat" value={typeOfStatus} placeholder={statusPlaceHolder}
+							disabled={disableStatus} options={statusOptions} onchange={handleStatusValueChange}></lightning-combobox>
+					</div>
+				</div>
+				<img class="dot" src={dotImg} alt ={alternateForDot}/>
+				<p class={selectedContentCategory}>{selectedContentCategory}</p>
+				<hr class="line" />
+				<div if:true={norecords}>
+					<p class="recordclass">{noNotifications}</p>
+				</div>
+				<template if:true={displayedHistoryValue}>
+					<template for:each={displayedHistoryValue} for:item="HistoryValue">
+						<h2 key={HistoryValue.Id}>
+							<div class="generalnotify">
+								<div class="classdate">
+									<p>{HistoryValue.FormattedDate}</p>
+								</div>
+								<div class="actionclass">
+									<div class="classimg">
+										<img if:true={HistoryValue.quesImg} class="imgclass" src={treatmentImg} alt = {alternateForReminders} />
+										<img if:true={HistoryValue.pssImg} class="imgclass" src={questionnaireImg} alt = {alternateForQuestions} />
+										<img if:true={HistoryValue.qsqImg} class="imgclass" src={questionnaireImg} alt = {alternateForQuestions} />
+										<img if:true={HistoryValue.wpaiImg} class="imgclass" src={questionnaireImg} alt = {alternateForQuestions} />
+										<img if:true={HistoryValue.dlqiImg} class="imgclass" src={questionnaireImg} alt = {alternateForQuestions} />
+										<img if:true={HistoryValue.sympimg} class="imgclass" src={symptomImg} alt = {alternateForSymptoms} />
+										<img if:true={HistoryValue.contentsimg} class="imgclass" src={contentImg} alt = {alternateForQuestions} />
+										<img if:true={HistoryValue.treatimg} class="imgclass" src={treatmentImg} alt = {alternateForReminders} />
+										<img if:true={HistoryValue.challimg} class="imgclass" src={challengeImg} alt = {alternateForChallenges} />
+										<img if:true={HistoryValue.chatterImg} class="imgclass" src={chatterImg} alt = {alternateForCommunity} />
+									</div>
+									<div class="classSubject">
+										<p>{HistoryValue.Subject}</p>
+									</div>
+								</div>
+								<br /><br />
+							</div>
+						</h2>
+					</template>
+				</template>
+				<button class="buttonclass" if:true={showLoadMoreButton} onclick={loadMore}>
+					{loadMoreButton}
+				</button>
+			</div>
+		</div>
+	</div>
+	<div if:true={showSpinner}>
+        <c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+    </div>
+</template>

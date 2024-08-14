@@ -1,0 +1,189 @@
+@font-face {
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff")
+        format("woff");
+}
+
+@font-face {
+    font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff")
+        format("woff");
+}
+
+@font-face {
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff")
+        format("woff");
+}
+
+@font-face {
+    font-family: "Eina04-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff")
+        format("woff");
+}
+
+.modal-confirm-btn {
+    height: 40px;
+    width: 170px;
+    border-radius: 12px;
+    background-color: #403a60;
+    font-weight: bold;
+    color: white;
+    border: #403a60;
+    margin: 20px 0px;
+    font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.modal-btn-row {
+    display: flex;
+    justify-content: center;
+}
+
+.emoji-container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.moodButton{
+	border: none;
+	background: none;
+}
+
+h5.mood-content {
+    font-size: 16px;
+    padding-left: 1rem;
+}
+
+.emoji-para {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.modal-mood-text {
+    display: none;
+    margin-bottom: 50px;
+    font-size: 24px;
+    font-weight: 100;
+}
+.itchiness {
+    font-size: 16px;
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    color: #2c333a;
+    line-height: 24px;
+}
+.itchiness-error {
+    text-align: center;
+    position: relative;
+    left: 0rem;
+    bottom: 0px;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.custom-tooltip img {
+    height: 85px;
+    width: 85px;
+    cursor: pointer;
+}
+
+.p {
+    display: flex;
+    color: #000000;
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-size: 16px;
+    padding-right: 10px;
+}
+
+.modal-message img {
+    width: 16px;
+    height: 24px;
+    margin: 0px 8px;
+    padding: 4px 0px;
+}
+
+.modal-message1 img {
+    width: 16px;
+    height: 24px;
+    margin: 0px 8px;
+    padding: 4px 0px;
+}
+
+.modal-message1 {
+    display: none;
+}
+
+@media only screen and (max-width: 400px) {
+    .emoji-container {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        width: 84%;
+        margin-left: 20px;
+    }
+
+    .custom-tooltip img {
+        height: 62px;
+        width: 62px;
+        margin-top: 7px;
+    }
+
+    .custom-tooltip {
+        margin-left: -8px;
+    }
+
+    .modal-mood-text {
+        font-size: 14px;
+    }
+
+    .modal-confirm-btn {
+        width: 100%;
+    }
+
+    .modal-message1 {
+        display: block;
+    }
+
+    .modal-message {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+    .emoji-container {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        width: 80%;
+        margin-left: 90px;
+    }
+
+    .custom-tooltip img {
+        height: 72px;
+        width: 72px;
+        margin-top: 7px;
+    }
+
+    .custom-tooltip {
+        margin-left: -8px;
+    }
+
+    .modal-mood-text {
+        font-size: 14px;
+    }
+
+    .modal-confirm-btn {
+        width: 100%;
+    }
+
+    .modal-message1 {
+        display: block;
+    }
+
+    .modal-message {
+        display: none;
+    }
+}

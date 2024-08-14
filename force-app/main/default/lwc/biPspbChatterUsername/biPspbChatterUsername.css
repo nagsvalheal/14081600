@@ -1,0 +1,421 @@
+@font-face {
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff")
+    format("woff");
+}
+
+.row {
+  background-color: #fbfaf5;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding-top: 6%;
+  padding-bottom: 92px;
+}
+
+.column {
+  float: left;
+  background-color: #fbfaf5;
+  height: 451px;
+}
+
+.left {
+  width: 30%;
+  padding-top: 2%;
+  padding-left: 5%;
+}
+
+.avatarImg {
+  margin-left: 78px;
+}
+
+.avatarContent {
+  width: 286px;
+  height: 120px;
+  padding: 10px;
+  border-radius: 8px;
+  background: #ecdca8;
+  top: 20px;
+  position: relative;
+}
+.avatarText {
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #403a60;
+}
+
+.forMblResponse {
+  display: none;
+}
+
+.right {
+  width: 70%;
+  padding-left: 12%;
+}
+
+.myProfileText {
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #403a60;
+  font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  top: 5%;
+  position: relative;
+}
+
+.normal {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #403a60;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.error {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ec4e4e;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.userInputBox {
+  position: absolute;
+  width: 390px;
+  height: 40px;
+  --slds-c-input-color-border: rgba(44, 51, 58, 1);
+  --lwc-colorTextLabel: rgba(64, 58, 96, 1);
+  --lwc-colorTextPlaceholder: rgba(64, 58, 96, 1);
+  --lightning-combobox-slds-listbox-li-color: #403a60;
+  border-radius: 4px;
+}
+
+.userInputBoxError {
+  position: absolute;
+  width: 390px;
+  height: 40px;
+  --slds-c-input-color-border: #ec4e4e;
+  --lwc-colorTextLabel: rgba(64, 58, 96, 1);
+  --lwc-colorTextPlaceholder: rgba(64, 58, 96, 1);
+  --lightning-combobox-slds-listbox-li-color: #403a60;
+  border-radius: 4px;
+}
+
+.error-message {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ff0000;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  margin-top: 35px;
+  width: 380px;
+}
+
+.errorImg {
+  width: 12px;
+  height: 12px;
+}
+
+.saveChangesBtn {
+  margin-top: 150px;
+  width: 148px;
+  height: 40px;
+  border: none;
+  padding: 10px 24px 12px 24px;
+  border-radius: 12px;
+  background-color: #403a60;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #ffffff;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+@media only screen and (max-width: 400px) {
+  .row {
+    position: relative;
+    display: block;
+    background: #f6efd9;
+  }
+
+  .left {
+    height: 100%;
+    width: 100%;
+    background: #f6efd9;
+  }
+
+  .right {
+    padding-left: 20px;
+    width: 100%;
+  }
+
+  .avatarImg {
+    margin-left: 5px;
+    height: 63px;
+    width: 52px;
+    position: relative;
+    right: 0%;
+  }
+
+  .avatarContent {
+    padding: 7px;
+    position: absolute;
+    left: 30%;
+    right: 20%;
+    width: 67%;
+    max-height: 45%;
+  }
+
+  .avatarText {
+    font-size: 12px;
+    line-height: 16px;
+    width: auto;
+    padding: 7px 5px 1px 3px;
+    margin-top: 2px;
+  }
+
+  .forMblResponse {
+    display: block;
+    background: linear-gradient(
+      90deg,
+      #6f511d 0%,
+      #926b45 17.19%,
+      #ecdca8 58.85%,
+      #6f511d 100%
+    );
+    height: 4px;
+    position: relative;
+    top: 30px;
+    padding: none;
+    width: auto;
+    left: 0px;
+  }
+
+  .myProfileText {
+    font-size: 20px;
+    line-height: 32px;
+    text-align: left;
+  }
+
+  .userInputBox {
+    width: 97%;
+    position: relative;
+    bottom: 12px;
+  }
+
+  .userInputBoxError {
+    width: 91%;
+    font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0em;
+    text-align: left;
+    top: 221px;
+  }
+
+  .error-message {
+    width: 90%;
+    padding-right: 10px;
+    position: relative;
+    bottom: 8px;
+  }
+
+  .saveChangesBtn {
+    position: relative;
+    right: 5px;
+    width: 97%;
+  }
+}
+
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+  .row {
+    position: relative;
+    display: block;
+    background: #f6efd9;
+  }
+
+  .left {
+    height: 100%;
+    width: 100%;
+    background: #f6efd9;
+  }
+
+  .right {
+    padding-left: 5%;
+    width: 100%;
+  }
+
+  .avatarImg {
+    margin-left: 4%;
+    height: 64px;
+    width: 64px;
+    position: relative;
+    bottom: 7px;
+  }
+
+  .avatarContent {
+    padding: 8px 30px 2px 9px;
+    position: absolute;
+    right: 22px;
+    height: 91px;
+    width: 65%;
+
+    margin-right: -1%;
+    top: 30px;
+  }
+
+  .avatarText {
+    font-size: 12px;
+    line-height: 16px;
+    width: auto;
+    min-width: 190px;
+  }
+
+  .forMblResponse {
+    display: block;
+    background: linear-gradient(
+      90deg,
+      #6f511d 0%,
+      #926b45 17.19%,
+      #ecdca8 58.85%,
+      #6f511d 100%
+    );
+    height: 4px;
+    position: relative;
+    top: 30px;
+    padding: none;
+    width: auto;
+    left: 0px;
+  }
+
+  .myProfileText {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  .userInputBox {
+    position: relative;
+    width: 96%;
+  }
+
+  .userInputBoxError {
+    width: 91%;
+  }
+
+  .error-message {
+    width: 90%;
+    padding-right: 10px;
+  }
+
+  .saveChangesBtn {
+    min-width: 96%;
+    position: relative;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 767px) {
+  .row {
+    width: 100%;
+    position: relative;
+    right: 0px;
+  }
+
+  .right {
+    width: 70%;
+  }
+
+  .left {
+    width: 30%;
+    padding-top: 4%;
+    padding-left: 7%;
+  }
+
+  .avatarImg {
+    width: 80px;
+    margin-left: 33px;
+    height: 104px;
+  }
+
+  .avatarContent {
+    width: 195px;
+    padding: 7px;
+    top: 18px;
+    right: 15px;
+    height: auto;
+  }
+
+  .avatarText {
+    font-size: 13px;
+  }
+
+  .userInputBox {
+    width: 330px;
+  }
+
+  .userInputBoxError {
+    width: 330px;
+  }
+
+  .error-message {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .row {
+    width: 101%;
+    position: relative;
+    right: 9px;
+  }
+
+  .right {
+    width: 70%;
+  }
+
+  .avatarImg {
+    width: 80px;
+    margin-left: 55px;
+    height: 104px;
+  }
+
+  .avatarContent {
+    width: 214px;
+    height: auto;
+  }
+
+  .avatarText {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1300px) {
+  .left {
+    padding-left: 5%;
+  }
+}

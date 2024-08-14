@@ -1,0 +1,58 @@
+<!--This Card displays information related to the Psoriasis Symptom Scale (PSS), aiding in the presentation and understanding of its 
+contents.-->
+<template>
+	<div class={flexCard}>
+		<div class="content">
+			<br />
+			<div>
+				<p class="dlqi">{pssHeading}<br />{pssHeadingText}</p>
+			</div>
+			<!--To display RollOut and Completed Date-->
+			<br />
+			<p class={dlqiText}>{rollOut}</p>
+			<p class={dlqiTextChange}>{rolloutDate}</p>
+			<br />
+			<div if:false={showCompletedDate}>
+				<p class={dlqiText}>{expireLabel}</p>
+				<p class={dlqiTextChange}>{expiresIn} days</p>
+			</div>
+			<div if:true={showCompletedDate}>
+				<p class={dlqiText}>{completedOn}</p>
+				<p class={dlqiTextChange}>{completedOnDate}</p>
+			</div>
+			<img src={cardImage} alt="Psoriasis" class={shiftImage} />
+	</div>
+			<div class={bottomBar}>
+				<!-- Total Number of answered Question and Total number of Questions-->
+				<p class={ans}>
+					<span class="ansq">{answeredQuestions}</span>/{totalQuestionCount}
+					<span class="smalltxt"> {ansText}</span>
+				</p>
+
+				<div class="right">
+					<template if:false={isStartLabel}>
+						<button
+			label={buttonLabel}
+			onclick={handleButtonClick}
+			class="button"
+			data-it-button="PSS: Resume"
+		>
+			{buttonLabel}
+		</button>
+					</template>
+					<!--To Display button with Dynamic label-->
+					<template if:true={isStartLabel}>
+						<svg class='svgtop' onclick={handleButtonClick} onkeydown={handleButtonClick} viewBox="0 0 49 48" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<rect x="1.68164" y="1" width="46" height="46" rx="23" stroke="#403A60" class="svgstroke"
+								stroke-width="2" />
+							<path d="M14.8477 24.166H34.8477" stroke="#403A60" class="svgstroke" stroke-width="2"
+								stroke-linecap="round" stroke-linejoin="round" />
+							<path d="M24.8477 14.166L34.8477 24.166L24.8477 34.166" stroke="#403A60" class="svgstroke"
+								stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					</template>
+				</div>
+			</div>
+		</div>
+</template>

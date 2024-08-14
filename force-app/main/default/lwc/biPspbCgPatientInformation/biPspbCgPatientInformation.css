@@ -1,0 +1,1015 @@
+.slds-form-element__help {
+  color: #ec4e4e;
+  font-size: 14px;
+  margin-left: 0px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+@font-face {
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff")
+    format("woff");
+}
+
+.boxedimg {
+  width: 16px;
+  height: 16px;
+  margin-top: 3px;
+}
+.check{
+	position: relative;
+    bottom: 233px;
+    width: 168%;
+    right: 54%;
+}
+.accsettings {
+  width: 89%;
+  margin-top: 30px;
+  margin-left: 2%;
+}
+
+.ULClass {
+  margin-top: 45px;
+}
+
+.toast {
+  background-color: rgb(194 240 194);
+  width: 100%;
+  height: 88px;
+  position: absolute;
+  display: flex;
+
+  left: 0%;
+  top: 130px;
+  z-index: 1;
+}
+
+.btncls {
+  float: right;
+  padding-bottom: 10%;
+  background-color: rgb(194 240 194);
+  color: #403a60;
+  border: 0px solid;
+  position: relative;
+  top: 0px;
+  left: 0%;
+  font-size: 45px;
+  font-weight: lighter;
+}
+
+.mainclass {
+  display: flex;
+}
+
+.slds-text-color_error {
+  color: red;
+  font-size: smaller;
+  font-weight: bold;
+  margin-top: 0px;
+}
+
+.color {
+  color: #403a60;
+}
+
+.slds-form-element__control {
+  clear: left;
+  width: 10cm;
+  position: relative;
+}
+
+.required {
+  color: #e93939;
+  font-size: 0.75rem;
+  margin-left: 0.125rem;
+  margin-bottom: 0.5rem !important;
+}
+
+.Piclass {
+  margin-left: 12px;
+}
+.QAColor {
+  color: #2c333a !important;
+}
+
+.h1 {
+  font-size: 20px;
+  font-weight: 400;
+  color: #403a60;
+  margin-bottom: 0px;
+}
+
+.popubhead {
+  padding: 32px;
+}
+
+.patientinfobox {
+  flex: 1;
+}
+
+.size {
+  font-size: 32px;
+  font-weight: 400;
+  padding-left: 15px;
+  font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  width: 100%;
+  color: #403a60;
+}
+
+.Sizeofcard {
+  width: 200px;
+  height: 300px;
+}
+
+.fieldwidth {
+  width: 390px;
+}
+
+.textInput::-webkit-scrollbar {
+  display: none;
+}
+
+.Move {
+  padding-left: 27px;
+}
+
+.btn {
+  display: flex;
+  justify-content: end;
+  margin-top: 10px;
+}
+
+.my-custom-button {
+  background-color: #ff9900;
+  color: #ffffff;
+}
+
+.textInput {
+  -webkit-text-fill-color: #403a60;
+  --slds-c-input-color-border: #423a66;
+  --slds-c-textarea-color-border: #423a66;
+  margin: 8px 0px 0px 0px;
+  --lwc-heightInput: 40px;
+  font-size: 16px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.textInput-err {
+  -webkit-text-fill-color: #403a60;
+  --slds-c-input-color-border: red;
+  --slds-c-textarea-color-border: red;
+
+  margin: 8px 0px 0px 0px;
+  --lwc-heightInput: 40px;
+  font-size: 16px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.colorChnage {
+  display: flex;
+  height: 40px;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: #fff;
+  color: #403a60;
+  border: 1px solid #403a60;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+.button-btn {
+  display: flex;
+  height: 40px;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: #c5ccd3;
+  color: #8d89a5;
+  border: 1px solid #c5ccd3;
+  cursor: not-allowed;
+  border-radius: 12px;
+}
+
+.colorChanage {
+  display: flex;
+  height: 40px;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: #fff;
+  color: #403a60;
+  border: 1px solid #403a60;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+.button-bttn {
+  display: flex;
+  height: 40px;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: #c5ccd3;
+  color: #8d89a5;
+  border: 1px solid #c5ccd3;
+  cursor: not-allowed;
+  border-radius: 12px;
+}
+.css {
+  margin-right: 5px;
+}
+.input-div {
+  margin: 8px 0px;
+  width: 80%;
+}
+
+.frstname {
+  position: relative;
+  right: 5px;
+}
+
+.input-error-label {
+  color: #ec4e4e;
+  font-weight: 400;
+  line-height: 24px;
+  font-style: normal;
+  font-size: 16px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+/* ------------------- Developed by Vinothkumar ---------------- */
+.input-label {
+  color: #403a60;
+  font-weight: 400;
+  line-height: 24px;
+  font-style: normal;
+  font-size: 16px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+.inputlable-email {
+  color: #8d89a5;
+  font-weight: 400;
+  line-height: 24px;
+  font-style: normal;
+  font-size: 16px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+.slds-form-element__control.slds-grow {
+  width: 10cm;
+}
+.secondcss {
+  position: relative;
+  bottom: 20px;
+  margin-bottom: -17px;
+}
+
+.slds-input {
+  width: 10cm;
+}
+
+.slds-c-button-text-color {
+  color: white;
+}
+
+
+:host {
+  --sds-c-card-color-background: #fbfaf4;
+}
+
+.notify {
+  background-color: none;
+
+  margin-left: auto;
+  margin-right: 25px;
+}
+
+.para {
+  font-size: 15px;
+  font-weight: bold;
+  padding-left: 135px;
+  padding-top: 25px;
+  width: 101%;
+}
+
+.TicImage {
+  background-color: rgb(37 156 37);
+  margin-left: -35px;
+  border-radius: 50px;
+  margin-right: 20px;
+  width: 25px;
+  height: 25px;
+}
+
+.save-button {
+   --slds-c-button-brand-color-background: #403a60;
+  display: flex;
+  height: 40px;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: #403a60;
+  color: #fff;
+  border-radius: 12px;
+  border-color: transparent;
+  width: 68px;
+}
+
+.slds-button {
+  background-color: #403a60;
+  color: #fbfaf4;
+  width: 144px;
+  height: 40px;
+  border-radius: 12px;
+  padding-left: 23px;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+  font-family: "Eina04-semibold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.outlined-button {
+  display: flex;
+  height: 40px;
+  width: 138px;
+
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: #fff;
+  color: #403a60;
+  border: 2px solid #8d89a5;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.li {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 8px 16px;
+  color: #506474;
+  display: flex;
+  align-items: center;
+}
+
+.a-tag {
+  text-decoration: none;
+  color: #403a60;
+  font-size: 14px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+.a-tags {
+  text-decoration: none;
+  color: #403a60;
+  font-size: 16px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.active {
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  border-radius: 4px;
+  background-color: #8d89a540;
+}
+
+.message {
+  display: flex;
+  margin-bottom: 10px;
+  gap: 5px;
+}
+
+.bullet {
+  width: 6px;
+  height: 6px;
+  background-color: #c3ccd4;
+  border-radius: 50%;
+}
+
+.bullet-active {
+  background-color: #696969;
+}
+
+.msg {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  color: #403a60;
+  margin-bottom: 10px;
+  padding-bottom: 15px;
+}
+
+.OTBTN {
+  width: 68px;
+}
+
+/* ------------------ Developed by Vinothkumar----------------------------- */
+
+/* Pop Up CSS */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.popup-content {
+  background-color: #ffffff;
+  width: 679px;
+  border-radius: 12px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.close-icon {
+  float: right;
+  --lwc-squareIconMediumContentAlt: 20px;
+  --lwc-borderWidthThin: 0px;
+  --slds-c-icon-color-foreground: #403a60;
+}
+
+.popup-heading {
+  font-size: 32px;
+  font-weight: 400;
+  color: #403a60;
+  font-style: normal;
+  font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.popup-confirmation {
+  font-size: 20px;
+  font-style: normal;
+  color: #2a333b;
+  margin-top: 10px;
+}
+
+/* You can add your styles here */
+.QuickLinks1 {
+  display: none;
+  margin-top: 70px;
+  width: 100%;
+  margin-right: 30px;
+}
+
+.Ql {
+  margin-top: 66px;
+  width: 250px;
+}
+
+.quick-links-list {
+  list-style-type: none;
+  padding: 0;
+  border: 1px solid lightgrey;
+  width: 296px;
+  position: relative;
+  left: 20px;
+  bottom: 50px;
+  background-color: white;
+}
+
+svg {
+  width: 20px;
+}
+
+.quick-links-list a {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 0px;
+  border-left: -26px;
+  width: 100%;
+}
+
+.li:hover {
+  background-color: rgba(142, 137, 167, 0.3);
+}
+
+.display {
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+  border: 1px solid lightgrey;
+  position: relative;
+  bottom: 50px;
+  left: 20px;
+  height: 56px;
+  padding: 10px;
+  background-color: white;
+}
+
+
+/*..... @media......*/
+@media only screen and (max-width: 601px) {
+  .para {
+    padding-left: 43px;
+    padding-top: 25px;
+  }
+
+  .size {
+    position: relative;
+    bottom: 0px;
+    padding-left: 0px;
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .popup-content {
+    background-color: #ffffff;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .fieldwidth {
+    width: 101%;
+    padding-left: 0px;
+    padding-right: 5px;
+  }
+  .check{
+    position: relative;
+    bottom: 7px;
+    width: 96%;
+    right: -2%;
+  }
+  .quick-links-list {
+    list-style-type: none;
+    padding: 0;
+    border: 1px solid lightgrey;
+    width: 100%;
+    position: relative;
+    left: 0px;
+    bottom: 50px;
+    background-color: white;
+  }
+
+  .save-button {
+    width: 100%;
+  }
+
+  ul {
+    position: relative;
+    bottom: 20px;
+    width: 200px;
+  }
+
+  .btn {
+    flex-direction: column-reverse;
+  }
+
+  .QuickLinks1 {
+    display: block;
+    position: relative;
+    top: 25px;
+    margin-top: 36px;
+  }
+
+  .slds-p-around_medium {
+    margin-top: 0px;
+    position: relative;
+    top: 0%;
+    padding: 0px;
+  }
+
+  .display {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border: 1px solid lightgrey;
+    position: relative;
+    bottom: 50px;
+    left: 0px;
+    height: 56px;
+    padding: 10px;
+    background-color: white;
+    align-items: center;
+    border-right: 0px;
+    border-left: 0px;
+  }
+
+  .Ql {
+    display: none;
+  }
+
+  .container {
+    position: relative;
+    bottom: 70px;
+    width: 100%;
+  }
+
+  .input-div {
+    width: 101%;
+  }
+
+  .acc {
+    margin-top: 50%;
+  }
+
+  .size {
+    position: relative;
+    bottom: 0px;
+    padding-left: 0px;
+    font-size: 24px;
+  }
+
+  .slds-button {
+    background-color: #403a60;
+    color: #fbfaf4;
+    width: 100%;
+    height: 40px;
+    border-radius: 12px;
+
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    display: block;
+  }
+
+  .outlined-button {
+    display: flex;
+    height: 40px;
+    width: 138px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    background-color: #fff;
+    color: #403a60;
+    border: 1px solid #8e89a7;
+    border-radius: 12px;
+    font-size: 14px;
+  }
+
+  .OTBTN {
+    width: 100%;
+  }
+
+  .toast {
+    background-color: rgb(194 240 194);
+    width: 115%;
+    height: auto;
+    position: absolute;
+    left: -4%;
+    top: 45px;
+  }
+}
+
+@media only screen and (min-width: 401px) and (max-width: 600px) {
+  .fieldwidth {
+    width: 101%;
+    padding-left: 0px;
+    padding-right: 5px;
+  }
+  .check{
+    position: relative;
+    bottom: 7px;
+    width: 96%;
+    right: -2%;
+  }
+  .quick-links-list {
+    list-style-type: none;
+    padding: 0;
+    border: 1px solid lightgrey;
+    width: 100%;
+    position: relative;
+    left: 0px;
+    bottom: 50px;
+    background-color: white;
+  }
+
+  .save-button {
+    width: 100%;
+  }
+
+  .notify {
+    margin-right: 35px;
+  }
+
+  .toast {
+    background-color: rgb(194 240 194);
+    width: 109%;
+    height: auto;
+    position: absolute;
+    left: -3%;
+    top: 45px;
+  }
+
+  ul {
+    position: relative;
+    bottom: 20px;
+    width: 200px;
+  }
+
+  .btn {
+    flex-direction: column-reverse;
+  }
+
+  .QuickLinks1 {
+    display: block;
+    position: relative;
+    top: 25px;
+    margin-top: 36px;
+  }
+
+  .slds-p-around_medium {
+    margin-top: 0px;
+    position: relative;
+    top: 0%;
+    padding: 0px;
+  }
+
+  .display {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border: 1px solid lightgrey;
+    position: relative;
+    bottom: 50px;
+    left: 0px;
+    height: 56px;
+    padding: 10px;
+    background-color: white;
+    align-items: center;
+    border-right: 0px;
+    border-left: 0px;
+  }
+
+  .Ql {
+    display: none;
+  }
+
+  .container {
+    position: relative;
+    bottom: 70px;
+    width: 100%;
+  }
+
+  .input-div {
+    width: 101%;
+  }
+
+  .acc {
+    margin-top: 50%;
+  }
+
+  .size {
+    position: relative;
+    bottom: 0px;
+    padding-left: 0px;
+  }
+
+  .slds-button {
+    background-color: #403a60;
+    color: #fbfaf4;
+    width: 100%;
+    height: 40px;
+    border-radius: 12px;
+
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    display: block;
+  }
+
+  .outlined-button {
+    display: flex;
+    height: 40px;
+    width: 138px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    background-color: #fff;
+    color: #403a60;
+    border: 1px solid #8e89a7;
+    border-radius: 12px;
+    font-size: 14px;
+  }
+
+  .OTBTN {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  .fieldwidth {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 5px;
+  }
+.check{
+  position: relative;
+        bottom: 624px;
+        width: 120%;
+        right: 15%;
+}
+  .QuickLinks {
+    position: absolute;
+    left: 6%;
+  }
+
+  ul {
+    position: relative;
+    bottom: 20px;
+  }
+
+  .slds-p-around_medium {
+    margin-top: 0px;
+    position: relative;
+    top: 10%;
+  }
+
+  .Ql {
+    position: relative;
+
+    margin-top: 0px;
+  }
+
+  .size {
+    position: relative;
+    bottom: 20px;
+  }
+
+  .container {
+    position: relative;
+    padding-left: 6%;
+  }
+
+  .acc {
+    margin-top: 50%;
+  }
+
+  .mainclass {
+    flex-direction: column-reverse;
+  }
+
+  .slds-button {
+    background-color: #403a60;
+    color: #fbfaf4;
+    width: 138px;
+    height: 40px;
+    border-radius: 12px;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    padding-left: 0px;
+    display: block;
+  }
+}
+
+/*..TAB....*/
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .fieldwidth {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 5px;
+  }
+  .check{
+    position: relative;
+    bottom: 147px;
+    width: 162%;
+    right: 75%;
+  }
+  .QuickLinks {
+    position: absolute;
+    left: 5%;
+  }
+
+  .acc {
+    margin-top: 30px;
+  }
+
+  .accsettings {
+    width: 87%;
+  }
+
+  .mainclass {
+    flex-direction: column-reverse;
+  }
+
+  .toast {
+    background-color: rgb(194 240 194);
+    width: 100%;
+    height: 88px;
+    position: absolute;
+    display: flex;
+    left: 0%;
+    top: 99px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .fieldwidth {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 5px;
+  }
+  .check{
+    position: relative;
+    bottom: 240px;
+    width: 186%;
+    right: 75%;
+  }
+  .QuickLinks {
+    position: absolute;
+    margin-left: 68%;
+  }
+
+  .slds-p-around_medium {
+    margin-top: 0px;
+  }
+
+  .acc {
+    margin-top: 30px;
+  }
+}
+
+/*..desktop....*/
+@media only screen and (min-width: 1200px) {
+  .fieldwidth {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 5px;
+  }
+
+  .QuickLinks {
+    position: absolute;
+    margin-left: 50%;
+  }
+
+  .acc {
+    margin-top: 30px;
+  }
+
+  .container {
+    margin-left: 0%;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .fieldwidth {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 5px;
+  }
+
+  .QuickLinks {
+    position: absolute;
+    margin-left: 32%;
+  }
+
+  .acc {
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  .toast {
+    top: -471px;
+    left: -82px;
+    width: 117%;
+  }
+
+  .btncls {
+    float: right;
+    padding-bottom: 10%;
+    background-color: rgb(194 240 194);
+    color: #403a60;
+    border: 0px solid;
+    position: relative;
+    top: 0px;
+    left: 0%;
+    font-size: 45px;
+    font-weight: lighter;
+  }
+}

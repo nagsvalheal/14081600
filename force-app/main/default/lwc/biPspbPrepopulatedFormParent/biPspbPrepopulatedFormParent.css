@@ -1,0 +1,189 @@
+.custom-box1 {
+	background-color: #403a60;
+}
+
+.custom-box2 {
+	width: -webkit-fill-available;
+	display: grid;
+	min-height: 100vh;
+	font-size: 0.8125rem;
+	overflow-x: hidden;
+}
+
+.padR7 {
+	padding-right: 11%;
+}
+
+/* CSS for Header ------------------------------------------------------------------------------- */
+
+.displayHeader {
+	display: flex;
+	justify-content: space-between;
+
+	top: 0px;
+	background-color: white;
+}
+
+.home-icon-container {
+	margin-right: 5.4%;
+}
+
+.header-logo-container {
+	background-color: #413a63;
+	width: 34%;
+}
+
+.header-logo-container>div {
+	width: 57%;
+	margin: 10px auto;
+}
+
+/* CSS for Footer --------------------------------------------------------------------------- */
+
+.footerLink {
+	text-decoration: none;
+	color: #403a60;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.grid-containerfooter {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 10px 20px;
+	padding: 10px;
+	width: fit-content;
+	margin-right: 5.4%;
+}
+
+.footer-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+
+	bottom: 0;
+	background-color: white;
+}
+
+.footer-logo-container {
+	background-color: #413a63;
+	width: 34%;
+	display: flex;
+	justify-content: center;
+	height: 100%;
+	align-items: flex-end;
+}
+
+.footer-containerMobile {
+	display: none;
+}
+
+.footer-logo-container>div {
+	width: 57%;
+	margin: 10px auto;
+}
+
+.marTB20 {
+	width: 210px;
+	position: relative;
+	bottom: 62px;
+	left: 118%;
+}
+
+/*--CSS Media Queries for Mobile View------------------------------------------------------------------*/
+@media (width >=1800px) {
+	.padR7 {
+		padding-right: 9%;
+	}
+}
+
+@media (width <=850px) {
+	/* CSS for Header ------------------------------------------------------------------------------- */
+
+	.displayHeader {
+		overflow-x: hidden;
+		position: relative;
+	}
+
+	.marTB20 {
+		display: none;
+	}
+
+	.header-logo-container {
+		width: 100%;
+	}
+
+	.header-logo-container>div {
+		width: 57%;
+		margin: 10px;
+	}
+
+	.home-icon-container {
+		margin-right: 0%;
+		background-color: #413a63;
+	}
+
+	/* CSS for Footer ---------------------------------------------------------------------------------- */
+
+	.footer-container {
+		position: static;
+		display: block;
+	}
+
+	.footer-containerMobile {
+		display: block;
+	}
+
+	.footer-logo-container {
+		width: 100%;
+		display: none;
+		height: auto;
+	}
+
+	.footer-logo-container>div {
+		width: 100%;
+		margin-left: 10px;
+	}
+
+	.footerLink {
+		color: #fff;
+		font-weight: 300;
+		font-size: 12px;
+	}
+
+	.grid-containerfooter {
+		display: none;
+		width: 100%;
+		background-color: #403a60;
+	}
+
+	.Foot {
+		width: 80%;
+	}
+}
+
+@media only screen and (min-width: 350px) and (max-width: 450px) {
+	.home-icon-container {
+		padding-right: 15%;
+	}
+}
+
+@media only screen and (min-width: 450px) and (max-width: 600px) {
+	.custom-box2 {
+		width: auto;
+		display: block;
+	}
+}
+
+@media (width <=450px) {
+	.displayHeader {
+		overflow-x: hidden;
+		position: relative;
+	}
+
+
+	.footer-container {
+		position: static;
+		display: block;
+	}
+}

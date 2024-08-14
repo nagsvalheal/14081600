@@ -1,0 +1,238 @@
+<!--This LWC is designed to display Notification Settings on clicking the Account Manager in the Dashboard-->
+<template>
+
+	<div class="main">
+		<div>
+			<header>
+				<h1>{notificationSetting}</h1>
+			</header>
+		</div>
+		<!-- notification for Treatment and Rx Reminders -->
+		<div class="flexclass">
+
+			<div class="image-content">
+				<img src={treatmentUrl} alt={treatmentIcon} class="imageee">
+			</div>
+			<div class="flexclassTwo">
+				<div><span class="heading">{rxRemainders}</span></div>
+				<div class="subclass">
+					<div>
+						<lightning-input type="checkbox" label="Email" checked={isCheckboxtreatmentEmail}
+							onchange={tretCheckboxChange}></lightning-input>
+					</div>
+					<div>
+						<lightning-input type="checkbox" label="SMS" checked={isCheckboxtreatmentSms}
+							onchange={tretCheckboxChange}></lightning-input>
+					</div>
+					<div class="insiteflex">
+						<div class="insiteclass">{insiteNotification}</div>
+						<lightning-input type="checkbox" label="Insite Notification" checked={isCheckboxtreatmentInsite} disabled
+							onchange={tretCheckboxChange} variant="label-hidden"></lightning-input>
+					</div>
+					<div class="phoneclass">
+						<lightning-input type="checkbox" label="Phone" checked={isCheckboxtreatmentPhone}
+							onchange={tretCheckboxChange}></lightning-input>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="b">
+				<div class="toggle">
+					<input class="toggle-input" type="checkbox" checked={treatmentAll} onchange={handleSwitchChangetreat} />
+					<span class="toggle-label"></span>
+					<span class="toggle-handle"></span>
+				</div>
+			</div>
+		</div>
+		<!-- notification for New Content Updates -->
+		<div class="flexclass">
+
+			<div class="image-content">
+				<img src={newContentUrl} alt={newContentIcon} class="imageee">
+			</div>
+			<div class="flexclassTwo">
+				<div>
+					<span class="heading">{newContentUpdate}</span>
+				</div>
+
+				<div class="subclass">
+					<div>
+						<lightning-input type="checkbox" label="Email" checked={isCheckboxNewEmail}
+							onchange={NewCheckboxChange}></lightning-input>
+					</div>
+					<div>
+						<lightning-input type="checkbox" label="SMS" checked={isCheckboxNewSms}
+							onchange={NewCheckboxChange}></lightning-input>
+					</div>
+					<div>
+						<lightning-input type="checkbox" label="Insite Notification" checked={isCheckboxNewInsite} disabled
+							onchange={NewCheckboxChange}></lightning-input>
+					</div>
+					<div>
+						<lightning-input type="checkbox" label="Phone" checked={isCheckboxNewPhone}
+							onchange={NewCheckboxChange}></lightning-input>
+					</div>
+				</div>
+			</div>
+
+
+ 		<div class="b">
+				<label class="toggle">
+					<input class="toggle-input" type="checkbox" checked={newContentAll}
+						onchange={handleSwitchChangeNew} />
+					<span class="toggle-label"></span>
+					<span class="toggle-handle"></span>
+				</label>
+			</div> 
+		</div>
+
+		<!-- notification for Questionnaires -->
+		<div class="flexclass">
+			<div class="image-content">
+				<img src={questionnaireUrl} alt={questionaireIcon} class="imageee">
+			</div>
+			<div class="flexclassTwo">
+				<div> <span class="heading">{questionairies}</span></div>
+				<div class="subclass">
+					<div>
+						<lightning-input type="checkbox" label="Email" checked={isCheckboxQuesEmail}
+							onchange={QuesCheckboxChange}></lightning-input>
+					</div>
+					<div>
+						<lightning-input type="checkbox" label="SMS" checked={isCheckboxQuesSms}
+							onchange={QuesCheckboxChange}></lightning-input>
+					</div>
+					<div>
+						<lightning-input type="checkbox" label="Insite Notification" checked={isCheckboxQuesInsite} disabled
+							onchange={QuesCheckboxChange}></lightning-input>
+					</div>
+					<div>
+						<lightning-input type="checkbox" label="Phone" checked={isCheckboxQuesPhone}
+							onchange={QuesCheckboxChange}></lightning-input>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="b">
+				<label class="toggle">
+					<input class="toggle-input" type="checkbox" checked={questionAll}
+						onchange={handleSwitchChangeQues} />
+					<span class="toggle-label"></span>
+					<span class="toggle-handle"></span>
+				</label>
+			</div>
+		</div>
+
+		<!-- notification for Symptom Tracker -->
+		<div class="flexclass">
+			<div class="image-content">
+				<img src={symptomsUrl} alt={symptomIcon} class="imageee">
+			</div>
+			<div class="flexclassTwo">
+				<div> <span class="heading">{symptomTracker}</span></div>
+				<div class="subclass">
+					<div>
+						<lightning-input type="checkbox" label="Email" checked={isCheckboxSympEmail}
+							onchange={sympCheckboxChange}></lightning-input>
+					</div>
+					<div>
+						<lightning-input type="checkbox" label="SMS" checked={isCheckboxSympSms}
+							onchange={sympCheckboxChange}></lightning-input>
+					</div>
+					<div>
+						<lightning-input type="checkbox" label="Insite Notification" checked={isCheckboxSympInsite} disabled
+							onchange={sympCheckboxChange}></lightning-input>
+					</div>
+					<div>
+						<lightning-input type="checkbox" label="Phone" checked={isCheckboxSympPhone}
+							onchange={sympCheckboxChange}></lightning-input>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="b">
+				<label class="toggle">
+					<input class="toggle-input" type="checkbox" checked={symptomAll} onchange={handleSwitchChangeSymp} />
+					<span class="toggle-label"></span>
+					<span class="toggle-handle"></span>
+				</label>
+			</div>
+		</div>
+		<!-- notification for Challenges -->
+		<div class="flexclass">
+			<div class="image-content">
+				<img src={challengeUrl} alt={challengesIcon} class="imageee">
+			</div>
+			<div class="flexclassTwo">
+				<div><span class="heading">{challenge}</span> </div>
+				<div class="subclass">
+
+					<div>
+						<lightning-input type="checkbox" label="Email" checked={isCheckboxChalEmail}
+							onchange={ChalCheckboxChange}></lightning-input>
+					</div>
+					<div>
+						<lightning-input type="checkbox" label="SMS" checked={isCheckboxChalSms}
+							onchange={ChalCheckboxChange}></lightning-input>
+					</div>
+					<div>
+						<lightning-input type="checkbox" label="Insite Notification" checked={isCheckboxChalInsite} disabled
+							onchange={ChalCheckboxChange}></lightning-input>
+					</div>
+					<div>
+						<lightning-input type="checkbox" label="Phone" checked={isCheckboxChalPhone}
+							onchange={ChalCheckboxChange}></lightning-input>
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="b">
+				<label class="toggle">
+					<input class="toggle-input" type="checkbox" checked={challengeAll}
+						onchange={handleSwitchChangeChal} />
+					<span class="toggle-label"></span>
+					<span class="toggle-handle"></span>
+				</label>
+			</div>
+		</div>
+		<!-- notification for Community -->
+		<div class="flexclass">
+			<div class="image-content">
+				<img src={communityUrl} alt={communityIcon} class="imageee">
+			</div>
+			<div class="flexclassTwo">
+				<div><span class="heading">{community}</span> </div>
+				<div class="subclass">
+
+					<div>
+						<lightning-input type="checkbox" label="Email" checked={iscommunityEmail}
+							onchange={ComCheckboxChange}></lightning-input>
+					</div>
+					<div>
+						<lightning-input type="checkbox" label="Insite Notification" checked={iscommunityInsite} disabled
+							onchange={ComCheckboxChange}></lightning-input>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="b">
+				<label class="toggle">
+					<input class="toggle-input" type="checkbox" checked={communityAll}
+						onchange={handleSwitchChangeCommunity} />
+					<span class="toggle-label"></span>
+					<span class="toggle-handle"></span>
+				</label>
+			</div>
+		</div>
+
+		<button class="Save" onclick={handleSave}>{saveChanges}</button>
+
+	</div>
+
+</template>

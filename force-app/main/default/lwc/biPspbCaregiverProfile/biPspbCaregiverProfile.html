@@ -1,0 +1,151 @@
+<!--The lightning component is designed to retrieve and update caregiver details from the account object-->
+<template>
+	<!-- Strings are hard coded in this HTML file to comply with the mobile responsiveness-->
+	<div class="target" data-scroll-target></div>
+
+	<template if:true={updatePopup}>
+		<div class="check"><c-bi-pspb-common-popup toast-message={profileUpdate} onbuttonclick={handleClose}></c-bi-pspb-common-popup></div>
+	</template>
+	<div class="flexcard">
+		<div class="flexcone">
+			<div>
+				<h2 class="size">{myProfile}</h2>
+				<!--Record edit form to update the caregiver details-->
+				<lightning-record-edit-form object-api-name="Account" record-id={accname} onsubmit={handleSubmit}
+					oncancel={handleCancel}>
+					<div class="custom-div">
+						<div class="input-div">
+							<div class="slds-col">
+								<div class="fieldwidth" id="1">
+									<br />
+									<h1 class="h1">{personalInformation}</h1>
+									<br />
+
+									<label for="FirstName" data-field="FirstName" class="input-label">{firstnamelabel}</label>
+									<lightning-input class="textInput" field-name="FirstName" data-field="FirstName"
+										placeholder={enterFirstName} variant="label-hidden" value={firstName}
+										onchange={handleNameChange} max-length="16" >
+									</lightning-input>
+									<span class="slds-form-element__help" if:true={firstNameErrorMessage}>
+										<img src={warning} alt={warningIcon} />{firstNameError}
+									</span>
+									<div class="slds-form-element__help" if:true={firstNameErrorMessageValid}>
+										<img class="css" src={warning} alt={warningIcon} width="12px" height="12px">
+										<span class="slds-form-element__helps">{validFirstname}</span>
+									</div>
+								</div>
+								<div class="input-div">
+									<label for="LastName" data-field="LastName" class="input-label">{lastnameLabel}</label>
+									<lightning-input class="textInput" field-name="LastName" data-field="LastName"
+										placeholder={enterLastName} value={lastName} variant="label-hidden"
+										onchange={handleLastNameChange}  maxlength="16" >
+									</lightning-input>
+									<span class="slds-form-element__help" if:true={lastNameErrorMessage}>
+										<img src={warning} alt={warningIcon} />{lastNameError}
+									</span>
+									<div class="slds-form-element__help" if:true={lastNameErrorMessageValid}>
+										<img class="css" src={warning} alt={warningIcon} width="12px" height="12px">
+										<span class="slds-form-element__helps">{validLastname}</span>
+									</div>
+								</div>
+								<div class="input-div">
+									<label for="Birthdate" data-field="Birthdate" class="input-label">{dobLabel}</label>
+									<lightning-input field-name="BI_PSP_Birthdate__c" label="Date of Birth"
+										onchange={ageCalculationEvent} value={birthDate} onkeydown={handleKeyDownThree}										data-field="Birthdate"
+										class="textInput" variant="label-hidden" type="date"
+										placeholder={enterDob} date-style="short"></lightning-input>
+									<span if:true={minorerror} class="slds-form-element__help">
+										<img src={warning} alt={warningIcon} />{dobError}</span>
+									<span if:true={futureError} class="slds-form-element__help">
+										<img src={warning} alt={warningIcon} />{futuredateError}</span>
+									<span if:true={majorError} class="slds-form-element__help">
+										<img src={warning} alt="warning Icon" />{majorDateError}</span>
+									<span if:true={dobErrorMessage} class="slds-form-element__help">
+										<img src={warning} alt={warningIcon} />
+										{dateError}
+									</span>
+								</div>
+								<div class="input-div">
+									<label for="Relationship" data-field="Relationship" class="input-label">Relationship
+										with {name}*</label>
+
+									<lightning-combobox field-name="BI_PSPB_Relationship_to_Patient__c"
+										name="CaregiverRelationship" placeholder={select} data-field="Relationship"
+										value={relationshipVal} options={leadPmc} onchange={relationshipEvent}
+										variant="label-hidden" class="textInput">
+									</lightning-combobox>
+
+									<span class="slds-form-element__help" if:true={relationshipErrorMessage}>
+										<img src={warning} alt={warningIcon} />{relationshipError}
+									</span>
+								</div>
+								<br />
+								<h1 class="h1">{communicationDetails}</h1>
+								<br />
+
+								<div class="input-div">
+									<label for="Email" data-field="email" class="input-labelemail">{emailLabel}</label>
+									<lightning-input class="textInput" disabled="false" field-name="PersonEmail"
+										data-field="email" variant="label-hidden" value={personEmailVal}>
+									</lightning-input>
+									<span class="slds-form-element__help" if:true={emailErrorMessage}>
+										<img src={warning} alt={warningIcon} />{emailError}
+									</span>
+								</div>
+								<template if:true={phoneVisbleField}>
+									<div if:true={phoneVisbleField}>
+									  <div class="input-div">
+										<label
+										  for="MobilePhone"
+										  data-field="MobilePhone"
+										  class="input-label"
+										  >{pmc}</label
+										>
+										<lightning-input
+										  field-name="Phone"
+										  maxlength="16"
+										  class="textInput"
+										  variant="label-hidden"
+										  data-field="MobilePhone"
+										  placeholder={enterPhone}
+										  value={phoneRecord}
+										  onchange={phoneChangeEvent}
+										  onkeydown={handleKeyDown}
+										  onpaste={handleKeyDown}
+										>
+										</lightning-input>
+										<span
+										  class="slds-form-element__help"
+										  if:true={phoneErrorMessage}
+										>
+										  <img src={warning} alt={warningIcon} />{phoneFieldError}
+										</span>
+									  </div>
+									</div>
+								  </template>
+								<div class="input-div">
+									<label for="PreferredMethodofCommunication"
+										data-field="PreferredMethodofCommunication" class="input-label">{prefferedLabel}</label>
+
+									<lightning-combobox options={preffer} value={communicationMode}
+										onchange={handleCommunicationMethodChange} variant="label-hidden"
+										class="textInput" data-field="PreferredMethodofCommunication"
+										placeholder={enterPreferredMode}></lightning-combobox>
+									<span class="slds-form-element__help" if:true={pcmErrorMessage}>
+										<img src={warning} alt={warningIcon} />{preferredMode}
+									</span>
+								</div>
+							</div>
+							<div class="btnc">
+								<button class="save-button" onclick={handleSubmitDetail}>
+									{saveChanges}
+								</button>
+							</div>
+						</div>
+						<br />
+					</div>
+				</lightning-record-edit-form>
+			</div>
+		</div>
+	</div>
+</template>

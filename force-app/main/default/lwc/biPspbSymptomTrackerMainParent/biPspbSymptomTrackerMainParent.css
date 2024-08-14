@@ -1,0 +1,127 @@
+.custom-box2 {
+    width: -webkit-fill-available;
+    display: grid;
+    margin-left: 20px;
+    position: relative;
+    bottom: 26px;
+}
+
+.custom-box1 {
+    padding: 0px 20px;
+}
+
+.displayHeader {
+    display: flex;
+    justify-content: end;
+}
+
+.footerLink {
+    text-decoration: none;
+    color: #403a60;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.grid-containerfooter {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px 20px;
+    padding: 10px;
+    width: fit-content;
+}
+
+.layoutColor {
+    background-color: #fbfaf5;
+    min-height: 400px;
+    overflow: hidden;
+    margin-bottom: -4rem;
+}
+
+.grid-containerTabs {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px 20px;
+    padding: 10px;
+    width: fit-content;
+}
+
+.tabsDiv {
+    width: 100%;
+    text-align: left;
+}
+
+.tabClass {
+    width: 100%;
+    background-color: white;
+}
+
+.anchorText {
+    text-decoration: none;
+    color: #403a60;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.anchorTextActive {
+    text-decoration: none;
+    color: #403a60;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+/*--CSS Media Queries---*/
+@media only screen and (max-width: 768px) {
+    .custom-box2 {
+        position: relative;
+        padding-right: 20px;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    .custom-box2 {
+        position: relative;
+        top: 5px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .pad {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .pad {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .pad {
+        padding-left: 5%;
+        padding-right: 12%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .pad {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .custom-box2 {
+        margin-left: 0px;
+        margin-top: 20px;
+        min-height: 68vh;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    .pad {
+        padding-left: 5%;
+        padding-right: 5%;
+        min-height: 68vh;
+    }
+}

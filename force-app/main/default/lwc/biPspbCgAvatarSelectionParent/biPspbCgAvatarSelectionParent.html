@@ -1,0 +1,31 @@
+<template>
+<lightning-layout
+multiple-rows
+class="layoutColor pad slds-p-top_xx-large slds-p-bottom_xx-large"
+>
+<lightning-layout-item
+	size="12"
+	small-device-size="12"
+	medium-device-size="4"
+	large-device-size="4"
+>
+	<div class="custom-box1">
+	<!-- Show avatar and message for firstname avatar selection -->
+	<c-bi-Pspb-Avatar-Navigation></c-bi-Pspb-Avatar-Navigation>
+	</div>
+</lightning-layout-item>
+<lightning-layout-item
+	size="12"
+	small-device-size="12"
+	medium-device-size="8"
+	large-device-size="8"
+>
+	<div class="custom-box2">
+	<div>
+		<!-- this component is used selecta first time -->
+		<c-bi-Pspb-Firsttime-Avatar-Selection></c-bi-Pspb-Firsttime-Avatar-Selection>
+	</div>
+	</div>
+</lightning-layout-item>
+</lightning-layout>
+</template>

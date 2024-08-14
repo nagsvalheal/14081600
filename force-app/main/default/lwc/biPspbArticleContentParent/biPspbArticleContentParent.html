@@ -1,0 +1,45 @@
+<!--This lightning web component is used for display the article detail content with all child components-->
+<template>
+	<!--Sub header-->
+	<div if:true={finalSpinnerStatus}>
+		<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	 </div>
+	<template if:true={showVideo}>
+		<lightning-layout multiple-rows>
+			<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+				<div class="customNavTab pad" data-it-uid={userId}>
+					<div class="grid-containerNavTab">
+						<button onclick={openArticlesPage} class="menuListActive">{articles}</button>
+						<button onclick={openSpevigoCategory} class="menuList">{spevigoArticleLabel}</button>
+						<button onclick={openPTVPage} class="menuList">{patientTreatmentVideos}</button>
+					</div>
+				</div>
+			</lightning-layout-item>
+		</lightning-layout>
+	</template>
+	<div class="flexrow">
+		<div>
+			<div class="flexi">
+				<!--Display the personalized message-->
+				<div class="column column1">
+					<div>
+						<c-bi-Pspb-Article-Content-Avatar site-urlq={siteUrlq} onavatarloaded ={handleAvatarLoaded}></c-bi-Pspb-Article-Content-Avatar>
+					</div>
+				</div>
+				<!--Display the Like button-->
+				<div class="column column1">
+					<c-bi-Pspb-Article-Like site-urlq={siteUrlq} onlikeloaded ={handleLikeLoaded}></c-bi-Pspb-Article-Like>
+				</div>
+				<!--Display the article category page navigation-->
+				<div class="column column1">
+					<c-bi-Pspb-Article-Content-Navigation site-urlq={siteUrlq} onnavigationloaded ={handleNaviLoaded}></c-bi-Pspb-Article-Content-Navigation>
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<!--Display the article content-->
+			<c-bi-Pspb-Article-Content oncontendloaded ={handleContentLoaded} onrelatedarticlesloaded={handleArticlesLoaded}></c-bi-Pspb-Article-Content>
+		</div>
+	</div>
+</template>

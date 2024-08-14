@@ -1,0 +1,86 @@
+<!--This lightning web component helps the user to see the available challenges and gives the ability to make them as active challenge-->
+<template>
+  <div class="grid-containerAC">
+    <div class="AChallenges">
+      <!-- Challenge Trophy -->
+      <div class="ChallengeTrophy slds-align_absolute-center">
+        <!-- Displaying an image or rich text for the challenge trophy -->
+        <lightning-formatted-rich-text
+          value={image}
+        ></lightning-formatted-rich-text>
+        <!-- Alternatively, if using an image: -->
+      </div>
+      <!-- Active Challenges -->
+      <div class="ActiveChallenges">
+        <!-- Reward Points Display -->
+        <div
+          class="grid-containerXPButtons slds-align_absolute-center slds-p-bottom_xx-large"
+        >
+          <p class="XPButton">{rewardPoints} XP</p>
+        </div>
+        <!-- Card Details -->
+        <div class="grid-containerCardDetails">
+          <!-- Challenge title -->
+          <div class="slds-align_absolute-center slds-p-top_small">
+            <p class="CardTitle">{title}</p>
+          </div>
+          <!-- Horizontal Line Separator -->
+          <div>
+            <hr />
+          </div>
+          <!-- Challenge description -->
+          <div class="slds-align_absolute-center">
+            <template if:true={otherChallenges}>
+            <p class="CardPara">
+              {description}
+              <template if:true={linktoArticle}
+                ><a class="noDecoration" onclick={openArticles}
+                  > "<u>{linkArticle}</u>"</a
+                ></template
+              >
+              <template if:true={whyBeingActive}
+                ><a class="noDecoration" onclick={openArticlesActive}
+                  > "<u>{beingActiveLink}</u>"</a
+                ></template
+              >
+
+                <template if:true={manageYourGppLink}
+                                  ><a class="noDecoration" onclick={openSymptom}
+                                  > "<u>{symptomValue}</u>"</a
+                                  ></template
+                                  >
+                <template if:true={manageYourGppLevelTwo}
+                                  ><a class="noDecoration" onclick={openSymptom}
+                                  > "<u>{symptomValue}</u>"</a
+                                  ></template
+                                  >
+            </p>
+            </template>
+            <template if:true={quesChallenges}>
+            <p class="CardPara">
+              <template if:true={trackYourGppDivWpai}>
+                {trackYourAns} <a class="noDecoration" onclick={TrackYourGppNavigationWPAI}>
+                  "<u>{gppWrkLifeLink}</u>"</a> {questionnairelink}
+              </template>
+              <template if:true={trackYourGppDivPss}>
+                {trackYourAns} <a class="noDecoration" onclick={TrackYourGppNavigationPSS}>
+                  "<u>{gppSymptomsLink}</u>"</a> {questionnairelink}
+              </template>
+              <template if:true={trackYourGppDivDlqi}>
+               {trackYourAns} <a class="noDecoration" onclick={TrackYourGppNavigationDLQI}>
+                  "<u>{gppQualityLifeLink}</u>"</a> {questionnairelink}
+              </template>
+            </p>
+            </template>
+          </div>
+          <!-- Accept Challenge Button -->
+          <div class="slds-align_absolute-center">
+            <button class="ComChaButton" onclick={afterAccept}>
+             {acceptChallengeButton}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

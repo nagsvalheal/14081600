@@ -1,0 +1,1029 @@
+/*--Font Declaration---*/
+
+@font-face {
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina01-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: "Eina-Light",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina04-Light.woff') format('woff');
+}
+
+@font-face {
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina04-SemiBold.woff') format('woff');
+}
+
+@font-face {
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url('/s/sfsites/c/resource/BI_PSP_WebEinaFonts/WebFonts/Eina04-Bold.woff') format('woff');
+}
+
+/* blur background for spinner */
+.spinner-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	backdrop-filter: blur(1.5px);
+	z-index: 9999;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  .spinner-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background-color: white;
+  }
+  
+  .loader:not(:required) {
+	color: transparent;
+	text-shadow: none;
+	background-color: transparent;
+	border: 0;
+  }
+  
+  .loader:not(:required):after {
+	content: "";
+	display: block;
+	font-size: 10px;
+	width: 1em;
+	height: 1em;
+	margin-top: -0.5em;
+	-webkit-animation: spinner 1500ms infinite linear;
+	-moz-animation: spinner 1500ms infinite linear;
+	-ms-animation: spinner 1500ms infinite linear;
+	-o-animation: spinner 1500ms infinite linear;
+	animation: spinner 1500ms infinite linear;
+	border-radius: 0.5em;
+	box-shadow:
+	  #403a60 1.5em 0 0 0,
+	  #403a60 1.1em 1.1em 0 0,
+	  #403a60 0 1.5em 0 0,
+	  #403a60 -1.1em 1.1em 0 0,
+	  #403a60 -1.5em 0 0 0,
+	  #403a60 -1.1em -1.1em 0 0,
+	  #403a60 0 -1.5em 0 0,
+	  #403a60 1.1em -1.1em 0 0;
+  }
+  
+  /* Animation for Spinner*/
+  @-webkit-keyframes spinner {
+	0% {
+	  -webkit-transform: rotate(0deg);
+	  -moz-transform: rotate(0deg);
+	  -ms-transform: rotate(0deg);
+	  -o-transform: rotate(0deg);
+	  transform: rotate(0deg);
+	}
+  
+	100% {
+	  -webkit-transform: rotate(360deg);
+	  -moz-transform: rotate(360deg);
+	  -ms-transform: rotate(360deg);
+	  -o-transform: rotate(360deg);
+	  transform: rotate(360deg);
+	}
+  }
+  
+  @-moz-keyframes spinner {
+	0% {
+	  -webkit-transform: rotate(0deg);
+	  -moz-transform: rotate(0deg);
+	  -ms-transform: rotate(0deg);
+	  -o-transform: rotate(0deg);
+	  transform: rotate(0deg);
+	}
+  
+	100% {
+	  -webkit-transform: rotate(360deg);
+	  -moz-transform: rotate(360deg);
+	  -ms-transform: rotate(360deg);
+	  -o-transform: rotate(360deg);
+	  transform: rotate(360deg);
+	}
+  }
+  
+  @-o-keyframes spinner {
+	0% {
+	  -webkit-transform: rotate(0deg);
+	  -moz-transform: rotate(0deg);
+	  -ms-transform: rotate(0deg);
+	  -o-transform: rotate(0deg);
+	  transform: rotate(0deg);
+	}
+  
+	100% {
+	  -webkit-transform: rotate(360deg);
+	  -moz-transform: rotate(360deg);
+	  -ms-transform: rotate(360deg);
+	  -o-transform: rotate(360deg);
+	  transform: rotate(360deg);
+	}
+  }
+  
+  @keyframes spinner {
+	0% {
+	  -webkit-transform: rotate(0deg);
+	  -moz-transform: rotate(0deg);
+	  -ms-transform: rotate(0deg);
+	  -o-transform: rotate(0deg);
+	  transform: rotate(0deg);
+	}
+  
+	100% {
+	  -webkit-transform: rotate(360deg);
+	  -moz-transform: rotate(360deg);
+	  -ms-transform: rotate(360deg);
+	  -o-transform: rotate(360deg);
+	  transform: rotate(360deg);
+	}
+  }
+/*--Banner Starts--*/
+.disBlock {
+	display: block;
+}
+
+.margintop {
+	margin-top: 20px;
+}
+
+.padding {
+	padding-right: 5%;
+	padding-left: 5%;
+}
+
+.displayFlexCenter {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0px 15px;
+}
+
+.ptag2 {
+	font-size: 16px;
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	color: #2C333A;
+}
+
+.font {
+	font-size: 16px;
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	color: #2C333A;
+}
+
+.fontTrack {
+	font-size: 16px;
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	color: #2C333A;
+}
+
+.bannerclass {
+	background-color: #FBFAF5;
+	padding: 90px 0px;
+}
+
+.backColor {
+	background-color: #FBFAF5;
+}
+
+
+.grid-container {
+	display: grid;
+	grid-template-columns: auto;
+	gap: 20px 0px;
+	width: -webkit-fill-available;
+}
+
+.TiltleHeading {
+	font-size: 44px;
+	line-height: 56px;
+	font-weight: 400;
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.paraHead {
+	font-size: 10px;
+}
+
+.spanHeading {
+	font-size: 15px;
+	font-weight: 800;
+}
+
+.TiltleHeadingUnbold {
+	font-size: 24px;
+	line-height: 32px;
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-weight: 400;
+}
+
+.textSmall {
+	padding-top: 3%;
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 20px;
+	line-height: 32px;
+	font-weight: 400;
+	margin-bottom: 10px;
+	color: #2C333A;
+}
+
+.ptag {
+	font-size: 16px;
+}
+
+.textSmallBold {
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 20px;
+	line-height: 32px;
+	font-weight: 400;
+	margin-top: 20px;
+	width: 79%;
+}
+
+.grid-containerButtons {
+	display: grid;
+	grid-template-columns: auto;
+	gap: 10px 15px;
+	width: auto;
+}
+
+.button-Div {
+	background-color: #403A60;
+	border-radius: 15px;
+	color: white;
+	font-weight: 800;
+	border-style: none;
+	padding: 10px 25px;
+	font-size: 14px;
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.button-Div1 {
+	display: none;
+	background-color: #403A60;
+	border-radius: 15px;
+	color: white;
+	font-weight: 800;
+	border-style: none;
+	padding: 10px 25px;
+	font-size: 14px;
+	font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.ptag1 {
+	display: none;
+}
+
+/*--Banner Ends--*/
+
+/*---Track & Features Section Starts---*/
+.textalignCenter {
+	text-align: center;
+}
+
+.bodyHeadText {
+	color: #403A60;
+	font-size: 40px;
+	font-weight: 400;
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	line-height: 52px;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.featurestext {
+	color: #403A60;
+	font-size: 40px;
+	font-weight: 400;
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	line-height: 52px;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.bodyParaText {
+	color: #2C333A;
+	font-size: 20px;
+	font-weight: 400;
+	font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	line-height: 24px;
+	margin-bottom: 10px;
+}
+
+.trackBox {
+
+	height: 260px;
+	background-color: white;
+	text-align: center;
+	border-radius: 12px;
+	box-shadow: 0px 0px 4px 0px #00000026;
+}
+.trackBoxx{
+	
+	background-color: white;
+	text-align: center;
+	border-radius: 12px;
+	box-shadow: 0px 0px 4px 0px #00000026;
+}
+.grid-containerTrackBoxContents {
+	display: grid;
+	grid-template-columns: auto;
+	gap: 15px;
+	padding: 35px;
+}
+
+.grid-containerFeatureBoxContents {
+	display: grid;
+	grid-template-columns: auto;
+	gap: 15px;
+	padding: 20px;
+}
+
+.uhead {
+	width: 99%;
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 24px;
+	line-height: 35px;
+	font-weight: 400;
+	color: #403A60;
+}
+
+.trackBoxTextHead {
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 32px;
+	line-height: 35px;
+	font-weight: 400;
+	color: #403A60;
+}
+
+.paddingBottom50 {
+	padding-bottom: 50px;
+}
+
+.displayblock {
+	display: block;
+}
+
+.marTB20 {
+	margin: 20px 0px;
+}
+
+.aligncontent {
+	display: none;
+}
+
+.take {
+	display: block;
+}
+
+.experience {
+	display: none;
+}
+
+.mobileimg {
+	display: none;
+}
+
+@media only screen and (max-width:400px) {
+	.display {
+		display: block;
+	}
+	.trackBoxTextHead {
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 24px;
+	line-height: 35px;
+	font-weight: 400;
+	color: #403A60;
+	width: 199px;
+    margin: 0 auto;
+}
+	.font {
+		font-size: 14px;
+		font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		color: #2C333A;
+	}
+
+	.grid-containerFeatureBoxes {
+		display: flex;
+        gap: 15px;
+        padding: 0px;
+        padding-top: 20px;
+        margin-left: 0%;
+        flex-direction: column;
+        width: 100%;
+	}
+
+	.grid-containerTrackBoxes {
+		display: grid;
+		grid-template-columns: repeat(1, auto);
+		gap: 40px;
+	}
+
+	.uhead {
+		color: #384B59;
+	}
+
+	.featurestext {
+		position: relative;
+		top: 10px;
+		color: #384B59;
+		font-size: 32px;
+		margin-top: -45px;
+		text-align: left;
+		margin-left: 28%;
+		font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	}
+
+	.ptag1 {
+		display: block;
+	}
+
+	.ptag2 {
+		display: none;
+	}
+
+	.bookimg {
+		display: none;
+	}
+
+	.imgcl {
+		width: 100%;
+	}
+
+	.control {
+		text-align: start;
+		padding-bottom: 10px;
+	}
+
+	.mobileimg {
+		display: block;
+		width: 86%;
+		height: 505px;
+		margin-left: 4%;
+	}
+
+	.trackbox {
+		display: none;
+	}
+   
+	.ptag {
+		font-size: 14px;
+	}
+
+	.aligncontent {
+		display: block;
+	}
+
+	.head {
+		background-color: white;
+		height: auto;
+	}
+
+	.experience {
+		display: block;
+		width: 300px;
+		height: 130px;
+		position: relative;
+		right: 0%;
+	}
+	.take {
+		display: none;
+	}
+
+	.textSmallBold {
+		margin-bottom: 20px;
+		width: 100%;
+		font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 18px;
+		line-height: 28px;
+		font-weight: 400;
+		margin-top: 20px;
+		color: #384B59;
+	}
+
+	.textSmall {
+		font-size: 18px;
+	}
+
+	.grid-container {
+		display: block;
+	}
+
+	.bannerclass {
+		display: none;
+	}
+
+	.button-Div1 {
+		display: block;
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+	.button-Div {
+		display: none;
+	}
+
+	.bodyHeadText {
+		font-size: 20px;
+		margin-top: -45px;
+		text-align: left;
+	}
+
+	.bodyParaText {
+		font-size: 18px;
+		margin-bottom: 10px;
+		width: 100%;
+	}
+
+	.grid-containerTrackBoxContents {
+		display: flex;
+		grid-template-columns: auto;
+		gap: 15px;
+		padding: 35px;
+		flex-direction: column;
+	}
+}
+
+@media only screen and (min-width:401px) and (max-width:600px) {
+	.display {
+		display: block;
+	}
+
+	.grid-containerFeatureBoxes {
+		display: flex;
+        gap: 15px;
+        padding: 0px;
+        padding-top: 20px;
+        margin-left: 0%;
+        flex-direction: column;
+        width: 100%;
+	}
+
+.trackBoxTextHead {
+	font-family:   "Eina-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 24px;
+	line-height: 35px;
+	font-weight: 400;
+	color: #403A60;
+	width: 180px;
+    margin: 0 auto;
+}
+	.font {
+		font-size: 14px;
+		font-family: "Eina-semiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		color: #2C333A;
+	}
+
+	.featurestext {
+		font-size: 32px;
+		margin-top: -45px;
+		text-align: left;
+		margin-left: 31%;
+		font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		position: relative;
+		top: 11px;
+		color: #384B59;
+	}
+
+	.grid-containerTrackBoxes {
+		display: grid;
+		grid-template-columns: repeat(1, auto);
+		gap: 40px;
+	}
+
+	.uhead {
+		color: #384B59;
+	}
+
+	.ptag1 {
+		display: block;
+	}
+
+	.ptag2 {
+		display: none;
+	}
+
+	.bookimg {
+		display: none;
+	}
+
+	.control {
+		text-align: start;
+		padding-bottom: 10px;
+	}
+
+	.mobileimg {
+		display: block;
+		width: 82%;
+		height: 520px;
+		margin-left: 8%;
+	}
+
+	.trackbox {
+		display: none;
+	}
+	
+
+	.ptag {
+		font-size: 14px;
+	}
+
+	.aligncontent {
+		display: block;
+	}
+
+	.head {
+		background-color: white;
+		height: auto;
+	}
+
+	.experience {
+		display: block;
+		width: 300px;
+		height: 130px;
+		position: relative;
+		right: 0%;
+	}
+
+	.bodyParaText {
+		font-size: 18px;
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	.take {
+		display: none;
+	}
+
+	.textSmallBold {
+		margin-bottom: 20px;
+		width: 100%;
+		font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+		font-size: 18px;
+		line-height: 28px;
+		font-weight: 400;
+		margin-top: 20px;
+		color: #384B59;
+	}
+
+	.textSmall {
+		font-size: 18px;
+	}
+
+	.grid-container {
+		display: block;
+	}
+
+	.bannerclass {
+		display: none;
+	}
+
+	.button-Div1 {
+		display: block;
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+	.button-Div {
+		display: none;
+	}
+
+	.bodyHeadText {
+		font-size: 20px;
+		margin-top: -45px;
+		text-align: left;
+	}
+
+
+	.grid-containerTrackBoxContents {
+		display: flex;
+		grid-template-columns: auto;
+		gap: 15px;
+		padding: 35px;
+		flex-direction: column;
+	}
+}
+
+@media only screen and (min-width:601px) and (max-width:768px) {
+	.display {
+		display: block;
+	}
+
+	.grid-containerFeatureBoxes {
+		display: grid;
+		grid-template-columns: repeat(1, 280px);
+		gap: 10px;
+		padding: 10px;
+	}
+
+	.grid-containerTrackBoxes {
+		display: grid;
+		grid-template-columns: repeat(1, auto);
+		gap: 40px;
+	}
+
+	.bookimg {
+		width: 60%;
+		position: relative;
+	}
+
+	.bannerclass {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width:992px) {
+	.display {
+		display: block;
+	}
+
+	.grid-containerFeatureBoxes {
+		display: grid;
+		grid-template-columns: repeat(2, 280px);
+		gap: 25px;
+		padding: 10px;
+	}
+
+	.grid-containerTrackBoxes {
+		display: grid;
+		grid-template-columns: repeat(1, auto);
+		gap: 40px;
+	}
+
+	.bannerclass {
+		display: none;
+		padding-top: 80px;
+		padding-left: 0px;
+	}
+
+	.head {
+		position: relative;
+	}
+
+	.button-Div {
+		width: 400px;
+	}
+
+	.textSmallBold {
+		margin-bottom: 20px;
+		width: 100%;
+	}
+}
+@media only screen and (min-width:992px) {
+	.trackBox {
+	width: 330px;
+	background-color: white;
+	text-align: center;
+	border-radius: 12px;
+	box-shadow: 0px 0px 4px 0px #00000026;
+}
+.trackBoxx {
+	background-color: white;
+	text-align: center;
+	border-radius: 12px;
+	box-shadow: 0px 0px 4px 0px #00000026;
+}
+}
+@media only screen and (min-width:992px) and (max-width:1100px) {
+	.display {
+		display: none;
+	}
+.trackBox{
+	width: 300px;
+}
+.trackBoxx{
+	width: 280px;
+}
+	.grid-containerFeatureBoxes {
+		display: grid;
+		grid-template-columns: repeat(2, 280px);
+		gap: 40px;
+		padding: 10px;
+	}
+
+	.grid-containerTrackBoxes {
+		display: grid;
+		grid-template-columns: repeat(3, auto);
+		gap: 20px;
+	}
+
+	.bannerclass {
+		display: flex;
+		padding: 0px 0px;
+	}
+
+	.head {
+		position: relative;
+		bottom: 8px;
+	}
+}
+
+@media only screen and (min-width:1100px) and (max-width:1200px) {
+	.bannerclass {
+		padding: 30px;
+	}
+	.trackBoxx{
+	width: 310px;
+}
+	.trackBox{
+	width: 240px;
+}
+	.grid-containerFeatureBoxes {
+		display: grid;
+		grid-template-columns: repeat(4, 280px);
+		gap: 0px;
+		padding: 10px;
+		margin-left: 5%;
+	}
+.grid-containerTrackBoxes {
+		display: grid;
+		grid-template-columns: repeat(3, auto);
+		gap: 20px;
+	}
+}
+
+@media only screen and (min-width:1200px) and (max-width:1400px) {
+	.bannerclass {
+		display: flex;
+		padding: 90px 0px;
+	}
+		.grid-containerFeatureBoxes {
+		display: grid;
+		grid-template-columns: repeat(4, 280px);
+		gap: 10px;
+		padding: 10px;
+		margin-left: 2%;
+	}
+	.trackBoxx{
+	width: 340px;
+}
+	.trackBox{
+	width: 260px;
+}
+}
+
+@media only screen and (min-width:1100px) and (max-width:1400px) {
+	.display {
+		display: none;
+	}
+
+
+
+	.grid-containerTrackBoxes {
+		display: grid;
+		grid-template-columns: repeat(3, auto);
+		gap: 40px;
+	}
+}
+
+@media only screen and (min-width:1200px) {
+	.textSmall {
+		width: 533px;
+	}
+.info{
+	width: 78%;
+    margin-left: 36px;
+}
+.sympt{
+	width: 78%;
+    margin-left: 36px;
+}
+	.control {
+		width: 750px;
+		margin-left: 16%;
+	}
+
+	.take {
+		width: 750px;
+		margin-left: 4%;
+	}
+}
+
+@media only screen and (min-width:1400px) and (max-width:1600px) {
+	.display {
+		display: none;
+	}
+.trackBoxx{
+	width: 380px;
+}
+	.control {
+		margin-left: 20%;
+	}
+
+	.grid-containerFeatureBoxes {
+		display: grid;
+		grid-template-columns: repeat(4, auto);
+		gap: 20px;
+		padding: 10px;
+	}
+.trackBox {
+	width: 300px;
+	background-color: white;
+	text-align: center;
+	border-radius: 12px;
+	box-shadow: 0px 0px 4px 0px #00000026;
+}
+	.grid-containerTrackBoxes {
+		display: grid;
+		grid-template-columns: repeat(3, auto);
+		gap: 40px;
+	}
+
+	.bannerclass {
+		display: flex;
+		padding: 130px 0px;
+	}
+}
+
+@media only screen and (min-width:1600px) and (max-width:1900px) {
+	.display {
+		display: none;
+	}
+
+	.control {
+		margin-left: 24%;
+	}
+
+	.head {
+		position: relative;
+		bottom: 116px;
+	}
+
+	.grid-containerFeatureBoxes {
+		display: grid;
+		grid-template-columns: repeat(4, auto);
+		gap: 32px;
+		padding: 10px;
+	}
+
+	.grid-containerTrackBoxes {
+		display: grid;
+		grid-template-columns: repeat(3, auto);
+		gap: 40px;
+	}
+
+	.bannerclass {
+		display: flex;
+		padding: 195px 0px;
+	}
+}
+@media only screen and (min-width:1600px) and (max-width:1700px){
+.trackBoxx{
+	width: 440px;
+}
+.trackBox{
+	width: 330px;
+}
+}
+@media only screen and (min-width:1700px) and (max-width:1900px){
+.trackBoxx{
+	width: 440px;
+}
+.trackBox{
+	width: 350px;
+}
+}
+@media only screen and (min-width:1900px) {
+	.display {
+		display: none;
+	}
+
+	.control {
+		margin-left: 26%;
+	}
+
+	.head {
+		position: relative;
+		bottom: 100px;
+	}
+
+	.grid-containerFeatureBoxes {
+		display: grid;
+		grid-template-columns: repeat(4, auto);
+		gap: 32px;
+		padding: 10px;
+	}
+.trackBox{
+	width: 400px;
+}
+	.grid-containerTrackBoxes {
+		display: grid;
+		grid-template-columns: repeat(3, auto);
+		gap: 40px;
+	}
+
+	.bannerclass {
+		display: flex;
+		padding: 235px 0px;
+	}
+}
+
+/*---Track & Features Section Ends---*/

@@ -1,0 +1,34 @@
+<!--This lightning web component takes in a percentage value and renders a circular progress chart accordingly, with the progress represented by a dynamically calculated dash array on the progress circle.-->
+<template>
+  <!-- The template for a circular progress chart -->
+  <div class="chart-container">
+    <!-- Container for the chart and percentage label -->
+    <div class="percentage-label">{ percentage }%</div>
+    <!-- Display the percentage with a label -->
+    <div class="chart">
+      <!-- Container for the SVG chart -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="wid200">
+        <!-- Background circle of the chart -->
+        <circle
+          cx="75"
+          cy="75"
+          r="60"
+          stroke="#403A60"
+          stroke-width="10"
+          fill="transparent"
+        ></circle>
+        <!-- Progress circle -->
+        <!-- The following styling cannot be avoided in the HTML file, since it requires calculation inside the circle desin-->
+        <circle
+          cx="75"
+          cy="75"
+          r="60"
+          style={progressCircleStyle}
+          stroke="#9B764E"
+          stroke-width="10"
+          fill="transparent"
+        ></circle>
+      </svg>
+    </div>
+  </div>
+</template>

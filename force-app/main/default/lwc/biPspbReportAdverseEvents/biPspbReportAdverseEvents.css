@@ -1,0 +1,842 @@
+/* *********************************************************
+Lighting Web Component Name    : biPspbReportAdverseEvents
+Created Date       :  20.12.2023,
+@description       : This LWC is used for create case record for Type - Medical Information Enquiry.
+@author            : Niyas
+Modification Log:
+Ver   Date         Author                               Modification
+59   06-01-2024   Niyas                                Initial Version
+********************************************************* */
+/* Add your CSS styles here */
+
+.font{
+    font-size:24px;
+}
+.check{
+    position: relative;
+    bottom: 156px;
+    width: 182%;
+    left: -40%;
+
+}
+.input-error-label {
+    color: red !important;
+    font-size: 18px;
+    font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.input-error {
+    color: #403a60 !important;
+    font-size: 18px;
+    font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.img {
+    width: 16px;
+    height: 16px;
+
+}
+
+.radio-group-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Optional: Adjust margins or padding for spacing */
+.radio-group-container lightning-radio-group {
+    margin-bottom: 10px;
+    /* Adjust as needed */
+}
+
+.form-container {
+    margin: 0px;
+    padding: 10px;
+}
+
+.toast {
+    background-color: rgb(194 240 194);
+    width: 188%;
+    height: 88px;
+    position: absolute;
+    left: -44%;
+    top: -11px;
+    z-index: 1;
+}
+
+.img4 {
+    background-color: rgb(37 156 37);
+    margin-left: -35px;
+    border-radius: 50px;
+    margin-right: 20px;
+    width: 25px;
+    height: 25px;
+}
+
+.btncls {
+    float: right;
+    padding-bottom: 10%;
+    background-color: rgb(194 240 194);
+    color: #000000;
+    border: 0px solid;
+    position: relative;
+    top: 50px;
+}
+
+.para {
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 60px;
+    padding-top: 25px;
+    width: 70%;
+}
+
+.notify {
+    background-color: none;
+    position: absolute;
+    top: -30px;
+    right: 70px;
+}
+
+.fileUploadSelector {
+    position: relative;
+    bottom: 39px;
+}
+
+.fileBox {
+    border-radius: 4px;
+    border: 1.2px solid #403A60;
+    height: 40px;
+    width: 390px;
+    background: white;
+    margin-top: 5px;
+}
+
+.parag {
+    width: 85%;
+    position: relative;
+    bottom: 4px;
+}
+
+.icon {
+    display: flex;
+    gap: 10px;
+    position: relative;
+    left: 96px;
+    top: 10px;
+}
+
+.fileBoxHide {
+    opacity: 0;
+    position: relative;
+    bottom: 25px;
+}
+
+.Upload {
+    position: relative;
+    right: 0px;
+    top: 3px;
+
+}
+
+h4.fivemb {
+    position: relative;
+    left: 97%;
+    bottom: 16px;
+    width: 41%;
+    display: flex;
+    font-size: 14px;
+    font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    gap: 5px;
+
+}
+
+.fileLabelName {
+    color: #8D89A5;
+    position: relative;
+    top: 7px;
+    left: 10px;
+    font-size: 16px;
+    font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+
+}
+
+.imgclass {
+    width: 16px;
+    height: 17px;
+    margin-bottom: 16px;
+    float: left;
+    position: relative;
+    bottom: 13px;
+    left: 355px;
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.UserImage {
+    padding-left: 4cm;
+    padding-top: 5cm;
+}
+
+.response .heading {
+    padding-left: 2.5cm;
+    font-size: large;
+    font-weight: bold;
+    margin-top: 2cm;
+    color: #403A60;
+}
+
+.heading h2 {
+
+    padding-top: 18px;
+    font-size: x-large;
+    color: #403A60;
+}
+
+.collectbutton {
+    padding-left: 2.5cm;
+    padding-top: 1cm;
+    display: flex;
+    justify-content: space-between;
+    gap: 1cm;
+
+}
+
+.buttonbox {
+    width: 286px;
+    height: 136px;
+    border-radius: 20px;
+    background-color: white;
+    border: 2px solid #403a60;
+    color: #403a60;
+}
+
+.back {
+    background: none;
+    border: none;
+    display: flex;
+    gap: 8px;
+}
+
+.back p {
+    font-size: 20px;
+    cursor: pointer;
+    color: #403A60;
+    padding-top: 0px;
+    font-family: "Eina04-bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.medicalheading h2 {
+    font-size: 32px;
+    font-weight: bold;
+    padding-left: 2.5cm;
+    color: #403A60;
+    font-family: "Eina04-bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    margin-top: 20px;
+}
+
+.medicalform {
+    padding-top: 5px;
+    padding-left: 2.2cm;
+}
+
+.medicalform label {
+    margin-top: 3px;
+    color: #403a60;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    line-height: 28px;
+}
+
+p {
+    font-size: 16px;
+    font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-weight: 400;
+}
+
+.medicalform .medicalInput {
+    padding-top: 3px;
+    font-size: 16px;
+    font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    line-height: 30px;
+    width: 110%;
+}
+
+.desc {
+  width: 390px;
+    border: 1.2px solid #403a60;
+    border-radius: 4px;
+    background-color: #ffffff;
+    margin-top: 5px;
+    --sds-c-textarea-sizing-min-height: 78px;
+    padding: 0;
+}
+
+.buttondiv {
+    display: flex;
+    gap: 1px;
+    margin-left: 81px;
+    position: relative;
+    bottom: 35px;
+}
+
+.button1 {
+    font-size: 14px;
+    font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    background-color: #403A60;
+    border: 2px solid #403a60;
+    border-radius: 12px;
+    color: #FFFFFF;
+    width: 165px;
+    height: 40px;
+}
+
+.max {
+    font-weight: 100;
+    font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-size: 14px;
+}
+
+.button2 {
+    padding-left: 2px;
+    background-color: #FFFFFF;
+    border: 1.2px solid #403a60;
+    border-radius: 12px;
+    margin-left: 10px;
+    width: 136px;
+    height: 40px;
+    font-size: 14px;
+    font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.buttonbox div {
+    padding-top: 1px;
+    padding-left: 1px;
+
+}
+
+.active {
+    background-color: #403a60;
+    border: 2px solid #403a60;
+    color: #fff;
+}
+
+.flexclass {
+    display: flex;
+    margin-left: -16px;
+    gap: 10px;
+}
+
+ul.noclass {
+    padding-left: 27px;
+    font-size: medium;
+}
+
+ul.tymclass {
+    padding-left: 27px;
+}
+
+.colclass {
+    display: flex;
+    flex-direction: column;
+}
+
+.info1 {
+    padding-right: 147px;
+}
+
+.info2 {
+    padding-right: 72px;
+}
+
+p.pinfo {
+    padding-right: 25px;
+}
+
+p.pinfo1 {
+    padding-right: 148px;
+}
+
+p.pinfo2 {
+    padding-right: 42px;
+}
+
+.error-throw {
+    color: red;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.error-throwtitle {
+    color: red;
+    font-size: 20px;
+    position: relative;
+    bottom: 8px;
+    font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.desnot {
+    color: #403a60;
+    font-size: 18px;
+    font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.attachment{
+    width: 390px;
+    padding: 0;
+    font-size: 16px;
+    font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    color: #403a60;
+}
+.p {
+    font-size: 16px;
+    font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-weight: 400;
+}
+
+.imgwarning {
+    width: 12px;
+    height: 12px;
+}
+
+.change {
+     width: 390px;
+    --sds-c-textarea-sizing-min-height: 40px !important;
+    border: 1.2px solid red !important;
+    border-radius: 4px;
+    height: 59px;
+}
+
+.change1 {
+    width: 400px;
+    height: 2cm;
+    border: 2px solid red !important;
+    border-radius: 5px;
+}
+
+.change2 {
+    width: 400px;
+    height: 2cm;
+    border: 2px solid red !important;
+    border-radius: 5px;
+}
+
+.slds-file-selector_files .slds-file-selector__body,
+.slds-file-selector--files .slds-file-selector__body {
+    display: flex;
+    align-items: center;
+    width: 350px;
+}
+
+.chnageradiobtn .slds-radio .slds-radio_faux,
+.slds-radio .slds-radio--faux {
+    width: var(--lwc-squareIconMediumContent, 1rem);
+    height: var(--lwc-squareIconMediumContent, 1rem);
+    display: inline-block;
+    position: relative;
+    flex-shrink: 0;
+    vertical-align: middle;
+    border: 1px solid red;
+
+    border-radius: var(--lwc-borderRadiusCircle, 50%);
+    background: none;
+    background-color: var(--slds-c-radio-color-background, var(--sds-c-radio-color-background, var(--slds-g-color-neutral-base-100, var(--lwc-colorBackgroundInput, rgb(255, 255, 255)))));
+    box-shadow: var(--slds-c-radio-shadow, var(--sds-c-radio-shadow));
+    transition: border var(--lwc-durationQuickly, 0.1s) linear, background-color var(--lwc-durationQuickly, 0.1s) linear;
+}
+
+@media only screen and (max-width:600px) {
+    .BoxAndMb {
+        display: grid;
+    }
+
+    h4.fivemb {
+        left: 0px;
+        width: 100%;
+        display: flex;
+        bottom: 0px;
+    }
+
+    .medicalheading h2 {
+        font-size: 16px;
+        padding-left: 10px;
+
+    }
+
+    .change {
+        width: 100%;
+    }
+
+    .main {
+        position: relative;
+        height: auto;
+        width: 100%;
+
+    }
+
+    .medicalform .medicalInput {
+        line-height: 32px;
+    }
+
+    .response .heading {
+        margin-top: 0px;
+        padding-left: 10px;
+
+    }
+
+    .desc {
+        width: 100%;
+    }
+
+    .fileBox {
+        width: 100%;
+    }
+
+    .imgclass {
+        float: right;
+        left: -8px;
+
+    }
+
+    .buttondiv {
+        bottom: 0px;
+        flex-direction: column;
+        gap: 10px;
+        margin-left: 0px;
+    }
+
+    .parag {
+        width: 95%;
+    }
+
+    .icon {
+        left: 10px;
+        width: 100%;
+
+    }
+
+    .toast {
+        width: 118%;
+        left: -22px;
+        top: -5px;
+        bottom: 313%;
+        min-height: 10vh;
+
+
+
+    }
+
+    .button1 {
+        width: 100%;
+
+    }
+
+    .button2 {
+        width: 100%;
+        margin-left: 0px;
+    }
+
+   
+
+    .back p {
+        font-size: 14px;
+        cursor: pointer;
+        color: #403A60;
+        padding-top: 5px;
+        font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    }
+
+    .medicalform label {
+        font-size: 16px;
+    }
+
+    .error-throwtitle {
+        font-size: 18px;
+    }
+
+    .p {
+        font-size: 14px;
+        font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+        font-weight: 400;
+    }
+
+    .imgmod {
+        width: 8px !important;
+        height: 8px !important;
+    }
+
+    .medicalform {
+        padding-top: 5px;
+        padding-left: 0px;
+    }
+    .check{
+        position: relative;
+        bottom: 0px;
+        width: 96%;
+        left: 3%;
+
+    }
+}
+
+@media only screen and (min-width:601px) and (max-width:767px) {
+    .BoxAndMb {
+        display: grid;
+    }
+
+    h4.fivemb {
+        left: 0px;
+        width: 100%;
+        display: flex;
+        bottom: 0px;
+    }
+
+    .medicalheading h2 {
+        font-size: 16px;
+        padding-left: 10px;
+
+    }
+
+    .change {
+        width: 100%;
+    }
+
+    .main {
+        position: relative;
+        height: auto;
+        width: 100%;
+
+    }
+
+    .medicalform .medicalInput {
+        line-height: 32px;
+    }
+
+    .response .heading {
+        margin-top: 0px;
+        padding-left: 10px;
+
+    }
+
+    .desc {
+        width: 100%;
+    }
+
+    .fileBox {
+        width: 100%;
+    }
+
+    .imgclass {
+        float: right;
+        left: -8px;
+
+    }
+
+    .buttondiv {
+        bottom: 0px;
+        flex-direction: column;
+        gap: 10px;
+        margin-left: 0px;
+    }
+
+    .parag {
+        width: 95%;
+    }
+
+    .icon {
+        left: 10px;
+        width: 100%;
+
+    }
+
+    .toast {
+           width: 110%;
+    left: -22px;
+    top: -451px;
+    bottom: 322%;
+    min-height: 10vh;
+
+
+
+    }
+
+    .button1 {
+        width: 100%;
+
+    }
+
+    .button2 {
+        width: 100%;
+        margin-left: 0px;
+    }
+
+
+    .back p {
+        font-size: 14px;
+        cursor: pointer;
+        color: #403A60;
+        padding-top: 5px;
+        font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    }
+
+    .medicalform label {
+        font-size: 16px;
+    }
+
+    .error-throwtitle {
+        font-size: 18px;
+    }
+
+    .p {
+        font-size: 14px;
+        font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+        font-weight: 400;
+    }
+
+    .imgmod {
+        width: 8px !important;
+        height: 8px !important;
+    }
+
+    .medicalform {
+        padding-top: 5px;
+        padding-left: 0px;
+    }
+    .check{
+        position: relative;
+        bottom: 434px;
+        width: 119%;
+        left: -13%;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:992px) {
+    .response {
+        margin-left: 60px;
+    }
+
+    .medicalheading h2 {
+        font-size: 32px;
+        padding-left: 93px;
+
+    }
+
+    .BoxAndMb {
+        display: grid;
+    }
+
+    h4.fivemb {
+        left: 0px;
+        width: 50%;
+        display: flex;
+        bottom: 0px;
+    }
+
+    .buttondiv {
+        bottom: 0px;
+    }
+
+    .parag {
+        width: 100%;
+    }
+
+    .icon {
+        width: 80%;
+        left: 94px;
+    }
+
+   
+.check{
+    position: relative;
+    bottom: 45px;
+    width: 159%;
+    left: -41%;
+
+}
+    .response .heading {
+        margin-top: 3cm !important;
+    }
+}
+
+@media only screen and (min-width:993px) and (max-width:1200px) {
+    h4.fivemb {
+        display: flex;
+    }
+
+    .icon {
+        width: 88%;
+        left: 96px;
+    }
+
+   .check{
+    position: relative;
+    bottom: 130px;
+    width: 186%;
+    left: -55%;
+   }
+    .parag {
+        width: 116%;
+        position: relative;
+        bottom: 4px;
+    }
+
+    .response .heading {
+        margin-top: 3cm !important;
+    }
+}
+
+@media only screen and (min-width:1200px) {
+    
+
+    .parag {
+        width: 102%;
+    }
+
+    .icon {
+        display: flex;
+        gap: 10px;
+        position: relative;
+        left: 96px;
+        top: 10px;
+    }
+
+   
+    .response .heading {
+        margin-top: 2.5cm;
+    }
+}
+
+@media only screen and (min-width:1200px) and (max-width:1500px) {
+    .check{
+        position: relative;
+        bottom: 130px;
+        width: 183%;
+        left: -47%;
+    }
+}
+
+@media only screen and (min-width:1500px) {
+    
+
+    
+
+    .icon {
+        display: flex;
+        gap: 10px;
+        position: relative;
+        left: 98px;
+        top: 10px;
+    }
+
+    .parag {
+        width: 85%;
+    }
+
+    .response .heading {
+        margin-top: 2cm;
+    }
+}

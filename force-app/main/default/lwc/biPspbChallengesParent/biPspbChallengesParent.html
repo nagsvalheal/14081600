@@ -1,0 +1,70 @@
+<!--This Lightning Web Component is a template with tab navigation for Challenges and Trophy Case, along with sections for Avatar Navigation and Challenge Component-->
+<template>
+  <div if:true={showSpinner}>
+		<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	 </div>
+  <!-- Layout for tabs -->
+  <lightning-layout multiple-rows class="tabClass">
+    <!-- Item for tab links -->
+    <lightning-layout-item
+      size="12"
+      small-device-size="12"
+      medium-device-size="12"
+      large-device-size="12"
+    >
+      <!-- Container for tab links -->
+      <div class="tabsDiv pad" data-it-uid={userId}>
+        <!-- Grid for tab links -->
+        <div class="grid-containerTabs">
+          <!-- Link to open Challenges -->
+          <a onclick={openChallenges} class="anchorTextActive">{challengeNavValue}</a>
+          <!-- Link to open Trophy Case -->
+          <a onclick={openTrophyCase} class="anchorText">{tropyCaseNavValue}</a>
+        </div>
+      </div>
+    </lightning-layout-item>
+  </lightning-layout>
+
+  <!-- Layout for main content -->
+  <lightning-layout multiple-rows class="layoutColor pad">
+    <!-- Avatar Navigation section -->
+    <lightning-layout-item
+      size="12"
+      small-device-size="12"
+      medium-device-size="4"
+      large-device-size="3"
+      class="slds-p-top_medium"
+    >
+    <div class="displayflexCenter1">
+      <!-- Box for Avatar Navigation component -->
+      <div class="custom-box1">
+        <c-bi-Pspb-Avatar-Navigation
+          receivedxpvalue={currentXPvalue}
+           onload={handleComponentLoad}
+        ></c-bi-Pspb-Avatar-Navigation>
+      </div>
+    </div>
+    </lightning-layout-item>
+    <!-- Challenge Component section -->
+    <lightning-layout-item
+      size="12"
+      small-device-size="12"
+      medium-device-size="8"
+      large-device-size="9"
+      class="slds-p-bottom_xx-large"
+    >
+    <div class="displayflexCenter">
+      <!-- Box for Challenge Component -->
+      <div class="custom-box2">
+        <!-- Placeholder for Challenge Component -->
+        <div>
+          <c-bi-Pspb-Challenges
+            onsendxp={sendxpvalue}
+             onload={handleComponentLoad}
+          ></c-bi-Pspb-Challenges>
+        </div>
+      </div>
+    </div>
+    </lightning-layout-item>
+  </lightning-layout>
+</template>

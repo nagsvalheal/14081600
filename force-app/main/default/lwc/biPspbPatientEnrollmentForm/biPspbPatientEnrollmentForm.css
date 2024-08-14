@@ -1,0 +1,1283 @@
+/* Style for the custom message with class slds-form-element__help */
+
+@font-face {
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff")
+    format("woff");
+}
+button{
+  background: none;
+  border: none;
+}
+.disable-button {
+  display: flex;
+  width: 79px;
+  height: 40px;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: grey;
+  color: #fff;
+  border-radius: 12px;
+  font-family: "Eina04-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 16px;
+  border-color: transparent;
+}
+.custom-checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.custom-checkbox {
+  display: none; /* Hide the default checkbox */
+}
+
+.custom-checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.custom-checkbox-box {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #8b99a7;
+  background-color: white;
+  margin-right: 2px;
+  margin-top: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
+  border-radius: 6px;
+}
+.custom-checkbox-box_Error {
+  border: 1px solid red;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+.custom-checkbox:checked + .custom-checkbox-label .custom-checkbox-box {
+  background-color: #ffffff;
+  border-color: #8b99a7;
+}
+
+.custom-checkbox:checked + .custom-checkbox-label .custom-checkbox-box::before {
+  content: "✓"; /* Checkmark */
+  color: #696969;
+  font-size: 16px;
+}
+.or {
+  position: relative;
+  right: 4px;
+}
+.terms {
+  font-size: 32px;
+  width: 80%;
+}
+.errorMessage {
+  font-size: 14px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  color: #ff0000;
+  margin-top: -5px;
+}
+.exitmail {
+  font-size: 14px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  color: #ff0000;
+  margin-top: -4px;
+}
+.error {
+  font-size: 14px;
+  font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif !important;
+  color: #ff0000;
+}
+
+.checkbox {
+  box-sizing: border-box;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.addNewHcpSection {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 400;
+  font-family: "Eina04-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  color: #403a60;
+  font-size: 14px;
+  width: 100%;
+}
+
+.text-content-for-mobile1 {
+  color: #fff;
+  background: rgba(102, 97, 132, 1);
+  border-radius: 5px;
+  padding: 10px;
+  width: 57%;
+  margin: 0px auto 5px;
+  padding-bottom: 10px;
+  padding-left: 12px;
+  border: none;
+}
+
+.addNewHcpSection-disable {
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: no-drop;
+}
+
+.Agree {
+  margin-left: 10px;
+  font-size: 16px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  color: #2c333a;
+  display: flex;
+}
+
+.custom-placeholder ::placeholder {
+  color: red;
+  /* Change this to the color you desire */
+}
+
+.terms-conditions-subheading {
+  font-size: 16px;
+  font-weight: 400;
+  color: #403a60;
+}
+
+.tilte {
+  font-size: 24px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  color: #ec4e4e;
+  margin-bottom: 3rem;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.prebtn {
+  display: flex;
+  width: 106px;
+  height: 40px;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: #fff;
+  color: #423a66;
+  border-radius: 12px;
+  border: 1.5px solid #423a66;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 14px;
+}
+
+.formContainer {
+  width: 66%;
+  display: flex;
+  margin-bottom: 120px;
+}
+
+.SPlable {
+  font-size: 14px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.step-container {
+  width: 44%;
+  margin-left: 16%;
+  margin-bottom: 65px;
+}
+
+.text-content1 {
+  color: #ffffff;
+  background: rgba(102, 97, 132, 1);
+  border-radius: 5px;
+  padding: 10px;
+  width: 97%;
+  font-size: 14px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  line-height: 20px;
+  margin-left: 10px;
+}
+
+/* CSS for Sidebar and avatar image  -----------------------------------------------------------------------*/
+.sidebar-container {
+  width: 34%;
+  background: #413a63;
+  padding-bottom: 10px;
+}
+
+.PI {
+  display: none;
+}
+
+.sidebar-container::after {
+  content: "";
+  background: linear-gradient(
+    to bottom,
+    #744f0d 0%,
+    #8b5f2d 11.35%,
+    #efdba1 42.29%,
+    #744f0d 100%
+  );
+  position: absolute;
+  top: 0;
+  left: 34%;
+  height: 100%;
+  width: 6px;
+}
+
+.error-message {
+  color: red;
+}
+
+.AccExit {
+  display: flex;
+  justify-content: space-between;
+}
+
+.marTB20 {
+  width: 210px;
+  position: relative;
+  bottom: 62px;
+  right: 80px;
+}
+
+.slds-col {
+  margin-left: 8%;
+  z-index: 2;
+}
+
+.clsebtndiv {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.div {
+  color: #ccc;
+}
+
+.avatar-img-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar-image {
+  width: 200px;
+  height: 190.61px;
+}
+
+.avatar-content-container {
+  position: relative;
+  top: 40px;
+}
+
+.text {
+  margin-top: 10px;
+  width: 98%;
+}
+
+.text-content {
+  color: #ffffff;
+  background: rgba(102, 97, 132, 1);
+  border-radius: 5px;
+  padding: 10px;
+  width: 57%;
+  margin: 0px auto 5px;
+  font-size: 14px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  line-height: 20px;
+}
+
+.text-content-for-mobile {
+  color: #fff;
+  background: rgba(102, 97, 132, 1);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0px auto 5px;
+  width: 10%;
+  padding-bottom: 10px;
+  padding-left: 12px;
+ 
+}
+
+.text-content-div-for-mobile {
+  display: none;
+}
+
+/* CSS for input field  --------------------------------------------------------------------------------------*/
+.input-label {
+  color: #403a60;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.input-label-search {
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #403a60;
+}
+
+.searchicon {
+  position: relative;
+  opacity: 0.9;
+  top: 29px;
+  z-index: 999;
+  float: inline-end;
+  right: 2%;
+}
+
+.input-error-label {
+  color: #ec4e4e;
+  line-height: 24px;
+  font-style: normal;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.input-error-label1 {
+  color: #ec4e4e;
+  line-height: 24px;
+
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.error-icon {
+  margin-right: 5px;
+}
+
+.slds-modal__header {
+  position: relative;
+  border-bottom-color: white;
+  background-color: var(
+    --slds-c-modal-header-color-background,
+    var(
+      --sds-c-modal-header-color-background,
+      var(
+        --slds-c-modal-color-background,
+        var(
+          --sds-c-modal-color-background,
+          var(
+            --slds-g-color-neutral-base-100,
+            var(--lwc-colorBackgroundAlt, rgb(255, 255, 255))
+          )
+        )
+      )
+    )
+  );
+  color: var(
+    --slds-c-modal-header-text-color,
+    var(--sds-c-modal-header-text-color, var(--sds-c-modal-text-color))
+  );
+  flex-shrink: 0;
+  padding-top: var(
+    --slds-c-modal-header-spacing-block-start,
+    var(
+      --sds-c-modal-header-spacing-block-start,
+      var(--lwc-spacingMedium, 1rem)
+    )
+  );
+  padding-bottom: var(
+    --slds-c-modal-header-spacing-block-end,
+    var(--sds-c-modal-header-spacing-block-end, var(--lwc-spacingMedium, 1rem))
+  );
+  padding-left: var(
+    --slds-c-modal-header-spacing-inline-start,
+    var(
+      --sds-c-modal-header-spacing-inline-start,
+      var(--lwc-spacingMedium, 1rem)
+    )
+  );
+  text-align: start;
+}
+
+.textInput {
+  -webkit-text-fill-color: #8d89a5;
+  --slds-c-input-color-border: #423a66;
+  --slds-c-textarea-color-border: #423a66;
+  margin: 8px 0px 0px 0px;
+  --lwc-heightInput: 40px;
+  font-size: 16px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  margin-top: 5px;
+}
+
+.slds-modal__header .slds-modal__close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1.5rem;
+  margin-left: 0;
+  bottom: 0;
+  font-size: 33px;
+  color: black;
+  cursor: pointer;
+}
+
+.textInput-err {
+  -webkit-text-fill-color: #403a60;
+  --slds-c-input-color-border: red;
+  --slds-c-textarea-color-border: red;
+  margin: 8px 0px 0px 0px;
+  --lwc-heightInput: 40px;
+  font-size: 16px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.slds-form-element__help {
+  color: red;
+  font-size: 13px;
+  margin-top: 8px;
+  margin-left: 4px;
+  font-weight: 400;
+  line-height: 22px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.Exists {
+  color: #ff0000;
+  font-size: 13px;
+  margin-top: 2px;
+  margin-left: 4px;
+  font-weight: 400;
+  line-height: 22px;
+  display: flex;
+  gap: 10px;
+  align-items: start;
+}
+
+.input-div {
+  margin: 8px 0px;
+}
+
+.accesscodeline {
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  position: relative;
+  top: 8px;
+}
+
+.mline {
+  display: flex;
+  align-items: center;
+}
+
+.line {
+  flex: 1;
+  border-top: 1px solid black;
+  margin-right: 10px;
+}
+
+.lighticon {
+  margin-left: 45px;
+}
+
+.hrline {
+  margin-top: 50px;
+  opacity: 1.1;
+}
+.hrlineone {
+  margin-top: 15px;
+  opacity: 1.1;
+  margin-bottom: 20px;
+}
+.hideuparrow {
+  display: block;
+  margin-left: 45px;
+}
+
+.hidearrowforclose {
+  display: none;
+}
+
+::placeholder {
+  opacity: 0.6;
+}
+
+/* CSS for Progress bar ---------------------------------------------------------------------------------*/
+.progress-bar-container {
+  position: relative;
+  top: 35px;
+}
+
+.progress-ol {
+  position: relative;
+  padding: 0;
+}
+
+.slds-progress__list .slds-progress__marker {
+  border-color: #f7f5fa !important;
+}
+
+.slds-progress__list .slds-is-completed .slds-progress__marker {
+  background-color: #403a60 !important;
+}
+
+.slds-progress__list .slds-is-active .slds-progress__marker {
+  background-color: #403a60 !important;
+}
+
+.slds-progress__list .slds-is-active .slds-progress__marker::after {
+  content: "";
+  padding: 13px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  position: relative;
+  bottom: 0px;
+  right: 11px;
+}
+
+.progress-label-count {
+  font-size: 16px;
+  font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  color: #8d89a580;
+}
+
+.PLbar {
+  font-size: 16px;
+  font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.progress-label {
+  font-weight: 400;
+  color: #403a60;
+  font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 20px;
+}
+
+.progress-label p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #403a60;
+  font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  margin-bottom: 0px;
+}
+
+.slds-progress__list .slds-is-active .slds-progress__marker::before {
+  content: "";
+  padding: 7px;
+  border: 4px double #ccc;
+  border-radius: 50%;
+  position: relative;
+  bottom: 0px;
+  left: 14px;
+}
+
+.slds-progress_vertical .slds-progress__item.slds-is-completed:before {
+  background-color: #8d89a5 !important;
+}
+
+.slds-progress_vertical .slds-progress__item.slds-is-completed:after {
+  background-color: #8d89a5 !important;
+}
+
+.slds-progress_vertical .slds-progress__item.slds-is-active:before {
+  background-color: #8d89a5 !important;
+}
+
+.slds-progress .slds-progress-bar {
+  position: absolute;
+  top: 50%;
+  margin-top: -0.0625rem;
+  display: none !important;
+}
+
+.slds-progress_vertical .slds-progress__item {
+  padding: 20px 0px;
+}
+
+.consent-checkox-div {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.tac {
+  text-decoration: underline;
+  margin-left: 5px;
+  cursor: pointer;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  color: #2c333a;
+  background: none;
+  border: none;
+}
+
+/* Styling placeholder when there is input */
+.input-filled ::placeholder {
+  color: greenyellow;
+  /* Darker color for the placeholder after typing */
+}
+
+.progress-bar-container-parent {
+  margin-top: 10px;
+  margin-left: 10%;
+}
+
+.mobile-heading {
+  display: none;
+}
+
+/* CSS for Button ----------------------------------------------------------------------------------  */
+.btn-div {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+}
+
+.next-button {
+  display: flex;
+  width: 79px;
+  height: 40px;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: #403a60;
+  color: #fff;
+  border-radius: 12px;
+  border-color: transparent;
+  font-size: 16px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.youraccfont {
+  font-size: 20px;
+  font-family: "Eina01-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  color: #2c333a;
+}
+.cancel-button {
+  display: flex;
+  width: 92px;
+  height: 40px;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: #fff;
+  color: #423a66;
+  border-radius: 12px;
+  border: 1.5px solid #423a66;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-right: 15px;
+}
+.GoTo-button {
+  display: flex;
+  width: 150px;
+  height: 40px;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: #403a60;
+  color: #fff;
+  border-radius: 12px;
+  border-color: transparent;
+  font-size: 16px;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+.prev-button {
+  display: flex;
+  width: 106px;
+  height: 40px;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: #fff;
+  color: #423a66;
+  border-radius: 12px;
+  border: 1.5px solid #423a66;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-right: 15px;
+}
+
+.radiobtn {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.SPClass {
+  margin-top: 20px;
+}
+
+.popup-visible {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  /* Ensure the pop-up appears above other content */
+  max-height: 80%;
+  /* Set a maximum height for the pop-up */
+  overflow-y: auto;
+  /* Enable vertical scrolling if content exceeds max-height */
+}
+
+.popup-hidden {
+  display: none;
+}
+
+.btn-11 {
+  border: none;
+  background: rgb(251, 33, 117);
+  background: linear-gradient(
+    0deg,
+    rgba(251, 33, 117, 1) 0%,
+    rgba(234, 76, 137, 1) 100%
+  );
+  color: #fff;
+  overflow: hidden;
+  width: 15%;
+  height: 5vh;
+  border-radius: 30px;
+  font-size: 11px;
+  font-style: italic;
+  position: relative;
+  left: 73rem;
+}
+
+.btn-11:hover {
+  text-decoration: none;
+  color: #fff;
+  opacity: 0.7;
+}
+
+.btn-11:before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  top: -180px;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background-color: #fff;
+  animation: shiny-btn1 3s ease-in-out infinite;
+}
+
+
+
+.btn-11:active {
+  box-shadow:
+    4px 4px 6px 0 rgba(255, 255, 255, 0.3),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+button.Pateientbutton {
+  width: 77%;
+  padding: 7px 11px;
+}
+
+.btn-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.btn-center button.slds-button.slds-button_brand {
+  border-radius: 22px;
+  width: 105px;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-weight: bold;
+  color: #403a60;
+  margin: auto;
+  font-size: 32px;
+}
+
+button.slds-button.slds-button_brand {
+  background-image: linear-gradient(
+    to right,
+    #29323c,
+    #485563,
+    #2b5876,
+    #4e4376
+  );
+  box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+}
+
+lightning-button.button {
+  --sds-c-button-brand-color-background: #bb00ff;
+  --sds-c-button-text-color: #f4f7f9;
+}
+
+.hcpbtn {
+  text-align: center;
+  padding: 25px 25px 25px 25px;
+  margin-top: 10px;
+}
+
+.custom-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.demoFont {
+  color: #000000;
+
+  font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.demoFontforConsent {
+  color: #000000;
+
+  font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.demoFontsubhead {
+  font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #000000;
+}
+
+.accessquestion {
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #403a60;
+}
+
+
+.slds-input {
+  border-color: red !important;
+}
+
+.slds-calendar {
+  background-color: #f0f0f0;
+  /* Customize the background color */
+}
+
+.radio-btn {
+  height: 24px;
+  width: 24px;
+}
+
+.radio-btn:checked {
+  accent-color: #403a60;
+}
+
+.radio-label {
+  margin: 0px 40px 0px 10px;
+  font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 16px;
+  color: #2c333a;
+}
+
+.accordion-div {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #403a60;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.modal1 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  z-index: 2;
+}
+
+.modal-content {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 33px;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  border-radius: 12px;
+}
+
+.modal-background {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.close {
+  color: #403a60;
+  font-size: 40px;
+  cursor: pointer;
+  position: relative;
+  bottom: 39px;
+  left: 17px;
+}
+
+.modal-header {
+  color: #403a60;
+  font-size: 32px;
+  font-family: "Eina04-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-weight: 400;
+  line-height: 44px;
+}
+
+.btn-clr {
+  display: inline-block;
+  height: 40px;
+  width: 154px;
+  border-radius: 12px;
+  background-color: #403a60;
+  font-weight: bold;
+  color: white;
+  border: #403a60;
+  margin-top: 20px;
+}
+
+.btn-clr-1 {
+  float: right;
+  height: 40px;
+  width: 154px;
+  border-radius: 12px;
+  background-color: #403a60;
+  font-weight: bold;
+  color: white;
+  border: #403a60;
+  margin-top: 20px;
+}
+
+.b {
+  color: white;
+}
+
+/* Media Query for mobile view -------------------------------------------------------------------------- */
+@media (width <=850px) {
+  /* Overall Layout related CSS -------------------------------------------------------------------------*/
+  .step-container {
+    width: 100%;
+    padding: 0px 10px;
+    margin-left: 0;
+    position: relative;
+    top: 0px;
+    margin-bottom: 0px;
+  }
+  .disable-button {
+    width: 100%;
+  }
+  .modal-content {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 33px;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    border-radius: 12px;
+  }
+  .modal-header {
+    font-size: 24px;
+  }
+  .clsebtndiv {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+  .cancel-button {
+    width: 100%;
+  }
+  .GoTo-button {
+    width: 100%;
+  }
+  .Handleclose {
+    position: relative;
+    right: 6%;
+    color: #ffffff;
+    cursor: pointer;
+  }
+
+ 
+
+  .demoFont1 {
+    position: relative;
+    top: 0px;
+  }
+
+  .PI {
+    display: flex;
+    font-weight: 600;
+    color: #403a60;
+    font-family: "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-size: 14px;
+  }
+
+  .sidebar-container1 {
+    content: "";
+    background: linear-gradient(
+      90deg,
+      #744f0d 0%,
+      #8b5f2d 11.35%,
+      #efdba1 42.29%,
+      #744f0d 100%
+    );
+    position: absolute;
+
+    left: 0%;
+    height: 4px;
+    width: 100%;
+  }
+
+  .marTB20 {
+    width: 230px;
+    position: relative;
+    bottom: 150px;
+    right: 0px;
+  }
+
+  .formContainer {
+    width: 100%;
+    flex-direction: column-reverse;
+    position: relative;
+    bottom: 50px;
+    margin-bottom: 0px;
+  }
+
+  .sidebar-container {
+    width: 100%;
+    position: relative;
+    top: 0px;
+    z-index: 3;
+  }
+
+  .slds-grid {
+    display: block;
+    height: 100%;
+  }
+
+  /* Button related CSS -----------------------------------------------------------------*/
+  .btn-div {
+    flex-direction: column-reverse;
+  }
+
+  .prev-button {
+    width: 100%;
+    margin: 10px 0px;
+  }
+
+  .next-button {
+    width: auto;
+  }
+
+  /* Sidebar and avatar image related CSS-------------------------------------------------------- */
+  .sidebar-container::after {
+    height: 0%;
+  }
+
+  .avatar-img-div {
+    flex-direction: row;
+    position: relative;
+    align-items: flex-start;
+    bottom: 40px;
+  }
+
+  .text-content {
+    display: none;
+  }
+
+  .avatar-image {
+    margin-left: 10px;
+    width: 65px;
+    height: 64px;
+  }
+
+  .avatar-content-container {
+    display: flex;
+  }
+
+  .text-content-for-mobile {
+    display: block;
+    width: 97%;
+    margin-right: 4px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding-right: 20px;
+  }
+
+  .text-content-div-for-mobile {
+    display: block;
+  }
+
+  /* Prgress bar CSS ------------------------------------------------------------------*/
+  .progress-label-count {
+    display: none;
+  }
+
+  .slds-progress__item_content {
+    display: none;
+  }
+
+  .slds-progress_vertical .slds-progress__list {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    margin-left: 10px;
+  }
+
+  .slds-progress_vertical .slds-progress__item {
+    padding: 23% 0px;
+    transform: rotate(270deg);
+  }
+
+  .progress-bar-container {
+    overflow-x: hidden;
+  }
+
+  .progress-bar-container-parent {
+    margin-left: 0;
+  }
+
+  .progress-label {
+    margin-left: 10px;
+    font-size: 16px;
+  }
+
+  .heading {
+    display: none;
+  }
+  .demoFont {
+    position: relative;
+    font-size: 16px;
+    top: 20px;
+  }
+  .mobile-heading {
+    display: block;
+    margin-left: 10px;
+    color: #403a60;
+    font-size: 18px;
+    margin-top: 110px;
+  }
+
+  .flex {
+    display: flex;
+        flex-direction: row-reverse;
+        align-items: start;
+  }
+
+  .text-content-for-mobile1 {
+    display: block;
+    width: 10%;
+    margin-right: 4px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border: none;
+  }
+}

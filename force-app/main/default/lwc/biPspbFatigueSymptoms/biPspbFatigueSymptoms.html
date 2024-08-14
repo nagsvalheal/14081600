@@ -1,0 +1,25 @@
+<!--This Lightning web component is used User FatigueSymptoms insert values -->
+<template>
+	<div class="itchenesline" data-it-uid={userid}>{fatigueInfo}</div>
+	<p class="fatique-content">{selectIntensity}</p>
+	<div class="slidervalue-intersity">
+		<span class="defalut-value">0</span>
+		<div class="slider-container">
+			<input class="slider" type="range" min="0" max="10" step="1" value={sliderValue}
+				oninput={handleEmojiClick} />
+			<br>
+			<div class="thumb-label" id="demo" data-name={sliderValue} data-value={sliderValue}>
+				{sliderValue}</div>
+		</div>
+		<span class="sliderval">10</span>
+	</div>
+	<div class="slider-value">
+		<div class="slider-value-box">
+			<span class="sliderResult">{sliderValueTwo}</span>
+		</div>
+		<p class="Intensity">{intensityLabel}</p>
+	</div>
+	<button class="confirm-btn" type="button"  onclick={onchangeAccept} disabled={fatiqueTrack}
+		data-it-button="Fatigue: Confirm and Save">{confirmAndSave}</button>
+	<div class="itchiness-error" if:true={fatigueError}>⚠ {intensityValidation} </div>
+</template>

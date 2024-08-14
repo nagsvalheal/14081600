@@ -1,0 +1,700 @@
+/* Add your CSS styles here */
+
+.font {
+font-size: 24px;
+}
+.mb {
+font-size: 14px;
+font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+margin-left: 5px;
+margin-right: 5px;
+}
+.form-container {
+margin: 0px;
+padding: 10px;
+}
+.check{
+    position: relative;
+    bottom: 134px;
+    width: 182%;
+    left: -40%; 
+}
+.img {
+width: 12px;
+height: 12px;
+}
+
+.imgwarning {
+width: 12px;
+height: 12px;
+}
+
+.fileUploadSelector {
+position: relative;
+bottom: 39px;
+}
+
+.toast {
+background-color: rgb(194 240 194);
+width: 187%;
+height: 88px;
+position: absolute;
+left: -56%;
+top: 0px;
+z-index: 1;
+}
+
+.img4 {
+background-color: rgb(37 156 37);
+margin-left: -35px;
+border-radius: 50px;
+margin-right: 20px;
+width: 25px;
+height: 25px;
+}
+
+.input-error-label {
+color: red !important;
+}
+
+.input-error {
+color: #403a60 !important;
+}
+
+.btncls {
+float: right;
+padding-bottom: 10%;
+background-color: rgb(194 240 194);
+color: #000000;
+border: 0px solid;
+position: relative;
+top: 50px;
+}
+
+.para {
+font-size: 15px;
+font-weight: bold;
+padding-left: 60px;
+padding-top: 25px;
+width: 70%;
+}
+
+.notify {
+background-color: none;
+position: absolute;
+top: -30px;
+right: 70px;
+}
+
+.fileBox {
+border: 1.2px solid #403a60 !important;
+height: 40px;
+width: 390px;
+background-color: #ffffff;
+border-radius: 4px;
+margin-top: 5px;
+}
+
+.fileBoxHide {
+opacity: 0;
+position: relative;
+bottom: 25px;
+}
+
+h4.fivemb {
+position: relative;
+left: 97%;
+bottom: 13px;
+width: 50%;
+font-size: 14px;
+font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.fileLabelName {
+color: grey;
+position: relative;
+top: 4px;
+left: 10px;
+font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+font-size: 16px;
+}
+
+.imgclass {
+margin-bottom: 16px;
+float: left;
+position: relative;
+bottom: 13px;
+left: 360px;
+width: 16px;
+height: 17px;
+}
+
+.main {
+width: 100%;
+height: 16cm;
+display: flex;
+flex-direction: row;
+}
+
+.UserImage {
+padding-left: 4cm;
+padding-top: 5cm;
+}
+
+.response .heading {
+padding-left: 2.5cm;
+font-size: large;
+font-weight: bold;
+margin-top: 2cm;
+color: #403a60;
+}
+
+.heading h2 {
+padding-top: 18px;
+font-size: x-large;
+color: #403a60;
+}
+
+.collectbutton {
+padding-left: 2.5cm;
+padding-top: 1cm;
+display: flex;
+justify-content: space-between;
+gap: 1cm;
+}
+
+.buttonbox {
+width: 286px;
+height: 136px;
+border-radius: 20px;
+background-color: white;
+border: 2px solid #403a60;
+color: #403a60;
+}
+
+.back {
+display: flex;
+gap: 8px;
+background: none;
+border: none;
+}
+
+.back p {
+font-size: 20px;
+cursor: pointer;
+color: #403a60;
+padding-top: 0px;
+font-family: "Eina04-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.medicalheading h2 {
+font-size: 32px;
+font-weight: bold;
+padding-left: 2.5cm;
+color: #403a60;
+font-family: "Eina04-Bold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+margin-top: 20px;
+}
+
+.medicalform {
+padding-top: 5px;
+padding-left: 2.2cm;
+}
+
+.medicalform label {
+margin-top: 3px;
+color: #403a60;
+font-weight: bold;
+font-size: 18px;
+font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+line-height: 28px;
+}
+
+.medicalform .medicalInput {
+padding-top: 3px;
+font-size: 16px;
+font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+line-height: 30px;
+width: 50%;
+}
+lightning-textarea{
+	width: 100%;
+	height: 80px;
+}
+
+.desc {
+width: 390px;
+    border: 1.2px solid #403a60;
+    border-radius: 4px;
+    background-color: #ffffff;
+    margin-top: 5px;
+    --sds-c-textarea-sizing-min-height: 78px;
+    padding: 0;
+
+}
+::-webkit-scrollbar{
+	width: 0px;
+}
+.buttondiv {
+display: flex;
+gap: 1px;
+margin-top: 30px;
+margin-left: 82px;
+}
+
+.button1 {
+background-color: #403a60;
+border: 1.5px solid #403a60;
+border-radius: 12px;
+color: white;
+width: 165px;
+height: 40px;
+font-size: 14px;
+font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.button2 {
+padding-left: 2px;
+background-color: white;
+border: 1.5px solid #403a60;
+border-radius: 12px;
+margin-left: 10px;
+width: 136px;
+height: 40px;
+font-size: 14px;
+font-family: "Eina-SemiBold",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.buttonbox div {
+padding-top: 1px;
+padding-left: 1px;
+}
+
+.active {
+background-color: #403a60;
+border: 2px solid #403a60;
+color: #fff;
+}
+
+.flexclass {
+display: flex;
+margin-left: -16px;
+gap: 10px;
+}
+
+ul.noclass {
+padding-left: 27px;
+font-size: medium;
+}
+
+ul.tymclass {
+padding-left: 27px;
+}
+
+.colclass {
+display: flex;
+flex-direction: column;
+}
+
+.info1 {
+padding-right: 147px;
+}
+
+.info2 {
+padding-right: 72px;
+}
+
+p.pinfo {
+padding-right: 25px;
+}
+
+p.pinfo1 {
+padding-right: 148px;
+}
+
+p.pinfo2 {
+padding-right: 42px;
+}
+
+.error-throw {
+color: red;
+font-size: 14px;
+font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.error-throwtitle {
+color: red;
+font-size: 20px;
+position: relative;
+bottom: 8px;	
+font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.change {
+    width: 390px;
+    --sds-c-textarea-sizing-min-height: 40px !important;
+    border: 1.2px solid red !important;
+    border-radius: 4px;
+    height: 59px;
+}
+
+.change1 {
+width: 400px;
+height: 2cm;
+border: 2px solid red !important;
+border-radius: 5px;
+}
+
+.change2 {
+width: 400px;
+height: 2cm;
+border: 2px solid red !important;
+border-radius: 5px;
+}
+
+.slds-file-selector_files .slds-file-selector__body,
+.slds-file-selector--files .slds-file-selector__body {
+display: flex;
+align-items: center;
+width: 395px;
+}
+
+.chnageradiobtn1 .slds-radio .slds-radio_faux,
+.slds-radio .slds-radio--faux {
+width: var(--lwc-squareIconMediumContent, 1rem);
+height: var(--lwc-squareIconMediumContent, 1rem);
+display: inline-block;
+position: relative;
+flex-shrink: 0;
+vertical-align: middle;
+border: 2px solid black;
+background: none;
+background-color:#403a60;
+box-shadow: var(--slds-c-radio-shadow, var(--sds-c-radio-shadow));
+transition:
+border var(--lwc-durationQuickly, 0.1s) linear,
+background-color var(--lwc-durationQuickly, 0.1s) linear;
+}
+
+.chnageradiobtn .slds-radio .slds-radio_faux,
+.slds-radio .slds-radio--faux {
+width: var(--lwc-squareIconMediumContent, 1rem);
+height: var(--lwc-squareIconMediumContent, 1rem);
+display: inline-block;
+position: relative;
+flex-shrink: 0;
+vertical-align: middle;
+border: 5px solid red;
+border-radius: var(--lwc-borderRadiusCircle, 50%);
+background: none;
+background-color: #403a60;
+box-shadow: var(--slds-c-radio-shadow, var(--sds-c-radio-shadow));
+transition:
+border var(--lwc-durationQuickly, 0.1s) linear,
+background-color var(--lwc-durationQuickly, 0.1s) linear;
+}
+
+@media only screen and (max-width: 600px) {
+.response {
+width: 100%;
+}
+
+.medicalheading h2 {
+    font-size: 16px;
+    padding-left: 8px;
+    width: 100%;
+    }
+.change {
+width: 100%;
+}
+
+.response .heading {
+padding-left: 0px;
+font-size: large;
+font-weight: bold;
+margin-top: 10px;
+color: #403a60;
+}
+
+.back p {
+font-size: 14px;
+cursor: pointer;
+color: #403a60;
+padding-top: 5px;
+font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.button1 {
+width: 100%;
+}
+
+.button2 {
+width: 100%;
+margin-left: 0px;
+}
+
+.medicalform label {
+margin-top: 3px;
+color: #403a60;
+font-weight: bold;
+font-size: 16px;
+font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+line-height: 28px;
+}
+
+.desc {
+width: 100%;
+}
+
+h4.fivemb {
+position: relative;
+left: 0%;
+top: 30px;
+width: 100%;
+}
+
+.img {
+width: 8px;
+height: 8px;
+}
+
+
+
+.buttondiv {
+margin-top: 60px;
+margin-left: 0px;
+
+flex-direction: column;
+gap: 10px;
+width: 100%;
+}
+
+
+
+.error-throwtitle {
+font-size: 18px;
+font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.main {
+    position: relative;
+    bottom: 10px;
+    width: 100%;
+    height: auto;
+}
+
+.fileBox {
+width: 100%;
+}
+
+.imgclass {
+position: relative;
+bottom: 14px;
+left: -8px;
+float: right;
+}
+
+.medicalform {
+padding-left: 0px;
+}
+
+.back {
+display: flex;
+gap: 8px;
+width: 100%;
+margin-left: 7px;
+}
+.check{
+    position: relative;
+    bottom: 14px;
+    width: 96%;
+    left: 1%;
+
+}
+}
+
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+.response {
+width: 100%;
+}
+
+.medicalheading h2 {
+    font-size: 16px;
+    padding-left: 8px;
+    width: 100%;
+    }
+.change {
+width: 100%;
+}
+
+.response .heading {
+padding-left: 0px;
+font-size: large;
+font-weight: bold;
+margin-top: 10px;
+color: #403a60;
+}
+
+.back p {
+font-size: 14px;
+cursor: pointer;
+color: #403a60;
+padding-top: 5px;
+font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.button1 {
+width: 100%;
+}
+
+.button2 {
+width: 100%;
+margin-left: 0px;
+}
+
+.medicalform label {
+margin-top: 3px;
+color: #403a60;
+font-weight: bold;
+font-size: 16px;
+font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+line-height: 28px;
+}
+
+.desc {
+width: 100%;
+}
+
+h4.fivemb {
+position: relative;
+left: 0%;
+top: 30px;
+width: 100%;
+}
+
+.img {
+width: 8px;
+height: 8px;
+}
+
+
+
+.buttondiv {
+margin-top: 60px;
+margin-left: 0px;
+
+flex-direction: column;
+gap: 10px;
+width: 100%;
+}
+
+.error-throwtitle {
+font-size: 18px;
+font-family: "Eina-Regular",  Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+.main {
+position: relative;
+bottom: 10px;
+width: 100%;
+}
+
+.fileBox {
+width: 100%;
+}
+
+.imgclass {
+position: relative;
+bottom: 14px;
+left: -8px;
+float: right;
+}
+
+.medicalform {
+padding-left: 0px;
+}
+
+.back {
+display: flex;
+gap: 8px;
+width: 100%;
+margin-left: 7px;
+}
+.check{
+    position: relative;
+    bottom: 356px;
+    width: 121%;
+    left: -14%;
+
+}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+.response {
+position: relative;
+bottom: 20px;
+left: 10%;
+}
+
+.imgclass {
+left: 360px;
+}
+
+h4.fivemb {
+position: relative;
+left: -6%;
+top: 25px;
+width: 50%;
+}
+
+.medicalheading h2 {
+font-size: 29px;
+padding-left: 93px;
+}
+
+.desc {
+width: 100%;
+}
+
+.buttondiv {
+margin-top: 60px;
+}
+
+.fileBox {
+width: 100%;
+}
+
+.main {
+margin-left: 4%;
+margin-top: 40px;
+}
+.check{
+    position: relative;
+    bottom: 110px;
+    width: 171%;
+    left: -48%;
+
+}
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+.main {
+margin-left: 7%;
+}
+.check{
+    position: relative;
+    bottom: 157px;
+    width: 187%;
+    left: -49%;
+}
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1500px) {
+.check{
+    position: relative;
+    bottom: 134px;
+    width: 177%;
+    left: -46%;
+}
+}

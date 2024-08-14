@@ -1,0 +1,76 @@
+<!-- This lightning web component is used to Create CommunityUsername for Patient Community before Navigate to any Community Page -->
+<!-- Strings are hard coded in this HTML file to comply with the mobile responsiveness-->
+<template>
+  <!-- whole container -->
+  <div data-it-uid={userId} class="row">
+    <br />
+    <!-- Leftside - split the whole container Like 30-70%  -->
+    <div class="column left">
+      <!-- Logged UserAvatar + Patient Community Content -->
+      <img
+        src={loggedUserAvatar}
+        alt={alternateTextForAvatar}
+        class="avatarImg"
+      />
+      <div class="avatarContent">
+        <p class="avatarText">{avatarContent}</p>
+      </div>
+    </div>
+    <!-- This line displays only at the mobile responsiveness time -->
+    <hr class="forMblResponse" />
+    <!-- Righttside - split the whole container Like 70-30%  -->
+    <div class="column right">
+      <!-- spinner for loading -->
+      <div lwc:if={showSpinner}>
+        <c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+      </div>
+      <!-- Enter the Username if any invalid entry, show the error message -->
+      <h1 class="myProfileText">{myProfile}</h1>
+      <br /><br />
+      <p class="normal" if:true={normal}>{profileName}</p>
+      <!-- general text without error -->
+      <p class="error" if:false={normal}>{profileName}</p>
+      <!-- error text  -->
+      <lightning-input
+        class={userInputBox}
+        placeholder="Enter Profile Name"
+        maxlength="25"
+        value={communityUsername}
+        onchange={handleCommunityUsername}
+      ></lightning-input>
+      <br />
+      <div class="error-message" if:true={showErrorForNull}>
+        <span>
+          <img
+            src={errorImg}
+            alt={alternateTextForWarningIcon}
+            class="errorImg" /></span
+        >&nbsp; {nameRequired}
+      </div>
+      <!-- error text if empty  -->
+      <div class="error-message" if:true={showError}>
+        <span>
+          <img
+            src={errorImg}
+            alt={alternateTextForWarningIcon}
+            class="errorImg"
+          />&nbsp;
+        </span>
+        Your {nameValidation}
+      </div>
+      <!-- error text if input contains Firstname,lastname,email,phone -->
+      <br />
+      <!-- Save button to create Community Username -->
+      <button
+        onclick={handleSave}
+        tabindex="0"
+        onkeypress={handleSave}
+        class="saveChangesBtn"
+        data-it-button="Chatter SignUp: Save Changes Button"
+      >
+        {saveChanges}
+      </button>
+    </div>
+    <br />
+  </div>
+</template>

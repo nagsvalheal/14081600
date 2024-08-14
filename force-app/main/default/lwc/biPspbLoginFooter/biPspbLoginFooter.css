@@ -1,0 +1,115 @@
+@font-face {
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina01-Regular.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-Light", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Light.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-SemiBold.woff") format("woff");
+}
+
+@font-face {
+	font-family:  "Eina-Bold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	src: url("/s/sfsites/c/resource/WebEinaFonts/WebFonts/Eina04-Bold.woff") format("woff");
+}
+
+.copyrights {
+	color: white;
+	text-align: left;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 20px;
+}
+.main{
+	    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.para {
+	text-align: left;
+	margin-left: 75px;
+}
+
+.link {	
+	color: white;
+    background-color: #403a60;
+    float: right;
+    margin-right: 75px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.link a {
+	color: white;
+}
+@media only screen and (max-width: 600px){
+.para{
+	font-family: "Eina-SemiBold", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	margin-left: 0px;
+}
+.link a {
+	
+	font-family: "Eina-Regular", Helvetica, Arial, Verdana, Tahoma, sans-serif;
+
+}
+.hrline {
+content: "";
+        background: linear-gradient(90deg, #744f0d 0%, #8b5f2d 11.35%, #efdba1 42.29%, #744f0d 100%);
+        left: 0%;
+        height: 2px;
+        width: 100%;
+		        margin: 3px;
+}
+.link{
+	    color: white;
+    background-color: #403a60;
+    float: right;	
+    margin-right: 0px;
+    
+    text-align: start;
+    font-size: 14px;
+    line-height: 10px;
+}
+.main{
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    bottom: 10px;
+	width: 103%;
+}
+.mobileViewPrivacy{
+	display: block;
+	right: 40px;
+}
+.mobileViewTerms{
+	display: block;
+}
+.mobileViewContact{
+	display: block;
+}
+
+}
+@media only screen and (min-width: 601px) and (max-width: 1030px){
+.main{
+	    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 13px;
+
+}.para {
+	text-align: left;
+	margin-left: 0px;
+}
+.link{
+	margin-right: 0px;
+}
+}

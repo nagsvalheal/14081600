@@ -1,0 +1,46 @@
+<!--This is a consolidated component that creates a dashboard layout featuring user notifications, update prescription, challenges, and articles. It utilizes Lightning Layout for responsive design, organizing components into rows and columns-->
+<!-- The child components are invoked in this parent component to bring the responsiveness for different resolutions. Since no communication is done, LMS is not used-->
+<template>
+	<div if:true={finalLoaderStatus}>
+		<c-bi-pspb-common-spinner></c-bi-pspb-common-spinner>
+	 </div>
+
+<div data-it-logged-in="true" data-it-uid={userId}>
+<lightning-layout multiple-rows class="padding">
+<lightning-layout-item size="12" small-device-size="12" medium-device-size="7" large-device-size="7" class="slds-p-top_x-large slds-p-bottom_x-large">
+<div class="grid-containerNotification">
+<div class="avatar">
+	<!-- To display Welcome Avatar with releavant messages -->
+	<c-bi-Pspb-Welcome-Avatar onavatarloaded={avatarLoading}></c-bi-Pspb-Welcome-Avatar>
+</div>
+<div class="board">
+	<!-- To display Dashboard Notification Widget -->
+	<c-bi-Pspb-Dashboard-Notification onnotification={startLoading} ></c-bi-Pspb-Dashboard-Notification>
+</div>
+</div>
+</lightning-layout-item>
+
+<lightning-layout-item size="12" small-device-size="12" medium-device-size="5" large-device-size="5" class="slds-p-top_x-large widget slds-p-bottom_x-large">
+<div class="grid-containerWidget">
+	<div>
+		<!-- To display Update Prescription Widget -->
+		<c-bi-Pspb-Prescription-Widget></c-bi-Pspb-Prescription-Widget> 
+	</div>
+	<div class="widgetch">
+		<!-- To display Challenge Widget -->
+		<c-bi-Pspb-Widget-Challenges onload={handleComponentLoad}></c-bi-Pspb-Widget-Challenges>
+	</div>
+</div>
+</lightning-layout-item>
+</lightning-layout>
+
+<lightning-layout multiple-rows class="padding">
+<lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12" class="slds-p-bottom_x-large">
+<div class="custom-box">
+	<!-- To display the articles in the Dashboard -->
+	<c-bi-Pspb-Articles-For-Dashboard onarticlesloaded={articleLoading}></c-bi-Pspb-Articles-For-Dashboard>
+</div>
+</lightning-layout-item>
+</lightning-layout>
+</div>
+</template>

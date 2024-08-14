@@ -1,0 +1,305 @@
+<template>
+	<!-- This is Work & Activity Impairment (WPAI) completed Questionnaire and  this allows you to see Wapi Completed Questionnaire 
+		with submitted responses.-->
+	<div class="tophead">{workAPI}<sup>1*</sup></div>
+	<div class="containercolumn" data-it-uid={userid}>
+		<!--To display Question and Response-->
+		<div class="column1">
+			<template if:true={assessmentResponseses}>
+				<div class="dropdowncolumn">
+					<div class="dropdowncolumn">
+						<template if:true={assessmentResponseses}>
+							<div class="comboboxtext">{selectmonth}</div>
+							<lightning-combobox value={selectedAssessment} options={assessmentOptions}
+								onchange={handleAssessmentChange} class ='lefticon' >
+							</lightning-combobox>
+						</template>
+					</div>
+				</div>
+				<template if:false={assessmentResponseses}>
+					<p>{notFound}</p>
+				</template>
+			</template>
+
+			<template if:true={assessmentResponseses}>
+				<template if:true={forSixResponse}>
+					<div class="nds-form-element nds-form-container">
+						<legend
+							class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+							<span class="nds-m-right_x-small"
+				>{firstQuestionText} (working for pay)?</span><br />
+			</legend>
+							<div class="nds-form-element__control nds-horizontal_radio">
+								<span class="nds-radio">
+				<div class="radio-container">
+				<input
+					type="radio"
+					
+					value="Yes"
+					checked
+					disabled
+					id="Questionbox1"
+				/>
+				<label class="nds-radio__label" for="Questionbox1">
+					<span class="nds-radio_faux"></span>
+								<span class="nds-form-element__label slds-p-left_small"
+					>{firstQuestionResponse}</span>
+								</label>
+							</div>
+							</span>
+					</div>
+		</div>
+
+		<div class="qnouterbox">
+			<div class="qn-box">
+				<span class="nds-m-right_x-small"
+				>{secondQuestionText}
+				<span class="subtext">({includeTxt})</span></span>
+			</div>
+			<div class="nums">
+				<input
+				type="number"
+				class="numbox"
+				value={secondQuestionResponse}
+				readonly
+				id="Questionbox2"
+			/>
+				<label class="labelhrs" for="Questionbox2">{hours}</label>
+			</div>
+		</div>
+		<div class="qnouterbox1">
+			<div class="qn-box1">
+				<span class="nds-m-right_x-small">{thirdQuestionText}</span><br />
+			</div>
+				<div class="nums">
+					<input
+				type="number"
+				class="numbox"
+				id="questionbox3"
+				value={thirdQuestionResponse}
+				readonly
+			/>
+					<label for="questionbox3" class="labelhrs">{hours}</label>
+				</div>
+			</div>
+
+			<div class="qnouterbox2">
+				<div class="qn-box2">
+					<span class="nds-m-right_x-small">{fourthQuestionText}</span>
+				</div>
+				<div class="nums">
+					<input
+				type="number"
+				class="numbox"
+				id="questionbox4"
+				value={fourthQuestionResponse}
+				readonly
+			/>
+					<label for="questionbox4" class="labelhrs">{hours}</label>
+				</div>
+			</div>
+
+			<div class="qnouterbox3">
+				<div class="qn-box3">
+					<span class="nds-m-right_x-small">{fifthQuestionText}</span><br /><br />
+					<slot>
+						<div class="contentclass">{sliderText}</div>
+					</slot><br />
+			</div>
+					<div class="compress">
+						<div class="slidecontainer">
+							<div class="start-label">0</div>
+							<div class="end-label">10</div>
+							<input
+				type="range"
+				min="0"
+				max="10"
+				name="firstQuestionName"
+				value={fifthQuestionResponse}
+				class="slider"
+				id="myRange"
+				list="tickmarks"
+				disabled
+				/>
+
+							<div class="thumb-label" id="demo">
+								{sliderValue}
+							</div>
+						</div>
+					</div>
+					<div class="slds-grid slds-gutters">
+						<div class="slds-col">
+							<div class="col1">{workSliderLeft}</div>
+						</div>
+						<div class="slds-col">
+							<div class="col2">{workSliderRight}</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="outerCOntainer">
+					<div class="container-box">
+						<span class="nds-m-right_x-small">{sixthQuestionText}</span><br /><br />
+						<slot>
+							<div class="contentclass">{sliderTextSec}</div>
+						</slot><br />
+			</div>
+						<!-- </div> -->
+						<div class="compress">
+							<div class="slidecontainersec">
+								<div class="start-labelsec">0</div>
+								<div class="end-labelsec">10</div>
+								<input
+				type="range"
+				min="0"
+				max="10"
+				value={sixthQuestionResponse}
+				class="slidersec"
+				id="myRangesec"
+				list="tickmarks"
+				disabled
+				/>
+
+								<div class="thumb-labelsec"  id="demosec">
+									{sliderValuesec}
+								</div>
+							</div>
+						</div>
+						<div class="slds-grid slds-gutters">
+							<div class="slds-col">
+								<div class="col1">{dailySilderLeft}</div>
+							</div>
+							<div class="slds-col">
+								<div class="col2">{dailySilderRight}</div>
+							</div>
+						</div>
+					</div>
+</template>
+
+<template if:true={forTwoResp}>
+	<div class="nds-form-element nds-form-container">
+		<legend
+			class="nds-form-element__label nds-form-element__legend nds-form-element__control-help nds-radio-relative-tooltip nds-show nds-float_left">
+			<span class="nds-m-right_x-small"
+				>{firstQuestionText}(working for pay)</span><br />
+			</legend>
+			<div class="nds-form-element__control nds-horizontal_radio">
+				<span class="nds-radio">
+				<div class="radio-container">
+				<input
+					type="radio"
+					value="Yes"
+					checked
+					disabled
+					id="ResponseCapture"
+				/>
+				<label class="nds-radio__label" for="ResponseCapture">
+					<span class="nds-radio_faux"></span>
+				<span class="nds-form-element__label slds-p-left_small"
+					>{firstQuestionResponse}</span>
+				</label>
+			</div>
+			</span>
+	</div>
+	</div>
+
+	<div class="outerCOntainer">
+		<div class="container-box">
+			<span class="nds-m-right_x-small">{sixthQuestionText}</span><br /><br />
+			<slot>
+				<div class="contentclass">{sliderTextSec}</div>
+			</slot><br />
+			</div>
+			<!-- </div> -->
+			<div class="compress">
+				<div class="slidecontainersec">
+					<div class="start-labelsec">0</div>
+					<div class="end-labelsec">10</div>
+					<input
+				type="range"
+				min="0"
+				max="10"
+				value={sixthQuestionResponse}
+				class="slidersec"
+				id="myRangesecS"
+				list="tickmarks"
+				disabled
+				/>
+
+					<div class="thumb-labelsec"  id="demosecS">
+						{sliderValuesec}
+					</div>
+				</div>
+			</div>
+			<div class="slds-grid slds-gutters">
+				<div class="slds-col">
+					<div class="col1">{dailySilderLeft}</div>
+				</div>
+				<div class="slds-col">
+					<div class="col2">{dailySilderRight}</div>
+				</div>
+			</div>
+		</div>
+</template>
+</template>
+</div>
+<!--column1-->
+
+<div class="column2">
+	<div class="box">
+		<div class="statusRE">
+			<div class="rollout">
+				{rollout}<br />
+				<p class="rddate">{rolloutDate}</p>
+			</div>
+			<div class="expires">
+				{completedOn}<br />
+				<p class="eddate">{expireDate}</p>
+			</div>
+		</div>
+	</div>
+	<div class="box2">
+		<div class="texts">{completedQn}</div>
+		<div class="line"></div>
+
+		<div class="category-names">
+			<div class={checkdlqi}>
+				<div role="button" class="category-box" onclick={navigateToCategory2} onkeydown={navigateToCategory2}
+					data-it-button="WAPI Completed Questionnaire: Navigate to DLQI">
+					<img src={cardImageDlqi} alt="Dermatology" class="imageNavi" />
+					<p class="b">{dlqi}</p>
+				</div>
+			</div>
+			<div class={checkpss}>
+				<div role="button" class="category-box" onclick={navigateToCategory3} onkeydown={navigateToCategory3}
+					data-it-button="WAPI Completed Questionnaire: Navigate to PSS">
+					<img src={cardImagePss} alt="Psorasis" class="imageNavi" />
+					<p class="c">{pss}</p>
+				</div>
+			</div>
+			<div class="category-box1" data-it-button="WAPI Completed Questionnaire: Navigate to WAPI">
+				<img src={cardImageWapi} alt="Work and Activity" class="imageNavi" />
+				<p class="d">{workAPI}</p>
+			</div>
+			<div class={checkqsq}>
+				<div role="button" class="category-box1" onclick={navigateToCategory5} onkeydown={navigateToCategory5}
+					data-it-button="WAPI Completed Questionnaire: Navigate to QSQ">
+					<img src={cardImageQsq} alt="Qualitative" class="imageNaviNxt" />
+					<p class="e">{qsq}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--column2-->
+</div>
+<!--columnconatiner-->
+
+<br />
+<div class="botcontainer">
+	<br />
+	<div class="bot1">1. {wpaiBot}</div>
+	<br /><br />
+	<div class="bot2">*{wpaiBotOne}</div>
+</div>
+</template>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+	<apiVersion>58.0</apiVersion>
+	<isExposed>true</isExposed>
+	<description>This component is used to Display Tasks based on the Action notification on clicking the Notification icon from the Dashboard.</description>
+	<targets>
+		<target>lightningCommunity__Default</target>
+		<target>lightningCommunity__Theme_Layout</target>
+		<target>lightning__HomePage</target>
+		<target>lightningCommunity__Page</target>
+	</targets>
+</LightningComponentBundle>
